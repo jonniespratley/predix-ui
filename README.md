@@ -55,7 +55,12 @@ var b = 10;
 console.log(a + b);
 ```
 
+```color
+value: '#f55'
+name: 'Red'
+span: 2
+```
+
 ## License
 
 *react-component-boilerplate* is available under MIT. See LICENSE for more details.
-
