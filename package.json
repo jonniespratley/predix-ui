@@ -1,9 +1,9 @@
 {
-  "name": "react-component-boilerplate",
-  "description": "Boilerplate for React.js components",
-  "author": "Juho Vepsalainen",
-  "user": "survivejs",
-  "version": "5.0.1",
+  "name": "px-components-react",
+  "description": "px-* web components in React.js components",
+  "author": "Jonnie Spratley",
+  "user": "jonniespratley",
+  "version": "0.0.1",
   "scripts": {
     "start": "webpack-dev-server --env dev",
     "test": "jest",
@@ -41,7 +41,6 @@
     "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.1",
     "eslint": "^4.7.1",
-    "eslint-config-airbnb": "^15.1.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
@@ -74,11 +73,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/survivejs/react-component-boilerplate.git"
+    "url": "https://github.com/jonniespratley/px-components-react.git"
   },
-  "homepage": "https://survivejs.github.io/react-component-boilerplate/",
+  "homepage": "https://jonniespratley.github.io/px-components-react/",
   "bugs": {
-    "url": "https://github.com/survivejs/react-component-boilerplate/issues"
+    "url": "https://github.com/jonniespratley/px-components-react/issues"
   },
   "jest": {
     "collectCoverage": true,
@@ -99,5 +98,13 @@
   "license": "MIT",
   "pre-push": [
     "test"
-  ]
+  ],
+  "dependencies": {
+    "babel-plugin-module-resolver": "^2.7.1",
+    "babel-plugin-wrap-in-js": "^1.1.1",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "strip-json-comments": "^2.0.1",
+    "styled-jsx": "^1.0.10"
+  }
 }

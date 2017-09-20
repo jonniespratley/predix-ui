@@ -1,5 +1,5 @@
 module.exports = {
-  "extends": "airbnb",
+  "extends": "",
   "parser": "babel-eslint",
   "env": {
     "browser": true,
@@ -11,6 +11,7 @@ module.exports = {
   ],
   "rules": {
     "comma-dangle": ["error", "never"],
+    "jsx-a11y/href-no-hash": 0,
     "global-require": 0,
     "prefer-arrow-callback": 0,
     "func-names": 0,

@@ -8,16 +8,36 @@ import 'purecss/build/pure.css';
 import './main.css';
 import '../style.css';
 
+import {px} from '../src';
+
+import CardDocs from './cards.md';
+import ButtonDocs from './buttons.md';
+// import GridDocs from './docs/Grids';
+
 // Add your documentation imports here. These are available to
 // React specimen. Do NOT pass React here as Catalog does that.
-const documentationImports = {};
+const documentationImports = {
+  px: px
+};
+
+
 const title = `${NAME} v${VERSION}`; // eslint-disable-line no-undef
 const project = `${USER}/${NAME}`; // eslint-disable-line no-undef
+
 const pages = [
   {
     path: '/',
     title: 'Introduction',
     component: require('../README.md')
+  },
+  {
+    title: 'Components',
+    pages: [
+      { path: 'button', title: 'Button', component: ButtonDocs},
+      { path: 'card', title: 'Card', component: CardDocs }
+
+    //  { path: 'grid', title: 'Grid', component: GridDocs }
+    ]
   }
 ];
 
