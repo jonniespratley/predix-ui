@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import GithubCorner from 'react-github-corner';
 import { Catalog, CodeSpecimen, ReactSpecimen } from 'catalog';
 
-import 'purecss/build/pure.css';
+//import 'purecss/build/pure.css';
 import './main.css';
 import '../style.css';
 
