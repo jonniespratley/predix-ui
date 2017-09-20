@@ -6,7 +6,8 @@ import { Catalog, CodeSpecimen, ReactSpecimen } from 'catalog';
 
 //import 'purecss/build/pure.css';
 import './main.css';
-import '../style.css';
+
+
 
 import {px} from '../src';
 import PxAlertLabel from '../src/px-alert-label';
@@ -15,15 +16,17 @@ import PxAlertLabel from '../src/px-alert-label';
 import pxAlertLabelDocs from './px-alert-label';
 import pxNavbarDocs from './px-navbar';
 import pxModalDocs from './px-modal';
-
+import pxButtonDocs from './px-button';
 
 import pxBrandingBarDocs from './branding-bar.md';
 import pxCardDocs from './cards.md';
-import pxButtonDocs from './buttons.md';
+
 import pxSpinnerDocs from './spinner.md';
 import pxViewHeaderDocs from './view-header.md';
-// import GridDocs from './docs/Grids';
 
+
+
+const logo = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/predix_ds_logo.webp';
 // Add your documentation imports here. These are available to
 // React specimen. Do NOT pass React here as Catalog does that.
 const documentationImports = {
@@ -68,6 +71,7 @@ ReactDOM.render(
       direction="right"
     />
     <Catalog
+      logoSrc={logo}
       imports={documentationImports}
       pages={pages}
       specimens={{
