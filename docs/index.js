@@ -11,18 +11,24 @@ import '../style.css';
 import {px} from '../src';
 import PxAlertLabel from '../src/px-alert-label';
 
+// TODO: Use this format
 import pxAlertLabelDocs from './px-alert-label';
-import BrandingBarDocs from './branding-bar.md';
-import CardDocs from './cards.md';
-import ButtonDocs from './buttons.md';
-import SpinnerDocs from './spinner.md';
-import ViewHeader from './view-header.md';
+import pxNavbarDocs from './px-navbar';
+import pxModalDocs from './px-modal';
+
+
+import pxBrandingBarDocs from './branding-bar.md';
+import pxCardDocs from './cards.md';
+import pxButtonDocs from './buttons.md';
+import pxSpinnerDocs from './spinner.md';
+import pxViewHeaderDocs from './view-header.md';
 // import GridDocs from './docs/Grids';
 
 // Add your documentation imports here. These are available to
 // React specimen. Do NOT pass React here as Catalog does that.
 const documentationImports = {
-  px, PxAlertLabel
+  px,
+  PxAlertLabel
 };
 
 
@@ -39,14 +45,13 @@ const pages = [
     title: 'Components',
     pages: [
       { path: 'px-alert-label', title: 'Alert Label', component: pxAlertLabelDocs},
-      { path: 'px-button', title: 'Button', component: ButtonDocs},
-      { path: 'px-branding-bar', title: 'Branding Bar', component: BrandingBarDocs},
-      { path: 'px-card', title: 'Card', component: CardDocs },
-      { path: 'px-spinner', title: 'Spinner', component: SpinnerDocs },
-      { path: 'px-view-header', title: 'View Header', component: ViewHeader }
-
-
-    //  { path: 'grid', title: 'Grid', component: GridDocs }
+      { path: 'px-button', title: 'Button', component: pxButtonDocs},
+      { path: 'px-branding-bar', title: 'Branding Bar', component: pxBrandingBarDocs},
+      { path: 'px-card', title: 'Card', component: pxCardDocs },
+      { path: 'px-navbar', title: 'Navbar', component: pxNavbarDocs },
+      { path: 'px-modal', title: 'Modal', component: pxModalDocs },
+      { path: 'px-spinner', title: 'Spinner', component: pxSpinnerDocs },
+      { path: 'px-view-header', title: 'View Header', component: pxViewHeaderDocs }
     ]
   }
 ];

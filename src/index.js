@@ -1,12 +1,20 @@
+
 import React from 'react';
 
-import Button from './px-button';
-import Partials from './px-partials';
-import BrandingBar from './px-branding-bar';
-import ViewHeader from './px-view-header';
-import Spinner from './px-spinner';
-import Card from './px-card';
 import styles from './sass/index.scss';
+import Partials from './px-partials';
+
+
+import Button from './px-button';
+import BrandingBar from './px-branding-bar';
+import Card from './px-card';
+import Spinner from './px-spinner';
+import ViewHeader from './px-view-header';
+
+import Modal from './px-modal';
+import Navbar from './px-navbar';
+
+
 
 const Icon = ({icon}) => (
 	<i className={`fa fa-${icon}`}></i>
@@ -52,6 +60,8 @@ module.exports = {
     KeyValuePair,
     Box,
     ViewHeader,
-    Spinner
+    Spinner,
+    Modal,
+    Navbar
   }
 };

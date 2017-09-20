@@ -1,0 +1,101 @@
+/*
+ * Copyright (c) 2016 GE Global Research. All rights reserved.
+ *
+ * The copyright to the computer software herein is the property of
+ * GE Global Research. The software may be used and/or copied only
+ * with the written permission of GE Global Research or in accordance
+ * with the terms and conditions stipulated in the agreement/contract
+ * under which the software has been supplied.
+ */
+@import "px-defaults-design/_settings.defaults.scss";
+@import "px-colors-design/_settings.colors.scss";
+@import 'variables';
+@import 'px-mobile-design/sass/_mixins.scss';
+
+@import 'px-navbar-sketch.scss';
+@include b ('navbar') {
+	font-size       : $inuit-base-font-size;
+	border-bottom   : $navbar-default-border-bottom;
+	border-bottom   : var(--px-navbar-border-bottom, $navbar-default-border-bottom);
+	background-color: var(--px-navbar-background-color, $navbar-default-background-color);
+	color           : var(--px-navbar-color, $navbar-default-font-color);
+
+
+	///-----------------------------------------------------------------
+	///.navbar--transparent
+	@include modifier ('transparent') {
+		background-color: transparent;
+		color           : $navbar-default-font-color;
+		.navbar__button {
+			color: $navbar-default-font-color;
+		}
+	}
+
+	///-----------------------------------------------------------------
+	///.navbar--shadow
+	@include modifier ('shadow') {
+		box-shadow: $navbar-default-box-shadow;
+	}
+	///-----------------------------------------------------------------
+	///.navbar--chrome
+	@include modifier ('chrome') {
+		background-color   : $navbar-chrome-background-color;
+		border-bottom-color: $navbar-chrome-border-color;
+		color              : $navbar-chrome-font-color;
+
+		.navbar__button {
+			color: $navbar-chrome-font-color;
+		}
+	}
+
+	///-----------------------------------------------------------------
+	///.navbar--dark
+	@include modifier ('dark') {
+		background-color   : $navbar-dark-background-color;
+		color              : $navbar-dark-font-color;
+		border-bottom-color: $navbar-dark-border-color;
+
+		.navbar__button {
+			color: $navbar-dark-font-color;
+		}
+	}
+	///-----------------------------------------------------------------
+	///.navbar--primary
+	@include modifier ('primary') {
+		background-color   : $navbar-primary-background-color;
+		color              : $navbar-primary-font-color;
+		border-bottom-color: $navbar-primary-border-color;
+
+		.navbar__button {
+			color: $navbar-primary-font-color;
+		}
+	}
+	///-----------------------------------------------------------------
+	//::content .navbar__button {
+	@include c ('.navbar__button') {
+		background-color: $navbar-button-background-color;
+		border          : $navbar-button-border;
+		border-radius  	: $navbar-button-border-radius;
+		font-size       : $navbar-button-font-size;
+		> * {
+			display: flex;
+			align-self: center;
+		}
+		&:active {
+			background-color: $navbar-button-background-color--active;
+			transition      : none;
+			opacity         : $navbar-button-opacity--active;
+		}
+	}
+	///-----------------------------------------------------------------
+	@include element ('title') {
+		font-size: $navbar-title-font-size;
+		color: var(--px-navbar-title-color, $navbar-title-font-color);
+	}
+
+	///-----------------------------------------------------------------
+	@include element ('subtitle') {
+		font-size: $navbar-subtitle-font-size;
+		color: var(--px-navbar-subtitle-color, $navbar-subtitle-font-color);
+	}
+}

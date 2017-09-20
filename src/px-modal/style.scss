@@ -1,0 +1,93 @@
+// Generic
+@import "px-normalize-design/_generic.normalize.scss";
+@import "px-box-sizing-design/_generic.box-sizing.scss";
+@import "px-helpers-design/_generic.helpers.scss";
+
+
+/**
+ * px-modal styles
+ */
+.px-modal {
+  background: green;
+  padding   : 1rem;
+
+  // Components
+  .modal {
+    position        : fixed;
+    top             : 0;
+    right           : 0;
+    bottom          : 0;
+    left            : 0;
+    z-index         : 999;
+    background-color: var(--px-modal-overlay-color, rgba(black, 0.65));
+    transition      : background-color 0.3s cubic-bezier(.78,.13,.16,.87);
+    //@apply(--px-modal);
+
+    &.invisible {
+      visibility      : hidden;
+      background-color: transparent;
+    }
+
+    &.fadeout {
+      animation: fadeout 0.3s cubic-bezier(.78,.13,.16,.87);
+    }
+  }
+  @keyframes fadeout {
+    from {
+      opacity         : 1;
+      background-color: var(--px-modal-overlay-color, rgba(black, 0.65));
+      visibility      : visible;
+    }
+
+    to {
+      opacity         : 0;
+      background-color: transparent;
+      visibility      : hidden;
+    }
+  }
+
+  .modal__title {
+    margin-bottom: $inuit-base-spacing-unit--large;
+    margin-top   : 0;
+    //@apply(--px-modal-title);
+  }
+
+  .modal__content {
+    position        : fixed;
+    top             : 50%;
+    left            : 50%;
+    transform       : translate(-50%, -50%);
+    max-height      : calc(100% - 2rem);
+    max-width       : calc(100% - 2rem);
+    overflow        : auto;
+    white-space     : normal;
+    word-wrap       : break-word;
+    background-color: var(--px-modal-background-color, white);
+    color           : var(--px-modal-text-color, black);
+    box-shadow      : 0 6px 12px 0 rgba(0,0,0,0.20);
+    padding         : $inuit-base-spacing-unit--large;
+    //@apply(--px-modal-content);
+    @include media-query(palm) {
+      width: 100%;
+    }
+    @include media-query(lap-and-up) {
+      min-width: calculateRem(400px);
+    }
+  }
+
+  .modal__buttons {
+    margin-top: $inuit-base-spacing-unit--large;
+    border-top: 1px solid var(--px-modal-border-color, transparent);
+  }
+
+  .modal__buttons button.btn {
+    &:nth-last-of-type(2) {
+      margin-right: $inuit-base-spacing-unit--small;
+    }
+    //@apply(--px-modal-buttons);
+  }
+
+  .modal__buttons button.btn--call-to-action {
+  //  @apply(--px-modal-positive-button);
+  }
+}
