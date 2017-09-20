@@ -1,0 +1,26 @@
+
+
+
+
+.px-branding-bar {
+	box-sizing: border-box;
+	width: inherit;
+	justify-content: space-between;
+	height: 2rem;
+	max-height: 4.46667rem;
+	min-height: 2rem;
+	background-color: #1b2a33;
+	font-size: 1rem;
+	color: #889aa5;
+
+	.px-predix-svg-logo {
+		margin: 0 auto;
+		display: block;
+		max-width: 60px;
+		vertical-align: middle;
+	}
+
+	.powered-by {
+		font-size: 0.8rem;
+	}
+}

@@ -1,0 +1,22 @@
+{
+  "name": "predix-nextjs-starter",
+  "description": "A starter project for Predix on nextjs",
+  "main": "",
+  "authors": [
+    "Jonnie Spratley <jonniespratley@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/jonniespratley/predix-nextjs-starter",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "px-starter-kit-design": "^1.0.1",
+    "px-mobile-design": "^1.0.0",
+    "inuit-responsive-settings": "^0.1.5"
+  }
+}

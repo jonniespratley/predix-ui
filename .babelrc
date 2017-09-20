@@ -8,6 +8,7 @@
     }]
   ],
   "plugins": [
+    "styled-jsx/babel",
     [
       "transform-react-remove-prop-types",
       {

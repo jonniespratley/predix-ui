@@ -1,6 +1,41 @@
 import React from 'react';
-import Card from './px-card';
+
 import Button from './px-button';
+import Partials from './px-partials';
+import BrandingBar from './px-branding-bar';
+import Card from './px-card';
+import styles from './sass/index.scss';
+
+const Icon = ({icon}) => (
+	<i className={`fa fa-${icon}`}></i>
+);
+
+const Box = ({ title, children}) => (
+	<div className='box u-mb-'>
+		<h3>{title}</h3>
+		<div className=''>{children}</div>
+	</div>
+);
+
+
+//https://www.predix-ui.com/#/elements/px-key-value-pair
+const KeyValuePair = ({label = 'Name', value = '12345'}) => (
+	<div className='PxKeyValuePair u-mh- flex__item flex flex--col'>
+		<div className="label">{label}</div>
+		<div className="value">{value}</div>
+	</div>
+);
+
+
+
+//https://www.predix-ui.com/#/elements/px-app-header
+const AppHeader = ({ title = 'PxAppHeader', children }) => (
+	<header className='PxAppHeader flex flex-spaced'>
+		<h1>{title}</h1>
+		{children}
+	</header>
+);
+
 //import Card from './px/card.js';
 //import demo from './demo.js';
 

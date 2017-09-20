@@ -23,7 +23,11 @@ const config = {
 
 const common = {
   resolve: {
-    extensions: ['.js', '.css', '.png', '.jpg']
+    extensions: ['.js', '.css', '.scss', '.png', '.jpg'],
+    modules: [
+      'bower_components',
+    'node_modules'
+    ]
   },
   module: {
     loaders: [
@@ -114,6 +118,41 @@ const dev = merge(common, siteCommon, {
     stats: 'errors-only'
   }
 });
+
+import glob from 'glob';
+
+dev.module.loaders.push(
+  /*{
+    test: /\.(css|scss)/,
+    loader: 'emit-file-loader',
+    options: {
+      name: 'dist/[path][name].[ext]'
+    }
+  },
+  {
+    test: /\.css$/,
+    use: ['babel-loader', 'raw-loader', 'postcss-loader']
+  },
+  */
+  {
+    test: /\.s(a|c)ss$/,
+    use: [
+      'babel-loader',
+      'raw-loader',
+      'postcss-loader', {
+        loader: 'sass-loader',
+        options: {
+          includePaths: [
+            'styles',
+            'bower_components',
+            'node_modules'
+          ].map((d) => path.join(__dirname, d)).map((g) => glob.sync(g)).reduce((a, c) => a.concat(c), [])
+        }
+      }
+    ]
+  }
+)
+
 
 const ghPages = merge(common, siteCommon, {
   entry: {

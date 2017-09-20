@@ -1,0 +1,54 @@
+.px-view-header {
+	height          : 4rem;
+	background-color: #e2e8ed;
+	display         : flex;
+	align-items     : center;
+	flex-direction  : row;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	&__actionable {
+		height                : auto;
+		border                : 0;
+		border-radius         : 0;
+		padding               : 0;
+		box-shadow            : none;
+		background            : 0 0;
+		line-height           : inherit;
+		font                  : inherit;
+		-webkit-font-smoothing: antitodoed;
+		cursor                : pointer;
+		transition            : color 0.4s;
+		user-select: none;
+		color: #007acc;
+		outline: 0;
+	}
+
+	&__text {
+		margin-left  : auto;
+		margin-right : auto;
+		padding-left : 1rem;
+		padding-right: 1rem;
+	}
+
+	&__title {
+		text-align: center;
+		color     : #2c404c;
+	}
+
+	&__subtitle {
+		text-align: center;
+		color     : #677e8c;
+	}
+
+	.zeta {
+		font-size  : 0.8rem;
+		line-height: 1.66667;
+		font-weight: 400;
+	}
+
+	.truncate {
+		overflow     : hidden;
+		text-overflow: ellipsis;
+		white-space  : nowrap;
+	}
+}
