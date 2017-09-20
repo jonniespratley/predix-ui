@@ -1,7 +1,8 @@
-@import "px-defaults-design/_settings.defaults.scss";
-@import "px-colors-design/_settings.colors.scss";
+@import 'px-defaults-design/_settings.defaults.scss';
+@import 'px-colors-design/_settings.colors.scss';
 @import 'px-spacing-design/_trumps.spacing.scss';
 @import 'px-mobile-design/sass/_mixins.scss';
+
 
 ///See px-header/px-header.html
 @include block('c-header') {

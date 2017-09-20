@@ -1,8 +1,8 @@
-# Buttons
-This is the buttons documentation.
+# Button
+This is the px-button documentation.
 
 
-## Example
+## Usage
 
 ```react
 <px.Button label='Test Button'/>

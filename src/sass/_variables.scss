@@ -1,0 +1,38 @@
+@import "px-defaults-design/_settings.defaults.scss";
+@import "px-colors-design/_settings.colors.scss";
+
+$primary-color: black;
+$red                        : #F00;
+$blue                       : #00F;
+$white                      : #FFF;
+$gray                       : #999;
+$black                      : #000;
+
+$global-primary-color: #007acc;
+$global-primary-light-color: #b5e5fd;
+$global-background-color    : #ebeff2;
+$global-font-color          : #333;
+$global-font-family         : 'Helvetica Neue', arial, sans-serif;
+
+$global-nav-font-color      : #fff;
+$global-nav-background-color: #1b2a33;
+
+$headerBackground           : #1b2a33;
+$header-font-color          : #fff;
+$navBackground              : #1b2a33;
+
+$footerBackground           : #2c404c;
+$contentBackground          : #8b8d8f;
+//Prefix for utility classes
+$utility-prefix: 'u-';
+$layout-prefix : 'l-';
+$block-prefix  : 'b-';
+$helper-prefix : 'h-';
+
+$margin-step   : 5;
+$height-step   : 25;
+$width-step    : 25;
+$padding-step  : 5;
+
+$px-spinner-background-color: gray;
+$px-spinner-fill-color: black;

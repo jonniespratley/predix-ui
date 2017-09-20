@@ -9,15 +9,20 @@ import './main.css';
 import '../style.css';
 
 import {px} from '../src';
+import PxAlertLabel from '../src/px-alert-label';
 
+import pxAlertLabelDocs from './px-alert-label';
+import BrandingBarDocs from './branding-bar.md';
 import CardDocs from './cards.md';
 import ButtonDocs from './buttons.md';
+import SpinnerDocs from './spinner.md';
+import ViewHeader from './view-header.md';
 // import GridDocs from './docs/Grids';
 
 // Add your documentation imports here. These are available to
 // React specimen. Do NOT pass React here as Catalog does that.
 const documentationImports = {
-  px: px
+  px, PxAlertLabel
 };
 
 
@@ -33,8 +38,13 @@ const pages = [
   {
     title: 'Components',
     pages: [
-      { path: 'button', title: 'Button', component: ButtonDocs},
-      { path: 'card', title: 'Card', component: CardDocs }
+      { path: 'px-alert-label', title: 'Alert Label', component: pxAlertLabelDocs},
+      { path: 'px-button', title: 'Button', component: ButtonDocs},
+      { path: 'px-branding-bar', title: 'Branding Bar', component: BrandingBarDocs},
+      { path: 'px-card', title: 'Card', component: CardDocs },
+      { path: 'px-spinner', title: 'Spinner', component: SpinnerDocs },
+      { path: 'px-view-header', title: 'View Header', component: ViewHeader }
+
 
     //  { path: 'grid', title: 'Grid', component: GridDocs }
     ]

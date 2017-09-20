@@ -1,26 +1,32 @@
 
+// Generic
+//@import "px-normalize-design/_generic.normalize-mini.scss";
+//@import "px-box-sizing-design/_generic.box-sizing.scss";
+@import "px-helpers-design/_generic.helpers.scss";
 
+// Base
+@import "px-flexbox-design/_base.flexbox.scss";
+//@import "px-headings-design/_base.headings.scss";
 
+// Component
 
 .px-branding-bar {
-	box-sizing: border-box;
-	width: inherit;
-	justify-content: space-between;
-	height: 2rem;
-	max-height: 4.46667rem;
-	min-height: 2rem;
-	background-color: #1b2a33;
-	font-size: 1rem;
-	color: #889aa5;
+  @extend .flex;
+  @extend .flex--middle;
+  width: inherit;
+  justify-content: space-between;
+  height: var(--px-branding-bar-height, calculateRem(30px));
+  max-height: calculateRem(67px);
+  min-height: calculateRem(30px);
+  background-color: var(--px-branding-bar-background-color, black);
+  @include media-query(palm) {
+    display: none !important;
+    visibility: hidden;
+  }
+  font-size: var(--px-branding-bar-font-size, calculateRem(15px));
+  color: var(--px-branding-bar-logo-and-title-text-color, gray);
+}
 
-	.px-predix-svg-logo {
-		margin: 0 auto;
-		display: block;
-		max-width: 60px;
-		vertical-align: middle;
-	}
-
-	.powered-by {
-		font-size: 0.8rem;
-	}
+.px-branding-bar__powered-by-text{
+  font-size: calculateRem(12px);
 }

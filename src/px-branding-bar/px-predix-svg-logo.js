@@ -1,4 +1,4 @@
-
+import React from 'react';
 
 export default () =>(
 	<svg height="13" viewBox="0 0 82.13 13.24" className='px-predix-svg-logo'>

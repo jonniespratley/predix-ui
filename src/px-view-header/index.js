@@ -1,5 +1,6 @@
-import {h, Component} from 'preact';
-import './style';
+import React from 'react';
+
+import styles from './style.scss';
 
 //https://www.predix-ui.com/#/elements/px-branding-bar
 export default ({ title = 'Current View Title', subtitle, children }) => (
@@ -10,5 +11,6 @@ export default ({ title = 'Current View Title', subtitle, children }) => (
 			{subtitle && <div className='zeta px-view-header__subtitle truncate' title={subtitle}>{subtitle}</div>}
 		</div>
 		<div className='px-view-header__actionable'>Next</div>
+    <style jsx>{styles}</style>
 	</div>
 );

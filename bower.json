@@ -17,6 +17,7 @@
   "dependencies": {
     "px-starter-kit-design": "^1.0.1",
     "px-mobile-design": "^1.0.0",
-    "inuit-responsive-settings": "^0.1.5"
+    "inuit-responsive-settings": "^0.1.5",
+    "px-headings-design": "^1.0.3"
   }
 }

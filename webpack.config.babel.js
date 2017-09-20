@@ -1,5 +1,5 @@
 import * as path from 'path';
-
+import glob from 'glob';
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -12,6 +12,7 @@ const pkg = require('./package.json');
 const ROOT_PATH = __dirname;
 const config = {
   paths: {
+    bower: path.join(ROOT_PATH, 'bower_components'),
     dist: path.join(ROOT_PATH, 'dist'),
     src: path.join(ROOT_PATH, 'src'),
     docs: path.join(ROOT_PATH, 'docs'),
@@ -21,16 +22,35 @@ const config = {
   library: 'Boilerplate'
 };
 
+const sassRules = {
+  test: /\.s(a|c)ss$/,
+  use: [
+    'babel-loader',
+    'raw-loader',
+    'postcss-loader', {
+      loader: 'sass-loader',
+      options: {
+        includePaths: [
+          'sass',
+          'styles',
+          'bower_components',
+          'node_modules'
+        ].map((d) => path.join(__dirname, d)).map((g) => glob.sync(g)).reduce((a, c) => a.concat(c), [])
+      }
+    }
+  ]
+};
+
 const common = {
   resolve: {
-    extensions: ['.js', '.css', '.scss', '.png', '.jpg'],
+    extensions: ['.js', '.css', '.scss', '.png', '.jpg', '.md'],
     modules: [
       'bower_components',
-    'node_modules'
+      'node_modules'
     ]
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         enforce: 'pre',
@@ -89,7 +109,7 @@ const dev = merge(common, siteCommon, {
     new webpack.HotModuleReplacementPlugin()
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
@@ -119,39 +139,9 @@ const dev = merge(common, siteCommon, {
   }
 });
 
-import glob from 'glob';
 
-dev.module.loaders.push(
-  /*{
-    test: /\.(css|scss)/,
-    loader: 'emit-file-loader',
-    options: {
-      name: 'dist/[path][name].[ext]'
-    }
-  },
-  {
-    test: /\.css$/,
-    use: ['babel-loader', 'raw-loader', 'postcss-loader']
-  },
-  */
-  {
-    test: /\.s(a|c)ss$/,
-    use: [
-      'babel-loader',
-      'raw-loader',
-      'postcss-loader', {
-        loader: 'sass-loader',
-        options: {
-          includePaths: [
-            'styles',
-            'bower_components',
-            'node_modules'
-          ].map((d) => path.join(__dirname, d)).map((g) => glob.sync(g)).reduce((a, c) => a.concat(c), [])
-        }
-      }
-    ]
-  }
-)
+dev.module.rules.push(sassRules);
+
 
 
 const ghPages = merge(common, siteCommon, {
@@ -187,7 +177,7 @@ const ghPages = merge(common, siteCommon, {
     })
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
@@ -224,7 +214,7 @@ const distCommon = {
     }
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         use: 'babel-loader',

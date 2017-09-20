@@ -3,6 +3,8 @@ import React from 'react';
 import Button from './px-button';
 import Partials from './px-partials';
 import BrandingBar from './px-branding-bar';
+import ViewHeader from './px-view-header';
+import Spinner from './px-spinner';
 import Card from './px-card';
 import styles from './sass/index.scss';
 
@@ -44,6 +46,12 @@ module.exports = {
   demo: require('./demo').default,
   px: {
     Button,
-    Card
+    Card,
+    BrandingBar,
+    AppHeader,
+    KeyValuePair,
+    Box,
+    ViewHeader,
+    Spinner
   }
 };
