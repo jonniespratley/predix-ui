@@ -13,6 +13,7 @@ import {px} from '../src';
 import PxAlertLabel from '../src/px-alert-label';
 
 // TODO: Use this format
+import pxActionSheetDocs from './px-action-sheet';
 import pxAlertLabelDocs from './px-alert-label';
 import pxButtonDocs from './px-button';
 import pxBrandingBarDocs from './branding-bar.md';
@@ -51,6 +52,7 @@ const pages = [
     title: 'Components',
     pages: [
       { path: 'px-alert-label', title: 'Alert Label', component: pxAlertLabelDocs},
+      { path: 'px-action-sheet', title: 'Action Sheet', component: pxActionSheetDocs},
       { path: 'px-button', title: 'Button', component: pxButtonDocs},
       { path: 'px-branding-bar', title: 'Branding Bar', component: pxBrandingBarDocs},
       { path: 'px-card', title: 'Card', component: pxCardDocs },

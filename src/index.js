@@ -5,6 +5,7 @@ import styles from './sass/index.scss';
 import Partials from './px-partials';
 
 
+import ActionSheet from './px-action-sheet';
 import Button from './px-button';
 import BrandingBar from './px-branding-bar';
 import Card from './px-card';
@@ -54,6 +55,7 @@ const AppHeader = ({ title = 'PxAppHeader', children }) => (
 module.exports = {
   demo: require('./demo').default,
   px: {
+    ActionSheet,
     Button,
     Card,
 		Drawer,
