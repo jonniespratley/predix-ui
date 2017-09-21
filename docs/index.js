@@ -14,12 +14,15 @@ import PxAlertLabel from '../src/px-alert-label';
 
 // TODO: Use this format
 import pxAlertLabelDocs from './px-alert-label';
+import pxButtonDocs from './px-button';
+import pxBrandingBarDocs from './branding-bar.md';
+
+import pxCardDocs from './cards.md';
 import pxNavbarDocs from './px-navbar';
 import pxModalDocs from './px-modal';
-import pxButtonDocs from './px-button';
+import pxTableViewDocs from './px-table-view';
+import pxDrawerDocs from './px-drawer';
 
-import pxBrandingBarDocs from './branding-bar.md';
-import pxCardDocs from './cards.md';
 
 import pxSpinnerDocs from './spinner.md';
 import pxViewHeaderDocs from './view-header.md';
@@ -51,9 +54,16 @@ const pages = [
       { path: 'px-button', title: 'Button', component: pxButtonDocs},
       { path: 'px-branding-bar', title: 'Branding Bar', component: pxBrandingBarDocs},
       { path: 'px-card', title: 'Card', component: pxCardDocs },
+      { path: 'px-drawer', title: 'Drawer', component: pxDrawerDocs },
       { path: 'px-navbar', title: 'Navbar', component: pxNavbarDocs },
       { path: 'px-modal', title: 'Modal', component: pxModalDocs },
       { path: 'px-spinner', title: 'Spinner', component: pxSpinnerDocs },
+      {
+        path: 'px-table-view',
+        title: 'Table View',
+        component: pxTableViewDocs
+
+       },
       { path: 'px-view-header', title: 'View Header', component: pxViewHeaderDocs }
     ]
   }

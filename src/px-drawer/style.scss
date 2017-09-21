@@ -1,0 +1,87 @@
+@import "sass/px-drawer-predix.scss";
+/**
+ * px-drawer styles
+ */
+ .px-drawer {
+   background: green;
+   padding: 1rem;
+
+
+      .drawer {
+        z-index: 20;
+        background-color: var(--px-drawer-background-color, #242326);
+        width: var(--px-drawer-width, 256px);
+        height: var(--px-drawer-height, 100%);
+      //  @apply(--px-drawer);
+      }
+      .drawer--static {
+        height: 100vh;
+      }
+
+
+      :host([mini]) .drawer,
+      :host([mini][persistent]) .drawer {
+        width: var(--px-drawer-mini-width, 50px);
+      }
+      :host([mini][opened]) .drawer {
+        width: var(--px-drawer-mini-width-opened, auto);
+      }
+
+      .drawer__spacer {
+        min-height: 56px;
+      }
+
+      .drawer__content {
+        overflow-x: hidden;
+      //  @apply(--px-drawer-content);
+      }
+
+      .swipe-open > .drawer::after {
+        position: fixed;
+        top: 56px;
+        bottom: 0;
+        left: 100%;
+        visibility: visible;
+        width: 20px;
+        content: '';
+      }
+
+      .drawer__overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transition: opacity 0.2s ease;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 0;
+        background: var(--px-drawer-overlay-background, rgba(0, 0, 0, 0.5));
+        z-index: -1;
+        visibility: hidden;
+        display: none;
+      //  @apply(--px-drawer-overlay);
+      }
+
+      :host([opened][persistent]){
+        min-height: 100vh;
+      }
+
+      .opened .drawer {
+        visibility: visible;
+        transform: translate3d(0,0,0);
+      //  @apply(--px-drawer-opened);
+      }
+      :host([opened][overlay]) > .drawer__overlay {
+        opacity: 1;
+        z-index: 15;
+        visibility: visible;
+        display: block;
+      }
+      :host([opened][persistent]) > .drawer__overlay {
+        visibility: hidden;
+        display: none;
+        pointer-events: none;
+        opacity: 0;
+      }
+ }

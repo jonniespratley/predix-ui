@@ -1,0 +1,33 @@
+/*
+ * Copyright (c) 2016 GE Global Research. All rights reserved.
+ *
+ * The copyright to the computer software herein is the property of
+ * GE Global Research. The software may be used and/or copied only
+ * with the written permission of GE Global Research or in accordance
+ * with the terms and conditions stipulated in the agreement/contract
+ * under which the software has been supplied.
+ */
+////
+/// px-drawer styles
+/// @author Jonnie Spratley
+/// @since 0.0.1
+////
+@import "px-drawer-sketch.scss";
+@import "variables";
+@import "px-mobile-design/sass/_mixins.scss";
+
+///---------------------------------------
+/// Drawer
+///---------------------------------------
+.drawer {
+  background-color: var(--px-drawer-background-color, $drawer-background-color);
+  color: var(--px-drawer-font-color, $drawer-font-color);
+  @include modifier ('dark') {
+    color: var(--px-drawer-dark-font-color, $drawer-dark-font-color);
+    background-color: var(--px-drawer-dark-background-color, $drawer-dark-background-color);
+
+    @include element ('button') {
+      color: var(--px-drawer-dark-font-color, $drawer-dark-font-color);
+    }
+  }
+}

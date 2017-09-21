@@ -11,6 +11,7 @@ import Card from './px-card';
 import Spinner from './px-spinner';
 import ViewHeader from './px-view-header';
 
+import Drawer from './px-drawer';
 import Modal from './px-modal';
 import Navbar from './px-navbar';
 
@@ -55,6 +56,7 @@ module.exports = {
   px: {
     Button,
     Card,
+		Drawer,
     BrandingBar,
     AppHeader,
     KeyValuePair,

@@ -1,0 +1,55 @@
+@import "variables";
+@import "px-mobile-design/sass/_mixins.scss";
+/// Drawer - Top modifier
+///
+.drawer {
+  ///------------------------------------------------------
+  /// .drawer--bottom
+  @include modifier ('bottom') {
+    @include transform(translate3d(0, 100%, 0));
+    bottom    : 0;
+    right     : 0;
+    left      : 0;
+    width     : 100%;
+    width     : var(--px-drawer-width, 100%);
+
+    box-shadow: $drawer-box-shadow;
+    height    : $drawer-bottom-height;
+
+    &.is-open {
+      @include transform(translate3d(0, 0, 0));
+      z-index: 500;
+    }
+
+    @include media-breakpoint-down ('sm') {
+      right : 0;
+      left  : 0;
+      width : 100%;
+      height: $drawer-bottom-height-small;
+      height: var(--px-drawer-height, $drawer-bottom-height-small);
+    }
+
+    @include media-breakpoint ('md') {
+      right : 15%;
+      left  : 15%;
+      width : auto;
+      height: $drawer-bottom-height-medium;
+      height: var(--px-drawer-height, $drawer-bottom-height-medium);
+    }
+
+    @include media-breakpoint-up ('lg') {
+      width : auto;
+      height: $drawer-bottom-height-large;
+      height: var(--px-drawer-height, $drawer-bottom-height-large);
+      right : 25%;
+      left  : 25%;
+    }
+
+    @include modifier ('full-width') {
+      width: 100% !important;
+      left : 0;
+      right: 0;
+    }
+
+  }
+}

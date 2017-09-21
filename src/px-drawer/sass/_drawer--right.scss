@@ -1,0 +1,39 @@
+@import "variables";
+@import "px-mobile-design/sass/_mixins.scss";
+/// Drawer -
+///
+@include b('drawer') {
+
+  ///------------------------------------------------------
+  /// .drawer--right
+  @include modifier ('right') {
+    @include transform(translate3d(100%, 0, 0));
+    top   : 0;
+    bottom: 0;
+    right : 0;
+
+    height: var(--px-drawer-height, $drawer-height);
+    margin-right: 0;
+    max-width: var(--px-drawer-max-width, $drawer-max-width);
+    text-align: left;
+    &.is-open {
+      @include transform(translate3d(0, 0, 0));
+    }
+
+    @include media-breakpoint-down ('sm') {
+      width: $drawer-width-small;
+      width: var(--px-drawer-width, $drawer-width-small);
+    }
+
+    @include media-breakpoint ('md') {
+      width: $drawer-width-medium;
+      width: var(--px-drawer-width, $drawer-width-medium);
+    }
+
+    @include media-breakpoint ('lg') {
+      max-width: $drawer-max-width;
+      width    : $drawer-width-large;
+      width    : var(--px-drawer-width, $drawer-width-large);
+    }
+  }
+}

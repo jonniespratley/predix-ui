@@ -1,0 +1,39 @@
+@import "variables";
+@import "px-mobile-design/sass/_mixins.scss";
+/// Drawer - Top modifier
+///
+@include b('drawer') {
+
+  ///------------------------------------------------------
+  /// .drawer--top
+  @include modifier ('top') {
+    @include transform(translate3d(0, -100%, 0));
+    top   : 0;
+    right : 0;
+    left  : 0;
+    height: auto;
+
+    width : $drawer-top-width;
+    width : var(--px-drawer-width, $drawer-top-width);
+
+    &.is-open {
+      @include transform(translate3d(0, 0, 0));
+    }
+
+    @include media-breakpoint-down ('sm') {
+      max-height: $drawer-height-top-small;
+      max-height: var(--px-drawer-height, $drawer-height-top-small);
+    }
+
+    @include media-breakpoint ('md') {
+      max-height: $drawer-height-top-medium;
+      max-height: var(--px-drawer-height, $drawer-height-top-medium);
+    }
+
+    @include media-breakpoint ('lg') {
+      max-height: $drawer-height-top-large;
+      max-height: var(--px-drawer-height, $drawer-height-top-large);
+    }
+
+  }
+}

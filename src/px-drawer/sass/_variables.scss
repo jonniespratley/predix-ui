@@ -1,0 +1,47 @@
+@import 'px-colors-design/_settings.colors.scss';
+@import 'px-spacing-design/_trumps.spacing.scss';
+@import "px-functions-design/_tools.functions.scss";
+
+//$drawer-transition           : all .5s;
+$drawer-transition            : all .5s cubic-bezier(0.1, 0.7, 0.1, 1);
+
+$drawer-mask-background-color : $gray10;
+$drawer-background-color : $gray10;
+$drawer-font-color : $gray2;
+$drawer-dark-font-color : $white;
+$drawer-dark-background-color : $gray10;
+
+$drawer-dark-font-color       : $white;
+$drawer-box-shadow            : 0 0 10px rgba(0, 0, 0, 0.4);
+$drawer-max-width             : 100%;
+$drawer-top-width             : 100%;
+$drawer-bottom-height         : 45%;
+$drawer-bottom-height-small   : 35%;
+$drawer-bottom-height-medium  : 35%;
+$drawer-bottom-height-large   : 25%;
+
+$drawer-mini-transition       : $drawer-transition;
+$drawer-mini-width            : 44px;
+$drawer-mini-open-width       : auto;
+$drawer-mini-open-width-small : 80%;
+$drawer-mini-open-width-medium: 40%;
+$drawer-mini-open-width-large : 25%;
+$drawer-mini-margin-right     : $inuit-base-spacing-unit;
+
+$drawer-persistent-transition : $drawer-transition;
+
+$drawer-height                : 100%;
+$drawer-width                 : 256px;
+$drawer-max-width             : 256px;
+$drawer-width-xsmall          : 256px;
+$drawer-width-small           : 256px;
+$drawer-width-medium          : 256px;
+$drawer-width-large           : 256px;
+
+$drawer-height-top-xsmall     : 25%;
+$drawer-height-top-small      : 25%;
+$drawer-height-top-medium     : 25%;
+$drawer-height-top-large      : 25%;
+
+$drawer-persistent-width      : 256px;
+$drawer-persistent-height     : 100%;

@@ -1,0 +1,75 @@
+@import "variables";
+@import "px-mobile-design/sass/_mixins.scss";
+/// Drawer - Mini modifier
+///
+@include b('drawer') {
+
+  ///------------------------------------------------------
+  /// .drawer--mini
+  @include modifier ('mini') {
+    @include transform(translate3d(0, 0, 0));
+
+    transition: $drawer-mini-transition;
+    position  : static;
+    visibility: visible;
+    float     : left;
+    width     : $drawer-mini-width;
+    overflow  : hidden;
+    text-align: left;
+
+    //  margin-right: $drawer-mini-margin-right;
+
+    .hidden-mini-closed,
+    .table-row__content {
+      transition: $drawer-mini-transition;
+    }
+
+    @include media-breakpoint ('xs') {
+      @include transform(translate3d(-100%, 0, 0));
+    }
+
+    &.is-open {
+      width    : 22%;
+      min-width: $drawer-mini-open-width;
+      max-width: $drawer-max-width;
+
+      @include media-breakpoint ('retina') {
+        //  width: $drawer-mini-open-width-small;
+      }
+
+      @include media-breakpoint-down ('sm') {
+        width: $drawer-mini-open-width-small;
+      }
+
+      @include media-breakpoint ('lg') {
+        width: $drawer-mini-open-width-large;
+      }
+
+      @include media-breakpoint ('md') {
+        width: $drawer-mini-open-width-medium;
+      }
+
+      .hidden-mini-closed,
+      .table-row__content {
+        visibility: visible;
+        opacity   : 1;
+      }
+    }
+
+    //Mini closed
+    &:not(.is-open) {
+      transition: $drawer-mini-transition;
+
+      &:before {
+        content: '';
+      }
+
+      .hidden-mini-closed,
+      .table-row__content {
+        opacity   : 0;
+        visibility: hidden;
+        overflow  : hidden;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import "variables";
+@import "px-mobile-design/sass/_mixins.scss";
+/// Drawer - Top modifier
+///
+@include b ('drawer') {
+
+  ///------------------------------------------------------
+  /// .drawer--static
+  @include modifier ('static') {
+    z-index: auto;
+    transform   : translate3d(0, 0, 0);
+    transition  : $drawer-persistent-transition;
+    position    : inherit;
+    visibility  : visible;
+    float       : left;
+    flex        : 1 0 $drawer-max-width;
+    @include media-breakpoint ('lg') {
+      margin-top: 0;
+    }
+    &.drawer--right {
+      float       : right;
+      position    : static;
+      margin-right: 0 !important;
+    }
+  }
+
+}
