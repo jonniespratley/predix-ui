@@ -5854,6 +5854,10 @@ purecss@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/purecss/-/purecss-1.0.0.tgz#3dbcd9e2a7592448a69acb705cce16311bf4b785"
 
+"px-table-view@https://github.com/PredixDev/px-table-view.git":
+  version "3.0.5"
+  resolved "https://github.com/PredixDev/px-table-view.git#de86bc270aa7ff7ad74d51133ba41e34bc70249b"
+
 q@^1.1.2:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.0.tgz#dd01bac9d06d30e6f219aecb8253ee9ebdc308f1"

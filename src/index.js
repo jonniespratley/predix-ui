@@ -17,6 +17,8 @@ import Modal from './px-modal';
 import Navbar from './px-navbar';
 
 
+import TableView from './px-table-view';
+import TableRow from './px-table-view/px-table-row';
 
 const Icon = ({icon}) => (
 	<i className={`fa fa-${icon}`}></i>
@@ -66,6 +68,8 @@ module.exports = {
     ViewHeader,
     Spinner,
     Modal,
-    Navbar
+    Navbar,
+    TableView,
+    TableRow
   }
 };

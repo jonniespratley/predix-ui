@@ -115,6 +115,7 @@
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-wrap-in-js": "^1.1.1",
     "node-sass": "^4.5.3",
+    "px-table-view": "https://github.com/PredixDev/px-table-view.git",
     "sass-loader": "^6.0.6",
     "strip-json-comments": "^2.0.1",
     "styled-jsx": "^1.0.10"

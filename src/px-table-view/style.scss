@@ -1,7 +1,6 @@
 /**
  * px-table-view styles
  */
- .px-table-view {
-   background: green;
-   padding: 1rem;
- }
+.px-table-view {
+ @import 'px-table-view/sass/px-table-view-predix.scss';
+}
