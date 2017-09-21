@@ -93,6 +93,11 @@
       "js",
       "jsx"
     ],
+    "modulePathIgnorePatterns": [
+      "bower_components",
+      "plop-templates",
+      "docs"
+    ],
     "moduleDirectories": [
       "node_modules",
       "packages"
