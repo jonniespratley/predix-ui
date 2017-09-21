@@ -28,8 +28,7 @@ import {TableView, TableRow} from 'px-components-react';
 ## Usage
 
 ```react
-<px.TableView>
-  <px.TableRow title="Text Label" />
+<px.TableView large>
   <px.TableRow title="Tappable Item" tappable/>
 </px.TableView>
 ```

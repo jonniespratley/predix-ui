@@ -2,135 +2,16 @@
  * px-action-sheet styles
  */
 .px-action-sheet {
+  background-color: red;
+
 
 }
-
-.flex {
-  display: flex;
+.px-action-sheet--is-open .c-action-dialog__mask{
+  background-color: green;
 }
-
-.inline--flex {
-  display: inline-flex;
-}
-
-.flex--row {
-  flex-direction: row;
-}
-
-.flex--row--rev {
-  flex-direction: row-reverse;
-}
-
-.flex--col {
-  flex-direction: column;
-}
-
-.flex--col--rev {
-  flex-direction: column-reverse;
-}
-
-.flex--nowrap {
-  flex-wrap: nowrap;
-}
-
-.flex--wrap {
-  flex-wrap: wrap;
-}
-
-.flex--wrap--rev {
-  flex-wrap: wrap-reverse;
-}
-
-.flex--left {
-  justify-content: flex-start;
-}
-
-.flex--center {
-  justify-content: center;
-}
-
-.flex--right {
-  justify-content: flex-end;
-}
-
-.flex--justify {
-  justify-content: space-between;
-}
-
-.flex--spaced {
-  justify-content: space-around;
-}
-
-.flex--top {
-  align-items: flex-start;
-}
-
-.flex--middle {
-  align-items: center;
-}
-
-.flex--bottom {
-  align-items: flex-end;
-}
-
-.flex--stretch {
-  align-items: stretch;
-}
-
-.flex--baseline {
-  align-items: baseline;
-}
-
-.flex--top--multi {
-  align-content: flex-start;
-}
-
-.flex--middle--multi {
-  align-content: center;
-}
-
-.flex--bottom--multi {
-  align-content: flex-end;
-}
-
-.flex--stretch--multi {
-  align-content: stretch;
-}
-
-.flex--justify--multi {
-  align-content: space-between;
-}
-
-.flex--spaced--multi {
-  align-content: space-around;
-}
-
-.flex__item {
-  flex: 1;
-}
-
-.flex__item--top {
-  align-self: flex-start;
-}
-
-.flex__item--middle {
-  align-self: center;
-}
-
-.flex__item--bottom {
-  align-self: flex-end;
-}
-
-.flex__item--baseline {
-  align-self: baseline;
-}
-
-
-
-
 
 // TODO: Mask
-.c-action-dialog--mask {
+.c-action-dialog__mask {
   transition: all 0.3s;
   position: fixed;
   top: 0;
@@ -141,13 +22,11 @@
   z-index: -1;
   opacity: 0;
   visibility: hidden;
-
-  &--is-open {
-
-    z-index: 10 !important;
-    opacity: 1 !important;
-    visibility: visible;
-  }
+}
+.c-action-dialog__mask.c-action-dialog__mask--is-open {
+  z-index: 10 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 
@@ -168,22 +47,21 @@
   background-color: var(--px-action-sheet-background-color, white);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
   -webkit-touch-callout: none;
-  /* iOS Safari */
+
   -webkit-user-select: none;
-  /* Chrome/Safari/Opera */
+
   -khtml-user-select: none;
-  /* Konqueror */
+
   -moz-user-select: none;
-  /* Firefox */
+
   -ms-user-select: none;
-  /* Internet Explorer/Edge */
   user-select: none;
 
-  &--is-open {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
+}
+.c-action-sheet--is-open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
 }
 
 .c-action-sheet.sixteen-nine {
@@ -264,8 +142,7 @@
   margin: 0;
 }
 
-.c-action-sheet__actions--list button,
-.c-action-sheet__actions--list::content button {
+.c-action-sheet__actions--list button{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -274,8 +151,7 @@
   text-align: left;
 }
 
-.c-action-sheet__actions--list button i,
-.c-action-sheet__actions--list::content button i {
+.c-action-sheet__actions--list button i {
   margin-left: 0.6666666667rem;
   margin-right: 0.6666666667rem;
 }
@@ -310,8 +186,7 @@
   outline: none;
 }
 
-.c-action-sheet__button btn,
-.c-action-sheet__button::content btn {
+.c-action-sheet__button btn{
   height: 100%;
   width: 100%;
   align-self: center;

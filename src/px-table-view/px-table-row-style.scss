@@ -1,3 +1,10 @@
+
+@mixin c($el) {
+  .#{$el} {
+    @content;
+  }
+}
+
 /**
  * px-table-row styles
  */
