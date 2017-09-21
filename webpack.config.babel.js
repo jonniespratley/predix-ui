@@ -25,32 +25,28 @@ const config = {
 
 
 const extractSass = new ExtractTextPlugin({
-	filename: '[name].css',
-	disable: true
+	filename: '[name].css'
 });
 
 const sassRules = {
-  //test: /\.s(a|c)ss$/,
-  test: /\.scss$/,
-  use: extractSass.extract({
-    fallback: 'style-loader',
-    use: [
-      'babel-loader',
-      'raw-loader',
-      'postcss-loader',
-      {
-        loader: 'sass-loader',
-        options: {
-          includePaths: [
-            'sass',
-            'styles',
-            'bower_components',
-            'node_modules'
-          ].map((d) => path.join(__dirname, d)).map((g) => glob.sync(g)).reduce((a, c) => a.concat(c), [])
-        }
+  test: /\.s(a|c)ss$/,
+  //test: /\.scss$/,
+  use: [
+    'babel-loader',
+    'raw-loader',
+    'postcss-loader',
+    {
+      loader: 'sass-loader',
+      options: {
+        includePaths: [
+          'sass',
+          'styles',
+          'bower_components',
+          'node_modules'
+        ].map((d) => path.join(__dirname, d)).map((g) => glob.sync(g)).reduce((a, c) => a.concat(c), [])
       }
-    ]
-  })
+    }
+  ]
 };
 
 /**
@@ -126,8 +122,8 @@ const dev = merge(common, siteCommon, {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"development"'
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    extractSass
+    new webpack.HotModuleReplacementPlugin()
+    //extractSass
   ],
   module: {
     rules: [
