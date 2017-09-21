@@ -185,6 +185,7 @@ const ghPages = merge(common, siteCommon, {
           use: 'css-loader'
         })
       },
+      sassRules,
       {
         test: /\.js$/,
         use: 'babel-loader',

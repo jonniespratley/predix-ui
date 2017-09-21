@@ -5,17 +5,16 @@ This is the documentation.
 ## Usage
 
 ```react
-iframe: true
+frame: true
 ---
-<px.ActionSheet>
-  This is the children
-</px.ActionSheet>
-```
-
-```react
-iframe: true
----
-<px.ActionSheet opened>
-  This is the children
-</px.ActionSheet>
+const style = {
+  height: 300,
+  position: 'relative',
+  display: 'flex'
+};
+<div style={style}>
+  <px.ActionSheet opened>
+    This is the children
+  </px.ActionSheet>
+</div>
 ```

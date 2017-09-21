@@ -1,0 +1,54 @@
+@import '~px-defaults-design/_settings.defaults.scss';
+
+// Component
+.px-card {
+  display: block;
+  width: 100%;
+  background-color: var(--px-card-background-color, white);
+  padding-bottom: 4 * $inuit-base-spacing-unit;
+
+  border: 1px solid var(--px-card-border-color, gray);
+
+	&[full-bleed] .contents {
+    padding: 0;
+  }
+
+	header {
+	  padding: $inuit-base-spacing-unit;
+	  padding-top: $inuit-base-spacing-unit--large;
+    border-bottom: 1px solid var(--px-card-border-color, gray);
+    margin-bottom: $inuit-base-spacing-unit;
+	  .epsilon {
+	    height: 2rem;
+	    line-height: 2rem;
+	    color: var(--px-card-header-color, black);
+	  }
+	}
+
+	#headericon {
+	  height: 2rem;
+	  width: 2rem;
+	  color: var(--px-card-icon-color, black);
+	  cursor: auto;
+	}
+
+	header i {
+	  --iron-icon-height: 2rem;
+	  --iron-icon-width: 2rem;
+	  color: var(--px-card-action-icon-color, black);
+	  cursor: pointer;
+	  &:hover {
+	    color: var(--px-card-action-icon-color--hover, blue);
+	  }
+	  &:active {
+	    color: var(--px-card-action-icon-color--pressed, blue);
+	  }
+	  &:not(:last-of-type) {
+	    margin-right: .66666rem;
+	  }
+	}
+	section {
+	  padding-left: $inuit-base-spacing-unit;
+	  padding-right: $inuit-base-spacing-unit;
+	}
+}

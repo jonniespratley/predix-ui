@@ -1,7 +1,9 @@
 /**
  * px-action-sheet styles
  */
-.px-action-sheet {}
+.px-action-sheet {
+
+}
 
 .flex {
   display: flex;
@@ -123,6 +125,11 @@
   align-self: baseline;
 }
 
+
+
+
+
+// TODO: Mask
 .c-action-dialog--mask {
   transition: all 0.3s;
   position: fixed;
@@ -134,15 +141,17 @@
   z-index: -1;
   opacity: 0;
   visibility: hidden;
+
+  &--is-open {
+
+    z-index: 10 !important;
+    opacity: 1 !important;
+    visibility: visible;
+  }
 }
 
-.c-action-dialog--mask--is-open {
-  position: fixed;
-  z-index: 10;
-  opacity: 1;
-  visibility: visible;
-}
 
+// TODO: Actionsheet
 .c-action-sheet {
   user-select: none;
   padding: 0;
@@ -169,6 +178,12 @@
   -ms-user-select: none;
   /* Internet Explorer/Edge */
   user-select: none;
+
+  &--is-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .c-action-sheet.sixteen-nine {
@@ -190,11 +205,7 @@
   bottom: 0;
 }
 
-.c-action-sheet--is-open {
-  transform: translateY(0);
-  opacity: 1;
-  visibility: visible;
-}
+
 @media (max-width: 51.1333333333rem) {
   .c-action-sheet {
     border-left: none;

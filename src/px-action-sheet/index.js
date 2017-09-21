@@ -18,21 +18,18 @@ export default class ActionSheet extends React.Component {
   render() {
     const {
       opened,
-      fixed,
-      overlay,
-      persistent,
-      align = 'left',
       children
     } = this.props;
 
     //base
-    let baseClasses = classnames('px-action-sheet', {
-      'px-action-sheet--is-opened': opened}
+    let baseClasses = classnames('px-action-sheet',
+      {'px-action-sheet--is-opened': opened}
     );
-    //over;ay
+    
+    //overlay
     let overlayClasses = classnames('c-action-dialog--mask',
-    {'c-action-dialog--mask--is-opened': opened}
-  );
+      {'c-action-dialog--mask--is-opened': opened}
+    );
 
     //style
     let classes = classnames(
