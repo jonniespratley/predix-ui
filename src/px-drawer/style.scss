@@ -6,10 +6,9 @@
   display: block;
 
 
-
   .drawer {
     z-index         : 20;
-    color:  var(--px-drawer-font-color, white);
+    color: var(--px-drawer-font-color, white);
     background-color: var(--px-drawer-background-color, black);
     width           : var(--px-drawer-width, 256px);
     height          : var(--px-drawer-height, 100vh);
