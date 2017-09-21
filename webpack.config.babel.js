@@ -10,6 +10,7 @@ import merge from 'webpack-merge';
 const pkg = require('./package.json');
 
 const ROOT_PATH = __dirname;
+
 const config = {
   paths: {
     bower: path.join(ROOT_PATH, 'bower_components'),
@@ -22,25 +23,39 @@ const config = {
   library: 'Boilerplate'
 };
 
+
+const extractSass = new ExtractTextPlugin({
+	filename: '[name].css',
+	disable: true
+});
+
 const sassRules = {
-  test: /\.s(a|c)ss$/,
-  use: [
-    'babel-loader',
-    'raw-loader',
-    'postcss-loader', {
-      loader: 'sass-loader',
-      options: {
-        includePaths: [
-          'sass',
-          'styles',
-          'bower_components',
-          'node_modules'
-        ].map((d) => path.join(__dirname, d)).map((g) => glob.sync(g)).reduce((a, c) => a.concat(c), [])
+  //test: /\.s(a|c)ss$/,
+  test: /\.scss$/,
+  use: extractSass.extract({
+    fallback: 'style-loader',
+    use: [
+      'babel-loader',
+      'raw-loader',
+      'postcss-loader',
+      {
+        loader: 'sass-loader',
+        options: {
+          includePaths: [
+            'sass',
+            'styles',
+            'bower_components',
+            'node_modules'
+          ].map((d) => path.join(__dirname, d)).map((g) => glob.sync(g)).reduce((a, c) => a.concat(c), [])
+        }
       }
-    }
-  ]
+    ]
+  })
 };
 
+/**
+ * common configuration
+ */
 const common = {
   resolve: {
     extensions: ['.js', '.css', '.scss', '.png', '.jpg', '.md'],
@@ -80,6 +95,7 @@ const common = {
   ]
 };
 
+
 const siteCommon = {
   plugins: [
     new HtmlWebpackPlugin({
@@ -97,6 +113,10 @@ const siteCommon = {
   ]
 };
 
+
+/**
+ * dev configuration
+ */
 const dev = merge(common, siteCommon, {
   devtool: 'eval-source-map',
   entry: {
@@ -106,7 +126,8 @@ const dev = merge(common, siteCommon, {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"development"'
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    extractSass
   ],
   module: {
     rules: [
@@ -144,6 +165,9 @@ dev.module.rules.push(sassRules);
 
 
 
+/**
+ * github pages configuration
+ */
 const ghPages = merge(common, siteCommon, {
   entry: {
     app: config.paths.docs
@@ -198,6 +222,10 @@ const ghPages = merge(common, siteCommon, {
   }
 });
 
+
+/**
+ * dist configuration
+ */
 const distCommon = {
   devtool: 'source-map',
   output: {
@@ -234,6 +262,9 @@ const dist = merge(distCommon, {
   }
 });
 
+
+
+
 const distMin = merge(distCommon, {
   output: {
     filename: `${config.filename}.min.js`
@@ -246,6 +277,8 @@ const distMin = merge(distCommon, {
     })
   ]
 });
+
+
 
 module.exports = (env) => {
   process.env.BABEL_ENV = env;
