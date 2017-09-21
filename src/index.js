@@ -1,24 +1,26 @@
-
 import React from 'react';
 
 import styles from './sass/index.scss';
 import Partials from './px-partials';
 
-
 import ActionSheet from './px-action-sheet';
 import Button from './px-button';
 import BrandingBar from './px-branding-bar';
 import Card from './px-card';
-import Spinner from './px-spinner';
-import ViewHeader from './px-view-header';
-
 import Drawer from './px-drawer';
 import Modal from './px-modal';
 import Navbar from './px-navbar';
-
-
+import Spinner from './px-spinner';
 import TableView from './px-table-view';
 import TableRow from './px-table-view/px-table-row';
+import Tabs from './px-tabs';
+import Tab from './px-tabs/px-tab';
+import ViewHeader from './px-view-header';
+
+
+
+
+
 
 const Icon = ({icon}) => (
 	<i className={`fa fa-${icon}`}></i>
@@ -70,6 +72,8 @@ module.exports = {
     Modal,
     Navbar,
     TableView,
-    TableRow
+    TableRow,
+    Tabs,
+    Tab
   }
 };

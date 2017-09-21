@@ -17,14 +17,12 @@ import pxActionSheetDocs from './px-action-sheet';
 import pxAlertLabelDocs from './px-alert-label';
 import pxButtonDocs from './px-button';
 import pxBrandingBarDocs from './branding-bar.md';
-
 import pxCardDocs from './cards.md';
+import pxDrawerDocs from './px-drawer';
 import pxNavbarDocs from './px-navbar';
 import pxModalDocs from './px-modal';
 import pxTableViewDocs from './px-table-view';
-import pxDrawerDocs from './px-drawer';
-
-
+import pxTabsDocs from './px-tabs';
 import pxSpinnerDocs from './spinner.md';
 import pxViewHeaderDocs from './view-header.md';
 
@@ -59,6 +57,7 @@ const pages = [
       { path: 'px-drawer', title: 'Drawer', component: pxDrawerDocs },
       { path: 'px-navbar', title: 'Navbar', component: pxNavbarDocs },
       { path: 'px-modal', title: 'Modal', component: pxModalDocs },
+      { path: 'px-tabs', title: 'Tabs', component: pxTabsDocs },
       { path: 'px-spinner', title: 'Spinner', component: pxSpinnerDocs },
       {
         path: 'px-table-view',

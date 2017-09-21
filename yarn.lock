@@ -4082,7 +4082,7 @@ js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
 
-js-yaml@^3.4.3, js-yaml@^3.7.0, js-yaml@^3.9.1:
+js-yaml@^3.2.7, js-yaml@^3.4.3, js-yaml@^3.7.0, js-yaml@^3.9.1:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.10.0.tgz#2e78441646bd4682e963f22b6e92823c309c62dc"
   dependencies:
@@ -4740,6 +4740,12 @@ node-pre-gyp@^0.6.36:
     tape "^4.6.3"
     tar "^2.2.1"
     tar-pack "^3.4.0"
+
+node-sass-import-once@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/node-sass-import-once/-/node-sass-import-once-1.2.0.tgz#4e523aa05d68d9b37c7ebacf3f15684e635b2f2e"
+  dependencies:
+    js-yaml "^3.2.7"
 
 node-sass@^4.5.3:
   version "4.5.3"
@@ -5857,6 +5863,12 @@ purecss@^1.0.0:
 "px-table-view@https://github.com/PredixDev/px-table-view.git":
   version "3.0.5"
   resolved "https://github.com/PredixDev/px-table-view.git#de86bc270aa7ff7ad74d51133ba41e34bc70249b"
+
+"px-theme@https://github.com/PredixDev/px-theme.git":
+  version "3.0.15"
+  resolved "https://github.com/PredixDev/px-theme.git#4fb622cc3353b88e1aee051bf037a69b63e9b248"
+  dependencies:
+    node-sass-import-once "^1.2.0"
 
 q@^1.1.2:
   version "1.5.0"

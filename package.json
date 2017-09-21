@@ -62,6 +62,7 @@
     "postcss-easy-import": "^3.0.0",
     "postcss-loader": "^2.0.6",
     "purecss": "^1.0.0",
+    "px-theme": "https://github.com/PredixDev/px-theme.git",
     "raw-loader": "^0.5.1",
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",

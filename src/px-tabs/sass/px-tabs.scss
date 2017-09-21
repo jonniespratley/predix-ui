@@ -1,0 +1,50 @@
+/*
+ * Copyright (c) 2014 GE Global Research. All rights reserved.
+ *
+ * The copyright to the computer software herein is the property of
+ * GE Global Research. The software may be used and/or copied only
+ * with the written permission of GE Global Research or in accordance
+ * with the terms and conditions stipulated in the agreement/contract
+ * under which the software has been supplied.
+ */
+
+//
+// Sass for the Predix notion of the px-tabs component
+//
+// @author
+//
+
+// Settings
+@import "px-defaults-design/_settings.defaults.scss";
+
+// Generic
+@import "px-normalize-design/_generic.normalize.scss";
+@import "px-box-sizing-design/_generic.box-sizing.scss";
+@import "px-helpers-design/_generic.helpers.scss";
+
+// Base
+@import "px-flexbox-design/_base.flexbox.scss";
+@import "px-viewport-design/_base.viewport.scss";
+
+// Component
+.tabs-container {
+  border: 0;
+  padding: 0;
+}
+
+.tabs-container:focus {
+  // TODO: we need a Predix-wide design for accessibile focus indicators
+  outline: var(--px-tab-outline-style, none);
+}
+
+.tabs-container__nav {
+  font: inherit;
+  margin: 0;
+  border-bottom: 1px solid var(--px-tab-border-color, gray);
+  padding: 0 1rem 0;
+}
+
+
+// Trumps
+@import "px-spacing-responsive-design/_trumps.spacing-responsive.scss";
+@import "px-widths-responsive-design/_trumps.widths-responsive.scss";
