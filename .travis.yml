@@ -6,3 +6,5 @@ script:
   - yarn test:coverage
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  - yarn gh-pages
+  - yarn gh-pages:deploy
