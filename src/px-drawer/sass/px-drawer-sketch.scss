@@ -39,18 +39,18 @@ $inuit-enable-margins: true;
   //will-change: translate;
   visibility: hidden;
 
-  @include modifier ('persistent') {
-    &.is-open{
+  * {
+    user-select: none;
+  }
 
-    }
+  @include modifier ('persistent') {
+    min-height: 100vh;
+
   }
   @include modifier ('fixed') {
     position: fixed !important;
   }
 
-  * {
-    user-select: none;
-  }
 
   &.is-open {
     visibility: visible;

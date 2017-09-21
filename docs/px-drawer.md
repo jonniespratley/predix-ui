@@ -5,9 +5,35 @@ This is the documentation.
 ## Usage
 
 ```react
-<px.Drawer>
-  This is the children
-</px.Drawer>
+frame: true
+---
+const style = {
+  height: 300,
+  position: 'relative',
+  display: 'flex'
+};
+<div style={style}>
+  <px.Drawer persistent opened>
+    This is the children
+  </px.Drawer>
+  <div>
+  <h4>Main Content</h4>
+  </div>
+</div>
+```
+
+```react
+frame: true
+---
+const style = {
+  height: 300,
+  position: 'relative'
+};
+<div style={style}>
+  <px.Drawer opened>
+    This is the children
+  </px.Drawer>
+</div>
 ```
 
 

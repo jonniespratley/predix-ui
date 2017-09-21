@@ -3,15 +3,15 @@
 @import "px-functions-design/_tools.functions.scss";
 
 //$drawer-transition           : all .5s;
-$drawer-transition            : all .5s cubic-bezier(0.1, 0.7, 0.1, 1);
+$drawer-transition            : all 0.5s cubic-bezier(0.1, 0.7, 0.1, 1);
 
-$drawer-mask-background-color : $gray10;
-$drawer-background-color : $gray10;
-$drawer-font-color : $gray2;
-$drawer-dark-font-color : $white;
-$drawer-dark-background-color : $gray10;
+$drawer-mask-background-color : gray;
+$drawer-background-color      : black;
+$drawer-font-color            : white;
+$drawer-dark-font-color       : white;
+$drawer-dark-background-color : gray;
 
-$drawer-dark-font-color       : $white;
+$drawer-dark-font-color       : white;
 $drawer-box-shadow            : 0 0 10px rgba(0, 0, 0, 0.4);
 $drawer-max-width             : 100%;
 $drawer-top-width             : 100%;
