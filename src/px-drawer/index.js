@@ -48,3 +48,9 @@ export default class Drawer extends React.Component {
     );
   }
 }
+Drawer.defaultProps = {
+  opened: false,
+  fixed: false,
+  persistent: false,
+  align: 'left'
+};
