@@ -20,7 +20,7 @@ export default class DrawerLayout extends React.Component {
             <div id="content">{children}</div>
           </div>
         </div>
-        <style jsx>{style}</style>
+        <style jsx >{style}</style>
       </div>
     );
   }

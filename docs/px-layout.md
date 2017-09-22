@@ -16,6 +16,9 @@ The Predix UI Layout module defines the 'grid' for Predix UI. Layout items can b
 This is used for layouts with a drawer that is rendered offscreen on small viewports.
 
 ```react
+responsive:true
+frame:true
+---
 const drawerContent = (<div>Im the drawer</div>);
 const navbarContent = (<px.ViewHeader title='My App'/>);
 const style = {
@@ -27,11 +30,10 @@ const style = {
     navbarContent={navbarContent}
     drawerContent={drawerContent}>
 
-    <px.Accordion headerValue="Header Caption" status="Last Updated: 3 Days Ago">
-      <p>Accordion content goes here.</p>
-    </px.Accordion>
 
+    <px.Card title='Card'>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </px.Card>
   </px.DrawerLayout>
 </div>
 ```

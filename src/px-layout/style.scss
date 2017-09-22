@@ -3,179 +3,179 @@
  */
  .px-layout {
 
-   /*
-    * Copyright (c) 2016 GE Global Research. All rights reserved.
-    *
-    * The copyright to the computer software herein is the property of
-    * GE Global Research. The software may be used and/or copied only
-    * with the written permission of GE Global Research or in accordance
-    * with the terms and conditions stipulated in the agreement/contract
-    * under which the software has been supplied.
-    */
-   @charset "utf-8";
-
-   $inuit-widths-columns-responsive                : ( 1, 2, 3, 4, 6 );
-   $inuit-base-spacing-unit: 1rem;
-
-   /// Settings
-   ///--------------------------------------------------------
-
-   $layout-min-height              : 90vh;
-
-   $inuit-widths-columns-responsive: ( 1, 2, 3, 4, 6);
-   $inuit-responsive-settings      : true;
-   $inuit-enable-margins--none     : true;
-   $inuit-enable-code--inline      : true;
-   $inuit-enable-responsive-margins: true;
-   $inuit-enable-margins           : true;
-   $inuit-enable-paddings          : true;
-   $inuit-use-fractions            : true;
-
-   $grid-breakpoints2: (
-     xs: calculateRem(round(330px)),
-     sm: calculateRem(round(480px)),
-     md: calculateRem(round(768px)),
-     lg: calculateRem(round(992px)),
-     xl: calculateRem(round(1200px))
-   );
-
-   @import "px-defaults-design/_settings.defaults.scss";
-   @import "px-colors-design/_settings.colors.scss";
-
-   /// Base
-   ///--------------------------------------------------------
-   //@import "px-typography-design/_base.typography.scss";
-   @import "px-headings-design/_base.headings.scss";
-   @import "px-flexbox-design/_base.flexbox.scss";
-   @import "px-viewport-design/_base.viewport.scss";
-
-   ///Tables
-   $inuit-enable-table--fixed                      : true;
-   $inuit-enable-table--small                      : true;
-   $inuit-enable-table--large                      : true;
-   $inuit-enable-table--no-cells                   : true;
-   $inuit-enable-table--rows                       : true;
-   $inuit-enable-table--columns                    : true;
-   //@import "px-tables-design/_base.tables.scss";
-
-   /// Objects
-   ///--------------------------------------------------------
-
-   ///Boxes
-   $inuit-enable-box--flush                        : true;
-   $inuit-enable-box--tiny                         : true;
-   $inuit-enable-box--small                        : true;
-   $inuit-enable-box--large                        : true;
-   $inuit-enable-box--huge                         : true;
-   //@import "px-box-design/_objects.box.scss";
-
-   ///Buttons
-   $inuit-enable-btn--primary                      : true;
-   $inuit-enable-btn--tertiary                     : true;
-   $inuit-enable-btn--small                        : true;
-   $inuit-enable-btn--large                        : true;
-   $inuit-enable-btn--huge                         : true;
-   $inuit-enable-btn--full                         : true;
-   $inuit-enable-btn--icon                         : true;
-   $inuit-enable-btn--bare                         : true;
-   $inuit-enable-btn--disabled                     : true;
-  // @import "px-buttons-design/_objects.buttons.scss";
-   //@import "px-toggle-design/_objects.toggle.scss";
-
-   ///.layout
-   $inuit-layout-min-width: 200px;
-   $inuit-enable-layout--tiny                      : true;
-   $inuit-enable-layout--small                     : true;
-   $inuit-enable-layout--large                     : true;
-   $inuit-enable-layout--huge                      : true;
-   $inuit-enable-layout--flush                     : true;
-   $inuit-enable-layout--rev                       : true;
-   $inuit-enable-layout--middle                    : true;
-   $inuit-enable-layout--bottom                    : true;
-   $inuit-enable-layout--full                      : true;
-   $inuit-enable-layout--right                     : true;
-   $inuit-enable-layout--center                    : true;
-   $inuit-enable-layout__item--full                : true;
-   $inuit-enable-layout__item--center              : true;
-   $inuit-enable-layout__item--bottom              : true;
-   $inuit-global-border-box                        : true;
-   //@import "px-layout-design/_objects.layout.scss";
-
-
-
-   /// Trumps
-   ///--------------------------------------------------------
-   ///Mobile breakpoints (xs, sm, md, lg, xl)
-   @import 'px-mobile-design/_trumps.breakpoints.scss';
-
-   ///Margins
-   $inuit-enable-paddings                          : true;
-   $inuit-enable-paddings--tiny                    : true;
-   $inuit-enable-paddings--small                   : true;
-   $inuit-enable-paddings--large                   : true;
-   $inuit-enable-paddings--huge                    : true;
-   $inuit-enable-paddings--none                    : true;
-   $inuit-enable-margins                           : true;
-   $inuit-enable-margins--tiny                     : true;
-   $inuit-enable-margins--small                    : true;
-   $inuit-enable-margins--large                    : true;
-   $inuit-enable-margins--huge                     : true;
-   $inuit-enable-margins--negative                 : true;
-   $inuit-enable-margins--negative-tiny            : true;
-   $inuit-enable-margins--negative-small           : true;
-   $inuit-enable-margins--negative-large           : true;
-   $inuit-enable-margins--negative-huge            : true;
-   $inuit-enable-margins--none                     : true;
-   @import "px-spacing-design/_trumps.spacing.scss";
-
-   ///Paddings
-   $inuit-enable-responsive-paddings               : true;
-   $inuit-enable-responsive-paddings--none         : true;
-   $inuit-enable-responsive-paddings--tiny         : true;
-   $inuit-enable-responsive-paddings--small        : true;
-   $inuit-enable-responsive-paddings--large        : true;
-   $inuit-enable-responsive-paddings--huge         : true;
-   $inuit-enable-responsive-margins                : true;
-   $inuit-enable-responsive-margins--none          : true;
-   $inuit-enable-responsive-margins--tiny          : true;
-   $inuit-enable-responsive-margins--small         : true;
-   $inuit-enable-responsive-margins--large         : true;
-   $inuit-enable-responsive-margins--huge          : true;
-   $inuit-enable-responsive-margins--negative      : true;
-   $inuit-enable-responsive-margins--negative-tiny : true;
-   $inuit-enable-responsive-margins--negative-small: true;
-   $inuit-enable-responsive-margins--negative-large: true;
-   $inuit-enable-responsive-margins--negative-huge : true;
-
-
-   ///Responsive spacing
-   @import "px-spacing-responsive-design/_trumps.spacing-responsive.scss";
-   @import "px-widths-design/_trumps.widths.scss";
-   @import "px-widths-responsive-design/_trumps.widths-responsive.scss";
-
-   /// Tools
-   ///--------------------------------------------------------
-   @import "px-mobile-design/sass/_mixins.scss";
-   //@import "inuit-responsive-settings/_settings.responsive.scss";
-   //@import "inuit-responsive-tools/_tools.responsive.scss";
-   @import "px-widths-tools-design/_tools.widths.scss";
-   //@import 'px-layout.scss';
-
-   /// Generic
-   ///--------------------------------------------------------
-   @import "px-normalize-design/_generic.normalize.scss";
-   @import "px-box-sizing-design/_generic.box-sizing.scss";
-   @import "px-helpers-design/_generic.helpers.scss";
-
-   ///Components
-   ///--------------------------------------------------------
-  // @import 'l-splitview.scss';
-   //@import 'l-tabs-to-columns.scss';
-   //@import 'px-layout.scss';
-
-
-   ///Demo
-   ///--------------------------------------------------------
-   //@import 'px-layout-demo.scss';
 
  }
+ /*
+  * Copyright (c) 2016 GE Global Research. All rights reserved.
+  *
+  * The copyright to the computer software herein is the property of
+  * GE Global Research. The software may be used and/or copied only
+  * with the written permission of GE Global Research or in accordance
+  * with the terms and conditions stipulated in the agreement/contract
+  * under which the software has been supplied.
+  */
+ @charset "utf-8";
+
+ $inuit-widths-columns-responsive                : ( 1, 2, 3, 4, 6 );
+ $inuit-base-spacing-unit: 1rem;
+
+ /// Settings
+ ///--------------------------------------------------------
+
+ $layout-min-height              : 90vh;
+
+ $inuit-widths-columns-responsive: ( 1, 2, 3, 4, 6);
+ $inuit-responsive-settings      : true;
+ $inuit-enable-margins--none     : true;
+ $inuit-enable-code--inline      : true;
+ $inuit-enable-responsive-margins: true;
+ $inuit-enable-margins           : true;
+ $inuit-enable-paddings          : true;
+ $inuit-use-fractions            : true;
+
+ $grid-breakpoints2: (
+   xs: calculateRem(round(330px)),
+   sm: calculateRem(round(480px)),
+   md: calculateRem(round(768px)),
+   lg: calculateRem(round(992px)),
+   xl: calculateRem(round(1200px))
+ );
+
+ @import "px-defaults-design/_settings.defaults.scss";
+ @import "px-colors-design/_settings.colors.scss";
+
+ /// Base
+ ///--------------------------------------------------------
+ //@import "px-typography-design/_base.typography.scss";
+ @import "px-headings-design/_base.headings.scss";
+ @import "px-flexbox-design/_base.flexbox.scss";
+ @import "px-viewport-design/_base.viewport.scss";
+
+ ///Tables
+ $inuit-enable-table--fixed                      : true;
+ $inuit-enable-table--small                      : true;
+ $inuit-enable-table--large                      : true;
+ $inuit-enable-table--no-cells                   : true;
+ $inuit-enable-table--rows                       : true;
+ $inuit-enable-table--columns                    : true;
+ //@import "px-tables-design/_base.tables.scss";
+
+ /// Objects
+ ///--------------------------------------------------------
+
+ ///Boxes
+ $inuit-enable-box--flush                        : true;
+ $inuit-enable-box--tiny                         : true;
+ $inuit-enable-box--small                        : true;
+ $inuit-enable-box--large                        : true;
+ $inuit-enable-box--huge                         : true;
+ //@import "px-box-design/_objects.box.scss";
+
+ ///Buttons
+ $inuit-enable-btn--primary                      : true;
+ $inuit-enable-btn--tertiary                     : true;
+ $inuit-enable-btn--small                        : true;
+ $inuit-enable-btn--large                        : true;
+ $inuit-enable-btn--huge                         : true;
+ $inuit-enable-btn--full                         : true;
+ $inuit-enable-btn--icon                         : true;
+ $inuit-enable-btn--bare                         : true;
+ $inuit-enable-btn--disabled                     : true;
+// @import "px-buttons-design/_objects.buttons.scss";
+ //@import "px-toggle-design/_objects.toggle.scss";
+
+ ///.layout
+ $inuit-layout-min-width: 200px;
+ $inuit-enable-layout--tiny                      : true;
+ $inuit-enable-layout--small                     : true;
+ $inuit-enable-layout--large                     : true;
+ $inuit-enable-layout--huge                      : true;
+ $inuit-enable-layout--flush                     : true;
+ $inuit-enable-layout--rev                       : true;
+ $inuit-enable-layout--middle                    : true;
+ $inuit-enable-layout--bottom                    : true;
+ $inuit-enable-layout--full                      : true;
+ $inuit-enable-layout--right                     : true;
+ $inuit-enable-layout--center                    : true;
+ $inuit-enable-layout__item--full                : true;
+ $inuit-enable-layout__item--center              : true;
+ $inuit-enable-layout__item--bottom              : true;
+ $inuit-global-border-box                        : true;
+ //@import "px-layout-design/_objects.layout.scss";
+
+
+
+ /// Trumps
+ ///--------------------------------------------------------
+ ///Mobile breakpoints (xs, sm, md, lg, xl)
+ @import 'px-mobile-design/_trumps.breakpoints.scss';
+
+ ///Margins
+ $inuit-enable-paddings                          : true;
+ $inuit-enable-paddings--tiny                    : true;
+ $inuit-enable-paddings--small                   : true;
+ $inuit-enable-paddings--large                   : true;
+ $inuit-enable-paddings--huge                    : true;
+ $inuit-enable-paddings--none                    : true;
+ $inuit-enable-margins                           : true;
+ $inuit-enable-margins--tiny                     : true;
+ $inuit-enable-margins--small                    : true;
+ $inuit-enable-margins--large                    : true;
+ $inuit-enable-margins--huge                     : true;
+ $inuit-enable-margins--negative                 : true;
+ $inuit-enable-margins--negative-tiny            : true;
+ $inuit-enable-margins--negative-small           : true;
+ $inuit-enable-margins--negative-large           : true;
+ $inuit-enable-margins--negative-huge            : true;
+ $inuit-enable-margins--none                     : true;
+ @import "px-spacing-design/_trumps.spacing.scss";
+
+ ///Paddings
+ $inuit-enable-responsive-paddings               : true;
+ $inuit-enable-responsive-paddings--none         : true;
+ $inuit-enable-responsive-paddings--tiny         : true;
+ $inuit-enable-responsive-paddings--small        : true;
+ $inuit-enable-responsive-paddings--large        : true;
+ $inuit-enable-responsive-paddings--huge         : true;
+ $inuit-enable-responsive-margins                : true;
+ $inuit-enable-responsive-margins--none          : true;
+ $inuit-enable-responsive-margins--tiny          : true;
+ $inuit-enable-responsive-margins--small         : true;
+ $inuit-enable-responsive-margins--large         : true;
+ $inuit-enable-responsive-margins--huge          : true;
+ $inuit-enable-responsive-margins--negative      : true;
+ $inuit-enable-responsive-margins--negative-tiny : true;
+ $inuit-enable-responsive-margins--negative-small: true;
+ $inuit-enable-responsive-margins--negative-large: true;
+ $inuit-enable-responsive-margins--negative-huge : true;
+
+
+ ///Responsive spacing
+ @import "px-spacing-responsive-design/_trumps.spacing-responsive.scss";
+ @import "px-widths-design/_trumps.widths.scss";
+ @import "px-widths-responsive-design/_trumps.widths-responsive.scss";
+
+ /// Tools
+ ///--------------------------------------------------------
+ @import "px-mobile-design/sass/_mixins.scss";
+ //@import "inuit-responsive-settings/_settings.responsive.scss";
+ //@import "inuit-responsive-tools/_tools.responsive.scss";
+ @import "px-widths-tools-design/_tools.widths.scss";
+ //@import 'px-layout.scss';
+
+ /// Generic
+ ///--------------------------------------------------------
+ @import "px-normalize-design/_generic.normalize.scss";
+ @import "px-box-sizing-design/_generic.box-sizing.scss";
+ @import "px-helpers-design/_generic.helpers.scss";
+
+ ///Components
+ ///--------------------------------------------------------
+// @import 'l-splitview.scss';
+ //@import 'l-tabs-to-columns.scss';
+ //@import 'px-layout.scss';
+
+
+ ///Demo
+ ///--------------------------------------------------------
+ //@import 'px-layout-demo.scss';
