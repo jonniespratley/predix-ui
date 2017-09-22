@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './style';
+import styles from './style.scss';
 export default ({ size=100, finished = false}) => (
 	<div>
 		{!finished && <svg viewBox='0 0 100 100' className="px-spinner" height={size} width={size}>

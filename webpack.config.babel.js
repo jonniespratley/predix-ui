@@ -19,8 +19,8 @@ const config = {
     docs: path.join(ROOT_PATH, 'docs'),
     ghPages: path.join(ROOT_PATH, 'gh-pages')
   },
-  filename: 'boilerplate',
-  library: 'Boilerplate'
+  filename: 'px',
+  library: 'px'
 };
 
 
@@ -244,10 +244,12 @@ const distCommon = {
         test: /\.js$/,
         use: 'babel-loader',
         include: config.paths.src
-      }
+      },
+      sassRules
     ]
   },
   plugins: [
+    //extractSass,
     new SystemBellPlugin()
   ]
 };
@@ -266,6 +268,7 @@ const distMin = merge(distCommon, {
     filename: `${config.filename}.min.js`
   },
   plugins: [
+
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false

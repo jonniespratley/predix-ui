@@ -23,6 +23,7 @@ export default({
 
   children}) => {
 
+
   const baseClassnames = classnames(
     'table-view',
     {'table-view--flush': flush},
