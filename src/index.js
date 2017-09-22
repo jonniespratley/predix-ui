@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './sass/index.scss';
 import Partials from './px-partials';
 
+import Accordion from './px-accordion';
 import ActionSheet from './px-action-sheet';
 import Button from './px-button';
 import BrandingBar from './px-branding-bar';
@@ -59,6 +60,7 @@ const AppHeader = ({ title = 'PxAppHeader', children }) => (
 module.exports = {
   demo: require('./demo').default,
   px: {
+    Accordion,
     ActionSheet,
     Button,
     Card,

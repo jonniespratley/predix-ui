@@ -1,4 +1,4 @@
-
+# px.Tabs
 The `px.Tabs` and `px.Tab` components together provide the tabbed interface. The tabbed content is expected to be contained in a separate iron-pages component.
 
 ```hint

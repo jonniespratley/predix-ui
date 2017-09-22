@@ -1,5 +1,5 @@
-# px-button
-The `px-button` component provides a way to use Predix Design buttons. (https://github.com/PredixDev/px-buttons-design)
+# px.Button
+The `px.Button` component provides a way to use Predix Design buttons. (https://github.com/PredixDev/px-buttons-design)
 
 ## Props
 

@@ -19,6 +19,7 @@
     "px-mobile-design": "^1.0.0",
     "inuit-responsive-settings": "^0.1.5",
     "px-headings-design": "^1.0.3",
-    "px-table-view": "^3.0.5"
+    "px-table-view": "^3.0.5",
+    "px-actionable-design": "^2.0.4"
   }
 }

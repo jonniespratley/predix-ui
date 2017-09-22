@@ -13,22 +13,24 @@ import {px} from '../src';
 import PxAlertLabel from '../src/px-alert-label';
 
 // TODO: Use this format
+import pxAccordionDocs from './px-accordion';
 import pxActionSheetDocs from './px-action-sheet';
 import pxAlertLabelDocs from './px-alert-label';
 import pxButtonDocs from './px-button';
-import pxBrandingBarDocs from './branding-bar.md';
-import pxCardDocs from './cards.md';
+import pxBrandingBarDocs from './px-branding-bar.md';
+import pxCardDocs from './px-card.md';
 import pxDrawerDocs from './px-drawer';
 import pxNavbarDocs from './px-navbar';
 import pxModalDocs from './px-modal';
 import pxTableViewDocs from './px-table-view';
 import pxTabsDocs from './px-tabs';
-import pxSpinnerDocs from './spinner.md';
-import pxViewHeaderDocs from './view-header.md';
+import pxSpinnerDocs from './px-spinner.md';
+import pxViewHeaderDocs from './px-view-header.md';
 
 
 
 const logo = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/predix_ds_logo.webp';
+
 // Add your documentation imports here. These are available to
 // React specimen. Do NOT pass React here as Catalog does that.
 const documentationImports = {
@@ -49,6 +51,7 @@ const pages = [
   {
     title: 'Components',
     pages: [
+      { path: 'px-accordion', title: 'Accordion', component: pxAccordionDocs},
       { path: 'px-alert-label', title: 'Alert Label', component: pxAlertLabelDocs},
       { path: 'px-action-sheet', title: 'Action Sheet', component: pxActionSheetDocs},
       { path: 'px-button', title: 'Button', component: pxButtonDocs},

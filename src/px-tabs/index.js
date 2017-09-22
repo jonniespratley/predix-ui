@@ -22,7 +22,6 @@ class Tabs extends React.Component {
 	}
 
   handleClick(index, event) {
-    console.log('handleClick', index);
     event.preventDefault();
     this.setState({
       selected: index

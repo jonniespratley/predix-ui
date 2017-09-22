@@ -9,3 +9,14 @@ This is the documentation.
   This is the children
 </{{pascalCase name}}>
 ```
+
+
+## Props
+
+```table
+span: 6
+rows:
+  - Name: label
+    Type: String
+    Description: This is the desc
+```

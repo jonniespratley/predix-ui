@@ -1,4 +1,5 @@
-# px-alert-label
+# px.AlertLabel
+
 Alert labels are used to draw attention to a particular piece of information on the screen.
 
 Each type of label (important, warning, error, information, healthy, and unknown) has its own distinct background color and appropriate font color for maximum visibility.

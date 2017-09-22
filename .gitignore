@@ -9,3 +9,4 @@ npm-debug.log
 .eslintcache
 .log
 bower_components
+stats.json
