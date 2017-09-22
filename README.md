@@ -51,8 +51,49 @@ var b = 10;
 console.log(a + b);
 ```
 
-```react
-<MyCoolComponent>My cool component</MyCoolComponent>
+
+```html
+iframe: true
+---
+<style media="screen">
+  :root{
+    --px-btn-background: pink;
+    --px-drawer-background-color: red;
+  }
+</style>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js'></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<link rel="stylesheet" href="../dist/px-components-react.css"/>
+<script src="../dist/px-components-react.js"></script>
+<script type="text/babel">
+  const { Component } = React;
+  const { render } = ReactDOM;
+  const { px } = PxReact;
+
+  const List = (props) => (
+    <ul class="list">
+      {props.children}
+    </ul>
+  );
+
+  class App extends Component {
+    render(){
+      return (
+        <div id="app">
+          <div class="box">
+            <h1>PxReact Component Example</h1>
+            <p>Here is an example.</p>
+          </div>
+          <px.Button label='Button'></px.Button>
+        </div>
+      )
+    }
+  }
+
+  render(<App />, document.querySelector('#app'));
+</script>
 ```
 
 

@@ -1,4 +1,3 @@
-
 $inuit-enable-btn--primary: true;
 $inuit-enable-btn--tertiary: true;
 $inuit-enable-btn--icon: true;
@@ -9,15 +8,11 @@ $inuit-enable-btn--small: true;
 $inuit-enable-btn--large: true;
 $inuit-enable-btn--huge: true;
 $inuit-enable-btn--full: true;
-
-
 @import "px-buttons-design/_objects.buttons.scss";
 
-.btn{
-  outline: none;
-  user-select: none;
-}
-
 .px-button {
-
+  .btn{
+    outline: none;
+    user-select: none;
+  }
 }
