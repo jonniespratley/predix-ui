@@ -4,6 +4,10 @@
   "author": "Jonnie Spratley",
   "user": "jonniespratley",
   "version": "0.0.1",
+  "config": {
+    "library": "PxReact",
+    "libraryTarget": "umd"
+  },
   "scripts": {
     "plop": "./node_modules/.bin/plop",
     "start": "webpack-dev-server --env dev",
@@ -116,6 +120,7 @@
   ],
   "license": "MIT",
   "pre-push": [
+    "test:lint",
     "test"
   ],
   "dependencies": {

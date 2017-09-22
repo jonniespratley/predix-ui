@@ -8,6 +8,6 @@ export default ({label = 'Button', children}) => (
   <div className='px-layout'>
     <h4>{label}</h4>
     <div>{children}</div>
-    <style jsx>{style}</style>
+    <style jsx global>{style}</style>
   </div>
 );

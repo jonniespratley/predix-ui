@@ -25,18 +25,18 @@ const config = {
   filename: pkg.name,
   library: pkg.name
 };
-/*
+
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const analyzeBundle = new BundleAnalyzerPlugin({
   analyzerMode: 'static',
   reportFilename: 'report.html',
   defaultSizes: 'parsed',
-  openAnalyzer: true,
+  openAnalyzer: false,
   generateStatsFile: false,
   statsFilename: 'stats.json',
   logLevel: 'info'
 });
-*/
+
 const extractCss = new ExtractTextPlugin({
 	filename: `${pkg.name}-[name].css`
 });
@@ -273,8 +273,8 @@ const distCommon = {
   resolve: common.resolve,
   output: {
     path: config.paths.dist,
-    libraryTarget: 'umd',
-    library: 'PxReact'
+    libraryTarget: pkg.config.libraryTarget,
+    library: pkg.config.library
   },
   entry: config.paths.src,
   externals: {
@@ -298,7 +298,7 @@ const distCommon = {
   plugins: [
     new SystemBellPlugin(),
     extractSass,
-  //  analyzeBundle
+    analyzeBundle
   ]
 };
 

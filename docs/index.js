@@ -17,15 +17,16 @@ import pxAccordionDocs from './px-accordion';
 import pxActionSheetDocs from './px-action-sheet';
 import pxAlertLabelDocs from './px-alert-label';
 import pxButtonDocs from './px-button';
-import pxBrandingBarDocs from './px-branding-bar.md';
-import pxCardDocs from './px-card.md';
+import pxBrandingBarDocs from './px-branding-bar';
+import pxCardDocs from './px-card';
 import pxDrawerDocs from './px-drawer';
 import pxNavbarDocs from './px-navbar';
 import pxModalDocs from './px-modal';
 import pxTableViewDocs from './px-table-view';
 import pxTabsDocs from './px-tabs';
-import pxSpinnerDocs from './px-spinner.md';
-import pxViewHeaderDocs from './px-view-header.md';
+import pxSpinnerDocs from './px-spinner';
+import pxViewHeaderDocs from './px-view-header';
+import pxLayoutDocs from './px-layout';
 
 
 
@@ -58,6 +59,7 @@ const pages = [
       { path: 'px-branding-bar', title: 'Branding Bar', component: pxBrandingBarDocs},
       { path: 'px-card', title: 'Card', component: pxCardDocs },
       { path: 'px-drawer', title: 'Drawer', component: pxDrawerDocs },
+      { path: 'px-layout', title: 'Layout', component: pxLayoutDocs },
       { path: 'px-navbar', title: 'Navbar', component: pxNavbarDocs },
       { path: 'px-modal', title: 'Modal', component: pxModalDocs },
       { path: 'px-tabs', title: 'Tabs', component: pxTabsDocs },

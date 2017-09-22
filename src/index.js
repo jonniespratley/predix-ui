@@ -18,7 +18,8 @@ import Tabs from './px-tabs';
 import Tab from './px-tabs/px-tab';
 import ViewHeader from './px-view-header';
 
-
+import Layout from './px-layout';
+import DrawerLayout from './px-layout/px-drawer-layout';
 
 
 import styles from './sass/index.scss';
@@ -53,10 +54,9 @@ const AppHeader = ({ title = 'PxAppHeader', children }) => (
 	</header>
 );
 
-//import Card from './px/card.js';
-//import demo from './demo.js';
 
-// this should be the entry point to your library
+
+
 module.exports = {
   styles,
   px: {
@@ -76,6 +76,8 @@ module.exports = {
     TableView,
     TableRow,
     Tabs,
-    Tab
+    Tab,
+    DrawerLayout,
+    Layout
   }
 };
