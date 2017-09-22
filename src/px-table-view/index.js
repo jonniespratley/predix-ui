@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 
 
-import style from './style';
+import style from './style.scss';
 import TableRow from './px-table-row';
 /**
  * px-table-view component
