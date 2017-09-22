@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './style.scss';
+import styles from './style';
 import classnames from 'classnames';
 
 const baseClasses = classnames('px-card');

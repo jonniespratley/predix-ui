@@ -74,6 +74,7 @@
     "system-bell-webpack-plugin": "^1.0.0",
     "url-loader": "^0.5.8",
     "webpack": "^3.6.0",
+    "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.4.5",
     "webpack-merge": "^4.1.0"
   },
