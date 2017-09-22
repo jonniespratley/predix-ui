@@ -1,14 +1,17 @@
 import * as path from 'path';
 import glob from 'glob';
 import webpack from 'webpack';
+import merge from 'webpack-merge';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import SystemBellPlugin from 'system-bell-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
-import merge from 'webpack-merge';
+
+
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 
 const pkg = require('./package.json');
-
 const ROOT_PATH = __dirname;
 
 const config = {
@@ -19,34 +22,65 @@ const config = {
     docs: path.join(ROOT_PATH, 'docs'),
     ghPages: path.join(ROOT_PATH, 'gh-pages')
   },
-  filename: 'boilerplate',
-  library: 'Boilerplate'
+  filename: pkg.name,
+  library: pkg.name
 };
 
+const analyzeBundle = new BundleAnalyzerPlugin({
+  analyzerMode: 'static',
+  reportFilename: 'report.html',
+  defaultSizes: 'parsed',
+  openAnalyzer: true,
+  generateStatsFile: false,
+  statsFilename: 'stats.json',
+  logLevel: 'info'
+});
+
+const extractCss = new ExtractTextPlugin({
+	filename: `${pkg.name}-[name].css`
+});
 
 const extractSass = new ExtractTextPlugin({
-	filename: '[name].css'
+	filename: `${pkg.name}.css`
 });
+
+const sassRules2 = {
+  test: /\.css$/,
+  use: extractCss.extract({
+    fallback: 'style-loader',
+    //resolve-url-loader may be chained before sass-loader if necessary
+    use: ['css-loader', 'postcss-loader']
+  })
+};
 
 const sassRules = {
   test: /\.s(a|c)ss$/,
-  //test: /\.scss$/,
-  use: [
-    'babel-loader',
-    'raw-loader',
-    'postcss-loader',
-    {
-      loader: 'sass-loader',
-      options: {
-        includePaths: [
-          'sass',
-          'styles',
-          'bower_components',
-          'node_modules'
-        ].map((d) => path.join(__dirname, d)).map((g) => glob.sync(g)).reduce((a, c) => a.concat(c), [])
+  use: extractSass.extract({
+    fallback: 'style-loader',
+    use: [
+      'babel-loader',
+      //'raw-loader',
+      {
+        loader: 'css-loader',
+        options: {
+          camelCase: true,
+          sourceMap: true
+        }
+      },
+      //'postcss-loader',
+      {
+        loader: 'sass-loader',
+        options: {
+          includePaths: [
+            'sass',
+            'styles',
+            'bower_components',
+            'node_modules'
+          ].map((d) => path.join(__dirname, d)).map((g) => glob.sync(g)).reduce((a, c) => a.concat(c), [])
+        }
       }
-    }
-  ]
+    ]
+  })
 };
 
 /**
@@ -54,7 +88,15 @@ const sassRules = {
  */
 const common = {
   resolve: {
-    extensions: ['.js', '.css', '.scss', '.png', '.jpg', '.md'],
+    extensions: [
+      '.js',
+      '.jsx',
+      '.css',
+      '.scss',
+      '.png',
+      '.svg',
+      '.md'
+    ],
     modules: [
       'bower_components',
       'node_modules'
@@ -122,15 +164,14 @@ const dev = merge(common, siteCommon, {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"development"'
     }),
-    new webpack.HotModuleReplacementPlugin()
-    //extractSass
+    new webpack.HotModuleReplacementPlugin(),
+    extractSass,
+    extractCss
   ],
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
+      sassRules2,
+      sassRules,
       {
         test: /\.js$/,
         use: {
@@ -152,12 +193,14 @@ const dev = merge(common, siteCommon, {
     inline: true,
     host: process.env.HOST,
     port: process.env.PORT,
-    stats: 'errors-only'
+    stats: true
   }
 });
 
 
-dev.module.rules.push(sassRules);
+
+
+
 
 
 
@@ -221,13 +264,15 @@ const ghPages = merge(common, siteCommon, {
 
 /**
  * dist configuration
+ * // TODO: Dist build needs to have .css and js
  */
 const distCommon = {
   devtool: 'source-map',
+  resolve: common.resolve,
   output: {
     path: config.paths.dist,
     libraryTarget: 'umd',
-    library: config.library
+    library: 'PxReact'
   },
   entry: config.paths.src,
   externals: {
@@ -244,11 +289,14 @@ const distCommon = {
         test: /\.js$/,
         use: 'babel-loader',
         include: config.paths.src
-      }
+      },
+      sassRules
     ]
   },
   plugins: [
-    new SystemBellPlugin()
+    new SystemBellPlugin(),
+    extractSass,
+    analyzeBundle
   ]
 };
 
@@ -276,6 +324,16 @@ const distMin = merge(distCommon, {
 
 
 
+
+// TODO: Add in sass plugin and rules
+//distCommon.plugins.push(extractCss);
+
+
+
+
+
+//
+
 module.exports = (env) => {
   process.env.BABEL_ENV = env;
 
@@ -285,6 +343,7 @@ module.exports = (env) => {
     distMin,
     ghPages
   };
-
-  return targets[env] ? targets[env] : common;
+  const c = targets[env] ? targets[env] : common;
+  console.log('webpack.config', JSON.stringify(c, null, 2));
+  return c;
 };
