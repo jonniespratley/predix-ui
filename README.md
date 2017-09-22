@@ -52,8 +52,9 @@ console.log(a + b);
 ```
 
 
-```html
+```code
 iframe: true
+responsive: true
 ---
 <style media="screen">
   :root{

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './sass/index.scss';
+
 import Partials from './px-partials';
 
 import Accordion from './px-accordion';
@@ -21,7 +21,7 @@ import ViewHeader from './px-view-header';
 
 
 
-
+import styles from './sass/index.scss';
 
 const Icon = ({icon}) => (
 	<i className={`fa fa-${icon}`}></i>
@@ -58,7 +58,7 @@ const AppHeader = ({ title = 'PxAppHeader', children }) => (
 
 // this should be the entry point to your library
 module.exports = {
-  demo: require('./demo').default,
+  styles,
   px: {
     Accordion,
     ActionSheet,

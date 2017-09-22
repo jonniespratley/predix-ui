@@ -23,9 +23,9 @@
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
     "postinstall": "node lib/post_install.js"
   },
-  "main": "dist/px.js",
-  "module": "dist/px.js",
-  "jsnext:main": "dist/px.js",
+  "main": "dist/px-components-react.js",
+  "module": "dist/module",
+  "jsnext:main": "dist/px-components-react.js",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.24.1",

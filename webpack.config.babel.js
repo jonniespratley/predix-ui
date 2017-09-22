@@ -8,7 +8,7 @@ import SystemBellPlugin from 'system-bell-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 
 
 const pkg = require('./package.json');
@@ -25,7 +25,8 @@ const config = {
   filename: pkg.name,
   library: pkg.name
 };
-
+/*
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const analyzeBundle = new BundleAnalyzerPlugin({
   analyzerMode: 'static',
   reportFilename: 'report.html',
@@ -35,7 +36,7 @@ const analyzeBundle = new BundleAnalyzerPlugin({
   statsFilename: 'stats.json',
   logLevel: 'info'
 });
-
+*/
 const extractCss = new ExtractTextPlugin({
 	filename: `${pkg.name}-[name].css`
 });
@@ -191,6 +192,7 @@ const dev = merge(common, siteCommon, {
     historyApiFallback: true,
     hot: true,
     inline: true,
+    open: true,
     host: process.env.HOST,
     port: process.env.PORT,
     stats: true
@@ -296,7 +298,7 @@ const distCommon = {
   plugins: [
     new SystemBellPlugin(),
     extractSass,
-    analyzeBundle
+  //  analyzeBundle
   ]
 };
 
