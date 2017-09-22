@@ -3,6 +3,7 @@
  */
 .px-drawer-layout {
   background: red;
+  height: 100%;
 
   display   : block;
   position  : relative;
@@ -24,7 +25,7 @@
 
   .l-drawer-layout__drawer {
     position: relative;
-    height  : 100%;
+    //height  : 100%;
     @apply(--px-drawer-layout-drawer);
   }
 
@@ -42,11 +43,12 @@
     @apply(--px-drawer-layout-content);
   }
 
-  .l-drawer-layout__content:not(.is-narrow) ::content [drawer-toggle] {
+  .l-drawer-layout__content:not(.is-narrow) [drawer-toggle] {
     display: none;
   }
+
   /* Hide the drawer-toggle button on large screens*/
-  .l-drawer-layout__container:not(.is-narrow) ::content [drawer-toggle] {
+  .l-drawer-layout__container:not(.is-narrow) [drawer-toggle] {
     display: none;
   }
 }

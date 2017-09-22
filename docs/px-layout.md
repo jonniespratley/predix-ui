@@ -1,5 +1,9 @@
 A collection of components that can be used to structure your app's layout.
 
+The Predix UI Layout module defines the 'grid' for Predix UI. Layout items can be autosized, or given a specific width, and layouts reflow responsively on smaller viewports.
+
+> https://www.predix-ui.com/#/css/layout/px-layout-design
+
 ## Usage
 
 ```code
@@ -12,13 +16,22 @@ A collection of components that can be used to structure your app's layout.
 This is used for layouts with a drawer that is rendered offscreen on small viewports.
 
 ```react
-const drawerContent = () => (<div>Im the drawer</div>);
-const navbarContent = () => (<div>Im the nav</div>);
+const drawerContent = (<div>Im the drawer</div>);
+const navbarContent = (<px.ViewHeader title='My App'/>);
+const style = {
+  height: 400
+};
 
-<div>
-  <px.DrawerLayout drawerContent={drawerContent}>
+<div style={style}>
+  <px.DrawerLayout
+    navbarContent={navbarContent}
+    drawerContent={drawerContent}>
 
-    <div>This can be anything</div>
+    <px.Accordion headerValue="Header Caption" status="Last Updated: 3 Days Ago">
+      <p>Accordion content goes here.</p>
+    </px.Accordion>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </px.DrawerLayout>
 </div>
 ```
