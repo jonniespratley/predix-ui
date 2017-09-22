@@ -64,7 +64,7 @@ export default ({
       <div id="underlay" className="flex flex--stretch">
         {underlayContent}
       </div>
-      <style jsx>{style}</style>
+      <style jsx global>{style}</style>
     </div>
   );
 }

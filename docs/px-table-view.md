@@ -35,7 +35,11 @@ import {TableView, TableRow} from 'px-components-react';
 
 ```react
 const tableItems = [
-  {title: 'Row 1', body: 'This is row 1'},
+  {
+    title: 'John Doe', 
+    body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+    image:'https://placehold.it/80'
+  },
   {title: 'Row 2', body: 'This is row 2'},
   {title: 'Row 3', body: 'This is row 3', image:'http://lorempixel.com/80/80/abstract'}
 ];
