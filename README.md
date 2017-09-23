@@ -53,9 +53,17 @@ console.log(a + b);
 
 
 ```code
-iframe: true
 responsive: true
 ---
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js'></script>
+<script src="../dist/px-components-react.js"></script>
+
+
+
+<link rel="stylesheet" href="../dist/px-components-react.css"/>
+
 <style media="screen">
   :root{
     --px-btn-background: pink;
@@ -63,11 +71,8 @@ responsive: true
   }
 </style>
 
-<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js'></script>
-<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-<link rel="stylesheet" href="../dist/px-components-react.css"/>
-<script src="../dist/px-components-react.js"></script>
+
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js" async></script>
 <script type="text/babel">
   const { Component } = React;
   const { render } = ReactDOM;
@@ -81,6 +86,7 @@ responsive: true
 
   class App extends Component {
     render(){
+      console.log('App.render');
       return (
         <div id="app">
           <div class="box">

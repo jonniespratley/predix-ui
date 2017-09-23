@@ -13,7 +13,7 @@ The text within the label is configurable, but will always show up in all capita
 ```react
 span: 2
 ---
-<PxAlertLabel
+<px.AlertLabel
   label='Info'
   type='info'/>
 ```
@@ -21,7 +21,7 @@ span: 2
 ```react
 span: 2
 ---
-<PxAlertLabel
+<px.AlertLabel
   label='warning'
   type='warning'/>
 ```
@@ -29,7 +29,7 @@ span: 2
 ```react
 span: 2
 ---
-<PxAlertLabel
+<px.AlertLabel
   label='healthy'
   type='healthy'/>
 ```
@@ -37,7 +37,7 @@ span: 2
 ```react
 span: 2
 ---
-<PxAlertLabel
+<px.AlertLabel
   label='error'
   type='error'/>
 ```
@@ -45,7 +45,7 @@ span: 2
 ```react
 span: 2
 ---
-<PxAlertLabel
+<px.AlertLabel
   label='important'
   type='important'/>
 ```

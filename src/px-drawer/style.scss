@@ -3,16 +3,13 @@
  * px-drawer styles
  */
 .px-drawer {
-  //display: block;
-
-
+  
   .drawer {
     z-index         : 20;
     color: var(--px-drawer-font-color, black);
     background-color: var(--px-drawer-background-color, white);
     width           : var(--px-drawer-width, 256px);
     height          : var(--px-drawer-height, 100%);
-    //  @apply(--px-drawer);
 
     &--mini {
       width: var(--px-drawer-mini-width, 50px);
@@ -30,6 +27,12 @@
 
     &--persistent{
       min-height: 100vh;
+      > .drawer__overlay {
+       visibility: hidden;
+       display: none;
+       pointer-events: none;
+       opacity: 0;
+     }
     }
 
     &::after {
@@ -42,46 +45,34 @@
       content   : '';
     }
 
-  }
+    &__spacer {
+      min-height: 56px;
+    }
 
-  .drawer--persistent  > .drawer__overlay {
-    visibility: hidden;
-    display: none;
-    pointer-events: none;
-    opacity: 0;
-  }
+    &__content {
+      overflow-x: hidden;
+    }
 
-
-
-  .drawer__spacer {
-    min-height: 56px;
-  }
-
-  .drawer__content {
-    overflow-x: hidden;
-  }
-
-  .drawer__overlay {
-    position         : fixed;
-    top              : 0;
-    right            : 0;
-    bottom           : 0;
-    left             : 0;
-    transition       : opacity 0.2s ease;
-    -webkit-transform: translateZ(0);
-    transform        : translateZ(0);
-    opacity          : 0;
-    background       : var(--px-drawer-overlay-background, rgba(0, 0, 0, 0.5));
-    z-index          : -1;
-    visibility       : hidden;
-    display          : none;
-    &--opened {
-      opacity   : 1;
-      z-index   : 15;
-      visibility: visible;
-      display   : block;
+    &__overlay {
+      position         : fixed;
+      top              : 0;
+      right            : 0;
+      bottom           : 0;
+      left             : 0;
+      transition       : opacity 0.2s ease;
+      -webkit-transform: translateZ(0);
+      transform        : translateZ(0);
+      opacity          : 0;
+      background       : var(--px-drawer-overlay-background, rgba(0, 0, 0, 0.5));
+      z-index          : -1;
+      visibility       : hidden;
+      display          : none;
+      &--opened {
+        opacity   : 1;
+        z-index   : 15;
+        visibility: visible;
+        display   : block;
+      }
     }
   }
-
-
 }

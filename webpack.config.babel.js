@@ -45,7 +45,7 @@ const extractSass = new ExtractTextPlugin({
 	filename: `${pkg.name}.css`
 });
 
-const sassRules2 = {
+const cssRules = {
   test: /\.css$/,
   use: extractCss.extract({
     fallback: 'style-loader',
@@ -171,7 +171,7 @@ const dev = merge(common, siteCommon, {
   ],
   module: {
     rules: [
-      sassRules2,
+      cssRules,
       sassRules,
       {
         test: /\.js$/,

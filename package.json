@@ -4,6 +4,17 @@
   "author": "Jonnie Spratley",
   "user": "jonniespratley",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonniespratley/px-components-react.git"
+  },
+  "homepage": "https://jonniespratley.github.io/px-components-react/",
+  "bugs": {
+    "url": "https://github.com/jonniespratley/px-components-react/issues"
+  },
+  "main": "dist/px-components-react.js",
+  "module": "dist/module",
+  "jsnext:main": "dist/px-components-react.js",
   "config": {
     "library": "PxReact",
     "libraryTarget": "umd"
@@ -27,9 +38,17 @@
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
     "postinstall": "node lib/post_install.js"
   },
-  "main": "dist/px-components-react.js",
-  "module": "dist/module",
-  "jsnext:main": "dist/px-components-react.js",
+
+  "keywords": [
+    "react",
+    "reactjs",
+    "boilerplate"
+  ],
+  "license": "MIT",
+  "pre-push": [
+    "test:lint",
+    "test"
+  ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.24.1",
@@ -86,14 +105,7 @@
   "peerDependencies": {
     "react": ">= 0.11.2 < 16.0.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jonniespratley/px-components-react.git"
-  },
-  "homepage": "https://jonniespratley.github.io/px-components-react/",
-  "bugs": {
-    "url": "https://github.com/jonniespratley/px-components-react/issues"
-  },
+
   "jest": {
     "collectCoverage": true,
     "moduleFileExtensions": [
@@ -114,16 +126,7 @@
       "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
     }
   },
-  "keywords": [
-    "react",
-    "reactjs",
-    "boilerplate"
-  ],
-  "license": "MIT",
-  "pre-push": [
-    "test:lint",
-    "test"
-  ],
+
   "dependencies": {
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-wrap-in-js": "^1.1.1",

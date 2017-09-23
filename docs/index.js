@@ -16,6 +16,7 @@ import PxAlertLabel from '../src/px-alert-label';
 import pxAccordionDocs from './px-accordion';
 import pxActionSheetDocs from './px-action-sheet';
 import pxAlertLabelDocs from './px-alert-label';
+import pxAlertMessageDocs from './px-alert-message';
 import pxButtonDocs from './px-button';
 import pxBrandingBarDocs from './px-branding-bar';
 import pxCardDocs from './px-card';
@@ -54,6 +55,7 @@ const pages = [
     pages: [
       { path: 'px-accordion', title: 'Accordion', component: pxAccordionDocs},
       { path: 'px-alert-label', title: 'Alert Label', component: pxAlertLabelDocs},
+      { path: 'px-alert-message', title: 'Alert Message', component: pxAlertMessageDocs},
       { path: 'px-action-sheet', title: 'Action Sheet', component: pxActionSheetDocs},
       { path: 'px-button', title: 'Button', component: pxButtonDocs},
       { path: 'px-branding-bar', title: 'Branding Bar', component: pxBrandingBarDocs},

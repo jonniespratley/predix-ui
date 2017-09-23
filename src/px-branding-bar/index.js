@@ -9,10 +9,11 @@ export default ({ title = 'Predix Design System', powered = 'Powered by', childr
 		<div className='u-ml flex flex--middle'>
 			<span className='u-ml-- flex flex--middle'><Logo/></span>
 			<label className='u-ml-- flex flex--middle'>{title}</label>
+			{children && <div>{children}</div>}
 		</div>
 		<div className='flex flex--middle'>
 			<span className='u-mr-- px-branding-bar__powered-by-text'>{powered}</span>
-			<span className='u-mr'><PredixLogo/></span>
+			<span className='u-mr'><PredixLogo size={10}/></span>
 		</div>
 		<style jsx>{styles}</style>
 	</div>

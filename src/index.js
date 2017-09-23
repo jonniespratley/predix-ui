@@ -4,6 +4,8 @@ import React from 'react';
 import Partials from './px-partials';
 
 import Accordion from './px-accordion';
+import AlertMessage from './px-alert-message';
+import AlertLabel from './px-alert-label';
 import ActionSheet from './px-action-sheet';
 import Button from './px-button';
 import BrandingBar from './px-branding-bar';
@@ -62,6 +64,8 @@ module.exports = {
   styles,
   px: {
     Accordion,
+		AlertLabel,
+		AlertMessage,
     ActionSheet,
     Button,
     Card,
