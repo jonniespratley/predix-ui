@@ -6,8 +6,13 @@ Alert Messages appear in a queue within the message container. Each message cons
 ## Usage
 
 ```react
-<px.AlertMessage messageTitle='Alert' message='This is an important message'/>
+<px.AlertMessage
+  messageTitle='Alert'
+  message='This is an important message'/>
 ```
+
+### Types
+
 ```react
 <px.AlertMessage
   type='warning'

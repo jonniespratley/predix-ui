@@ -17,7 +17,7 @@ export default ({
   expanded,
   children}) => {
 
-  const baseClasses = classnames('px-alert-message',
+  const baseClasses = classnames(
     'alert-message',
     'alert-message--visible',
     'shadow-notification',
@@ -32,19 +32,35 @@ export default ({
     type);
 
   return (
+  <div className='px-alert-message'>
     <div className={baseClasses}>
       <div className={severityClasses}></div>
       <div className="message-column flex flex--middle">
         <div className="message-container">
-          <div id="message">
-            <span className="title">{messageTitle}</span>
+          <div id="message" className='message'>
+            <span className="title u-mr--">{messageTitle}</span>
             <span>{message}</span>
+            <div>{children}</div>
           </div>
 
         </div>
+        <div className='action flex flex--middle flex--center'>
+          <button className='btn btn--bare dismiss'>
+            <svg viewBox="0 0 22 22" preserveAspectRatio="xMidYMid meet" focusable="false">
+              <g>
+                <path stroke-miterlimit="10" d="M3 19L19 3M3 3l16 16"></path>
+              </g>
+            </svg>
+          </button>
+        </div>
+
       </div>
-      <div>{children}</div>
+
+
+
       <style jsx>{style}</style>
+
     </div>
+  </div>
   );
 }
