@@ -4,4 +4,184 @@
  .px-alert-message {
    background: green;
    padding: 1rem;
+
+
  }
+
+
+// Generic
+//@import "px-normalize-design/_generic.normalize.scss";
+//@import "px-box-sizing-design/_generic.box-sizing.scss";
+//@import "px-helpers-design/_generic.helpers.scss";
+
+// Base
+//@import "px-flexbox-design/_base.flexbox.scss";
+
+$inuit-enable-btn--bare: true;
+$inuit-enable-btn--tertiary: true;
+@import "px-buttons-design/_objects.buttons.scss";
+
+$actionable: true;
+@import "px-actionable-design/_objects.actionable.scss";
+@import "px-shadows-design/_objects.shadows.scss";
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    left: 4rem;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+    max-height: $inuit-base-spacing-unit--small * 10;
+    min-height: 0px;
+  }
+  to   {
+    opacity: 0;
+    max-height: 0px;
+    min-height: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+
+// Component
+:root {
+  --px-alert-label-background-color--important: white;
+  --px-alert-label-text-color--important: black;
+  --px-alert-label-background-color--error: white;
+  --px-alert-label-text-color--error: black;
+  --px-alert-label-background-color--warning: white;
+  --px-alert-label-text-color--warning: black;
+  --px-alert-label-background-color--information: white;
+  --px-alert-label-text-color--information: black;
+  --px-alert-label-background-color--unknown: white;
+  --px-alert-label-text-color--unknown: black;
+  --px-btn-min-width: 0
+}
+
+[hidden] {
+  visibility: hidden;
+  display: none;
+}
+
+.alert-message {
+  visibility: hidden;
+  display: none;
+  width: $inuit-base-spacing-unit--small * 40;
+  margin: $inuit-base-spacing-unit--tiny;
+  padding: $inuit-base-spacing-unit--small;
+  min-height: $inuit-base-spacing-unit--small * 6;
+  word-wrap: break-word;
+  word-break: break-word;
+  background-color: var(--px-alert-message-background-color, white);
+  position: relative;
+  min-height: 0px;
+  button, a {
+      outline: none;
+  }
+  opacity: 0;
+  max-height: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.alert-message--visible {
+  visibility: visible;
+  display: flex;
+  opacity: 1;
+  max-height: none;
+  padding-top: $inuit-base-spacing-unit--small;
+  padding-bottom: $inuit-base-spacing-unit--small;
+}
+.fade-in {
+  animation: fadein .4s cubic-bezier(.78,.13,.16,.87);
+}
+.fade-out {
+  animation: fadeout .4s cubic-bezier(.78,.13,.16,.87);
+}
+
+.message-column {
+  display: flex;
+  align-items: center;
+  flex: 2;
+  margin-left: $inuit-base-spacing-unit--small;
+  margin-right: $inuit-base-spacing-unit--small;
+}
+
+.severity {
+  min-height: 4rem;
+  width: 4rem;
+  margin-left: -0.6666rem; //10px
+  margin-top: -0.6666rem;
+  margin-bottom: -0.6666rem;
+  padding-top: 1rem;
+  &.important {
+    background-color: var(--px-alert-message-color--important, red);
+  }
+  &.information {
+    background-color: var(--px-alert-message-color--information, blue);
+  }
+  &.warning {
+    background-color: var(--px-alert-message-color--warning, orange);
+  }
+  &.error {
+    background-color: var(--px-alert-message-color--error, yellow);
+  }
+  &.unknown {
+    background-color: var(--px-alert-message-color--unknown, gray);
+  }
+}
+
+.message {
+  color: var(--px-alert-message-text-color, black);
+  line-height: calculateRem(16px);
+  font-size: calculateRem(12px);
+  padding: 0;
+  margin: 0;
+
+  &.collapsed-message{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;                /* number of lines to show */
+    max-height: calculateRem(16px) * 2;   /* fallback */
+  }
+  &.more {
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+  }
+  .title {
+    font-weight: bold;
+  }
+}
+.show-more {
+  line-height: calculateRem(16px);
+  font-size: calculateRem(12px);
+}
+
+.message-container {
+  width: 100%;
+}
+
+.action {
+  width: auto;
+  cursor: pointer;
+  margin-top: calculateRem(4px);
+  .dismiss {
+    color: var(--px-alert-message-dismiss-icon-color, gray);
+    outline: none;
+
+    .px-icon {
+      height: calculateRem(20px);
+      width: calculateRem(20px);
+    }
+  }
+}
