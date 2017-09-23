@@ -19,7 +19,19 @@ This is used for layouts with a drawer that is rendered offscreen on small viewp
 responsive:true
 frame:true
 ---
-const drawerContent = (<div>Im the drawer</div>);
+const drawerContent = (<div>
+  <div className="u-p u-mv flex flex--center flex--middle">
+      <px.PredixSvgLogo size={95}/>
+    </div>
+    <div>
+      <p className="u-p">
+        Place your navigation here.
+      </p>
+      <px.TableView bare>
+        <px.TableRow title="Tappable Item" tappable/>
+      </px.TableView>
+    </div>
+</div>);
 const navbarContent = (<px.ViewHeader title='My App'/>);
 const style = {
   height: 400

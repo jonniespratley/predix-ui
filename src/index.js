@@ -7,6 +7,7 @@ import Accordion from './px-accordion';
 import ActionSheet from './px-action-sheet';
 import Button from './px-button';
 import BrandingBar from './px-branding-bar';
+import PredixSvgLogo from './px-branding-bar/px-predix-svg-logo';
 import Card from './px-card';
 import Drawer from './px-drawer';
 import Modal from './px-modal';
@@ -78,6 +79,7 @@ module.exports = {
     Tabs,
     Tab,
     DrawerLayout,
-    Layout
+    Layout,
+		PredixSvgLogo
   }
 };

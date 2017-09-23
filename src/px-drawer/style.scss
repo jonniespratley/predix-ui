@@ -3,15 +3,15 @@
  * px-drawer styles
  */
 .px-drawer {
-  display: block;
+  //display: block;
 
 
   .drawer {
     z-index         : 20;
-    color: var(--px-drawer-font-color, white);
-    background-color: var(--px-drawer-background-color, black);
+    color: var(--px-drawer-font-color, black);
+    background-color: var(--px-drawer-background-color, white);
     width           : var(--px-drawer-width, 256px);
-    height          : var(--px-drawer-height, 100vh);
+    height          : var(--px-drawer-height, 100%);
     //  @apply(--px-drawer);
 
     &--mini {

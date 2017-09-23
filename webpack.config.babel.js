@@ -68,7 +68,7 @@ const sassRules = {
           sourceMap: true
         }
       },
-      //'postcss-loader',
+      'postcss-loader',
       {
         loader: 'sass-loader',
         options: {

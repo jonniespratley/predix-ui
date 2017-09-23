@@ -30,14 +30,22 @@ export default class DrawerLayout extends React.Component {
   }
 
   componentWillMount(){
+
     console.log('DrawerLayout', 'componentWillMount', this);
   }
 
   componentDidMount(){
+    this.isAttached = true;
+
+
+    //window.addEventListener('resize', this.handleResize).bind(this);
     this.$ = this.refs;
     console.log('DrawerLayout', 'componentDidMount', this);
-    this.isAttached = true;
-    this.resetLayout();
+    window.addEventListener('resize', (e) => {
+      console.log(e);
+      this.resetLayout().bind(this);
+    }).bind(this)
+    //this.resetLayout();
   }
 
   /**
@@ -49,13 +57,14 @@ export default class DrawerLayout extends React.Component {
       console.warn('_resetLayout', this);
       if (!this.isAttached) {
         console.warn('notAttached');
-        return;
+        //return;
       }
-      const narrow = this.props.narrow;
-      var drawer = this.$.drawer;
-      var drawerWidth = this.$.drawerContainer.offsetWidth
-      var contentContainer = this.$.contentContainer;
-      const navbar = this.$.navbar;
+
+      const narrow = window.matchMedia(`(min-width: ${this.props.responsiveWidth})`).matches;
+      var drawer = this.refs.drawer;
+      var drawerWidth = this.refs.drawerContainer.offsetWidth
+      var contentContainer = this.refs.contentContainer;
+      const navbar = this.refs.navbar;
 
       if (narrow) {
         drawer.opened = drawer.persistent = false;
@@ -67,12 +76,12 @@ export default class DrawerLayout extends React.Component {
         if (navbar && navbar.fixed) {
           navbar.style.left = '';
         }
-        console.log('narrow');
+        console.log('narrow', narrow);
       } else {
         //drawer.setAttribute('opened', true);
-        //drawer.type = 'persistent';
+        drawer.type = 'persistent';
         drawer.opened = drawer.persistent = true;
-        drawer.type = 'temporary';
+        //drawer.type = 'temporary';
 
         contentContainer.classList.remove('is-narrow');
 
@@ -118,7 +127,7 @@ export default class DrawerLayout extends React.Component {
     console.log('DrawerLayout.render', this.props)
     return (
       <div className='px-drawer-layout'>
-        <div id="container" className="l-drawer-layout layout" ref='container'>
+        <div id="container" className="l-drawer-layout" ref='container'>
           <div id="drawerContainer" className="l-drawer-layout__drawer" ref='drawerContainer'>
             <Drawer ref='drawer'>{drawerContent}</Drawer>
           </div>
