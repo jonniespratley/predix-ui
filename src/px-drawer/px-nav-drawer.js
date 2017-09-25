@@ -6,7 +6,9 @@ export default class NavDrawer extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      open: props.open || false
+      opened: props.opened || false,
+      persistent: props.persistent || false
+
     };
   }
 
@@ -30,6 +32,10 @@ export default class NavDrawer extends React.Component {
 
     //this.setState(nextProps);
     this.toggle();
+  }
+
+  getWidth(){
+    return this.refs.rootElement.offsetWidth;
   }
 
 	_setupTouchHandlers() {
@@ -66,7 +72,7 @@ export default class NavDrawer extends React.Component {
 	}
 
 	toggle() {
-		if (this.state.open) {
+		if (this.isOpen()) {
 			this.close();
 		} else {
 			this.open();

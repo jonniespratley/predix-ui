@@ -37,8 +37,10 @@ const style = {
   height: 400
 };
 
+const headerContent = (<px.BrandingBar/>);
 <div style={style}>
   <px.DrawerLayout
+    headerContent={headerContent}
     navbarContent={navbarContent}
     drawerContent={drawerContent}>
 

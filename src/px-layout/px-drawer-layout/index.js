@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './style.scss';
-import Drawer from '../../px-drawer';
+import NavDrawer from '../../px-drawer/px-nav-drawer';
 
 /**
  * px-layout component
@@ -10,8 +10,12 @@ export default class DrawerLayout extends React.Component {
   constructor(props){
     super(props);
     this.isAttached = false;
+    this.state = {
+      narrow: false
+    };
 
     console.log('DrawerLayout', this);
+    window.addEventListener('resize', this.resetLayout.bind(this));
   }
 
   toggleClass(name, el){
@@ -39,7 +43,7 @@ export default class DrawerLayout extends React.Component {
 
     this.$ = this.refs;
     console.log('DrawerLayout', 'componentDidMount', this);
-    this.resetLayout();
+
   }
 
   /**
@@ -54,13 +58,13 @@ export default class DrawerLayout extends React.Component {
         //return;
       }
 
-      const narrow = window.matchMedia(`(min-width: ${this.props.responsiveWidth})`).matches;
+      const narrow = !window.matchMedia(`(min-width: ${this.props.responsiveWidth})`).matches;
       var drawer = this.refs.drawer;
-      var drawerWidth = this.refs.drawerContainer.offsetWidth
+      var drawerWidth = drawer.getWidth();
       var contentContainer = this.refs.contentContainer;
       const navbar = this.refs.navbar;
 
-      console.log('narrow', narrow);
+      console.log('narrow', this.props.responsiveWidth, narrow);
       if (narrow) {
         drawer.opened = drawer.persistent = false;
         drawer.type = 'temporary';
@@ -118,16 +122,24 @@ export default class DrawerLayout extends React.Component {
   }
 
   render() {
-    const { drawerContent, navbarContent, children } = this.props;
+    const {
+      headerContent,
+      drawerContent,
+      navbarContent,
+      children } = this.props;
+      const {narrow} = this.state;
     console.log('DrawerLayout.render', this.props)
     return (
       <div className='px-drawer-layout'>
+        {headerContent}
         <div id="container" className="l-drawer-layout" ref='container'>
           <div id="drawerContainer" className="l-drawer-layout__drawer" ref='drawerContainer'>
-            <Drawer ref='drawer'>{drawerContent}</Drawer>
+            <NavDrawer ref='drawer' opened={narrow}>{drawerContent}</NavDrawer>
           </div>
           <div id="contentContainer" className="l-drawer-layout__container " ref='contentContainer'>
-            <nav id="navbarContent">{navbarContent}</nav>
+            <nav id="navbarContent">
+              <button className='drawer-toggle'>Toggle</button>
+              {navbarContent}</nav>
             <div id="content">{children}</div>
           </div>
         </div>
