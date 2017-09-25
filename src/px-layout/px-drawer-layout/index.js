@@ -37,15 +37,9 @@ export default class DrawerLayout extends React.Component {
   componentDidMount(){
     this.isAttached = true;
 
-
-    //window.addEventListener('resize', this.handleResize).bind(this);
     this.$ = this.refs;
     console.log('DrawerLayout', 'componentDidMount', this);
-    window.addEventListener('resize', (e) => {
-      console.log(e);
-      this.resetLayout();
-    })
-    //this.resetLayout();
+    this.resetLayout();
   }
 
   /**

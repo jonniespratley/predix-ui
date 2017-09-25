@@ -1,9 +1,13 @@
 import React from 'react';
 import style from './px-nav-drawer.scss';
+import classnames from 'classnames';
 
 export default class NavDrawer extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      open: props.open || false
+    };
   }
 
 	componentDidMount() {
@@ -11,6 +15,7 @@ export default class NavDrawer extends React.Component {
 		//this.rootElement = this.base.querySelector('.js-nav-drawer');
 		//this.sideNavContent = this.refs.rootElement.querySelector('.js-nav-drawer-content');
 		//this.sideNavBody = this.refs.rootElement.querySelector('.nav-drawer__body');
+    console.log('componentDidMount', this);
 		this.refs.sideNavContent.addEventListener('click', (e) => {
 			console.log('e.stopPropagation');
 			e.stopPropagation();
@@ -19,6 +24,13 @@ export default class NavDrawer extends React.Component {
 			this._setupTouchHandlers();
 		}
 	}
+
+  componentWillReceiveProps(nextProps){
+    console.log('componentWillReceiveProps', nextProps);
+
+    //this.setState(nextProps);
+    this.toggle();
+  }
 
 	_setupTouchHandlers() {
 		this.touchStartX = null;
@@ -54,7 +66,7 @@ export default class NavDrawer extends React.Component {
 	}
 
 	toggle() {
-		if (this.isOpen()) {
+		if (this.state.open) {
 			this.close();
 		} else {
 			this.open();
@@ -62,6 +74,7 @@ export default class NavDrawer extends React.Component {
 	}
 
 	close() {
+    //this.setState({open: false});
 		this.refs.rootElement.classList.remove('nav-drawer--visible');
 		this.refs.sideNavContent.classList.add('nav-drawer__content--animatable');
 		if (this.hasUnprefixedTransform) {
@@ -69,10 +82,14 @@ export default class NavDrawer extends React.Component {
 		} else {
 			this.refs.sideNavContent.classList.remove('nav-drawer--visible');
 		}
+    if(this.props.onClose){
+      this.props.onClose();
+    }
 		return false;
 	}
 
 	open() {
+  //  this.setState({open: true});
 		this.refs.rootElement.classList.add('nav-drawer--visible');
 		if (this.hasUnprefixedTransform) {
 			let onSideNavTransitionEnd = (e) => {
@@ -89,29 +106,43 @@ export default class NavDrawer extends React.Component {
 		} else {
 			this.refs.sideNavContent.classList.add('nav-drawer--visible');
 		}
+    if(this.props.onOpen){
+      this.props.onOpen();
+    }
 	}
 
 	render() {
     const {
   		title = 'AppNav',
   		nav,
-  		open,
       children
   	} = this.props;
+    const {open} = this.state;
+
+    const rootElementClasses = classnames(
+      'nav-drawer',
+      'js-nav-drawer',
+      //{'nav-drawer--visible': open}
+    );
+    const sideNavContentClasses = classnames(
+      'nav-drawer__content',
+      'js-nav-drawer-content'
+    );
+
+
 		return (
 			<div className='px-nav-drawer'>
-				<section className="nav-drawer js-nav-drawer"  ref='rootElement'
-          onClick={(e) => this.close(e)}>
-					<div className="nav-drawer__content js-nav-drawer-content" ref='sideNavContent'>
+				<section className={rootElementClasses} ref='rootElement' onClick={(e) => this.close(e)}>
+					<div className={sideNavContentClasses} ref='sideNavContent'>
 						<div className="nav-drawer__header">
 							<h1 className="nav-drawer__title">{title}</h1>
 						</div>
 						<nav className="nav-drawer__body" ref='sideNavBody'>
               {children}
 							{nav && nav.map((item) => (
-								<Link href={item.url} role="tab" activeClassName="active" className="nav-drawer__link">
+								<a href={item.url} role="tab" activeClassName="active" className="nav-drawer__link">
 									<span onClick={(e) => this.close(e)}>{item.label}</span>
-								</Link>
+								</a>
 							))}
 						</nav>
 					</div>

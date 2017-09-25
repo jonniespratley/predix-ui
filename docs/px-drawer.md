@@ -5,9 +5,9 @@ This is the documentation.
 ## Usage
 
 ```react
-state: {open: false}
-frame: true
-responsive: true
+state:
+  clicked: 0
+  open: false
 ---
 
 const style = {
@@ -16,13 +16,19 @@ const style = {
   display: 'flex'
 };
 <div style={style}>
-  <px.NavDrawer  visible={state.open}>
+  <px.NavDrawer open={state.open}>
     This is the children
   </px.NavDrawer>
   <div>
     <h4>Main Content</h4>
-    <button onClick={() => setState({open: !state.open})}>Toggle</button>
-    <p>{state.open}</p>
+
+    <button onClick={() => setState({clicked: state.clicked + 1})}>
+      Clicked {state.clicked} times
+    </button>
+
+    <button onClick={() => setState({open: (state.open ? false : true)})}>Toggle</button>
+    <p>{state.open && 'Open'}</p>
+    <p>{!state.open && 'Closed'}</p>
   </div>
 </div>
 ```

@@ -4,10 +4,10 @@
 .px-card {
   display: block;
   width: 100%;
-  background-color: var(--px-card-background-color, white);
+  background-color: var(--px-card-background-color, lightgray);
   padding-bottom: 4 * $inuit-base-spacing-unit;
 
-  border: 1px solid var(--px-card-border-color, gray);
+  border-top: 1px solid var(--px-card-border-color, gray);
 
 	&[full-bleed] .contents {
     padding: 0;
@@ -16,7 +16,7 @@
 	header {
 	  padding: $inuit-base-spacing-unit;
 	  padding-top: $inuit-base-spacing-unit--large;
-    border-bottom: 1px solid var(--px-card-border-color, gray);
+    border-bottom: 1px solid var(--px-card-border-color, transparent);
     margin-bottom: $inuit-base-spacing-unit;
 	  .epsilon {
 	    height: 2rem;

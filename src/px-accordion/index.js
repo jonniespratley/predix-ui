@@ -1,6 +1,5 @@
 import React from 'react';
 import classnames from 'classnames';
-
 import style from './style.scss';
 
 /**
@@ -15,12 +14,7 @@ export default class Accordion extends React.Component {
     this.onClick = this.onClick.bind(this);
   }
 
-  componentDidMount(){
-    console.log('Accordion.componentDidMount', this);
-  }
-
   onClick(){
-    console.log('toggle iron-collapse');
     this.setState((prevState, props) => ({
       open: !prevState.open
     }));
@@ -29,7 +23,6 @@ export default class Accordion extends React.Component {
   render(){
     const open = this.state && this.state.open;
     const {headerValue = 'px-accordion', status, disabled, showAction, children} = this.props;
-
     const baseClasses = classnames('px-accordion', {
       'px-accordion--children': children
     });

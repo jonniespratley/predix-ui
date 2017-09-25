@@ -1,146 +1,146 @@
-$global-nav-background-color: #eee;
+$global-nav-background-color: black;
 $global-background-color: #222;
-$global-nav-font-color: #fff;
+$global-nav-font-color: white;
+
 .px-nav-drawer{
 
-  /**
-   * @filename
-   * @package
-   */
-  .nav-drawer {
-  	width         : 100%;
-  	height        : 100%;
-  	position      : fixed;
-  	pointer-events: none;
-  	top           : 0;
-  	left          : 0;
-  	overflow      : hidden;
+}
+/**
+ * @filename
+ * @package
+ */
+.nav-drawer {
+  width         : 100%;
+  height        : 100%;
+  position      : absolute;
+  pointer-events: none;
+  top           : 0;
+  left          : 0;
+  overflow      : hidden;
+}
+
+.nav-drawer:before {
+  content    : '';
+  width      : 100%;
+  height     : 100%;
+  background : var(--px-nav-drawer-background-color, black);
+  opacity    : 0;
+  display    : block;
+  position   : absolute;
+  will-change: opacity;
+  transition : opacity 0.233s cubic-bezier(0,0,0.21,1);
+}
+
+.nav-drawer--visible {
+  pointer-events: auto;
+  z-index: 100;
+}
+
+.nav-drawer--visible:before {
+  opacity: 0.7;
+}
+
+.nav-drawer__content {
+  background : var(--px-nav-drawer-content-background-color, white);
+  width      : 80%;
+  max-width  : 304px;
+  height     : 100%;
+  overflow   : hidden;
+  position   : relative;
+  box-shadow : 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
+  will-change: transform;
+  transform  : translateX(-102%);
+  &.nav-drawer--visible {
+    transform: translateX(0px);
+    z-index: auto;
+  }
+}
+
+.nav-drawer__content--animatable {
+  transition: transform 0.233s cubic-bezier(0,0,0.21,1);
+}
+
+.nav-drawer__header {
+  background     : var(--px-nav-drawer-header-background-color, black);
+  background-size: cover;
+  width          : 100%;
+  height         : 75px;
+  position       : relative;
+  user-select: none;
+}
+
+.nav-drawer__title {
+  font-size  : 16px;
+  line-height: 1;
+  color      : $global-nav-font-color;
+  position   : absolute;
+  bottom     : 8px;
+  left       : 16px;
+  height     : 16px;
+  font-weight: 500;
+}
+
+.nav-drawer__body {
+  padding-top: 8px;
+}
+
+.nav-drawer__version {
+  position : absolute;
+  bottom   : 16px;
+  left     : 16px;
+  font-size: 14px;
+  opacity  : 0.54;
+}
+
+.nav-drawer__delete-all,
+.nav-drawer__delete-memos,
+.nav-drawer__file-bug-report,
+.nav-drawer__link {
+  font-size    : 14px;
+  outline      : none;
+  height       : 48px;
+  padding-left : 20px;
+  width        : 100%;
+  text-align   : left;
+  display      : block;
+  border       : none;
+  //background: url(/images/ic_delete_24px.svg) 16px 12px no-repeat;
+  color        : rgba(0,0,0,0.87);
+  cursor       : pointer;
+  display      : flex;
+  align-content: stretch;
+
+  span {
+    flex: 1;
   }
 
-  .nav-drawer:before {
-  	content    : '';
-  	width      : 100%;
-  	height     : 100%;
-  	background : $global-nav-background-color;
-  	opacity    : 0;
-  	display    : block;
-  	position   : absolute;
-  	will-change: opacity;
-  	transition : opacity 0.233s cubic-bezier(0,0,0.21,1);
+  &:hover {
+    background-color: rgba(51, 51, 51, 0.21);
   }
+}
 
-  .nav-drawer--visible {
-  	pointer-events: auto;
-  	z-index: 100;
-  }
+.nav-drawer__delete-all {
+  //background-image: url(/images/ic_restore_24px.svg);
+}
 
-  .nav-drawer--visible:before {
-  	opacity: 0.7;
-  }
+.nav-drawer__link {
+  //background-image: url(/images/ic_info_outline_24px.svg);
+  line-height    : 48px;
+  text-decoration: none;
+}
 
-  .nav-drawer__content {
-  	background : $global-background-color;
-  	width      : 80%;
-  	max-width  : 304px;
-  	height     : 100%;
-  	overflow   : hidden;
-  	position   : relative;
-  	box-shadow : 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
-  	will-change: transform;
-  	transform  : translateX(-102%);
-  	&.nav-drawer--visible {
-  		transform: translateX(0px);
-  		z-index: auto;
-  	}
-  }
+.nav-drawer__link:focus {
+  background-color: #eee;
+  outline         : 0;
+}
 
-  .nav-drawer__content--animatable {
-  	transition: transform 0.233s cubic-bezier(0,0,0.21,1);
-  }
+.nav-drawer__file-bug-report {
+  //  background-image: url(/images/ic_feedback_24px.svg);
+  line-height    : 48px;
+  text-decoration: none;
+}
 
-  .nav-drawer__header {
-  	background     : $global-nav-background-color;
-  	background-size: cover;
-  	width          : 100%;
-  	height         : 175px;
-  	position       : relative;
-  	user-select: none;
-  }
-
-  .nav-drawer__title {
-  	font-size  : 16px;
-  	line-height: 1;
-  	color      : $global-nav-font-color;
-  	position   : absolute;
-  	bottom     : 8px;
-  	left       : 16px;
-  	height     : 16px;
-  	font-weight: 500;
-  }
-
-  .nav-drawer__body {
-  	padding-top: 8px;
-  }
-
-  .nav-drawer__version {
-  	position : absolute;
-  	bottom   : 16px;
-  	left     : 16px;
-  	font-size: 14px;
-  	opacity  : 0.54;
-  }
-
-  .nav-drawer__delete-all,
-  .nav-drawer__delete-memos,
-  .nav-drawer__file-bug-report,
-  .nav-drawer__link {
-  	font-size    : 14px;
-  	outline      : none;
-  	height       : 48px;
-  	padding-left : 20px;
-  	width        : 100%;
-  	text-align   : left;
-  	display      : block;
-  	border       : none;
-  	//background: url(/images/ic_delete_24px.svg) 16px 12px no-repeat;
-  	color        : rgba(0,0,0,0.87);
-  	cursor       : pointer;
-  	display      : flex;
-  	align-content: stretch;
-
-  	span {
-  		flex: 1;
-  	}
-
-  	&:hover {
-  		background-color: rgba(51, 51, 51, 0.21);
-  	}
-  }
-
-  .nav-drawer__delete-all {
-  	//background-image: url(/images/ic_restore_24px.svg);
-  }
-
-  .nav-drawer__link {
-  	//background-image: url(/images/ic_info_outline_24px.svg);
-  	line-height    : 48px;
-  	text-decoration: none;
-  }
-
-  .nav-drawer__link:focus {
-  	background-color: #eee;
-  	outline         : 0;
-  }
-
-  .nav-drawer__file-bug-report {
-  	//  background-image: url(/images/ic_feedback_24px.svg);
-  	line-height    : 48px;
-  	text-decoration: none;
-  }
-
-  .nav-drawer__link.active {
-  	font-weight     : bold;
-  	background-color: rgba(0,0,0,.05);
-  }
-
+.nav-drawer__link.active {
+  font-weight     : bold;
+  background-color: rgba(0,0,0,.05);
 }

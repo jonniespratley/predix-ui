@@ -71,7 +71,6 @@ const sassRules = {
       {
         loader: 'sass-loader-once',
         options: {
-          sourceMap: true,
           includePaths: [
             'sass',
             'styles',
