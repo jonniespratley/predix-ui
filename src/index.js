@@ -12,6 +12,7 @@ import BrandingBar from './px-branding-bar';
 import PredixSvgLogo from './px-branding-bar/px-predix-svg-logo';
 import Card from './px-card';
 import Drawer from './px-drawer';
+import NavDrawer from './px-drawer/px-nav-drawer';
 import Modal from './px-modal';
 import Navbar from './px-navbar';
 import Spinner from './px-spinner';
@@ -70,6 +71,7 @@ module.exports = {
     Button,
     Card,
 		Drawer,
+		NavDrawer,
     BrandingBar,
     AppHeader,
     KeyValuePair,

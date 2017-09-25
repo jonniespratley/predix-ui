@@ -64,8 +64,7 @@ const sassRules = {
       {
         loader: 'css-loader',
         options: {
-          camelCase: true,
-          sourceMap: true
+          camelCase: true
         }
       },
       'postcss-loader',

@@ -5,22 +5,30 @@ This is the documentation.
 ## Usage
 
 ```react
+state: {open: false}
 frame: true
+responsive: true
 ---
+
 const style = {
   height: 300,
   position: 'relative',
   display: 'flex'
 };
 <div style={style}>
-  <px.Drawer persistent opened>
+  <px.NavDrawer  visible={state.open}>
     This is the children
-  </px.Drawer>
+  </px.NavDrawer>
   <div>
-  <h4>Main Content</h4>
+    <h4>Main Content</h4>
+    <button onClick={() => setState({open: !state.open})}>Toggle</button>
+    <p>{state.open}</p>
   </div>
 </div>
 ```
+
+
+
 
 ```react
 frame: true

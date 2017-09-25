@@ -19,21 +19,23 @@ export default class Drawer extends React.Component {
     const {opened, fixed, overlay, persistent, align = 'left', children} = this.props;
 
 
-    let drawerClasses = classnames(
+    const drawerClasses = classnames(
       'px-drawer',
       {'px-drawer--opened': opened}
-    )
-    let overlayClasses = classnames(
+    );
+
+    const overlayClasses = classnames(
       'drawer__overlay',
       {'drawer__overlay--opened': opened}
-    )
-    let classes = classnames(
+    );
+
+    const classes = classnames(
       'drawer',
       { [`drawer--${align}`]: true },
       {'drawer--opened': opened},
       {'drawer--fixed': fixed},
       {'drawer--persistent': persistent},
-    )
+    );
 
     return (
       <div className={drawerClasses}>
