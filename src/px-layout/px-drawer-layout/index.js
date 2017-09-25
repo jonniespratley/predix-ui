@@ -11,39 +11,59 @@ export default class DrawerLayout extends React.Component {
     super(props);
     this.isAttached = false;
     this.state = {
-      narrow: false
+      isNarrow: false
     };
-
-    console.log('DrawerLayout', this);
     window.addEventListener('resize', this.resetLayout.bind(this));
   }
 
-  toggleClass(name, el){
+  toggleClass(name, onoff, el){
+    if(el){
+      el.classList.toggle(name);
+    } else {
+      if(onoff){
+        this.refs.baseElement.classList.add(name);
+      } else {
+        this.refs.baseElement.classList.remove(name);
+      }
+    }
     console.log('toggleClass', name);
   }
+
   notifyResize(name, el){
-    console.log('notifyResize', name);
+    //console.log('notifyResize', name);
   }
 
-  debounce(name, func){
+  debounce(name, func, wait, immediate){
     console.log('DrawerLayout.debounce', name);
-    if(func){
-      func.apply(this);
+    var timeout;
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) {
+        func.apply(context, args);
+      }
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) {
+      func.apply(context, args);
     }
-
   }
 
   componentWillMount(){
+    console.log('[DrawerLayout.componentWillMount]', this);
+  }
 
-    console.log('DrawerLayout', 'componentWillMount', this);
+  componentWillUnmount(){
+    console.log('[DrawerLayout.componentWillUnmount]', this);
+    window.removeEventListener('resize', this.resetLayout.bind(this));
   }
 
   componentDidMount(){
     this.isAttached = true;
-
     this.$ = this.refs;
-    console.log('DrawerLayout', 'componentDidMount', this);
-
+    console.log('[DrawerLayout.componentDidMount]', this);
   }
 
   /**
@@ -51,63 +71,56 @@ export default class DrawerLayout extends React.Component {
    * @event px-layout-reset
    */
   resetLayout () {
-    this.debounce('_resetLayout', () => {
-      console.warn('_resetLayout', this);
-      if (!this.isAttached) {
-        console.warn('notAttached');
-        //return;
+    if (!this.isAttached) {
+      console.warn('notAttached');
+      //return;
+    }
+    const narrow = !window.matchMedia(`(min-width: ${this.props.responsiveWidth})`).matches;
+
+    var drawer = this.drawer;
+    var drawerWidth = drawer && drawer.getWidth() || 250;
+    var contentContainer = this.contentContainer;
+    const navbar = this.navbar;
+
+    console.log('narrow', this.props.responsiveWidth, narrow, drawerWidth);
+    //this.setState({isNarrow: narrow});
+
+    if (narrow) {
+      //drawer.props.opened = false;
+      //drawer.props.persistent = false;
+      contentContainer.classList.add('is-narrow');
+      contentContainer.style.marginLeft = '';
+      contentContainer.style.marginRight = '';
+      if (navbar && navbar.fixed) {
+        navbar.style.left = '';
       }
 
-      const narrow = !window.matchMedia(`(min-width: ${this.props.responsiveWidth})`).matches;
-      var drawer = this.refs.drawer;
-      var drawerWidth = drawer.getWidth();
-      var contentContainer = this.refs.contentContainer;
-      const navbar = this.refs.navbar;
-
-      console.log('narrow', this.props.responsiveWidth, narrow);
-      if (narrow) {
-        drawer.opened = drawer.persistent = false;
-        drawer.type = 'temporary';
-        //drawer.setAttribute('opened', true);
-        contentContainer.classList.add('is-narrow');
+    } else {
+      contentContainer.classList.remove('is-narrow');
+      if (navbar && navbar.fixed) {
+        navbar.style.left = drawerWidth + 'px';
+      }
+      if (drawer.props.align == 'right') {
         contentContainer.style.marginLeft = '';
-        contentContainer.style.marginRight = '';
-        if (navbar && navbar.fixed) {
-          navbar.style.left = '';
-        }
-
+        contentContainer.style.marginRight = drawerWidth + 'px';
       } else {
-        //drawer.setAttribute('opened', true);
-        drawer.type = 'persistent';
-        drawer.opened = drawer.persistent = true;
-        //drawer.type = 'temporary';
-
-        contentContainer.classList.remove('is-narrow');
-
-        if (navbar && navbar.fixed) {
-          navbar.style.left = drawerWidth + 'px';
-        }
-
-        if (drawer.align == 'right') {
-          contentContainer.style.marginLeft = '';
-          contentContainer.style.marginRight = drawerWidth + 'px';
-        } else {
-          console.log('moving drawer');
-          contentContainer.style.marginLeft = (drawerWidth || 100) + 'px';
-          contentContainer.style.marginRight = '';
-        }
+        contentContainer.style.marginLeft = (drawerWidth) + 'px';
+        contentContainer.style.marginRight = '';
       }
-      this.toggleClass('is-narrow', narrow);
-      this.notifyResize();
-    });
+    }
+    //this.toggleClass('is-narrow', narrow);
+    this.notifyResize();
   }
 
   _handleDrawerToggle(){
-    var drawer = this.refs.drawer;
-    var drawerWidth = drawer.offsetWidth;
-    var contentContainer = this.refs.contentContainer;
-    console.log('_handleDrawerToggle');
-    if(drawer && drawer.opened){
+    var drawer = this.drawer;
+    var drawerWidth = drawer.getWidth() || 200;
+    var contentContainer = this.contentContainer;
+
+    drawer.toggle();
+
+    console.log('[DrawerLayout.toggle]', drawer.state, drawer.props)
+    if(drawer && drawer.isOpen){
       if (drawer.align == 'right') {
         contentContainer.style.marginLeft = '';
         contentContainer.style.marginRight = drawerWidth + 'px';
@@ -126,20 +139,38 @@ export default class DrawerLayout extends React.Component {
       headerContent,
       drawerContent,
       navbarContent,
-      children } = this.props;
-      const {narrow} = this.state;
+      children
+    } = this.props;
+
+    const {
+      isNarrow
+    } = this.state;
+
     console.log('DrawerLayout.render', this.props)
     return (
-      <div className='px-drawer-layout'>
-        {headerContent}
-        <div id="container" className="l-drawer-layout" ref='container'>
-          <div id="drawerContainer" className="l-drawer-layout__drawer" ref='drawerContainer'>
-            <NavDrawer ref='drawer' opened={narrow}>{drawerContent}</NavDrawer>
+
+      <div className='px-drawer-layout' ref={(el) => { this.baseElement = el; }}>
+        <div className='flex'>
+          <button role="tab" onClick={(e) => this._handleDrawerToggle(e)} className="header__menu js-toggle-menu" title="Toggle nav menu">
+            Toggle nav menu
+          </button>
+          <div className="flex__item">
+            {headerContent}
           </div>
-          <div id="contentContainer" className="l-drawer-layout__container " ref='contentContainer'>
-            <nav id="navbarContent">
-              <button className='drawer-toggle'>Toggle</button>
-              {navbarContent}</nav>
+        </div>
+
+        <div id="container" className="l-drawer-layout" ref={(el) => { this.container = el; }}>
+          <div id="drawerContainer" className="l-drawer-layout__drawer" ref={(el) => { this.drawerContainer = el; }}>
+            <NavDrawer
+              ref={(el) => { this.drawer = el; }}
+              persistent
+              opened={isNarrow}>
+              {drawerContent}
+            </NavDrawer>
+          </div>
+
+          <div id="contentContainer" className="l-drawer-layout__container " ref={(el) => { this.contentContainer = el; }}>
+            <nav id="navbarContent">{navbarContent}</nav>
             <div id="content">{children}</div>
           </div>
         </div>

@@ -1,8 +1,10 @@
 import React from 'react';
+import BaseComponent from '../base-component';
+
 import style from './px-nav-drawer.scss';
 import classnames from 'classnames';
 
-export default class NavDrawer extends React.Component {
+class NavDrawer extends BaseComponent {
   constructor(props){
     super(props);
     this.state = {
@@ -28,14 +30,14 @@ export default class NavDrawer extends React.Component {
 	}
 
   componentWillReceiveProps(nextProps){
-    console.log('componentWillReceiveProps', nextProps);
+    console.log('NavDrawer.componentWillReceiveProps', nextProps);
 
     //this.setState(nextProps);
-    this.toggle();
+    //this.toggle();
   }
 
   getWidth(){
-    return this.refs.rootElement.offsetWidth;
+    return this.refs.sideNavContent.offsetWidth;
   }
 
 	_setupTouchHandlers() {
@@ -69,6 +71,7 @@ export default class NavDrawer extends React.Component {
 
 	isOpen() {
 		return this.refs.rootElement.classList.contains('nav-drawer--visible');
+    //this.props.opened;
 	}
 
 	toggle() {
@@ -80,7 +83,8 @@ export default class NavDrawer extends React.Component {
 	}
 
 	close() {
-    //this.setState({open: false});
+
+    this.setState({opened: false});
 		this.refs.rootElement.classList.remove('nav-drawer--visible');
 		this.refs.sideNavContent.classList.add('nav-drawer__content--animatable');
 		if (this.hasUnprefixedTransform) {
@@ -91,11 +95,14 @@ export default class NavDrawer extends React.Component {
     if(this.props.onClose){
       this.props.onClose();
     }
-		return false;
+
+    console.log('px-nav-drawer', 'close', this);
+    return false;
 	}
 
 	open() {
-  //  this.setState({open: true});
+
+    this.setState({opened: true});
 		this.refs.rootElement.classList.add('nav-drawer--visible');
 		if (this.hasUnprefixedTransform) {
 			let onSideNavTransitionEnd = (e) => {
@@ -115,21 +122,31 @@ export default class NavDrawer extends React.Component {
     if(this.props.onOpen){
       this.props.onOpen();
     }
+    console.log('px-nav-drawer', 'open', this);
 	}
 
 	render() {
     const {
   		title = 'AppNav',
   		nav,
+      opened,
+      persistent,
       children
   	} = this.props;
-    const {open} = this.state;
+
+    const baseClasses = classnames(
+      'px-nav-drawer',
+      {'px-nav-drawer--is-visible': opened},
+      {'px-nav-drawer--is-persistent': persistent}
+    );
 
     const rootElementClasses = classnames(
       'nav-drawer',
       'js-nav-drawer',
-      //{'nav-drawer--visible': open}
+    //  {'nav-drawer--visible': opened},
+      {'nav-drawer--persistent': persistent}
     );
+
     const sideNavContentClasses = classnames(
       'nav-drawer__content',
       'js-nav-drawer-content'
@@ -137,7 +154,7 @@ export default class NavDrawer extends React.Component {
 
 
 		return (
-			<div className='px-nav-drawer'>
+			<div className={baseClasses}>
 				<section className={rootElementClasses} ref='rootElement' onClick={(e) => this.close(e)}>
 					<div className={sideNavContentClasses} ref='sideNavContent'>
 						<div className="nav-drawer__header">
@@ -158,3 +175,9 @@ export default class NavDrawer extends React.Component {
 		);
 	}
 }
+
+NavDrawer.defaultProps = {
+  opened: false,
+  persistent: false
+};
+export default NavDrawer;

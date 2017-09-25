@@ -17,27 +17,27 @@ This is used for layouts with a drawer that is rendered offscreen on small viewp
 
 ```react
 responsive:true
-frame:true
 ---
-const drawerContent = (<div>
-  <div className="u-p u-mv flex flex--center flex--middle">
-      <px.PredixSvgLogo size={95}/>
-    </div>
-    <div>
-      <p className="u-p">
-        Place your navigation here.
+const drawerContent = (
+  <div>
+    <p className="u-p">
+      Place your navigation here.
       </p>
-      <px.TableView bare>
-        <px.TableRow title="Tappable Item" tappable/>
-      </px.TableView>
-    </div>
-</div>);
-const navbarContent = (<px.ViewHeader title='My App'/>);
+  </div>
+);
+
+const navbarContent = (
+  <px.ViewHeader title='My App'/>
+);
+const headerContent = (
+  <px.BrandingBar/>
+);
+
 const style = {
-  height: 400
+  height: 600
 };
 
-const headerContent = (<px.BrandingBar/>);
+
 <div style={style}>
   <px.DrawerLayout
     headerContent={headerContent}
