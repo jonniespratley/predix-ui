@@ -24,7 +24,7 @@ export default class DrawerLayout extends React.Component {
   debounce(name, func){
     console.log('DrawerLayout.debounce', name);
     if(func){
-      func.call(this);
+      func.apply(this);
     }
 
   }
@@ -43,8 +43,8 @@ export default class DrawerLayout extends React.Component {
     console.log('DrawerLayout', 'componentDidMount', this);
     window.addEventListener('resize', (e) => {
       console.log(e);
-      this.resetLayout().bind(this);
-    }).bind(this)
+      this.resetLayout();
+    })
     //this.resetLayout();
   }
 
@@ -66,6 +66,7 @@ export default class DrawerLayout extends React.Component {
       var contentContainer = this.refs.contentContainer;
       const navbar = this.refs.navbar;
 
+      console.log('narrow', narrow);
       if (narrow) {
         drawer.opened = drawer.persistent = false;
         drawer.type = 'temporary';
@@ -76,7 +77,7 @@ export default class DrawerLayout extends React.Component {
         if (navbar && navbar.fixed) {
           navbar.style.left = '';
         }
-        console.log('narrow', narrow);
+
       } else {
         //drawer.setAttribute('opened', true);
         drawer.type = 'persistent';

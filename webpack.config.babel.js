@@ -70,8 +70,9 @@ const sassRules = {
       },
       'postcss-loader',
       {
-        loader: 'sass-loader',
+        loader: 'sass-loader-once',
         options: {
+          sourceMap: true,
           includePaths: [
             'sass',
             'styles',

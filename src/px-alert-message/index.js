@@ -48,7 +48,7 @@ export default ({
           <button className='btn btn--bare dismiss'>
             <svg viewBox="0 0 22 22" preserveAspectRatio="xMidYMid meet" focusable="false">
               <g>
-                <path stroke-miterlimit="10" d="M3 19L19 3M3 3l16 16"></path>
+                <path strokeMiterlimit="10" d="M3 19L19 3M3 3l16 16"></path>
               </g>
             </svg>
           </button>
