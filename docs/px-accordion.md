@@ -7,13 +7,19 @@ An optional action icon on the right side will fire an event when pressed.
 ## Usage
 
 ```react
-<div>
-<px.Accordion headerValue="Header Caption" status="Last Updated: 3 Days Ago">
-  <p>Accordion content goes here.</p>
-</px.Accordion>
-<px.Accordion headerValue="Header Caption" status="Last Updated: 3 Days Ago">
-  <p>Accordion content goes here.</p>
-</px.Accordion>
+<div id="app">
+  <style>{`
+    #app{
+      --px-headings-heading-subsection-color: red;
+      --px-headings-heading-subsection-background: black;
+    }
+  `}</style>
+  <px.Accordion headerValue="Header Caption" status="Last Updated: 3 Days Ago">
+    <p>Accordion content goes here.</p>
+  </px.Accordion>
+  <px.Accordion headerValue="Header Caption" status="Last Updated: 3 Days Ago">
+    <p>Accordion content goes here.</p>
+  </px.Accordion>
 </div>
 ```
 
@@ -39,4 +45,15 @@ rows:
     Type: boolean
     Value: "false"
     Description: Flag indicating whether the accordion should be disabled.
+```
+
+## Styling
+The following custom properties are available for styling
+
+```table
+rows:
+  - Name: --px-headings-heading-subsection-color
+    Description: Text color for the accordion header
+  - Name: --px-headings-heading-subsection-background
+    Description: Background color for the accordion header
 ```
