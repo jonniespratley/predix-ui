@@ -26,8 +26,6 @@ import Layout from './px-layout';
 import DrawerLayout from './px-layout/px-drawer-layout';
 
 
-import styles from './sass/index.scss';
-
 const Icon = ({icon}) => (
 	<i className={`fa fa-${icon}`}></i>
 );
@@ -38,10 +36,6 @@ const Box = ({ title, children}) => (
 		<div className=''>{children}</div>
 	</div>
 );
-
-
-
-
 
 
 //https://www.predix-ui.com/#/elements/px-app-header
@@ -56,7 +50,6 @@ const AppHeader = ({ title = 'PxAppHeader', children }) => (
 
 
 module.exports = {
-  styles,
   px: {
     Accordion,
 		AlertLabel,
