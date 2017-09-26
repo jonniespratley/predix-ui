@@ -1,14 +1,18 @@
-import React, {Component} from 'react';
+import React from 'react';
+import debug from 'debug';
 
-export default class BaseComponent extends Component {
-  constructor(){
-    super();
+export default class BaseComponent extends React.Component {
+  constructor(props){
+    super(props);
+    this.name = 'base-component';
+    this.log = debug(`px:${this.name}`);
+    this.log('constructor');
   }
   componentWillMount(){
-    console.log('componentWillMount', this);
+    this.log('componentWillMount', this);
   }
   componentDidMount(){
-    console.log('componentDidMount', this);
+    this.log('componentDidMount', this);
   }
 
 }

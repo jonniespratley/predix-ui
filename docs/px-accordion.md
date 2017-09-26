@@ -1,4 +1,3 @@
-# px.Accordion
 The `px.Accordion` component provides expandable and collapsible subsection headers for a page.
 An optional action icon on the right side will fire an event when pressed.
 

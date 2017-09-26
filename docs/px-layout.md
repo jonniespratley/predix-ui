@@ -27,7 +27,7 @@ const drawerContent = (
 );
 
 const navbarContent = (
-  <px.ViewHeader title='My App'/>
+  <px.Navbar title='My App' showMenuButton/>
 );
 const headerContent = (
   <px.BrandingBar/>

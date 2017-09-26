@@ -1,4 +1,3 @@
-# px-navbar
 The `px.Navbar` component is a responsive mobile first navigation bar.
 
 

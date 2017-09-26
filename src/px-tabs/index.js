@@ -1,4 +1,5 @@
 import React from 'react';
+import BaseComponent from '../base-component';
 import classnames from 'classnames';
 
 import tabStyle  from './sass/px-tab.scss';
@@ -12,16 +13,18 @@ const Pane = (props) => {
 /**
  * px-tabs component
  */
-class Tabs extends React.Component {
+class Tabs extends BaseComponent {
 	constructor(props) {
 		super(props);
 		this.displayName = 'Tabs';
     this.state = {
       selected: this.props.selected
     };
+    this.name = 'tabs';
 	}
 
   handleClick(index, event) {
+    this.log('handleClick', index);
     event.preventDefault();
     this.setState({
       selected: index

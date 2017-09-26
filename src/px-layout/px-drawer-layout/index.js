@@ -76,7 +76,7 @@ export default class DrawerLayout extends React.Component {
       //return;
     }
     const narrow = !window.matchMedia(`(min-width: ${this.props.responsiveWidth})`).matches;
-
+    var baseElement  = this.baseElement;
     var drawer = this.drawer;
     var drawerWidth = drawer && drawer.getWidth() || 250;
     var contentContainer = this.contentContainer;
@@ -88,6 +88,7 @@ export default class DrawerLayout extends React.Component {
     if (narrow) {
       //drawer.props.opened = false;
       //drawer.props.persistent = false;
+      baseElement.classList.add('is-narrow');
       contentContainer.classList.add('is-narrow');
       contentContainer.style.marginLeft = '';
       contentContainer.style.marginRight = '';
@@ -96,6 +97,7 @@ export default class DrawerLayout extends React.Component {
       }
 
     } else {
+      baseElement.classList.remove('is-narrow');
       contentContainer.classList.remove('is-narrow');
       if (navbar && navbar.fixed) {
         navbar.style.left = drawerWidth + 'px';
@@ -120,8 +122,8 @@ export default class DrawerLayout extends React.Component {
     drawer.toggle();
 
     console.log('[DrawerLayout.toggle]', drawer.state, drawer.props)
-    if(drawer && drawer.isOpen){
-      if (drawer.align == 'right') {
+    if(drawer && drawer.state.opened){
+      if (drawer.props.align == 'right') {
         contentContainer.style.marginLeft = '';
         contentContainer.style.marginRight = drawerWidth + 'px';
       } else {
@@ -153,6 +155,11 @@ export default class DrawerLayout extends React.Component {
         <div className='flex'>
           <button role="tab" onClick={(e) => this._handleDrawerToggle(e)} className="header__menu js-toggle-menu" title="Toggle nav menu">
             Toggle nav menu
+            <svg viewBox="0 0 22 22" preserveAspectRatio="xMidYMid meet" focusable="false">
+              <g>
+                <path strokeMiterlimit="10" d="M3 19L19 3M3 3l16 16"></path>
+              </g>
+            </svg>
           </button>
           <div className="flex__item">
             {headerContent}

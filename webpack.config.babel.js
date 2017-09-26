@@ -67,15 +67,21 @@ const sassRules = {
           camelCase: true
         }
       },
-      'postcss-loader',
+    //  'postcss-loader',
       {
-        loader: 'sass-loader-once',
+        loader: 'sass-loader',
         options: {
+          importer: require('node-sass-import-once'),
+           importOnce: {
+             index: true,
+             css: true,
+             bower: true
+           },
           includePaths: [
             'sass',
-            'styles',
-            'bower_components',
-            'node_modules'
+            'styles'
+          //  'bower_components',
+          //  'node_modules'
           ].map((d) => path.join(__dirname, d)).map((g) => glob.sync(g)).reduce((a, c) => a.concat(c), [])
         }
       }

@@ -1,4 +1,3 @@
-# px.BrandingBar
 The `px.BrandingBar` component provides a header area to contain title, logo and branding content.
 
 

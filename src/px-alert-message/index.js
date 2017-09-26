@@ -10,16 +10,18 @@ export default ({
   label = 'px-alert-message',
   messageTitle,
   message,
+
+  action = 'dismiss',
+  visible,
+  expanded,
   type = 'information',
-  action,
   autoDismiss = 5000,
   language = 'en',
-  expanded,
   children}) => {
 
   const baseClasses = classnames(
     'alert-message',
-    'alert-message--visible',
+    {'alert-message--visible': visible},
     'shadow-notification',
     'flex',
     'flex--left',
@@ -29,7 +31,8 @@ export default ({
     'severity',
     'flex',
     'flex--center',
-    type);
+    type
+  );
 
   return (
   <div className='px-alert-message'>
@@ -42,20 +45,24 @@ export default ({
             <span>{message}</span>
             <div>{children}</div>
           </div>
-
         </div>
-        <div className='action flex flex--middle flex--center'>
-          <button className='btn btn--bare dismiss'>
-            <svg viewBox="0 0 22 22" preserveAspectRatio="xMidYMid meet" focusable="false">
-              <g>
-                <path strokeMiterlimit="10" d="M3 19L19 3M3 3l16 16"></path>
-              </g>
-            </svg>
-          </button>
-        </div>
-
       </div>
+      <div className='action flex flex--middle flex--center'>
 
+        {action === 'dismiss' && <button
+          onClick={(e) => {this.close(e);}}
+          className='btn btn--bare dismiss'>
+          <svg viewBox="0 0 22 22" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path strokeMiterlimit="10" d="M3 19L19 3M3 3l16 16"></path>
+            </g>
+          </svg>
+        </button>}
+
+        {action === 'acknowledge' && <button id="actionButton"
+          onClick={(e) => {this.close(e);}}
+          className="btn btn--tertiary">OK</button>}
+      </div>
 
 
       <style jsx>{style}</style>

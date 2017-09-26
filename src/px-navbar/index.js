@@ -9,7 +9,7 @@ export default({
 	subtitle,
 	back,
 	backLabel,
-	drawer,
+	showMenuButton,
 	rightContent,
 	children
 }) => (
@@ -18,7 +18,10 @@ export default({
 		<nav id="navbar" className="navbar">
 			<div className="navbar__inner">
 				<div id="left" className="navbar__left">
-					{drawer && <button className="navbar__button flex flex--center">Menu</button>}
+					{showMenuButton &&
+						<button className="navbar__button flex flex--center toggle__menu">
+							Menu
+					</button>}
 					{back && <button id="backButton" className="navbar__button" >{backLabel}</button>}
 				</div>
 				<div className="navbar__center">

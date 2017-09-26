@@ -16,7 +16,7 @@ const style = {
   display: 'flex'
 };
 <div style={style}>
-  <px.NavDrawer open={state.open}>
+  <px.NavDrawer opened={state.open}>
     This is the children
   </px.NavDrawer>
   <div>

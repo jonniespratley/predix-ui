@@ -1,4 +1,3 @@
-# px.Card
 This is the cards documentation.
 
 

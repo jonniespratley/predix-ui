@@ -1,31 +1,44 @@
 // Generic
 @import "px-normalize-design/_generic.normalize.scss";
-@import "px-box-sizing-design/_generic.box-sizing.scss";
+//@import "px-box-sizing-design/_generic.box-sizing.scss";
 @import "px-helpers-design/_generic.helpers.scss";
-
 
 /**
  * px-modal styles
  */
 .px-modal {
-  background: green;
-  padding   : 1rem;
 
-  // Components
-  .modal {
+  .modal__backdrop{
     position        : fixed;
     top             : 0;
     right           : 0;
     bottom          : 0;
     left            : 0;
-    z-index         : 999;
+    z-index         : 900;
     background-color: var(--px-modal-overlay-color, rgba(black, 0.65));
     transition      : background-color 0.3s cubic-bezier(.78,.13,.16,.87);
-    //@apply(--px-modal);
-
-    &.invisible {
+    &--invisible{
       visibility      : hidden;
       background-color: transparent;
+    }
+
+  }
+
+  // Components
+  .modal {
+    position        : absolute;
+  //  top             : 0;
+//    right           : 0;
+    //bottom          : 0;
+    //left            : 0;
+    z-index         : 999;
+  //  background-color: var(--px-modal-overlay-color, rgba(black, 0.65));
+//    transition      : background-color 0.3s cubic-bezier(.78,.13,.16,.87);
+    @apply(--px-modal);
+    background-color: transparent;
+    &.invisible {
+      visibility      : hidden;
+      //background-color: transparent;
     }
 
     &.fadeout {
@@ -49,7 +62,7 @@
   .modal__title {
     margin-bottom: $inuit-base-spacing-unit--large;
     margin-top   : 0;
-    //@apply(--px-modal-title);
+    @apply(--px-modal-title);
   }
 
   .modal__content {
@@ -57,6 +70,7 @@
     top             : 50%;
     left            : 50%;
     transform       : translate(-50%, -50%);
+    z-index     : auto;
     max-height      : calc(100% - 2rem);
     max-width       : calc(100% - 2rem);
     overflow        : auto;
@@ -66,7 +80,7 @@
     color           : var(--px-modal-text-color, black);
     box-shadow      : 0 6px 12px 0 rgba(0,0,0,0.20);
     padding         : $inuit-base-spacing-unit--large;
-    //@apply(--px-modal-content);
+    @apply(--px-modal-content);
     @include media-query(palm) {
       width: 100%;
     }
@@ -84,10 +98,10 @@
     &:nth-last-of-type(2) {
       margin-right: $inuit-base-spacing-unit--small;
     }
-    //@apply(--px-modal-buttons);
+    @apply(--px-modal-buttons);
   }
 
   .modal__buttons button.btn--call-to-action {
-  //  @apply(--px-modal-positive-button);
+    @apply(--px-modal-positive-button);
   }
 }
