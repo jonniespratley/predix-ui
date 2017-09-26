@@ -1,9 +1,9 @@
-# View Header
-This is the documentation.
-
+The `px.ViewHeader` component provides the user an overview of the content they are viewing and interacting with.
 
 ## Usage
 
 ```react
-<px.ViewHeader title='View Title'/>
+  <px.ViewHeader
+    subtitle='Section Name'
+    title='View Title'/>
 ```

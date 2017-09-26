@@ -4,6 +4,9 @@ This is the documentation.
 
 ## Usage
 
+
+### NavDrawer
+
 ```react
 state:
   clicked: 0
@@ -34,19 +37,60 @@ const style = {
 ```
 
 
-
+### Drawer
 
 ```react
-frame: true
+state:
+  fixed: false
+  overlay: false
+  persistent: false
+  clicked: 0
+  open: false
 ---
 const style = {
-  height: 300,
+  height: 400,
+  overflow: 'hidden',
   position: 'relative'
 };
+<div>
+<button onClick={() => setState({open: (state.open ? false : true)})}>Toggle</button>
+
+<label>
+  persistent:
+  <input
+    type='checkbox'
+    onClick={() => setState({persistent: !state.persistent})}
+    checked={state.persistent}/>
+</label>
+<label>
+  overlay:
+  <input
+    type='checkbox'
+    onClick={() => setState({overlay: !state.overlay})}
+    checked={state.overlay}/>
+</label>
+<label>
+  fixed:
+  <input
+    type='checkbox'
+    onClick={() => setState({fixed: !state.fixed})}
+    checked={state.fixed}/>
+</label>
+
+<p>{state.open && 'Open'}</p>
+<p>{!state.open && 'Closed'}</p>
+
 <div style={style}>
-  <px.Drawer opened>
+  <px.Drawer
+    overlay={state.overlay}
+    onOverlayClick={(e) => setState({open: !state.open})}
+    fixed={state.fixed}
+    opened={state.open}
+    persistent={state.persistent}>
     This is the children
   </px.Drawer>
+  <p>THis is content</p>
+</div>
 </div>
 ```
 

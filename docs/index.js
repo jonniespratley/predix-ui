@@ -68,12 +68,7 @@ const pages = [
       { path: 'px-modal', title: 'Modal', component: pxModalDocs },
       { path: 'px-tabs', title: 'Tabs', component: pxTabsDocs },
       { path: 'px-spinner', title: 'Spinner', component: pxSpinnerDocs },
-      {
-        path: 'px-table-view',
-        title: 'Table View',
-        component: pxTableViewDocs
-
-       },
+      { path: 'px-table-view', title: 'Table View', component: pxTableViewDocs },
       { path: 'px-view-header', title: 'View Header', component: pxViewHeaderDocs }
     ]
   }

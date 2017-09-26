@@ -8,29 +8,32 @@ import classnames from 'classnames';
 export default class ActionSheet extends React.Component {
   constructor(props){
     super(props);
+
     this.onOverlayClick = this.onOverlayClick.bind(this);
   }
   onOverlayClick() {
     this.toggle();
   }
   toggle() {
-    this.refs.baseElement.classList.toggle('px-action-sheet--is-opened');
-    this.refs.overlay.classList.toggle('c-action-dialog__mask--is-opened');
+    this.setState({opened: !this.state.opened});
     console.log('toggle');
   }
   open() {
     console.log('open');
   }
+
   close() {
     console.log('close');
   }
+
   render() {
     const {
       opened,
+      onOverlayClick,
       children
     } = this.props;
 
-    console.log('ActionSheet.render', this);
+
 
     //base
     let baseClasses = classnames('px-action-sheet',
@@ -49,7 +52,7 @@ export default class ActionSheet extends React.Component {
 
     return (
       <div className={baseClasses} ref='baseElement'>
-        <div id="overlay" ref='overlay' onClick={this.onOverlayClick} className={overlayClasses}></div>
+        <div id="overlay" ref='overlay' onClick={onOverlayClick} className={overlayClasses}></div>
         <div id="sheet" ref='sheet' className={classes}>
           <div id="actions" ref='actions' className="c-action-sheet__actions">
             {children}

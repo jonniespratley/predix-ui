@@ -16,7 +16,13 @@ export default class Drawer extends React.Component {
     console.log('close');
   }
   render(){
-    const {opened, fixed, overlay, persistent, align = 'left', children} = this.props;
+    const {
+      opened,
+      fixed,
+      overlay,
+      persistent,
+      onOverlayClick,
+      align = 'left', children} = this.props;
 
 
     const drawerClasses = classnames(
@@ -33,13 +39,16 @@ export default class Drawer extends React.Component {
       'drawer',
       { [`drawer--${align}`]: true },
       {'drawer--opened': opened},
+      {'drawer--temporary': opened},
       {'drawer--fixed': fixed},
       {'drawer--persistent': persistent},
     );
 
     return (
       <div className={drawerClasses}>
-        <div id="overlay" className={overlayClasses}></div>
+        {overlay && <div id="overlay"
+          onClick={onOverlayClick}
+          className={overlayClasses}></div>}
         <div id="drawer" className={classes}>
           <div id="drawerContent" className="drawer__content">
             <div>{children}</div>

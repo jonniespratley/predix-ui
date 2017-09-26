@@ -1,6 +1,6 @@
 .px-view-header {
 	height          : 4rem;
-	background-color: #e2e8ed;
+	background-color: var(--px-view-header-background-color, #e2e8ed);
 	display         : flex;
 	align-items     : center;
 	flex-direction  : row;

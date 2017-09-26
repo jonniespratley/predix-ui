@@ -5,7 +5,12 @@ This is the documentation.
 ## Usage
 
 ```react
-frame: true
+state:
+  fixed: false
+  overlay: false
+  persistent: false
+  clicked: 0
+  open: false
 ---
 const style = {
   height: 300,
@@ -13,8 +18,18 @@ const style = {
   display: 'flex'
 };
 <div style={style}>
-  <px.ActionSheet opened>
-    This is the children
+<label>
+  open:
+  <input
+    type='checkbox'
+    onClick={() => setState({open: !state.open})}
+    checked={state.open}/>
+</label>
+  <px.ActionSheet
+    onOverlayClick={() => setState({open: !state.open})}
+    opened={state.open}>
+    <p>This is actionsheet content</p>
+    <p>Include actions here</p>
   </px.ActionSheet>
 </div>
 ```

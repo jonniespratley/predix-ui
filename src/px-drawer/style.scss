@@ -1,18 +1,32 @@
 //@import "sass/px-drawer-predix.scss";
+@import "./sass/variables";
+@import "px-mobile-design/sass/_mixins.scss";
 /**
  * px-drawer styles
  */
 .px-drawer {
-  
+  @import "./sass/_drawer--top";
+  @import "./sass/_drawer--bottom";
+
+  @import "./sass/_drawer--right";
+  @import "./sass/_drawer--mini";
+
+  transition: all .5s cubic-bezier(.1,.7,.1,1);
+
   .drawer {
+    transition: all .5s cubic-bezier(.1,.7,.1,1);
     z-index         : 20;
     color: var(--px-drawer-font-color, black);
-    background-color: var(--px-drawer-background-color, white);
+    background-color: var(--px-drawer-background-color, gray);
     width           : var(--px-drawer-width, 256px);
     height          : var(--px-drawer-height, 100%);
 
     &--mini {
       width: var(--px-drawer-mini-width, 50px);
+    }
+
+    &--fixed {
+     position: fixed !important;
     }
 
     &--static {
@@ -21,12 +35,15 @@
 
     &--opened {
       width: var(--px-drawer-mini-width-opened, auto);
+      max-width: 300px;
+      min-width: 250px;
       visibility: visible;
-      transform : translate3d(0,0,0);
+      transform : translate3d(0,0,0) !important;
     }
 
     &--persistent{
-      min-height: 100vh;
+      //min-height: 100vh;
+      transform : translate3d(0,0,0) !important;
       > .drawer__overlay {
        visibility: hidden;
        display: none;
@@ -72,6 +89,37 @@
         z-index   : 15;
         visibility: visible;
         display   : block;
+      }
+    }
+
+    @include modifier ('left') {
+      @include transform(translate3d(-100%, 0, 0));
+    //  width : var(--px-drawer-width, $drawer-width);
+    //  height: var(--px-drawer-height, $drawer-height);
+
+      &.is-open {
+        @include transform(translate3d(0, 0, 0));
+      }
+    }
+
+
+    ///------------------------------------------------------
+    /// .drawer--static
+    @include modifier ('static') {
+      z-index: auto;
+      transform   : translate3d(0, 0, 0);
+      transition  : $drawer-persistent-transition;
+      position    : inherit;
+      visibility  : visible;
+      float       : left;
+      flex        : 1 0 $drawer-max-width;
+      @include media-breakpoint ('lg') {
+        margin-top: 0;
+      }
+      &.drawer--right {
+        float       : right;
+        position    : static;
+        margin-right: 0 !important;
       }
     }
   }
