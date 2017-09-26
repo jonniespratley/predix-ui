@@ -4,14 +4,14 @@ import BaseComponent from '../base-component';
 import style from './px-nav-drawer.scss';
 import classnames from 'classnames';
 
-class NavDrawer extends BaseComponent {
+class NavDrawer extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       opened: props.opened || false,
       persistent: props.persistent || false
-
     };
+    this.close = this.close.bind(this);
   }
 
 	componentDidMount() {
@@ -19,7 +19,6 @@ class NavDrawer extends BaseComponent {
 		//this.rootElement = this.base.querySelector('.js-nav-drawer');
 		//this.sideNavContent = this.refs.rootElement.querySelector('.js-nav-drawer-content');
 		//this.sideNavBody = this.refs.rootElement.querySelector('.nav-drawer__body');
-    console.log('componentDidMount', this);
 		this.refs.sideNavContent.addEventListener('click', (e) => {
 			console.log('e.stopPropagation');
 			e.stopPropagation();
@@ -83,8 +82,9 @@ class NavDrawer extends BaseComponent {
 	}
 
 	close() {
-
-    this.setState({opened: false});
+    console.log('px-nav-drawer', 'close', this);
+    //this.setState({opened: false});
+		this.refs.baseElement.classList.remove('px-nav-drawer--is-visible');
 		this.refs.rootElement.classList.remove('nav-drawer--visible');
 		this.refs.sideNavContent.classList.add('nav-drawer__content--animatable');
 		if (this.hasUnprefixedTransform) {
@@ -96,13 +96,12 @@ class NavDrawer extends BaseComponent {
       this.props.onClose();
     }
 
-    console.log('px-nav-drawer', 'close', this);
+
     return false;
 	}
 
 	open() {
-
-    this.setState({opened: true});
+    //this.setState({opened: true});
 		this.refs.rootElement.classList.add('nav-drawer--visible');
 		if (this.hasUnprefixedTransform) {
 			let onSideNavTransitionEnd = (e) => {
@@ -154,9 +153,9 @@ class NavDrawer extends BaseComponent {
 
 
 		return (
-			<div className={baseClasses}>
-				<section className={rootElementClasses} ref='rootElement' onClick={(e) => this.close(e)}>
-					<div className={sideNavContentClasses} ref='sideNavContent'>
+			<div className={baseClasses} ref='baseElement'>
+				<section className={rootElementClasses} ref='rootElement' onClick={this.close}>
+					<div className={sideNavContentClasses} ref='sideNavContent' onClick={this.close}>
 						<div className="nav-drawer__header">
 							<h1 className="nav-drawer__title">{title}</h1>
 						</div>

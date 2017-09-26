@@ -7,9 +7,11 @@ import style from './style.scss';
 export default({
 	title,
 	subtitle,
-	back,
-	backLabel,
+	showBackButton,
+	backButtonLabel,
 	showMenuButton,
+  onBackButtonClick,
+  onMenuButtonClick,
 	rightContent,
 	children
 }) => (
@@ -19,10 +21,10 @@ export default({
 			<div className="navbar__inner">
 				<div id="left" className="navbar__left">
 					{showMenuButton &&
-						<button className="navbar__button flex flex--center toggle__menu">
+						<button className="navbar__button flex flex--center toggle__menu" onClick={onMenuButtonClick}>
 							Menu
-					</button>}
-					{back && <button id="backButton" className="navbar__button" >{backLabel}</button>}
+            </button>}
+					{showBackButton && <button id="backButton" className="navbar__button" onClick={onBackButtonClick}>{backButtonLabel}</button>}
 				</div>
 				<div className="navbar__center">
 					<span className="navbar__title">
