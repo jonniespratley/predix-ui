@@ -1,17 +1,8 @@
-# px-table-view
-Px-table-view is a Predix UI component that creates a table-style list of items which can be interacted with by the user. It works as users expect from a native mobile app, allowing swiping, tapping, and re-ordering of list items.
+The `px.TableView` is a Predix UI component that creates a table-style list of items which can be interacted with by the user. It works as users expect from a native mobile app, allowing swiping, tapping, and re-ordering of list items.
 
-Use the px-table-view component to create list-style interfaces like menus or to display sets of related data that can be acted upon.
-
+Use the `px.TableView` component to create list-style interfaces like menus or to display sets of related data that can be acted upon.
 
 
-Getting Started
-
-First, install the component via bower on the command line:
-
-```code
-$ npm install @px-components-react/px-table-view --save
-```
 
 Use the component in your application:
 
@@ -36,7 +27,7 @@ import {TableView, TableRow} from 'px-components-react';
 ```react
 const tableItems = [
   {
-    title: 'John Doe', 
+    title: 'John Doe',
     body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     image:'https://placehold.it/80'
   },
@@ -46,4 +37,15 @@ const tableItems = [
 <div>
   <px.TableView items={tableItems} tappable/>
 </div>
+```
+
+
+## Properties
+
+```table
+span: 6
+rows:
+  - Name: label
+    Type: String
+    Description: Label for the button
 ```

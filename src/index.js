@@ -21,7 +21,7 @@ import TableRow from './px-table-view/px-table-row';
 import Tabs from './px-tabs';
 import Tab from './px-tabs/px-tab';
 import ViewHeader from './px-view-header';
-
+import KeyValuePair from './px-key-value-pair';
 import Layout from './px-layout';
 import DrawerLayout from './px-layout/px-drawer-layout';
 
@@ -40,13 +40,7 @@ const Box = ({ title, children}) => (
 );
 
 
-//https://www.predix-ui.com/#/elements/px-key-value-pair
-const KeyValuePair = ({label = 'Name', value = '12345'}) => (
-	<div className='PxKeyValuePair u-mh- flex__item flex flex--col'>
-		<div className="label">{label}</div>
-		<div className="value">{value}</div>
-	</div>
-);
+
 
 
 

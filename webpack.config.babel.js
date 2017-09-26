@@ -6,7 +6,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import SystemBellPlugin from 'system-bell-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
-
+import NpmInstallPlugin from 'npm-install-webpack-plugin';
 
 
 
@@ -167,6 +167,7 @@ const dev = merge(common, siteCommon, {
     docs: [config.paths.docs]
   },
   plugins: [
+    new NpmInstallPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"development"'
     }),

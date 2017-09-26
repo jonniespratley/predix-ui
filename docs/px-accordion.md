@@ -9,8 +9,8 @@ An optional action icon on the right side will fire an event when pressed.
 <div id="app">
   <style>{`
     #app{
-      --px-headings-heading-subsection-color: red;
-      --px-headings-heading-subsection-background: black;
+      --px-headings-heading-subsection-color: black;
+      --px-headings-heading-subsection-background: gray;
     }
   `}</style>
   <px.Accordion headerValue="Header Caption" status="Last Updated: 3 Days Ago">

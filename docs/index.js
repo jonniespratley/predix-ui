@@ -28,6 +28,7 @@ import pxTabsDocs from './px-tabs';
 import pxSpinnerDocs from './px-spinner';
 import pxViewHeaderDocs from './px-view-header';
 import pxLayoutDocs from './px-layout';
+import pxKeyValuePairDocs from './px-key-value-pair';
 
 
 
@@ -61,6 +62,7 @@ const pages = [
       { path: 'px-branding-bar', title: 'Branding Bar', component: pxBrandingBarDocs},
       { path: 'px-card', title: 'Card', component: pxCardDocs },
       { path: 'px-drawer', title: 'Drawer', component: pxDrawerDocs },
+      { path: 'px-key-value-pair', title: 'Key-Value Pair', component: pxKeyValuePairDocs },
       { path: 'px-layout', title: 'Layout', component: pxLayoutDocs },
       { path: 'px-navbar', title: 'Navbar', component: pxNavbarDocs },
       { path: 'px-modal', title: 'Modal', component: pxModalDocs },

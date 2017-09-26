@@ -1,0 +1,75 @@
+/**
+ * px-key-value-pair styles
+ */
+.px-key-value-pair {
+
+  // Settings
+
+  // Tools
+
+  // Generic
+  //@import "px-normalize-design/_generic.normalize.scss";
+  //@import "px-box-sizing-design/_generic.box-sizing.scss";
+  @import "px-helpers-design/_generic.helpers.scss";
+
+  // Base
+  @import "px-headings-design/_base.headings.scss";
+
+  // Meta
+
+  // Objects
+
+  // Component
+
+  .kvp-value {
+    color: var(--px-headings-value-color, black);
+  }
+
+  .kvp-value--alpha {
+    margin-top: calculateRem(-10px);
+  }
+
+  .kvp-value--beta {
+    margin-top: calculateRem(-6px);
+  }
+
+  .kvp-value--gamma {
+    margin-top: calculateRem(-12px);
+  }
+
+  .kvp-value--delta {
+    margin-top: calculateRem(-8px);
+  }
+
+  .kvp-value--epsilon {
+    margin-top: calculateRem(-2px);
+  }
+
+  .kvp-value--regular {
+    margin-top: calculateRem(-4px);
+  }
+
+  .kvp-uom--alpha {
+    margin-left: calculateRem(-12px);
+  }
+
+  .kvp-uom--beta {
+    margin-left: calculateRem(-10px);
+  }
+
+  .kvp-uom--gamma {
+    margin-left: calculateRem(-8px);
+  }
+
+  .kvp-uom--delta {
+    margin-left: calculateRem(-4px);
+  }
+
+  .kvp-uom--epsilon {
+    margin-left: calculateRem(-2px);
+  }
+
+  .kvp-uom--regular {
+    margin-left: calculateRem(0px);
+  }
+}
