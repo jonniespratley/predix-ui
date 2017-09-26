@@ -1,5 +1,8 @@
 import React from 'react';
+import classnames from 'classnames';
 import style from './style.scss';
+import Drawer from '../../px-drawer';
+import Navbar from '../../px-navbar';
 import NavDrawer from '../../px-drawer/px-nav-drawer';
 
 /**
@@ -56,14 +59,12 @@ export default class DrawerLayout extends React.Component {
   }
 
   componentWillUnmount(){
-    console.log('[DrawerLayout.componentWillUnmount]', this);
+
     window.removeEventListener('resize', this.resetLayout.bind(this));
   }
 
   componentDidMount(){
     this.isAttached = true;
-    this.$ = this.refs;
-    console.log('[DrawerLayout.componentDidMount]', this);
   }
 
   /**
@@ -83,29 +84,30 @@ export default class DrawerLayout extends React.Component {
     const navbar = this.navbar;
 
     console.log('narrow', this.props.responsiveWidth, narrow, drawerWidth);
-    //this.setState({isNarrow: narrow});
+    this.setState({isNarrow: narrow});
 
     if (narrow) {
       //drawer.props.opened = false;
       //drawer.props.persistent = false;
-      baseElement.classList.add('is-narrow');
-      contentContainer.classList.add('is-narrow');
-      contentContainer.style.marginLeft = '';
-      contentContainer.style.marginRight = '';
+      //baseElement.classList.add('is-narrow');
+      //contentContainer.classList.add('is-narrow');
+      //contentContainer.style.marginLeft = '';
+      //contentContainer.style.marginRight = '';
       if (navbar && navbar.fixed) {
         navbar.style.left = '';
       }
 
     } else {
-      baseElement.classList.remove('is-narrow');
-      contentContainer.classList.remove('is-narrow');
+      //baseElement.classList.remove('is-narrow');
+      //contentContainer.classList.remove('is-narrow');
       if (navbar && navbar.fixed) {
-        navbar.style.left = drawerWidth + 'px';
+        //navbar.style.left = drawerWidth + 'px';
       }
       if (drawer.props.align == 'right') {
         contentContainer.style.marginLeft = '';
         contentContainer.style.marginRight = drawerWidth + 'px';
       } else {
+        console.warn('changing contentContainer marginLeft');
         contentContainer.style.marginLeft = (drawerWidth) + 'px';
         contentContainer.style.marginRight = '';
       }
@@ -116,28 +118,12 @@ export default class DrawerLayout extends React.Component {
 
   _handleDrawerToggle(){
     var drawer = this.drawer;
-    var drawerWidth = drawer.getWidth() || 200;
-    var contentContainer = this.contentContainer;
-
     drawer.toggle();
-
-    console.log('[DrawerLayout.toggle]', drawer.state, drawer.props)
-    if(drawer && drawer.state.opened){
-      if (drawer.props.align == 'right') {
-        contentContainer.style.marginLeft = '';
-        contentContainer.style.marginRight = drawerWidth + 'px';
-      } else {
-        contentContainer.style.marginLeft = drawerWidth + 'px';
-        contentContainer.style.marginRight = '';
-      }
-    } else {
-      contentContainer.style.marginLeft = '';
-      contentContainer.style.marginRight = '';
-    }
   }
 
   render() {
     const {
+      title = 'Drawer Layout',
       headerContent,
       drawerContent,
       navbarContent,
@@ -148,10 +134,16 @@ export default class DrawerLayout extends React.Component {
       isNarrow
     } = this.state;
 
+    const baseClassNames = classnames(
+      'px-drawer-layout',
+      {'px-drawer-layout--is-narrow': isNarrow}
+    );
+
+
     console.log('DrawerLayout.render', this.props)
     return (
 
-      <div className='px-drawer-layout' ref={(el) => { this.baseElement = el; }}>
+      <div className={baseClassNames} ref={(el) => { this.baseElement = el; }}>
         <div className='flex'>
           <button role="tab" onClick={(e) => this._handleDrawerToggle(e)} className="header__menu js-toggle-menu" title="Toggle nav menu">
             Toggle nav menu
@@ -177,7 +169,11 @@ export default class DrawerLayout extends React.Component {
           </div>
 
           <div id="contentContainer" className="l-drawer-layout__container " ref={(el) => { this.contentContainer = el; }}>
-            <nav id="navbarContent">{navbarContent}</nav>
+            <nav id="navbarContent">
+              <Navbar title={title}
+                showMenuButton={isNarrow}
+                onMenuButtonClick={(e) => this._handleDrawerToggle(e)}/>
+            </nav>
             <div id="content">{children}</div>
           </div>
         </div>

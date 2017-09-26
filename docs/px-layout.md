@@ -17,6 +17,8 @@ This is used for layouts with a drawer that is rendered offscreen on small viewp
 
 ```react
 responsive:true
+state:
+  opened: false
 ---
 const drawerContent = (
   <div>
@@ -26,9 +28,6 @@ const drawerContent = (
   </div>
 );
 
-const navbarContent = (
-  <px.Navbar title='My App' showMenuButton/>
-);
 const headerContent = (
   <px.BrandingBar/>
 );
@@ -40,10 +39,11 @@ const style = {
 
 <div style={style}>
   <px.DrawerLayout
+    title='My App'
     headerContent={headerContent}
-    navbarContent={navbarContent}
     drawerContent={drawerContent}>
 
+    
 
     <px.Card title='Card'>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
