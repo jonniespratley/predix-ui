@@ -96,6 +96,7 @@ export default class Drawer extends React.Component {
       overlayStyle,
       onOverlayClick,
 
+      type = 'persistent',
       align = 'left',
       children
     } = this.props;
@@ -116,6 +117,7 @@ export default class Drawer extends React.Component {
 
     const drawerClasses = classnames(
       className,
+      { [`${className}--${type}`]: true },
       { [`${className}--${align}`]: true },
       {[`${className}--is-open`]: open},
       {[`${className}--is-docked`]: docked},
