@@ -13,7 +13,7 @@ This is the documentation.
 
 state:
   overlay: false
-  docked: true
+  docked: false
   clicked: 0
   open: false
 ---

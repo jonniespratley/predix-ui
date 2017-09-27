@@ -127,6 +127,7 @@ const pages = [
       { path: 'px-layout', title: 'Layout', component: pxLayoutDocs },
       { path: 'px-navbar', title: 'Navbar', component: pxNavbarDocs },
       { path: 'px-modal', title: 'Modal', component: pxModalDocs },
+      { path: 'px-overlay', title: 'Overlay', component: pxOverlayDocs },
       { path: 'px-spinner', title: 'Spinner', component: pxSpinnerDocs },
       { path: 'px-popover', title: 'Popover', component: pxPopoverDocs },
       { path: 'px-progress-bar', title: 'Progress Bar', component: pxProgressbarDocs },

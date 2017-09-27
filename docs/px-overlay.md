@@ -1,13 +1,19 @@
-# px-overlay
 This is the documentation.
 
 
 ## Usage
 
 ```react
-<PxOverlay>
-  This is the children
-</PxOverlay>
+state:
+  open: false
+---
+const {Overlay} = px;
+<div>
+  <button onClick={(e) => setState({open: !state.open})}>Open Overlay</button>
+  <Overlay visible={state.open} onOverlayClick={(e) => setState({open: !state.open})}>
+    This is the children
+  </Overlay>
+</div>
 ```
 
 
