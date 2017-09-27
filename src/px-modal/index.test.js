@@ -1,12 +1,12 @@
 import { expect } from 'chai';
 import React from 'react';
 import {shallow} from 'enzyme';
-import {{pascalCase name}} from './';
+import PxModal from './';
 
-describe('{{dashCase name}}', () => {
+describe('px-modal', () => {
   test('should...', () =>{
     const wrapper = shallow(
-      <{{pascalCase name}}/>
+      <PxModal/>
     );
     console.log(wrapper.debug());
     expect(true).to.equal(true);

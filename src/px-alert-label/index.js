@@ -1,10 +1,11 @@
 import React from 'react';
+import classnames from 'classnames';
 import style from './style.scss';
 
 /**
  * px-alert-label component
  */
-export default ({label, type, badge, children}) => {
+export default ({label, type = 'info', badge, children}) => {
   const _isCircle = (t) =>{
     return t === 'unknown';
   };
@@ -23,7 +24,7 @@ export default ({label, type, badge, children}) => {
       return '3,3 3,30 30,30 30,3';
     }
   };
-  const classNames = `alertlabel ${type} ${badge}`;
+  const classNames = classnames(alertlabel, type, badge);
 
   return (
     <div className='px-alert-label'>

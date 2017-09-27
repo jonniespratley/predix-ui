@@ -51,7 +51,7 @@ class Tabs extends BaseComponent {
     }
     return (
       <ul className="tabs-container__nav flex">
-        {this.props.children.map(labels.bind(this))}
+        {this.props.children && this.props.children.map(labels.bind(this))}
       </ul>
     );
   }
@@ -59,7 +59,7 @@ class Tabs extends BaseComponent {
 	_renderContent() {
 		return (
 			<div className='tabs-container__content'>
-				{this.props.children[this.state.selected]}
+				{this.props.children && this.props.children[this.state.selected]}
 			</div>
 		);
 	}

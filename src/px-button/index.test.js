@@ -1,9 +1,16 @@
 import { expect } from 'chai';
 import React from 'react';
 import {shallow} from 'enzyme';
-import PxButton from '../../src/px-button';
+import PxButton from './';
 
 describe('px-button', () => {
+  test('should...', () =>{
+    const wrapper = shallow(
+      <PxButton/>
+    );
+    console.log(wrapper.debug());
+    expect(true).to.equal(true);
+  });
   test('should render button', () => {
     const wrapper = shallow(<PxButton/>);
     console.log(wrapper.debug());

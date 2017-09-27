@@ -1,12 +1,12 @@
 import { expect } from 'chai';
 import React from 'react';
 import {shallow} from 'enzyme';
-import PxIcons from '../../src/px-icons';
+import PxDatatable from './';
 
-describe('px-icons', () => {
+describe('px-datatable', () => {
   test('should...', () =>{
     const wrapper = shallow(
-      <PxIcons/>
+      <PxDatatable/>
     );
     console.log(wrapper.debug());
     expect(true).to.equal(true);

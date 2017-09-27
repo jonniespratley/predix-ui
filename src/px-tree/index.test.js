@@ -1,12 +1,12 @@
 import { expect } from 'chai';
 import React from 'react';
 import {shallow} from 'enzyme';
-import PxPopover from '../../src/px-popover';
+import PxTree from './';
 
-describe('px-popover', () => {
+describe('px-tree', () => {
   test('should...', () =>{
     const wrapper = shallow(
-      <PxPopover/>
+      <PxTree/>
     );
     console.log(wrapper.debug());
     expect(true).to.equal(true);

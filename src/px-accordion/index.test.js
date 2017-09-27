@@ -1,12 +1,12 @@
 import { expect } from 'chai';
 import React from 'react';
 import {shallow} from 'enzyme';
-import {{pascalCase name}} from './';
+import PxAccordion from './';
 
-describe('{{dashCase name}}', () => {
+describe('px-accordion', () => {
   test('should...', () =>{
     const wrapper = shallow(
-      <{{pascalCase name}}/>
+      <PxAccordion/>
     );
     console.log(wrapper.debug());
     expect(true).to.equal(true);

@@ -122,7 +122,8 @@
     "setupTestFrameworkScriptFile": "<rootDir>__tests__/setup.js",
     "collectCoverage": true,
     "testMatch": [
-      "**/__tests__/**/*.test.js?(x)"
+      "**/__tests__/**/*.test.js?(x)",
+      "**/src/**/*.test.js?(x)"
     ],
     "moduleFileExtensions": [
       "js",

@@ -1,12 +1,12 @@
 import { expect } from 'chai';
 import React from 'react';
 import {shallow} from 'enzyme';
-import PxProgressBar from '../../src/px-progress-bar';
+import PxChip from './';
 
-describe('px-progress-bar', () => {
+describe('px-chip', () => {
   test('should...', () =>{
     const wrapper = shallow(
-      <PxProgressBar/>
+      <PxChip/>
     );
     console.log(wrapper.debug());
     expect(true).to.equal(true);

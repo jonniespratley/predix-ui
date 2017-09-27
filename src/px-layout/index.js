@@ -1,7 +1,7 @@
 import React from 'react';
 
 import classnames from 'classnames';
-import style from './style.scss';
+import stylesheet from './style.scss';
 
 /**
  * px-layout component
@@ -35,6 +35,6 @@ export default ({
     {'layout--full': full}
   )} style={style}>
     {children}
-    <style jsx>{style}</style>
+    <style jsx>{stylesheet}</style>
   </div>
 );

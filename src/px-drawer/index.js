@@ -45,11 +45,14 @@ export default class Drawer extends React.Component {
     if (this.hasUnprefixedTransform) {
       this._setupTouchHandlers();
     }
-    this.sideNavContent.addEventListener('click', (e) =>{
-      if(!this.state.docked){
-        this._close();
-      }
-    });
+    if(this.sideNavContent){
+      this.sideNavContent.addEventListener('click', (e) =>{
+        if(!this.state.docked){
+          this._close();
+        }
+      });
+    }
+
   }
 
   componentWillReceiveProps(nextProps){
@@ -59,9 +62,12 @@ export default class Drawer extends React.Component {
   _setupTouchHandlers() {
     this.touchStartX = null;
     this.sideNavTransform = null;
-    this.sideNavContent.addEventListener('touchstart', this.onSideNavTouchStart.bind(this));
-    this.sideNavContent.addEventListener('touchmove', this.onSideNavTouchMove.bind(this));
-    this.sideNavContent.addEventListener('touchend', this.onSideNavTouchEnd.bind(this));
+    if(this.sideNavContent){
+      this.sideNavContent.addEventListener('touchstart', this.onSideNavTouchStart.bind(this));
+      this.sideNavContent.addEventListener('touchmove', this.onSideNavTouchMove.bind(this));
+      this.sideNavContent.addEventListener('touchend', this.onSideNavTouchEnd.bind(this));  
+    }
+
   }
 
   onSideNavTouchStart(e) {

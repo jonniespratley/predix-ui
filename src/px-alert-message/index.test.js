@@ -1,12 +1,12 @@
 import { expect } from 'chai';
 import React from 'react';
 import {shallow} from 'enzyme';
-import {{pascalCase name}} from './';
+import PxAlertMessage from './';
 
-describe('{{dashCase name}}', () => {
+describe('px-alert-message', () => {
   test('should...', () =>{
     const wrapper = shallow(
-      <{{pascalCase name}}/>
+      <PxAlertMessage/>
     );
     console.log(wrapper.debug());
     expect(true).to.equal(true);

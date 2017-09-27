@@ -1,12 +1,12 @@
 import { expect } from 'chai';
 import React from 'react';
 import {shallow} from 'enzyme';
-import {{pascalCase name}} from './';
+import PxOverlay from './';
 
-describe('{{dashCase name}}', () => {
+describe('px-overlay', () => {
   test('should...', () =>{
     const wrapper = shallow(
-      <{{pascalCase name}}/>
+      <PxOverlay/>
     );
     console.log(wrapper.debug());
     expect(true).to.equal(true);

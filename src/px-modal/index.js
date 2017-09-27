@@ -1,11 +1,14 @@
 import React from 'react';
+
+import Overlay from '../px-overlay';
 import classnames from 'classnames';
-import style from './style.scss';
+import stylesheet from './style.scss';
 
 /**
  * px-modal component
  */
 export default ({
+  style,
   modalHeading = 'Modal',
   btnModalNegative,
   onBtnModalNegativeClick,
@@ -16,12 +19,6 @@ export default ({
   btnModalPositiveDisabled = false,
   children
 }) =>  {
-
-    const modalBackdropClassnames = classnames(
-      'modal__backdrop',
-      'fadeout',
-      {'modal__backdrop--invisible' : !visible}
-    );
 
     const modalClassnames = classnames(
       'modal',
@@ -34,7 +31,7 @@ export default ({
 
   return (
   <div className='px-modal'>
-    <div className={modalBackdropClassnames} onClick={(e) => onBackdropClick(e)}></div>
+    <Overlay visible={visible} onOverlayClick={(e) => onBackdropClick(e)}/>
     <div className={modalClassnames} role="dialog">
       <section className="modal__content" role='region'>
         <h3 className="modal__title epsilon weight--normal">{modalHeading}</h3>
@@ -54,6 +51,6 @@ export default ({
         </div>
       </section>
     </div>
-    <style jsx>{style}</style>
+    <style jsx>{stylesheet}</style>
   </div>);
 }

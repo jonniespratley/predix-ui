@@ -1,12 +1,12 @@
 import { expect } from 'chai';
 import React from 'react';
 import {shallow} from 'enzyme';
-import PxDropdown from '../../src/px-dropdown';
+import PxBreadcrumbs from './';
 
-describe('px-dropdown', () => {
+describe('px-breadcrumbs', () => {
   test('should...', () =>{
     const wrapper = shallow(
-      <PxDropdown/>
+      <PxBreadcrumbs/>
     );
     console.log(wrapper.debug());
     expect(true).to.equal(true);

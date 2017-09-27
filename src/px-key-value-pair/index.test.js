@@ -1,12 +1,12 @@
 import { expect } from 'chai';
 import React from 'react';
 import {shallow} from 'enzyme';
-import PxTree from '../../src/px-tree';
+import PxKeyValuePair from './';
 
-describe('px-tree', () => {
+describe('px-key-value-pair', () => {
   test('should...', () =>{
     const wrapper = shallow(
-      <PxTree/>
+      <PxKeyValuePair/>
     );
     console.log(wrapper.debug());
     expect(true).to.equal(true);

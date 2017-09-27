@@ -1,12 +1,12 @@
 import { expect } from 'chai';
 import React from 'react';
 import {shallow} from 'enzyme';
-import {{pascalCase name}} from './';
+import PxPopover from './';
 
-describe('{{dashCase name}}', () => {
+describe('px-popover', () => {
   test('should...', () =>{
     const wrapper = shallow(
-      <{{pascalCase name}}/>
+      <PxPopover/>
     );
     console.log(wrapper.debug());
     expect(true).to.equal(true);

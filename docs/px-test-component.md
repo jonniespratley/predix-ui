@@ -1,15 +1,15 @@
-# {{dashCase name}}
-The `<{{unprefixedName name}}/>` component enables you to ...
+# px-test-component
+The `<test-component/>` component enables you to ...
 
 
 
 ## Usage
 
 ```react
-const { {{unprefixedName name}} } = px;
-<{{unprefixedName name}}>
+const { test-component } = px;
+<test-component>
   This is the children
-</{{unprefixedName name}}>
+</test-component>
 ```
 
 

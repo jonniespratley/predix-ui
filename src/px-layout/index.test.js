@@ -1,12 +1,12 @@
 import { expect } from 'chai';
 import React from 'react';
 import {shallow} from 'enzyme';
-import PxChip from '../../src/px-chip';
+import PxLayout from './';
 
-describe('px-chip', () => {
+describe('px-layout', () => {
   test('should...', () =>{
     const wrapper = shallow(
-      <PxChip/>
+      <PxLayout/>
     );
     console.log(wrapper.debug());
     expect(true).to.equal(true);

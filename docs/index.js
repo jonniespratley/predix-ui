@@ -28,36 +28,20 @@ import pxChipDocs from './px-chip';
 import pxDrawerDocs from './px-drawer';
 import pxDatatableDocs from './px-datatable';
 import pxDropDownDocs from './px-dropdown';
-
 import pxGridDocs from './px-grid';
 import pxLayoutDocs from './px-layout';
-
 import pxModalDocs from './px-modal';
 import pxNavbarDocs from './px-navbar';
-
-
 import pxSpinnerDocs from './px-spinner';
-
 import pxTableViewDocs from './px-table-view';
 import pxTabsDocs from './px-tabs';
-
-
-
 import pxProgressbarDocs from './px-progress-bar';
 import pxPopoverDocs from './px-popover';
-
-
 import pxOverlayDocs from './px-overlay';
-
-
-
 import pxTileDocs from './px-tile';
 import pxTreeDocs from './px-tree';
-
 import pxKeyValuePairDocs from './px-key-value-pair';
-
 import pxViewHeaderDocs from './px-view-header';
-
 
 
 const logo = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/predix_ds_logo.webp';
@@ -70,8 +54,10 @@ const documentationImports = {
 };
 
 
-const title = `${NAME} v${VERSION}`; // eslint-disable-line no-undef
+//const title = `${NAME} v${VERSION}`; // eslint-disable-line no-undef
+const title = `px-react v${VERSION}`;
 const project = `${USER}/${NAME}`; // eslint-disable-line no-undef
+
 const responsiveSizes = [
   {name: 'mobile', width: 320, height: 568},
   {name: 'tablet', width: 1024, height: 768},
@@ -122,7 +108,6 @@ const pages = [
       { path: 'px-datatable', title: 'DataTable', component: pxDatatableDocs },
       { path: 'px-dropdown', title: 'Dropdown', component: pxDropDownDocs },
       { path: 'px-grid', title: 'Grid', component: pxGridDocs },
-
       { path: 'px-key-value-pair', title: 'Key-Value Pair', component: pxKeyValuePairDocs },
       { path: 'px-layout', title: 'Layout', component: pxLayoutDocs },
       { path: 'px-navbar', title: 'Navbar', component: pxNavbarDocs },
@@ -151,7 +136,7 @@ ReactDOM.render(
       direction="right"
     />
     <Catalog
-      logoSrc={logo}
+      //logoSrc={logo}
       imports={documentationImports}
       pages={pages}
       specimens={{

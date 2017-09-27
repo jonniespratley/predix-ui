@@ -1,12 +1,12 @@
 import { expect } from 'chai';
 import React from 'react';
 import {shallow} from 'enzyme';
-import PxGrid from '../../src/px-grid';
+import PxCard from './';
 
-describe('px-grid', () => {
+describe('px-card', () => {
   test('should...', () =>{
     const wrapper = shallow(
-      <PxGrid/>
+      <PxCard/>
     );
     console.log(wrapper.debug());
     expect(true).to.equal(true);
