@@ -24,7 +24,7 @@ export default ({label, type = 'info', badge, children}) => {
       return '3,3 3,30 30,30 30,3';
     }
   };
-  const classNames = classnames(alertlabel, type, badge);
+  const classNames = classnames('alertlabel', type, badge);
 
   return (
     <div className='px-alert-label'>
