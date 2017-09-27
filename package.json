@@ -126,7 +126,9 @@
     ],
     "moduleFileExtensions": [
       "js",
-      "jsx"
+      "jsx",
+      "scss",
+      "css"
     ],
     "modulePathIgnorePatterns": [
       "bower_components",
