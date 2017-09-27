@@ -10,6 +10,13 @@ The `px.Navbar` component is a responsive mobile first navigation bar.
   backButtonLabel='< Back'
   showBackButton/>
 ```
+```react
+<px.Navbar
+  title='Navbar'
+  subtitle='Subtitle'
+  
+  showMenuButton/>
+```
 
 ## Properties
 

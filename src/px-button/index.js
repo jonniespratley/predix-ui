@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
-import style from './style.scss';
+import style from './style';
 
 export default({
 	label = 'Button',
@@ -37,10 +37,7 @@ export default({
     <button className={cssClasses} type={type} onClick={onClick}>
       {label}
       {children}
-      <style jsx>
-        {
-            style
-        }</style>
+      <style jsx>{style}</style>
     </button>
 	);
 }

@@ -49,7 +49,7 @@ $drawer-max-width: 300px;
 
   		&--is-open{
   			visibility: visible;
-  			transform: translateX(0) !important;
+  			transform: translateX(0);
   		}
 
 

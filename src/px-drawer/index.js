@@ -13,26 +13,43 @@ import stylesheet from './style.scss';
 export default class Drawer extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      open: props.open || false
+    };
+  }
+
+  isOpen(){
+    return this.state.open;
   }
 
   toggle(){
-    console.log('toggle');
+    if(this.isOpen()){
+      this._close();
+    } else {
+      this._open();
+    }
   }
 
   _open(){
-    console.log('open');
+    this.setState({open: true});
   }
 
   _close(){
-    console.log('close');
+    this.setState({open: false});
+    this.sideNavContent.style.transform = '';
   }
+
   componentDidMount() {
     this.hasUnprefixedTransform = 'transform' in document.documentElement.style;
     if (this.hasUnprefixedTransform) {
       this._setupTouchHandlers();
     }
-    console.log('componentDidMount', this);
   }
+
+  componentWillReceiveProps(nextProps){
+    this.setState({open: nextProps.open});
+  }
+
   _setupTouchHandlers() {
     this.touchStartX = null;
     this.sideNavTransform = null;
@@ -67,21 +84,17 @@ export default class Drawer extends React.Component {
       style,
       className = 'drawer',
       containerClassName,
-
-      open,
-
       overlay,
       docked,
-
       overlayClassName = 'drawer__overlay',
       overlayStyle,
       onOverlayClick,
 
-      zDepth = 2,
       align = 'left',
       children
     } = this.props;
 
+    const {open} = this.state;
 
     const baseClassName = 'px-drawer';
     const baseClasses = classnames(
@@ -123,7 +136,6 @@ Drawer.propTypes = {
 
 Drawer.defaultProps = {
   opened: false,
-  fixed: false,
-  persistent: false,
+  docked: true,
   align: 'left'
 };

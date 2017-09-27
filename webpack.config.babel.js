@@ -38,11 +38,13 @@ const analyzeBundle = new BundleAnalyzerPlugin({
 });
 
 const extractCss = new ExtractTextPlugin({
-	filename: `${pkg.name}-[name].css`
+	filename: `${pkg.name}-[name].css`,
+  disable: true
 });
 
 const extractSass = new ExtractTextPlugin({
-	filename: `${pkg.name}.css`
+	filename: `${pkg.name}.css`,
+  disable: false
 });
 
 const cssRules = {
@@ -50,7 +52,10 @@ const cssRules = {
   use: extractCss.extract({
     fallback: 'style-loader',
     //resolve-url-loader may be chained before sass-loader if necessary
-    use: ['css-loader', 'postcss-loader']
+    use: [
+      'css-loader',
+      'postcss-loader'
+    ]
   })
 };
 
@@ -60,7 +65,7 @@ const sassRules = {
     fallback: 'style-loader',
     use: [
       'babel-loader',
-      //'raw-loader',
+      'raw-loader',
       {
         loader: 'css-loader',
         options: {
@@ -172,13 +177,11 @@ const dev = merge(common, siteCommon, {
       'process.env.NODE_ENV': '"development"'
     }),
     new webpack.HotModuleReplacementPlugin(),
-    extractSass,
-    extractCss
+    extractSass
+    //extractCss
   ],
   module: {
     rules: [
-      cssRules,
-      sassRules,
       {
         test: /\.js$/,
         use: {
@@ -191,7 +194,9 @@ const dev = merge(common, siteCommon, {
           config.paths.docs,
           config.paths.src
         ]
-      }
+      },
+      cssRules,
+      sassRules
     ]
   },
   devServer: {

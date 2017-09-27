@@ -20,6 +20,7 @@ import pxAlertMessageDocs from './px-alert-message';
 import pxButtonDocs from './px-button';
 import pxBrandingBarDocs from './px-branding-bar';
 import pxCardDocs from './px-card';
+import pxChipDocs from './px-chip';
 import pxDrawerDocs from './px-drawer';
 import pxNavbarDocs from './px-navbar';
 import pxModalDocs from './px-modal';
@@ -61,6 +62,7 @@ const pages = [
       { path: 'px-button', title: 'Button', component: pxButtonDocs},
       { path: 'px-branding-bar', title: 'Branding Bar', component: pxBrandingBarDocs},
       { path: 'px-card', title: 'Card', component: pxCardDocs },
+      { path: 'px-chip', title: 'Chip', component: pxChipDocs },
       { path: 'px-drawer', title: 'Drawer', component: pxDrawerDocs },
       { path: 'px-key-value-pair', title: 'Key-Value Pair', component: pxKeyValuePairDocs },
       { path: 'px-layout', title: 'Layout', component: pxLayoutDocs },

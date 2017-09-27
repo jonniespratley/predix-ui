@@ -11,14 +11,9 @@
       body {
         background: #eee;
         padding: .5rem;
+        width: 100%;
+        height: 100%;
       }
-
-      html .box,
-      body .box {
-        background: #fff;
-        padding: 1rem;
-      }
-
     </style>
 
   </head>
@@ -55,9 +50,15 @@
       			<div id="app">
       				<div class="box">
       					<h1>PxReact Component Example</h1>
-      					<p>Here is an example.</p>
+      					<p>Here is an example of using the px-components-react library with custom css properties.</p>
       				</div>
-              <px.Button label='Button'></px.Button>
+
+
+              <px.Card title='Card Title'>
+                This is the card content.
+                <px.Button label='Button'></px.Button>
+                <px.Button label='Button' large></px.Button>
+              </px.Card>
       			</div>
       		)
       	}

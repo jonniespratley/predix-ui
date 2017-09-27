@@ -9,59 +9,39 @@ This is the documentation.
 
 
 ```react
+frame: true
 state:
-  overlay: false
-  docked: false
+  overlay: true
+  docked: true
   clicked: 0
   open: false
 ---
 const style = {
-  height: 400,
+  height: 300,
   overflow: 'hidden',
   position: 'relative'
 };
 <div>
-<button onClick={() => setState({open: (state.open ? false : true)})}>Toggle</button>
+  <div style={style}>
+    <px.Navbar
+      title='Navbar'
+      subtitle='Subtitle'
+      onMenuButtonClick={()=> setState({open: !state.open})}
+      showMenuButton/>
 
-<label>
-  docked:
-  <input
-    type='checkbox'
-    onClick={() => setState({docked: !state.docked})}
-    checked={state.docked}/>
-</label>
+    <px.Drawer
+      overlay={state.overlay}
+      onOverlayClick={(e) => setState({open: !state.open})}
+      open={state.open}
+      docked={state.docked}>
+      This is the children
+    </px.Drawer>
 
-<label>
-  overlay:
-  <input
-    type='checkbox'
-    onClick={() => setState({overlay: !state.overlay})}
-    checked={state.overlay}/>
-</label>
+    <div className='content'>
+      <p>This is content</p>
+    </div>
 
-
-
-<p>
-  {state.open && 'Open'}
-  {!state.open && 'Closed'}
-</p>
-
-
-<div style={style}>
-
-  <px.Drawer
-    overlay={state.overlay}
-    onOverlayClick={(e) => setState({open: !state.open})}
-    open={state.open}
-    docked={state.docked}>
-    This is the children
-  </px.Drawer>
-
-  <div className='content'>
-    <p>THis is content</p>
   </div>
-
-</div>
 </div>
 ```
 

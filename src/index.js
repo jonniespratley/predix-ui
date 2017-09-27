@@ -11,6 +11,7 @@ import Button from './px-button';
 import BrandingBar from './px-branding-bar';
 import PredixSvgLogo from './px-branding-bar/px-predix-svg-logo';
 import Card from './px-card';
+import Chip from './px-chip';
 import Drawer from './px-drawer';
 import NavDrawer from './px-drawer/px-nav-drawer';
 import Modal from './px-modal';
@@ -57,6 +58,7 @@ module.exports = {
     ActionSheet,
     Button,
     Card,
+    Chip,
 		Drawer,
 		NavDrawer,
     BrandingBar,
