@@ -5,16 +5,7 @@
 
 
  }
- /*
-  * Copyright (c) 2016 GE Global Research. All rights reserved.
-  *
-  * The copyright to the computer software herein is the property of
-  * GE Global Research. The software may be used and/or copied only
-  * with the written permission of GE Global Research or in accordance
-  * with the terms and conditions stipulated in the agreement/contract
-  * under which the software has been supplied.
-  */
- @charset "utf-8";
+
 
  $inuit-widths-columns-responsive                : ( 1, 2, 3, 4, 6 );
  $inuit-base-spacing-unit: 1rem;
@@ -101,7 +92,7 @@
  $inuit-enable-layout__item--center              : true;
  $inuit-enable-layout__item--bottom              : true;
  $inuit-global-border-box                        : true;
- //@import "px-layout-design/_objects.layout.scss";
+ @import "px-layout-design/_objects.layout.scss";
 
 
 
@@ -165,8 +156,9 @@
 
  /// Generic
  ///--------------------------------------------------------
- @import "px-normalize-design/_generic.normalize.scss";
- @import "px-box-sizing-design/_generic.box-sizing.scss";
+
+ // @import "px-normalize-design/_generic.normalize.scss";
+// @import "px-box-sizing-design/_generic.box-sizing.scss";
  @import "px-helpers-design/_generic.helpers.scss";
 
  ///Components

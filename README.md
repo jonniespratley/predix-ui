@@ -3,21 +3,7 @@ Why? Well the current `px` component library is built with Polymer and Web Compo
 
 [![Build Status](https://travis-ci.org/jonniespratley/px-components-react.svg?branch=master)](https://travis-ci.org/jonniespratley/px-components-react) [![bitHound Score](https://www.bithound.io/github/jonniespratley/px-components-react/badges/score.svg)](https://www.bithound.io/github/jonniespratley/px-components-react) [![Dependency Status](https://david-dm.org/jonniespratley/px-components-react.svg)](https://david-dm.org/jonniespratley/px-components-react) [![codecov](https://codecov.io/gh/jonniespratley/px-components-react/branch/master/graph/badge.svg)](https://codecov.io/gh/jonniespratley/px-components-react)
 
-## Getting Started
-To use this library simply install it with `npm` or `yarn`:
 
-```
-$ npm install px-components-react
-```
-
-### Download
-You can grab the latest release below:
-
-```download
-title: px-components-react-v0.0.1(.zip)
-subtitle: 150 KB
-url: https://github.com/jonniespratley/px-components-react/archive/v0.0.1.zip
-```
 
 ### Build
 

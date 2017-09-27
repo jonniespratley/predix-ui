@@ -45,12 +45,39 @@ const documentationImports = {
 
 const title = `${NAME} v${VERSION}`; // eslint-disable-line no-undef
 const project = `${USER}/${NAME}`; // eslint-disable-line no-undef
-
+const responsiveSizes = [
+  {name: 'mobile', width: 320, height: 568},
+  {name: 'tablet', width: 1024, height: 768},
+  {name: 'desktop', width: 1280, height: 960}
+];
 const pages = [
   {
     path: '/',
     title: 'Introduction',
     component: require('../README.md')
+  },
+  {
+    path: '/getting-started',
+    title: 'Getting Started',
+    pages: [
+      {path: 'installation', title: 'Installation', component: require('./installation.md')}
+    ]
+  },
+  {
+    path: '/layout',
+    title: 'Layout',
+    responsiveSizes: responsiveSizes,
+    styles: [
+      '/px-components-react.css'
+    ],
+    pages: [
+      {path: 'basics', title: 'Basics', component: require('./layout-basics.md')},
+      {
+        path: 'grid',
+        title: 'Grid',
+        responsiveSizes: responsiveSizes,
+        component: require('./layout-grid.md')}
+    ]
   },
   {
     title: 'Components',
