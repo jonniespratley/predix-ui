@@ -1,7 +1,54 @@
 /**
  * px-progress-bar styles
  */
- .px-progress-bar {
-   background: green;
-   padding: 1rem;
- }
+.px-progress-bar {
+  // Component
+
+  $px-progress-bar-fill-color      : var(--px-progress-bar-fill-color,black);
+  $px-progress-bar-background-color: var(--px-progress-bar-background-color, lightgray);
+  $px-progress-bar-height          : var(--px-progress-bar-height, 5px);
+  @keyframes progress {
+    0% {
+      left     : 0;
+      right    : 100%;
+      transform: scaleX(0);
+    }
+    50% {
+      left     : 0;
+      right    : 0;
+      transform: scaleX(1);
+    }
+    100% {
+      left     : 100%;
+      right    : 0;
+      transform: scaleX(0);
+    }
+  }
+
+  height: $px-progress-bar-height;
+
+  .background {
+    background-color: $px-progress-bar-background-color;
+    height          : $px-progress-bar-height;
+  }
+
+  .fill {
+    background-color        : $px-progress-bar-fill-color;
+    height                  : $px-progress-bar-height;
+    transition              : transform 1s cubic-bezier(.78,.13,.16,.87);
+    -webkit-transform-origin: left center;
+    transform-origin        : left center;
+    -webkit-transform       : scaleX(0);
+    transform               : scaleX(0);
+    overflow                : hidden;
+  }
+
+  &.infinite {
+    .fill {
+      position : relative;
+      animation: progress 2s cubic-bezier(.78,.13,.16,.87) infinite;
+    }
+  }
+
+
+}

@@ -6,42 +6,38 @@ import { Catalog, CodeSpecimen, ReactSpecimen } from 'catalog';
 
 //import 'purecss/build/pure.css';
 import './main.css';
-
-
-
 import {px} from '../src';
-import PxAlertLabel from '../src/px-alert-label';
 
 // TODO: Use this format
-import pxAccordionDocs from './px-accordion';
-import pxActionSheetDocs from './px-action-sheet';
-import pxAlertLabelDocs from './px-alert-label';
-import pxAlertMessageDocs from './px-alert-message';
+import pxAccordionDocs from '../src/px-accordion/README';
+import pxActionSheetDocs from '../src/px-action-sheet/README';
+import pxAlertLabelDocs from '../src/px-alert-label/README';
+import pxAlertMessageDocs from '../src/px-alert-message/README';
 
-import pxButtonDocs from './px-button';
-import pxBreadcrumbsDocs from './px-breadcrumbs';
-import pxBrandingBarDocs from './px-branding-bar';
+import pxButtonDocs from '../src/px-button/README';
+import pxBreadcrumbsDocs from '../src/px-breadcrumbs/README';
+import pxBrandingBarDocs from '../src/px-branding-bar/README';
 
-import pxCardDocs from './px-card';
-import pxChipDocs from './px-chip';
+import pxCardDocs from '../src/px-card/README';
+import pxChipDocs from '../src/px-chip/README';
 
-import pxDrawerDocs from './px-drawer';
-import pxDatatableDocs from './px-datatable';
-import pxDropDownDocs from './px-dropdown';
-import pxGridDocs from './px-grid';
-import pxLayoutDocs from './px-layout';
-import pxModalDocs from './px-modal';
-import pxNavbarDocs from './px-navbar';
-import pxSpinnerDocs from './px-spinner';
-import pxTableViewDocs from './px-table-view';
-import pxTabsDocs from './px-tabs';
-import pxProgressbarDocs from './px-progress-bar';
-import pxPopoverDocs from './px-popover';
-import pxOverlayDocs from './px-overlay';
-import pxTileDocs from './px-tile';
-import pxTreeDocs from './px-tree';
-import pxKeyValuePairDocs from './px-key-value-pair';
-import pxViewHeaderDocs from './px-view-header';
+import pxDrawerDocs from '../src/px-drawer/README';
+import pxDatatableDocs from '../src/px-datatable/README';
+import pxDropDownDocs from '../src/px-dropdown/README';
+import pxGridDocs from '../src/px-grid/README';
+import pxLayoutDocs from '../src/px-layout/README';
+import pxModalDocs from '../src/px-modal/README';
+import pxNavbarDocs from '../src/px-navbar/README';
+import pxSpinnerDocs from '../src/px-spinner/README';
+import pxTableViewDocs from '../src/px-table-view/README';
+import pxTabsDocs from '../src/px-tabs/README';
+import pxProgressbarDocs from '../src/px-progress-bar/README';
+import pxPopoverDocs from '../src/px-popover/README';
+import pxOverlayDocs from '../src/px-overlay/README';
+import pxTileDocs from '../src/px-tile/README';
+import pxTreeDocs from '../src/px-tree/README';
+import pxKeyValuePairDocs from '../src/px-key-value-pair/README';
+import pxViewHeaderDocs from '../src/px-view-header/README';
 
 
 const logo = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/predix_ds_logo.webp';
@@ -49,8 +45,7 @@ const logo = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/predix_ds_logo.
 // Add your documentation imports here. These are available to
 // React specimen. Do NOT pass React here as Catalog does that.
 const documentationImports = {
-  px,
-  PxAlertLabel
+  px
 };
 
 

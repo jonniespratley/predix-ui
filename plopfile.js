@@ -17,97 +17,115 @@ pkg: look up a property from a package.json file in the same folder as the plopf
 
 */
 module.exports = function(plop) {
-  const generators = plop.getGeneratorList();
-  console.log('generators', generators)
+
+
   plop.addHelper("upperCase", function(text) {
-    return text.toUpperCase();
-  });
+		return text.toUpperCase();
+	});
+
   plop.addHelper('unprefixedName', function(text) {
-    return text.replace(ns, '');
-  });
+		return text.replace(ns, '');
+	});
 
-  //component
-  plop.setGenerator("component", {
-    description: "Create a new React Component",
-    prompts: [
-      {
-        type: "input",
-        name: "name",
-        message: "What is the name?"
-      }
-    ],
-    actions: [
-      //component
-      {
-        type: "add",
-        path: "src/{{dashCase name}}/index.js",
-        templateFile: "plop-templates/component.tmpl.js"
-      },
-      //style
-      {
-        type: "add",
-        path: "src/{{dashCase name}}/style.scss",
-        templateFile: "plop-templates/component.tmpl.scss"
-      },
-      //test
-      {
-        type: "add",
-        path: "src/{{dashCase name}}/spec.test.js",
-        templateFile: "plop-templates/component.test.tmpl.js"
-      },
-      //readme
-      {
-        type: "add",
-        path: "src/{{dashCase name}}/README.md",
-        templateFile: "plop-templates/component.tmpl.md"
-      }
-    ]
-  });
+	//component
+	plop.setGenerator("component", {
+		description: "Create a new React Component",
+		prompts: [
+			{
+				type: "input",
+				name: "name",
+				message: "What is the name?"
+			}
+		],
+		actions: [
+			//component
+			{
+				type: "add",
+				path: "src/{{dashCase name}}/index.js",
+				templateFile: "plop-templates/component.tmpl.js"
+			},
+			//style
+			{
+				type: "add",
+				path: "src/{{dashCase name}}/style.scss",
+				templateFile: "plop-templates/component.tmpl.scss"
+			},
+			//test
+			{
+				type: "add",
+				path: "src/{{dashCase name}}/spec.test.js",
+				templateFile: "plop-templates/component.test.tmpl.js"
+			},
+			//readme
+			{
+				type: "add",
+				path: "src/{{dashCase name}}/README.md",
+				templateFile: "plop-templates/component.tmpl.md"
+			}
+		]
+	});
 
-  //Test spec
-  plop.setGenerator("test", {
-    description: "Create a new React Test",
-    prompts: [
-      {
-        type: "input",
-        name: "name",
-        message: "What is the name?"
-      }
-    ],
-    actions: [
-      {
-        type: "add",
-        //path: "__tests__/components/{{dashCase name}}.test.js",
-        path: "src/{{dashCase name}}/index.test.js",
-        templateFile: "plop-templates/component.test.tmpl.js"
-      }
-    ]
-  });
+	//Test spec
+	plop.setGenerator("test", {
+		description: "Create a new React Test",
+		prompts: [
+			{
+				type: "input",
+				name: "name",
+				message: "What is the name?"
+			}
+		],
+		actions: [
+			{
+				type: "add",
+				//path: "__tests__/components/{{dashCase name}}.test.js",
+				path: "src/{{dashCase name}}/index.test.js",
+				templateFile: "plop-templates/component.test.tmpl.js"
+			}
+		]
+	});
+	//Readme
+	plop.setGenerator('readme', {
+		description: 'Create a new component README.md',
+		prompts: [
+			{
+				type: "input",
+				name: "name",
+				message: "What is the name?"
+			}
+		],
+		actions: [
+			{
+				type: "add",
+				path: "src/{{dashCase name}}/README.md",
+				templateFile: "plop-templates/component.tmpl.md"
+			}
+		]
+	});
 
-  //Batch create
-  plop.setGenerator('batch-test', {
-    description: 'Create a bunch of tests',
-    prompts: [
-      {
-        type: "input",
-        name: "names",
-        message: "What are the names?"
-      }
-    ],
-    actions: function(data) {
-
+	//Batch create
+	plop.setGenerator('batch-test', {
+		description: 'Create a bunch of tests',
+		prompts: [
+			{
+				type: "input",
+				name: "names",
+				message: "What are the names?"
+			}
+		],
+		actions: function(data) {
 			var files = data.names.split(',');
-
 			console.log('create', files);
+			var actions = [];
+			actions.push({
+				type: "add",
+				path: "src/{{dashCase name}}/index.test.js",
+				templateFile: "plop-templates/component.test.tmpl.js"
+			});
+			return actions;
+		}
+	});
 
-      var actions = [];
-      actions.push({
-        type: "add",
-        //path: "__tests__/components/{{dashCase name}}.test.js",
-        path: "src/{{dashCase name}}/index.test.js",
-        templateFile: "plop-templates/component.test.tmpl.js"
-      });
-      return actions;
-    }
-  });
+  //const generators = plop.getGeneratorList();
+  //console.log('registered generators', generators);
 };

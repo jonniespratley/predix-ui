@@ -15,9 +15,9 @@ The `px.Button` component provides a way to use Predix Design buttons. (https://
 ```react|lang-jsx
 <div>
   <px.Button label='Button' small/>
-  <px.Button label='Button' primary/>
-  <px.Button label='Button' tertiary large/>
-  <px.Button label='Button' disabled huge/>
+  <px.Button label='Button' />
+  <px.Button label='Button' large/>
+  <px.Button label='Button' huge/>
 </div>
 ```
 
@@ -47,4 +47,16 @@ rows:
   - Name: huge
     Type: Boolean
     Description: Enable huge button
+```
+
+
+
+### Styling
+
+```table
+span: 6
+rows:
+  - Property: --my-prop
+    Default: null
+    Description: This is the style prop.
 ```

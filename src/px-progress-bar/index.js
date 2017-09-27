@@ -6,15 +6,34 @@ import style from './style.scss';
 /**
  * px-progress-bar component
  */
-export default ({label = 'px-progress-bar', children}) => {
-  const baseClasses = classnames('px-progress-bar', {
-    'px-progress-bar--children': children
-  });
+export default ({
+
+  value = 0,
+  max = 100,
+  min = 0,
+  infinite,
+  children
+}) => {
+  const baseClasses = classnames(
+    'px-progress-bar',
+    {'infinite': infinite }
+  );
+
+  const _computeRatio = (v) => {
+    return v < 0 ? 0 : (v > 100 ? 1 : v / 100);
+  };
+  let transform = 'scaleX(' + _computeRatio(value) + ')';
+  let fillStyle = {};
+  fillStyle.transform = fillStyle.WebkitTransform = transform;
 
   return (
-    <div className={baseClasses}>
-      <h4>{label}</h4>
-      <div>{children}</div>
+    <div className={baseClasses} role='progressbar'
+      aria-valuemin={min}
+      aria-valuemax={max}
+    >
+      <div id="background" className='background'>
+        <div id="fill" className='fill' style={fillStyle}></div>
+      </div>
       <style jsx>{style}</style>
     </div>
   );

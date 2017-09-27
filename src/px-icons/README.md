@@ -1,15 +1,15 @@
-# px-test-component
-The `<test-component/>` component enables you to ...
+# px-icons
+The `<icons/>` component enables you to ...
 
 
 
 ## Usage
 
 ```react
-const { test-component } = px;
-<test-component>
+const { icons } = px;
+<icons>
   This is the children
-</test-component>
+</icons>
 ```
 
 
