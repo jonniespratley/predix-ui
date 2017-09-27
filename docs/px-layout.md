@@ -6,11 +6,33 @@ The Predix UI Layout module defines the 'grid' for Predix UI. Layout items can b
 
 ## Usage
 
-```code
-<px.DrawerLayout>
-  This can be anything
-</px.DrawerLayout>
+```react
+const style = {
+  layout: {
+    backgroundColor: '#eee'
+  },
+  layoutItem: {
+    backgroundColor: 'white',
+    margin: '1rem'
+  }
+};
+
+const { Layout, LayoutItem } = px;
+
+<Layout style={style.layout} large container>
+  <Layout style={style.layoutItem} item>
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </Layout>
+
+  <LayoutItem style={style.layoutItem}>
+    This can be anything.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </LayoutItem>
+</Layout>
 ```
+
+
+
 
 ### `px.DrawerLayout`
 This is used for layouts with a drawer that is rendered offscreen on small viewports.
@@ -43,7 +65,7 @@ const style = {
     headerContent={headerContent}
     drawerContent={drawerContent}>
 
-    
+
 
     <px.Card title='Card'>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

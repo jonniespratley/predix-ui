@@ -17,19 +17,46 @@ import pxAccordionDocs from './px-accordion';
 import pxActionSheetDocs from './px-action-sheet';
 import pxAlertLabelDocs from './px-alert-label';
 import pxAlertMessageDocs from './px-alert-message';
+
 import pxButtonDocs from './px-button';
+import pxBreadcrumbsDocs from './px-breadcrumbs';
 import pxBrandingBarDocs from './px-branding-bar';
+
 import pxCardDocs from './px-card';
 import pxChipDocs from './px-chip';
+
 import pxDrawerDocs from './px-drawer';
-import pxNavbarDocs from './px-navbar';
+import pxDatatableDocs from './px-datatable';
+import pxDropDownDocs from './px-dropdown';
+
+import pxGridDocs from './px-grid';
+import pxLayoutDocs from './px-layout';
+
 import pxModalDocs from './px-modal';
+import pxNavbarDocs from './px-navbar';
+
+
+import pxSpinnerDocs from './px-spinner';
+
 import pxTableViewDocs from './px-table-view';
 import pxTabsDocs from './px-tabs';
-import pxSpinnerDocs from './px-spinner';
-import pxViewHeaderDocs from './px-view-header';
-import pxLayoutDocs from './px-layout';
+
+
+
+import pxProgressbarDocs from './px-progress-bar';
+import pxPopoverDocs from './px-popover';
+
+
+import pxOverlayDocs from './px-overlay';
+
+
+
+import pxTileDocs from './px-tile';
+import pxTreeDocs from './px-tree';
+
 import pxKeyValuePairDocs from './px-key-value-pair';
+
+import pxViewHeaderDocs from './px-view-header';
 
 
 
@@ -85,18 +112,26 @@ const pages = [
       { path: 'px-accordion', title: 'Accordion', component: pxAccordionDocs},
       { path: 'px-alert-label', title: 'Alert Label', component: pxAlertLabelDocs},
       { path: 'px-alert-message', title: 'Alert Message', component: pxAlertMessageDocs},
-      { path: 'px-action-sheet', title: 'Action Sheet', component: pxActionSheetDocs},
+      //{ path: 'px-action-sheet', title: 'Action Sheet', component: pxActionSheetDocs},
       { path: 'px-button', title: 'Button', component: pxButtonDocs},
       { path: 'px-branding-bar', title: 'Branding Bar', component: pxBrandingBarDocs},
+      { path: 'px-breadcrumbs', title: 'Breadcrumbs', component: pxBreadcrumbsDocs},
       { path: 'px-card', title: 'Card', component: pxCardDocs },
       { path: 'px-chip', title: 'Chip', component: pxChipDocs },
       { path: 'px-drawer', title: 'Drawer', component: pxDrawerDocs },
+      { path: 'px-datatable', title: 'DataTable', component: pxDatatableDocs },
+      { path: 'px-dropdown', title: 'Dropdown', component: pxDropDownDocs },
+      { path: 'px-grid', title: 'Grid', component: pxGridDocs },
+
       { path: 'px-key-value-pair', title: 'Key-Value Pair', component: pxKeyValuePairDocs },
       { path: 'px-layout', title: 'Layout', component: pxLayoutDocs },
       { path: 'px-navbar', title: 'Navbar', component: pxNavbarDocs },
       { path: 'px-modal', title: 'Modal', component: pxModalDocs },
-      { path: 'px-tabs', title: 'Tabs', component: pxTabsDocs },
       { path: 'px-spinner', title: 'Spinner', component: pxSpinnerDocs },
+      { path: 'px-popover', title: 'Popover', component: pxPopoverDocs },
+      { path: 'px-progress-bar', title: 'Progress Bar', component: pxProgressbarDocs },
+      { path: 'px-tabs', title: 'Tabs', component: pxTabsDocs },
+      { path: 'px-tree', title: 'Tree', component: pxTreeDocs },
       { path: 'px-table-view', title: 'Table View', component: pxTableViewDocs },
       { path: 'px-view-header', title: 'View Header', component: pxViewHeaderDocs }
     ]

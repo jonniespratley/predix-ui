@@ -25,7 +25,7 @@ import ViewHeader from './px-view-header';
 import KeyValuePair from './px-key-value-pair';
 import Layout from './px-layout';
 import DrawerLayout from './px-layout/px-drawer-layout';
-
+import Grid from './px-grid';
 
 const Icon = ({icon}) => (
 	<i className={`fa fa-${icon}`}></i>
@@ -48,33 +48,65 @@ const AppHeader = ({ title = 'PxAppHeader', children }) => (
 );
 
 
+const LayoutItem = ({style, children}) => {
+  return (<div style={style} className='layout__item'>{children}</div>);
+};
 
+
+import ProgressBar from './px-progress-bar';
+import Popover from './px-popover';
+import Tile from './px-tile';
+import Tree from './px-tree';
+import Overlay from './px-overlay';
+import DataTable from './px-datatable';
+import Breadcrumbs from './px-breadcrumbs';
+import Dropdown from './px-dropdown';
 
 module.exports = {
   px: {
+    AppHeader,
     Accordion,
 		AlertLabel,
 		AlertMessage,
     ActionSheet,
     Button,
+    BrandingBar,
+    Breadcrumbs,
     Card,
     Chip,
+
+    DataTable,
+    Dropdown,
 		Drawer,
 		NavDrawer,
-    BrandingBar,
-    AppHeader,
+    Grid,
+
+
     KeyValuePair,
-    Box,
-    ViewHeader,
+
     Spinner,
     Modal,
     Navbar,
+    Overlay,
+
+    DrawerLayout,
+    Layout,
+    LayoutItem,
+
+		PredixSvgLogo,
+
+
+
+    ProgressBar,
+    Popover,
+
+
     TableView,
     TableRow,
     Tabs,
     Tab,
-    DrawerLayout,
-    Layout,
-		PredixSvgLogo
+    Tile,
+    Tree,
+    ViewHeader
   }
 };

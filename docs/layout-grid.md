@@ -1,8 +1,5 @@
-This is the layout grid.
+The `<Grid/>` component provides layout styles that include the following options:
 
-
-
-The `layout` class provides layout styles that include the following:
 
 ```
 layout--tiny
@@ -15,6 +12,7 @@ layout--middle
 layout--bottom
 layout--full
 ```
+
 
 ```html
 responsive: true
