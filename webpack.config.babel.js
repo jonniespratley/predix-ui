@@ -38,13 +38,11 @@ const analyzeBundle = new BundleAnalyzerPlugin({
 });
 
 const extractCss = new ExtractTextPlugin({
-	filename: `${pkg.name}-[name].css`,
-  disable: true
+	filename: `${pkg.name}-[name].css`
 });
 
 const extractSass = new ExtractTextPlugin({
-	filename: `${pkg.name}.css`,
-  disable: false
+	filename: `${pkg.name}.css`
 });
 
 const cssRules = {
@@ -65,7 +63,7 @@ const sassRules = {
     fallback: 'style-loader',
     use: [
       'babel-loader',
-      'raw-loader',
+      //'raw-loader',
       {
         loader: 'css-loader',
         options: {
@@ -84,9 +82,9 @@ const sassRules = {
            },
           includePaths: [
             'sass',
-            'styles'
+            'styles',
           //  'bower_components',
-          //  'node_modules'
+            'node_modules'
           ].map((d) => path.join(__dirname, d)).map((g) => glob.sync(g)).reduce((a, c) => a.concat(c), [])
         }
       }
@@ -177,11 +175,14 @@ const dev = merge(common, siteCommon, {
       'process.env.NODE_ENV': '"development"'
     }),
     new webpack.HotModuleReplacementPlugin(),
+
+    extractCss,
     extractSass
-    //extractCss
   ],
   module: {
     rules: [
+      cssRules,
+      sassRules,
       {
         test: /\.js$/,
         use: {
@@ -194,9 +195,7 @@ const dev = merge(common, siteCommon, {
           config.paths.docs,
           config.paths.src
         ]
-      },
-      cssRules,
-      sassRules
+      }
     ]
   },
   devServer: {

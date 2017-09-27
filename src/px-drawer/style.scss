@@ -27,7 +27,12 @@ $drawer-max-width: 300px;
   		width: var(--px-drawer-width, $drawer-width);
   		height: var(--px-drawer-height, $drawer-height);
   		box-shadow: $drawer-box-shadow;
-
+      position: fixed;
+      transform: translateX(-100%);
+      //visibility: hidden;
+      top: 0;
+      left: 0;
+      bottom: 0;
   		&::after {
   			position: fixed;
   			top: 56px;
@@ -39,12 +44,8 @@ $drawer-max-width: 300px;
   		}
 
   		&--is-docked {
-  			top: 0;
-  			left: 0;
-  			bottom: 0;
-  			position: fixed !important;
-  			transform: translateX(-110%);
-  			//visibility: hidden;
+  			
+  			transform: translateX(0);
   		}
 
   		&--is-open{

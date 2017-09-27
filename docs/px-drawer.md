@@ -1,6 +1,7 @@
 This is the documentation.
 
-
+- The drawer by default is hidden off screen and only visible when open is `true`.
+- Setting the `docked` prop to `true` will make the overlay hidden and drawer visible.
 
 
 
@@ -9,9 +10,9 @@ This is the documentation.
 
 
 ```react
-frame: true
+
 state:
-  overlay: true
+  overlay: false
   docked: true
   clicked: 0
   open: false
@@ -34,11 +35,17 @@ const style = {
       onOverlayClick={(e) => setState({open: !state.open})}
       open={state.open}
       docked={state.docked}>
-      This is the children
+
+      <p>This is the children</p>
+
+      {state.docked && <p>This drawer is docked.</p>}
     </px.Drawer>
 
-    <div className='content'>
+    <div className='content u-p'>
       <p>This is content</p>
+
+      <button onClick={() => setState({overlay: !state.overlay})}>Toggle Overlay</button>
+      <button onClick={() => setState({docked: !state.docked})}>Toggle Docked</button>
     </div>
 
   </div>

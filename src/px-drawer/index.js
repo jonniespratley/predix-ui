@@ -14,7 +14,8 @@ export default class Drawer extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      open: props.open || false
+      open: props.open || false,
+      docked: props.docked || false
     };
   }
 
@@ -44,10 +45,15 @@ export default class Drawer extends React.Component {
     if (this.hasUnprefixedTransform) {
       this._setupTouchHandlers();
     }
+    this.sideNavContent.addEventListener('click', (e) =>{
+      if(!this.state.docked){
+        this._close();
+      }
+    });
   }
 
   componentWillReceiveProps(nextProps){
-    this.setState({open: nextProps.open});
+    this.setState(nextProps);
   }
 
   _setupTouchHandlers() {
@@ -85,7 +91,7 @@ export default class Drawer extends React.Component {
       className = 'drawer',
       containerClassName,
       overlay,
-      docked,
+      //docked,
       overlayClassName = 'drawer__overlay',
       overlayStyle,
       onOverlayClick,
@@ -94,7 +100,7 @@ export default class Drawer extends React.Component {
       children
     } = this.props;
 
-    const {open} = this.state;
+    const { open, docked } = this.state;
 
     const baseClassName = 'px-drawer';
     const baseClasses = classnames(
@@ -105,7 +111,7 @@ export default class Drawer extends React.Component {
 
     const overlayClasses = classnames(
       overlayClassName,
-      {[`${overlayClassName}--is-open`]: open}
+      {[`${overlayClassName}--is-open`]: (open) }
     );
 
     const drawerClasses = classnames(
@@ -117,7 +123,7 @@ export default class Drawer extends React.Component {
 
     return (
       <div className={baseClasses}>
-        {overlay && <div id="overlay" style={overlayStyle} onClick={onOverlayClick} className={overlayClasses}></div>}
+        {!docked && <div id="overlay" style={overlayStyle} onClick={onOverlayClick} className={overlayClasses}></div>}
         <div id="drawer" className={drawerClasses} style={style} ref={(e) => {this.sideNavContent = e;}}>
           <div id="drawerContent" className="drawer__content">
             <div>{children}</div>
