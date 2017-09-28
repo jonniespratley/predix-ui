@@ -38,11 +38,13 @@ const analyzeBundle = new BundleAnalyzerPlugin({
 });
 
 const extractCss = new ExtractTextPlugin({
-	filename: `${pkg.name}-[name].css`
+	filename: `${pkg.name}-[name].css`,
+  allChunks: true
 });
 
 const extractSass = new ExtractTextPlugin({
-	filename: `${pkg.name}.css`
+	filename: `${pkg.name}-[name]-[hash].css`,
+  allChunks: true
 });
 
 const cssRules = {
@@ -51,8 +53,8 @@ const cssRules = {
     fallback: 'style-loader',
     //resolve-url-loader may be chained before sass-loader if necessary
     use: [
-      'css-loader',
-      'postcss-loader'
+      'css-loader'
+      //'postcss-loader'
     ]
   })
 };
@@ -67,13 +69,21 @@ const sassRules = {
       {
         loader: 'css-loader',
         options: {
+          importLoaders: 1,
+          sourceMap: true,
           camelCase: true
         }
       },
-    //  'postcss-loader',
+      {
+        loader: 'postcss-loader',
+        options: {
+          sourceMap: true
+        }
+      },
       {
         loader: 'sass-loader',
         options: {
+          sourceMap: true,
           importer: require('node-sass-import-once'),
            importOnce: {
              index: true,
@@ -83,7 +93,6 @@ const sassRules = {
           includePaths: [
             'sass',
             'styles',
-          //  'bower_components',
             'node_modules'
           ].map((d) => path.join(__dirname, d)).map((g) => glob.sync(g)).reduce((a, c) => a.concat(c), [])
         }
@@ -170,12 +179,11 @@ const dev = merge(common, siteCommon, {
     docs: [config.paths.docs]
   },
   plugins: [
-    new NpmInstallPlugin(),
+    //new NpmInstallPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"development"'
     }),
     new webpack.HotModuleReplacementPlugin(),
-
     extractCss,
     extractSass
   ],
@@ -253,13 +261,7 @@ const ghPages = merge(common, siteCommon, {
   ],
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader'
-        })
-      },
+      cssRules,
       sassRules,
       {
         test: /\.js$/,

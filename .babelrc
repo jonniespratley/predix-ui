@@ -1,9 +1,14 @@
 {
+  "ignore": [
+    "node_modules",
+    "src/**/*.test.js"
+  ],
   "presets": [
     "react",
     ["env", {
       "targets": {
-        "browsers": ["last 2 versions", "safari >= 7"]
+        "browsers": ["last 2 versions", "safari >= 9"],
+        "node": "8"
       }
     }]
   ],
@@ -45,7 +50,12 @@
     },
     "modules": {
       "presets": [
-        "es2015"
+        [
+          "es2015",
+          {
+            "modules": "umd"
+          }
+        ]
       ]
     },
     "es6": {

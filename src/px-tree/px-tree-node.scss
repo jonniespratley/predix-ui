@@ -1,0 +1,42 @@
+.px-tree-node{
+
+  .tree__branch > .tree-node__content {
+    padding-left: 1.5rem;
+    display: none;
+  }
+
+  &.active{
+    > .tree__branch > .tree-node__content{
+      display: block;
+    }
+  }
+
+  .tree__label{
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color           : var(--px-tree-text-color--hover, black);
+      background-color: var(--px-tree-background-color--hover, lightgray);
+    }
+    &.selected {
+      color           : var(--px-tree-text-color--selected, white);
+      background-color: var(--px-tree-background-color--selected, gray);
+    }
+  }
+
+  .tree__leaf {
+    padding-left: 1.75rem;
+  }
+
+  .tree-node__icon {
+    align-items: center;
+    display: flex;
+    width : 1rem;
+    height: 1rem;
+    margin-left       : 0.25rem;
+    margin-right      : 0.25rem;
+  }
+
+
+}

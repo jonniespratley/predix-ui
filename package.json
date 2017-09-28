@@ -14,7 +14,7 @@
   },
   "main": "dist/px-components-react.js",
   "module": "dist/module",
-  "jsnext:main": "dist/px-components-react.js",
+  "jsnext:main": "dist/es6",
   "config": {
     "library": "PxReact",
     "libraryTarget": "umd"
@@ -38,6 +38,10 @@
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
     "postinstall": "node lib/post_install.js"
   },
+  "engines" : {
+     "node" : "^8.0.0",
+     "npm" : "^5.0.0"
+   },
   "keywords": [
     "react",
     "reactjs",
