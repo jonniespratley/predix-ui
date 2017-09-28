@@ -1,7 +1,6 @@
 {
   "ignore": [
-    "node_modules",
-    "src/**/*.test.js"
+    "node_modules"
   ],
   "presets": [
     "react",
