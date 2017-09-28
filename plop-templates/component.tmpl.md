@@ -20,16 +20,17 @@ span: 6
 rows:
   - Name: children
     Type: node
-    Description: The children content.
+    Description: The child nodes.
 ```
 
 
 ### Styling
+The following custom properties are available for styling.
 
 ```table
 span: 6
 rows:
-  - Property: --my-prop
+  - Property: --{{dashCase name}}
     Default: null
-    Description: This is the style prop.
+    Description: Mixin applied to entire element.
 ```

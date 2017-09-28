@@ -9,12 +9,6 @@
  */
 ///
 @import "variables";
-///
-@import 'px-mobile-design/sass/_mixins.scss';
-
-
-
-//Base
 
 //Components
 
@@ -27,7 +21,7 @@
 ///
 ///
 /// @access public
-@include b ('navbar') {
+@include block ('navbar') {
 
 	position  : absolute;
 	top       : 0;
@@ -62,7 +56,7 @@
 		//	background-color: pink!important;
 	}
 
-	.btn, button,
+	.btn,
 	button {
 		outline: none;
 	}
@@ -157,7 +151,7 @@
 	}
 
 	///.navbar__button
-	@include c ('.navbar__button') {
+	.navbar__button {
 		padding        : $navbar-button-padding;
 		letter-spacing : 0;
 		line-height    : $inuit-base-line-height;
@@ -187,7 +181,7 @@
 
 		&:disabled,
 		&[disabled] {
-			opacity       : .3;
+			opacity       : 0.3;
 			cursor        : default;
 			pointer-events: none;
 		}
@@ -208,7 +202,5 @@
 			}
 		}
 	}
-
-
 
 }

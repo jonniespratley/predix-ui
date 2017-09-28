@@ -9,6 +9,8 @@ import './main.css';
 import {px} from '../src';
 
 // TODO: Use this format
+import pxAppHeaderDocs from '../src/px-app-header/README';
+import pxAppNavDocs from '../src/px-app-nav/README';
 import pxAccordionDocs from '../src/px-accordion/README';
 import pxActionSheetDocs from '../src/px-action-sheet/README';
 import pxAlertLabelDocs from '../src/px-alert-label/README';
@@ -45,7 +47,8 @@ const logo = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/predix_ds_logo.
 // Add your documentation imports here. These are available to
 // React specimen. Do NOT pass React here as Catalog does that.
 const documentationImports = {
-  px
+  px,
+  PxReact: px
 };
 
 
@@ -93,6 +96,8 @@ const pages = [
       { path: 'px-accordion', title: 'Accordion', component: pxAccordionDocs},
       { path: 'px-alert-label', title: 'Alert Label', component: pxAlertLabelDocs},
       { path: 'px-alert-message', title: 'Alert Message', component: pxAlertMessageDocs},
+      { path: 'px-app-header', title: 'App Header', component: pxAppHeaderDocs},
+      { path: 'px-app-nav', title: 'App Nav', component: pxAppNavDocs},
       //{ path: 'px-action-sheet', title: 'Action Sheet', component: pxActionSheetDocs},
       { path: 'px-button', title: 'Button', component: pxButtonDocs},
       { path: 'px-branding-bar', title: 'Branding Bar', component: pxBrandingBarDocs},

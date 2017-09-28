@@ -1,4 +1,23 @@
-This is about layout basics.
+## Basic Structure
+
+The basic components of a page include an optional branding area, navigation, cards to group similar content, and an optional footer. Navigation may live on the left side or the top of the page structure.
+
+
+
+```image
+plain: true
+span: 3
+src: "https://www.predix-ui.com/img/guidelines/horizontal_layout.png"
+title: "Page assembly with horizontal navigation"
+```
+
+```image
+plain: true
+span: 3
+src: "https://www.predix-ui.com/img/guidelines/vertical_layout.png"
+title: "Page assembly with vertical navigation"
+```
+
 
 
 ### Base Screen Sizes

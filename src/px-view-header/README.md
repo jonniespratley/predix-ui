@@ -1,21 +1,14 @@
-The `px.ViewHeader` component provides the user an overview of the content they are viewing and interacting with.
+The `ViewHeader` component provides the user an overview of the content they are viewing and interacting with.
 
 ## Usage
 
 ```react
-  <px.ViewHeader
-    subtitle='Section Name'
-    title='View Title'/>
+  const { ViewHeader } = PxReact;
+  <ViewHeader
+    title='Current View Title'
+    subtitle='A subtitle describing the view.'/>
 ```
 
-## Usage
-
-```react
-const { view-header } = px;
-<view-header>
-  This is the children
-</view-header>
-```
 
 
 ## Properties
@@ -23,6 +16,12 @@ const { view-header } = px;
 ```table
 span: 6
 rows:
+  - Name: title
+    Type: string
+    Description: The title displayed in the center of the header.
+  - Name: subtitle
+    Type: string
+    Description: The (optional) subtitle displayed in the center of the header.
   - Name: children
     Type: node
     Description: The children content.
@@ -30,11 +29,12 @@ rows:
 
 
 ### Styling
+The following custom properties are available for styling:
 
 ```table
 span: 6
 rows:
-  - Property: --my-prop
+  - Property: --px-view-header-background-color
     Default: null
-    Description: This is the style prop.
+    Description: Background color for the view header
 ```

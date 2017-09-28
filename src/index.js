@@ -2,6 +2,8 @@ import React from 'react';
 
 
 import Partials from './px-partials';
+import AppHeader from './px-app-header';
+import AppNav from './px-app-nav';
 
 import Accordion from './px-accordion';
 import AlertMessage from './px-alert-message';
@@ -40,13 +42,7 @@ const Box = ({ title, children}) => (
 );
 
 
-//https://www.predix-ui.com/#/elements/px-app-header
-const AppHeader = ({ title = 'PxAppHeader', children }) => (
-	<header className='PxAppHeader flex flex-spaced'>
-		<h1>{title}</h1>
-		{children}
-	</header>
-);
+
 
 
 const LayoutItem = ({style, children}) => {
@@ -69,6 +65,7 @@ import Iron from './iron-components';
 module.exports = {
 	Iron,
   px: {
+		AppNav,
     AppHeader,
     Accordion,
 		AlertLabel,

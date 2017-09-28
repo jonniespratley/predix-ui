@@ -1,3 +1,7 @@
+@import "px-defaults-design/_settings.defaults.scss";
+//@import "px-colors-design/_settings.colors.scss";
+//@import 'px-mobile-design/sass/_mixins.scss';
+
 //@import 'px-mobile-design';
 //@import 'px-mobile-design/sass/_variables';
 @import 'px-mobile-design/sass/_mixins.scss';
@@ -8,8 +12,8 @@
 ///
 
 ///
-$navbar-default-background-color       : white;
-$navbar-default-font-color             : black;
+$navbar-default-background-color       : var(--px-navbar-background-color, #e2e8ed);
+$navbar-default-font-color             : var(--px-navbar-font-color, #2c404c);
 $navbar-default-border-bottom          : 1px solid gray;
 $navbar-default-box-shadow             : 0 2px 2px 0 rgba(0, 0, 0, 0.15);
 
@@ -37,6 +41,7 @@ $navbar-button-padding                 : $inuit-base-spacing-unit--tiny;
 $navbar-button-height                  : calculateRem(44px);
 $navbar-button-width                   : calculateRem(44px);
 $navbar-button-background-color        : rgba(0, 0, 0, 0);
+$navbar-button-color: var(--px-navbar-button-color, blue);
 $navbar-button-border-radius           : 2px;
 $navbar-button-border                  : 1px solid transparent;
 $navbar-button-background-color--active: rgba(0, 0, 0, .5);
@@ -47,7 +52,7 @@ $navbar-title-font-color               : black;
 
 ///
 $navbar-subtitle-font-size             : calculateRem(12px);
-$navbar-subtitle-font-color            : gray;
+$navbar-subtitle-font-color            : #677e8c;
 
 $navbar-padding--tiny                  : $inuit-base-spacing-unit--tiny;
 $navbar-padding--small                 : $inuit-base-spacing-unit--small;

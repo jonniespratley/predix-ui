@@ -1,28 +1,31 @@
 import classnames from 'classnames';
 import React from 'react';
-import style from './style.scss';
+import stylesheet from './style.scss';
 
-export default({
-	label = 'Button',
-  type = 'button',
+export default(props) => {
+  const {
+  	label = 'Button',
+    type = 'button',
 
-  //colors
-	primary,
-  tertiary,
-  bare,
-  disabled,
-  icon,
-  full,
+    //colors
+  	primary,
+    tertiary,
+    bare,
+    disabled,
+    icon,
+    full,
 
-  //sizes
-  small,
-  large,
-  huge,
+    //sizes
+    small,
+    large,
+    huge,
 
-  //handlers
-  onClick,
-	children
-}) => {
+    //handlers
+    onClick,
+    style,
+    attrs,
+  	children
+  } = props;
 	let cssClasses = classnames('btn',
     { 'btn--primary': primary },
     { 'btn--tertiary': tertiary },
@@ -34,10 +37,10 @@ export default({
     { 'btn--huge': huge }
   );
 	return (
-    <button className={cssClasses} type={type} onClick={onClick}>
+    <button className={cssClasses} type={type} onClick={onClick} style={style} {...attrs}>
       {label}
       {children}
-      <style jsx>{style}</style>
+      <style jsx>{stylesheet}</style>
     </button>
 	);
 }

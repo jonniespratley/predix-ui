@@ -1,19 +1,10 @@
-/*
- * Copyright (c) 2016 GE Global Research. All rights reserved.
- *
- * The copyright to the computer software herein is the property of
- * GE Global Research. The software may be used and/or copied only
- * with the written permission of GE Global Research or in accordance
- * with the terms and conditions stipulated in the agreement/contract
- * under which the software has been supplied.
- */
-@import "px-defaults-design/_settings.defaults.scss";
-@import "px-colors-design/_settings.colors.scss";
 @import 'variables';
-@import 'px-mobile-design/sass/_mixins.scss';
-
 @import 'px-navbar-sketch.scss';
-@include b ('navbar') {
+
+
+
+// TODO: This is the theme (colors);
+@include block('navbar') {
 	font-size       : $inuit-base-font-size;
 	border-bottom   : $navbar-default-border-bottom;
 	border-bottom   : var(--px-navbar-border-bottom, $navbar-default-border-bottom);
@@ -70,11 +61,12 @@
 			color: $navbar-primary-font-color;
 		}
 	}
-	
+
 	///-----------------------------------------------------------------
 	//::content .navbar__button {
 	@include c ('.navbar__button') {
 		background-color: $navbar-button-background-color;
+		color: $navbar-button-color;
 		border          : $navbar-button-border;
 		border-radius  	: $navbar-button-border-radius;
 		font-size       : $navbar-button-font-size;

@@ -1,16 +1,22 @@
-
 // Generic
 //@import "px-normalize-design/_generic.normalize-mini.scss";
 //@import "px-box-sizing-design/_generic.box-sizing.scss";
-@import "px-helpers-design/_generic.helpers.scss";
-
-// Base
-@import "px-flexbox-design/_base.flexbox.scss";
 //@import "px-headings-design/_base.headings.scss";
 
 // Component
 
 .px-branding-bar {
+  //@import "px-helpers-design/_generic.helpers.scss";
+
+  // Base
+  @import "px-flexbox-design/_base.flexbox.scss";
+
+  $inuit-enable-margins : true;
+  @import 'px-spacing-design/_trumps.spacing.scss';
+
+  $inuit-enable-responsive-margins : true;
+  @import "px-spacing-responsive-design/_trumps.spacing-responsive.scss";
+
   @extend .flex;
   @extend .flex--middle;
   width: inherit;
@@ -25,8 +31,9 @@
   }
   font-size: var(--px-branding-bar-font-size, calculateRem(15px));
   color: var(--px-branding-bar-logo-and-title-text-color, gray);
-}
 
-.px-branding-bar__powered-by-text{
-  font-size: calculateRem(12px);
+  .px-branding-bar__powered-by-text{
+    font-size: calculateRem(12px);
+  }
+
 }
