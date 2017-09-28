@@ -25,6 +25,7 @@ import ViewHeader from './px-view-header';
 import KeyValuePair from './px-key-value-pair';
 import Layout from './px-layout';
 import DrawerLayout from './px-layout/px-drawer-layout';
+import Tile from './px-tile';
 import Grid from './px-grid';
 
 const Icon = ({icon}) => (
@@ -55,14 +56,18 @@ const LayoutItem = ({style, children}) => {
 
 import ProgressBar from './px-progress-bar';
 import Popover from './px-popover';
-import Tile from './px-tile';
+
 import Tree from './px-tree';
 import Overlay from './px-overlay';
 import DataTable from './px-datatable';
 import Breadcrumbs from './px-breadcrumbs';
 import Dropdown from './px-dropdown';
 
+
+import Iron from './iron-components';
+
 module.exports = {
+	Iron,
   px: {
     AppHeader,
     Accordion,

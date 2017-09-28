@@ -6,10 +6,10 @@ The `<tile/>` component enables you to ...
 ## Usage
 
 ```react
-const { tile } = px;
-<tile>
+const { Tile } = px;
+<Tile image='https://www.predix-ui.com/bower_components/px-tile/turbine.jpg'>
   This is the children
-</tile>
+</Tile>
 ```
 
 

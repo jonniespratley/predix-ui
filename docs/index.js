@@ -112,6 +112,7 @@ const pages = [
       { path: 'px-popover', title: 'Popover', component: pxPopoverDocs },
       { path: 'px-progress-bar', title: 'Progress Bar', component: pxProgressbarDocs },
       { path: 'px-tabs', title: 'Tabs', component: pxTabsDocs },
+      { path: 'px-tile', title: 'Tile', component: pxTileDocs },
       { path: 'px-tree', title: 'Tree', component: pxTreeDocs },
       { path: 'px-table-view', title: 'Table View', component: pxTableViewDocs },
       { path: 'px-view-header', title: 'View Header', component: pxViewHeaderDocs }
