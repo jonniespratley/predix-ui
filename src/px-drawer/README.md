@@ -22,23 +22,29 @@ const style = {
   overflow: 'hidden',
   position: 'relative'
 };
+const { AppNav } = PxReact;
+const navItems = [
+  {id : "home", label: "Home", icon: "px-fea:home", selected: true},
+  {id : "settings", label: "Settings", icon: "px-fea:settings"},
+  {id : "alert", label: "Alerts", icon: "px-fea:alerts"}
+];
 <div>
   <div style={style}>
     <px.Navbar
       title='Navbar'
       subtitle='Subtitle'
+
       onMenuButtonClick={()=> setState({open: !state.open})}
       showMenuButton/>
 
     <px.Drawer
       overlay={state.overlay}
+      onClose={()=> setState({open: state.open})}
       onOverlayClick={(e) => setState({open: !state.open})}
       open={state.open}
       docked={state.docked}>
 
-      <p>This is the children</p>
-
-      {state.docked && <p>This drawer is docked.</p>}
+      <AppNav items={navItems} vertical/>
     </px.Drawer>
 
     <div className='content u-p'>

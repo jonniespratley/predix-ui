@@ -18,22 +18,47 @@ class Tabs extends BaseComponent {
 		super(props);
 		this.displayName = 'Tabs';
     this.state = {
-      selected: this.props.selected
+      selected: this.props.selected,
+      propForSelect: this.props.propForSelect
     };
     this.name = 'tabs';
+    this._items = [];
+    this._keys = [];
 	}
+
+  _getIndexForValue(val){
+    return this._keys.indexOf(val);
+  }
 
   handleClick(index, event) {
     this.log('handleClick', index);
     event.preventDefault();
     this.setState({
-      selected: index
+      selected: this._getIndexForValue(index)
     });
   }
 
   _renderTitles() {
+    this._keys = [];
     function labels(child, index) {
-      let selected = (this.state.selected === index);
+      let propForSelect = index;
+      //add child
+      this._items.push(child);
+
+
+      //add prop to keys
+      if(this.props.propForSelect){
+         propForSelect = child.props[this.props.propForSelect];
+        this._keys.push(propForSelect);
+      } else {
+        this._keys.push(index);
+      }
+
+      //selected index is selected key
+
+
+
+      let selected = (this.state.selected === this._getIndexForValue(propForSelect));
       let baseClasses = classnames(
         'px-tab',
         {'iron-selected': selected}
@@ -42,7 +67,7 @@ class Tabs extends BaseComponent {
         <li key={index}
           className={baseClasses} >
           <a href='#'
-            onClick={this.handleClick.bind(this, index)}
+            onClick={this.handleClick.bind(this, propForSelect)}
           className='tab-title'>
             {child.props.label}
           </a>
