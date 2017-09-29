@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)-->
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .st0{fill:none;stroke:#4C6472;stroke-linejoin:round;}
+  </style>
+  <title>
+    truck_32x32
+  </title>
+  <path d="M11.1 25h-4m8.9 0h3.5V10h4.9l6.1 7v8H28"/>
+  <path d="M21.6 16v-3h2.6l2.3 2.4c.1.1.1.4 0 .5-.1.1-.2.1-.3.1h-4.6zm2.4 9h-5"/>
+  <circle cx="5.1" cy="25.5" r="2.5"/>
+  <circle cx="13.1" cy="25.5" r="2.5"/>
+  <circle cx="26" cy="25.5" r="2.5"/>
+  <path d="M3.1 25H1.6V7H18m-.9-3h1c.8 0 1.5.6 1.5 1.5v5"/>
+</svg>

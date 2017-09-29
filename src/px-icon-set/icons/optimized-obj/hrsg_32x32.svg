@@ -1,0 +1,10 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30.14">
+  <title>
+    hrsg_32x32
+  </title>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M22.5 7.64h7v22h-7z"/>
+  <path stroke-linejoin="round" d="M20.5 13.56h-11l-9 9.08v7h22"/>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M22.5 10.64h7"/>
+  <path d="M17.42 1.4c0 5 9 2 9 6v-3s0-3-4-3z" transform="translate(-.92 -.9)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19.92 19.55c-1.83 0-1.83 2-3.66 2s-1.83-2-3.67-2-1.83 2-3.67 2m11 2c-1.83 0-1.83 2-3.66 2s-1.83-2-3.67-2-1.83 2-3.67 2" transform="translate(-.92 -.9)" stroke-miterlimit="10"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <title>
+    closest_point_22x22
+  </title>
+  <path stroke-miterlimit="10" d="M0 21.5h22M.5 22V0"/>
+  <circle cx="11.34" cy="8.01" r="2.66"/>
+  <circle cx="11.34" cy="14.01" r="2.66"/>
+  <path stroke-miterlimit="10" stroke-dasharray="1 1" d="M11.5 0v21"/>
+</svg>

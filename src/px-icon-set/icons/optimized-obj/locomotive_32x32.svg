@@ -1,0 +1,9 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>
+    locomotive_32x32
+  </title>
+  <path stroke-miterlimit="10" d="M1 26h30"/>
+  <path stroke-linejoin="round" d="M4 17h23.5l3 6h-4l-1-3h-19l-1 3h-4V6h19l2 5h5v6"/>
+  <path d="M12 20a2.5 2.5 0 1 1-4 0m10 0a2.5 2.5 0 1 1-4 0m10 0a2.5 2.5 0 1 1-4 0" stroke-miterlimit="10"/>
+  <path d="M21.44 8h-4.88L17 9.55A1.63 1.63 0 0 0 18.44 11h4.5" stroke-linejoin="round"/>
+</svg>

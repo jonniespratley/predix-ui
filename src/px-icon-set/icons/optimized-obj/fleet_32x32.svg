@@ -1,0 +1,10 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 30.19">
+  <title>
+    fleet_32x32
+  </title>
+  <path stroke-linejoin="round" d="M21.5 25.52v-8.35l-7-4.17-7 4.17v8.35l7 4.17 7-4.17z"/>
+  <path stroke-linejoin="round" d="M7.37 17.37l7.13 4.25 7.13-4.25M14.5 29.85v-8m7-4.66l7-4.17V4.67L21.5.5l-7 4.17"/>
+  <path stroke-linejoin="round" d="M14.37 4.87l7.13 4.25 7.13-4.25M21.5 17.35v-8"/>
+  <path stroke-linejoin="round" d="M14.5 4.67L7.5.5l-7 4.17v8.35l7 4.17"/>
+  <path stroke-linejoin="round" d="M.37 4.87L7.5 9.12l7.13-4.25M7.5 17.35v-8m7-4.5v8"/>
+</svg>

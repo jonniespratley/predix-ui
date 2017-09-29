@@ -1,3 +1,14 @@
 demo/
 tests/
 .*
+__tests__
+__mocks__
+bower_components
+docs
+plop-templates
+*.config.js
+lib
+gh-pages
+coverage
+js-docs
+esdocs

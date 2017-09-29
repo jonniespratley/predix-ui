@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <title>
+    _
+  </title>
+  <g id="Document_PDF">
+    <path stroke-linejoin="round" d="M3.5 14v1.5h12v-12l-3-3h-9V7"/>
+    <path stroke-linejoin="round" d="M11.5.5v4h4"/>
+    <text fill="currentcolor" stroke="none"  transform="translate(-.32 13.23)" font-size="7" font-weight="700" letter-spacing=".06em">
+      PD<tspan x="9.83" y="0" letter-spacing=".04em">F</tspan>
+    </text>
+  </g>
+</svg>

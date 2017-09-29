@@ -1,0 +1,11 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>
+    airplane_engine_32x32
+  </title>
+  <path d="M12.9 28H7.4a.68.68 0 0 1-.7-.7 48 48 0 0 1 0-22.6.68.68 0 0 1 .7-.7H13a47.6 47.6 0 0 0-.1 24zm1.1-6.8a44.05 44.05 0 0 1-.3-5.2 45.33 45.33 0 0 1 .3-5.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M11.4 28h1.7a.68.68 0 0 0 .7-.7 41 41 0 0 0 1.1-6.1" stroke-miterlimit="10"/>
+  <path d="M11.4 4h1.7a.68.68 0 0 1 .7.7 59.72 59.72 0 0 1 1.1 6.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <path stroke-miterlimit="10" d="M14.1 11l7.2-2m-7.2 12l7.2 2m-7.2-9h7.2m-7.2 4h7.2"/>
+  <path stroke-linecap="round" stroke-miterlimit="10" d="M21.5 8v16m.1-3.1s2.3 2 5.3-1V12c-3-3-5.3-1-5.3-1"/>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M26.9 14l3.9 2-3.9 2m-21.7.8l-3-1.5a1.73 1.73 0 0 1-.5-2.2c.1-.2.3-.3.5-.5l3-1.5"/>
+</svg>

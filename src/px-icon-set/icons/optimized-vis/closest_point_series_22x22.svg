@@ -1,0 +1,13 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <title>
+    closest_point_series_22x22
+  </title>
+  <path stroke-miterlimit="10" d="M0 21.5h22M.5 22V0"/>
+  <circle cx="6.34" cy="14.01" r="2.66"/>
+  <circle cx="6.34" cy="8.01" r="2.66"/>
+  <path stroke-miterlimit="10" stroke-dasharray="1 1" d="M6.5 0v21"/>
+  <path d="M16.34 4.35a2.65 2.65 0 0 1 .62.08A2.65 2.65 0 0 0 17 4a2.66 2.66 0 1 0-3.28 2.58 2.66 2.66 0 0 1 2.62-2.23z" stroke-miterlimit="10"/>
+  <circle cx="12.34" cy="13.01" r="2.66" stroke-miterlimit="10"/>
+  <circle cx="18.34" cy="17.01" r="2.66" stroke-miterlimit="10"/>
+  <circle cx="16.34" cy="7.01" r="2.66" stroke-miterlimit="10"/>
+</svg>

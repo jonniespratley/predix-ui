@@ -1,0 +1,8 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <title>
+    _
+  </title>
+  <circle cx="7.5" cy="8.5" r="7" stroke-linejoin="round"/>
+  <circle cx="7.5" cy="6" r=".5" stroke-linejoin="round"/>
+  <path stroke-linejoin="round" d="M7.5 8v4"/>
+</svg>

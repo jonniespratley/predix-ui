@@ -1,0 +1,9 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>
+    spaces_32x32
+  </title>
+  <circle cx="8.5" cy="8.5" r="5" stroke-miterlimit="10"/>
+  <circle cx="8.5" cy="23.5" r="5" stroke-miterlimit="10"/>
+  <circle cx="23.5" cy="23.5" r="5" stroke-miterlimit="10"/>
+  <path stroke-miterlimit="10" d="M23.5 3v11M29 8.5H18"/>
+</svg>

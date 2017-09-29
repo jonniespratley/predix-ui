@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <title>
+    _
+  </title>
+  <g id="Note">
+    <path stroke-linejoin="round" d="M15.5 1.5H.5v13h12l3-3v-10z"/>
+    <path stroke-linejoin="round" d="M11.5 14.5v-4h4M3 4.5h10m-10 3h7m-7 3h4"/>
+  </g>
+</svg>

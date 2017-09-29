@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#4C6472;stroke-linejoin:round;}
+	.st1{fill:none;stroke:#4C6472;stroke-miterlimit:10;}
+</style>
+<title>wind_turbine_32x32</title>
+<circle class="st0" cx="15.9" cy="14.1" r="2.3"/>
+<line class="st0" x1="14.5" y1="18.8" x2="12.8" y2="30.5"/>
+<line class="st0" x1="19.2" y1="30.5" x2="17.4" y2="18.8"/>
+<path class="st0" d="M15.6,11.8l-1.4-1.9c-0.4-0.6-0.5-1.3-0.1-1.9l3.2-6.5h1.9l-1.9,10.8"/>
+<path class="st0" d="M18.1,15l2.3-0.2c0.7-0.1,1.4,0.3,1.7,0.8l4,6l-0.9,1.6l-8.4-7"/>
+<path class="st0" d="M14.1,15.6l-1,2.1c-0.3,0.6-1.2,0.7-1.9,0.7l-7,0.8l-0.9-1.6l10.3-3.8"/>
+<line class="st1" x1="9" y1="30.5" x2="23" y2="30.5"/>
+</svg>

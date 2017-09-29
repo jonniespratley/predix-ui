@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <title>
+    _
+  </title>
+  <g id="Document_Word">
+    <path stroke-linejoin="round" d="M1.5 15.5h13v-12l-3-3h-10v15z"/>
+    <path stroke-linejoin="round" d="M10.5.5v4h4"/>
+    <text fill="currentcolor" stroke="none"  transform="translate(3.68 12.23)" font-size="8" font-weight="700" letter-spacing=".03em">
+      W
+    </text>
+  </g>
+</svg>

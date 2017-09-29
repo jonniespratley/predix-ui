@@ -1,0 +1,10 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>
+    Database_32x32
+  </title>
+  <g id="Layer_2" data-name="Layer 2">
+    <path d="M28.35 8.74v3.59c0 2-5.62 3.6-12.55 3.6S3.25 14.31 3.25 12.34v-3.6" stroke-linejoin="round"/>
+    <ellipse cx="15.8" cy="4.99" rx="12.55" ry="3.59" stroke-linejoin="round"/>
+    <path d="M28.35 23.42v3.51c0 1.94-5.62 3.51-12.55 3.51s-12.55-1.56-12.55-3.5v-3.52m25.1-7.49v3.75c0 2-5.62 3.67-12.55 3.67S3.25 21.66 3.25 19.67v-3.74" stroke-linejoin="round"/>
+  </g>
+</svg>

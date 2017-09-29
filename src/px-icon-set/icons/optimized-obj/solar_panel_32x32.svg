@@ -1,0 +1,9 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 29">
+  <title>
+    solar_panel_32x32
+  </title>
+  <path stroke-linejoin="round" d="M16 13.5h13.5v15h-18V16m6-2.5v15m6-15v15m-12-5h18m-18-5h18"/>
+  <circle cx="8.5" cy="8.5" r="4" stroke-linejoin="round"/>
+  <path stroke-miterlimit="10" d="M8.5 0v3"/>
+  <path stroke-linejoin="round" d="M17 8.5h-3M8.5 17v-3M0 8.5h3m11.51-6.01l-2.12 2.12m2.12 9.9l-2.12-2.12m-9.9 2.12l2.12-2.12m-2.12-9.9l2.12 2.12"/>
+</svg>

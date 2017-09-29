@@ -1,0 +1,12 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 28">
+  <title>
+    versions_32x32
+  </title>
+  <path stroke-linejoin="round" d="M15 24.5H.5V.5h27V13"/>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M.5 5.5h27"/>
+  <circle cx="3" cy="3" r=".5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="6" cy="3" r=".5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="9" cy="3" r=".5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M29.5 24.03V17.1l-6-3.46-6 3.46v6.93l6 3.47 6-3.47z"/>
+  <path stroke-linejoin="round" d="M23.5 24.22v-5.5H22"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31">
+  <title>
+    asset_ingestion_32x32
+  </title>
+  <path d="M22.5 19.41v-8.34l-7-4.17-7 4.17v8.34l7 4.18 7-4.18z"/>
+  <path d="M8.5 11.34l7 4.17 7-4.17m-7 3.66v8.59"/>
+  <path d="M15.5 16v-.54l7-4.12v-.27l-7-4.17-7 4.17v.27l7 4.17 7-4.17"/>
+  <circle cx="3" cy="3" r="2.5"/>
+  <path d="M8.5 8.5L4.77 4.77"/>
+  <circle cx="28" cy="3" r="2.5"/>
+  <path d="M22.5 8.5l3.73-3.73"/>
+  <circle cx="28" cy="28" r="2.5"/>
+  <path d="M22.5 22.5l3.73 3.73"/>
+  <circle cx="3" cy="28" r="2.5"/>
+  <path d="M8.5 22.5l-3.73 3.73"/>
+</svg>

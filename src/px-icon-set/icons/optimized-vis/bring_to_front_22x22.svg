@@ -1,0 +1,14 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <title>
+    bring_to_front_22x22
+  </title>
+  <path stroke-miterlimit="10" d="M15.5 15v.5"/>
+  <path stroke-miterlimit="10" stroke-dasharray="0.9 0.9" d="M15.5 16.4v3.15"/>
+  <path stroke-miterlimit="10" d="M15.5 20v.5H15"/>
+  <path stroke-miterlimit="10" stroke-dasharray="1 1" d="M14 20.5H2.5"/>
+  <path stroke-miterlimit="10" d="M2 20.5h-.5V20"/>
+  <path stroke-miterlimit="10" stroke-dasharray="1 1" d="M1.5 19V7.5"/>
+  <path stroke-miterlimit="10" d="M1.5 7v-.5H2"/>
+  <path stroke-miterlimit="10" stroke-dasharray="0.9 0.9" d="M2.9 6.5h3.15"/>
+  <path stroke-miterlimit="10" d="M6.5 6.5H7m-.5-5h14v14h-14z"/>
+</svg>

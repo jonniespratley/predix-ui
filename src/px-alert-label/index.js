@@ -1,6 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
 import style from './style.scss';
+import BaseComponent from '../base-component';
+
+
 
 /**
  * px-alert-label component

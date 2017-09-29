@@ -1,8 +1,7 @@
 import React from 'react';
+import BaseComponent from '../base-component';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
-
 import stylesheet from './style.scss';
 
 
@@ -10,9 +9,9 @@ import stylesheet from './style.scss';
 /**
  * px-drawer component
  */
-export default class Drawer extends React.Component {
+export default class Drawer extends BaseComponent {
   constructor(props){
-    super(props);
+    super(props, { name: 'Drawer' });
     this.state = {
       open: props.open || false,
       docked: props.docked || false
@@ -32,10 +31,12 @@ export default class Drawer extends React.Component {
   }
 
   _open(){
+    this._log('open', this.state);
     this.setState({open: true});
   }
 
   _close(){
+    this._log('close', this.state);
     this.setState({open: false});
     this.sideNavContent.style.transform = '';
   }
@@ -65,7 +66,7 @@ export default class Drawer extends React.Component {
     if(this.sideNavContent){
       this.sideNavContent.addEventListener('touchstart', this.onSideNavTouchStart.bind(this));
       this.sideNavContent.addEventListener('touchmove', this.onSideNavTouchMove.bind(this));
-      this.sideNavContent.addEventListener('touchend', this.onSideNavTouchEnd.bind(this));  
+      this.sideNavContent.addEventListener('touchend', this.onSideNavTouchEnd.bind(this));
     }
 
   }

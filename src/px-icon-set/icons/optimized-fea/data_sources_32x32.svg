@@ -1,0 +1,10 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 30.14">
+  <title>
+    data_sources_32x32
+  </title>
+  <rect x=".5" y="23.64" width="22" height="6" rx="1" ry="1" stroke-miterlimit="10"/>
+  <path d="M18.5 7.39H26a1 1 0 0 1 1 1v17m-22 0v-17a1 1 0 0 1 1-1h7.5" transform="translate(-4.5 -.75)" stroke-miterlimit="10"/>
+  <circle cx="4.5" cy="26.64" r="1" stroke-miterlimit="10"/>
+  <path stroke-miterlimit="10" d="M8 26.64h12M11.5 14.5V1"/>
+  <path stroke-linejoin="round" d="M7.5 4.5l4-4 4 4"/>
+</svg>

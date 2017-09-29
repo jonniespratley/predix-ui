@@ -1,13 +1,14 @@
+import BaseComponent from '../base-component';
 import React from 'react';
-import classnames from 'classnames';
-import style from './style.scss';
+//import classnames from 'classnames';
+import stylesheet from './style.scss';
 
 /**
  * px-accordion component
  */
-export default class Accordion extends React.Component {
+export default class Accordion extends BaseComponent {
   constructor(props){
-    super(props);
+    super(props, {name: 'Accordion'});
     this.state = {
       open: true
     };
@@ -22,9 +23,18 @@ export default class Accordion extends React.Component {
 
   render(){
     const open = this.state && this.state.open;
-    const {headerValue = 'px-accordion', status, disabled, showAction, children} = this.props;
+    const {
+      headerValue = 'px-accordion',
+      status,
+      disabled,
+      showAction,
+      style,
+      children
+    } = this.props;
+
+    const classnames = this.$$.classnames;
     const baseClasses = classnames('px-accordion', {
-      'px-accordion--children': children
+      'px-accordion--disabled': disabled
     });
 
     const headerClasses = classnames(
@@ -51,7 +61,7 @@ export default class Accordion extends React.Component {
     );
 
     return (
-      <div className={baseClasses}>
+      <div className={baseClasses} style={style}>
         <section className="accordion__container">
           <div className={headerClasses} onClick={this.onClick} disabled={disabled}>
             <div className="flex flex--middle">
@@ -71,8 +81,8 @@ export default class Accordion extends React.Component {
               <div>{children}</div>
             </div>
           </div>
-          </section>
-        <style jsx>{style}</style>
+        </section>
+        <style jsx>{stylesheet}</style>
       </div>
     );
   }

@@ -32,6 +32,8 @@ import DrawerLayout from './px-layout/px-drawer-layout';
 import Tile from './px-tile';
 import Grid from './px-grid';
 
+import IconSet from './px-icon-set';
+import Icon from './px-icon-set/px-icon';
 
 const LayoutItem = ({style, children}) => {
   return (<div style={style} className='layout__item'>{children}</div>);
@@ -46,6 +48,13 @@ import DataTable from './px-datatable';
 import Breadcrumbs from './px-breadcrumbs';
 import Dropdown from './px-dropdown';
 import Iron from './iron-components';
+
+/**
+ * @access public
+ * @example
+ * const {AppNav} = px;
+ *
+ */
 const px = {
 	ExampleComponent,
 	AppNav,
@@ -64,6 +73,8 @@ const px = {
 	Drawer,
 	NavDrawer,
 	Grid,
+  Icon,
+  IconSet,
 	KeyValuePair,
 	Spinner,
 	Modal,

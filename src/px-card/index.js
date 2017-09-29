@@ -1,16 +1,22 @@
 import React from 'react';
 
-import styles from './style.scss';
+import stylesheet from './style.scss';
 import classnames from 'classnames';
 
 const baseClasses = classnames('px-card');
 
-export default ({title = 'Card', children}) => (
-  <div className={baseClasses}>
-    <header>
-      <span className='epsilon caps'>{title}</span>
-    </header>
+export default ({
+  headerText,
+  icon,
+  style,
+  children
+}) => (
+  <div className={baseClasses} style={style}>
+    {headerText && <header>
+      <span>{icon}</span>
+      <span className='epsilon caps'>{headerText}</span>
+    </header>}
     <section>{children}</section>
-    <style jsx>{styles}</style>
+    <style jsx>{stylesheet}</style>
   </div>
 );

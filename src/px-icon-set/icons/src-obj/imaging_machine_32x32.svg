@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 27.2"><title>imaging_machine_32x32</title>
+<path d="M23.4,20.8c-1,3.9-3.2,6.6-5.7,6.6-3.5,0-6.4-5.2-6.4-11.6S14.1,4.2,17.7,4.2c3.2,0,5.9,4.4,6.3,10.1" fill="none" stroke="#4e6572" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M19.8,20.8a2.63,2.63,0,0,1-2.2,1.4c-1.9,0-3.5-2.9-3.5-6.4s1.6-6.4,3.5-6.4c1.6,0,3,2,3.4,4.8" fill="none" stroke="#4e6572" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18,27.4c-2.4,0-10.4-1.6-10.4-1.6-3.2-.9-6.4-5.2-6.4-11.6S5,2.7,8.5,2.7L18,4.2" fill="none" stroke="#4e6572" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="13.6 15.7 26.8 17.7 29.5 15.4 13.4 12.8" transform="translate(0.7 2.2)" fill="none" stroke="#4e6572" stroke-linejoin="round"/>
+<line x1="25.1" y1="17.7" x2="25.1" y2="26.3" transform="translate(0.7 2.2)" fill="none" stroke="#4e6572" stroke-linejoin="round"/>
+<line x1="27.7" y1="26.7" x2="22.5" y2="25.9" transform="translate(0.7 2.2)" fill="none" stroke="#4e6572" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

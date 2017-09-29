@@ -21,6 +21,8 @@
   },
   "scripts": {
     "plop": "./node_modules/.bin/plop",
+    "docs": "esdoc",
+    "dist:icons": "node ./bin/icons-optimize-and-fix.js",
     "start": "webpack-dev-server --env dev",
     "test": "jest",
     "test:coverage": "jest --coverage",
@@ -36,12 +38,12 @@
     "preversion": "npm run test && npm run dist && npm run dist:min && git commit --allow-empty -am ''",
     "prepublish": "npm run dist:es6 && npm run dist:modules",
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
-    "postinstall": "node lib/post_install.js"
+    "postinstall": "node bin/post_install.js"
   },
-  "engines" : {
-     "node" : "^8.0.0",
-     "npm" : "^5.0.0"
-   },
+  "engines": {
+    "node": "^8.0.0",
+    "npm": "^5.0.0"
+  },
   "keywords": [
     "react",
     "reactjs",
@@ -49,7 +51,6 @@
   ],
   "license": "MIT",
   "pre-push": [
-    "test:lint",
     "test"
   ],
   "devDependencies": {
@@ -74,6 +75,8 @@
     "debug": "^3.0.1",
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.0",
+    "esdoc": "^1.0.3",
+    "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^4.7.1",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-import": "^2.2.0",
@@ -111,6 +114,8 @@
     "strip-json-comments": "^2.0.1",
     "style-loader": "^0.18.2",
     "styled-jsx": "^1.0.10",
+    "svg-inline-loader": "^0.8.0",
+    "svgo": "^0.7.2",
     "sync-exec": "^0.6.2",
     "system-bell-webpack-plugin": "^1.0.0",
     "url-loader": "^0.5.8",

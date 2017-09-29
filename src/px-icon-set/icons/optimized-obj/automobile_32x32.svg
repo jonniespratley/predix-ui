@@ -1,0 +1,9 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>
+    automobile_32x32
+  </title>
+  <circle cx="7.3" cy="21.11" r="2.49" stroke-linejoin="round"/>
+  <circle cx="24.7" cy="21.11" r="2.49" stroke-linejoin="round"/>
+  <path stroke-linejoin="round" d="M22.21 21.11H9.79m-4.98.29H2.33a.85.85 0 0 1-.83-.87v-4.61a.87.87 0 0 1 .52-.8l5.28-1.48 1.76-4a2.47 2.47 0 0 1 2.13-1.26h6.68a2.43 2.43 0 0 1 1.76.76l3.21 4.23a.82.82 0 0 0 .48.25L29.25 15a1.72 1.72 0 0 1 1.25 1.66v3.85a.85.85 0 0 1-.83.87h-2.48"/>
+  <path d="M9.25 14.41l1.61-3.61a.76.76 0 0 1 .65-.39h6.12a.74.74 0 0 1 .54.23l2.68 3.77zm5.51-4.07v4.15m13.25.41v2.07h2.49" stroke-linejoin="round"/>
+</svg>

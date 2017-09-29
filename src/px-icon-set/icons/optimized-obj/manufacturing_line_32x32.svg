@@ -1,0 +1,12 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>
+    manufacturing_line_32x32
+  </title>
+  <path d="M1 14h23.23a6.3 6.3 0 0 1 6.13 5c.86 4.22-2.14 8-5.94 8H1" stroke-linejoin="round"/>
+  <ellipse cx="23.48" cy="20.5" rx="2.34" ry="2.5" stroke-linejoin="round"/>
+  <ellipse cx="15.04" cy="20.5" rx="2.34" ry="2.5" stroke-linejoin="round"/>
+  <ellipse cx="6.6" cy="20.5" rx="2.34" ry="2.5" stroke-linejoin="round"/>
+  <path stroke-linejoin="round" d="M3.48 5h8v9h-8z"/>
+  <path stroke-linejoin="round" d="M6.48 5h2v3h-2zm9 0h8v9h-8z"/>
+  <path stroke-linejoin="round" d="M18.48 5h2v3h-2z"/>
+</svg>

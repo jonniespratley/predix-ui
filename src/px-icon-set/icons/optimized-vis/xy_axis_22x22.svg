@@ -1,0 +1,9 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <title>
+    xy_axis_22x22
+  </title>
+  <text fill="currentcolor" stroke="none"  transform="translate(3.71 15.38)" font-size="18" font-family="GEInspiraSans-Regular, GE Inspira Sans" letter-spacing="0em">
+    x<tspan x="8.33" y="0" letter-spacing="-.02em">y</tspan>
+  </text>
+  <path stroke-miterlimit="10" d="M0 21.5h22M.5 22V0"/>
+</svg>

@@ -110,6 +110,21 @@ const sassRules = {
   })
 };
 
+
+//https://github.com/webpack-contrib/svg-inline-loader
+const svgRules = {
+  test: /\.svg$/,
+  use: [
+    {
+      loader: 'svg-inline-loader',
+      options: {
+        classPrefix: false,
+        idPrefix: false
+      }
+    }
+  ]
+};
+
 /**
  * common configuration
  */
@@ -143,6 +158,18 @@ const common = {
       {
         test: /\.md$/,
         use: ['catalog/lib/loader', 'raw-loader']
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'svg-inline-loader',
+            options: {
+              classPrefix: false,
+              idPrefix: false
+            }
+          }
+        ]
       },
       {
         test: /\.(jpg|png)$/,
