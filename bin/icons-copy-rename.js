@@ -64,12 +64,12 @@ function renameIcons(ns){
       let ext = path.extname(file);
       let basename = path.basename(file).replace(sizeRegEx, '').replace('_', '-');
       let newName = `px-${ns}:${basename}`;
-      console.log('=>', newName);
+    //  console.log('=>', newName);
 
       let rawSvg = fs.readFileSync(file, 'utf8');
     //  console.log('dirty - svg', rawSvg);
       let svg = cleanForOutfile( rawSvg, newName);
-      console.log('clean - svg', svg);
+      console.log( svg);
 
       allIcons += `\n${svg}`;
 
