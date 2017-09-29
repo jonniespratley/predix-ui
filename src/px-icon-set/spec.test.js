@@ -5,10 +5,7 @@ import PxIconSet from './';
 
 describe('px-icon-set', () => {
   test('should...', () =>{
-    const wrapper = shallow(
-      <PxIconSet/>
-    );
-    console.log(wrapper.debug());
+    
     expect(true).to.equal(true);
   });
   //expect(wrapper.find('.label')).to.have.length(1);

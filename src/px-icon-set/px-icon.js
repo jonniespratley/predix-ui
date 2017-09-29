@@ -8,9 +8,7 @@ const iconSets = {
     analysis: ''
   },
   'px-doc': {
-    chart: require('./icons/optimized-doc/chart_16x16.svg'),
-    document: require('./icons/optimized-doc/document_16x16.svg'),
-    note: require('./icons/optimized-doc/note_16x16.svg')
+    
   },
   'px-utl': {},
   'px-com': {
