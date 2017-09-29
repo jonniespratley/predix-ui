@@ -313,11 +313,13 @@ const distCommon = {
         use: 'babel-loader',
         include: config.paths.src
       },
+      cssRules,
       sassRules
     ]
   },
   plugins: [
     new SystemBellPlugin(),
+    extractCss,
     extractSass,
     analyzeBundle
   ]
@@ -328,8 +330,6 @@ const dist = merge(distCommon, {
     filename: `${config.filename}.js`
   }
 });
-
-
 
 
 const distMin = merge(distCommon, {

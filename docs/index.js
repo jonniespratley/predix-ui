@@ -6,7 +6,7 @@ import { Catalog, CodeSpecimen, ReactSpecimen } from 'catalog';
 
 //import 'purecss/build/pure.css';
 import './main.css';
-import {px} from '../src';
+import px from '../src';
 
 // TODO: Use this format
 import pxAppHeaderDocs from '../src/px-app-header/README';

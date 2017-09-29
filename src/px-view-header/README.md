@@ -1,4 +1,8 @@
-The `ViewHeader` component provides the user an overview of the content they are viewing and interacting with.
+The `<ViewHeader/>` component is located at the top of the page and provides the user an overview of the content they are viewing and interacting with.
+
+```hint
+Reference https://www.predix-ui.com/#/elements/px-view-header
+```
 
 ## Usage
 
@@ -6,7 +10,8 @@ The `ViewHeader` component provides the user an overview of the content they are
   const { ViewHeader } = PxReact;
   <ViewHeader
     title='Current View Title'
-    subtitle='A subtitle describing the view.'/>
+    subtitle='A subtitle describing the view.'
+    showMenuButton/>
 ```
 
 
@@ -35,6 +40,12 @@ The following custom properties are available for styling:
 span: 6
 rows:
   - Property: --px-view-header-background-color
-    Default: null
+    Default: whitesmoke
     Description: Background color for the view header
+  - Property: --px-view-header-title-color
+    Default: black
+    Description: Color for the title
+  - Property: --px-view-header-subtitle-color
+    Default: gray
+    Description: Color for the subtitle
 ```

@@ -16,7 +16,7 @@
     left            : 0;
     z-index         : 900;
     background-color: var(--px-modal-overlay-color, rgba(black, 0.65));
-    transition      : background-color 0.2s cubic-bezier(.78,.13,.16,.87);
+    transition      : var(--px-modal-overlay-transition, background-color 0.1s cubic-bezier(.78,.13,.16,.87));
     &--invisible{
       visibility      : hidden;
       background-color: transparent;

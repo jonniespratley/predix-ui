@@ -1,15 +1,24 @@
-
-// Base
-@import "px-flexbox-design/_base.flexbox.scss";
-@import "px-headings-design/_base.headings.scss";
-
-// Objects
-@import "px-actionable-design/_objects.actionable.scss";
-
 /**
  * px-accordion styles
  */
 .px-accordion {
+
+  // Base
+  @import "px-flexbox-design/_base.flexbox.scss";
+  @import "px-headings-design/_base.headings.scss";
+
+  // Objects
+  @import "px-actionable-design/_objects.actionable.scss";
+
+
+  // Generic
+  //@import "px-normalize-design/_generic.normalize.scss";
+  //@import "px-box-sizing-design/_generic.box-sizing.scss";
+  //@import "px-helpers-design/_generic.helpers.scss";
+
+  // Trumps
+  $inuit-enable-paddings--tiny: true;
+  @import "px-spacing-design/_trumps.spacing.scss";
 
   // Component
   .accordion__header {
@@ -58,12 +67,3 @@
   }
 
 }
-
-// Generic
-//@import "px-normalize-design/_generic.normalize.scss";
-//@import "px-box-sizing-design/_generic.box-sizing.scss";
-//@import "px-helpers-design/_generic.helpers.scss";
-
-// Trumps
-$inuit-enable-paddings--tiny: true;
-@import "px-spacing-design/_trumps.spacing.scss";

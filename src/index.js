@@ -2,6 +2,8 @@ import React from 'react';
 
 
 import Partials from './px-partials';
+
+
 import AppHeader from './px-app-header';
 import AppNav from './px-app-nav';
 import ExampleComponent from './px-example-component';
@@ -30,20 +32,6 @@ import DrawerLayout from './px-layout/px-drawer-layout';
 import Tile from './px-tile';
 import Grid from './px-grid';
 
-const Icon = ({icon}) => (
-	<i className={`fa fa-${icon}`}></i>
-);
-
-const Box = ({ title, children}) => (
-	<div className='box u-mb-'>
-		<h3>{title}</h3>
-		<div className=''>{children}</div>
-	</div>
-);
-
-
-
-
 
 const LayoutItem = ({style, children}) => {
   return (<div style={style} className='layout__item'>{children}</div>);
@@ -52,64 +40,47 @@ const LayoutItem = ({style, children}) => {
 
 import ProgressBar from './px-progress-bar';
 import Popover from './px-popover';
-
 import Tree from './px-tree';
 import Overlay from './px-overlay';
 import DataTable from './px-datatable';
 import Breadcrumbs from './px-breadcrumbs';
 import Dropdown from './px-dropdown';
-
-
 import Iron from './iron-components';
-
-module.exports = {
-	Iron,
-  px: {
-		ExampleComponent,
-		AppNav,
-    AppHeader,
-    Accordion,
-		AlertLabel,
-		AlertMessage,
-    ActionSheet,
-    Button,
-    BrandingBar,
-    Breadcrumbs,
-    Card,
-    Chip,
-
-    DataTable,
-    Dropdown,
-		Drawer,
-		NavDrawer,
-    Grid,
-
-
-    KeyValuePair,
-
-    Spinner,
-    Modal,
-    Navbar,
-    Overlay,
-
-    DrawerLayout,
-    Layout,
-    LayoutItem,
-
-		PredixSvgLogo,
-
-
-
-    ProgressBar,
-    Popover,
-
-
-    TableView,
-    TableRow,
-    Tabs,
-    Tab,
-    Tile,
-    Tree,
-    ViewHeader
-  }
+const px = {
+	ExampleComponent,
+	AppNav,
+	AppHeader,
+	Accordion,
+	AlertLabel,
+	AlertMessage,
+	ActionSheet,
+	Button,
+	BrandingBar,
+	Breadcrumbs,
+	Card,
+	Chip,
+	DataTable,
+	Dropdown,
+	Drawer,
+	NavDrawer,
+	Grid,
+	KeyValuePair,
+	Spinner,
+	Modal,
+	Navbar,
+	Overlay,
+	DrawerLayout,
+	Layout,
+	LayoutItem,
+	PredixSvgLogo,
+	ProgressBar,
+	Popover,
+	TableView,
+	TableRow,
+	Tabs,
+	Tab,
+	Tile,
+	Tree,
+	ViewHeader
 };
+module.exports = px;
