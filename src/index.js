@@ -4,7 +4,7 @@ import React from 'react';
 import Partials from './px-partials';
 import AppHeader from './px-app-header';
 import AppNav from './px-app-nav';
-
+import ExampleComponent from './px-example-component';
 import Accordion from './px-accordion';
 import AlertMessage from './px-alert-message';
 import AlertLabel from './px-alert-label';
@@ -65,6 +65,7 @@ import Iron from './iron-components';
 module.exports = {
 	Iron,
   px: {
+		ExampleComponent,
 		AppNav,
     AppHeader,
     Accordion,

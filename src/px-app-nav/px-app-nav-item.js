@@ -15,6 +15,7 @@ export default ({
   collapsed,
   overflowed,
   onlyShowIcon,
+  onClick,
   children
 }) => {
 
@@ -27,9 +28,9 @@ export default ({
   );
 
   return (
-    <div className={baseClasses} style={style} data-id={id}>
-      <div>{children}</div>
+    <div onClick={onClick} className={baseClasses} style={style} data-id={id}>
       <span className='app-nav-item__label'>{label}</span>
+      {children && <div>{children}</div>}
       <style jsx>{stylesheet}</style>
     </div>
   );

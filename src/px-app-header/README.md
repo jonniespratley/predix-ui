@@ -10,8 +10,7 @@ const { AppHeader, AppNav, Card } = PxReact;
 const navItems = [
 { selected: true, "path":"tab1","icon":"px-fea:alerts","eventName":"firstItem","label":"Alerts","subitems":[{"label":"Sub Category 1"},{"label":"Sub Category 2","eventName":"subitemTwo"},{"label":"Sub Category 3","path":"subitem3"}]},{"path":"tab2","icon":"px-fea:asset","label":"Cases","subitems":[{"label":"Sub Category 1"},{"label":"Sub Category 2"},{"label":"Sub Category 3"}]},{"path":"tab3","icon":"px-fea:analysis","label":"Analysis"},{"path":"tab4","icon":"px-fea:dashboard","label":"Dashboards"}];
 
-<AppHeader>
-  <AppNav items={navItems}/>
+<AppHeader title='My App' items={navItems}>
   <div>
     <Card headerText="moo" icon="px-fea:cases">
       <p>

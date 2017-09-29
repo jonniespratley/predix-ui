@@ -53,8 +53,16 @@ const cssRules = {
     fallback: 'style-loader',
     //resolve-url-loader may be chained before sass-loader if necessary
     use: [
-      'css-loader'
-      //'postcss-loader'
+      {
+        loader: 'css-loader',
+        options: {
+          importLoaders: 1,
+          modules: true,
+          sourceMap: true,
+          camelCase: true
+        }
+      },
+      'postcss-loader'
     ]
   })
 };
@@ -70,6 +78,7 @@ const sassRules = {
         loader: 'css-loader',
         options: {
           importLoaders: 1,
+        //  modules: true,
           sourceMap: true,
           camelCase: true
         }

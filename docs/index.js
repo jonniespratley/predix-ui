@@ -71,7 +71,8 @@ const pages = [
     path: '/getting-started',
     title: 'Getting Started',
     pages: [
-      {path: 'installation', title: 'Installation', component: require('./installation.md')}
+      {path: 'installation', title: 'Installation', component: require('./installation.md')},
+      {path: 'customization', title: 'Customization', component: require('./customization.md')}
     ]
   },
   {

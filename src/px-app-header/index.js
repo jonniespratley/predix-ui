@@ -3,6 +3,7 @@ import classnames from 'classnames';
 
 import stylesheet from './style.scss';
 
+import AppNav from '../px-app-nav';
 import BrandingBar from '../px-branding-bar';
 
 /**
@@ -10,6 +11,7 @@ import BrandingBar from '../px-branding-bar';
  */
 export default ({
   title = 'px-app-header',
+  items,
   style,
   children
 }) => {
@@ -22,6 +24,7 @@ export default ({
   return (
     <div className={baseClasses} style={style}>
       <BrandingBar title={title}/>
+      <AppNav items={items}/>
       <div>{children}</div>
       <style jsx>{stylesheet}</style>
     </div>

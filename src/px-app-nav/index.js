@@ -12,7 +12,9 @@ import NavItem from './px-app-nav-item';
 export default ({
   label = 'px-app-nav',
   vertical,
+  opened = true,
   items,
+  selectedItem,
   style,
   children
 }) => {
@@ -20,6 +22,8 @@ export default ({
   const baseClasses = classnames(
     'px-app-nav',
     'app-nav',
+    { 'vertical': vertical },
+    { 'vertical-opened': opened },
     { 'px-app-nav--children': children }
   );
 

@@ -48,6 +48,28 @@ const navItems = [
   <AppNav items={navItems}/>
 </div>
 ```
+### Vertical
+```react
+const { AppNav } = PxReact;
+const navItems = [
+  {id : "home", label: "Home", icon: "px-fea:home", selected: true},
+  {id : "settings", label: "Settings", icon: "px-fea:settings"},
+  {id : "alert", label: "Alerts", icon: "px-fea:alerts"}
+];
+const style = {
+  position: 'relative',
+  height: 400
+};
+<div style={style}>
+  <style>{`
+    :root{
+      --px-app-nav-background-color: #e2e8ed;
+      --px-app-nav-item-background-color: transparent;
+    }
+  `}</style>
+  <AppNav items={navItems} vertical/>
+</div>
+```
 
 
 ## Properties
