@@ -3,6 +3,8 @@ import React from 'react';
 import stylesheet from './style.scss';
 import classnames from 'classnames';
 
+import Icon from '../px-icon-set/px-icon';
+
 const baseClasses = classnames('px-card');
 
 export default ({
@@ -12,8 +14,8 @@ export default ({
   children
 }) => (
   <div className={baseClasses} style={style}>
-    {headerText && <header>
-      <span>{icon}</span>
+    {headerText && <header className='flex'>
+      {icon && <span className='icon'><Icon icon={icon}/></span>}
       <span className='epsilon caps'>{headerText}</span>
     </header>}
     <section>{children}</section>
