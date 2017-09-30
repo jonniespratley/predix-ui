@@ -9,6 +9,7 @@ script:
 - yarn test:coverage
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+- yarn gh-pages
 deploy:
   provider: npm
   email: jonniespratley@gmail.com
@@ -20,6 +21,7 @@ deploy:
 deploy:
   provider: pages
   skip_cleanup: true
+  local_dir: 'gh-pages'
   github_token:
     secure: MVxhny07/BLkzM4k4a0F7zkgnWYhQT2+I8LWW6nhEI4u3/qmNc/ErW7AciuGbVuanzIl8fmcX0o+rF8ceD6MLgvBKu3yGWRfybExGjYdfQaL+Qz2J3Y71RRjABbkg8r8ODJMoUht4qU5DhixliRE3v5jzb5LDiaBjDq4R17KKtKb1Lc0CQJFjwbg581JMlYg5pQlttTzeUkiNx/dvlt+MlI/eMfFtjow4Wk1yf4Bcq7Pr2Zsmlpee1D5/oUEApiii9k70M9nHT3O5iQeTZyTqcphfhyzNMM+5igPugEk3tB7oL1M+d4pGataNAsaOStD0ilaOR+Dvr+oz6zEV+HJLk4P519oiX3J4RwTc11Xc8F3/ZuTp1r47/00qWVS8Eo9K6cHAL1+Uu/EL1YJxg9ubAu7iFQhQA5B3OQ0nYkM9J3Wa3QQx0AG9eZy2WiZXF8ii7Eb+aN3tsYA07aSZ1nDnP1L/jr/Y6lFNh0KmnNt/cuxVmAdQDb0aUlXhWxLIQ9wxiE+2LLn0KlGwHt4RwgywnXUx1xqJae2Bvve9tPsG/OU8C3AkzZnDzTEFGg5JFhxvF2+Rpi3omQroquHEYz/QIsXf8oBw6nCI+7x5yf0FmdEZOeo4WKOP+eIjGSBgrTkIqPdjmkITFgSHQzA6o5ijsMejiV5rnV3uEr759G8DGA=
   on:
