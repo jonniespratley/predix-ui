@@ -4,7 +4,7 @@ import stylesheet from './style.scss';
 
 export default(props) => {
   const {
-  	label = 'Button',
+  	label,
     type = 'button',
 
     //colors

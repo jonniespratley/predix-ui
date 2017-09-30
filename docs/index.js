@@ -118,9 +118,10 @@ const pages = [
       { path: 'px-navbar', title: 'Navbar', component: pxNavbarDocs },
       { path: 'px-modal', title: 'Modal', component: pxModalDocs },
       { path: 'px-overlay', title: 'Overlay', component: pxOverlayDocs },
-      { path: 'px-spinner', title: 'Spinner', component: pxSpinnerDocs },
       { path: 'px-popover', title: 'Popover', component: pxPopoverDocs },
       { path: 'px-progress-bar', title: 'Progress Bar', component: pxProgressbarDocs },
+      { path: 'px-spinner', title: 'Spinner', component: pxSpinnerDocs },
+
       { path: 'px-tabs', title: 'Tabs', component: pxTabsDocs },
       { path: 'px-tile', title: 'Tile', component: pxTileDocs },
       { path: 'px-tree', title: 'Tree', component: pxTreeDocs },

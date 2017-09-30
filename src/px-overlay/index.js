@@ -12,6 +12,7 @@ export default (props) => {
     style,
     onOverlayClick,
     zIndex = 900,
+    isOpen,
     children
   } = props;
   const baseClasses = classnames('px-overlay', {

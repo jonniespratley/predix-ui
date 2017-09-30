@@ -1,5 +1,8 @@
-This is the documentation.
+The `<Overlay/>` is a component used for modal dialogues, popovers, and other use cases where the remainder of the application content is obscured or falls away from the primary actionable component. The overlay covers the entire screen.
 
+```hint
+Reference https://www.predix-ui.com/#/elements/px-overlay
+```
 
 ## Usage
 
@@ -7,22 +10,24 @@ This is the documentation.
 state:
   open: false
 ---
-const {Overlay} = px;
+const {Button, Overlay} = PxReact;
 <div>
-  <button onClick={(e) => setState({open: !state.open})}>Open Overlay</button>
-  <Overlay visible={state.open} onOverlayClick={(e) => setState({open: !state.open})}>
-    This is the children
-  </Overlay>
+  <Button
+    label='Open Overlay'
+    onClick={(e) => setState({open: !state.open})}/>
+  <Overlay
+    visible={state.open}
+    onOverlayClick={(e) => setState({open: !state.open})}/>
 </div>
 ```
 
 
-## Props
+## Properties
 
 ```table
 span: 6
 rows:
-  - Name: label
-    Type: String
-    Description: This is the desc
+  - Name: visible
+    Type: bool
+    Description: The visibility of the modal.
 ```

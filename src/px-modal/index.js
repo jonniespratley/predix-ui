@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Overlay from '../px-overlay';
+import Button from '../px-button';
 import classnames from 'classnames';
 import stylesheet from './style.scss';
 
@@ -15,6 +16,7 @@ export default ({
   btnModalPositive,
   onBtnModalPositiveClick,
   visible,
+  isOpen,
   onBackdropClick,
   btnModalPositiveDisabled = false,
   children
@@ -40,13 +42,14 @@ export default ({
         </div>
         <div className="modal__buttons flex flex--right">
           <div className='flex'>
-            {btnModalNegative && <button type="button" id="btnModalNegative" className="btn"
-              onClick={(e) => onBtnModalNegativeClick(e)}>{btnModalNegative}</button>}
-            {btnModalPositive && <button type="button"
+            {btnModalNegative && <Button id="btnModalNegative"
+              label={btnModalNegative}
+              onClick={(e) => onBtnModalNegativeClick(e)}/>}
+            {btnModalPositive && <Button primary
               disabled={btnModalPositiveDisabled}
               id="btnModalPositive"
-              className="btn"
-              onClick={(e) => onBtnModalPositiveClick(e)}>{btnModalPositive}</button>}
+              label={btnModalPositive}
+              onClick={(e) => onBtnModalPositiveClick(e)}/>}
           </div>
         </div>
       </section>

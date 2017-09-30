@@ -129,7 +129,7 @@ function renameIcons(ns){
         let file = files[i];
         let ext = path.extname(file);
         let basename = path.basename(file).replace(sizeRegEx, '').replace('_', '-');
-        let newName = `px-${ns}:${basename}`;
+        let newName = `px-${ns}-${basename}`;
         let newFilename = path.resolve(DEST_DIR, newName);
        console.log('\n=>', newName);
 
@@ -173,7 +173,7 @@ function optimizeAll(files){
 const iconSets = Object.keys(iconsetNames);
 const names = [];
 iconSets.forEach(icons => {
-  //names.push(renameIcons(icons));
+  names.push(renameIcons(icons));
 
 });
 console.log('optimize', names);
