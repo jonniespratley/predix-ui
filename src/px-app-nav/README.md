@@ -1,37 +1,38 @@
-
-The `<AppNav/>` is an app-level navigation element that allows users to change the
+The `<AppNav/>` component is an app-level navigation element that allows users to change the
 current view. The element is designed to work on desktop and mobile/touch
-devices, supporting any viewport size. It has three distinct visual styles that
-can be switched at any time to suit different app designs.
+devices, supporting any viewport size.
 
+```hint
+Reference https://www.predix-ui.com/#/elements/px-app-nav
+```
 
 This data should be passed into the `items` property on the component.
 
-This is a simple navigation data example:
-
-```
-    [
-      {
-        "id" : "home",
-        "label" : "Home",
-        "icon" : "px-fea:home"
-      },
-      {
-        "id" : "alert",
-        "label" : "Alerts",
-        "icon" : "px-fea:alerts"
-      }
-    ]
+```code
+[
+  {
+    "id" : "home",
+    "label" : "Home",
+    "icon" : "px-fea:home"
+  },
+  {
+    "id" : "alert",
+    "label" : "Alerts",
+    "icon" : "px-fea:alerts"
+  }
+]
 ```
 
-```hint
-For more information visit https://www.predix-ui.com/#/elements/px-app-nav
-```
 
 
 ## Usage
 
 ```react
+state:
+  selected: 0
+  selectedItem: null
+
+---
 const { AppNav } = PxReact;
 const navItems = [
   {id : "home", label: "Home", icon: "px-fea:home", selected: true},
@@ -45,9 +46,14 @@ const navItems = [
       --px-app-nav-item-background-color: transparent;
     }
   `}</style>
-  <AppNav items={navItems}/>
+  <AppNav
+    selected={state.selected}
+    items={navItems}/>
+    <p>Selected Index: {state.selected}</p>
 </div>
 ```
+
+
 ### Vertical
 ```react
 const { AppNav } = PxReact;
@@ -77,6 +83,15 @@ const style = {
 ```table
 span: 6
 rows:
+  - Name: classes
+    Type: string
+    Description: Classnames to apply
+  - Name: vertical
+    Type: bool
+    Description: Show the vertical navigation
+  - Name: style
+    Type: object
+    Description: The style object to apply
   - Name: children
     Type: node
     Description: The child nodes.

@@ -1,7 +1,8 @@
-# px.AlertMessage
-Alert Messages appear in a queue within the message container. Each message consists of an icon, title, body, and action.
+The `<AlertMessage/>` component appear in a queue within the message container. Each message consists of an icon, title, body, and action.
 
-> https://www.predix-ui.com/#/elements/px-alert-message
+```hint
+Reference https://www.predix-ui.com/#/elements/px-alert-message
+```
 
 ## Usage
 
@@ -31,26 +32,48 @@ Alert Messages appear in a queue within the message container. Each message cons
 ```
 
 
-## Props
+## Properties
 
 ```table
 span: 6
 rows:
-  - Name: label
-    Type: String
-    Description: This is the desc
+  - Name: action
+    Type: string
+    Description: dismiss, acknowledge
 ```
+
 
 
 ### Styling
 The following custom properties are available for styling:
-Custom property | Description
+```table
+span: 6
+rows:
+  - Property: --px-alert-message-background-color
+    Default: null
+    Description: Background color for the body of the alert
 
-:----------------|:-------------
-`--px-alert-message-background-color` | Background color for the body of the alert
-`--px-alert-message-text-color` | Text color for the title and message
-`--px-alert-message-color--important` | Status color for an 'important' alert
-`--px-alert-message-color--warning` | Status color for a 'warning' alert
-`--px-alert-message-color--error` | Status color for an 'error' alert
-`--px-alert-message-color--information` | Status color for an 'information' alert
-`--px-alert-message-dismiss-icon-color` | Color of the dismiss icon
+  - Property: --px-alert-message-text-color
+    Default: null
+    Description: Text color for the title and message
+
+  - Property: --px-alert-message-color--important
+    Default: null
+    Description: Status color for an 'important' alert
+
+  - Property: --px-alert-message-color--warning
+    Default: null
+    Description: Status color for a 'warning' alert
+
+  - Property: --px-alert-message-color--error
+    Default: null
+    Description: Status color for an 'error' alert
+
+  - Property: --px-alert-message-color--information
+    Default: null
+    Description: Status color for an 'information' alert
+
+  - Property: --px-alert-message-dismiss-icon-color
+    Default: null
+    Description: Color of the dismiss icon
+```

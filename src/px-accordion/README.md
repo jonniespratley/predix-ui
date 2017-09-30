@@ -1,6 +1,8 @@
-The `px.Accordion` component provides expandable and collapsible subsection headers for a page.
-An optional action icon on the right side will fire an event when pressed.
+The `<Accordion/>` component provides expandable and collapsible subsection headers for a page.
 
+```hint
+Reference https://www.predix-ui.com/#/elements/px-accordion
+```
 
 
 ## Usage

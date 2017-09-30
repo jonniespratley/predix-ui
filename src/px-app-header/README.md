@@ -1,7 +1,12 @@
-
-The `<AppHeader/>` component can be used as a wrapper for the `<AppNav/>` component. It provides a container that stays fixed to the top of the screen.
+The `<AppHeader/>` component is used as a wrapper for the `<AppNav/>` and `<BrandingBar/>` components.
+It provides a container that stays fixed to the top of the screen.
 
 By default, the `<BrandingBar/>` will shrink to a minimized state as the user scrolls down the page, unless the `fixed` property is set.
+
+```hint
+Reference https://www.predix-ui.com/#/elements/px-app-header
+```
+
 
 ## Usage
 

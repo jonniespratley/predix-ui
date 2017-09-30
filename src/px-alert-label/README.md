@@ -1,9 +1,8 @@
-`px.AlertLabel` labels are used to draw attention to a particular piece of information on the screen.
+The `<AlertLabel/>` component labels are used to draw attention to a particular piece of information on the screen.
 
-Each type of label (important, warning, error, information, healthy, and unknown) has its own distinct background color and appropriate font color for maximum visibility.
-
-The text within the label is configurable, but will always show up in all capital letters.
-> Avoid using action verbs in an alert label, as users may confuse the label for a button.
+```hint
+Reference https://www.predix-ui.com/#/elements/px-alert-label
+```
 
 
 ## Usage
@@ -11,7 +10,8 @@ The text within the label is configurable, but will always show up in all capita
 ```react
 span: 2
 ---
-<px.AlertLabel
+const {AlertLabel} = PxReact;
+<AlertLabel
   label='Info'
   type='info'/>
 ```
@@ -19,7 +19,8 @@ span: 2
 ```react
 span: 2
 ---
-<px.AlertLabel
+const {AlertLabel} = PxReact;
+<AlertLabel
   label='warning'
   type='warning'/>
 ```
@@ -27,7 +28,8 @@ span: 2
 ```react
 span: 2
 ---
-<px.AlertLabel
+const {AlertLabel} = PxReact;
+<AlertLabel
   label='healthy'
   type='healthy'/>
 ```
@@ -35,7 +37,8 @@ span: 2
 ```react
 span: 2
 ---
-<px.AlertLabel
+const {AlertLabel} = PxReact;
+<AlertLabel
   label='error'
   type='error'/>
 ```
@@ -43,7 +46,8 @@ span: 2
 ```react
 span: 2
 ---
-<px.AlertLabel
+const {AlertLabel} = PxReact;
+<AlertLabel
   label='important'
   type='important'/>
 ```
