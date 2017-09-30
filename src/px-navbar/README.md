@@ -1,4 +1,5 @@
-The `px.Navbar` component is a responsive mobile first navigation bar.
+The `<Navbar/>` component enables navigation through an information hierarchy and, optionally, management of screen contents.
+
 
 ## Usage
 
@@ -46,5 +47,28 @@ rows:
   - Name: onBackButtonClick
     Type: Function
     Description: Callback to invoke when clicked
+
+```
+
+## Styling
+The following custom properties are available for styling:
+
+```table
+rows:
+  - Property: --px-navbar
+    Default: null
+    Description: Style mixin to be applied to the element
+
+  - Property: --px-navbar-title
+    Default: null
+    Description: Style mixin applied to the title
+
+  - Property: --px-navbar-subtitle
+    Default: null
+    Description: Style mixin applied to the sub title
+
+  - Property: --px-navbar-button
+    Default: null
+    Description: Style mixin applied to the button
 
 ```
