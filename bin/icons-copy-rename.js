@@ -5,12 +5,49 @@
 const fs = require('fs-extra');
 const path = require('path');
 const glob = require('glob');
+const SVGO = require('svgo');
+const svgo = new SVGO({
+  full: true,
+  multipass: true,
+  js2svg: {
+    pretty: true,
+    indent: '  '
+  },
+  plugins: [
+    {cleanupAttrs: true},
+    {removeEditorsNSData: true},
+    {removeEmptyAttrs: true},
+    {removeEmptyContainers: true},
+    {cleanUpEnableBackground: true},
+    {convertStyleToAttrs: true},
+    {convertPathData: true},
+    {convertTransform: true},
+    {removeUnknownsAndDefaults: true},
+    {removeNonInheritableGroupAttrs: true},
+    {removeUselessStrokeAndFill: true},
+    {removeUnusedNS: true},
+    {cleanupNumericValues: true},
+    {mergePaths: true},
+    {convertShapeToPath: true},
+    {transformsWithOnePath: false},
+    {removeAttrs: {attrs: '(class|stroke|fill)'}}
+  ]
+});
+
 
 const SRC_DIR = path.resolve(__dirname, '../src/px-icon-set/icons');
 const DEST_DIR = path.resolve(__dirname, '../temp/icons');
 
 const sizeRegEx = /(\w\d+x\d*)/g
-
+const iconsetNames = {
+  'com': 'communication',
+  'doc': 'document',
+  'fea': 'feature',
+  'nav': 'navigation',
+  'obj': 'object',
+  'utl': 'utility',
+  'vis': 'vis'
+};
 
 /*
 * Gives us the index at the end of a search term
@@ -18,6 +55,22 @@ const sizeRegEx = /(\w\d+x\d*)/g
 function findIndex(searchTerm, src) {
   const i = String(src).indexOf(searchTerm);
   return i + searchTerm.length;
+};
+function optimize(string) {
+  return new Promise(resolve => {
+    svgo.optimize(string, result => {
+      return resolve(result.data);
+    });
+  });
+};
+
+function write(path, string) {
+  return new Promise(resolve => {
+    fs.writeFile(path, string, 'utf8', err => {
+      if (err) throw err;
+      return resolve(path);
+    });
+  });
 };
 
 function getIconNames(src) {
@@ -28,7 +81,6 @@ function getIconNames(src) {
   while(n = re.exec(src)) {
     names.push(n[1])
   }
-
   return names;
 };
 
@@ -55,33 +107,54 @@ function cleanForOutfile(string, name) {
 
 //fs.removeSync(DEST_DIR);
 
-function renameIcons(ns){
-  let allIcons = ``;
+async function renameIcons(ns){
+  let allIcons = `
+  <svg>
+    <defs>
+    `;
   console.log('renameIcons', ns);
+  let outputname = `${DEST_DIR}/${ns}_all.svg`;
+
   const icons = glob(`${SRC_DIR}/src-${ns}/*.svg`, (err, files) =>{
     for (var i = 0; i < files.length; i++) {
       let file = files[i];
       let ext = path.extname(file);
       let basename = path.basename(file).replace(sizeRegEx, '').replace('_', '-');
       let newName = `px-${ns}:${basename}`;
-    //  console.log('=>', newName);
+      let newFilename = path.resolve(DEST_DIR, newName);
+     console.log('\n=>', newName);
 
       let rawSvg = fs.readFileSync(file, 'utf8');
-    //  console.log('dirty - svg', rawSvg);
+      console.log('dirty - svg =>', rawSvg);
+
+      svgo.optimize(rawSvg, (err, data) =>{
+        console.log(err, data);
+      });
+
       let svg = cleanForOutfile( rawSvg, newName);
-      console.log( svg);
+      console.log('clean - svg =>', svg);
 
       allIcons += `\n${svg}`;
 
-      fs.copySync(file, path.resolve(DEST_DIR, newName));
-      if(i === files.length ){
-        fs.writeFileSync(`${DEST_DIR}/_all.svg`, allIcons, 'utf8');
-      }
+      fs.copySync(file, newFilename);
+      fs.writeFileSync(outputname, allIcons, 'utf8');
+      //console.log(allIcons);
     }
+    if(i === files.length ){
+      allIcons += `
+      </defs>
+      </svg>
+      `
 
+      fs.writeFileSync(outputname, allIcons, 'utf8');
+      return outputname;
+    }
   });
 }
 
 
-const iconSets = ['doc', 'fea', 'obj', 'utl', 'vis', 'nav', 'com'];
-iconSets.forEach(icons => renameIcons(icons));
+const iconSets = Object.keys(iconsetNames);
+iconSets.forEach(icons => {
+  var name = renameIcons(icons);
+  console.log('optimize', name);
+});
