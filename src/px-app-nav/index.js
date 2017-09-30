@@ -13,6 +13,7 @@ export default class AppNav extends BaseComponent {
     super(props, {name: 'AppNav'});
     this.state = {
       selected: this.props.selected,
+      selectedItem: null,
       propForSelect: this.props.propForSelect
     };
     this._items = [];
@@ -22,13 +23,21 @@ export default class AppNav extends BaseComponent {
   _getIndexForValue(val){
     return this._keys.indexOf(val);
   }
+  _getValueForIndex(index){
+    return this._items[index];
+  }
 
   handleClick(val, event) {
+    const index = this._getIndexForValue(val);
     this._log('handleClick', val);
     //event.preventDefault();
     this.setState({
-      selected: this._getIndexForValue(val)
+      selected: index,
+      selectedItem: this._getValueForIndex(index)
     });
+    if(this.props.onChange){
+      this.props.onChange(this._getValueForIndex(index))
+    }
   }
 
   _reset(){
@@ -37,7 +46,9 @@ export default class AppNav extends BaseComponent {
   }
 
   _renderItem(child, index){
-    let propForSelect = (this.props.propForSelect ? child.props[this.props.propForSelect] : index);
+    this._log('_renderItem', child, index, propForSelect);
+
+    let propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : index);
     this._items.push(child);
     this._keys.push(propForSelect);
 
@@ -46,20 +57,20 @@ export default class AppNav extends BaseComponent {
     let itemClasses = classnames(
       {'iron-selected': selected}
     );
-    return (<li className={itemClasses}>
-      <NavItem
+
+    return (<NavItem
+        onClick={this.handleClick.bind(this, propForSelect)}
         selected={selected}
-        onClick={this.handleClick(propForSelect)}
-        key={index} {...child.props}/>
-    </li>);
+        key={index}
+        {...child}/>);
   }
 
   _renderItems(items){
     this._reset();
     return (
-      <ul className="tabs-container__nav flex">
+      <div className="app-nav__items">
         {items && items.map(this._renderItem.bind(this))}
-      </ul>
+      </div>
     );
   }
 
@@ -72,6 +83,7 @@ export default class AppNav extends BaseComponent {
       items,
       selected,
       selectedItem,
+      onChange,
       children
     } = this.props;
 
@@ -84,9 +96,7 @@ export default class AppNav extends BaseComponent {
 
     return (
       <nav className={baseClasses} style={style}>
-        <section className='app-nav__items'>
-          {this._renderItems(items)}
-        </section>
+        {this._renderItems(items)}
         {/* Horizontal menu */}
 
         {/* Overflowed or collapsed */}

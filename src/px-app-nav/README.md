@@ -53,6 +53,33 @@ const navItems = [
 </div>
 ```
 
+```react
+state:
+  selected: 'settings'
+  selectedItem: null
+
+---
+const { AppNav } = PxReact;
+const navItems = [
+  {id : "home", label: "Home", icon: "px-fea:home"},
+  {id : "settings", label: "Settings", icon: "px-fea:settings"},
+  {id : "alert", label: "Alerts", icon: "px-fea:alerts"}
+];
+<div>
+  <style>{`
+    :root{
+      --px-app-nav-background-color: #e2e8ed;
+      --px-app-nav-item-background-color: transparent;
+    }
+  `}</style>
+  <AppNav
+    propForSelect='id'
+    selected={state.selected}
+    items={navItems}/>
+    <p>Selected Index: {state.selected}</p>
+</div>
+```
+
 
 ### Vertical
 ```react
