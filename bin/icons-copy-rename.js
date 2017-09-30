@@ -72,6 +72,14 @@ function write(path, string) {
     });
   });
 };
+function read(path) {
+  return new Promise(resolve => {
+    fs.readFile(path, 'utf8', (err, data) => {
+      if (err) throw err;
+      return resolve(data);
+    });
+  });
+};
 
 function getIconNames(src) {
   const re = /<g\s?id="([^"]+)/g;
@@ -107,7 +115,7 @@ function cleanForOutfile(string, name) {
 
 //fs.removeSync(DEST_DIR);
 
-async function renameIcons(ns){
+function renameIcons(ns){
   let allIcons = `
   <svg>
     <defs>
@@ -115,46 +123,64 @@ async function renameIcons(ns){
   console.log('renameIcons', ns);
   let outputname = `${DEST_DIR}/${ns}_all.svg`;
 
-  const icons = glob(`${SRC_DIR}/src-${ns}/*.svg`, (err, files) =>{
-    for (var i = 0; i < files.length; i++) {
-      let file = files[i];
-      let ext = path.extname(file);
-      let basename = path.basename(file).replace(sizeRegEx, '').replace('_', '-');
-      let newName = `px-${ns}:${basename}`;
-      let newFilename = path.resolve(DEST_DIR, newName);
-     console.log('\n=>', newName);
+  return new Promise((resolve, reject) =>{
+    glob(`${SRC_DIR}/src-${ns}/*.svg`, (err, files) =>{
+      for (var i = 0; i < files.length; i++) {
+        let file = files[i];
+        let ext = path.extname(file);
+        let basename = path.basename(file).replace(sizeRegEx, '').replace('_', '-');
+        let newName = `px-${ns}:${basename}`;
+        let newFilename = path.resolve(DEST_DIR, newName);
+       console.log('\n=>', newName);
 
-      let rawSvg = fs.readFileSync(file, 'utf8');
-      console.log('dirty - svg =>', rawSvg);
+       //dirty
+        let rawSvg = fs.readFileSync(file ,'utf8');
+        //console.log('dirty - svg =>', rawSvg);
 
-      svgo.optimize(rawSvg, (err, data) =>{
-        console.log(err, data);
-      });
+        //clean
+        let svg = cleanForOutfile( rawSvg, newName);
+        //console.log('clean - svg =>', svg);
 
-      let svg = cleanForOutfile( rawSvg, newName);
-      console.log('clean - svg =>', svg);
+        allIcons += `\n${svg}`;
 
-      allIcons += `\n${svg}`;
-
-      fs.copySync(file, newFilename);
-      fs.writeFileSync(outputname, allIcons, 'utf8');
-      //console.log(allIcons);
-    }
-    if(i === files.length ){
-      allIcons += `
-      </defs>
-      </svg>
-      `
-
-      fs.writeFileSync(outputname, allIcons, 'utf8');
-      return outputname;
-    }
+        fs.copySync(file, newFilename);
+        fs.writeFileSync(outputname, allIcons, 'utf8');
+        //console.log(allIcons);
+      }
+      if(i === files.length ){
+        allIcons += `
+        </defs>
+        </svg>
+        `
+        fs.writeFileSync(outputname, allIcons, 'utf8');
+        resolve(outputname);
+      }
+    });
   });
 }
 
+function optimizeAll(files){
+  let p = [];
+  for (var i = 0; i < files.length; i++) {
+    p.push(optimize(files[i]));
+  }
+  return Promise.all(p);
+}
+
+
+
 
 const iconSets = Object.keys(iconsetNames);
+const names = [];
 iconSets.forEach(icons => {
-  var name = renameIcons(icons);
-  console.log('optimize', name);
+  //names.push(renameIcons(icons));
+
 });
+console.log('optimize', names);
+
+
+
+  glob(`${DEST_DIR}/*_all.svg`, (err, files) =>{
+    console.log(files);
+    optimizeAll(files);
+  });
