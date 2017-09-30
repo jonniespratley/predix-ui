@@ -135,11 +135,11 @@ function renameIcons(ns){
 
        //dirty
         let rawSvg = fs.readFileSync(file ,'utf8');
-        //console.log('dirty - svg =>', rawSvg);
+        console.log('dirty - svg =>', rawSvg);
 
         //clean
         let svg = cleanForOutfile( rawSvg, newName);
-        //console.log('clean - svg =>', svg);
+        console.log('clean - svg =>', svg);
 
         allIcons += `\n${svg}`;
 
