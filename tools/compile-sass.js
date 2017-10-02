@@ -11,28 +11,31 @@ const DEST = '../temp/all.css';
 const yourPathTotheFile = path.resolve(__dirname, DEST );
 const scss_filename = path.resolve(__dirname, SRC, 'theme/px-dark-theme.scss' );
 
-
 const config = {
   src: path.resolve(__dirname, '../src'),
   dest: path.resolve(__dirname, '../temp/css'),
-  sass: path.resolve(__dirname, '../src/**/*.scss')
+  sass: path.resolve(__dirname, '../src/sass/index.scss')
 };
 
 glob(config.sass, (err, files) =>{
-  var newPath;
+  var newPath, newFilename;
   files.map(file => {
     newPath = path.parse(file);
     newPath.ext = '.css';
-    console.log('compile each', file);
+    newFilename = newPath.base.replace('.scss', '.css');
+    console.log('sass =>', newPath.base);
 
-    //compileSass(file, path.format(newPath))
-    //console.log(path.join(file, config.dest))
+    console.log('css =>', newFilename)
+
+    compileSass(file, path.resolve(config.dest, newFilename));
+
   });
 });
 
 
 
 function compileSass(input, output){
+  //fs.ensureDirSync(path.parse(output).dirname);
   return new Promise((resolve, reject) =>{
     var SASS_OPTIONS = {
       file: input,
@@ -49,7 +52,7 @@ function compileSass(input, output){
     sass.render(SASS_OPTIONS, function(err, result) {
       console.log('compileSass', input);
       if (!err) {
-
+        console.log(result);
         fs.writeFileSync(output, result);
         resolve({
           filename: output,
