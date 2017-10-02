@@ -8,7 +8,7 @@ import stylesheet from './style.scss';
  */
 export default class Accordion extends BaseComponent {
   constructor(props){
-    super(props, {name: 'Accordion'});
+    super(props, {displayName: 'Accordion'});
     this.state = {
       open: true
     };

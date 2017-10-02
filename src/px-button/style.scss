@@ -11,8 +11,6 @@ $inuit-enable-btn--full: true;
 @import "px-buttons-design/_objects.buttons.scss";
 
 .px-button {
-  .btn{
-    outline: none;
-    user-select: none;
-  }
+  outline: none;
+  user-select: none;
 }

@@ -25,6 +25,7 @@ export default class IconSet extends React.Component {
 			element._svgIcon = null;
 		}
 	}
+
 	_renderUseIcon(icon, size) {
 		let style = {
 			pointerEvents: 'none',
@@ -72,14 +73,13 @@ export default class IconSet extends React.Component {
 	}
 
 	render() {
-		const {name, icon, children, size} = this.props;
+		const { name, icon, children, size } = this.props;
 		console.warn('IconSet', name, ':', icon);
 		return (
 			<div ref={(e) => {
 				this.refs.root = e;
 			}}>
 				{children}
-
 			</div>
 		);
 	}

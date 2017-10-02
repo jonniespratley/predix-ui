@@ -4,14 +4,14 @@ import style from './style.scss';
 import Drawer from '../../px-drawer';
 import Navbar from '../../px-navbar';
 import NavDrawer from '../../px-drawer/px-nav-drawer';
-
+import BaseComponent from '../../base-component';
 /**
  * px-layout component
  */
-export default class DrawerLayout extends React.Component {
+export default class DrawerLayout extends BaseComponent {
 
   constructor(props){
-    super(props);
+    super(props, {displayName: 'DrawerLayout'});
     this.isAttached = false;
     this.state = {
       isNarrow: false

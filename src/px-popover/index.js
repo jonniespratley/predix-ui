@@ -9,7 +9,7 @@ import stylesheet from './style.scss';
 
 export default class Popover extends BaseComponent {
   constructor(props){
-    super(props, {name: 'Popover'});
+    super(props, {displayName: 'Popover'});
   }
   render(){
     const {

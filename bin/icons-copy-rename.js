@@ -2,6 +2,7 @@
  going to copy all icons from src/px-icon-set/icons/src-{name} to
  {name}-{icon}.svg
 */
+const _ = require('lodash');
 const fs = require('fs-extra');
 const path = require('path');
 const glob = require('glob');
@@ -113,49 +114,96 @@ function cleanForOutfile(string, name) {
 };
 
 
-//fs.removeSync(DEST_DIR);
 
-function renameIcons(ns){
-  let allIcons = `
-  <svg>
-    <defs>
-    `;
-  console.log('renameIcons', ns);
-  let outputname = `${DEST_DIR}/${ns}_all.svg`;
+function cleanName(ns, file){
+  let ext = path.extname(file);
+  let basename = path.basename(file).replace(sizeRegEx, '').replace('_', '-');
+  let newName = `px-${ns}-${basename}`;
+  let newFilename = path.resolve(DEST_DIR, newName);
 
+  return {
+    file: file,
+    newFilename: newFilename,
+    basename: path.basename(newFilename),
+    parsed: path.parse(newFilename)
+  }
+}
+
+function globFiles(pattern){
   return new Promise((resolve, reject) =>{
-    glob(`${SRC_DIR}/src-${ns}/*.svg`, (err, files) =>{
-      for (var i = 0; i < files.length; i++) {
-        let file = files[i];
-        let ext = path.extname(file);
-        let basename = path.basename(file).replace(sizeRegEx, '').replace('_', '-');
-        let newName = `px-${ns}-${basename}`;
-        let newFilename = path.resolve(DEST_DIR, newName);
-       console.log('\n=>', newName);
+    glob(pattern, (err, files) => {
+      if(err){
+        reject(err);
+      }
+      resolve(files);
+    });
+  });
+}
 
-       //dirty
+/**
+ * renameIcons - Rename all icons by cleaning filename and writing to dest
+ */
+function renameIcons(ns){
+  console.log('renameIcons', ns);
+  let jsIcons = `
+  renderGraphic() {
+    switch (this.props.icon) {
+
+  `;
+  let allIcons = `<svg><defs>`;
+  let outputname = `${DEST_DIR}/${ns}_all.svg`;
+  let dirPattern = `${SRC_DIR}/src-${ns}/*.svg`;
+  let out = [];
+  fs.ensureDirSync(DEST_DIR);
+  return new Promise((resolve, reject) =>{
+    globFiles(dirPattern).then((files) => {
+      let _done = _.after(files.length, () =>{
+        allIcons += `
+          </defs>
+          </svg>
+        `
+
+        jsIcons += `
+      }
+    }
+        `;
+        fs.writeFileSync(outputname, allIcons, 'utf8');
+        fs.writeFileSync(outputname.replace('.svg', '.js'), jsIcons, 'utf8');
+        out.push(outputname);
+        resolve(out);
+      });
+
+      _.forEach(files, (file) => {
+        let cleanFile = cleanName(ns, file);
+        console.log('\n=>', cleanFile.newFilename);
+
+        //dirty
         let rawSvg = fs.readFileSync(file ,'utf8');
         console.log('dirty - svg =>', rawSvg);
 
-        //clean
-        let svg = cleanForOutfile( rawSvg, newName);
-        console.log('clean - svg =>', svg);
 
-        allIcons += `\n${svg}`;
 
-        fs.copySync(file, newFilename);
-        fs.writeFileSync(outputname, allIcons, 'utf8');
-        //console.log(allIcons);
-      }
-      if(i === files.length ){
-        allIcons += `
-        </defs>
-        </svg>
-        `
-        fs.writeFileSync(outputname, allIcons, 'utf8');
-        resolve(outputname);
-      }
-    });
+        optimize(rawSvg).then((res) =>{
+
+          //clean
+          let svg = cleanForOutfile( res, cleanFile.basename );
+
+          jsIcons += `
+          case '${cleanFile.basename.replace('.svg', '')}':
+            return (${svg});
+          `;
+
+
+          allIcons += `\n${svg}`;
+          console.log('clean - svg =>', svg);
+          console.log('optimized', res);
+
+          write(cleanFile.newFilename, res).then(_done);
+        });
+
+
+      });
+    }).catch(reject);
   });
 }
 
@@ -169,18 +217,20 @@ function optimizeAll(files){
 
 
 
-
 const iconSets = Object.keys(iconsetNames);
 const names = [];
 iconSets.forEach(icons => {
-  names.push(renameIcons(icons));
-
-});
-console.log('optimize', names);
-
-
-
-  glob(`${DEST_DIR}/*_all.svg`, (err, files) =>{
-    console.log(files);
-    optimizeAll(files);
+  renameIcons(icons).then((files) =>{
+    names.push(files);
+  }).then(()=>{
+    console.log('optimize', names);
   });
+});
+
+
+
+
+glob(`${DEST_DIR}/*_all.svg`, (err, files) =>{
+  console.log(files);
+//  optimizeAll(files);
+});

@@ -26,7 +26,9 @@ export default(props) => {
     attrs,
   	children
   } = props;
-	let cssClasses = classnames('btn',
+	let cssClasses = classnames(
+    'px-button',
+    'btn',
     { 'btn--primary': primary },
     { 'btn--tertiary': tertiary },
     { 'btn--bare': bare },

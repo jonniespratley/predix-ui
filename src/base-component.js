@@ -19,16 +19,16 @@ export default class BaseComponent extends React.Component {
 		log: false
 	}) {
 		super(props);
-
+		this.displayName = options.name || options.displayName;
 		// TODO: Find a way to flag on or off
-		let log = debug(`px:${options.displayName}`);
+		let log = debug(`px:${this.displayName}`);
 		this._log = log;
 		this.$$ = {
 			options,
 			log,
 			classnames
 		};
-		this.displayName = options.displayName;
+
 		this._log('constructor', props, options);
 	}
 

@@ -1,1 +1,7 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><title>sms_32x32</title><polyline points="20.5 18 20.5 29.5 0.5 29.5 0.5 0.5 20.5 0.5 20.5 3" fill="none" stroke="#4c6472" stroke-linejoin="round"/><polygon points="12.5 4.5 29.5 4.5 29.5 15.5 17.5 15.5 12.5 20.5 12.5 4.5" fill="none" stroke="#4c6472" stroke-linejoin="round"/><rect x="9.5" y="25.5" width="3" height="2" fill="none" stroke="#4c6472" stroke-linejoin="round"/><line x1="1" y1="23.5" x2="21" y2="23.5" fill="none" stroke="#4c6472" stroke-linejoin="round"/></svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+  <title>sms_32x32</title>
+  <polyline points="20.5 18 20.5 29.5 0.5 29.5 0.5 0.5 20.5 0.5 20.5 3" fill="none" stroke="#4c6472" stroke-linejoin="round"/>
+  <polygon points="12.5 4.5 29.5 4.5 29.5 15.5 17.5 15.5 12.5 20.5 12.5 4.5" fill="none" stroke="#4c6472" stroke-linejoin="round"/>
+  <rect x="9.5" y="25.5" width="3" height="2" fill="none" stroke="#4c6472" stroke-linejoin="round"/>
+  <line x1="1" y1="23.5" x2="21" y2="23.5" fill="none" stroke="#4c6472" stroke-linejoin="round"/>
+</svg>
