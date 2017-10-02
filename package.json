@@ -22,7 +22,7 @@
   "scripts": {
     "plop": "./node_modules/.bin/plop",
     "docs": "esdoc",
-    "dist:icons": "node ./bin/icons-optimize-and-fix.js",
+    "dist:icons": "node ./tools/icons-optimize-and-fix.js",
     "start": "webpack-dev-server --env dev",
     "test": "jest",
     "test:coverage": "jest --coverage",
@@ -38,7 +38,7 @@
     "preversion": "npm run test && npm run dist && npm run dist:min && git commit --allow-empty -am ''",
     "prepublish": "npm run dist:es6 && npm run dist:modules",
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
-    "postinstall": "node bin/post_install.js"
+    "postinstall": "node tools/post_install.js"
   },
   "engines": {
     "node": "^8.0.0",
@@ -120,7 +120,7 @@
     "sync-exec": "^0.6.2",
     "system-bell-webpack-plugin": "^1.0.0",
     "url-loader": "^0.5.8",
-  
+
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.4.5",
