@@ -10,7 +10,8 @@
       html,
       body {
         background: #eee;
-        padding: .5rem;
+        margin: 0;
+        padding: 0;
         width: 100%;
         height: 100%;
       }
@@ -21,39 +22,129 @@
   <body translate="no">
     <div id="app"><!-- App loaded here --></div>
 
-    <style media="screen">
-      :root{
-        --px-btn-background: pink;
-        --px-drawer-background-color: red;
-      }
-    </style>
+
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js'></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <link rel="stylesheet" href="../dist/px-components-react.css"/>
     <script src="../dist/px-components-react.js"></script>
+    <style media="screen">
+      :root{
+
+        --px-drawer-background-color: red;
+        --px-app-nav-background-color: black;
+        --px-app-nav-item-background-color: transparent;
+      }
+    </style>
     <script type="text/babel">
     //  const { Component } = React;
       const { render } = ReactDOM;
-      const { Button, AppHeader, AppNav, Card } = PxReact;
+      const {
+
+        AppHeader,
+        AppNav,
+        Button,
+        Card,
+        DrawerLayout,
+        Layout,
+        LayoutItem,
+        Icon
+      } = PxReact;
       const navItems = [
-      { selected: true, "path":"tab1","icon":"px-fea:alerts","eventName":"firstItem","label":"Alerts","subitems":[{"label":"Sub Category 1"},{"label":"Sub Category 2","eventName":"subitemTwo"},{"label":"Sub Category 3","path":"subitem3"}]},{"path":"tab2","icon":"px-fea:asset","label":"Cases","subitems":[{"label":"Sub Category 1"},{"label":"Sub Category 2"},{"label":"Sub Category 3"}]},{"path":"tab3","icon":"px-fea:analysis","label":"Analysis"},{"path":"tab4","icon":"px-fea:dashboard","label":"Dashboards"}];
+      { "path":"tab1","icon":"px-fea:alerts","eventName":"firstItem","label":"Alerts",
+      "subitems":[
+        {"label":"Sub Category 1"},
+        {"label":"Sub Category 2","eventName":"subitemTwo"},
+        {"label":"Sub Category 3","path":"subitem3"}
+      ]},
+      {"path":"tab2","icon":"px-fea:asset","label":"Cases",
+        "subitems":[
+          {"label":"Sub Category 1"},
+          {"label":"Sub Category 2"},
+          {"label":"Sub Category 3"}
+      ]},
+        {"path":"tab3","icon":"px-fea:analysis","label":"Analysis"},
+        {"path":"tab4","icon":"px-fea:dashboard","label":"Dashboards"}
+    ];
+
+      const demoIcons = [
+        'px-doc'
+      ];
+      const navIcons = [
+        "px-nav:back",
+        "px-nav:close",
+        "px-nav:collapse",
+        "px-nav:confirmed",
+        "px-nav:down",
+        "px-nav:expand",
+        "px-nav:favorite",
+        "px-nav:generic-user",
+        "px-nav:grid-view",
+        "px-nav:hamburger",
+        "px-nav:hierarchy",
+        "px-nav:home",
+        "px-nav:inbox-view",
+        "px-nav:instance",
+        "px-nav:list-view",
+        "px-nav:log-out",
+        "px-nav:menu",
+        "px-nav:more",
+        "px-nav:new-window",
+        "px-nav:next",
+        "px-nav:notification",
+        "px-nav:open-context",
+        "px-nav:pause",
+        "px-nav:play",
+        "px-nav:reload",
+        "px-nav:search",
+        "px-nav:stop",
+        "px-nav:tile-view",
+        "px-nav:tree",
+        "px-nav:unconfirmed",
+        "px-nav:up"
+      ];
+
+      const drawerContent = (<div>
+        Content
+      </div>);
+
+
+      const cards = [
+        1,2,3,4,5,7,8,9,10
+      ];
 
       class App extends React.Component {
+
       	render(){
+
+
+
+
       		return (
-            <div>
-              <div>
-              <h1>PxReact Component Example</h1>
-                <p>Here is an example of using the px-components-react library with custom css properties.</p>
-                <Card title='Card Title'>
-                  This is the card content.
-                  <Button label='Button'></Button>
-                  <Button label='Button' large></Button>
-                </Card>
-              </div>
-            </div>
+            <DrawerLayout
+               title='My App'
+               navItems={navItems}
+               drawerContent={drawerContent}>
+
+               <Layout>
+                 <LayoutItem>
+                   <h1>PxReact Component Example</h1>
+
+
+                   <Card headerText='Card Title'>
+                    <p>Here is an example of using the px-components-react library with custom css properties.</p>
+                     <Button label='Button'></Button>
+                   </Card>
+
+                   {cards && cards.map((card, index) => (
+                     <Card headerText={`Card #${index}`}>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                     </Card>
+                   ))}
+                 </LayoutItem>
+              </Layout>
+             </DrawerLayout>
       		)
       	}
       }

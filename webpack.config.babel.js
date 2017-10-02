@@ -38,12 +38,14 @@ const analyzeBundle = new BundleAnalyzerPlugin({
 });
 
 const extractCss = new ExtractTextPlugin({
-	filename: `${pkg.name}-[name].css`,
+	filename: `css/${pkg.name}-[name].css`,
+  //disable: process.env.BABEL_ENV !== 'dist',
   allChunks: true
 });
 
 const extractSass = new ExtractTextPlugin({
-	filename: `${pkg.name}-[name]-[hash].css`,
+	filename: `${pkg.name}.css`,
+  //disable: process.env.BABEL_ENV !== 'dist',
   allChunks: true
 });
 

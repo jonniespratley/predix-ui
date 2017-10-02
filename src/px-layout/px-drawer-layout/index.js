@@ -13,7 +13,6 @@ import IronMediaQuery from '../../iron-components/iron-media-query';
  * px-layout component
  */
 export default class DrawerLayout extends BaseComponent {
-
   constructor(props){
     super(props, {displayName: 'DrawerLayout'});
     this.isAttached = false;
@@ -21,113 +20,31 @@ export default class DrawerLayout extends BaseComponent {
       isNarrow: false
     };
     this.handleMediaChange = this.handleMediaChange.bind(this);
-
   }
-
-  toggleClass(name, onoff, el){
-    if(el){
-      el.classList.toggle(name);
-    } else {
-      if(onoff){
-        this.refs.baseElement.classList.add(name);
-      } else {
-        this.refs.baseElement.classList.remove(name);
-      }
-    }
-    console.log('toggleClass', name);
-  }
-
-
-
-  debounce(name, func, wait, immediate){
-    console.log('DrawerLayout.debounce', name);
-    var timeout;
-    var context = this, args = arguments;
-    var later = function() {
-      timeout = null;
-      if (!immediate) {
-        func.apply(context, args);
-      }
-    };
-    var callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) {
-      func.apply(context, args);
-    }
-  }
-
 
   componentDidMount(){
     this.isAttached = true;
   }
 
-  /**
-   * Handle resetting the layout and either hiding or revealing the drawer.
-   * @event px-layout-reset
-   */
-  resetLayout () {
-    if (!this.isAttached) {
-      console.warn('notAttached');
-      //return;
-    }
-    const narrow = !window.matchMedia(`(min-width: ${this.props.responsiveWidth})`).matches;
-    var baseElement  = this.baseElement;
-    var drawer = this.drawer;
-    var drawerWidth = drawer && drawer.getWidth() || 250;
-    var contentContainer = this.contentContainer;
-    const navbar = this.navbar;
-
-    console.log('narrow', this.props.responsiveWidth, narrow, drawerWidth);
-  //  this.setState({isNarrow: narrow});
-
-    if (narrow) {
-      //drawer.props.opened = false;
-      //drawer.props.persistent = false;
-      //baseElement.classList.add('is-narrow');
-      //contentContainer.classList.add('is-narrow');
-      //contentContainer.style.marginLeft = '';
-      //contentContainer.style.marginRight = '';
-      if (navbar && navbar.fixed) {
-        navbar.style.left = '';
-      }
-
+  // TODO: Implement changes to position containter based on drawer width;
+  handleMediaChange(e){
+    let narrow = !e.queryMatches;
+    let contentContainer = this.contentContainer;
+    let drawer = this.drawer;
+    let drawerWidth = drawer.offsetWidth || '256';
+    if(narrow){
+      contentContainer.style.marginLeft = '';
+      contentContainer.style.marginRight = '';
     } else {
-      //baseElement.classList.remove('is-narrow');
-      //contentContainer.classList.remove('is-narrow');
-      if (navbar && navbar.fixed) {
-        //navbar.style.left = drawerWidth + 'px';
-      }
       if (drawer.props.align == 'right') {
         contentContainer.style.marginLeft = '';
         contentContainer.style.marginRight = drawerWidth + 'px';
       } else {
-        console.warn('changing contentContainer marginLeft');
-        contentContainer.style.marginLeft = (drawerWidth) + 'px';
+        contentContainer.style.marginLeft = drawerWidth + 'px';
         contentContainer.style.marginRight = '';
       }
     }
-    //this.toggleClass('is-narrow', narrow);
-    this.notifyResize();
-  }
-
-  // TODO: Implement changes to position containter based on draw widt;
-  handleMediaChange(e){
-
-    var contentContainer = this.contentContainer;
-    var drawer = this.drawer;
-    var drawerWidth = drawer.offsetWidth || '300px';
-    console.log('handleMatch', e);
-    this.setState({isNarrow: !e.queryMatches});
-
-    if (drawer.props.align == 'right') {
-      contentContainer.style.marginLeft = '';
-      contentContainer.style.marginRight = drawerWidth + 'px';
-    } else {
-      console.warn('changing contentContainer marginLeft');
-      contentContainer.style.marginLeft = drawerWidth + 'px';
-      contentContainer.style.marginRight = '';
-    }
+    this.setState({isNarrow: narrow});
   }
 
   _handleDrawerToggle(){
@@ -153,9 +70,7 @@ export default class DrawerLayout extends BaseComponent {
       'px-drawer-layout',
       {'px-drawer-layout--is-narrow': isNarrow},
       'l-drawer-layout'
-
     );
-
 
     const headerContent = (
       <div className='flex'>

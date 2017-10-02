@@ -101,8 +101,9 @@
 
     .l-drawer-layout__content {
       position: relative;
-      width   : 100%;
-      height  : 100%;
+
+      //width   : 100%;
+      //height  : 100%;
       //@apply(--px-drawer-layout-content);
     }
 
@@ -113,5 +114,15 @@
     /* Hide the drawer-toggle button on large screens*/
     .l-drawer-layout__container:not(.is-narrow) [drawer-toggle] {
       display: none;
+    }
+
+    &--is-narrow {
+      .l-drawer-layout__content{
+        overflow: auto;
+        top: 0;
+        left: 0;
+        position: fixed;
+      }
+
     }
 }

@@ -38,7 +38,8 @@ const { Layout, LayoutItem } = px;
 This is used for layouts with a drawer that is rendered offscreen on small viewports.
 
 ```react
-responsive:true
+light: true
+
 state:
   opened: false
 ---

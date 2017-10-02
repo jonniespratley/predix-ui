@@ -3226,14 +3226,14 @@ export default class IronIcon extends React.Component{
   }
 
   render() {
+    const { size, style, color } = this.props;
     let styles = {
-      fill: "currentcolor",
-      verticalAlign: "middle",
-      // Use CSS instead of the width prop to support non-pixel units (eg: rem)
-      width: this.props.size,
-      height: this.props.size
+      fill: 'currentcolor',
+      verticalAlign: 'middle',
+      height: size,
+      width: size
     };
-    const {style } = this.props;
+
     return (
       <svg viewBox="0 0 22 22"
         preserveAspectRatio="xMidYMid meet"
@@ -3241,7 +3241,7 @@ export default class IronIcon extends React.Component{
           styles,
           style
         )}>
-          {this.renderGraphic()}
+        {this.renderGraphic()}
       </svg>
     );
   }

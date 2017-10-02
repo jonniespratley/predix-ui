@@ -6,7 +6,7 @@ $drawer-overlay-background-color: rgba(0, 0, 0, 0.5);
 $drawer-background-color: white;
 $drawer-font-color: black;
 
-$drawer-box-shadow: rgba(0, 0, 0, 0.16) 0 3px 10px, rgba(0, 0, 0, 0.23) 0 3px 10px;
+$drawer-box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px, rgba(0, 0, 0, 0.23) 0 1px 4px;
 
 $drawer-height: 100%;
 $drawer-width: 256px;
@@ -28,7 +28,7 @@ $drawer-max-width: 300px;
   		height: var(--px-drawer-height, $drawer-height);
   		box-shadow: $drawer-box-shadow;
       position: fixed;
-      transform: translateX(-100%);
+      transform: translateX(-110%);
       //visibility: hidden;
       top: 0;
       left: 0;

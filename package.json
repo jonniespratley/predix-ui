@@ -31,7 +31,7 @@
     "gh-pages": "webpack --env ghPages",
     "gh-pages:deploy": "gh-pages -d gh-pages",
     "gh-pages:stats": "webpack --env ghPages --profile --json > stats.json",
-    "dist": "webpack --env dist",
+    "dist": "rimraf ./dist/*.* && webpack --env dist",
     "dist:es6": "rimraf ./dist/es6 && BABEL_ENV=es6 babel ./src --out-dir ./dist/es6",
     "dist:min": "webpack --env distMin",
     "dist:modules": "rimraf ./dist/modules && BABEL_ENV=modules babel ./src --out-dir ./dist/modules",

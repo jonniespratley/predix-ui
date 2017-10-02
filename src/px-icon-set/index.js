@@ -1,11 +1,11 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import stylesheet from './style.scss';
+//import stylesheet from './style.scss';
 
-import DocumentIcons from './px-icon-set-document';
+//import DocumentIcons from './px-icon-set-document';
 
-import chatIcon from './icons/optimized-doc/chart_16x16.svg';
+//import chatIcon from './icons/optimized-doc/chart_16x16.svg';
 
 /**
  * px-icon-set component
@@ -21,7 +21,7 @@ export default ({
 
   const getIcon = (name) =>{
     return {
-      __html: chatIcon
+      __html: ''
     }
   };
 
