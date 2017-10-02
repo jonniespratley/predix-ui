@@ -5,10 +5,7 @@ import IronComponents from './';
 
 describe('iron-components', () => {
   test('should...', () =>{
-    const wrapper = shallow(
-      <IronComponents/>
-    );
-    console.log(wrapper.debug());
+
     expect(true).to.equal(true);
   });
   //expect(wrapper.find('.label')).to.have.length(1);
