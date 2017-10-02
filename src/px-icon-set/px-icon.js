@@ -2,6 +2,8 @@ import React from 'react';
 import classnames from 'classnames';
 import stylesheet from './style.scss';
 
+import IronIcon from '../iron-components/iron-icon';
+
 const iconSets = {
   'px-com': {},
   'px-doc': {},
@@ -45,12 +47,62 @@ const getIconName = (name) =>{
   }
 }
 
+
+
+const pxIconSets = {
+  'px-com': {
+    '': ''
+  },
+  'px-doc': {
+    'chart': '',
+    'document': '',
+    'document-csv': '',
+    'image': 'image'
+  },
+  'px-utl': {
+    'chevron-up': 'expand-less',
+    'chevron': 'expand-more',
+    'chevron-down': 'expand-more'
+  },
+  'px-obj': {},
+  'px-nav': {
+    back: 'arrow-back',
+    up: 'arrow-up',
+    next: 'arrow-next',
+    more: 'more-horiz',
+    menu: 'more-vert',
+    favorite: 'grade',
+    expand: 'expand-more',
+    collapse: 'expand-less',
+    'generic-user': 'person-outline',
+
+
+    'grid-view': 'view-module'
+  }
+};
+
+
+//Create a map of px icons to polymer icons (TEMPORTARY)
+// Maps to http://dmfrancisco.github.io/react-icons/
+const pxIconToPolymerIcon = (name) =>{
+  let pieces = name.split(':');
+  let ns = pieces[0];
+  let n = pieces[1];
+  if(pxIconSets[ns] && pxIconSets[ns][n]){
+    n = pxIconSets[ns][n];
+  }
+  console.log('pxIconToPolymerIcon', ns, n);
+  return n;
+};
+
 /**
  * px-icon component
+ *
+ * TODO Right now we are just using iron-icons set
  */
 export default ({
   icon,
-  size = 16,
+  size = 22,
   children
 }) => {
 
@@ -60,19 +112,15 @@ export default ({
     color: 'inherit',
     display: 'inline-block'
   };
-  let name = icon && icon.replace(':', '-');
 
   const baseClasses = classnames(
     'px-icon'
   );
-  const iconClasses = classnames(
-    'icon',
-    {[`${name}`]: icon}
-  );
+
+  const iconName = pxIconToPolymerIcon(icon);
   return (
-    <div className={baseClasses} style={style}>
-      {/* _renderSvgIcon(getIconName(icon), size)*/ }
-      <i className={iconClasses}></i>
+    <div className={baseClasses} style={style} data-icon={iconName}>
+      <IronIcon icon={iconName} size={size}/>
       <style jsx>{stylesheet}</style>
     </div>
   );
