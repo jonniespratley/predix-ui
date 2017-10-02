@@ -15,13 +15,13 @@ const Pane = (props) => {
  */
 class Tabs extends BaseComponent {
 	constructor(props) {
-		super(props);
-		this.displayName = 'Tabs';
+		super(props, {displayName: 'Tabs'});
+
     this.state = {
       selected: this.props.selected,
       propForSelect: this.props.propForSelect
     };
-    this.name = 'tabs';
+
     this._items = [];
     this._keys = [];
 	}
@@ -31,7 +31,7 @@ class Tabs extends BaseComponent {
   }
 
   handleClick(index, event) {
-    this.log('handleClick', index);
+    this._log('handleClick', index);
     event.preventDefault();
     this.setState({
       selected: this._getIndexForValue(index)
