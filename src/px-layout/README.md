@@ -6,6 +6,12 @@ The Predix UI Layout module defines the 'grid' for Predix UI. Layout items can b
 
 ## Usage
 
+
+```react
+const {IronResizable} = PxReact;
+<IronResizable onResize={(e) => console.log(e)}/>
+```
+
 ```react
 const style = {
   layout: {
@@ -37,7 +43,7 @@ const { Layout, LayoutItem } = px;
 ### `px.DrawerLayout`
 This is used for layouts with a drawer that is rendered offscreen on small viewports.
 
-```react
+```code
 responsive:true
 state:
   opened: false

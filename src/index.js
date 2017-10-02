@@ -4,6 +4,7 @@ import React from 'react';
 import Partials from './px-partials';
 
 
+import IronResizable from './px-layout/iron-resizable';
 import AppHeader from './px-app-header';
 import AppNav from './px-app-nav';
 import ExampleComponent from './px-example-component';
@@ -56,6 +57,7 @@ import Iron from './iron-components';
  *
  */
 const px = {
+  IronResizable,
 	ExampleComponent,
 	AppNav,
 	AppHeader,

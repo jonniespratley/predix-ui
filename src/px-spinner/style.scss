@@ -1,4 +1,5 @@
-@import '../sass/_variables.scss';
+$px-spinner-background-color: var(--px-spinner-background-color, gray);
+$px-spinner-fill-color: var(--px-spinner-fill-color, black);
 
 .px-spinner {
 	.circle1 {

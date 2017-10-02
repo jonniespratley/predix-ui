@@ -1,18 +1,25 @@
 The `<ProgressBar/>` component enables you to use the design system progress bar.
 
-The basic progress bar indicates the progress of an activity with explicit start and end times, or known duration. The filled portion of the bar grows from left to right to indicate the percentage of progress.
-
+```hint
+Reference https://www.predix-ui.com/#/elements/px-progressbar
+```
 
 
 ## Usage
 
 ```react
-const { ProgressBar } = px;
+const { ProgressBar } = PxReact;
 <div>
-
   <ProgressBar value={75}/>
-  <p>infinite example</p>
-  <ProgressBar value={50} infinite/>
+</div>
+```
+
+### Infinite example
+
+```react
+const { ProgressBar } = PxReact;
+<div>
+  <ProgressBar value={75} infinite/>
 </div>
 ```
 
