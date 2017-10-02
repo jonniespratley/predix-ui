@@ -8,6 +8,9 @@ import { Catalog, CodeSpecimen, ReactSpecimen } from 'catalog';
 import './main.css';
 import px from '../src';
 
+// TODO: extract
+import IronComponents from '../src/iron-components';
+
 // TODO: Use this format
 import pxAppHeaderDocs from '../src/px-app-header/README';
 import pxAppNavDocs from '../src/px-app-nav/README';
@@ -42,12 +45,14 @@ import pxTreeDocs from '../src/px-tree/README';
 import pxKeyValuePairDocs from '../src/px-key-value-pair/README';
 import pxViewHeaderDocs from '../src/px-view-header/README';
 
+import ironComponentsDocs from '../src/iron-components/README';
 
 const logo = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/predix_ds_logo.webp';
 
 // Add your documentation imports here. These are available to
 // React specimen. Do NOT pass React here as Catalog does that.
 const documentationImports = {
+  IronComponents,
   px,
   PxReact: px
 };

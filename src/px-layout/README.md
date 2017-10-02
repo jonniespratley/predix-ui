@@ -6,12 +6,6 @@ The Predix UI Layout module defines the 'grid' for Predix UI. Layout items can b
 
 ## Usage
 
-
-```react
-const {IronResizable} = PxReact;
-<IronResizable onResize={(e) => console.log(e)}/>
-```
-
 ```react
 const style = {
   layout: {
