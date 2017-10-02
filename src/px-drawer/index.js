@@ -72,7 +72,7 @@ export default class Drawer extends BaseComponent {
   }
 
   onSideNavTouchStart(e) {
-    e.preventDefault();
+    //e.preventDefault();
     this.touchStartX = e.touches[0].pageX;
   }
 
@@ -95,6 +95,7 @@ export default class Drawer extends BaseComponent {
   render(){
     const {
       style,
+      fixed,
       className = 'drawer',
       containerClassName,
       overlay,
@@ -126,6 +127,7 @@ export default class Drawer extends BaseComponent {
       className,
       { [`${className}--${type}`]: true },
       { [`${className}--${align}`]: true },
+      {[`${className}--is-fixed`]: fixed},
       {[`${className}--is-open`]: open},
       {[`${className}--is-docked`]: docked},
     );

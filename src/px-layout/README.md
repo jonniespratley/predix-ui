@@ -37,11 +37,23 @@ const { Layout, LayoutItem } = px;
 ### `px.DrawerLayout`
 This is used for layouts with a drawer that is rendered offscreen on small viewports.
 
-```code
+```react
 responsive:true
 state:
   opened: false
 ---
+const { BrandingBar, DrawerLayout, AppNav } = PxReact;
+
+
+
+const navItems = [
+  {id : "home", label: "Home", icon: "px-fea:home"},
+  {id : "settings", label: "Settings", icon: "px-fea:settings"},
+  {id : "alert", label: "Alerts", icon: "px-fea:alerts"}
+];
+
+
+
 const drawerContent = (
   <div>
     <p className="u-p">
@@ -50,19 +62,15 @@ const drawerContent = (
   </div>
 );
 
-const headerContent = (
-  <px.BrandingBar/>
-);
 
 const style = {
   height: 600
 };
 
-
 <div style={style}>
   <px.DrawerLayout
     title='My App'
-    headerContent={headerContent}
+    navItems={navItems}
     drawerContent={drawerContent}>
 
 

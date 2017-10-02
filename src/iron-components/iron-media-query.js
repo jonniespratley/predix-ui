@@ -11,9 +11,12 @@ export default class IronMediaQuery extends React.Component {
 		this._boundMQHandler = this.queryHandler.bind(this);
 		this.defaultProps = {
 			queryMatches: false,
-			query: ""
+			query: null,
+			onMatch: null,
+			onChange: null
 		};
 		this.state = {
+			full: props.full || false,
 			queryMatches: false,
 			query: props.query || null
 		};
@@ -29,7 +32,10 @@ export default class IronMediaQuery extends React.Component {
 		let s = this.state;
 		s.queryMatches = m;
 		this.setState(s);
-		if (this.props.onMatch) {
+		if (this.props.onChange) {
+			this.props.onChange(s);
+		}
+		if (m && this.props.onMatch) {
 			this.props.onMatch(s);
 		}
 	}
@@ -53,7 +59,7 @@ export default class IronMediaQuery extends React.Component {
 		if (!query) {
 			return;
 		}
-		if (!this.full && query[0] !== "(") {
+		if (!this.props.full && query[0] !== "(") {
 			query = "(" + query + ")";
 		}
 		this._mq = window.matchMedia(query);
