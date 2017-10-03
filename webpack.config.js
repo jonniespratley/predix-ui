@@ -1,12 +1,17 @@
-import * as path from 'path';
-import glob from 'glob';
-import webpack from 'webpack';
-import merge from 'webpack-merge';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import SystemBellPlugin from 'system-bell-webpack-plugin';
-import CleanWebpackPlugin from 'clean-webpack-plugin';
-import NpmInstallPlugin from 'npm-install-webpack-plugin';
+require('babel-register');
+const path = require('path');
+const glob = require('glob');
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const SystemBellPlugin = require('system-bell-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
+//const NpmInstallPlugin from 'npm-install-webpack-plugin';
 
 
 
@@ -38,7 +43,7 @@ const analyzeBundle = new BundleAnalyzerPlugin({
 });
 
 const extractCss = new ExtractTextPlugin({
-	filename: `css/${pkg.name}-[name].css`,
+	filename: `${pkg.name}-[name].css`,
   //disable: process.env.BABEL_ENV !== 'dist',
   allChunks: true
 });
@@ -379,9 +384,6 @@ const distMin = merge(distCommon, {
 
 // TODO: Add in sass plugin and rules
 //distCommon.plugins.push(extractCss);
-
-
-
 
 
 //

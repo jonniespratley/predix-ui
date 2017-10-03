@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import style from './px-drawer-layout';
+import stylesheet from './px-drawer-layout.scss';
 import Drawer from '../../px-drawer';
 import AppHeader from '../../px-app-header';
 import BrandingBar from '../../px-branding-bar';
@@ -96,10 +96,10 @@ export default class DrawerLayout extends BaseComponent {
               open={isOpen}
               docked={!isNarrow}
               onOverlayClick={(e) => this.setState({isOpen: false})}
-              >
-                <AppNav
-                  vertical
-                  items={navItems}/>
+            >
+              <AppNav
+                vertical
+                items={navItems}/>
 
               {drawerContent}
             </Drawer>
@@ -116,9 +116,9 @@ export default class DrawerLayout extends BaseComponent {
         </div>
 
         <IronMediaQuery
-            onChange={this.handleMediaChange}
-            query={`(min-width: ${this.props.responsiveWidth})`} full/>
-        <style jsx >{style}</style>
+          onChange={this.handleMediaChange}
+          query={`(min-width: ${this.props.responsiveWidth})`} full/>
+        <style jsx >{stylesheet}</style>
       </div>
     );
   }
