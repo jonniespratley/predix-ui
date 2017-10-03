@@ -39,6 +39,7 @@ This is used for layouts with a drawer that is rendered offscreen on small viewp
 
 ```react
 light: true
+frame: true
 
 state:
   opened: false

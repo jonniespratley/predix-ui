@@ -24,20 +24,86 @@ import {TableView, TableRow} from 'px-components-react';
 </px.TableView>
 ```
 
+
+
+## Examples
+
+
+### 1. Basic
+
 ```react
-const tableItems = [
+const items = [
+  {title: 'Text Label'},
+  {title: 'Text Label'},
+  {title: 'Text Label'}
+];
+<px.TableView items={items} tappable/>
+```
+
+### 2. With icons
+
+```react
+const items = [
+  {title: 'Text Label', icon:'px-nav:home'},
+  {title: 'Text Label', icon:'px-nav:home'},
+  {title: 'Text Label', icon:'px-nav:home'}
+];
+<px.TableView items={items} tappable/>
+```
+
+
+
+
+
+### 3. With  images
+
+```react
+const items = [
+  {title: 'Text Label', image:'http://placehold.it/44'},
+  {title: 'Text Label', image:'http://placehold.it/44'},
+  {title: 'Text Label', image:'http://placehold.it/44'}
+];
+<px.TableView items={items} tappable/>
+```
+
+
+### 4. With labels
+
+```react
+const items = [
+  {title: 'Text Label', label1: 'New'},
+  {title: 'Text Label', label1: 'New'}
+];
+<px.TableView items={items} tappable/>
+```
+
+### 5. With descriptions
+
+
+```react
+const items = [
   {
-    title: 'John Doe',
-    body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    image:'https://placehold.it/80'
+    title: 'Text Label',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
   },
-  {title: 'Row 2', body: 'This is row 2'},
-  {title: 'Row 3', body: 'This is row 3', image:'http://lorempixel.com/80/80/abstract'}
+  {
+    title: 'Text Label',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+  },
+  {
+    title: 'Text Label',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+  }
 ];
 <div>
-  <px.TableView items={tableItems} tappable/>
+  <px.TableView items={items} tappable/>
 </div>
 ```
+
+
+
+
+
 
 
 ## Properties

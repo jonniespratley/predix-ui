@@ -9,7 +9,7 @@
 
 
 @mixin c($el) {
-  .#{$el} {
+  #{$el} {
     @content;
   }
 }
@@ -18,26 +18,10 @@
  * px-table-view styles
  */
 .px-table-view {
-// @import 'px-table-view/sass/px-table-view-predix.scss';
-}
+  // @import 'px-table-view/sass/px-table-view-predix.scss';
 
-// Base
-
-@include b ('table-view') {
-  @include clearfix();
-  @include pxFonts();
-  font-size      : $table-row-font-size;
-
-  list-style-type: none;
-  margin         : 0;
-  padding        : 0;
-  position       : relative;
-  display        : flex;
-  flex-direction : column;
-
-  ///------------------------------------------------------
-  @include c ('.table-row') {
-    padding: $inuit-base-spacing-unit--small;
+  .table-row{
+    padding: $inuit-base-spacing-unit;
   }
 
   ///------------------------------------------------------
@@ -72,12 +56,6 @@
     }
   }
 
-  ///------------------------------------------------------
-  @include modifier ('regular') {
-    @include c ('.table-row') {
-      padding: $inuit-base-spacing-unit !important;
-    }
-  }
 
   ///------------------------------------------------------
   ///.table-view--flush
@@ -87,9 +65,30 @@
     }
   }
 
-  &ul {
-    margin: 0 !important;
-  }
-}
 
-// Trumps
+  // Base
+  @include block('table-view') {
+    @include clearfix();
+    @include pxFonts();
+    font-size      : $table-row-font-size;
+
+    list-style-type: none;
+    margin         : 0;
+    padding        : 0;
+    position       : relative;
+    display        : flex;
+    flex-direction : column;
+
+    ///------------------------------------------------------
+
+
+
+
+    &ul {
+      margin: 0 !important;
+    }
+  }
+
+  // Trumps
+
+}
