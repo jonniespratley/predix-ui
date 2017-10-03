@@ -3,16 +3,16 @@ import classnames from 'classnames';
 import stylesheet from './style.scss';
 import TreeNode from './px-tree-node';
 
+import BaseComponent from '../base-component';
 /**
  * px-tree component
  */
- export default class Tree extends React.Component {
+ export default class Tree extends BaseComponent{
    constructor(props){
-     super(props);
+     super(props, {displayName: 'Tree'});
      this.state = {
        selectedNode: null
      };
-
      this.handleClick = this.handleClick.bind(this);
    }
 
@@ -27,19 +27,13 @@ import TreeNode from './px-tree-node';
       children
     } = this.props;
 
-    const {selectedNode} = this.state;
+    const { selectedNode } = this.state;
 
     const baseClasses = classnames('px-tree');
 
     return (
       <div className={baseClasses} style={style}>
-        <ul>
-          {items && items.map((item, index) => <TreeNode
-            onClick={(e) => {this.handleClick(e)}}
-            item={item}
-            isSelected={selectedNode === item}
-            key={index} {...item}/>)}
-        </ul>
+        <TreeNode data={items}/>
         <style jsx>{stylesheet}</style>
       </div>
     );

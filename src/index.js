@@ -42,6 +42,7 @@ const LayoutItem = ({style, children}) => {
 
 import ProgressBar from './px-progress-bar';
 import Popover from './px-popover';
+import TreeNode from './px-tree/px-tree-node';
 import Tree from './px-tree';
 import Overlay from './px-overlay';
 import DataTable from './px-datatable';
@@ -93,6 +94,7 @@ const px = {
 	Tab,
 	Tile,
 	Tree,
+  TreeNode,
 	ViewHeader
 };
 module.exports = px;

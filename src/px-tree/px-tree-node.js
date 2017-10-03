@@ -2,8 +2,8 @@ import React from 'react';
 import classnames from 'classnames';
 import stylesheet from './px-tree-node.scss';
 import TreeIcon from './px-tree-icon';
-
-
+import BaseComponent from '../base-component';
+/*
 
 export default class TreeNode extends React.Component {
   constructor(props){
@@ -73,3 +73,65 @@ export default class TreeNode extends React.Component {
     );
   }
 }
+*/
+class TreeNode extends BaseComponent {
+	constructor(props) {
+		super(props, {displayName:'TreeNode'});
+		this.state = {
+			children: []
+		};
+		this.onCategorySelect = this.onCategorySelect.bind(this);
+		this.onChildDisplayToggle = this.onChildDisplayToggle.bind(this);
+	}
+	onCategorySelect(ev) {
+    this._log('onCategorySelect', ev);
+		if (this.props.onCategorySelect) {
+			this.props.onCategorySelect(this);
+		}
+		ev.preventDefault();
+		ev.stopPropagation();
+	}
+	onChildDisplayToggle(ev) {
+		this._log('onChildDisplayToggle', ev);
+		if (this.props.data.children) {
+			if (this.state.children && this.state.children.length) {
+				this.setState({ children: null });
+			} else {
+				this.setState({ children: this.props.data.children });
+			}
+		}
+		ev.preventDefault();
+		ev.stopPropagation();
+	}
+	render() {
+
+		if (!this.state.children) {
+			this.state.children = [];
+		}
+
+		let classes = classnames('tree-node',{
+			"has-children": this.props.data.children ? true : false,
+			open: this.state.children.length ? true : false,
+			closed: this.state.children ? false : true,
+			selected: this.state.selected ? true : false
+		});
+		return (
+			<li className={classes} ref="node" onClick={this.onChildDisplayToggle}>
+				<a data-id={this.props.data.id} onClick={this.onCategorySelect}>
+					{this.props.data.name || this.props.data.label}
+					<ul>
+						{this.state.children.map((child, index) => (
+							<TreeNode
+								key={index}
+								data={child}
+								onCategorySelect={this.props.onCategorySelect}
+       />
+						))}
+					</ul>
+				</a>
+        <style jsx>{stylesheet}</style>
+			</li>
+		);
+	}
+}
+export default TreeNode;
