@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import style from './style.scss';
+import style from './px-drawer-layout';
 import Drawer from '../../px-drawer';
 import AppHeader from '../../px-app-header';
 import BrandingBar from '../../px-branding-bar';

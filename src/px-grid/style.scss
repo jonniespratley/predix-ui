@@ -3,6 +3,7 @@
  */
 .px-grid {
   @apply(--px-grid);
+
   /* Here we import the base styles and extend each one for component */
   @import "px-flexbox-design/_base.flexbox.scss";
 

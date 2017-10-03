@@ -1,15 +1,18 @@
-# px-icon-set
-The `<icon-set/>` component enables you to ...
+The `<Icon/>` component enables you to use icons.
+
+```hint
+Work in progress
+```
+
+
+```hint
+Reference https://www.predix-ui.com/#/elements/px-icon-set
+```
+
+
 
 
 ## Usage
-
-```react
-const { IconSet } = PxReact;
-<IconSet>
-  This is the children
-</IconSet>
-```
 
 ```react
 const { IconSet, Icon } = PxReact;
@@ -34,9 +37,15 @@ const docIcons = [
   "px-doc:note",
   "px-doc:website"
 ];
-<div>
-  {docIcons.map((icon, index) => <px.Icon size={16} key={index} icon={icon}/>)}
-</div>
+
+<Grid container wrap>
+  {docIcons.map((icon, index) => (
+    <Grid row key={index}>
+      <Icon size={22} icon={icon}/>
+      <span>{icon}</span>
+    </Grid>
+  ))}
+</Grid>
 ```
 
 ### Utility : Small - 16px

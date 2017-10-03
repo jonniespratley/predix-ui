@@ -1,20 +1,79 @@
 The `<Grid/>` component provides layout styles that include the following options:
 
+## How it works
+The grid system is implemented with the <Grid /> component:
+
+- It’s using CSS’s Flexible Box module for high flexibility.
+- There is two type of layout: containers and items.
+- Item widths are set in percentages, so they’re always fluid and sized relative to their parent element.
+- Items have padding to create the spacing between individual items.
+- There are five grid breakpoints: xs, sm, md, lg, and xl.
+
+
+
+### Using Grid
+
+
+```react
+const { Grid } = PxReact;
+
+<Grid container>
+  <Grid item xs={12}>
+    xs=12
+  </Grid>
+
+
+  <Grid item xs={12} sm={6}>
+    xs=12 sm=6
+  </Grid>
+  <Grid item xs={12} sm={6}>
+    xs=12 sm=6
+  </Grid>
+
+
+  <Grid item xs={6} sm={3}>
+    xs=6 sm=3
+  </Grid>
+  <Grid item xs={6} sm={3}>
+    xs=6 sm=3
+  </Grid>
+  <Grid item xs={6} sm={3}>
+    xs=6 sm=3
+  </Grid>
+  <Grid item xs={6} sm={3}>
+    xs=6 sm=3
+  </Grid>
+
+
+</Grid>
+```
+
+### Using Layout
+```react
+const { Layout } = PxReact;
+
+<Layout container>
+  <Layout item xs={12}>
+    xs=12
+  </Layout>
+</Layout>
 
 ```
-layout--tiny
-layout--small
-layout--large
-layout--huge
-layout--flush
-layout--rev
-layout--middle
-layout--bottom
-layout--full
-```
 
 
-```html
+
+
+
+
+
+
+
+
+
+
+
+
+```code
 responsive: true
 frame: true
 ---
@@ -113,7 +172,7 @@ frame: true
 
 ## Layout Sizing
 
-```html
+```code
 responsive: true
 ---
 
@@ -182,7 +241,7 @@ responsive: true
 
 ## Layout Position
 
-```html
+```code
 responsive: true
 frame: true
 ---
