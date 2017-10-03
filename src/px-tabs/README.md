@@ -1,5 +1,5 @@
 
-The `px.Tabs` and `px.Tab` components together provide the tabbed interface. The tabbed content is expected to be contained in a separate iron-pages component.
+The `Tabs` and `Tab` components together provide the tabbed interface.
 
 ```hint
 Note: There is no limit on the number of tabs in a set, but there is no support for scrolling or wrapping.
@@ -49,7 +49,23 @@ rows:
 ```table
 span: 6
 rows:
-  - Property: --my-prop
+  - Property: --px-tab-color
     Default: null
-    Description: This is the style prop.
+    Description: Text color for unselected tabs
+
+  - Property: --px-tab-color--hover
+    Default: null
+    Description: Text color for unselected tabs on hover
+
+  - Property: --px-tab-color--active
+    Default: null
+    Description: Text color for unselected tabs on press
+
+  - Property: --px-tab-color--selected
+    Default: null
+    Description: Text and border color for selected tab
+
+  - Property: --px-tab-border-color
+    Default: null
+    Description: Border color for unselected tabs
 ```
