@@ -7,6 +7,7 @@ import { Catalog, CodeSpecimen, ReactSpecimen } from 'catalog';
 //import 'purecss/build/pure.css';
 import './main.css';
 import px from '../src';
+import DemoHelpers from '../src/px-demo-helpers';
 
 // TODO: extract
 import IronComponents from '../src/iron-components';
@@ -53,6 +54,7 @@ const logo = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/predix_ds_logo.
 // React specimen. Do NOT pass React here as Catalog does that.
 const documentationImports = {
   IronComponents,
+  DemoHelpers,
   px,
   PxReact: px
 };

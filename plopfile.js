@@ -47,13 +47,13 @@ module.exports = function(plop) {
 			//style
 			{
 				type: "add",
-				path: "src/{{dashCase name}}/style.scss",
+				path: "src/{{dashCase name}}/{{dashCase name}}.scss",
 				templateFile: "plop-templates/component.tmpl.scss"
 			},
 			//test
 			{
 				type: "add",
-				path: "src/{{dashCase name}}/spec.test.js",
+				path: "src/{{dashCase name}}/{{dashCase name}}.test.js",
 				templateFile: "plop-templates/component.test.tmpl.js"
 			},
 			//readme
@@ -79,7 +79,7 @@ module.exports = function(plop) {
 			{
 				type: "add",
 				//path: "__tests__/components/{{dashCase name}}.test.js",
-				path: "src/{{dashCase name}}/index.test.js",
+				path: "src/{{dashCase name}}/{{dashCase name}}.test.js",
 				templateFile: "plop-templates/component.test.tmpl.js"
 			}
 		]
@@ -119,7 +119,7 @@ module.exports = function(plop) {
 			var actions = [];
 			actions.push({
 				type: "add",
-				path: "src/{{dashCase name}}/index.test.js",
+				path: "src/{{dashCase name}}/{{dashCase name}}.test.js",
 				templateFile: "plop-templates/component.test.tmpl.js"
 			});
 			return actions;
