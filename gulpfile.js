@@ -74,7 +74,7 @@ gulp.task('autoprefixer', function() {
       cascade: false
     }))
     .pipe($.rename({
-      suffix: '.prefixed'
+      //suffix: '.prefixed'
     }))
     .pipe($.size())
     .pipe(gulp.dest(config.styles.dest));
@@ -87,13 +87,13 @@ gulp.task('cssmin', 'Take all css and min with source maps', function() {
     .pipe($.cssmin({
        format: 'beautify'
     }))
-    //.pipe($.concat(pkg.name + '.css'))
     //.pipe($.sourcemaps.write('.'))
     .pipe($.rename({
     //  suffix: '.min'
     }))
     .pipe($.size())
-    .pipe(gulp.dest(config.styles.dest));
+    .pipe(gulp.dest(config.styles.dest))
+    ;
 });
 
 gulp.task('sass:watch', function() {
