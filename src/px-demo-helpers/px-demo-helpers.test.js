@@ -5,10 +5,8 @@ import PxDemoHelpers from './';
 
 describe('px-demo-helpers', () => {
   test('should...', () =>{
-    const wrapper = shallow(
-      <PxDemoHelpers/>
-    );
-    console.log(wrapper.debug());
+
+    
     expect(true).to.equal(true);
   });
   //expect(wrapper.find('.label')).to.have.length(1);
