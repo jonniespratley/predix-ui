@@ -84,11 +84,13 @@ gulp.task('cssmin', 'Take all css and min with source maps', function() {
   return gulp.src(`${config.styles.dest}/**/*.css`)
     .pipe($.filelog())
     //.pipe($.sourcemaps.init())
-    .pipe($.cssmin())
+    .pipe($.cssmin({
+       format: 'beautify'
+    }))
     //.pipe($.concat(pkg.name + '.css'))
     //.pipe($.sourcemaps.write('.'))
     .pipe($.rename({
-      suffix: '.min'
+    //  suffix: '.min'
     }))
     .pipe($.size())
     .pipe(gulp.dest(config.styles.dest));
