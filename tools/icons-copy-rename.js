@@ -146,9 +146,8 @@ function globFiles(pattern){
 function renameIcons(ns){
   console.log('renameIcons', ns);
   let jsIcons = `
-  renderGraphic() {
-    switch (this.props.icon) {
-
+    //${ns} icons
+    const ${ns} = {
   `;
   let allIcons = `<svg><defs>`;
   let outputname = `${DEST_DIR}/${ns}_all.svg`;
@@ -163,10 +162,9 @@ function renameIcons(ns){
           </svg>
         `
 
-        jsIcons += `
-      }
-    }
-        `;
+        jsIcons += `};
+        //done
+        export default ${ns}`;
         fs.writeFileSync(outputname, allIcons, 'utf8');
         fs.writeFileSync(outputname.replace('.svg', '.js'), jsIcons, 'utf8');
         out.push(outputname);
@@ -188,9 +186,7 @@ function renameIcons(ns){
           //clean
           let svg = cleanForOutfile( res, cleanFile.basename );
 
-          jsIcons += `
-          case '${cleanFile.basename.replace('.svg', '')}':
-            return (${svg});
+          jsIcons += `'${cleanFile.basename.replace('.svg', '')}': '${svg}',
           `;
 
 

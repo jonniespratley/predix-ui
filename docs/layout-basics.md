@@ -37,7 +37,7 @@ There are five variations of the grid to supporting a one to six column layout, 
 For information-dense screens and workflows such as cases, or asset records
 
 ```react
-const {Grid} = px;
+const {Grid} = PxReact;
 <Grid container>
   <Grid item>Item 1</Grid>
   <Grid item>Item 2</Grid>
@@ -52,7 +52,7 @@ const {Grid} = px;
 Commonly used for dashboards or layouts with large widgets displaying high level information.
 
 ```react
-const {Grid} = px;
+const {Grid} = PxReact;
 <Grid container>
   <Grid item>Item 1</Grid>
   <Grid item>Item 2</Grid>
@@ -60,15 +60,24 @@ const {Grid} = px;
 </Grid>
 ```
 
-
-
-
 ### Single Column
 Commonly used for dashboards or layouts with large widgets displaying high level information.
 
 ```react
-const {Grid} = px;
+const {Grid} = PxReact;
 <Grid container>
   <Grid item>Item 1</Grid>
 </Grid>
+```
+
+## Cards
+Cards are used to group similar information into logical groups to make it easier for people to consume. They consist of a header area and content area, with spacing in between
+
+```react
+const { Card, Grid, Layout } = PxReact;
+<Card headerText='Card Header'>
+  <Layout container>
+    <Layout item>Item 1</Layout>
+  </Layout>
+</Card>
 ```

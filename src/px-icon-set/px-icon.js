@@ -1,15 +1,18 @@
 import React from 'react';
 import classnames from 'classnames';
-import stylesheet from './style.scss';
+import stylesheet from './px-icon.scss';
 
-import IronIcon from '../iron-components/iron-icon';
+//import IronIcon from '../iron-components/iron-icon';
+import com from './px-icon-set-communication';
+import utl from './px-icon-set-utility';
+import doc from './px-icon-set-document';
+import nav from './px-icon-set-navigation';
+import obj from './px-icon-set-object';
+import vis from './px-icon-set-vis';
+import fea from './px-icon-set-feature';
 
-const iconSets = {
-  'px-com': {},
-  'px-doc': {},
-  'px-obj': {},
-  'px-nav': {}
-};
+
+const iconSets = Object.assign({}, doc, nav, obj, vis, fea, com, utl);
 
 const _renderRawHtml = (h) =>{
   return {
@@ -22,11 +25,11 @@ const _renderSvgIcon = (icon, size) => {
   let style = {
     pointerEvents: 'none',
     display: 'block',
-    width: '100%',
-    height: '100%'
+    width: size,
+    height: size
   };
   return (
-    <svg viewBox={`0 0 ${size} ${size}`}
+    <svg viewBox={`0 0 22 22`}
       preserveAspectRatio="xMidYMid meet"
       focusable="false"
       dangerouslySetInnerHTML={_renderRawHtml(icon)}
@@ -35,12 +38,12 @@ const _renderSvgIcon = (icon, size) => {
   );
 }
 
-const getIconName = (name) =>{
+const getIconSvgByName = (name) =>{
   try {
     let n = name.split(':');
     name = name.replace(':', '-');
     console.log('getIconName', name);
-    return iconSets[n[0]][n[1]];
+    return iconSets[name];
   } catch (e) {
     console.error('Cannot find icon', name);
     return name;
@@ -48,52 +51,11 @@ const getIconName = (name) =>{
 }
 
 
-
-const pxIconSets = {
-  'px-com': {
-    '': ''
-  },
-  'px-doc': {
-    'chart': '',
-    'document': '',
-    'document-csv': '',
-    'image': 'image'
-  },
-  'px-utl': {
-    'chevron-up': 'expand-less',
-    'chevron': 'expand-more',
-    'chevron-down': 'expand-more'
-  },
-  'px-obj': {},
-  'px-nav': {
-    back: 'arrow-back',
-    up: 'arrow-up',
-    next: 'arrow-next',
-    more: 'more-horiz',
-    menu: 'more-vert',
-    favorite: 'grade',
-    expand: 'expand-more',
-    collapse: 'expand-less',
-    'generic-user': 'person-outline',
-
-
-    'grid-view': 'view-module'
-  }
+const renderSvgIcon = (name, size) =>{
+  const icon = getIconSvgByName(name);
+  return _renderSvgIcon(icon, size);
 };
 
-
-//Create a map of px icons to polymer icons (TEMPORTARY)
-// Maps to http://dmfrancisco.github.io/react-icons/
-const pxIconToPolymerIcon = (name) =>{
-  let pieces = name.split(':');
-  let ns = pieces[0];
-  let n = pieces[1];
-  if(pxIconSets[ns] && pxIconSets[ns][n]){
-    n = pxIconSets[ns][n];
-  }
-  console.log('pxIconToPolymerIcon', ns, n);
-  return n;
-};
 
 /**
  * px-icon component
@@ -117,10 +79,9 @@ export default ({
     'px-icon'
   );
 
-  const iconName = pxIconToPolymerIcon(icon);
   return (
-    <div className={baseClasses} style={style} data-icon={iconName}>
-      <IronIcon icon={iconName} size={size}/>
+    <div className={baseClasses} style={style}>
+      {renderSvgIcon(icon, size)}
       <style jsx>{stylesheet}</style>
     </div>
   );
