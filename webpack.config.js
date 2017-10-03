@@ -1,11 +1,8 @@
-require('babel-register');
+
 const path = require('path');
 const glob = require('glob');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SystemBellPlugin = require('system-bell-webpack-plugin');
@@ -380,16 +377,15 @@ const distMin = merge(distCommon, {
 });
 
 
-
-
 // TODO: Add in sass plugin and rules
 //distCommon.plugins.push(extractCss);
 
 
-//
-
 module.exports = (env) => {
+
   process.env.BABEL_ENV = env;
+
+  console.log('webpack.config.js', env);
 
   const targets = {
     dev,
@@ -399,5 +395,6 @@ module.exports = (env) => {
   };
   const c = targets[env] ? targets[env] : common;
   console.log('webpack.config', JSON.stringify(c, null, 2));
+
   return c;
 };

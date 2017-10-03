@@ -123,21 +123,15 @@ gulp.task('lint', 'Lint all source scripts', () => {
       .pipe(eslint.failAfterError());
 });
 
-
-
-
-//const webpack = require('webpack');
-//const gulpWebpack = require('gulp-webpack');
-const webpack = require('webpack-stream');
-//var webpack = require('webpack');
-//var gulpWebpack = require('webpack-stream');
+const gulpWebpack = require('webpack-stream');
+const webpack = require('webpack');
 
 gulp.task('webpack',  'Run webpack build', () => {
   return gulp.src('src/index.js')
-  // .pipe(gulpWebpack({}, webpack))
-    .pipe(webpack({
-      config : require('./webpack.config.babel.js')
-    }))
+    .pipe(gulpWebpack({
+      config : require('./webpack.config.js')('dist')
+    }, webpack))
+
    .pipe(gulp.dest('dist/'));
 });
 
