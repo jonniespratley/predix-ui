@@ -47,7 +47,7 @@ import Overlay from './px-overlay';
 import DataTable from './px-datatable';
 import Breadcrumbs from './px-breadcrumbs';
 import Dropdown from './px-dropdown';
-import Iron from './iron-components';
+//import Iron from './iron-components';
 
 /**
  * @access public
