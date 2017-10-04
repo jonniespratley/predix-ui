@@ -8,10 +8,12 @@ import stylesheet from './px-layout.scss';
  * Renders a div with proper classes
  */
 export default ({
+  className,
   style,
 
   item,
   container,
+  size,
 
   //padding
   tiny,
@@ -36,6 +38,7 @@ export default ({
   children
 }) => {
     const baseClasses = classnames (
+      className,
       'px-layout',
       {'layout': container},
       {'layout__item': item},
@@ -49,18 +52,17 @@ export default ({
       {'layout--full': full}
     );
 
-
-      let size = xs || sm || md || lg,
-      screen;
+    const layoutSize = size || xs || sm || md || lg;
 
     const layoutSizeClasses = classnames (
-      {[`u-1/${size}-xs`]: xs},
-      {[`u-1/${size}-sm`]: sm},
-      {[`u-1/${size}-md`]: md},
-      {[`u-1/${size}-lg`]: lg}
+      {[`u-1/${layoutSize}`]: size},
+      {[`u-1/${layoutSize}-xs`]: xs},
+      {[`u-1/${layoutSize}-sm`]: sm},
+      {[`u-1/${layoutSize}-md`]: md},
+      {[`u-1/${layoutSize}-lg`]: lg}
     );
     return (
-      <div className={baseClasses} style={style}>
+      <div className={classnames(baseClasses, layoutSizeClasses)} style={style}>
         {children}
         <style jsx>{stylesheet}</style>
       </div>

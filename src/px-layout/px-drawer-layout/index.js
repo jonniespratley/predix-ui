@@ -55,6 +55,8 @@ export default class DrawerLayout extends BaseComponent {
   render() {
     const {
       title = 'Drawer Layout',
+      forceNarrow,
+      responsiveWidth = '768px',
       navItems,
       drawerContent,
       navbarContent,

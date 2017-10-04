@@ -7,7 +7,12 @@ import DeviceView from './device-view';
 import stylesheet from './px-demo-helpers.scss';
 class DeviceLayoutViewer extends React.Component {
   render(){
-    const {device, src, selectedView = 0} = this.props;
+    const {
+      device,
+      src,
+      selectedView = 0,
+      children
+  } = this.props;
     return (
       <div className={`px-demo-helpers ${device}`}>
         <div className={`canvas ${device}`}>
@@ -15,9 +20,9 @@ class DeviceLayoutViewer extends React.Component {
               selected={device}
               propForSelected="device"
               selectedItem={selectedView}>
-            <DeviceView device="laptop" src={src}/>
-            <DeviceView device="tablet" src={src} landscape/>
-            <DeviceView device="phone" src={src} />
+            <DeviceView device="laptop" src={src}>{children}</DeviceView>
+            <DeviceView device="tablet" src={src} landscape>{children}</DeviceView>
+            <DeviceView device="phone" src={src} >{children}</DeviceView>
           </IronSelector>
         </div>
         <style jsx>{stylesheet}</style>

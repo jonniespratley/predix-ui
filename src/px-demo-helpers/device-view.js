@@ -30,9 +30,7 @@ export default class DeviewView extends BaseComponent {
 			<div className={baseClasses} style={style} data-device={device}>
         <div className='container'>
           {src && <iframe src={src}></iframe>}
-          <div className="device-view-content">
-            {children}
-          </div>
+          {children && <div className="device-view-content">{children}</div>}
         </div>
 				<style jsx>{stylesheet}</style>
 			</div>
