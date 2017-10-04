@@ -21,9 +21,37 @@ export default ({
   stretch,
   justify,
   item,
-  children}) => {
+
+  //sizes
+  xs,
+  sm,
+  md,
+  lg,
+
+
+  children
+}) => {
+
+  const getScreenSize = (props) =>{
+    let size = 1;
+    let screen = 'sm';
+    return `u-1/${size}-${screen}`;
+  };
+  let size, screen;
+
+  size = xs || sm || md || lg;
+
   const baseClasses = classnames('px-grid',
-    {'flex': container},
+    //{[getScreenSize(props)]: true},
+
+    {[`u-1/${size}-xs`]: xs},
+    {[`u-1/${size}-sm`]: sm},
+    {[`u-1/${size}-md`]: md},
+    {[`u-1/${size}-lg`]: lg},
+
+    {'layout': container },
+
+  //  {'flex': container && !size},
     {'flex--row': row},
     {'flex--col': column},
     {'flex--left': left},
@@ -34,7 +62,7 @@ export default ({
     {'flex--wrap': wrap},
     {'flex--justify': justify},
     {'flex--stretch': stretch},
-    {'flex__item': item}
+    {'flex__item': item && !size}
   );
   return (
     <div className={baseClasses} style={style}>

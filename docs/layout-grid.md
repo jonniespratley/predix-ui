@@ -18,16 +18,16 @@ The grid system is implemented with the <Grid /> component:
 const { Grid } = PxReact;
 
 <Grid container>
-  <Grid item xs={12}>
-    xs=12
+  <Grid item xs={1}>
+    xs=1
   </Grid>
 
 
-  <Grid item xs={12} sm={6}>
-    xs=12 sm=6
+  <Grid item xs={2} sm={4}>
+    xs=2 sm=4
   </Grid>
-  <Grid item xs={12} sm={6}>
-    xs=12 sm=6
+  <Grid item xs={2} sm={4}>
+    xs=2 sm=4
   </Grid>
 
 
