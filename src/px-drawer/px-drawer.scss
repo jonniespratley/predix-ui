@@ -1,0 +1,91 @@
+@import "px-mobile-design/sass/_mixins.scss";
+
+
+$drawer-transition: transform 450ms cubic-bezier(0.23, 1, 0.32, 1);
+$drawer-overlay-background-color: rgba(0, 0, 0, 0.5);
+$drawer-background-color: white;
+$drawer-font-color: black;
+
+$drawer-box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px, rgba(0, 0, 0, 0.23) 0 1px 4px;
+
+$drawer-height: 100%;
+$drawer-width: 256px;
+$drawer-max-width: 300px;
+
+/**
+ * px-drawer styles
+ */
+.px-drawer {
+
+  	///------------------------------------------------------
+  	/// default
+  	.drawer {
+  		transition: $drawer-transition;
+  		z-index: 20;
+  		color: var(--px-drawer-font-color, $drawer-font-color);
+  		background-color: var(--px-drawer-background-color, $drawer-background-color);
+  		width: var(--px-drawer-width, $drawer-width);
+  		height: var(--px-drawer-height, $drawer-height);
+  		box-shadow: $drawer-box-shadow;
+      position: fixed;
+      transform: translateX(-110%);
+      //visibility: hidden;
+      top: 0;
+      left: 0;
+      bottom: 0;
+  		&::after {
+  			position: fixed;
+  			top: 56px;
+  			bottom: 0;
+  			left: 100%;
+  			visibility: visible;
+  			width: 20px;
+  			content: "";
+  		}
+      &--is-fixed {
+        position: fixed;
+      }
+
+  		&--is-docked {
+
+  			transform: translateX(0);
+  		}
+
+  		&--is-open{
+  			visibility: visible;
+  			transform: translateX(0);
+  		}
+
+
+  		&__content {
+  			overflow-x: hidden;
+  		}
+
+
+  		&__overlay {
+  			position: fixed;
+  			top: 0;
+  			right: 0;
+  			bottom: 0;
+  			left: 0;
+  			transition: opacity 0.2s ease;
+  			transform: translateZ(0);
+  			opacity: 0;
+  			background: var(
+  				--px-drawer-overlay-background,
+  				$drawer-overlay-background-color
+  			);
+  			z-index: -1;
+  			visibility: hidden;
+  			display: none;
+
+  			&--is-open {
+  				opacity: 1;
+  				z-index: 15;
+  				visibility: visible;
+  				display: block;
+  			}
+  		}
+
+  	}
+}

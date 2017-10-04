@@ -1,57 +1,43 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import styles from './style.scss';
+import stylesheet from './style.scss';
 
 /**
  * px-grid component
  */
 export default ({
-  container,
   style,
-  center,
-  middle,
-  row,
-  wrap,
-  column,
-  left,
-  right,
+
+  item,
+  container,
+
+  //position
+
+
   top,
+  middle,
   bottom,
+
+  left,
+  center,
+  right,
+
+  //type
+  row,
+  column,
+
   stretch,
   justify,
-  item,
-
-  //sizes
-  xs,
-  sm,
-  md,
-  lg,
-
+  wrap,
+  nowrap,
 
   children
 }) => {
 
-  const getScreenSize = (props) =>{
-    let size = 1;
-    let screen = 'sm';
-    return `u-1/${size}-${screen}`;
-  };
-  let size, screen;
-
-  size = xs || sm || md || lg;
 
   const baseClasses = classnames('px-grid',
-    //{[getScreenSize(props)]: true},
-
-    {[`u-1/${size}-xs`]: xs},
-    {[`u-1/${size}-sm`]: sm},
-    {[`u-1/${size}-md`]: md},
-    {[`u-1/${size}-lg`]: lg},
-
-    {'layout': container },
-
-  //  {'flex': container && !size},
+    {'flex': container },
     {'flex--row': row},
     {'flex--col': column},
     {'flex--left': left},
@@ -60,14 +46,15 @@ export default ({
     {'flex--center': center},
     {'flex--bottom': bottom},
     {'flex--wrap': wrap},
+    {'flex--nowrap': nowrap},
     {'flex--justify': justify},
     {'flex--stretch': stretch},
-    {'flex__item': item && !size}
+    {'flex__item': item}
   );
   return (
     <div className={baseClasses} style={style}>
       {children}
-      <style jsx>{styles}</style>
+      <style jsx>{stylesheet}</style>
     </div>
   );
 }

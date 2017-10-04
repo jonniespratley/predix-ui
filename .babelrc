@@ -13,6 +13,7 @@
   ],
   "plugins": [
     "styled-jsx/babel",
+    ["transform-class-properties", { "spec": true }],
     [
       "transform-react-remove-prop-types",
       {

@@ -1,7 +1,7 @@
 import React from 'react';
 import PredixLogo from './px-predix-svg-logo';
 import Logo from './px-ge-svg-logo';
-import styles from './style.scss';
+import styles from './px-branding-bar.scss';
 
 //https://www.predix-ui.com/#/elements/px-branding-bar
 export default ({ title = 'Predix Design System', powered = 'Powered by', children }) => (

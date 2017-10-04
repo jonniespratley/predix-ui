@@ -1,6 +1,6 @@
 import React from 'react';
 
-import stylesheet from './style.scss';
+import stylesheet from './px-card.scss';
 import classnames from 'classnames';
 
 import Icon from '../px-icon-set/px-icon';

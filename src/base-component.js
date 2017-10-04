@@ -8,6 +8,7 @@ import classnames from 'classnames';
  */
 export default class BaseComponent extends React.Component {
 
+
 	/**
    * constructor - description
    *
@@ -108,5 +109,7 @@ export default class BaseComponent extends React.Component {
 	componentWillUnmount() {
 		this._log('componentWillUnmount');
 	}
+
+
 
 }

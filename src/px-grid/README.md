@@ -4,8 +4,7 @@ The `<Grid/>` component provides a way to create a flexible layout grid.
 ## Usage
 
 ```react
-//import from global namespace
-const {Grid} = px;
+const { Grid } = PxReact;
 
 <Grid container middle>
   <Grid item>
@@ -17,6 +16,17 @@ const {Grid} = px;
 </Grid>
 ```
 
+
+```react
+const { Grid } = PxReact;
+
+<Grid container bottom>
+  <Grid item>Item 1</Grid>
+  <Grid item>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Grid>
+  <Grid item>Item 3</Grid>
+</Grid>
+
+```
 
 ## Props
 

@@ -9,19 +9,33 @@ import stylesheet from './px-layout.scss';
  */
 export default ({
   style,
-  container,
+
   item,
+  container,
+
+  //padding
   tiny,
   small,
   large,
   huge,
   flush,
+
+  //position
   rev,
   middle,
   bottom,
   full,
-  children}) => {
-    const baseClassnames = classnames (
+
+  //responsive sizes
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
+
+  children
+}) => {
+    const baseClasses = classnames (
       'px-layout',
       {'layout': container},
       {'layout__item': item},
@@ -34,11 +48,19 @@ export default ({
       {'layout--bottom': bottom},
       {'layout--full': full}
     );
-    const layoutClassnames = classnames (
 
+
+      let size = xs || sm || md || lg,
+      screen;
+
+    const layoutSizeClasses = classnames (
+      {[`u-1/${size}-xs`]: xs},
+      {[`u-1/${size}-sm`]: sm},
+      {[`u-1/${size}-md`]: md},
+      {[`u-1/${size}-lg`]: lg}
     );
     return (
-      <div className={baseClassnames} style={style}>
+      <div className={baseClasses} style={style}>
         {children}
         <style jsx>{stylesheet}</style>
       </div>

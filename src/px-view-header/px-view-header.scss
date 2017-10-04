@@ -1,0 +1,182 @@
+.px-view-header {
+  @import "../sass/helpers";
+
+  $viewheader-background-color           : var(--px-view-header-background-color, whitesmoke);
+  ///
+  $navbar-height                         : 56px;
+  $navbar-padding                        : $inuit-base-spacing-unit--tiny;
+  ///
+  $navbar-button-font-size               : $inuit-base-font-size;
+  $navbar-button-padding                 : $inuit-base-spacing-unit--tiny;
+  $navbar-button-height                  : calculateRem(44px);
+  $navbar-button-width                   : calculateRem(44px);
+  $navbar-button-background-color        : rgba(0, 0, 0, 0);
+  $navbar-button-color: var(--px-navbar-button-color, blue);
+  $navbar-button-border-radius           : 2px;
+  $navbar-button-border                  : 1px solid transparent;
+  $navbar-button-background-color--active: rgba(0, 0, 0, .5);
+  $navbar-button-opacity--active         : .5;
+
+  &.vh-header {
+    height          : 4rem;
+    background-color: var(--px-view-header-background-color, whitesmoke);
+    padding-left    : $inuit-base-spacing-unit;
+    padding-right   : $inuit-base-spacing-unit;
+
+    display         : flex;
+    align-items     : center;
+    flex-direction  : row;
+    ///.navbar__inner
+  	@include element ('inner') {
+  		box-sizing     : border-box;
+  		white-space    : nowrap;
+  		align-items    : center;
+  		justify-content: space-between;
+  		height         : $navbar-height;
+  		padding        : $navbar-padding;
+  		display        : flex;
+  		overflow       : hidden;
+      flex: 1;
+  	}
+
+  	//TODO - Need to use absolute position for true center.
+  	@include element ('center') {
+  		@include centerer();
+  		order     : 2;
+  		flex      : 1 0 auto;
+  		align-self: center;
+  		text-align: center;
+
+  		> * {
+  			display: block;
+  		}
+  	}
+  }
+
+  .vh-header-text {
+    padding-left : $inuit-base-spacing-unit;
+    padding-right: $inuit-base-spacing-unit;
+    flex         : initial;
+    min-width    : 0;
+    margin-left  : auto;
+    margin-right : auto;
+  }
+
+  .vh-header-text--ms-fix {
+    min-width: 1px; //on IE11, leaving this as 0 or 0px means auto instead of 0
+  }
+
+  .vh-title {
+    text-align: center;
+    color     : var(--px-view-header-title-color, black);
+  }
+
+  .vh-subtitle {
+    text-align: center;
+    color     : var(--px-view-header-subtitle-color, gray);
+  }
+
+  .zeta {
+    font-size  : 0.8rem;
+    line-height: 1.66667;
+    font-weight: 400;
+  }
+
+  .truncate {
+    overflow     : hidden;
+    text-overflow: ellipsis;
+    white-space  : nowrap;
+  }
+
+  ///.navbar__button
+  .btn {
+    padding        : $navbar-button-padding;
+    letter-spacing : 0;
+    line-height    : $inuit-base-line-height;
+
+    padding        : $navbar-button-padding;
+    min-width      : $navbar-button-height;
+    min-height     : $navbar-button-height;
+    transition     : none;
+    vertical-align : middle;
+    box-shadow     : none;
+    display        : flex;
+    align-items    : center;
+    align-content  : center;
+    justify-content: center;
+    box-sizing     : border-box;
+    min-width      : $navbar-button-height;
+    height         : $navbar-button-height;
+
+
+    background-color: $navbar-button-background-color;
+    color: $navbar-button-color;
+    border          : $navbar-button-border;
+    border-radius  	: $navbar-button-border-radius;
+    font-size       : $navbar-button-font-size;
+
+    > * {
+      display: flex;
+      align-self: center;
+    }
+    &:active {
+      background-color: $navbar-button-background-color--active;
+      transition      : none;
+      opacity         : $navbar-button-opacity--active;
+    }
+
+    i,
+    span {
+      flex      : 1 0 auto;
+      align-self: center;
+    }
+
+    &:disabled,
+    &[disabled] {
+      opacity       : 0.3;
+      cursor        : default;
+      pointer-events: none;
+    }
+
+    &:focus {
+      outline   : none;
+      transition: none;
+    }
+
+    &:hover {
+      box-shadow: none;
+      transition: none;
+    }
+
+    @include modifier ('back') {
+      i.fa-angle-left {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .toggle__menu {
+  	background : url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24h-24z" fill="none"/><path d="M3 18h18v-2h-18v2zm0-5h18v-2h-18v2zm0-7v2h18v-2h-18z" fill="black"/></svg>') center center no-repeat;
+  	width      : 30px;
+  	height     : 30px;
+  	//margin-right: 16px;
+  	text-indent: -30000px;
+  	overflow   : hidden;
+  	opacity    : 0.54;
+  	transition : opacity 0.333s cubic-bezier(0,0,0.21,1);
+  	border     : none;
+  	outline    : none;
+  	cursor     : pointer;
+
+    &:focus,
+    &:hover {
+    	opacity: 1;
+    	//border: 1px solid white;
+    }
+
+
+  }
+
+
+
+}

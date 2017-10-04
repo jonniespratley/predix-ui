@@ -1,10 +1,15 @@
-The `px.BrandingBar` component provides a header area to contain title, logo and branding content.
+The `<BrandingBar/>` component provides a header area to contain title, logo and branding content.
+
+```hint
+Reference https://www.predix-ui.com/#/elements/px-branding-bar
+```
 
 
 ## Usage
 
 ```react
-<px.BrandingBar
+const {BrandingBar} = PxReact;
+<BrandingBar
   application-title="Predix Design System"/>
 ```
 

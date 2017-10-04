@@ -1,15 +1,18 @@
-A Static Chip is a persistent object that can be toggled on and off.
+The `<Chip/>` component is a persistent object that can be toggled on and off.
 The static chip is not meant to be dismissed or removed. A Static Chip is best used for curated filters.
 
-Curated filters will allow a user to filter a page based on commonly used filter criteria.
 
+```hint
+Work in progress
+```
 
 ## Usage
 
 ```react
-<px.Chip showIcon selected>
-  This is the children
-</px.Chip>
+const {Chip} = PxReact;
+<Chip showIcon selected>
+  Text Label
+</Chip>
 ```
 
 
@@ -18,9 +21,12 @@ Curated filters will allow a user to filter a page based on commonly used filter
 ```table
 span: 6
 rows:
-  - Name: label
-    Type: String
-    Description: This is the desc
+  - Name: children
+    Type: node
+    Description: This contents of the chip.
+  - Name: showIcon
+    Type: bool
+    Description: Toggle the icon on or off.
 ```
 
 

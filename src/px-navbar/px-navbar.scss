@@ -1,0 +1,27 @@
+/**
+ * px-navbar styles
+ */
+ .px-navbar {
+  @import './sass/px-navbar-predix';
+  .toggle__menu {
+  	background : url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24h-24z" fill="none"/><path d="M3 18h18v-2h-18v2zm0-5h18v-2h-18v2zm0-7v2h18v-2h-18z" fill="black"/></svg>') center center no-repeat;
+  	width      : 30px;
+  	height     : 30px;
+  	//margin-right: 16px;
+  	text-indent: -30000px;
+  	overflow   : hidden;
+  	opacity    : 0.54;
+  	transition : opacity 0.333s cubic-bezier(0,0,0.21,1);
+  	border     : none;
+  	outline    : none;
+  	cursor     : pointer;
+
+    &:focus,
+    &:hover {
+    	opacity: 1;
+    	//border: 1px solid white;
+    }
+
+
+  }
+ }
