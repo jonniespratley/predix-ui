@@ -4,9 +4,13 @@ module.exports = ({ file, options, env }) => {
     plugins: []
   };
   //opt.plugins.push(require('postcss-import')({root: file.dirname}));
-  opt.plugins.push(require('postcss-cssnext'));
+  if(options.cssnext){
+    opt.plugins.push(require('postcss-cssnext'));
+  }
 
-  opt.plugins.push(require('cssnano'));
+  if(options.cssnano){
+    opt.plugins.push(require('cssnano'));
+  }
 
   if(options.reporter){
     opt.plugins.push(require('postcss-browser-reporter'));
