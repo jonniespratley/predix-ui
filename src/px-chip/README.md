@@ -32,16 +32,43 @@ rows:
 
 ### Styling
 The following custom properties are available for styling:
-Custom property | Description
-:----------------|:-------------
-`--px-chip-background-color` | Background color for chip
-`--px-chip-background-color--hover`| Background color for chip on hover
-`--px-chip-background-color--selected` | Background color for chip on selected
-`--px-chip-border-color` | Border or outline color for chip
-`--px-chip-border-color--hover` | Border or outline color for chip on hover
-`--px-chip-border-color--selected` | Border or outline color for chip on selected
-`--px-chip-icon-color` | Icon color
-`--px-chip-icon-color--hover` | Icon color on hover
-`--px-chip-text-color` | Text color for chip content
-`--px-chip-text-color--selected` | Text color for chip content on selected
-`--px-chip-max-width` | Max width of the chip (default: 120px)
+
+```code
+span: 6
+rows:
+  - Property: --px-chip-background-color
+    Description: Background color for chip
+
+  - Property: --px-chip-background-color--hover
+    Description: Background color for chip on hover
+
+  - Property: --px-chip-background-color--selected
+    Description: Background color for chip on selected
+
+  - Property: --px-chip-border-color
+    Description: Border or outline color for chip
+
+  - Property: --px-chip-border-color--hover
+    Description: Border or outline color for chip on hover
+
+  - Property: --px-chip-border-color--selected
+    Description: Border or outline color for chip on selected
+
+  - Property: --px-chip-icon-color
+    Description: Icon color
+
+  - Property: --px-chip-icon-color--hover
+    Description: Icon color on hover
+
+  - Property: --px-chip-text-color
+    Description: Text color for chip content
+
+  - Property: --px-chip-text-color--hover
+    Description: Text color for chip content on hover
+
+  - Property: --px-chip-text-color--selected
+    Description: Text color for chip content on selected
+
+  - Property: --px-chip-max-width
+    Description: Max width of the chip (default: 120px)
+```
