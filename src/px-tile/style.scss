@@ -11,6 +11,9 @@
   // Meta
   // Objects
   @import "px-shadows-design/_objects.shadows.scss";
+  width   : var(--px-tile-width, 20rem);
+  height  : var(--px-tile-height, 15.3333rem);
+  overflow: hidden;
   // Component
   .tile__container {
     position: relative;
@@ -18,7 +21,7 @@
 
   .overlay,
   .tile {
-    width: var(--px-tile-width, 20rem);
+    width : var(--px-tile-width, 20rem);
     height: var(--px-tile-height, 15.3333rem);
   }
 
@@ -27,29 +30,29 @@
   }
 
   .thumbnail {
-    width: var(--px-tile-thumbnail-width, 20rem);
-    height: var(--px-tile-thumbnail-height, 11.66667rem);
+    width           : var(--px-tile-thumbnail-width, 20rem);
+    height          : var(--px-tile-thumbnail-height, 11.66667rem);
     background-color: var(--px-tile-thumbnail-background-color, white);
   }
 
   .title {
     background-color: var(--px-tile-background-color, lightgray);
-    height: 3.66667rem;
-    padding: 0 1.3333rem;
-    display: flex;
-    align-items: center;
+    height          : 3.66667rem;
+    padding         : 0 1.3333rem;
+    display         : flex;
+    align-items     : center;
   }
 
   .overlay {
-    position: absolute;
-    top: 0;
+    position        : absolute;
+    top             : 0;
     background-color: var(--px-tile-overlay-background-color, black);
-    color: var(--px-tile-overlay-text-color, white);
-    opacity: 0;
-    transition: opacity 0.4s cubic-bezier(.78,.13,.16,.87);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    color           : var(--px-tile-overlay-text-color, white);
+    opacity         : 0;
+    transition      : opacity 0.4s cubic-bezier(.78,.13,.16,.87);
+    display         : flex;
+    flex-direction  : column;
+    justify-content : space-between;
 
     .title {
       background: none;
@@ -57,15 +60,15 @@
     }
 
     .text {
-      padding: 0 1.3333rem;
-      height: 7.6rem;
-      overflow: hidden;
+      padding   : 0 1.3333rem;
+      height    : 7.6rem;
+      overflow  : hidden;
       margin-top: 1rem;
     }
 
     .footer {
-      padding: 1rem 1.3333rem;
-      height: 3.66667rem;
+      padding   : 1rem 1.3333rem;
+      height    : 3.66667rem;
       margin-top: 1rem;
     }
 
@@ -76,7 +79,7 @@
     }
   }
 
-  .tile__container:hover{
+  .tile__container:hover {
     .overlay {
       opacity: 1;
 

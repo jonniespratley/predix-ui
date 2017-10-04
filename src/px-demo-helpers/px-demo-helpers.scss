@@ -1,16 +1,10 @@
-/**
- * px-demo-helpers styles
- */
 .px-demo-helpers {
-//  overflow: hidden;
-  //display: flex;
-
   .canvas {
-    display: flex;
-    align-items: center;
+    display        : flex;
+    align-items    : center;
     justify-content: center;
-    position: relative;
-    overflow: auto;
+    position       : relative;
+    overflow       : auto;
   }
 
   .canvas.laptop {
@@ -19,8 +13,8 @@
 
   .views:not(.all) {
     justify-content: center;
-    align-items: center;
-    margin: auto 0;
+    align-items    : center;
+    margin         : auto 0;
   }
 
   .views:not(.all) .device-view:not(.iron-selected) {
@@ -28,74 +22,73 @@
   }
 
   .views.all {
-    display: block;
-    width: 1000px;
-    height: 600px;
+    display    : block;
+    width      : 1000px;
+    height     : 600px;
     margin-left: 32px;
   }
 
   .views.all .device-view {
-    position: absolute;
+    position                : absolute;
     -webkit-transform-origin: left top;
-    transform-origin: left top;
+    transform-origin        : left top;
   }
 
   .views:not(.all) .device-view.laptop {
-    @apply(--layout-fit);
-    width: auto;
+    width : auto;
     height: auto;
   }
 
   .views.all .device-view.laptop {
     -webkit-transform: translate3d(0px, 40px, 0) scale(0.5);
-    transform: translate3d(0px, 40px, 0) scale(0.5);
+    transform        : translate3d(0px, 40px, 0) scale(0.5);
   }
 
   .views.all .device-view.tablet {
     -webkit-transform: translate3d(380px, 130px, 0) scale(0.5);
-    transform: translate3d(380px, 130px, 0) scale(0.5);
+    transform        : translate3d(380px, 130px, 0) scale(0.5);
   }
 
   .views.all .device-view.phone {
     -webkit-transform: translate3d(800px, 110px, 0) scale(0.5);
-    transform: translate3d(800px, 110px, 0) scale(0.5);
+    transform        : translate3d(800px, 110px, 0) scale(0.5);
   }
   @media (max-width: 1024px) {
     .views:not(.all):not(.laptop) {
-      width: 1400px;
-      height: 800px;
+      width            : 1400px;
+      height           : 800px;
       -webkit-transform: scale(0.5);
-      transform: scale(0.5);
-      @apply(--layout-flex-none);
+      transform        : scale(0.5);
+      flex             : none;
     }
 
     .views.all {
-      width: 500px;
-      height: 300px;
-      margin-left: -64px;
+      width                   : 500px;
+      height                  : 300px;
+      margin-left             : -64px;
       -webkit-transform-origin: 0 0;
-      transform-origin: 0 0;
-      -webkit-transform: scale(0.6);
-      transform: scale(0.6);
+      transform-origin        : 0 0;
+      -webkit-transform       : scale(0.6);
+      transform               : scale(0.6);
     }
   }
   @media (max-width: 600px) {
     .views:not(.all):not(.laptop) {
-      width: 1400px;
-      height: 800px;
+      width            : 1400px;
+      height           : 800px;
       -webkit-transform: scale(0.5);
-      transform: scale(0.5);
-      @apply(--layout-flex-none);
+      transform        : scale(0.5);
+      flex             : none;
     }
 
     .views.all {
-      width: 250px;
-      height: 150px;
-      margin-left: -80px;
+      width                   : 250px;
+      height                  : 150px;
+      margin-left             : -80px;
       -webkit-transform-origin: 0 0;
-      transform-origin: 0 0;
-      -webkit-transform: scale(0.35);
-      transform: scale(0.35);
+      transform-origin        : 0 0;
+      -webkit-transform       : scale(0.35);
+      transform               : scale(0.35);
     }
   }
 }

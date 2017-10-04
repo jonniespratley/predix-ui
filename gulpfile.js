@@ -54,9 +54,21 @@ gulp.task('sassdoc', function() {
 });
 
 gulp.task('clean', function() {
-  return gulp.src(['.tmp', config.styles.dest], {
+  return gulp.src([
+    '.tmp',
+    './dist/es6',
+    './dist/modules',
+    config.styles.dest
+  ], {
     read: false
   }).pipe($.clean());
+});
+
+gulp.task('clean:es6', function() {
+  return gulp.src(['./dist/es6'], {read: false}).pipe($.clean());
+});
+gulp.task('clean:modules', function() {
+  return gulp.src(['./dist/modules'], {read: false}).pipe($.clean());
 });
 
 gulp.task('sass', 'Compile all .sass/.scss files', function() {
@@ -153,17 +165,33 @@ gulp.task('webpack',  'Run webpack build', () => {
     .pipe(gulp.dest('dist/'));
 });
 
+
+
 const babel = require('gulp-babel');
-gulp.task('dist', 'Run scripts through babel', () =>
-  gulp.src(config.scripts.src)
-    .pipe($.filelog())
-    .pipe(babel({
-      comments: false,
-      extends: path.resolve(__dirname, '.babelrc')
-    }))
-    .pipe($.size())
-    .pipe(gulp.dest('dist/es6'))
-);
+
+gulp.task('dist:es6', 'Run scripts through babel to es6', ['clean:es6'], () =>{
+  process.env.BABEL_ENV = 'es6';
+  return gulp.src(config.scripts.src)
+  .pipe($.filelog())
+  .pipe(babel({
+    comments: false,
+    extends: path.resolve(__dirname, '.babelrc')
+  }))
+  .pipe($.size())
+  .pipe(gulp.dest(`./dist/${process.env.BABEL_ENV}`));
+});
+
+gulp.task('dist:modules', 'Run scripts through babel to modules', ['clean:modules'], () =>{
+  process.env.BABEL_ENV = 'modules';
+  return gulp.src(config.scripts.src)
+  .pipe($.filelog())
+  .pipe(babel({
+    comments: false,
+    extends: path.resolve(__dirname, '.babelrc')
+  }))
+  .pipe($.size())
+  .pipe(gulp.dest(`./dist/${process.env.BABEL_ENV}`));
+});
 
 gulp.task('watch', ['sass:watch', 'autoprefixer:watch']);
 gulp.task('styles', gulpSequence('clean', 'sass', 'autoprefixer', 'cssmin'));

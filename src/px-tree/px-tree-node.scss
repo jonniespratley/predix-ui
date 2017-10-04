@@ -1,24 +1,79 @@
-.px-tree-node{
+.px-tree-node {
+  &.tree-node {
+    margin : 0;
+    padding: 0;
+
+    ul {
+      margin : 0;
+      padding: 0 0 0 14px;
+    }
+
+    li {
+      list-style-type: none;
+
+      &.selected > a {
+        background-color: #d9edf7;
+        color           : #000;
+        padding         : 0 7px;
+      }
+
+      &:before {
+        content       : "";
+        display       : inline-block;
+        font-size     : 13px;
+        height        : 11px;
+        line-height   : 7px;
+        margin        : 3px 7px 0 0;
+        text-align    : center;
+        vertical-align: top;
+        width         : 11px;
+      }
+    }
+
+    a {
+      cursor: pointer;
+    }
+
+    .has-children {
+      &:before {
+        border : 1px solid black;
+        content: "+";
+        cursor : pointer;
+      }
+
+      &.open:before {
+        content: "-";
+        cursor : pointer;
+      }
+
+      &.always-open:before {
+        border : 1px solid black;
+        content: "";
+        cursor : default;
+      }
+    }
+  }
 
   .tree__branch > .tree-node__content {
     padding-left: 1.5rem;
-    display: none;
+    display     : none;
   }
 
-  &.active{
-    > .tree__branch > .tree-node__content{
+  &.active {
+    > .tree__branch > .tree-node__content {
       display: block;
     }
   }
 
-  .tree__label{
-    display: flex;
+  .tree__label {
+    display    : flex;
     align-items: center;
 
     &:hover {
       color           : var(--px-tree-text-color--hover, black);
       background-color: var(--px-tree-background-color--hover, lightgray);
     }
+
     &.selected {
       color           : var(--px-tree-text-color--selected, white);
       background-color: var(--px-tree-background-color--selected, gray);
@@ -30,13 +85,11 @@
   }
 
   .tree-node__icon {
-    align-items: center;
-    display: flex;
-    width : 1rem;
-    height: 1rem;
-    margin-left       : 0.25rem;
-    margin-right      : 0.25rem;
+    align-items : center;
+    display     : flex;
+    width       : 1rem;
+    height      : 1rem;
+    margin-left : 0.25rem;
+    margin-right: 0.25rem;
   }
-
-
 }

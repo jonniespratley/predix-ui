@@ -1,6 +1,20 @@
 module.exports = ({ file, options, env }) => {
-  console.log('postcss.config.js', file, options, env);
-  return {
+//  console.log('postcss.config.js', file, options, env);
+  let opt = {
+    plugins: []
+  };
+  //opt.plugins.push(require('postcss-import')({root: file.dirname}));
+  opt.plugins.push(require('postcss-cssnext'));
+
+  opt.plugins.push(require('cssnano'));
+
+  if(options.reporter){
+    opt.plugins.push(require('postcss-browser-reporter'));
+    opt.plugins.push(require('postcss-reporter'));
+  }
+
+  return opt;
+  /*{
     //parser: file.extname === '.sss' ? 'sugarss' : false,
     plugins: {
       'postcss-import': { root: file.dirname },
@@ -10,5 +24,5 @@ module.exports = ({ file, options, env }) => {
       //'postcss-browser-reporter': true,
       //'postcss-reporter': true
     }
-  };
+  };*/
 };

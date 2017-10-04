@@ -2,11 +2,9 @@
  * px-grid styles
  */
 .px-grid {
-  @apply(--px-grid);
-
+  //@apply(--px-grid);
   /* Here we import the base styles and extend each one for component */
   @import "px-flexbox-design/_base.flexbox.scss";
-
   $displays: flex, flex__item, flex--row, flex--col, flex--stretch, flex--justify, flex--wrap, flex--nowrap, flex--row--rev, flex--top, flex--bottom, flex--middle, flex--center;
   @each $val in ($displays) {
     &.#{$val} {

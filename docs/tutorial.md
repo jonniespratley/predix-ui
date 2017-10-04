@@ -21,8 +21,16 @@ Use the `<DeviceView/>` to display a page on a device layout.
 ```react
 const {DeviceView} = DemoHelpers;
 const url = 'https://app-shell.run.aws-usw02-pr.ice.predix.io';
-<DeviceView
-  landscape
-  device="phone"
-  src={url}/>
+const style = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: 5
+};
+<div style={style}>
+  <DeviceView
+    landscape
+    device="phone"
+    src={url}/>
+</div>
 ```

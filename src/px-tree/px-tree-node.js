@@ -83,6 +83,7 @@ class TreeNode extends BaseComponent {
 		this.onCategorySelect = this.onCategorySelect.bind(this);
 		this.onChildDisplayToggle = this.onChildDisplayToggle.bind(this);
 	}
+
 	onCategorySelect(ev) {
     this._log('onCategorySelect', ev);
 		if (this.props.onCategorySelect) {
@@ -91,8 +92,10 @@ class TreeNode extends BaseComponent {
 		ev.preventDefault();
 		ev.stopPropagation();
 	}
+
 	onChildDisplayToggle(ev) {
 		this._log('onChildDisplayToggle', ev);
+
 		if (this.props.data.children) {
 			if (this.state.children && this.state.children.length) {
 				this.setState({ children: null });
@@ -109,26 +112,34 @@ class TreeNode extends BaseComponent {
 			this.state.children = [];
 		}
 
-		let classes = classnames('tree-node',{
-			"has-children": this.props.data.children ? true : false,
-			open: this.state.children.length ? true : false,
-			closed: this.state.children ? false : true,
-			selected: this.state.selected ? true : false
+		let classes = classnames(
+			'px-tree-node',
+			{
+				"has-children": this.props.data.children ? true : false,
+				open: this.state.children.length ? true : false,
+				closed: this.state.children ? false : true,
+				selected: this.state.selected ? true : false
 		});
+
+		const treeNodeClasses = classnames(
+			'tree-node',
+			{ active: this.state.selected ? true : false },
+			{tree__leaf: this.props.data.children ? true : false},
+		);
 		return (
 			<li className={classes} ref="node" onClick={this.onChildDisplayToggle}>
-				<a data-id={this.props.data.id} onClick={this.onCategorySelect}>
-					{this.props.data.name || this.props.data.label}
-					<ul>
-						{this.state.children.map((child, index) => (
-							<TreeNode
-								key={index}
-								data={child}
-								onCategorySelect={this.props.onCategorySelect}
-       />
-						))}
-					</ul>
+				<a data-id={this.props.data.id} onClick={this.onCategorySelect} className={treeNodeClasses}>
+					{this.props.data.children && <TreeIcon className='tree-node__icon' open={this.state.selected}/>}
+					<span className='tree__label'>{this.props.data.name || this.props.data.label}</span>
 				</a>
+				<ul className='collapse-content'>
+					{this.state.children.map((child, index) => (
+						<TreeNode
+							key={index}
+							data={child}
+							onCategorySelect={this.props.onCategorySelect}/>
+					))}
+				</ul>
         <style jsx>{stylesheet}</style>
 			</li>
 		);

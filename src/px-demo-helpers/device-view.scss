@@ -12,6 +12,7 @@
     width: 360px;
     height: 600px;
     margin: 60px 0 96px;
+
     &.landscape {
       width: 600px;
       height: 360px;
@@ -19,20 +20,17 @@
     }
   }
 
-
-
   &.tablet {
     width: 720px;
     height: 1024px;
     margin: 60px 0 96px;
+
     &.landscape {
       width: 1024px;
       height: 720px;
       margin: 0;
     }
   }
-
-
 
   &.laptop {
     width: 1366px;
