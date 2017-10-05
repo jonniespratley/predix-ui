@@ -1,7 +1,95 @@
 /**
  * px-breadcrumbs styles
  */
- .px-breadcrumbs {
-   background: green;
-   padding: 1rem;
- }
+.px-breadcrumbs {
+  /*
+  * Copyright (c) 2014 GE Global Research. All rights reserved.
+  *
+  * The copyright to the computer software herein is the property of
+  * GE Global Research. The software may be used and/or copied only
+  * with the written permission of GE Global Research or in accordance
+  * with the terms and conditions stipulated in the agreement/contract
+  * under which the software has been supplied.
+  */
+
+  //
+  // Sass for the for the px-breadcrumbs component
+  //
+  // @author
+  //
+
+  // Settings
+
+  // Tools
+
+  // Generic
+//  @import "px-normalize-design/_generic.normalize.scss";
+//  @import "px-box-sizing-design/_generic.box-sizing.scss";
+  @import "px-helpers-design/_generic.helpers.scss";
+
+  // Base
+  @import "px-flexbox-design/_base.flexbox.scss";
+
+  // Meta
+
+  // Objects
+  @import "px-actionable-design/_objects.actionable.scss";
+  @import "px-shadows-design/_objects.shadows.scss";
+
+  // Component
+  :host {
+    display: block;
+  }
+
+  .container {
+    white-space: nowrap;
+    overflow   : hidden;
+  }
+
+  .container ul {
+    margin    : 0;
+    padding   : 0;
+    max-height: calculateRem(45px);
+    max-width : 100%;
+  }
+
+  .breadcrumbTopItem {
+    list-style-type: none;
+    height         : 2rem;
+
+    &:last-of-type .actionable {
+      font-weight: 600;
+    }
+
+    &:last-of-type px-dropdown {
+      --px-dropdown-font-weight: bold;
+    }
+
+    .small > px-icon {
+      --iron-icon-height: 1rem;
+      --iron-icon-width : 1rem;
+      color             : var(--px-breadcrumbs-chevron-color, gray);
+    }
+
+    .large > px-icon {
+      --iron-icon-height: 2rem;
+      --iron-icon-width : 2rem;
+      color             : var(--px-breadcrumbs-chevron-color, gray);
+    }
+  }
+
+  .topPath {
+    flex          : 1;
+    display       : flex;
+    flex-direction: row;
+  }
+
+  // Trumps
+  //because of the low specificity of hidden, we have to add this:
+  //PolymerElements/iron-flex-layout#86.
+  [hidden] {
+    display: none !important;
+  }
+  $inuit-enable-paddings--small: true;
+  @import "px-spacing-design/_trumps.spacing.scss";
+}
