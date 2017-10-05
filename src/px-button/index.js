@@ -1,8 +1,13 @@
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
 import React from 'react';
 import stylesheet from './px-button.scss';
 
-export default(props) => {
+
+/**
+ * Button component will render a button with Predix Design.
+ */
+const Button = (props) => {
   const {
   	label,
     type = 'button',
@@ -46,3 +51,25 @@ export default(props) => {
     </button>
 	);
 }
+
+Button.defaultProps = {
+  disabled: false,
+  label: null,
+  onClick: () => {},
+  style: null,
+  type: 'button',
+  attrs: {}
+};
+Button.propTypes = {
+  /** Boolean indicating whether the button should render as disabled */
+  disabled: PropTypes.bool,
+  /** button label. */
+  label: PropTypes.string,
+  /** onClick event handler */
+  onClick: PropTypes.func,
+  /** Component styles */
+  style: PropTypes.object,
+  /** Any valid attributes to add to button element */
+  attr: PropTypes.object
+};
+export default Button;

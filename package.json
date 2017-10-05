@@ -56,6 +56,7 @@
     "test"
   ],
   "devDependencies": {
+    "@storybook/addon-info": "^3.2.12",
     "@storybook/addon-knobs": "^3.2.12",
     "@storybook/react": "^3.2.12",
     "babel-cli": "^6.26.0",

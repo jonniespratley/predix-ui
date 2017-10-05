@@ -37,14 +37,16 @@ const {
    <button disabled={boolean('Disabled', false)} >
      {text('Label', 'Hello Button')}
    </button>
- ))
+ ));
+
  stories.add('as dynamic variables', () => {
   const name = text('Name', 'Arunoda Susiripala');
   const age = number('Age', 89);
-
   const content = `I am ${name} and I'm ${age} years old.`;
   return (<div>{content}</div>);
 });
+
+
 
 ///
 storiesOf('Accordion', module)
@@ -52,6 +54,7 @@ storiesOf('Accordion', module)
 	.add('default', () => (
 		<Accordion headerValue='Accordion Header'>Accordion Content</Accordion>
 	));
+
 
 
 ///
@@ -72,32 +75,17 @@ storiesOf('AppHeader', module)
 		<AppHeader title='AppHeader' items={navItems}/>
 	));
 
+
 ///
 storiesOf('AppNav', module)
 	.add('default', () => (
 		<AppNav items={navItems}/>
 	));
 
+
 ///
-storiesOf('Button', module)
-	.add('default', () => (
-		<Button onClick={action('clicked')} label='Button'/>
-	))
-	.add('with text', () => (
-		<Button onClick={action('clicked')}>Hello Button</Button>
-	))
-	.add('with emoji', () => (
-		<Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
-	))
-	.add('with theme', () => (
-		<div>
-			<Button onClick={action('clicked')} label='Button'/>
-			<Button onClick={action('clicked')} label='Button' primary/>
-			<Button onClick={action('clicked')} label='Button' tertiary/>
-			<Button onClick={action('clicked')} label='Button' disabled/>
-		</div>
-	))
-	;
+
+
 
 /// TODO: BrandingBar
 storiesOf('BrandingBar', module)
@@ -139,7 +127,7 @@ storiesOf('Navbar', module)
 	;
 
 
-
+///
 storiesOf('ProgressBar', module)
 	.add('default', () => (
 		<ProgressBar value={75}/>
@@ -186,6 +174,7 @@ storiesOf('Tabs', module)
   ;
 
 
+///
 storiesOf('Tile', module)
 	.add('default', () => (
     <Tile image='https://www.predix-ui.com/bower_components/px-tile/turbine.jpg'>
