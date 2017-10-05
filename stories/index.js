@@ -17,10 +17,10 @@ storiesOf('Accordion', module)
 
 storiesOf('AppHeader', module)
 	.add('default', () => (
-		<AppHeader/>
+		<AppHeader items={navItems}/>
 	))
 	.add('with title', () => (
-		<AppHeader title='AppHeader'/>
+		<AppHeader title='AppHeader' items={navItems}/>
 	));
 
 storiesOf('AppNav', module)
@@ -33,15 +33,27 @@ storiesOf('Button', module)
 	.add('default', () => (
 		<Button onClick={action('clicked')} label='Button'/>
 	))
-	.add('primary', () => (
-		<Button onClick={action('clicked')} label='Button' primary/>
-	))
 	.add('with text', () => (
 		<Button onClick={action('clicked')}>Hello Button</Button>
 	))
-	.add('with some emoji', () => (
+	.add('with emoji', () => (
 		<Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
-	));
+	))
+	.add('with theme', () => (
+		<div>
+			<Button onClick={action('clicked')} label='Button'/>
+			<Button onClick={action('clicked')} label='Button' primary/>
+			<Button onClick={action('clicked')} label='Button' tertiary/>
+			<Button onClick={action('clicked')} label='Button' disabled/>
+		</div>
+	))
+	;
+
+	storiesOf('BrandingBar', module)
+		.add('default', () => (
+			<BrandingBar application-title="Predix Design System"/>
+		));
+
 
 storiesOf('Card', module)
 	.add('with header', () => (
