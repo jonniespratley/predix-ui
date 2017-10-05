@@ -8,19 +8,38 @@ Reference https://www.predix-ui.com/#/elements/px-accordion
 ## Usage
 
 ```react
-<div id="app">
+const { Accordion } = PxReact;
+<div>
+  <Accordion
+    headerText="Header Caption"
+    status="Last Updated: 3 Days Ago">
+    <p>Accordion content goes here.</p>
+  </Accordion>
+
+  <Accordion
+    headerText="Header Caption"
+    status="Last Updated: 3 Days Ago">
+    <p>Accordion content goes here.</p>
+  </Accordion>
+</div>
+```
+
+### With custom CSS
+
+```react
+const { Accordion } = PxReact;
+<div className='custom'>
   <style>{`
-    #app{
-      --px-headings-heading-subsection-color: black;
-      --px-headings-heading-subsection-background: gray;
+    .custom {
+      --px-headings-heading-subsection-color: white;
+      --px-headings-heading-subsection-background: black;
     }
   `}</style>
-  <px.Accordion headerValue="Header Caption" status="Last Updated: 3 Days Ago">
+  <Accordion
+    headerValue="Header Caption"
+    status="Last Updated: 3 Days Ago">
     <p>Accordion content goes here.</p>
-  </px.Accordion>
-  <px.Accordion headerValue="Header Caption" status="Last Updated: 3 Days Ago">
-    <p>Accordion content goes here.</p>
-  </px.Accordion>
+  </Accordion>
 </div>
 ```
 
@@ -30,21 +49,24 @@ Reference https://www.predix-ui.com/#/elements/px-accordion
 ```table
 span: 6
 rows:
-  - Name: headerValue
-    Type: String
-    Value: '" "'
+  - Name: headerText
+    Type: string
+    Default: null
     Description: String that will appear in header.
+
   - Name: status
-    Type: String
-    Value: '" "'
+    Type: string
+    Default: null
     Description: String that will appear in the right hand side of the accordion.
+
   - Name: showAction
-    Type: boolean
-    Value: "false"
+    Type: bool
+    Default: fals
     Description: Flag indicating whether the 'action' icon should be shown on the right hand side.
+
   - Name: disabled
-    Type: boolean
-    Value: "false"
+    Type: bool
+    Default: fals
     Description: Flag indicating whether the accordion should be disabled.
 ```
 

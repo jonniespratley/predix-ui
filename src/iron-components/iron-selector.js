@@ -1,5 +1,5 @@
 import React from 'react';
-class IronSelector extends React.Component {
+export default class IronSelector extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -9,8 +9,9 @@ class IronSelector extends React.Component {
     };
   }
   render(){
-    const {children, className, style} = this.props;
-    const {selected, selectedItem} = this.state;
+    const { children, className, style } = this.props;
+    const { selected, selectedItem } = this.state;
+
     console.log('IronSelector', selected, this);
     return (
       <div className={className} style={style}>
@@ -19,11 +20,3 @@ class IronSelector extends React.Component {
     );
   }
 }
-IronSelector.defaultProps = {
-  selectedItem: {},
-  selected: 0,
-  propForSelected: null,
-  className: '',
-  style: {}
-};
-export default IronSelector;

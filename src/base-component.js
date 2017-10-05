@@ -21,14 +21,16 @@ export default class BaseComponent extends React.Component {
 	}) {
 		super(props);
 		this.displayName = options.name || options.displayName;
-		// TODO: Find a way to flag on or off
-		let log = debug(`px:${this.displayName}`);
-		this._log = log;
-		this.$$ = {
-			options,
-			log,
-			classnames
-		};
+
+		this.$$ = { options, classnames };
+
+    // TODO: Find a way to flag on or off
+
+    if(props && props.log){
+  		this._log = debug(`px:${options.displayName}`);
+    } else {
+      this._log = ()=>{};
+    }
 
 		this._log('constructor', props, options);
 	}

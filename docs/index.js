@@ -102,7 +102,7 @@ const pages = [
     ]
   },
   {
-    title: 'Components',
+    title: 'Component Demos',
     pages: [
       { path: 'px-accordion', title: 'Accordion', component: pxAccordionDocs},
       { path: 'px-alert-label', title: 'Alert Label', component: pxAlertLabelDocs},

@@ -1,13 +1,16 @@
 import React from 'react';
-import classnames from 'classnames';
-
-import IronResizable from './iron-resizable';
+import IronCollapse from './iron-collapse';
+import IronMediaQuery from './iron-media-query';
 import IconIcon from './iron-icon';
+import IronResizable from './iron-resizable';
 import IronSelector from './iron-selector';
 
-const IronComponents = {
+
+
+export default {
+  IronCollapse,
+  IronMediaQuery,
+  IronIcon,
   IronResizable,
-  IronSelector,
-  IronIcon
+  IronSelector
 };
-export default IronComponents;
