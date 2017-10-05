@@ -1,4 +1,4 @@
-The `px.KeyValuePair` component allows you to prominently display information in a dashboard.
+The `<KeyValuePair/>` component allows you to prominently display information in a dashboard.
 
 
 ## Usage
@@ -6,7 +6,8 @@ The `px.KeyValuePair` component allows you to prominently display information in
 ```react
 span: 6
 ---
-<px.KeyValuePair
+const { KeyValuePair } = PxReact;
+<KeyValuePair
   label="Lorem Ipsum"
   value="12345"
   uom="units"

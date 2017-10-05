@@ -11,12 +11,31 @@ The `<Navbar/>` component enables navigation through an information hierarchy an
   backButtonLabel='< Back'
   showBackButton/>
 ```
+
+### With menu
+
 ```react
 <px.Navbar
   title='Navbar'
   subtitle='Subtitle'
-
   showMenuButton/>
+```
+
+### With custom CSS
+
+```react
+<div className='custom'>
+<style>{`
+  .custom{
+    --px-navbar-font-color: white;
+    --px-navbar-button-color: white;
+    --px-navbar-background-color: #0d5eb6;
+  }
+`}</style>
+  <px.Navbar
+    title='Navbar'
+    showMenuButton/>
+</div>
 ```
 
 ## Properties
@@ -58,6 +77,10 @@ rows:
   - Property: --px-navbar
     Default: null
     Description: Style mixin to be applied to the element
+
+  - Property: --px-navbar-background-color
+    Default: null
+    Description: Background color.
 
   - Property: --px-navbar-title
     Default: null

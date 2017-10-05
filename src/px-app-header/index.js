@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import stylesheet from './style.scss';
+import stylesheet from './px-app-header.scss';
 
 import AppNav from '../px-app-nav';
 import BrandingBar from '../px-branding-bar';
@@ -24,8 +24,8 @@ export default ({
   return (
     <div className={baseClasses} style={style}>
       <BrandingBar title={title}/>
-      <AppNav items={items}/>
-      <div>{children}</div>
+      {items && <AppNav items={items}/>}
+      {children && <div>{children}</div>}
       <style jsx>{stylesheet}</style>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import stylesheet from './style.scss';
+import stylesheet from './px-view-header.scss';
 
 //https://www.predix-ui.com/#/elements/px-branding-bar
 export default ({

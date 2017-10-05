@@ -38,7 +38,9 @@
     "preversion": "npm run test && npm run dist && npm run dist:min && git commit --allow-empty -am ''",
     "prepublish": "npm run dist:es6 && npm run dist:modules",
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
-    "postinstall": "node tools/post_install.js"
+    "postinstall": "node tools/post_install.js",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook:build": "build-storybook -c .storybook -o .out"
   },
   "engines": {
     "node": "^8.0.0",
@@ -54,6 +56,7 @@
     "test"
   ],
   "devDependencies": {
+    "@storybook/react": "^3.2.12",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.24.1",
     "babel-eslint": "^8.0.0",

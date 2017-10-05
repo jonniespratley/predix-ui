@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import style from './style.scss';
+import stylesheet from './px-dropdown.scss';
 
 /**
  * px-dropdown component
@@ -15,7 +15,7 @@ export default ({label = 'px-dropdown', children}) => {
     <div className={baseClasses}>
       <h4>{label}</h4>
       <div>{children}</div>
-      <style jsx>{style}</style>
+      <style jsx>{stylesheet}</style>
     </div>
   );
 }

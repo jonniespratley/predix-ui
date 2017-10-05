@@ -14,26 +14,26 @@ const rows = [
   ['3', '3', '3'],
   ['4', '4', '4', '4'],
   ['6','6','6','6','6','6'],
-  ['1','3']
+  ['1','3'],
+  ['2','4'],
+  ['1','6']
 ];
 const { Layout } = PxReact;
-
-
 <div className='demo'>
-
   {rows.map((row, index) => (
     <Layout container key={index}>
-      {row.map((size, i) => ( <Layout item key={i} size={size}> <p><code>size={size}</code></p> </Layout>))}
+      {row.map((size, i) => (
+        <Layout
+          item key={i}
+          sm={1}
+          lg={size}>
+          <p><code>size={size}</code></p>
+        </Layout>)
+      )}
     </Layout>
     )
   )}
-
   <style>{`
-    .demo{
-    }
-    .demo .layout__item {
-
-    }
     .demo p{
       padding: 1rem;
       background-color: white;
@@ -41,6 +41,9 @@ const { Layout } = PxReact;
   `}</style>
 </div>
 ```
+
+
+
 
 ```react
 

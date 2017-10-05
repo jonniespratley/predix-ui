@@ -1,6 +1,5 @@
-Cards consist of a header area and content area. The header can optionally contain a descriptive icon in the top left corner and/or an actions area in the top right corner for settings or other action icons. Cards are incredibly flexible in terms of what content can be placed in the main area of the card and how it's arranged.
+The `<Card/>` component consist of a header area and content area. The header can optionally contain a descriptive icon in the top left corner and/or an actions area in the top right corner for settings or other action icons. Cards are incredibly flexible in terms of what content can be placed in the main area of the card and how it's arranged.
 
-A few layout configurations are provided in the px-widget-cards component to help you organize content in a responsive grid within a card.
 
 
 ```hint
@@ -10,7 +9,6 @@ Reference https://www.predix-ui.com/#/elements/cards/card/px-card
 ## Usage
 
 ```react
-//import {Card} from 'px-react';
 const { Card } = PxReact;
 <div>
   <style>{`

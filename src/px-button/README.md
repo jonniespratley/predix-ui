@@ -1,23 +1,30 @@
-The `px.Button` component provides a way to use Predix Design buttons. (https://github.com/PredixDev/px-buttons-design)
+The `<Button/>` component provides a way to use Predix Design buttons.
+
+
+```hint
+Reference https://github.com/PredixDev/px-buttons-design
+```
 
 ## Usage
 
 
 ```react|lang-jsx
+const { Button } = PxReact;
 <div>
-  <px.Button label='Button'/>
-  <px.Button label='Button' primary/>
-  <px.Button label='Button' tertiary/>
-  <px.Button label='Button' disabled/>
+  <Button label='Button'/>
+  <Button label='Button' primary/>
+  <Button label='Button' tertiary/>
+  <Button label='Button' disabled/>
 </div>
 ```
 
 ```react|lang-jsx
+const { Button } = PxReact;
 <div>
-  <px.Button label='Button' small/>
-  <px.Button label='Button' />
-  <px.Button label='Button' large/>
-  <px.Button label='Button' huge/>
+  <Button label='Button' small/>
+  <Button label='Button' />
+  <Button label='Button' large/>
+  <Button label='Button' huge/>
 </div>
 ```
 
