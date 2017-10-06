@@ -80,6 +80,17 @@ gulp.task('sass', 'Compile all .sass/.scss files', function() {
     .pipe($.filelog())
     .pipe(gulp.dest(config.styles.dest));
 });
+gulp.task('sass:all', 'Combine all .sass/.scss files', function() {
+  return gulp.src(config.styles.src)
+    .pipe($.filelog())
+
+    .pipe($.sass(sassOptions).on('error', $.sass.logError))
+    .pipe($.concat(pkg.name + '.all.css'))
+    .pipe($.size())
+
+    .pipe($.filelog())
+    .pipe(gulp.dest(config.styles.dest));
+});
 
 gulp.task('autoprefixer', function() {
   return gulp.src(`${config.styles.dest}/**/*.css`)
@@ -107,10 +118,10 @@ gulp.task('cssmin', 'Take all css and min with source maps', function() {
     }))
     //.pipe($.sourcemaps.write('.'))
     .pipe($.rename({
-    //  suffix: '.min'
+      suffix: '.min'
     }))
     .pipe($.size())
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./dist/css'))
     ;
 });
 

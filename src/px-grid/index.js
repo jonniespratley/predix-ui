@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import stylesheet from './style.scss';
+import stylesheet from './px-grid.scss';
 
 /**
  * px-grid component

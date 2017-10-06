@@ -46,7 +46,7 @@ const dashboardData = {
   <Card headerText='West Coast Fleet'>
     <Layout container center middle wrap>
       {dashboardData.keyVals.map((item, index) => (
-        <Layout item key={index} xs={2}>
+        <Layout item key={index} xs={2} md={4} xl={6}>
           <KeyValuePair
             label={item.label}
             uom={item.uom}
