@@ -5,7 +5,7 @@
 	font-size       : $inuit-base-font-size;
 	border-bottom   : $navbar-default-border-bottom;
 	border-bottom   : var(--px-navbar-border-bottom, $navbar-default-border-bottom);
-	background-color: var(--px-navbar-background-color, $navbar-default-background-color);
+	background-color: var(--px-view-header-background-color, $navbar-default-background-color);
 	color           : var(--px-navbar-color, $navbar-default-font-color);
 	///-----------------------------------------------------------------
 	///.navbar--transparent
@@ -22,39 +22,7 @@
 	@include modifier ('shadow') {
 		box-shadow: $navbar-default-box-shadow;
 	}
-	///-----------------------------------------------------------------
-	///.navbar--chrome
-	@include modifier ('chrome') {
-		background-color   : $navbar-chrome-background-color;
-		border-bottom-color: $navbar-chrome-border-color;
-		color              : $navbar-chrome-font-color;
 
-		.navbar__button {
-			color: $navbar-chrome-font-color;
-		}
-	}
-	///-----------------------------------------------------------------
-	///.navbar--dark
-	@include modifier ('dark') {
-		background-color   : $navbar-dark-background-color;
-		color              : $navbar-dark-font-color;
-		border-bottom-color: $navbar-dark-border-color;
-
-		.navbar__button {
-			color: $navbar-dark-font-color;
-		}
-	}
-	///-----------------------------------------------------------------
-	///.navbar--primary
-	@include modifier ('primary') {
-		background-color   : $navbar-primary-background-color;
-		color              : $navbar-primary-font-color;
-		border-bottom-color: $navbar-primary-border-color;
-
-		.navbar__button {
-			color: $navbar-primary-font-color;
-		}
-	}
 	///-----------------------------------------------------------------
 	//::content .navbar__button {
 	@include c ('.navbar__button') {
@@ -79,12 +47,12 @@
 	@include element ('title') {
 		font-size: $navbar-title-font-size;
 		//color    : var(--px-navbar-title-color, black);
-		color    : var(--px-navbar-font-color, black);
+		color    : var(--px-view-header-title-color, black);
 	}
 	///-----------------------------------------------------------------
 	@include element ('subtitle') {
 		font-size: $navbar-subtitle-font-size;
-		color    : var(--px-navbar-font-color, black);
-		color    : var(--px-navbar-subtitle-color, $navbar-subtitle-font-color);
+
+		color    : var(--px-view-header-subtitle-color, $navbar-subtitle-font-color);
 	}
 }

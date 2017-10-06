@@ -11,8 +11,33 @@ Reference https://www.predix-ui.com/#/elements/cards/card/px-card
 ```react
 const { Card } = PxReact;
 <div>
+  <Card headerText='My Card'>
+    This is the main content area of a Predix card.
+  </Card>
+</div>
+```
+
+### With loading
+
+```react
+const { Card, Spinner } = PxReact;
+<div>
+  <Card headerText='Loading Card' loading>
+    This is the main content area of a Predix card that is loading
+    <div className='flex flex--center'>
+      <Spinner size={50}/>
+    </div>
+  </Card>
+</div>
+```
+
+### With custom CSS
+
+```react
+const { Card } = PxReact;
+<div className='custom'>
   <style>{`
-    :root{
+    .custom{
       --px-card-background-color: #ebeff2;
       --px-card-border-color: #d8e0e5;
       --px-card-header-color: #677e8c;

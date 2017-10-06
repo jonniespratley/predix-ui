@@ -12,15 +12,7 @@ $navbar-default-background-color       : var(--px-navbar-background-color, #e2e8
 $navbar-default-font-color             : var(--px-navbar-font-color, #2c404c);
 $navbar-default-border-bottom          : 1px solid gray;
 $navbar-default-box-shadow             : 0 2px 2px 0 rgba(0, 0, 0, 0.15); ///
-$navbar-chrome-background-color        : $gray2;
-$navbar-chrome-font-color              : $gray10;
-$navbar-chrome-border-color            : $gray4; ///
-$navbar-dark-background-color          : gray;
-$navbar-dark-font-color                : white;
-$navbar-dark-border-color              : black; ///
-$navbar-primary-background-color       : blue;
-$navbar-primary-font-color             : white;
-$navbar-primary-border-color           : darkblue; ///
+
 $navbar-height                         : 56px;
 $navbar-padding                        : $inuit-base-spacing-unit--tiny; ///
 $navbar-button-font-size               : $inuit-base-font-size;

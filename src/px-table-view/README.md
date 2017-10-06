@@ -24,6 +24,39 @@ import {TableView, TableRow} from 'px-components-react';
 </px.TableView>
 ```
 
+### Sizes
+
+
+#### Flush
+```react
+<px.TableView flush>
+  <px.TableRow title="Tappable Item" tappable/>
+</px.TableView>
+```
+
+
+#### Regular
+```react
+<px.TableView>
+  <px.TableRow title="Tappable Item" tappable/>
+</px.TableView>
+```
+
+#### Large
+```react
+<px.TableView large>
+  <px.TableRow title="Tappable Item" tappable/>
+</px.TableView>
+```
+
+
+#### Huge
+```react
+<px.TableView huge>
+  <px.TableRow title="Tappable Item" tappable/>
+</px.TableView>
+```
+
 
 
 ## Examples
@@ -63,7 +96,7 @@ const items = [
   {title: 'Text Label', image:'http://placehold.it/44'},
   {title: 'Text Label', image:'http://placehold.it/44'}
 ];
-<px.TableView items={items} tappable/>
+<px.TableView items={items} large tappable/>
 ```
 
 
@@ -71,10 +104,11 @@ const items = [
 
 ```react
 const items = [
-  {title: 'Text Label', label1: 'New'},
-  {title: 'Text Label', label1: 'New'}
+  {title: 'Text Label', labelRight: 'New'},
+  {title: 'Text Label', labelRight: 'New'},
+  {title: 'Text Label', labelRight: 'New'}
 ];
-<px.TableView items={items} tappable/>
+<px.TableView items={items} large tappable/>
 ```
 
 ### 5. With descriptions
@@ -96,7 +130,7 @@ const items = [
   }
 ];
 <div>
-  <px.TableView items={items} tappable/>
+  <px.TableView items={items} large tappable/>
 </div>
 ```
 
