@@ -24,7 +24,7 @@ class IronPages extends React.Component {
 
 
     const selectedClassName = classnames('iron-selected');
-    console.log('Render selected prop child', selectedClassName);
+
 		return (<div className={selectedClassName}>{child}</div>);
 	}
 	render(){

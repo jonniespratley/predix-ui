@@ -130,6 +130,8 @@
     "px-table-view": "https://github.com/PredixDev/px-table-view.git",
     "px-theme": "https://github.com/PredixDev/px-theme.git",
     "raw-loader": "^0.5.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
     "react-github-corner": "^1.0.0",
     "react-test-renderer": "16",
