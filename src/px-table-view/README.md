@@ -24,42 +24,10 @@ import {TableView, TableRow} from 'px-components-react';
 </px.TableView>
 ```
 
-### Sizes
-
-
-#### Flush
-```react
-<px.TableView flush>
-  <px.TableRow title="Tappable Item" tappable/>
-</px.TableView>
-```
-
-
-#### Regular
-```react
-<px.TableView>
-  <px.TableRow title="Tappable Item" tappable/>
-</px.TableView>
-```
-
-#### Large
-```react
-<px.TableView large>
-  <px.TableRow title="Tappable Item" tappable/>
-</px.TableView>
-```
-
-
-#### Huge
-```react
-<px.TableView huge>
-  <px.TableRow title="Tappable Item" tappable/>
-</px.TableView>
-```
-
 
 
 ## Examples
+The following are examples of the row component.
 
 
 ### 1. Basic

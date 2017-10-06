@@ -1,0 +1,98 @@
+/// @group px-table-view
+/// Mixins
+@import "../variables";
+@import "../mixins";
+///
+///---------------------------------------------------------------------------
+///.table-row--actionable
+@include modifier ('swipeable') {
+  background-color: $table-row-background-color;
+  overflow       : hidden;
+  transform-style: preserve-3d;
+  transition: transform cubic-bezier(.55,0,.1,1) 0.3s;
+  z-index: 10;
+  .table-row__content {
+    position  : relative;
+  }
+}
+///---------------------------------------------------------------------------
+///.table-row__actions
+@include element ('actions') {
+  overflow       : hidden;
+  transform-style: preserve-3d;
+  position       : absolute;
+  top            : 0;
+  bottom            : 0;
+  display        : flex;
+  flex-direction : row;
+  justify-content: space-between;
+  width          : auto;
+  align-self     : stretch;
+  align-items    : stretch;
+
+  &.is-visible {
+    z-index: 50;
+  }
+  ///---------------------------------------------------------------------------
+  //left actions
+  @include modifier ('left') {
+    order    : 0;
+    left: 0;
+
+    ///---------------------------------------------------------------------------
+    //Visible actions
+    &.is-visible {
+      width    : auto;
+      transform: translateX(0%);
+    }
+  }
+
+  ///---------------------------------------------------------------------------
+  //right actions
+  @include modifier ('right') {
+    order: 10;
+    right: 0;
+
+    &.is-visible {
+      width    : auto;
+      transform: translateX(-100%);
+    }
+  }
+}
+///---------------------------------------------------------------------------
+//Button
+@include element ('button') {
+  @include noselect();
+  cursor         : pointer;
+  flex: 1;
+  margin         : 0;
+  border-radius  : 0;
+  min-width      : 80px;
+  outline        : 0;
+  user-select    : none;
+  font-family    : $font-family-default;
+  margin         : $table-row-button-margin;
+  padding        : $table-row-button-padding;
+  color          : $table-row-button-font-color;
+  font-size      : $table-row-button-font-size;
+  display        : flex;
+  align-items    : center;
+  flex-direction : column;
+  justify-content: center;
+
+  @include modifier ('alert') {
+    @include actionButton($table-row-button-color-alert, $table-row-button-color-alert-active, $table-row-button-color-alert-hover);
+  }
+
+  @include modifier ('warn') {
+    @include actionButton($table-row-button-color-warn, $table-row-button-color-warn-active, $table-row-button-color-warn-hover);
+  }
+
+  @include modifier ('primary') {
+    @include actionButton($table-row-button-color-primary, $table-row-button-color-primary-active, $table-row-button-color-primary-hover);
+  }
+
+  @include modifier ('info') {
+    @include actionButton($table-row-button-color-info, $table-row-button-color-info-active, $table-row-button-color-info-hover);
+  }
+}
