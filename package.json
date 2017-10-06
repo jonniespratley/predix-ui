@@ -3,7 +3,7 @@
   "description": "px-* web components in React.js components",
   "author": "Jonnie Spratley",
   "user": "jonniespratley",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/jonniespratley/predix-ui.git"
@@ -21,6 +21,8 @@
   },
   "scripts": {
     "plop": "./node_modules/.bin/plop",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook:build": "build-storybook -c .storybook -o .out",
     "docs": "esdoc",
     "dist:icons": "node ./tools/icons-optimize-and-fix.js",
     "start": "webpack-dev-server --env dev",
@@ -31,16 +33,14 @@
     "gh-pages": "webpack --env ghPages",
     "gh-pages:deploy": "gh-pages -d gh-pages",
     "gh-pages:stats": "webpack --env ghPages --profile --json > stats.json",
-    "dist": "rimraf ./dist/*.* && webpack --env dist",
+    "dist": "npm run dist:es6 && npm run dist:min && npm run dist:modules",
     "dist:es6": "rimraf ./dist/es6 && BABEL_ENV=es6 babel ./src --out-dir ./dist/es6",
     "dist:min": "webpack --env distMin",
     "dist:modules": "rimraf ./dist/modules && BABEL_ENV=modules babel ./src --out-dir ./dist/modules",
     "preversion": "npm run test && npm run dist && npm run dist:min && git commit --allow-empty -am ''",
-    "prepublish": "npm run dist:es6 && npm run dist:modules",
+    "prepublish": "npm run dist",
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
-    "postinstall": "node tools/post_install.js",
-    "storybook": "start-storybook -p 9001 -c .storybook",
-    "storybook:build": "build-storybook -c .storybook -o .out"
+    "postinstall": "node tools/post_install.js"
   },
   "engines": {
     "node": "^8.0.0",
@@ -170,6 +170,7 @@
     "modulePathIgnorePatterns": [
       "bower_components",
       "plop-templates",
+      "stories",
       "docs"
     ],
     "moduleDirectories": [

@@ -22,9 +22,11 @@ const sassOptions = {
 const config = {
   dest: './dist',
   scripts: {
+    main: 'src/index.js',
     src: [
       'src/**/*.js',
-      '!src/**/*.test.js'
+      '!src/**/*.test.js',
+      '!src/**/*.stories.js'
     ]
   },
   styles: {
@@ -36,8 +38,9 @@ const config = {
   }
 };
 
-gulp.task('sassdoc', function() {
 
+///
+gulp.task('sassdoc', function() {
   const sassdocOptions = {
     dest: 'sass-docs',
     verbose: true,
@@ -53,6 +56,7 @@ gulp.task('sassdoc', function() {
   return gulp.src(config.styles.src).pipe($.sassdoc(sassdocOptions));
 });
 
+///
 gulp.task('clean', function() {
   return gulp.src([
     '.tmp',
@@ -64,13 +68,21 @@ gulp.task('clean', function() {
   }).pipe($.clean());
 });
 
+///
+gulp.task('clean:dist:files', function() {
+  return gulp.src(['./dist/*.*'], {read: false}).pipe($.clean());
+});
+///
 gulp.task('clean:es6', function() {
   return gulp.src(['./dist/es6'], {read: false}).pipe($.clean());
 });
+
+///
 gulp.task('clean:modules', function() {
   return gulp.src(['./dist/modules'], {read: false}).pipe($.clean());
 });
 
+///
 gulp.task('sass', 'Compile all .sass/.scss files', function() {
   return gulp.src(config.styles.src)
     .pipe($.filelog())
@@ -80,6 +92,8 @@ gulp.task('sass', 'Compile all .sass/.scss files', function() {
     .pipe($.filelog())
     .pipe(gulp.dest(config.styles.dest));
 });
+
+///
 gulp.task('sass:all', 'Combine all .sass/.scss files', function() {
   return gulp.src(config.styles.src)
     .pipe($.filelog())
@@ -92,6 +106,8 @@ gulp.task('sass:all', 'Combine all .sass/.scss files', function() {
     .pipe(gulp.dest(config.styles.dest));
 });
 
+
+///
 gulp.task('autoprefixer', function() {
   return gulp.src(`${config.styles.dest}/**/*.css`)
     .pipe($.filelog())
@@ -106,6 +122,7 @@ gulp.task('autoprefixer', function() {
     .pipe(gulp.dest(config.styles.dest));
 });
 
+///
 gulp.task('cssmin', 'Take all css and min with source maps', function() {
   return gulp.src([
     `${config.styles.dest}/**/*.css`,
@@ -125,6 +142,7 @@ gulp.task('cssmin', 'Take all css and min with source maps', function() {
     ;
 });
 
+///
 gulp.task('postcss', 'Run files throught postcss', ['sass'], function () {
     const postcss    = require('gulp-postcss');
     const sourcemaps = require('gulp-sourcemaps');
@@ -142,10 +160,12 @@ gulp.task('postcss', 'Run files throught postcss', ['sass'], function () {
 });
 
 
+///
 gulp.task('sass:watch', function() {
   gulp.watch('./sass/**/*.scss', ['sass']);
 });
 
+///
 gulp.task('autoprefixer:watch', function() {
   gulp.watch('./css/**/*.css', ['autoprefixer']);
 });
@@ -155,16 +175,15 @@ gulp.task('autoprefixer:watch', function() {
 
 
 
-const eslint = require('gulp-eslint');
-
+///
 gulp.task('lint', 'Lint all source scripts', () => {
   return gulp.src(['./src/**/*.js','!node_modules/**'])
-      .pipe($.filelog())
-      .pipe(eslint())
-      .pipe(eslint.format())
-      .pipe(eslint.failAfterError());
+      .pipe($.eslint())
+      .pipe($.eslint.format())
+      .pipe($.eslint.failAfterError());
 });
 
+///
 const gulpWebpack = require('webpack-stream');
 const webpack = require('webpack');
 gulp.task('webpack',  'Run webpack build', () => {
@@ -180,22 +199,37 @@ gulp.task('webpack',  'Run webpack build', () => {
 
 const babel = require('gulp-babel');
 
+///
 gulp.task('dist:es6', 'Run scripts through babel to es6', ['clean:es6'], () =>{
   process.env.BABEL_ENV = 'es6';
   return gulp.src(config.scripts.src)
-  .pipe($.filelog())
-  .pipe(babel({
-    comments: false,
-    extends: path.resolve(__dirname, '.babelrc')
-  }))
-  .pipe($.size())
-  .pipe(gulp.dest(`./dist/${process.env.BABEL_ENV}`));
+    //.pipe($.filelog())
+    .pipe(babel({
+      comments: false,
+      extends: path.resolve(__dirname, '.babelrc')
+    }))
+    .pipe($.size())
+    .pipe(gulp.dest(`./dist/${process.env.BABEL_ENV}`));
 });
 
+gulp.task('compile:demo', () =>{
+  return gulp.src('./demo/**/*.es6.js')
+    .pipe($.filelog())
+    .pipe(babel({
+      comments: false,
+      extends: path.resolve(__dirname, '.babelrc')
+    }))
+    .pipe($.rename({
+      suffix: '.min'
+    }))
+    .pipe($.size())
+    .pipe(gulp.dest(`./demo`));
+});
+///
 gulp.task('dist:modules', 'Run scripts through babel to modules', ['clean:modules'], () =>{
   process.env.BABEL_ENV = 'modules';
   return gulp.src(config.scripts.src)
-  .pipe($.filelog())
+  //.pipe($.filelog())
   .pipe(babel({
     comments: false,
     extends: path.resolve(__dirname, '.babelrc')
@@ -206,4 +240,7 @@ gulp.task('dist:modules', 'Run scripts through babel to modules', ['clean:module
 
 gulp.task('watch', ['sass:watch', 'autoprefixer:watch']);
 gulp.task('styles', gulpSequence('clean', 'sass', 'autoprefixer', 'cssmin'));
-gulp.task('default', gulpSequence('clean', 'sass', 'autoprefixer', 'cssmin'));
+
+gulp.task('dist', 'Lint, build ES6 and modules.', gulpSequence( 'lint', 'dist:es6', 'dist:modules'));
+
+gulp.task('default', gulpSequence('clean', 'dist'));

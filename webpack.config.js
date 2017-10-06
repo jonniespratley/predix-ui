@@ -9,10 +9,6 @@ const SystemBellPlugin = require('system-bell-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 //const NpmInstallPlugin from 'npm-install-webpack-plugin';
-
-
-
-
 const pkg = require('./package.json');
 const ROOT_PATH = __dirname;
 
@@ -39,15 +35,19 @@ const analyzeBundle = new BundleAnalyzerPlugin({
   logLevel: 'info'
 });
 
+
+const isProduction = (process.env.BABEL_ENV !== 'dev');
+
+
 const extractCss = new ExtractTextPlugin({
-	filename: `${pkg.name}-[name].css`,
-  //disable: process.env.BABEL_ENV !== 'dist',
+	filename: `[name].css`,
+  disable: isProduction,
   allChunks: true
 });
 
 const extractSass = new ExtractTextPlugin({
 	filename: `${pkg.name}.css`,
-  //disable: process.env.BABEL_ENV !== 'dist',
+  disable: isProduction,
   allChunks: true
 });
 
@@ -229,8 +229,6 @@ const dev = merge(common, siteCommon, {
   ],
   module: {
     rules: [
-      cssRules,
-      sassRules,
       {
         test: /\.js$/,
         use: {
@@ -243,7 +241,9 @@ const dev = merge(common, siteCommon, {
           config.paths.docs,
           config.paths.src
         ]
-      }
+      },
+      cssRules,
+      sassRules
     ]
   },
   devServer: {
@@ -344,8 +344,8 @@ const distCommon = {
         use: 'babel-loader',
         include: config.paths.src
       },
-      cssRules,
-      sassRules
+      sassRules,
+      cssRules
     ]
   },
   plugins: [
