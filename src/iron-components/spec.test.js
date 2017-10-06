@@ -12,7 +12,7 @@ describe('iron-components', () => {
   describe('iron-collapse', () => {
     test('should render', () => {
       const wrapper = mount(<IronCollapse/>);
-      console.log(wrapper.text());
+      console.log(wrapper.debug());
       expect(wrapper.find('.iron-collapse')).to.have.length(1);
     });
   });
