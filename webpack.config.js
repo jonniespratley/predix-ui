@@ -36,18 +36,19 @@ const analyzeBundle = new BundleAnalyzerPlugin({
 });
 
 
-const isProduction = (process.env.BABEL_ENV !== 'dev');
+
+const EXTRACT_CSS = (process.env.EXTRACT_CSS === true);
 
 
 const extractCss = new ExtractTextPlugin({
 	filename: `[name].css`,
-  disable: isProduction,
+  disable: EXTRACT_CSS,
   allChunks: true
 });
 
 const extractSass = new ExtractTextPlugin({
 	filename: `${pkg.name}.css`,
-  disable: isProduction,
+  disable: EXTRACT_CSS,
   allChunks: true
 });
 

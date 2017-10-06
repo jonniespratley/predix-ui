@@ -5,12 +5,12 @@ import IconIcon from './iron-icon';
 import IronResizable from './iron-resizable';
 import IronSelector from './iron-selector';
 
-
-
-export default {
+const IronComponents = {
   IronCollapse,
   IronMediaQuery,
   IronIcon,
   IronResizable,
   IronSelector
 };
+
+export default IronComponents;

@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import tabStyle  from './sass/px-tab.scss';
 import Tab from './px-tab';
-import style from './style.scss';
+import style from './px-tabs.scss';
 
 const Pane = (props) => {
   return (<div>{props.children}</div>);
@@ -45,7 +45,6 @@ class Tabs extends BaseComponent {
       //add child
       this._items.push(child);
 
-
       //add prop to keys
       if(this.props.propForSelect){
          propForSelect = child.props[this.props.propForSelect];
@@ -55,9 +54,6 @@ class Tabs extends BaseComponent {
       }
 
       //selected index is selected key
-
-
-
       let selected = (this.state.selected === this._getIndexForValue(propForSelect));
       let baseClasses = classnames(
         'px-tab',

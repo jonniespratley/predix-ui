@@ -15,6 +15,7 @@ export default class IronCollapse extends React.Component {
 			opened: props.opened || false,
 			style: null
 		};
+		this._handleRef = this._handleRef.bind(this);
 		this._transitionEndBound = this._transitionEnd.bind(this);
 	}
 
@@ -25,7 +26,7 @@ export default class IronCollapse extends React.Component {
 	}
 
 	get _isDisplayed() {
-		var rect = this.$.getBoundingClientRect();
+		var rect = this.base.getBoundingClientRect();
 		for (var prop in rect) {
 			if (rect[prop] !== 0)
 				return true;
@@ -34,20 +35,20 @@ export default class IronCollapse extends React.Component {
 	}
 
 	_calcSize() {
-		return this.$.getBoundingClientRect()[this.dimension] + "px";
+		return this.base.getBoundingClientRect()[this.dimension] + "px";
 	}
 
 	toggleClass(name, bool) {
 		if (bool) {
-			this.$.classList.add(name);
+			this.base.classList.add(name);
 		} else {
-			this.$.classList.remove(name);
+			this.base.classList.remove(name);
 		}
 	}
 
 	_transitionEnd() {
 		if (this.state.opened) {
-			this.$.style[this.dimension] = 'auto';
+			this.base.style[this.dimension] = 'auto';
 		}
 		this._updateTransition(false);
 		this.toggleClass('iron-collapse-closed', !this.state.opened);
@@ -55,18 +56,18 @@ export default class IronCollapse extends React.Component {
 	}
 
 	_updateTransition(enabled) {
-		this.$.style.transitionDuration = (enabled && !this.state.noAnimation)
+		this.base.style.transitionDuration = (enabled && !this.state.noAnimation)
 			? ''
 			: '0s';
 	}
 
 	focus() {
-		this.$.focus();
+		this.base.focus();
 	}
 
 	updateSize(size, animated) {
-		let style = this.$.style;
-		if (this.$.style[this.dimension] === size) {
+		let style = this.base.style;
+		if (this.base.style[this.dimension] === size) {
 			return;
 		}
 		this._updateTransition(false);
@@ -76,14 +77,14 @@ export default class IronCollapse extends React.Component {
 			// For `auto` we must calculate what is the final size for the animation.
 			// After the transition is done, _transitionEnd will set the size back to `auto`.
 			if (size === "auto") {
-				this.$.style[this.dimension] = size;
+				this.base.style[this.dimension] = size;
 				size = this._calcSize();
 			}
-			this.$.style[this.dimension] = startSize;
-			this.$.style.height = this.$.offsetHeight;
+			this.base.style[this.dimension] = startSize;
+			this.base.style.height = this.base.offsetHeight;
 			this._updateTransition(true);
 		}
-		this.$.style[this.dimension] = size;
+		this.base.style[this.dimension] = size;
 	}
 
 	/**
@@ -98,6 +99,7 @@ export default class IronCollapse extends React.Component {
 			this.show();
 		}
 	}
+
   /** Show content*/
 	show() {
 		this.setState({opened: true});
@@ -127,12 +129,17 @@ export default class IronCollapse extends React.Component {
 	}
 
 	componentDidMount() {
-		this.$.addEventListener('transitionend', this._transitionEndBound);
+		this.base.addEventListener('transitionend', this._transitionEndBound);
 		this._transitionEnd();
 	}
 
 	componentWillUnmount() {
-		this.$.removeEventListener('transitionend', this._transitionEndBound);
+		this.base.removeEventListener('transitionend', this._transitionEndBound);
+	}
+
+	_handleRef(el){
+		this.base = el;
+		console.log('got ref', el);
 	}
 
 	render() {
@@ -147,7 +154,7 @@ export default class IronCollapse extends React.Component {
 
 		return (
 			<div className={baseClassnames}
-				ref={e => { this.$ = e;}}
+				ref={this._handleRef}
 				className={baseClassnames}
 				style={style}
 				aria-hidden={!opened}
