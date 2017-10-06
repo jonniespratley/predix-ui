@@ -35,6 +35,10 @@ import Grid from './px-grid';
 import IconSet from './px-icon-set';
 import Icon from './px-icon-set/px-icon';
 
+
+// TODO: DataViz
+import Gauge from './px-gauge';
+
 const LayoutItem = ({style, children}) => {
   return (<div style={style} className='layout__item'>{children}</div>);
 };
@@ -50,6 +54,7 @@ import Breadcrumbs from './px-breadcrumbs';
 import Dropdown from './px-dropdown';
 //import Iron from './iron-components';
 
+import Theme from './px-theme';
 /**
  * @access public
  * @example
@@ -57,7 +62,9 @@ import Dropdown from './px-dropdown';
  *
  */
 const px = {
+  Theme,
 
+  Gauge,
 	ExampleComponent,
 	AppNav,
 	AppHeader,
