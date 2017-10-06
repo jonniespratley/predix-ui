@@ -8,9 +8,12 @@ import { withKnobs, text, array, object, boolean, number } from '@storybook/addo
 
 //component
 import IronCollapse from './iron-collapse';
+import IronSelector from './iron-selector';
+import IronMediaQuery from './iron-media-query';
+import IronPages from './iron-pages';
 
 //stories
-const stories = storiesOf('IronCollapse', module);
+const stories = storiesOf('IronComponents', module);
 
 stories
 .addDecorator(withKnobs)
@@ -19,8 +22,23 @@ stories
       <IronCollapse>Click the "?" mark at top-right to view the info.</IronCollapse>
     )
   )
-.add('default', () => (
+
+.add('iron-collapse', () => (
 	<IronCollapse onClick={action('clicked')}>This is collapsable content.</IronCollapse>
+))
+.add('iron-selector', () => (
+	<IronSelector selected={1} onClick={action('clicked')}>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </IronSelector>
+))
+.add('iron-pages', () => (
+	<IronPages selected={1} onClick={action('clicked')}>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </IronPages>
 ))
 
 module.exports = stories;

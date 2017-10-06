@@ -160,6 +160,11 @@ export default class IronCollapse extends React.Component {
 				aria-hidden={!opened}
 				aria-expanded={opened}>
 				{children}
+				<style jsx>{`
+					.iron-collapse{
+						overflow:hidden;
+					}
+				`}</style>
 			</div>
 		);
 	}
