@@ -1,25 +1,25 @@
-# px-components-react
+# predix-ui
 
 > React Components that Implement Predix's Design System.
 > https://www.predix-ui.com/#/home
 
 Why? Well the current `px` component library is built with Polymer and Web Components. So this port will attempt to bring those components to a React compatible library.
 
-[![Build Status](https://travis-ci.org/jonniespratley/px-components-react.svg?branch=master)](https://travis-ci.org/jonniespratley/px-components-react) [![bitHound Score](https://www.bithound.io/github/jonniespratley/px-components-react/badges/score.svg)](https://www.bithound.io/github/jonniespratley/px-components-react) [![codecov](https://codecov.io/gh/jonniespratley/px-components-react/branch/master/graph/badge.svg)](https://codecov.io/gh/jonniespratley/px-components-react) [![Dependency Status](https://david-dm.org/jonniespratley/px-components-react.svg)](https://david-dm.org/jonniespratley/px-components-react) [![devDependencies Status](https://david-dm.org/jonniespratley/px-components-react/dev-status.svg)](https://david-dm.org/jonniespratley/px-components-react?type=dev)  [![peerDependencies Status](https://david-dm.org/jonniespratley/px-components-react/peer-status.svg)](https://david-dm.org/jonniespratley/px-components-react?type=peer)
+[![Build Status](https://travis-ci.org/jonniespratley/predix-ui.svg?branch=master)](https://travis-ci.org/jonniespratley/predix-ui) [![bitHound Score](https://www.bithound.io/github/jonniespratley/predix-ui/badges/score.svg)](https://www.bithound.io/github/jonniespratley/predix-ui) [![codecov](https://codecov.io/gh/jonniespratley/predix-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/jonniespratley/predix-ui) [![Dependency Status](https://david-dm.org/jonniespratley/predix-ui.svg)](https://david-dm.org/jonniespratley/predix-ui) [![devDependencies Status](https://david-dm.org/jonniespratley/predix-ui/dev-status.svg)](https://david-dm.org/jonniespratley/predix-ui?type=dev)  [![peerDependencies Status](https://david-dm.org/jonniespratley/predix-ui/peer-status.svg)](https://david-dm.org/jonniespratley/predix-ui?type=peer)
 
 
 ## Install
 To use this library simply install it with `npm` or `yarn`:
 
 ```
-$ npm install px-components-react
+$ npm install predix-ui
 ```
 
 Then import the library or just components you want.
 
 ```
-import px from 'px-components-react';
-import {Button} from 'px-components-react';
+import px from 'predix-ui';
+import {Button} from 'predix-ui';
 
 <Button label='My Button' primary/>
 ```

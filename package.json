@@ -1,18 +1,18 @@
 {
-  "name": "px-components-react",
+  "name": "predix-ui",
   "description": "px-* web components in React.js components",
   "author": "Jonnie Spratley",
   "user": "jonniespratley",
   "version": "0.0.2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jonniespratley/px-components-react.git"
+    "url": "https://github.com/jonniespratley/predix-ui.git"
   },
-  "homepage": "https://jonniespratley.github.io/px-components-react/",
+  "homepage": "https://jonniespratley.github.io/predix-ui/",
   "bugs": {
-    "url": "https://github.com/jonniespratley/px-components-react/issues"
+    "url": "https://github.com/jonniespratley/predix-ui/issues"
   },
-  "main": "dist/px-components-react.js",
+  "main": "dist/predix-ui.js",
   "module": "dist/module",
   "jsnext:main": "dist/es6",
   "config": {
