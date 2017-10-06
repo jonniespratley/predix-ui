@@ -39,6 +39,11 @@ const analyzeBundle = new BundleAnalyzerPlugin({
   logLevel: 'info'
 });
 
+const extractCss = new ExtractTextPlugin({
+	filename: `${pkg.name}-[name].css`,
+  //disable: process.env.BABEL_ENV !== 'dist',
+  allChunks: true
+});
 
 const extractSass = new ExtractTextPlugin({
 	filename: `${pkg.name}.css`,
@@ -46,10 +51,28 @@ const extractSass = new ExtractTextPlugin({
   allChunks: true
 });
 
+const cssRules = {
+  test: /\.css$/,
+  use: extractCss.extract({
+    fallback: 'style-loader',
+    //resolve-url-loader may be chained before sass-loader if necessary
+    use: [
+      {
+        loader: 'css-loader',
+        options: {
+          importLoaders: 1,
+          modules: true,
+          sourceMap: true,
+          camelCase: true
+        }
+      },
+      'postcss-loader'
+    ]
+  })
+};
 
 const sassRules = {
-  //test: /\.s(a|c)ss$/,
-  test: /(\.css|\.scss)$/,
+  test: /\.s(a|c)ss$/,
   use: extractSass.extract({
     fallback: 'style-loader',
     use: [
@@ -59,7 +82,7 @@ const sassRules = {
         loader: 'css-loader',
         options: {
           importLoaders: 1,
-          modules: true,
+        //  modules: true,
           sourceMap: true,
           camelCase: true
         }
@@ -83,7 +106,7 @@ const sassRules = {
           includePaths: [
             'sass',
             'styles',
-            //'node_modules'
+            'node_modules'
           ].map((d) => path.join(__dirname, d)).map((g) => glob.sync(g)).reduce((a, c) => a.concat(c), [])
         }
       }
@@ -201,12 +224,12 @@ const dev = merge(common, siteCommon, {
       'process.env.NODE_ENV': '"development"'
     }),
     new webpack.HotModuleReplacementPlugin(),
-
+    extractCss,
     extractSass
   ],
   module: {
     rules: [
-
+      cssRules,
       sassRules,
       {
         test: /\.js$/,
@@ -278,7 +301,7 @@ const ghPages = merge(common, siteCommon, {
   ],
   module: {
     rules: [
-
+      cssRules,
       sassRules,
       {
         test: /\.js$/,
@@ -321,13 +344,13 @@ const distCommon = {
         use: 'babel-loader',
         include: config.paths.src
       },
-      //cssRules,
+      cssRules,
       sassRules
     ]
   },
   plugins: [
     new SystemBellPlugin(),
-
+    extractCss,
     extractSass,
     analyzeBundle
   ]

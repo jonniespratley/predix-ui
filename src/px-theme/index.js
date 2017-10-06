@@ -22,7 +22,6 @@ export default ({
 
   return (
     <div className={baseClasses} style={style}>
-
       <div>{children}</div>
 
       <style jsx global>{darkStylesheet}</style>

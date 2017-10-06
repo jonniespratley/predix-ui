@@ -60,8 +60,8 @@ const documentationImports = {
 };
 
 
-//const title = `${NAME} v${VERSION}`; // eslint-disable-line no-undef
-const title = `px-react v${VERSION}`;
+const title = `${NAME} v${VERSION}`; // eslint-disable-line no-undef
+//const title = `px-react v${VERSION}`;
 const project = `${USER}/${NAME}`; // eslint-disable-line no-undef
 
 const responsiveSizes = [
@@ -89,9 +89,6 @@ const pages = [
     path: '/layout',
     title: 'Layout',
     responsiveSizes: responsiveSizes,
-    styles: [
-      '/px-components-react.css'
-    ],
     pages: [
       {path: 'basics', title: 'Basics', component: require('./layout-basics.md')},
       {

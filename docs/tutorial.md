@@ -51,7 +51,7 @@ The following components are implemented to transition from web components.
 
 ### `<IronCollapse/>`
 
-```react
+```code
 const { Button } = PxReact;
 const { IronCollapse } = IronComponents;
 <div>
