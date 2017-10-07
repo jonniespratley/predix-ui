@@ -14,7 +14,7 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
+  "dependencies": {
     "px-starter-kit-design": "^1.0.1",
     "px-mobile-design": "^1.0.0",
     "inuit-responsive-settings": "^0.1.5",

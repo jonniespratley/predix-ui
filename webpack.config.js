@@ -48,7 +48,7 @@ const extractCss = new ExtractTextPlugin({
 
 const extractSass = new ExtractTextPlugin({
 	filename: `${pkg.name}.css`,
-  disable: EXTRACT_CSS,
+//  disable: EXTRACT_CSS,
   allChunks: true
 });
 
