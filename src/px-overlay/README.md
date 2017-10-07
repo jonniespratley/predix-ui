@@ -16,7 +16,7 @@ const {Button, Overlay} = PxReact;
     label='Open Overlay'
     onClick={(e) => setState({open: !state.open})}/>
   <Overlay
-    visible={state.open}
+    open={state.open}
     onOverlayClick={(e) => setState({open: !state.open})}/>
 </div>
 ```
