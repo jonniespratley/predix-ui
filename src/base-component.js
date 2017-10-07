@@ -1,4 +1,5 @@
 import React from 'react';
+
 import debug from 'debug';
 import classnames from 'classnames';
 
@@ -32,6 +33,8 @@ export default class BaseComponent extends React.Component {
       this._log = ()=>{};
     }
 
+
+
 		this._log('constructor', props, options);
 	}
 
@@ -61,6 +64,7 @@ export default class BaseComponent extends React.Component {
    */
 	componentDidMount() {
 		this._log('componentDidMount', this);
+		//console.log('findDOMNode', findDOMNode(this));
 	}
 
 	/**

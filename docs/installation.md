@@ -1,14 +1,13 @@
 To use this library simply install it with `npm` or `yarn`:
 
-```
-$ npm install px-components-react
+```code
+$ npm install predix-ui
 ```
 
 Then import the library or just components you want.
 
-```
-import px from 'px-components-react';
-import {Button} from 'px-components-react';
+```code
+import { Button } from 'predix-ui';
 
 <Button label='My Button' primary/>
 ```
@@ -19,7 +18,7 @@ import {Button} from 'px-components-react';
 You can grab the latest release below:
 
 ```download
-title: px-components-react-v0.0.1(.zip)
+title: predix-ui-v0.0.3(.zip)
 subtitle: 150 KB
-url: https://github.com/jonniespratley/px-components-react/archive/v0.0.1.zip
+url: https://github.com/jonniespratley/predix-ui/archive/v0.0.13.zip
 ```

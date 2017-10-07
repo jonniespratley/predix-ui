@@ -2,29 +2,26 @@
  * px-accordion styles
  */
 .px-accordion {
-
   // Base
   @import "px-flexbox-design/_base.flexbox.scss";
   @import "px-headings-design/_base.headings.scss";
-
   // Objects
   @import "px-actionable-design/_objects.actionable.scss";
-
-
   // Generic
   //@import "px-normalize-design/_generic.normalize.scss";
   //@import "px-box-sizing-design/_generic.box-sizing.scss";
   //@import "px-helpers-design/_generic.helpers.scss";
-
   // Trumps
   $inuit-enable-paddings--tiny: true;
   @import "px-spacing-design/_trumps.spacing.scss";
-
+  user-select                 : none;
   // Component
   .accordion__header {
-    margin-bottom: 0.3333rem;
-    cursor       : pointer;
-    user-select  : none;
+    margin-bottom   : 0.3333rem;
+    cursor          : pointer;
+    user-select     : none;
+    background-color: var(--px-base-background-color, gray);
+    color           : var(--px-base-text-color, black);
 
     &[disabled] {
       cursor: not-allowed;
@@ -65,5 +62,4 @@
   .iron-collapse:not(.iron-collapse-opened) {
     overflow: hidden;
   }
-
 }

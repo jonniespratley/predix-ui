@@ -1,13 +1,12 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import style from './style.scss';
+import style from './px-alert-message.scss';
 
 /**
  * px-alert-message component
  */
 export default ({
-  label = 'px-alert-message',
   messageTitle,
   message,
 

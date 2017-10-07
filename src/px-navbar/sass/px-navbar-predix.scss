@@ -5,8 +5,8 @@
 	font-size       : $inuit-base-font-size;
 	border-bottom   : $navbar-default-border-bottom;
 	border-bottom   : var(--px-navbar-border-bottom, $navbar-default-border-bottom);
-	background-color: var(--px-view-header-background-color, $navbar-default-background-color);
-	color           : var(--px-navbar-color, $navbar-default-font-color);
+	background-color: var(--px-base-background-color, --px-navbar-background-color);
+	color           : var(--px-base-text-color, $navbar-default-font-color);
 	///-----------------------------------------------------------------
 	///.navbar--transparent
 	@include modifier ('transparent') {
@@ -22,7 +22,6 @@
 	@include modifier ('shadow') {
 		box-shadow: $navbar-default-box-shadow;
 	}
-
 	///-----------------------------------------------------------------
 	//::content .navbar__button {
 	@include c ('.navbar__button') {
@@ -31,6 +30,8 @@
 		border          : $navbar-button-border;
 		border-radius   : $navbar-button-border-radius;
 		font-size       : $navbar-button-font-size;
+		color           : var(--px-base-text-color, $navbar-button-color);
+		cursor          : pointer;
 
 		> * {
 			display   : flex;
@@ -47,12 +48,12 @@
 	@include element ('title') {
 		font-size: $navbar-title-font-size;
 		//color    : var(--px-navbar-title-color, black);
-		color    : var(--px-view-header-title-color, black);
+		color    : var(--px-view-header-title-color);
+		color    : var(--px-base-text-color);
 	}
 	///-----------------------------------------------------------------
 	@include element ('subtitle') {
 		font-size: $navbar-subtitle-font-size;
-
 		color    : var(--px-view-header-subtitle-color, $navbar-subtitle-font-color);
 	}
 }

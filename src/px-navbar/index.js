@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './style.scss';
+import style from './px-navbar.scss';
 
 /**
  * px-navbar component
@@ -22,7 +22,7 @@ export default({
 				<div id="left" className="navbar__left">
 					{showMenuButton &&
 						<button className="navbar__button flex flex--center toggle__menu" onClick={onMenuButtonClick}>
-							Menu
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24h-24z" fill="none"/><path d="M3 18h18v-2h-18v2zm0-5h18v-2h-18v2zm0-7v2h18v-2h-18z"/></svg>
             </button>}
 					{showBackButton && <button id="backButton" className="navbar__button" onClick={onBackButtonClick}>{backButtonLabel}</button>}
 				</div>
