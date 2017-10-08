@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Overlay from '../px-overlay';
-import Button from '../px-button';
+import Button from '../Button';
 import classnames from 'classnames';
 import stylesheet from './style.scss';
 
