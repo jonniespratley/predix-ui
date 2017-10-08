@@ -24,7 +24,7 @@ export default class Accordion extends BaseComponent {
   render(){
     const open = this.state && this.state.open;
     const {
-      headerValue = 'px-accordion',
+      headerValue = 'Accordion',
       status,
       disabled,
       showAction,
@@ -32,7 +32,7 @@ export default class Accordion extends BaseComponent {
       children
     } = this.props;
 
-    const baseClasses = classnames('px-accordion', {
+    const baseClasses = classnames('Accordion', {
       'px-accordion--disabled': disabled
     });
 

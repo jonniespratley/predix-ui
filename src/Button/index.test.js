@@ -3,7 +3,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import PxButton from './';
 
-describe('px-button', () => {
+describe('Button', () => {
   test('should...', () =>{
     const wrapper = shallow(
       <PxButton/>

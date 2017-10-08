@@ -15,19 +15,19 @@ import IronComponents from '../src/iron-components';
 // TODO: Use this format
 import pxAppHeaderDocs from '../src/px-app-header/README';
 import pxAppNavDocs from '../src/px-app-nav/README';
-import pxAccordionDocs from '../src/px-accordion/README';
+import pxAccordionDocs from '../src/Accordion/README';
 import pxActionSheetDocs from '../src/px-action-sheet/README';
 import pxAlertLabelDocs from '../src/px-alert-label/README';
 import pxAlertMessageDocs from '../src/px-alert-message/README';
 
-import pxButtonDocs from '../src/px-button/README';
+import pxButtonDocs from '../src/Button/README';
 import pxBreadcrumbsDocs from '../src/px-breadcrumbs/README';
 import pxBrandingBarDocs from '../src/px-branding-bar/README';
 
-import pxCardDocs from '../src/px-card/README';
+import pxCardDocs from '../src/Card/README';
 import pxChipDocs from '../src/px-chip/README';
 
-import pxInputDocs from '../src/px-input/README';
+import pxInputDocs from '../src/Input/README';
 import pxIconSetDocs from '../src/px-icon-set/README';
 //import pxIconSetDocs from '../src/px-icon-set/README';
 import pxDrawerDocs from '../src/px-drawer/README';
@@ -103,23 +103,23 @@ const pages = [
   {
     title: 'Component Demos',
     pages: [
-      { path: 'px-accordion', title: 'Accordion', component: pxAccordionDocs},
+      { path: 'Accordion', title: 'Accordion', component: pxAccordionDocs},
       { path: 'px-alert-label', title: 'Alert Label', component: pxAlertLabelDocs},
       { path: 'px-alert-message', title: 'Alert Message', component: pxAlertMessageDocs},
       { path: 'px-app-header', title: 'App Header', component: pxAppHeaderDocs},
       { path: 'px-app-nav', title: 'App Nav', component: pxAppNavDocs},
       //{ path: 'px-action-sheet', title: 'Action Sheet', component: pxActionSheetDocs},
-      { path: 'px-button', title: 'Button', component: pxButtonDocs},
+      { path: 'Button', title: 'Button', component: pxButtonDocs},
       { path: 'px-branding-bar', title: 'Branding Bar', component: pxBrandingBarDocs},
       { path: 'px-breadcrumbs', title: 'Breadcrumbs', component: pxBreadcrumbsDocs},
-      { path: 'px-card', title: 'Card', component: pxCardDocs },
+      { path: 'Card', title: 'Card', component: pxCardDocs },
       { path: 'px-chip', title: 'Chip', component: pxChipDocs },
       { path: 'px-drawer', title: 'Drawer', component: pxDrawerDocs },
       { path: 'px-datatable', title: 'DataTable', component: pxDatatableDocs },
       { path: 'px-dropdown', title: 'Dropdown', component: pxDropDownDocs },
       { path: 'px-grid', title: 'Grid', component: pxGridDocs },
       { path: 'px-icon-set', title: 'Icon Set', component: pxIconSetDocs },
-      { path: 'px-input', title: 'Input', component: pxInputDocs },
+      { path: 'Input', title: 'Input', component: pxInputDocs },
       { path: 'px-key-value-pair', title: 'Key-Value Pair', component: pxKeyValuePairDocs },
       { path: 'px-layout', title: 'Layout', component: pxLayoutDocs },
       { path: 'px-navbar', title: 'Navbar', component: pxNavbarDocs },

@@ -1,20 +1,30 @@
 import React from 'react';
 
 
+
+
+
+//todo change all component names to class like
+import Input from './Input';
+import Button from './Button';
+import Card from './Card';
+
+
 import Partials from './px-partials';
 
-import Input from './px-input';
+
+
 import AppHeader from './px-app-header';
 import AppNav from './px-app-nav';
 import ExampleComponent from './px-example-component';
-import Accordion from './px-accordion';
+import Accordion from './Accordion';
 import AlertMessage from './px-alert-message';
 import AlertLabel from './px-alert-label';
 import ActionSheet from './px-action-sheet';
-import Button from './px-button';
+
 import BrandingBar from './px-branding-bar';
 import PredixSvgLogo from './px-branding-bar/px-predix-svg-logo';
-import Card from './px-card';
+
 import Chip from './px-chip';
 import Drawer from './px-drawer';
 import NavDrawer from './px-drawer/px-nav-drawer';

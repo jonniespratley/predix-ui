@@ -5,7 +5,7 @@ import classnames from 'classnames';
 
 import Icon from '../px-icon-set/px-icon';
 
-const baseClasses = classnames('px-card');
+const baseClasses = classnames('Card');
 
 export default ({
   headerText,
