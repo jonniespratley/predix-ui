@@ -3,7 +3,7 @@ import React from 'react';
 
 import Partials from './px-partials';
 
-
+import Input from './px-input';
 import AppHeader from './px-app-header';
 import AppNav from './px-app-nav';
 import ExampleComponent from './px-example-component';
@@ -63,7 +63,7 @@ import Theme from './px-theme';
  */
 const px = {
   Theme,
-
+  Input,
   Gauge,
 	ExampleComponent,
 	AppNav,

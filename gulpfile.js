@@ -123,10 +123,9 @@ gulp.task('autoprefixer', function() {
 });
 
 ///
-gulp.task('cssmin', 'Take all css and min with source maps', function() {
+gulp.task('cssmin', 'Take all css and min with source maps', ['sass'],function() {
   return gulp.src([
-    `${config.styles.dest}/**/*.css`,
-    `./dist/${pkg.name}.css`
+    `${config.styles.dest}/**/*.css`
   ])
     .pipe($.filelog())
     //.pipe($.sourcemaps.init())

@@ -27,7 +27,9 @@ import pxBrandingBarDocs from '../src/px-branding-bar/README';
 import pxCardDocs from '../src/px-card/README';
 import pxChipDocs from '../src/px-chip/README';
 
+import pxInputDocs from '../src/px-input/README';
 import pxIconSetDocs from '../src/px-icon-set/README';
+//import pxIconSetDocs from '../src/px-icon-set/README';
 import pxDrawerDocs from '../src/px-drawer/README';
 import pxDatatableDocs from '../src/px-datatable/README';
 import pxDropDownDocs from '../src/px-dropdown/README';
@@ -117,6 +119,7 @@ const pages = [
       { path: 'px-dropdown', title: 'Dropdown', component: pxDropDownDocs },
       { path: 'px-grid', title: 'Grid', component: pxGridDocs },
       { path: 'px-icon-set', title: 'Icon Set', component: pxIconSetDocs },
+      { path: 'px-input', title: 'Input', component: pxInputDocs },
       { path: 'px-key-value-pair', title: 'Key-Value Pair', component: pxKeyValuePairDocs },
       { path: 'px-layout', title: 'Layout', component: pxLayoutDocs },
       { path: 'px-navbar', title: 'Navbar', component: pxNavbarDocs },

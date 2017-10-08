@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import stylesheet from './style.scss';
+import stylesheet from './px-app-nav.scss';
 import NavItem from './px-app-nav-item';
 import BaseComponent from '../base-component';
 
@@ -29,15 +29,18 @@ export default class AppNav extends BaseComponent {
 
   handleClick(val, event) {
     const index = this._getIndexForValue(val);
-    this._log('handleClick', val);
-    //event.preventDefault();
-    this.setState({
+    const item = this._getValueForIndex(index);
+    const state = {
       selected: index,
-      selectedItem: this._getValueForIndex(index)
-    });
+      selectedItem: item
+    };
+    this._log('handleClick', index);
+    //event.preventDefault();
+    this.setState(state);
     if(this.props.onChange){
-      this.props.onChange(this._getValueForIndex(index))
+      this.props.onChange(state);
     }
+
   }
 
   _reset(){

@@ -26,5 +26,8 @@
   },
   "resolutions": {
     "webcomponentsjs": "^v1.0.2"
+  },
+  "devDependencies": {
+    "px-forms-design": "^2.0.6"
   }
 }
