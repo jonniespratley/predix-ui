@@ -18,13 +18,13 @@
   </head>
 
   <body translate="no">
-    <div id="app"><!-- App loaded here --></div>
+    <div id="root"><!-- App loaded here --></div>
 
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js'></script>
 
-
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <link rel="stylesheet" href="../dist/predix-ui.css"/>
     <script src="../dist/predix-ui.min.js"></script>
     <style media="screen">
@@ -34,7 +34,91 @@
         --px-app-nav-item-background-color: transparent;
       }
     </style>
-    <script src="main.es6.min.js"></script>
+    <script type="text/babel">
+    const { Component } = React;
+    const { render } = ReactDOM;
+    const {
+      AppHeader,
+      AppNav,
+      Button,
+      Card,
+      Drawer,
+      Navbar,
+      KeyValuePair,
+      Grid,
+      Gauge,
+      Layout,
+      Spinner,
+      ProgressBar,
+      Theme
+      } = PxReact;
+
+
+    const dashboardData = {
+      title: 'Predix Sample Application',
+      navItems: [
+        { "path": "dashboard", "icon": "px-nav:home", "label": "Dashboard" },
+        { "path": "details", "icon": "px-nav:list", "label": "Details" },
+        { "path": "alerts","icon": "px-nav:home", "label": "Alerts" }
+      ],
+      keyVals: [
+        {label: 'New Alerts', value: 21},
+        {label: 'Utilization', value: '70', uom: '%'},
+        {label: 'Faults', value: 3},
+        {label: 'Output', value: 53, uom: 'mw'}
+      ],
+      cards: [
+        { title: 'Card 1', children: [ <div>Lorem ipsum dolor sit</div> ] },
+        { title: 'Card 2', children: [ <div>Lorem ipsum dolor sit</div> ] },
+        { title: 'Card 3', children: [ <div>Lorem ipsum dolor sit</div> ] }
+      ]
+    };
+
+
+
+    /**
+     * Example App
+     */
+    class App extends Component {
+      constructor(props){
+        super(props);
+      }
+
+      render(){
+        return (
+          <Theme dark>
+            <AppHeader
+              title={dashboardData.title}
+              items={dashboardData.navItems}>
+
+              <Card headerText='West Coast Fleet'>
+                <Layout container center middle wrap>
+                  {dashboardData.keyVals.map((item, index) => (
+                    <Layout item key={index} xs={2} lg={4} xl={6}>
+                      <KeyValuePair
+                        label={item.label}
+                        uom={item.uom}
+                        value={item.value}
+                        size="beta"/>
+                    </Layout>
+                  ))}
+                </Layout>
+              </Card>
+              {dashboardData.cards && dashboardData.cards.map((card, index) => (
+                <Card key={index}
+                  headerText={card.title}>
+                  {card.children}
+                </Card>
+              ))}
+            </AppHeader>
+          </Theme>
+        )
+      }
+    }
+
+    render(<App />, document.querySelector('#root'));
+
+    </script>
 
   </body>
 
