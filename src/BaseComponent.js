@@ -44,7 +44,7 @@ export default class BaseComponent extends React.Component {
    * @return {type}  description
    */
 	componentWillMount() {
-		this._log('componentWillMount', this);
+		//this._log('componentWillMount', this);
 	}
 
 	/**
@@ -53,7 +53,7 @@ export default class BaseComponent extends React.Component {
    * @return {type}  description
    */
 	render() {
-		this._log('render', this);
+		//this._log('render', this);
 		//return (<div>base-component</div>);
 	}
 
@@ -63,7 +63,7 @@ export default class BaseComponent extends React.Component {
    * @return {type}  description
    */
 	componentDidMount() {
-		this._log('componentDidMount', this);
+		//this._log('componentDidMount', this);
 		//console.log('findDOMNode', findDOMNode(this));
 	}
 
@@ -80,7 +80,7 @@ export default class BaseComponent extends React.Component {
    * @return {type}           description
    */
 	componentWillReceiveProps(nextProps) {
-		this._log('componentWillReceiveProps', nextProps);
+		//this._log('componentWillReceiveProps', nextProps);
 	}
 
 	/**
@@ -91,7 +91,7 @@ export default class BaseComponent extends React.Component {
    * @return {type}           description
    */
 	shouldComponentUpdate(nextProps, nextState) {
-		this._log('shouldComponentUpdate', nextProps, nextState);
+		//this._log('shouldComponentUpdate', nextProps, nextState);
 		return true;
 	}
 
@@ -103,7 +103,7 @@ export default class BaseComponent extends React.Component {
    * @return {type}           description
    */
 	componentWillUpdate(nextProps, nextState) {
-		this._log('shouldComponentUpdate', nextProps, nextState);
+		//this._log('shouldComponentUpdate', nextProps, nextState);
 		return true;
 	}
 
@@ -113,7 +113,7 @@ export default class BaseComponent extends React.Component {
    * @return {type}  description
    */
 	componentWillUnmount() {
-		this._log('componentWillUnmount');
+		//this._log('componentWillUnmount');
 	}
 
 
