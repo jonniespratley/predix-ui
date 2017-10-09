@@ -3,8 +3,8 @@ import React from 'react';
 import {shallow, mount} from 'enzyme';
 import IronComponents from './';
 
-import IronCollapse from './iron-collapse';
-import IronSelector from './iron-selector';
+import IronCollapse from './IronCollapse';
+import IronSelector from './IronSelector';
 import IronPages from './iron-pages';
 
 describe('iron-components', () => {

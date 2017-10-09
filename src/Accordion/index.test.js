@@ -1,15 +1,16 @@
 import { expect } from 'chai';
 import React from 'react';
 import {shallow} from 'enzyme';
-import PxAccordion from './';
+import Accordion from './';
 
 describe('Accordion', () => {
   test('should...', () =>{
     const wrapper = shallow(
-      <PxAccordion/>
+      <Accordion headerText="Header Caption" status="Last Updated: 3 Days Ago">
+        <p>Accordion content goes here.</p>
+      </Accordion>
     );
-    console.log(wrapper.debug());
-    expect(true).to.equal(true);
+    expect(wrapper.find('.accordion__header').exists());
   });
   //expect(wrapper.find('.label')).to.have.length(1);
   //expect(wrapper.find('.delta')).to.have.length(1);

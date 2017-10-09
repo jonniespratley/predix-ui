@@ -8,6 +8,7 @@ export default class IronSelector extends React.Component {
     this.state = {
       selected: props.selected || 0,
       selectedItem: props.selectedItem || null,
+      selectedClassName: props.selectedClassName || 'iron-selected',
       propForSelected: props.propForSelected || null
     };
     this._items = [];
@@ -40,9 +41,10 @@ export default class IronSelector extends React.Component {
       }
 
       //selected index is selected key
+      const selectedClassName = this.state.selectedClassName;
       let selected = (this.state.selected === this._getIndexForValue(propForSelect));
       let baseClasses = classnames(
-        {'iron-selected': selected}
+        {[`${selectedClassName}`]: selected}
       );
       return (
         <li key={index} className={baseClasses}>
@@ -63,7 +65,6 @@ export default class IronSelector extends React.Component {
     const {
       children,
       className = 'iron-selector',
-      selectedClassName = 'iron-selected',
       selected,
       selectedItem,
       style = {
@@ -80,17 +81,6 @@ export default class IronSelector extends React.Component {
     return (
       <ul className={baseClassnames} style={style}>
         { this._renderTitles() }
-
-        <style jsx>{`
-
-          .iron-selector {
-            user-select: none;
-          }
-
-          .iron-selector .iron-selected {
-            background: var(--iron-selected, green);
-          }
-        `}</style>
       </ul>
     );
   }

@@ -1,10 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
-import IronSelector from '../iron-components/iron-selector';
-
+import IronSelector from '../iron-components/IronSelector';
 import DeviceView from './device-view';
-
 import stylesheet from './px-demo-helpers.scss';
+
 class DeviceLayoutViewer extends React.Component {
   render(){
     const {

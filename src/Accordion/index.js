@@ -2,6 +2,7 @@ import BaseComponent from '../BaseComponent';
 import React from 'react';
 import classnames from 'classnames';
 import stylesheet from './px-accordion.scss';
+import IronCollapse from '../iron-components/IronCollapse';
 
 /**
  * Accordion component
@@ -10,7 +11,7 @@ export default class Accordion extends BaseComponent {
   constructor(props){
     super(props, {displayName: 'Accordion'});
     this.state = {
-      open: true
+      open: props.open || true
     };
     this.onClick = this.onClick.bind(this);
   }
@@ -22,7 +23,7 @@ export default class Accordion extends BaseComponent {
   }
 
   render(){
-    const open = this.state && this.state.open;
+    const {open} = this.state;
     const {
       headerValue = 'Accordion',
       status,
@@ -54,12 +55,6 @@ export default class Accordion extends BaseComponent {
       'flex--middle'
     );
 
-    const collapseClasses = classnames(
-      'iron-collapse',
-      {'iron-collapse-opened': open},
-      {'iron-collapse-closed': !open}
-    );
-
     return (
       <div className={baseClasses} style={style}>
         <section className="accordion__container">
@@ -76,11 +71,12 @@ export default class Accordion extends BaseComponent {
               {showAction && <span className={iconClasses}>action</span>}
             </div>
           </div>
-          <div id="collapse" ref="collapse" className={collapseClasses}>
+
+          <IronCollapse ref="collapse" opened={open}>
             <div className="accordion__body u-p--">
-              <div>{children}</div>
+              {children}
             </div>
-          </div>
+          </IronCollapse>
         </section>
         <style jsx>{stylesheet}</style>
       </div>

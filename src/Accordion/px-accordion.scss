@@ -47,19 +47,4 @@
     overflow: auto;
   }
 
-  .iron-collapse {
-    display                    : block;
-    transition-duration        : 300ms;
-    -webkit-transition-duration: 300ms;
-    overflow                   : visible;
-  }
-
-  .iron-collapse.iron-collapse-closed {
-    display: none;
-    //height: 0;
-  }
-
-  .iron-collapse:not(.iron-collapse-opened) {
-    overflow: hidden;
-  }
 }
