@@ -1,70 +1,57 @@
 import React from 'react';
 
-
-
-
-
-//todo change all component names to class like
-import Input from './Input';
+import AppHeader from './AppHeader';
+import AppNav from './AppNav';
+import Accordion from './Accordion';
+import AlertMessage from './AlertMessage';
+import AlertLabel from './AlertLabel';
+import ActionSheet from './ActionSheet';
+import BrandingBar from './BrandingBar';
+import Breadcrumbs from './Breadcrumbs';
 import Button from './Button';
 import Card from './Card';
+import Chip from './Chip';
+import Drawer from './Drawer';
+import DataTable from './DataTable';
+import Dropdown from './Dropdown';
+import DrawerLayout from './Layout/px-drawer-layout';
+
+import Grid from './Grid';
+import Input from './Input';
+import IconSet from './px-icon-set';
+import Icon from './px-icon-set/px-icon';
+import KeyValuePair from './KeyValuePair';
+import Layout from './Layout';
+
+import Modal from './Modal';
+import NavDrawer from './Drawer/px-nav-drawer';
+import Navbar from './Navbar';
+
+import Overlay from './Overlay';
+import Popover from './Popover';
+import PredixSvgLogo from './BrandingBar/px-predix-svg-logo';
+import ProgressBar from './ProgressBar';
+import Spinner from './Spinner';
+import TableView from './TableView';
+import TableRow from './TableView/TableRow';
+import Tabs from './Tabs';
+import Tab from './Tabs/Tab';
+import Theme from './Theme';
+import TreeNode from './Tree/px-tree-node';
+import Tree from './Tree';
+import Tile from './Tile';
+import ViewHeader from './ViewHeader';
 
 
 import Partials from './px-partials';
-
-
-
-import AppHeader from './px-app-header';
-import AppNav from './px-app-nav';
 import ExampleComponent from './px-example-component';
-import Accordion from './Accordion';
-import AlertMessage from './px-alert-message';
-import AlertLabel from './px-alert-label';
-import ActionSheet from './px-action-sheet';
-
-import BrandingBar from './px-branding-bar';
-import PredixSvgLogo from './px-branding-bar/px-predix-svg-logo';
-
-import Chip from './px-chip';
-import Drawer from './px-drawer';
-import NavDrawer from './px-drawer/px-nav-drawer';
-import Modal from './px-modal';
-import Navbar from './px-navbar';
-import Spinner from './px-spinner';
-import TableView from './px-table-view';
-import TableRow from './px-table-view/px-table-row';
-import Tabs from './px-tabs';
-import Tab from './px-tabs/px-tab';
-import ViewHeader from './px-view-header';
-import KeyValuePair from './px-key-value-pair';
-import Layout from './px-layout';
-import DrawerLayout from './px-layout/px-drawer-layout';
-import Tile from './px-tile';
-import Grid from './px-grid';
-
-import IconSet from './px-icon-set';
-import Icon from './px-icon-set/px-icon';
-
 
 // TODO: DataViz
-import Gauge from './px-gauge';
+import Gauge from './Gauge';
 
 const LayoutItem = ({style, children}) => {
   return (<div style={style} className='layout__item'>{children}</div>);
 };
-
-
-import ProgressBar from './px-progress-bar';
-import Popover from './px-popover';
-import TreeNode from './px-tree/px-tree-node';
-import Tree from './px-tree';
-import Overlay from './px-overlay';
-import DataTable from './px-datatable';
-import Breadcrumbs from './px-breadcrumbs';
-import Dropdown from './px-dropdown';
-//import Iron from './iron-components';
-
-import Theme from './px-theme';
 /**
  * @access public
  * @example

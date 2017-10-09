@@ -1,4 +1,4 @@
-import BaseComponent from '../base-component';
+import BaseComponent from '../BaseComponent';
 import React from 'react';
 import classnames from 'classnames';
 import stylesheet from './px-accordion.scss';
@@ -32,7 +32,8 @@ export default class Accordion extends BaseComponent {
       children
     } = this.props;
 
-    const baseClasses = classnames('Accordion', {
+    const baseClasses = classnames(
+      'px-accordion', {
       'px-accordion--disabled': disabled
     });
 

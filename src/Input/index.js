@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import stylesheet from './px-input.scss';
-import BaseComponent from '../base-component';
+import BaseComponent from '../BaseComponent';
 
 /**
  *  component
@@ -22,7 +22,7 @@ export default class Input extends BaseComponent {
 		} = this.props;
 
 		const baseClasses = classnames(
-      'Input',
+      'px-input',
       {'px-input--children': children}
     );
 
