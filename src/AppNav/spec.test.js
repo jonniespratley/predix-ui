@@ -20,18 +20,13 @@ describe('AppNav', () => {
   test('should set selected and seletedItem', () => {
     let spy = sinon.spy();
     const wrapper = shallow(<AppNav onChange={spy} selected={1} items={navItems}/>);
-
-    const targetItem = wrapper.find('[label="Alerts"]');
-          targetItem.simulate('click');
-
+    const targetItem = wrapper.find('[label="Alerts"]').simulate('click');
     const selectedItem = wrapper.find('.selected');
-
     console.log(wrapper.state());
 
     expect(wrapper.state().selectedItem.path).to.equal(navItems[2].path);
     expect(selectedItem.exists());
     expect(spy.calledOnce);
-    //expect(spy.calledWith(null));
   });
 
   //expect(wrapper.find('.delta')).to.have.length(1);

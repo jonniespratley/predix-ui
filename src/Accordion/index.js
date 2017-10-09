@@ -17,13 +17,15 @@ export default class Accordion extends BaseComponent {
   }
 
   onClick(){
-    this.setState((prevState, props) => ({
-      open: !prevState.open
-    }));
+    if(!this.props.disabled){
+      this.setState((prevState, props) => ({
+        open: !prevState.open
+      }));
+    }
   }
 
   render(){
-    const {open} = this.state;
+    const { open } = this.state;
     const {
       headerValue = 'Accordion',
       status,
@@ -34,9 +36,10 @@ export default class Accordion extends BaseComponent {
     } = this.props;
 
     const baseClasses = classnames(
-      'px-accordion', {
-      'px-accordion--disabled': disabled
-    });
+      'px-accordion',
+      {'px-accordion--disabled': disabled},
+      {'px-accordion--open': open}
+    );
 
     const headerClasses = classnames(
       'accordion__header',
@@ -58,7 +61,7 @@ export default class Accordion extends BaseComponent {
     return (
       <div className={baseClasses} style={style}>
         <section className="accordion__container">
-          <div className={headerClasses} onClick={this.onClick} disabled={disabled}>
+          <header className={headerClasses} onClick={this.onClick} disabled={disabled}>
             <div className="flex flex--middle">
               <span className={iconClasses}>
                 {open && '-'}
@@ -70,7 +73,7 @@ export default class Accordion extends BaseComponent {
               <span className="accordion__status">{status}</span>
               {showAction && <span className={iconClasses}>action</span>}
             </div>
-          </div>
+          </header>
 
           <IronCollapse ref="collapse" opened={open}>
             <div className="accordion__body u-p--">

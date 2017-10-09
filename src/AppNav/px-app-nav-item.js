@@ -6,7 +6,7 @@ import stylesheet from './px-app-nav-item.scss';
  * AppNav-item component
  */
 export default ({
-  label = 'AppNav-item',
+  label,
   icon,
   id,
   item,

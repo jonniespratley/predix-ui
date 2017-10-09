@@ -139,15 +139,14 @@ export default class IronCollapse extends React.Component {
 
 	_handleRef(el){
 		this.base = el;
-		console.log('got ref', el);
 	}
 
 	render() {
 		const { opened, style } = this.state;
 		const { children } = this.props;
 		const baseClassnames = classnames(
-			'iron-collapse',
-			{ 'iron-collapse-opened': opened }
+			'iron-collapse'
+			//{ 'iron-collapse-opened': opened }
 		//	{ "iron-collapse-closed": !opened }
 		);
 
@@ -161,8 +160,17 @@ export default class IronCollapse extends React.Component {
 				aria-expanded={opened}>
 				{children}
 				<style jsx>{`
-					.iron-collapse{
-						overflow:hidden;
+					.iron-collapse {
+					  display: block;
+					  -webkit-transition-duration: 300ms;
+					          transition-duration: 300ms;
+					  overflow: visible;
+					}
+					.iron-collapse.iron-collapse-closed {
+
+					}
+					.iron-collapse:not(.iron-collapse-opened) {
+					  overflow: hidden;
 					}
 				`}</style>
 			</div>

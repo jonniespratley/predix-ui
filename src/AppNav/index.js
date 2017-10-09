@@ -48,7 +48,7 @@ export default class AppNav extends BaseComponent {
   }
 
   _renderItem(child, index){
-    this._log('_renderItem', child, index, propForSelect);
+    //this._log('_renderItem', child, index, propForSelect);
 
     let propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : index);
     this._items.push(child);
@@ -57,14 +57,13 @@ export default class AppNav extends BaseComponent {
     //selected index is selected key
     let selected = (this.state.selected === this._getIndexForValue(propForSelect));
     let itemClasses = classnames(
-      {'iron-selected': selected}
+      { 'iron-selected': selected }
     );
 
-    return (<NavItem
-        onClick={this.handleClick.bind(this, propForSelect)}
-        selected={selected}
-        key={index}
-        {...child}/>);
+    return (<NavItem key={index}
+      selected={selected}
+      onClick={this.handleClick.bind(this, propForSelect)}
+      {...child}/>);
   }
 
   _renderItems(items){

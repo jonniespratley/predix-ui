@@ -31,8 +31,9 @@ const { Accordion } = PxReact;
 <div className='custom'>
   <style>{`
     .custom {
-      --px-headings-heading-subsection-color: white;
-      --px-headings-heading-subsection-background: black;
+      --px-accordion-header-color: white;
+      --px-accordion-header-background-color: crimson;
+
     }
   `}</style>
   <Accordion

@@ -14,18 +14,15 @@
   // Trumps
   $inuit-enable-paddings--tiny: true;
   @import "px-spacing-design/_trumps.spacing.scss";
-  user-select                 : none;
+
   // Component
   .accordion__header {
+    user-select                 : none;
     margin-bottom   : 0.3333rem;
     cursor          : pointer;
     user-select     : none;
-    background-color: var(--px-base-background-color, gray);
-    color           : var(--px-base-text-color, black);
-
-    &[disabled] {
-      cursor: not-allowed;
-    }
+    background-color: var(--px-accordion-header-background-color, white);
+    color           : var(--px-accordion-header-color, black);
   }
 
   .accordion__expand__collapse {
@@ -45,6 +42,14 @@
   .accordion__body {
     margin  : 0;
     overflow: auto;
+  }
+
+  &--disabled {
+
+    .accordion__header{
+      cursor: not-allowed;
+      pointer-events: none;
+    }
   }
 
 }

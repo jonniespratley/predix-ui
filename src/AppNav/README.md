@@ -31,7 +31,6 @@ This data should be passed into the `items` property on the component.
 state:
   selected: 0
   selectedItem: null
-
 ---
 const { AppNav } = PxReact;
 const navItems = [
@@ -39,19 +38,10 @@ const navItems = [
   {id : "settings", label: "Settings", icon: "px-fea:settings"},
   {id : "alert", label: "Alerts", icon: "px-fea:alerts"}
 ];
-<div>
-  <style>{`
-    :root{
-      --px-app-nav-background-color: #e2e8ed;
-      --px-app-nav-item-background-color: transparent;
-    }
-  `}</style>
-  <AppNav
-    selected={state.selected}
-    items={navItems}/>
-    <p>Selected Index: {state.selected}</p>
-</div>
+<AppNav selected={state.selected} items={navItems}/>
 ```
+
+### With propForSelect
 
 ```react
 state:
@@ -75,13 +65,16 @@ const navItems = [
   <AppNav
     propForSelect='id'
     selected={state.selected}
+    onChange={(e) => setState(e)}
     items={navItems}/>
     <p>Selected Index: {state.selected}</p>
+    <p>Selected Item: {state.selectedItem.id}</p>
 </div>
 ```
 
 
-### Vertical
+### With vertical menu
+
 ```react
 const { AppNav } = PxReact;
 const navItems = [
@@ -94,12 +87,6 @@ const style = {
   height: 400
 };
 <div style={style}>
-  <style>{`
-    :root{
-      --px-app-nav-background-color: #e2e8ed;
-      --px-app-nav-item-background-color: transparent;
-    }
-  `}</style>
   <AppNav items={navItems} vertical/>
 </div>
 ```
@@ -110,15 +97,18 @@ const style = {
 ```table
 span: 6
 rows:
-  - Name: classes
-    Type: string
-    Description: Classnames to apply
+  - Name: items
+    Type: array
+    Description: Array of nav items.
+
   - Name: vertical
     Type: bool
     Description: Show the vertical navigation
+
   - Name: style
     Type: object
     Description: The style object to apply
+
   - Name: children
     Type: node
     Description: The child nodes.
