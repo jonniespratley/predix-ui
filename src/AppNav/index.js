@@ -36,12 +36,10 @@ export default class AppNav extends BaseComponent {
     };
     this._log('handleClick', index);
     //event.preventDefault();
-    this.setState(state, () => {
-      if(this.props.onChange){
-        this.props.onChange(state);
-      }
-    });
-
+    this.setState(state);
+    if(this.props.onChange){
+      this.props.onChange(state);
+    }
   }
 
   _reset(){
