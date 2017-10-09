@@ -5,10 +5,7 @@ import PxTheme from './';
 
 describe('Theme', () => {
   test('should...', () =>{
-    const wrapper = shallow(
-      <PxTheme/>
-    );
-    console.log(wrapper.debug());
+
     expect(true).to.equal(true);
   });
   //expect(wrapper.find('.label')).to.have.length(1);

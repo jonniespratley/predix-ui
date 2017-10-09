@@ -19,3 +19,6 @@ esdocs
 tools
 stories
 .storybook
+
+.test.js
+.stories.js
