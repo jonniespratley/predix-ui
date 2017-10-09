@@ -1,12 +1,18 @@
 @import 'variables';
 @import 'px-navbar-sketch.scss'; // TODO: This is the theme (colors);
 
+:root{
+  --px-navbar-background-color: var(--px-base-background-color, white);
+  --px-navbar-title-color: var(--px-base-text-color, --px-view-header-title-color, black);
+
+}
+
 @include block ('navbar') {
 	font-size       : $inuit-base-font-size;
 	border-bottom   : $navbar-default-border-bottom;
 	border-bottom   : var(--px-navbar-border-bottom, $navbar-default-border-bottom);
-	background-color: var(--px-base-background-color, --px-navbar-background-color);
-	color           : var(--px-base-text-color, $navbar-default-font-color);
+	background-color: var(--px-navbar-background-color);
+	color           : var(--px-navbar-color);
 	///-----------------------------------------------------------------
 	///.navbar--transparent
 	@include modifier ('transparent') {
@@ -47,13 +53,11 @@
 	///-----------------------------------------------------------------
 	@include element ('title') {
 		font-size: $navbar-title-font-size;
-		//color    : var(--Navbar-title-color, black);
-		color    : var(--px-view-header-title-color);
-		color    : var(--px-base-text-color);
+		color    : var(--px-navbar-title-color, black);
 	}
 	///-----------------------------------------------------------------
 	@include element ('subtitle') {
 		font-size: $navbar-subtitle-font-size;
-		color    : var(--px-view-header-subtitle-color, $navbar-subtitle-font-color);
+		color    : var(--px-navbar-subtitle-color, $navbar-subtitle-font-color);
 	}
 }

@@ -5,6 +5,18 @@ The `<input/>` component enables you to ...
 
 ## Usage
 
+```react
+const { Input } = px;
+const FormField = (props) => (<li>{props.children}</li>);
+<form>
+  <FormField label='Username'>
+    <Input name='username'/>
+  </FormField>
+</form>
+```
+
+
+
 ```code
 const { Input } = px;
 <form >
@@ -44,11 +56,6 @@ const { Input } = px;
     <input class="btn btn--primary" type="submit" value="Submit">
   </fieldset>
 </form>
-```
-
-```react
-const { Input } = px;
-<Input/>
 ```
 
 

@@ -2,10 +2,24 @@
  * px-input styles
  */
 .px-input {
+
   ///Objects
   $inuit-enable-toggle--small : true;
   $inuit-enable-toggle--huge  : true;
   $inuit-enable-toggle--large : true;
+
+  /**
+   * $inuit-enable-btn--primary  : true;
+   $inuit-enable-btn--tertiary : true;
+   $inuit-enable-btn--small    : true;
+   $inuit-enable-btn--large    : true;
+   $inuit-enable-btn--huge     : true;
+   $inuit-enable-btn--icon     : true;
+   $inuit-enable-btn--bare     : true;
+   $inuit-enable-btn--disabled : true;
+   @import 'px-buttons-design/_objects.buttons.scss';
+
+   */
   $inuit-enable-inline-fields : true;
   $inuit-enable-input--tiny   : true;
   $inuit-enable-input--small  : true;
@@ -13,14 +27,6 @@
   $inuit-enable-input--large  : true;
   $inuit-enable-input--huge   : true;
   $inuit-enable-input--bare   : true;
-  $inuit-enable-btn--primary  : true;
-  $inuit-enable-btn--tertiary : true;
-  $inuit-enable-btn--small    : true;
-  $inuit-enable-btn--large    : true;
-  $inuit-enable-btn--huge     : true;
-  $inuit-enable-btn--icon     : true;
-  $inuit-enable-btn--bare     : true;
-  $inuit-enable-btn--disabled : true;
-  @import 'px-buttons-design/_objects.buttons.scss';
+  $inuit-enable-validation-states: true;
   @import 'px-forms-design/_base.forms.scss';
 }

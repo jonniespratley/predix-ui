@@ -6,7 +6,7 @@ import BaseComponent from '../BaseComponent';
 /**
  *  component
  */
-export default class Input extends BaseComponent {
+class Input extends BaseComponent {
   constructor(props){
     super(props, {displayName: 'Input'});
     this.state = {};
@@ -14,16 +14,26 @@ export default class Input extends BaseComponent {
 	render() {
 
     const {
-			label = 'Input',
+			label,
 			style,
+
       type = 'text',
-      placeholder = "Type something...",
+      className = 'px-input',
+      placeholder,
+
+      onChange,
+
+      autoFocus,
+      disabled,
+
+      inputProps,
+      inputRef,
+
 			children
 		} = this.props;
 
 		const baseClasses = classnames(
-      'px-input',
-      {'px-input--children': children}
+      className
     );
 
 		const inputClassnames = classnames(
@@ -33,12 +43,33 @@ export default class Input extends BaseComponent {
 
 		return (
 			<div className={baseClasses} style={style}>
-				<h4 className={stylesheet.title}>{label}</h4>
-				<div>{children}</div>
-        <label htmlFor="input1" >Input Label</label>
-        <input id="input1" placeholder={placeholder} className={inputClassnames} type={type}/>
+        {label && <label htmlFor="input1">{label}</label>}
+        <input id="input1"
+          {...inputProps}
+          placeholder={placeholder}
+          className={inputClassnames}
+          type={type}/>
 				<style jsx>{stylesheet}</style>
 			</div>
 		);
 	}
 }
+
+Input.defaultProps = {
+  /** The label */
+  label: null,
+  /** The input value, required for a controlled component. */
+  value: null,
+  /** Type of the input element. It should be a valid HTML5 input type. */
+  type: 'text',
+  /** If true, the input will be disabled. */
+  disabled: null,
+  /** The short hint displayed in the input before the user enters a value. */
+  placeholder: null,
+  /** Use that property to pass a ref callback to the native input component. */
+  inputRef: null,
+  /** Properties applied to the input element. */
+  inputProps: null
+};
+
+export default Input;
