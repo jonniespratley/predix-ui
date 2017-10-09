@@ -43,8 +43,8 @@ const dashboardData = {
   ]
 };
 
-<Theme dark>
-<AppHeader
+
+<AppHeader log
   title={dashboardData.title}
   items={dashboardData.navItems}>
 
@@ -62,18 +62,14 @@ const dashboardData = {
     </Layout>
   </Card>
 
-
-
   {dashboardData.cards && dashboardData.cards.map((card, index) => (
     <Card key={index}
       headerText={card.title}>
-
-      <Spinner/>
 
       {card.children}
     </Card>
   ))}
   </AppHeader>
-</Theme>
+
 
 ```

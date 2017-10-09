@@ -18,7 +18,7 @@ export default class BaseComponent extends React.Component {
    */
 	constructor(props, options = {
 		displayName: 'base-component',
-		log: false
+		log: true
 	}) {
 		super(props);
 		this.displayName = options.name || options.displayName;
@@ -26,8 +26,8 @@ export default class BaseComponent extends React.Component {
 		this.$$ = { options, classnames };
 
     // TODO: Find a way to flag on or off
-
-    if(props && props.log){
+		options.log = true;
+    if(options && options.log){
   		this._log = debug(`px:${options.displayName}`);
     } else {
       this._log = ()=>{};

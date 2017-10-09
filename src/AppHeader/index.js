@@ -8,7 +8,10 @@ import BrandingBar from '../BrandingBar';
  * AppHeader component
  */
 export default ({
-  title = 'AppHeader',
+  title,
+  selected,
+  selectedItem,
+  onChange,
   items,
   style,
   children
@@ -22,7 +25,7 @@ export default ({
   return (
     <div className={baseClasses} style={style}>
       <BrandingBar title={title}/>
-      {items && <AppNav items={items}/>}
+      {items && <AppNav items={items} selected={selected} onChange={onChange}/>}
       {children && <div>{children}</div>}
       <style jsx>{stylesheet}</style>
     </div>

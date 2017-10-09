@@ -10,7 +10,7 @@ import BaseComponent from '../BaseComponent';
  */
 export default class AppNav extends BaseComponent {
   constructor(props){
-    super(props, {name: 'AppNav'});
+    super(props, {displayName: 'AppNav'});
     this.state = {
       selected: this.props.selected,
       selectedItem: null,
@@ -36,10 +36,11 @@ export default class AppNav extends BaseComponent {
     };
     this._log('handleClick', index);
     //event.preventDefault();
-    this.setState(state);
-    if(this.props.onChange){
-      this.props.onChange(state);
-    }
+    this.setState(state, () => {
+      if(this.props.onChange){
+        this.props.onChange(state);
+      }
+    });
 
   }
 
