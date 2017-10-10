@@ -39,7 +39,7 @@ export default ({
 }) => {
     const baseClasses = classnames (
       className,
-      'Layout',
+      'px-layout',
       {'layout': container},
       {'layout__item': item},
       {'layout--tiny': tiny},
