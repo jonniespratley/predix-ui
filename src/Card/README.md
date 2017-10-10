@@ -20,15 +20,24 @@ const { Card } = PxReact;
 ### With loading
 
 ```react
+state:
+  loading: true
+---
 const { Card, Spinner } = PxReact;
-<div>
-  <Card headerText='Loading Card' loading>
-    This is the main content area of a Predix card that is loading
-    <div className='flex flex--center'>
-      <Spinner size={50}/>
-    </div>
-  </Card>
-</div>
+const LoadingCard = (props) => {
+  const {loading, children} = props;
+  return (
+    <Card headerText='Loading Card' loading>
+      {!loading && children}
+      {loading && <div className='flex flex--center'><Spinner size={75}/></div>}
+    </Card>
+  );
+};
+
+<LoadingCard loading={state.loading}>
+  <p>This card should stop loading after a few seconds</p>
+</LoadingCard>
+
 ```
 
 ### With custom CSS
