@@ -68,7 +68,7 @@ const navItems = [
     onChange={(e) => setState(e)}
     items={navItems}/>
     <p>Selected Index: {state.selected}</p>
-    <p>Selected Item: {state.selectedItem.id}</p>
+    {state.selectedItem && <p>Selected Item: {state.selectedItem.id}</p>}
 </div>
 ```
 

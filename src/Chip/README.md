@@ -34,7 +34,6 @@ rows:
 The following custom properties are available for styling:
 
 ```code
-span: 6
 rows:
   - Property: --px-chip-background-color
     Description: Background color for chip

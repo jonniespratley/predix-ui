@@ -23,6 +23,7 @@ export default class AppNav extends BaseComponent {
   _getIndexForValue(val){
     return this._keys.indexOf(val);
   }
+
   _getValueForIndex(index){
     return this._items[index];
   }
@@ -34,8 +35,6 @@ export default class AppNav extends BaseComponent {
       selected: index,
       selectedItem: item
     };
-    this._log('handleClick', index);
-    //event.preventDefault();
     this.setState(state);
     if(this.props.onChange){
       this.props.onChange(state);

@@ -5,7 +5,7 @@ import IronComponents from './';
 
 import IronCollapse from './IronCollapse';
 import IronSelector from './IronSelector';
-import IronPages from './iron-pages';
+import IronPages from './IronPages';
 
 import IronSelectable from './IronSelectable';
 import IronMultiSelectable from './IronMultiSelectable';

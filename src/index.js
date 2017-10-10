@@ -36,7 +36,7 @@ import TableView from './TableView';
 import TableRow from './TableView/TableRow';
 import Tabs from './Tabs';
 import Tab from './Tabs/Tab';
-import Theme from './Theme';
+
 import TreeNode from './Tree/px-tree-node';
 import Tree from './Tree';
 import Tile from './Tile';
@@ -49,6 +49,10 @@ import ExampleComponent from './px-example-component';
 // TODO: DataViz
 import Gauge from './Gauge';
 
+
+
+//import Theme from './Theme';
+
 const LayoutItem = ({style, children}) => {
   return (<div style={style} className='layout__item'>{children}</div>);
 };
@@ -59,7 +63,7 @@ const LayoutItem = ({style, children}) => {
  *
  */
 const px = {
-  Theme,
+  //Theme,
   Input,
   Gauge,
 	ExampleComponent,

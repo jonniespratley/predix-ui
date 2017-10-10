@@ -4,10 +4,10 @@ import {shallow} from 'enzyme';
 import sinon from 'sinon';
 import AppNav from './';
 const navItems = [
-    { "path": "dashboard", "icon": "px-nav:home", "label": "Dashboard" },
-    { "path": "details", "icon": "px-nav:list", "label": "Details" },
-    { "path": "alerts","icon": "px-nav:home", "label": "Alerts" }
-  ];
+  {id : "home", label: "Home", icon: "px-fea:home"},
+  {id : "settings", label: "Settings", icon: "px-fea:settings"},
+  {id : "alert", label: "Alerts", icon: "px-fea:alerts"}
+];
 describe('AppNav', () => {
 
   test('should render', () => {
@@ -24,7 +24,19 @@ describe('AppNav', () => {
     const selectedItem = wrapper.find('.selected');
     console.log(wrapper.state());
 
-    expect(wrapper.state().selectedItem.path).to.equal(navItems[2].path);
+    expect(wrapper.state().selectedItem.id).to.equal(navItems[2].id);
+    expect(selectedItem.exists());
+    expect(spy.calledOnce);
+  });
+
+  test('should work with propForSelect', () => {
+    let spy = sinon.spy();
+    const wrapper = shallow(<AppNav onChange={spy} selected='home' propForSelect='id' items={navItems}/>);
+    const targetItem = wrapper.find('[label="Alerts"]').simulate('click');
+    const selectedItem = wrapper.find('.selected');
+    console.log(wrapper.state());
+
+    expect(wrapper.state().selectedItem.id).to.equal(navItems[2].id);
     expect(selectedItem.exists());
     expect(spy.calledOnce);
   });

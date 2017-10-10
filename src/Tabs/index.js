@@ -59,11 +59,8 @@ class Tabs extends BaseComponent {
         {'iron-selected': selected}
       );
       return (
-        <li key={index}
-          className={baseClasses} >
-          <a href='#'
-            onClick={this.handleClick.bind(this, propForSelect)}
-          className='tab-title'>
+        <li key={index} className={baseClasses} >
+          <a href='#' onClick={this.handleClick.bind(this, propForSelect)} className='tab-title'>
             {child.props.label}
           </a>
         </li>

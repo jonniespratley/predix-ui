@@ -9,7 +9,6 @@ import classnames from 'classnames';
  */
 export default class BaseComponent extends React.Component {
 
-
 	/**
    * constructor - description
    *
@@ -32,10 +31,6 @@ export default class BaseComponent extends React.Component {
     } else {
       this._log = ()=>{};
     }
-
-
-
-		this._log('constructor', props, options);
 	}
 
 	/**

@@ -2,7 +2,7 @@
 The `Tabs` and `Tab` components together provide the tabbed interface.
 
 ```hint
-Note: There is no limit on the number of tabs in a set, but there is no support for scrolling or wrapping.
+Reference https://www.predix-ui.com/#/elements/px-tabs
 ```
 
 
