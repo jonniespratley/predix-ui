@@ -89,21 +89,21 @@ storiesOf('AppNav', module)
 
 
 
-/// TODO: BrandingBar
+/// BrandingBar
 storiesOf('BrandingBar', module)
 	.add('default', () => (
 		<BrandingBar application-title="Predix Design System"/>
 	));
 
 
-// TODO: Card
+//  Card
 storiesOf('Card', module)
 	.add('with header', () => (
 		<Card headerText='Card Header'>Card Content</Card>
 	));
 
 
-// TODO: Navbar
+// Navbar
 storiesOf('Navbar', module)
 	.add('default', () => (
 		<Navbar
@@ -140,7 +140,7 @@ storiesOf('ProgressBar', module)
   ;
 
 
-// TODO: Spinner
+// Spinner
 storiesOf('Spinner', module)
 	.add('default', () => (
 		<Spinner/>
@@ -149,7 +149,7 @@ storiesOf('Spinner', module)
 
 
 
-// TODO: Tabs
+/// Tabs
 storiesOf('Tabs', module)
 	.add('default', () => (
     <Tabs>
