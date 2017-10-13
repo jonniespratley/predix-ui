@@ -148,6 +148,9 @@ gulp.task('postcss', 'Run files throught postcss', ['sass'], function () {
 
     return gulp.src([
       `${config.styles.dest}/**/*.css`,
+      `!./dist/**/*.min.css`,
+      '!./dist/AppNav/*.css',
+
       `./dist/${pkg.name}.css`
     ])
     .pipe( sourcemaps.init() )
@@ -158,6 +161,29 @@ gulp.task('postcss', 'Run files throught postcss', ['sass'], function () {
     .pipe( gulp.dest('dist/css') );
 });
 
+const purify = require('gulp-purifycss');
+gulp.task('css', function() {
+  return gulp.src([
+    `dist/**/*.css`,
+    `!dist/**/*.min.css`,
+    '!dist/AppNav/*.css'
+  ])
+    .pipe($.filelog())
+    .pipe($.size())
+    .pipe(purify([
+      './dist/es6/**/*.js',
+      './src/**/*.js'
+    ], {
+       rejected: true,
+      info: true,
+       minify: true
+    }))
+    .pipe($.rename({
+      suffix: '.min'
+    }))
+    .pipe($.size())
+    .pipe(gulp.dest('./dist/css/'));
+});
 
 ///
 gulp.task('sass:watch', function() {
