@@ -2,18 +2,19 @@
  * px-grid styles
  */
 .px-grid {
-  $grid-breakpoints: ( xs: calculateRem(round(330px)), sm: calculateRem(round(480px)), md: calculateRem(round(768px)), lg: calculateRem(round(992px)), xl: calculateRem(round(1200px)) );
-  //@apply(--Grid);
-  ///Mobile breakpoints (xs, sm, md, lg, xl)
-  @import 'px-mobile-design/_trumps.breakpoints.scss';
-  /* Here we import the base styles and extend each one for component */
+
   @import "px-flexbox-design/_base.flexbox.scss";
   @import "inuit-responsive-settings/_settings.responsive.scss";
   @import "px-spacing-responsive-design/_trumps.spacing-responsive.scss";
   @import "px-widths-design/_trumps.widths.scss";
   @import "px-widths-responsive-design/_trumps.widths-responsive.scss";
-  //
   @import "px-widths-tools-design/_tools.widths.scss";
+
+  $grid-breakpoints: ( xs: calculateRem(round(330px)), sm: calculateRem(round(480px)), md: calculateRem(round(768px)), lg: calculateRem(round(992px)), xl: calculateRem(round(1200px)) );
+
+  @import 'px-mobile-design/_trumps.breakpoints.scss';
+
+  /* Here we import the base styles and extend each one for component */
   $displays        : flex, flex__item, flex--row, flex--col, flex--stretch, flex--justify, flex--wrap, flex--nowrap, flex--row--rev, flex--top, flex--bottom, flex--middle, flex--center;
   @each $val in ($displays) {
     &.#{$val} {

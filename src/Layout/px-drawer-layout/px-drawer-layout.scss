@@ -1,128 +1,112 @@
 @import "px-helpers-design/_generic.helpers.scss";
 @import 'px-mobile-design/sass/_mixins.scss';
-
+///.layout
+$inuit-layout-min-width           : 200px;
+$inuit-enable-layout--tiny        : true;
+$inuit-enable-layout--small       : true;
+$inuit-enable-layout--large       : true;
+$inuit-enable-layout--huge        : true;
+$inuit-enable-layout--flush       : true;
+$inuit-enable-layout--rev         : true;
+$inuit-enable-layout--middle      : true;
+$inuit-enable-layout--bottom      : true;
+$inuit-enable-layout--full        : true;
+$inuit-enable-layout--right       : true;
+$inuit-enable-layout--center      : true;
+$inuit-enable-layout__item--full  : true;
+$inuit-enable-layout__item--center: true;
+$inuit-enable-layout__item--bottom: true;
+$inuit-global-border-box          : true;
+//@import "px-layout-design/_objects.layout.scss";
 /**
  * px-layout styles
  */
 .px-drawer-layout {
 
-
-  display   : block;
-  position  : relative;
-
+  display : block;
+  position: relative;
 
   .header__menu {
-  	background : url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24h-24z" fill="none"/><path d="M3 18h18v-2h-18v2zm0-5h18v-2h-18v2zm0-7v2h18v-2h-18z" fill="black"/></svg>') center center no-repeat;
-  	width      : 30px;
-  	height     : 30px;
-  	//margin-right: 16px;
-  	text-indent: -30000px;
-  	overflow   : hidden;
-  	opacity    : 0.54;
-  	transition : opacity 0.333s cubic-bezier(0,0,0.21,1);
-  	border     : none;
-  	outline    : none;
-  	cursor     : pointer;
+    background : url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24h-24z" fill="none"/><path d="M3 18h18v-2h-18v2zm0-5h18v-2h-18v2zm0-7v2h18v-2h-18z" fill="black"/></svg>') center center no-repeat;
+    width      : 30px;
+    height     : 30px;
+    //margin-right: 16px;
+    text-indent: -30000px;
+    overflow   : hidden;
+    opacity    : 0.54;
+    transition : opacity 0.333s cubic-bezier(0,0,0.21,1);
+    border     : none;
+    outline    : none;
+    cursor     : pointer;
 
     &:focus,
     &:hover {
-    	opacity: 1;
-    	//border: 1px solid white;
+      opacity: 1;
+      //border: 1px solid white;
     }
-
-
   }
 
-  .is-narrow{
+  .is-narrow {
     background: pink;
-    padding: .5rem;
-
-
+    padding   : 0.5rem;
   }
 
+  &.has-navbar .drawer-spacer {
+    min-height: 57px;
+  }
 
+  .has-navbar .l-drawer-layout__container {
+    padding-top: 57px;
+  }
 
+  .l-drawer-layout {
+    position  : relative;
+    transition: all 0.3s;
+    overflow  : hidden;
+    display   : flex;
+    //@apply(--Drawer-layout);
+  }
 
+  .l-drawer-layout__drawer {
+    position: relative;
+    //height  : 100%;
+    height  : auto;
+    //min-width: 250px;
+    //@apply(--Drawer-layout-drawer);
+  }
 
+  .l-drawer-layout__container {
+    position: relative;
+    //width   : 100%;
+    //height  : 100%;
+    flex    : 1;
+    //@apply(--Drawer-layout-container);
+  }
 
+  .l-drawer-layout__content {
+    position: relative;
 
-    ///.layout
-    $inuit-layout-min-width: 200px;
-    $inuit-enable-layout--tiny                      : true;
-    $inuit-enable-layout--small                     : true;
-    $inuit-enable-layout--large                     : true;
-    $inuit-enable-layout--huge                      : true;
-    $inuit-enable-layout--flush                     : true;
-    $inuit-enable-layout--rev                       : true;
-    $inuit-enable-layout--middle                    : true;
-    $inuit-enable-layout--bottom                    : true;
-    $inuit-enable-layout--full                      : true;
-    $inuit-enable-layout--right                     : true;
-    $inuit-enable-layout--center                    : true;
-    $inuit-enable-layout__item--full                : true;
-    $inuit-enable-layout__item--center              : true;
-    $inuit-enable-layout__item--bottom              : true;
-    $inuit-global-border-box                        : true;
+    //width   : 100%;
+    height  : 100%;
+    //@apply(--Drawer-layout-content);
+  }
 
+  .l-drawer-layout__content:not(.is-narrow) [drawer-toggle] {
+    display: none;
+  }
 
-    @import "px-layout-design/_objects.layout.scss";
+  /* Hide the drawer-toggle button on large screens*/
+  .l-drawer-layout__container:not(.is-narrow) [drawer-toggle] {
+    display: none;
+  }
 
-    &.has-navbar .drawer-spacer {
-      min-height: 57px;
-    }
-
-    .has-navbar .l-drawer-layout__container {
-      padding-top: 57px;
-    }
-
-    .l-drawer-layout {
-      position  : relative;
-      transition: all 0.3s;
-      overflow: hidden;
-      display   : flex;
-      //@apply(--Drawer-layout);
-    }
-
-    .l-drawer-layout__drawer {
-      position: relative;
-      //height  : 100%;
-      height: auto;
-      //min-width: 250px;
-      //@apply(--Drawer-layout-drawer);
-    }
-
-    .l-drawer-layout__container {
-      position: relative;
-      //width   : 100%;
-      //height  : 100%;
-      flex: 1;
-      //@apply(--Drawer-layout-container);
-    }
-
+  &--is-narrow {
     .l-drawer-layout__content {
-      position: relative;
-
-      //width   : 100%;
-      height  : 100%;
-      //@apply(--Drawer-layout-content);
+      overflow: auto;
+      top     : 0;
+      left    : 0;
+      position: fixed;
     }
 
-    .l-drawer-layout__content:not(.is-narrow) [drawer-toggle] {
-      display: none;
-    }
-
-    /* Hide the drawer-toggle button on large screens*/
-    .l-drawer-layout__container:not(.is-narrow) [drawer-toggle] {
-      display: none;
-    }
-
-    &--is-narrow {
-      .l-drawer-layout__content{
-        overflow: auto;
-        top: 0;
-        left: 0;
-        position: fixed;
-      }
-
-    }
+  }
 }

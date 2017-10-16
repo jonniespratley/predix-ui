@@ -3,16 +3,15 @@
 
 :root{
   --px-navbar-background-color: var(--px-base-background-color, white);
-  --px-navbar-title-color: var(--px-base-text-color, --px-view-header-title-color, black);
-
+  --px-navbar-title-color: var(--px-base-text-color, --px-view-header-title-color);
 }
 
 @include block ('navbar') {
 	font-size       : $inuit-base-font-size;
 	border-bottom   : $navbar-default-border-bottom;
 	border-bottom   : var(--px-navbar-border-bottom, $navbar-default-border-bottom);
-	background-color: var(--px-navbar-background-color);
-	color           : var(--px-navbar-color);
+	background-color: var(--px-navbar-background-color, white);
+	color           : var(--px-navbar-color, black);
 	///-----------------------------------------------------------------
 	///.navbar--transparent
 	@include modifier ('transparent') {

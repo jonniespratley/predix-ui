@@ -2,8 +2,7 @@
  * px-navbar styles
  */
 .px-navbar {
-  @import './sass/px-navbar-predix';
-
+  @import 'px-navbar-predix';
   .toggle__menu {
     svg {
       fill: currentColor;

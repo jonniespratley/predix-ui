@@ -1,50 +1,50 @@
-.px-icon{
+.px-icon {
 
-   /* Create some vars we can manipulate asour icons change*/
-   --px-icon-default-width: 22px;
-   --px-icon-default-height: 22px;
-   /* Update iron-icon vars so we can overwrite */
-   --iron-icon-width: var(--px-icon-default-width);
-   --iron-icon-height: var(--px-icon-default-height);
+  /* Create some vars we can manipulate asour icons change*/
+  --px-icon-default-width : 22px;
+  --px-icon-default-height: 22px;
+  /* Update iron-icon vars so we can overwrite */
+  --iron-icon-width       : var(--px-icon-default-width);
+  --iron-icon-height      : var(--px-icon-default-height);
 
-   svg{
-     /* Ensures the currentColor is overriden by the stroke color so text
+  svg {
+    /* Ensures the currentColor is overriden by the stroke color so text
         elements inside the SVG work correctly */
-     color: var(--iron-icon-stroke-color, inherit);
-     /* Reverses the standard iron-icon colors to have the stroke inherit
+    color         : var(--iron-icon-stroke-color, inherit);
+    /* Reverses the standard iron-icon colors to have the stroke inherit
         currentcolor and fill default to none */
-     fill: var(--iron-icon-fill-color, none);
-     stroke: var(--iron-icon-stroke-color, currentColor);
-     /* The rest of the properties are copied exactly from iron-icon */
-     @apply --layout-inline;
-     @apply --layout-center-center;
-     position: relative;
-     vertical-align: middle;
-     width: var(--iron-icon-width);
-     height: var(--iron-icon-height);
-     @apply --iron-icon;
-   }
+    fill          : var(--iron-icon-fill-color, none);
+    stroke        : var(--iron-icon-stroke-color, currentColor);
+    /* The rest of the properties are copied exactly from iron-icon */
 
- /* Also copied exactly from iron-icon */
- &.hidden {
-   display: none;
- }
- /* Set default sizes for all icons sets */
- :host([icon^='px-utl']),
- :host([icon^='px-doc']) {
-   --px-icon-default-width: 16px;
-   --px-icon-default-height: 16px;
- }
- :host([icon^='px-obj']),
- :host([icon^='px-fea']),
- :host([icon^='px-com']) {
-   --px-icon-default-width: 32px;
-   --px-icon-default-height: 32px;
- }
- /* Forces iron-icon to inherit the :host scoped fill/stroke styles */
- svg {
-   color: inherit;
-   fill: inherit;
-   stroke: inherit;
- }
+    position      : relative;
+    vertical-align: middle;
+    width         : var(--iron-icon-width);
+    height        : var(--iron-icon-height);
+
+  }
+
+  /* Also copied exactly from iron-icon */
+  &.hidden {
+    display: none;
+  }
+  /* Set default sizes for all icons sets
+  :host([icon^='px-doc']),
+  :host([icon^='px-utl']) {
+    --px-icon-default-width : 16px;
+    --px-icon-default-height: 16px;
+  }
+
+  :host([icon^='px-com']),
+  :host([icon^='px-fea']),
+  :host([icon^='px-obj']) {
+    --px-icon-default-width : 32px;
+    --px-icon-default-height: 32px;
+  } */
+  /* Forces iron-icon to inherit the :host scoped fill/stroke styles */
+  svg {
+    color : inherit;
+    fill  : inherit;
+    stroke: inherit;
+  }
 }

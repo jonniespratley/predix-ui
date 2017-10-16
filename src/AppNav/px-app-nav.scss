@@ -31,12 +31,10 @@
   display                : block;
   width                  : 100%;
   text-size-adjust       : 100%;
-  /* [4] */
   -moz-osx-font-smoothing: grayscale;
-  /* [5] */
+
   -webkit-font-smoothing : antialiased;
-  /* [5] */
-  @apply --px-app-nav;
+
 
   .app-nav {
     display: flex;
@@ -61,7 +59,7 @@
     min-width: $px-app-nav-vertical-width;
     max-width: $px-app-nav-vertical-width;
     transition: $px-app-nav-vertical-transition;
-    @apply --px-app-nav;
+
 
     &.vertical-opened {
       overflow-y: auto;

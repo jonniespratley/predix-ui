@@ -11,6 +11,8 @@ const importOnce = require('node-sass-import-once');
 
 
 const sassOptions = {
+  //sourceComments: true,
+  outputStyle: 'compact',
   importer: importOnce,
   importOnce: {
     index: true,
@@ -61,7 +63,7 @@ gulp.task('clean', function() {
   return gulp.src([
     '.tmp',
     './dist/es6',
-    './dist/modules',
+    './dist/umd',
     config.styles.dest
   ], {
     read: false
@@ -74,12 +76,12 @@ gulp.task('clean:dist:files', function() {
 });
 ///
 gulp.task('clean:es6', function() {
-  return gulp.src(['./dist/es6'], {read: false}).pipe($.clean());
+  return gulp.src(['./dist/es'], {read: false}).pipe($.clean());
 });
 
 ///
 gulp.task('clean:modules', function() {
-  return gulp.src(['./dist/modules'], {read: false}).pipe($.clean());
+  return gulp.src(['./dist/umd'], {read: false}).pipe($.clean());
 });
 
 ///
@@ -97,11 +99,9 @@ gulp.task('sass', 'Compile all .sass/.scss files', function() {
 gulp.task('sass:all', 'Combine all .sass/.scss files', function() {
   return gulp.src(config.styles.src)
     .pipe($.filelog())
-
     .pipe($.sass(sassOptions).on('error', $.sass.logError))
     .pipe($.concat(pkg.name + '.all.css'))
     .pipe($.size())
-
     .pipe($.filelog())
     .pipe(gulp.dest(config.styles.dest));
 });
@@ -162,7 +162,7 @@ gulp.task('postcss', 'Run files throught postcss', ['sass'], function () {
 });
 
 const purify = require('gulp-purifycss');
-gulp.task('css', function() {
+gulp.task('purifycss', function() {
   return gulp.src([
     `dist/**/*.css`,
     `!dist/**/*.min.css`,
@@ -171,7 +171,7 @@ gulp.task('css', function() {
     .pipe($.filelog())
     .pipe($.size())
     .pipe(purify([
-      './dist/es6/**/*.js',
+      './dist/**/*.js',
       './src/**/*.js'
     ], {
        rejected: true,
@@ -182,7 +182,7 @@ gulp.task('css', function() {
       suffix: '.min'
     }))
     .pipe($.size())
-    .pipe(gulp.dest('./dist/css/'));
+    .pipe(gulp.dest('./dist/'));
 });
 
 ///
@@ -234,9 +234,23 @@ gulp.task('dist:es6', 'Run scripts through babel to es6', ['clean:es6'], () =>{
       extends: path.resolve(__dirname, '.babelrc')
     }))
     .pipe($.size())
-    .pipe(gulp.dest(`./dist/${process.env.BABEL_ENV}`));
+    .pipe(gulp.dest(`./dist/es`));
 });
 
+///
+gulp.task('dist:modules', 'Run scripts through babel to modules', ['clean:modules'], () =>{
+  process.env.BABEL_ENV = 'modules';
+  return gulp.src(config.scripts.src)
+  //.pipe($.filelog())
+  .pipe(babel({
+    comments: false,
+    extends: path.resolve(__dirname, '.babelrc')
+  }))
+  .pipe($.size())
+  .pipe(gulp.dest(`./dist/umd`));
+});
+
+///
 gulp.task('compile:demo', () =>{
   return gulp.src('./demo/**/*.es6.js')
     .pipe($.filelog())
@@ -250,19 +264,6 @@ gulp.task('compile:demo', () =>{
     .pipe($.size())
     .pipe(gulp.dest(`./demo`));
 });
-///
-gulp.task('dist:modules', 'Run scripts through babel to modules', ['clean:modules'], () =>{
-  process.env.BABEL_ENV = 'modules';
-  return gulp.src(config.scripts.src)
-  //.pipe($.filelog())
-  .pipe(babel({
-    comments: false,
-    extends: path.resolve(__dirname, '.babelrc')
-  }))
-  .pipe($.size())
-  .pipe(gulp.dest(`./dist/${process.env.BABEL_ENV}`));
-});
-
 gulp.task('watch', ['sass:watch', 'autoprefixer:watch']);
 gulp.task('styles', gulpSequence('clean', 'sass', 'autoprefixer', 'cssmin'));
 

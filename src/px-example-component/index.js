@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import stylesheet from './style.css';
+import stylesheet from './px-example-component.scss';
 import BaseComponent from '../BaseComponent';
 
 /**

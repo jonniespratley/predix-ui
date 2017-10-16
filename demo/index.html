@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>Demo using predix-ui</title>
+    <title>Predix Sample Application (React)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       html,
@@ -15,24 +15,30 @@
         height: 100%;
       }
     </style>
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js'></script>
+
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   </head>
 
   <body translate="no">
     <div id="root"><!-- App loaded here --></div>
 
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js'></script>
 
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- theme styles -->
+    <link rel="stylesheet" href="../dist/css/theme/px-theme.css"/>
+
+    <!-- base styles -->
     <link rel="stylesheet" href="../dist/predix-ui.css"/>
+
     <script src="../dist/predix-ui.js"></script>
     <style media="screen">
       :root{
         --px-drawer-background-color: red;
-        --px-app-nav-background-color: black;
-        --px-app-nav-item-background-color: transparent;
       }
+
     </style>
     <script type="text/babel">
     const { Component } = React;
@@ -62,15 +68,21 @@
         { "path": "alerts","icon": "px-nav:home", "label": "Alerts" }
       ],
       keyVals: [
-        {label: 'New Alerts', value: 21},
-        {label: 'Utilization', value: '70', uom: '%'},
+        {label: 'Total Alerts', value: 21},
+        {label: 'Connected Devices', value: 583},
+
+        {label: 'Utilization', value: '89', uom: '%'},
         {label: 'Faults', value: 3},
         {label: 'Output', value: 53, uom: 'mw'}
       ],
       cards: [
         { title: 'Card 1', children: [ <div>Lorem ipsum dolor sit</div> ] },
         { title: 'Card 2', children: [ <div>Lorem ipsum dolor sit</div> ] },
-        { title: 'Card 3', children: [ <div>Lorem ipsum dolor sit</div> ] }
+        { title: 'Card 3', children: [ <div>Lorem ipsum dolor sit</div> ] },
+        { title: 'Card 4', children: [ <div>Lorem ipsum dolor sit</div> ] },
+        { title: 'Card 5', children: [ <div>Lorem ipsum dolor sit</div> ] },
+        { title: 'Card 6', children: [ <div>Lorem ipsum dolor sit</div> ] },
+        { title: 'Card 7', children: [ <div>Lorem ipsum dolor sit</div> ] }
       ]
     };
 
@@ -92,24 +104,28 @@
               items={dashboardData.navItems}>
 
               <Card headerText='West Coast Fleet'>
-                <Layout container center middle wrap>
+                <Grid container wrap justify>
                   {dashboardData.keyVals.map((item, index) => (
-                    <Layout item key={index} xs={2} lg={4} xl={6}>
+
                       <KeyValuePair
+                        key={index}
+                        className='u-p'
                         label={item.label}
                         uom={item.uom}
                         value={item.value}
                         size="beta"/>
-                    </Layout>
                   ))}
-                </Layout>
+                </Grid>
               </Card>
+
+              <Grid container wrap>
               {dashboardData.cards && dashboardData.cards.map((card, index) => (
                 <Card key={index}
                   headerText={card.title}>
                   {card.children}
                 </Card>
               ))}
+              </Grid>
             </AppHeader>
 
         )

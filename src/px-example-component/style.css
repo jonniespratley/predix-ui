@@ -1,11 +1,7 @@
 /**
- * px-example-component styles
+ * px-example-component css styles
  */
  .px-example-component {
    background: green;
    padding: 1rem;
-
-   .title{
-     color: red;
-   }
  }
