@@ -17,12 +17,15 @@
 
   // Component
   .accordion__header {
-    user-select                 : none;
     margin-bottom   : 0.3333rem;
     cursor          : pointer;
     user-select     : none;
     background-color: var(--px-accordion-header-background-color, white);
     color           : var(--px-accordion-header-color, black);
+    > * {
+      user-select                 : none;
+    }
+
   }
 
   .accordion__expand__collapse {

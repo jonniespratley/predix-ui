@@ -11,6 +11,7 @@ import DemoHelpers from '../src/DemoHelpers';
 
 // TODO: extract
 import IronComponents from '../src/iron-components';
+import ironComponentsDocs from '../src/iron-components/README';
 
 // TODO: Use this format
 import pxAppHeaderDocs from '../src/AppHeader/README';
@@ -45,7 +46,7 @@ import pxTreeDocs from '../src/Tree/README';
 import pxKeyValuePairDocs from '../src/KeyValuePair/README';
 import pxViewHeaderDocs from '../src/ViewHeader/README';
 
-import ironComponentsDocs from '../src/iron-components/README';
+
 
 const logo = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/predix_ds_logo.webp';
 

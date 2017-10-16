@@ -30,4 +30,20 @@ rows:
   - Name: visible
     Type: bool
     Description: The visibility of the modal.
+  - Name: ignoreEscapeKeyUp
+    Type: bool
+    Description: If true, ESC key will not close modal.
+  - Name: ignoreOverlayClick
+    Type: bool
+    Description: If true, clicking backdrop will not close modal.
+  - Name: open
+    Type: bool
+    Description: The visibility of the modal.
+  - Name: onRequestClose
+    Type: function
+    Description: Invoked when request to close overlay happens.
+  - Name: onEscapeKeyUp
+    Type: function
+    Description: Invoked when ESC key is up.
+
 ```

@@ -15,18 +15,15 @@ import Drawer from './Drawer';
 import DataTable from './DataTable';
 import Dropdown from './Dropdown';
 import DrawerLayout from './Layout/px-drawer-layout';
-
 import Grid from './Grid';
 import Input from './Input';
 import IconSet from './px-icon-set';
 import Icon from './px-icon-set/px-icon';
 import KeyValuePair from './KeyValuePair';
 import Layout from './Layout';
-
 import Modal from './Modal';
 import NavDrawer from './Drawer/px-nav-drawer';
 import Navbar from './Navbar';
-
 import Overlay from './Overlay';
 import Popover from './Popover';
 import PredixSvgLogo from './BrandingBar/px-predix-svg-logo';
@@ -36,14 +33,13 @@ import TableView from './TableView';
 import TableRow from './TableView/TableRow';
 import Tabs from './Tabs';
 import Tab from './Tabs/Tab';
-
 import TreeNode from './Tree/px-tree-node';
 import Tree from './Tree';
 import Tile from './Tile';
 import ViewHeader from './ViewHeader';
 
 
-import Partials from './px-partials';
+//import Partials from './px-partials';
 import ExampleComponent from './px-example-component';
 
 // TODO: DataViz
