@@ -7,7 +7,7 @@ class Overlay extends BaseComponent {
   constructor(props){
     super(props, {displayName: 'Overlay'});
     this.state = {
-      open: props.open || props.visible || false
+      opened: props.opened || props.visible || false
     };
     this._handleOverlayClick = this._handleOverlayClick.bind(this);
     this._handleEscKeyUp = this._handleEscKeyUp.bind(this);
@@ -22,7 +22,7 @@ class Overlay extends BaseComponent {
   }
 
   componentWillReceiveProps(nextProps){
-    this.setState({open: nextProps.open});
+    this.setState({opened: nextProps.opened});
   }
 
   _handleEscKeyUp(e){
@@ -41,11 +41,11 @@ class Overlay extends BaseComponent {
   }
 
   close(){
-    this.setState({open: false});
+    this.setState({opened: false});
   }
 
   open(){
-    this.setState({open: true});
+    this.setState({opened: true});
   }
 
   render(){
@@ -59,11 +59,11 @@ class Overlay extends BaseComponent {
       children
     } = this.props;
 
-    const { open } = this.state;
+    const { opened } = this.state;
 
     const baseClasses = classnames('px-overlay', {
-      'px-overlay--is-open': open,
-      'px-overlay--invisible': !open
+      'px-overlay--is-open': opened,
+      'px-overlay--invisible': !opened
     });
 
     return (

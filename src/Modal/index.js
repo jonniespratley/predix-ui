@@ -16,7 +16,7 @@ export default ({
   btnModalPositive,
   onBtnModalPositiveClick,
   visible,
-  isOpen,
+  opened,
   onBackdropClick,
   btnModalPositiveDisabled = false,
   children
@@ -28,12 +28,12 @@ export default ({
       'flex--middle',
       'flex--center',
       'full-height',
-      {'invisible' : !visible}
+      {'invisible' : !opened}
     );
 
   return (
   <div className='px-modal'>
-    <Overlay open={visible} onOverlayClick={(e) => onBackdropClick(e)}/>
+    <Overlay opened={opened} onOverlayClick={(e) => onBackdropClick(e)}/>
     <div className={modalClassnames} role="dialog">
       <section className="modal__content" role='region'>
         <h3 className="modal__title epsilon weight--normal">{modalHeading}</h3>
@@ -44,12 +44,12 @@ export default ({
           <div className='flex'>
             {btnModalNegative && <Button id="btnModalNegative"
               label={btnModalNegative}
-              onClick={(e) => onBtnModalNegativeClick(e)}/>}
+              onClick={onBtnModalNegativeClick}/>}
             {btnModalPositive && <Button primary
               disabled={btnModalPositiveDisabled}
               id="btnModalPositive"
               label={btnModalPositive}
-              onClick={(e) => onBtnModalPositiveClick(e)}/>}
+              onClick={onBtnModalPositiveClick}/>}
           </div>
         </div>
       </section>

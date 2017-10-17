@@ -14,7 +14,7 @@ const {Button, Modal} = PxReact;
     btnModalPositive="Sign In"
     btnModalNegative="Back"
     onBackdropClick={() => setState({opened: !state.opened})}
-    visible={state.opened}>
+    opened={state.opened}>
     This is the children content of the modal.
   </Modal>
 

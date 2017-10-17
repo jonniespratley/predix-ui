@@ -41,6 +41,7 @@ export default class Accordion extends BaseComponent {
       {'px-accordion--open': open}
     );
 
+
     const headerClasses = classnames(
       'accordion__header',
       'flex',

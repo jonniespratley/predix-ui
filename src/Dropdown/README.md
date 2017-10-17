@@ -6,10 +6,10 @@ The `<dropdown/>` component enables you to ...
 ## Usage
 
 ```react
-const { dropdown } = px;
-<dropdown>
+const { Dropdown } = PxReact;
+<Dropdown>
   This is the children
-</dropdown>
+</Dropdown>
 ```
 
 

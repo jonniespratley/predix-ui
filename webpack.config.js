@@ -6,7 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SystemBellPlugin = require('system-bell-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-
+const PurifyCSSPlugin = require('purifycss-webpack');
 const pkg = require('./package.json');
 const ROOT_PATH = __dirname;
 
