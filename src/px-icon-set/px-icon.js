@@ -1,7 +1,5 @@
 import React from 'react';
 import classnames from 'classnames';
-import stylesheet from './px-icon.scss';
-
 //import IronIcon from '../iron-components/iron-icon';
 import com from './px-icon-set-communication';
 import utl from './px-icon-set-utility';
@@ -12,77 +10,55 @@ import vis from './px-icon-set-vis';
 import fea from './px-icon-set-feature';
 
 
-const iconSets = Object.assign({}, doc, nav, obj, vis, fea, com, utl);
+const AllPxIcons = Object.assign({}, doc, nav, obj, vis, fea, com, utl);
 
-const _renderRawHtml = (h) =>{
-  return {
-    __html: h
-  }
+class Icon extends React.Component{
+	constructor(props){
+		super(props);
+		this.createMarkup = this.createMarkup.bind(this);
+	}
+	mergeStyles(...args){
+		return Object.assign({}, ...args);
+	}
+	createMarkup(icon){
+		let html = this.getIcon(icon);
+		return { __html: html };
+	}
+	getIcon(name){
+		if(AllPxIcons.hasOwnProperty(name)){
+			return AllPxIcons[name];
+		}
+	}
+	render(){
+		const {icon, size} = this.props;
+		let styles = {
+      width: `${size}px`,
+      height: `${size}px`
+    };
+    return (
+			<div className="ReactIcon">
+				<svg viewBox={`0 0 ${size} ${size}`} preserveAspectRatio="xMidYMid meet"
+          dangerouslySetInnerHTML={this.createMarkup(icon)}
+        	style={this.mergeStyles(styles,this.props.style)}>
+	      </svg>
+        <style jsx>{`
+          .ReactIcon {
+          	color: #2c404c;
+          	fill: none;
+          	stroke: #2c404c;
+          	display: inline-flex;
+          	align-items: center;
+          	justify-content: center;
+          	position: relative;
+          	vertical-align: middle;
+          }
+        `}</style>
+			</div>
+    );
+
+	}
+}
+Icon.defaultProps = {
+  size: 32
 };
-
-const _renderSvgIcon = (icon, size) => {
-  console.log('_renderSvgIcon', icon);
-  let style = {
-    pointerEvents: 'none',
-    display: 'block',
-    width: size,
-    height: size
-  };
-  return (
-    <svg viewBox={`0 0 22 22`}
-      preserveAspectRatio="xMidYMid meet"
-      focusable="false"
-      dangerouslySetInnerHTML={_renderRawHtml(icon)}
-      style={style}>
-    </svg>
-  );
-}
-
-const getIconSvgByName = (name) =>{
-  try {
-    let n = name.split(':');
-    name = name.replace(':', '-');
-    console.log('getIconName', name);
-    return iconSets[name];
-  } catch (e) {
-    console.error('Cannot find icon', name);
-    return name;
-  }
-}
-
-
-const renderSvgIcon = (name, size) =>{
-  const icon = getIconSvgByName(name);
-  return _renderSvgIcon(icon, size);
-};
-
-
-/**
- * px-icon component
- *
- * TODO Right now we are just using iron-icons set
- */
-export default ({
-  icon,
-  size = 22,
-  children
-}) => {
-
-  let style = {
-    height: size,
-    width: size,
-    color: 'inherit',
-    display: 'inline-block'
-  };
-
-  const baseClasses = classnames(
-    'px-icon'
-  );
-
-  return (
-    <div className={baseClasses} style={style}>
-      {renderSvgIcon(icon, size)}
-      <style jsx>{stylesheet}</style>
-    </div>
-  );
-}
+export default Icon;

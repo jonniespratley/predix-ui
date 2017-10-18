@@ -105,42 +105,11 @@ const utilIcons = [
 ### Navigation : Medium - 22px
 
 ```react
-const navIcons = [
-  "px-nav:back",
-  "px-nav:close",
-  "px-nav:collapse",
-  "px-nav:confirmed",
-  "px-nav:down",
-  "px-nav:expand",
-  "px-nav:favorite",
-  "px-nav:generic-user",
-  "px-nav:grid-view",
-  "px-nav:hamburger",
-  "px-nav:hierarchy",
-  "px-nav:home",
-  "px-nav:inbox-view",
-  "px-nav:instance",
-  "px-nav:list-view",
-  "px-nav:log-out",
-  "px-nav:menu",
-  "px-nav:more",
-  "px-nav:new-window",
-  "px-nav:next",
-  "px-nav:notification",
-  "px-nav:open-context",
-  "px-nav:pause",
-  "px-nav:play",
-  "px-nav:reload",
-  "px-nav:search",
-  "px-nav:stop",
-  "px-nav:tile-view",
-  "px-nav:tree",
-  "px-nav:unconfirmed",
-  "px-nav:up"
-];
-<div>
-  {navIcons.map((icon, index) => <px.Icon size={22} key={index} icon={icon}/>)}
-</div>
+const {Icon} = PxReact;
+const navIcons = ["px-nav-back","px-nav-close","px-nav-collapse","px-nav-confirmed","px-nav-down","px-nav-expand","px-nav-favorite","px-nav-generic-user","px-nav-grid-view","px-nav-hamburger","px-nav-hierarchy","px-nav-home","px-nav-inbox-view","px-nav-instance","px-nav-list-view","px-nav-log-out","px-nav-menu","px-nav-more","px-nav-new-window","px-nav-next","px-nav-notification","px-nav-open-context","px-nav-pause","px-nav-play","px-nav-reload","px-nav-search","px-nav-stop","px-nav-tile-view","px-nav-tree","px-nav-unconfirmed","px-nav-up"];
+<ul>
+  {navIcons && navIcons.map((item, key) => (<li key={key}><Icon icon={item} size={24}/>{item}</li>))}
+</ul>
 ```
 
 ### Communication : Large - 32px
