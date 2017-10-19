@@ -3,7 +3,7 @@
   "description": "px-* web components in React.js components",
   "author": "Jonnie Spratley",
   "user": "jonniespratley",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/jonniespratley/predix-ui.git"

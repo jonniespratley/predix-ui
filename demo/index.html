@@ -62,11 +62,7 @@
 
     const dashboardData = {
       title: 'Predix Sample Application',
-      navItems: [
-        { "path": "dashboard", "icon": "px-nav:home", "label": "Dashboard" },
-        { "path": "details", "icon": "px-nav:list", "label": "Details" },
-        { "path": "alerts","icon": "px-nav:home", "label": "Alerts" }
-      ],
+      navItems: [{"label":"Home","id":"home","icon":"px-fea:home"},{"label":"Alerts","id":"alerts","icon":"px-fea:alerts","metadata":{"openCases":"12","closedCases":"82"}},{"label":"Assets","id":"assets","icon":"px-fea:asset","children":[{"label":"Asset #1","id":"a1"},{"label":"Asset #2","id":"a2"}]},{"label":"Dashboards","path":"dashboards","icon":"px-fea:dashboard","subitems":[{"label":"See Live Truck View","path":"trucks","icon":"px-obj:truck"},{"label":"Track Orders","path":"orders","icon":"px-fea:orders"},{"label":"Analyze Invoices","path":"invoices","icon":"px-fea:templates"}]}],
       keyVals: [
         {label: 'Total Alerts', value: 21},
         {label: 'Connected Devices', value: 583},
@@ -85,8 +81,6 @@
         { title: 'Card 7', children: [ <div>Lorem ipsum dolor sit</div> ] }
       ]
     };
-
-
 
     /**
      * Example App
