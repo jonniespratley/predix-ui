@@ -1,5 +1,5 @@
-import React from 'react';
-
+import {Component} from 'react';
+import {findDOMNode} from 'react-dom';
 import debug from 'debug';
 import classnames from 'classnames';
 
@@ -7,7 +7,7 @@ import classnames from 'classnames';
  * @description Base component class that all ui components extend.
  * @class BaseComponent
  */
-export default class BaseComponent extends React.Component {
+export default class BaseComponent extends Component {
 
 	/**
    * constructor - description
@@ -22,15 +22,34 @@ export default class BaseComponent extends React.Component {
 		super(props);
 		this.displayName = options.name || options.displayName;
 
-		this.$$ = { options, classnames };
-
-    // TODO: Find a way to flag on or off
+		// TODO: Find a way to flag on or off
 		options.log = true;
-    if(options && options.log){
-  		this._log = debug(`px:${options.displayName}`);
-    } else {
-      this._log = ()=>{};
-    }
+		if (options && options.log) {
+			this._log = debug(`px:${options.displayName}`);
+		} else {
+			this._log = () => {};
+		}
+	}
+
+	setBaseRef(el) {
+		this.base = el;
+	}
+
+	$$(slctr) {
+		if (this.base) {
+			return this.base.querySelector(slctr);
+		}
+	}
+
+	transform(transform, node) {
+		node = node || this.base;
+		node.style.webkitTransform = transform;
+		node.style.transform = transform;
+	}
+
+	translate3d(x, y, z, node) {
+		node = node || this.base;
+		this.transform(`translate3d(${x}, ${y}, ${z})`, node);
 	}
 
 	/**
@@ -59,7 +78,6 @@ export default class BaseComponent extends React.Component {
    */
 	componentDidMount() {
 		//this._log('componentDidMount', this);
-		//console.log('findDOMNode', findDOMNode(this));
 	}
 
 	/**
@@ -110,7 +128,5 @@ export default class BaseComponent extends React.Component {
 	componentWillUnmount() {
 		//this._log('componentWillUnmount');
 	}
-
-
 
 }

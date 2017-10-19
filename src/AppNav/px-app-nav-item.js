@@ -14,6 +14,15 @@ class AppNavItem extends BaseComponent {
     this.state = {
       selected: this.props.selected
     };
+    this._handleClick = this._handleClick.bind(this);
+  }
+  _handleClick(e){
+    if(!this.props.cancelSelect && this.props.onClick){
+      this.props.onClick(e);
+    }
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextProps.selected !== this.props.selected || nextProps.onlyShowIcon !== this.props.onlyShowIcon;
   }
   render(){
     const {
@@ -48,7 +57,7 @@ class AppNavItem extends BaseComponent {
     );
 
     return (
-      <div onClick={onClick} className={baseClasses} style={style} data-id={id}>
+      <div onClick={this._handleClick} className={baseClasses} style={style} data-id={id}>
 
         {/* icon */}
         {icon && <Icon size={32} icon={icon} className={iconClasses}/>}
@@ -79,17 +88,57 @@ class AppNavItem extends BaseComponent {
 }
 
 AppNavItem.defaultProps = {
-  empty: false,
-  emptyIcon: false,
-  emptyLabel: false,
+  /**
+   * Set to `true` if the item is in a collapsed dropdown.
+   */
   collapsed: false,
-  overflowed: false,
-  fixedWidth: null,
-  hideDropdownIcon: false,
+
+  /**
+   * Cancels events that trigger selection.
+   */
+  cancelSelect: false,
+  /**
+   * Used to set the icon for the item.
+   */
   icon: null,
-  label: null,
+  /**
+   * A reference the object used to create this nav item.
+   */
   item: null,
-  selected: false
+  /**
+   * Used as the label text for the item.
+   */
+  label: null,
+  /**
+   * Set to `true` if the item is selected.
+   */
+  selected: false,
+  /**
+   * Shows a dropdown arrow icon to indicate this item can be tapped to
+   * open a subgroup.
+   */
+  dropdown: false,
+  empty: false,
+  /**
+   * Shows an empty state outline for icon.
+   */
+  emptyIcon: false,
+  /**
+   * Shows an empty state outline for the label.
+   */
+  emptyLabel: false,
+  /**
+   * Set to `true` if the item is inside a overflowed dropdown.
+   */
+  overflowed: false,
+  /**
+   * Set to `true` if this is a subitem.
+   */
+  subitem: false,
+  onClick: null,
+  fixedWidth: null,
+  hideDropdownIcon: false
+
 };
 
 export default AppNavItem;

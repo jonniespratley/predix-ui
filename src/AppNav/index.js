@@ -102,12 +102,7 @@ class AppNav extends BaseComponent {
     let propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : index);
     this._items.push(child);
     this._keys.push(propForSelect);
-
-    //selected index is selected key
     let selected = (this.state.selected === this._getIndexForValue(propForSelect));
-
-    console.log('_renderItem', child);
-
     if(!child.children){
       return (
         <NavItem key={index}

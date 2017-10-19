@@ -19,9 +19,7 @@ class Icon extends React.Component {
 	getIcon(name){
 		if(IconSet.hasOwnProperty(name)){
 			return IconSet[name];
-		} else {
-      console.warn('px-icon', `${name} not found!`);
-    }
+		}
 	}
 	render(){
     const { icon, size, style, className } = this.props;
