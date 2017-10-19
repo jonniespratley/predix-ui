@@ -35,11 +35,26 @@ state:
 const { AppNav } = PxReact;
 const navItems = [
   {id : "home", label: "Home", icon: "px-fea:home"},
-  {id : "settings", label: "Settings", icon: "px-fea:settings"},
-  {id : "alert", label: "Alerts", icon: "px-fea:alerts"}
+  {id : "assets", label: "Assets", icon: "px-fea:asset"},
+  {id : "alerts", label: "Alerts", icon: "px-fea:alerts"},
+  {id : "dashboards", label: "Dashboards", icon: "px-fea:dashboard"}
 ];
 <AppNav selected={state.selected} items={navItems}/>
 ```
+
+
+```react
+
+const {AppNavItem} = PxReact;
+<div>
+  <AppNavItem label="Label" icon="px-fea:home"/>
+  <AppNavItem label="Label" icon="px-fea:home" onlyShowIcon/>
+</div>
+```
+
+
+
+
 
 ### With propForSelect
 
@@ -47,41 +62,58 @@ const navItems = [
 state:
   selected: 'settings'
   selectedItem: null
-
 ---
 const { AppNav } = PxReact;
 const navItems = [
   {id : "home", label: "Home", icon: "px-fea:home"},
-  {id : "settings", label: "Settings", icon: "px-fea:settings"},
-  {id : "alert", label: "Alerts", icon: "px-fea:alerts"}
+  {id : "assets", label: "Assets", icon: "px-fea:asset"},
+  {id : "alerts", label: "Alerts", icon: "px-fea:alerts"},
+  {id : "dashboards", label: "Dashboards", icon: "px-fea:dashboard"}
 ];
-<div>
+<div className='custom'>
   <style>{`
-    :root{
+    .custom{
       --px-app-nav-background-color: #e2e8ed;
       --px-app-nav-item-background-color: transparent;
     }
   `}</style>
   <AppNav
     propForSelect='id'
-    selected={state.selected}
     onChange={(e) => setState(e)}
     items={navItems}/>
-    <p>Selected Index: {state.selected}</p>
-    {state.selectedItem && <p>Selected Item: {state.selectedItem.id}</p>}
+    {state && <p>Selected Index: {state.selected}</p>}
 </div>
 ```
+
 
 
 ### With vertical menu
 
 ```react
-const { AppNav } = PxReact;
+const { AppNav, AppNavItem } = PxReact;
 const navItems = [
   {id : "home", label: "Home", icon: "px-fea:home"},
   {id : "settings", label: "Settings", icon: "px-fea:settings"},
   {id : "alert", label: "Alerts", icon: "px-fea:alerts"}
 ];
+const style = {
+  position: 'relative',
+  height: 400
+};
+<div style={style}>
+  <AppNav items={navItems} vertical/>
+</div>
+```
+
+
+
+
+
+### With nested children
+
+```react
+const { AppNav } = PxReact;
+const navItems = [{"label":"Home","id":"home","icon":"px-fea:home"},{"label":"Alerts","id":"alerts","icon":"px-fea:alerts","metadata":{"openCases":"12","closedCases":"82"}},{"label":"Assets","id":"assets","icon":"px-fea:asset","children":[{"label":"Asset #1","id":"a1"},{"label":"Asset #2","id":"a2"}]},{"label":"Dashboards","path":"dashboards","icon":"px-fea:dashboard","subitems":[{"label":"See Live Truck View","path":"trucks","icon":"px-obj:truck"},{"label":"Track Orders","path":"orders","icon":"px-fea:orders"},{"label":"Analyze Invoices","path":"invoices","icon":"px-fea:templates"}]}];
 const style = {
   position: 'relative',
   height: 400

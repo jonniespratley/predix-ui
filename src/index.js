@@ -2,6 +2,8 @@ import React from 'react';
 
 import AppHeader from './AppHeader';
 import AppNav from './AppNav';
+import AppNavItem from './AppNav/px-app-nav-item';
+import AppNavSubGroup from './AppNav/px-app-nav-sub-group';
 import Accordion from './Accordion';
 import AlertMessage from './AlertMessage';
 import AlertLabel from './AlertLabel';
@@ -64,6 +66,8 @@ const px = {
   Gauge,
 	ExampleComponent,
 	AppNav,
+  AppNavItem,
+  AppNavSubGroup,
 	AppHeader,
 	Accordion,
 	AlertLabel,

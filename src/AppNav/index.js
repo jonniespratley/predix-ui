@@ -3,21 +3,73 @@ import classnames from 'classnames';
 import stylesheet from './px-app-nav.scss';
 import NavItem from './px-app-nav-item';
 import BaseComponent from '../BaseComponent';
+import Icon from '../IconSet/px-icon';
 
-
+import AppNavSubGroup from './px-app-nav-sub-group';
 /**
  * AppNav component
  */
-export default class AppNav extends BaseComponent {
+class AppNav extends BaseComponent {
   constructor(props){
     super(props, {displayName: 'AppNav'});
     this.state = {
       selected: this.props.selected,
+      onlyShowIcon: this.props.onlyShowIcon || this.props.vertical,
       selectedItem: null,
+      vertical: this.props.vertical,
+      verticalOpened: this.props.verticalOpened || !this.props.vertical,
       propForSelect: this.props.propForSelect
     };
     this._items = [];
     this._keys = [];
+
+    this._handleRef = this._handleRef.bind(this);
+    this._handleMouseEnter = this._handleMouseEnter.bind(this);
+    this._handleMouseExit = this._handleMouseExit.bind(this);
+  }
+
+  componentDidMount(){
+    if(this.base){
+      this.base.addEventListener('mouseleave', this._handleMouseExit);
+      this.base.addEventListener('mouseenter', this._handleMouseEnter);
+    }
+  }
+  componentWillUnmount(){
+    if(this.base){
+      this.base.removeEventListener('mouseleave', this._handleMouseExit);
+      this.base.removeEventListener('mouseenter', this._handleMouseEnter);
+    }
+  }
+
+  _handleRef(el){
+    this.base = el;
+  }
+
+  _handleMouseEnter(e){
+    if (!this.state.vertical){
+      return;
+    }
+    this._mouseIsOverNav = true;
+    if (this._mouseIsOverNav && !this.state.verticalOpened) {
+      this._setVerticalOpened(true);
+    }
+  }
+
+  _handleMouseExit(e){
+    if (!this.state.vertical){
+      return;
+    }
+    this._mouseIsOverNav = false;
+    if (!this._mouseIsOverNav && this.state.verticalOpened) {
+      this._setVerticalOpened(false);
+    }
+  }
+
+  _setVerticalOpened(bool){
+    this.setState({
+      verticalOpened: bool,
+      onlyShowIcon: !bool
+    });
   }
 
   _getIndexForValue(val){
@@ -47,39 +99,52 @@ export default class AppNav extends BaseComponent {
   }
 
   _renderItem(child, index){
-    //this._log('_renderItem', child, index, propForSelect);
-
     let propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : index);
     this._items.push(child);
     this._keys.push(propForSelect);
 
     //selected index is selected key
     let selected = (this.state.selected === this._getIndexForValue(propForSelect));
-    let itemClasses = classnames(
-      { 'iron-selected': selected }
-    );
 
-    return (<NavItem key={index}
-      selected={selected}
-      onClick={this.handleClick.bind(this, propForSelect)}
-      {...child}/>);
+    console.log('_renderItem', child);
+
+    if(!child.children){
+      return (
+        <NavItem key={index}
+          id={child.id}
+          item={child}
+          icon={child.icon}
+          label={child.label}
+          selected={selected}
+          onlyShowIcon={this.state.onlyShowIcon}
+          onClick={this.handleClick.bind(this, propForSelect)}
+        />
+      );
+    } else {
+      return (
+        <AppNavSubGroup
+          key={index}
+          id={child.id}
+          item={child}
+          icon={child.icon}
+          label={child.label}
+          onlyShowIcon={this.state.onlyShowIcon}
+          selected={selected}
+          onClick={this.handleClick.bind(this, propForSelect)}
+        />
+      );
+    }
   }
 
   _renderItems(items){
     this._reset();
-    return (
-      <div className="app-nav__items">
-        {items && items.map(this._renderItem.bind(this))}
-      </div>
-    );
+    return items.map(this._renderItem.bind(this));
   }
 
   render(){
     const {
       classes,
       style,
-      vertical,
-      opened = true,
       items,
       selected,
       selectedItem,
@@ -87,24 +152,58 @@ export default class AppNav extends BaseComponent {
       children
     } = this.props;
 
+    const {
+      vertical,
+      verticalOpened
+    } = this.state;
+
     const baseClasses = classnames(
       'px-app-nav',
-      'app-nav',
       { 'vertical': vertical },
-      { 'vertical-opened': opened }
+      { 'vertical-opened': vertical && verticalOpened }
     );
 
+    const appNavClasses = classnames('app-nav');
+
+
     return (
-      <nav className={baseClasses} style={style}>
-        {this._renderItems(items)}
-        {/* Horizontal menu */}
+      <nav className={baseClasses} style={style} ref={this._handleRef}>
+        <section className={appNavClasses}>
 
-        {/* Overflowed or collapsed */}
+          <section className='app-nav__items'>
+            {/* app-nav__items */}
+            {this._renderItems(items)}
+          </section>
 
-        <div>{children}</div>
+          {/* STATE: Horizontal or menu nav, any visible items */}
+
+          {/* STATE: Items overflowed or collapsed */}
+
+          {/* Actions */}
+          <section className="app-nav__actions">
+            {children}
+          </section>
+
+        </section>
         <style jsx>{stylesheet}</style>
       </nav>
     );
   }
 
 }
+
+AppNav.defaultProps = {
+  vertical: false,
+  collapseAll: false,
+  collapseAt: null,
+  collapseWithIcon: false,
+  collapseOpened: false,
+  verticalOpened: false,
+  selected: 0,
+  selectedItem: null,
+  visibleItems: null,
+  items: null,
+  opened: true
+};
+
+export default AppNav;

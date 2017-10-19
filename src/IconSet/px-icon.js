@@ -19,10 +19,12 @@ class Icon extends React.Component {
 	getIcon(name){
 		if(IconSet.hasOwnProperty(name)){
 			return IconSet[name];
-		}
+		} else {
+      console.warn('px-icon', `${name} not found!`);
+    }
 	}
 	render(){
-    const { icon, size } = this.props;
+    const { icon, size, style, className } = this.props;
 		const styles = {
      width: `${size}px`,
      height: `${size}px`
@@ -34,10 +36,11 @@ class Icon extends React.Component {
 			width: '100%'
     };
     return (
-			<i className='px-icon' style={styles}>
-				<svg viewBox={`0 0 ${size} ${size}`} preserveAspectRatio="xMidYMid meet"
+			<i className={classnames('px-icon', className)} style={styles}>
+				<svg viewBox={`0 0 ${size} ${size}`}
+          preserveAspectRatio="xMidYMid meet"
           dangerouslySetInnerHTML={this.createMarkup(icon)}
-        	style={this.mergeStyles(svgStyles, this.props.style)}>
+        	style={this.mergeStyles(svgStyles, style)}>
 	      </svg>
         <style jsx>{stylesheet}</style>
 			</i>
