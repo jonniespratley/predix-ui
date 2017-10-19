@@ -1,9 +1,7 @@
 import React from 'react';
-
 import stylesheet from './px-card.scss';
 import classnames from 'classnames';
-
-import Icon from '../px-icon-set/px-icon';
+import Icon from '../IconSet/px-icon';
 
 const baseClasses = classnames('px-card');
 
@@ -15,7 +13,7 @@ export default ({
 }) => (
   <div className={baseClasses} style={style}>
     {headerText && <header className='flex'>
-      {icon && <span className='icon'><Icon icon={icon}/></span>}
+      {icon && <span className='icon'><Icon icon={icon} size={22}/></span>}
       <span className='epsilon caps'>{headerText}</span>
     </header>}
     <section>{children}</section>

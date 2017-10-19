@@ -26,7 +26,7 @@ import pxBrandingBarDocs from '../src/BrandingBar/README';
 import pxCardDocs from '../src/Card/README';
 import pxChipDocs from '../src/Chip/README';
 import pxInputDocs from '../src/Input/README';
-import pxIconSetDocs from '../src/px-icon-set/README';
+import pxIconSetDocs from '../src/IconSet/README';
 //import pxIconSetDocs from '../src/px-icon-set/README';
 import pxDrawerDocs from '../src/Drawer/README';
 import pxDatatableDocs from '../src/DataTable/README';
