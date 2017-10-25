@@ -84,6 +84,26 @@ gulp.task('clean:modules', function() {
   return gulp.src(['./dist/umd'], {read: false}).pipe($.clean());
 });
 
+///copy sass from src to dist
+gulp.task('sass:copy', 'Copy all .sass/.scss files', function() {
+  return gulp.src(config.styles.src)
+    .pipe($.filelog())
+    //.pipe($.sass(sassOptions).on('error', $.sass.logError))
+    //.pipe($.size())
+    //.pipe($.rename(pkg.name + '.css'))
+    .pipe($.filelog())
+    .pipe(gulp.dest(config.dest + '/es/'));
+});
+gulp.task('sass:copy:modules', 'Copy all .sass/.scss files', function() {
+  return gulp.src(config.styles.src)
+    .pipe($.filelog())
+    //.pipe($.sass(sassOptions).on('error', $.sass.logError))
+    //.pipe($.size())
+    //.pipe($.rename(pkg.name + '.css'))
+    .pipe($.filelog())
+    .pipe(gulp.dest(config.dest + '/es/'));
+});
+
 ///
 gulp.task('sass', 'Compile all .sass/.scss files', function() {
   return gulp.src(config.styles.src)
@@ -225,10 +245,10 @@ gulp.task('webpack',  'Run webpack build', () => {
 const babel = require('gulp-babel');
 
 ///
-gulp.task('dist:es6', 'Run scripts through babel to es6', ['clean:es6'], () =>{
+gulp.task('babel-es6', 'Run scripts through babel to es6', () =>{
   process.env.BABEL_ENV = 'es6';
   return gulp.src(config.scripts.src)
-    //.pipe($.filelog())
+    .pipe($.filelog())
     .pipe(babel({
       comments: false,
       extends: path.resolve(__dirname, '.babelrc')
@@ -238,10 +258,10 @@ gulp.task('dist:es6', 'Run scripts through babel to es6', ['clean:es6'], () =>{
 });
 
 ///
-gulp.task('dist:modules', 'Run scripts through babel to modules', ['clean:modules'], () =>{
+gulp.task('babel-modules', 'Run scripts through babel to modules', () =>{
   process.env.BABEL_ENV = 'modules';
   return gulp.src(config.scripts.src)
-  //.pipe($.filelog())
+  .pipe($.filelog())
   .pipe(babel({
     comments: false,
     extends: path.resolve(__dirname, '.babelrc')
@@ -269,4 +289,6 @@ gulp.task('styles', gulpSequence('clean', 'sass', 'autoprefixer', 'cssmin'));
 
 gulp.task('dist', 'Lint, build ES6 and modules.', gulpSequence( 'lint', 'dist:es6', 'dist:modules'));
 
+gulp.task('dist:es6', gulpSequence('clean:es6', 'sass:copy', 'babel-es6'));
+gulp.task('dist:modules', gulpSequence('clean:modules', 'sass:copy:modules', 'babel-modules'));
 gulp.task('default', gulpSequence('clean', 'dist'));
