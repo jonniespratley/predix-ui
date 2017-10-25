@@ -1,6 +1,5 @@
 demo/
 tests/
-.*
 *.config.js
 
 __tests__
@@ -16,7 +15,6 @@ gh-pages
 coverage
 js-docs
 esdocs
-tools
 stories
 .storybook
 
