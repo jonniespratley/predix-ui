@@ -3,7 +3,7 @@
   "description": "px-* web components in React.js components",
   "author": "Jonnie Spratley",
   "user": "jonniespratley",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "repository": {
     "type": "git",
     "url": "https://github.com/jonniespratley/predix-ui.git"
@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/jonniespratley/predix-ui/issues"
   },
-  "browser": "dist/predix-ui.js",
+  "browser": "dist/predix-ui.min.js",
   "main": "dist/umd/index.js",
   "module": "dist/es/index.js",
   "config": {
@@ -97,6 +97,7 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-babel": "^7.0.0",
+    "gulp-bower": "^0.0.13",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
     "gulp-cssmin": "^0.2.0",
