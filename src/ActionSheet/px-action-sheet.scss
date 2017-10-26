@@ -1,0 +1,214 @@
+/**
+ * px-action-sheet styles
+ */
+.px-action-sheet {
+  background-color: red;
+
+  &--is-opened {
+    .c-action-dialog__mask {
+      background-color: green;
+    }
+  }
+
+  // TODO: Mask
+  .c-action-dialog__mask {
+    transition: all 0.3s;
+    position  : fixed;
+    top       : 0;
+    bottom    : 0;
+    left      : 0;
+    right     : 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index   : -1;
+    opacity   : 0;
+    visibility: hidden;
+
+    &--is-opened {
+      z-index   : 10 !important;
+      opacity   : 1 !important;
+      visibility: visible !important;
+    }
+  }
+
+  // TODO: Actionsheet
+  .c-action-sheet {
+    user-select          : none;
+    padding              : 0;
+    border-radius        : 0;
+    position             : fixed;
+    left                 : 0;
+    right                : 0;
+    transition           : all 0.3s;
+    bottom               : 0;
+    transform            : translateY(115%);
+    border               : none;
+    border               : var(--px-action-sheet-border, none);
+    background-color     : white;
+    background-color     : var(--px-action-sheet-background-color, white);
+    box-shadow           : 0 0 2px rgba(0, 0, 0, 0.2);
+    -webkit-touch-callout: none;
+
+    -webkit-user-select  : none;
+
+    -khtml-user-select   : none;
+
+    -moz-user-select     : none;
+
+    -ms-user-select      : none;
+    user-select          : none;
+
+    &--is-open {
+      transform : translateY(0);
+      opacity   : 1;
+      visibility: visible;
+      z-index   : 20;
+    }
+  }
+
+  .c-action-sheet.sixteen-nine {
+    position: relative;
+  }
+
+  .c-action-sheet.sixteen-nine:before {
+    display    : block;
+    content    : '';
+    width      : 100%;
+    padding-top: 56.25%;
+  }
+
+  .c-action-sheet.sixteen-nine > .content {
+    position: absolute;
+    top     : 0;
+    left    : 0;
+    right   : 0;
+    bottom  : 0;
+  }
+  @media (max-width: 51.1333333333rem) {
+    .c-action-sheet {
+      border-left  : none;
+      border-right : none;
+      border-bottom: none;
+      left         : 0;
+      right        : 0;
+    }
+  }
+  @media (min-width: 51.2rem) {
+    .c-action-sheet {
+      left : 20%;
+      right: 20%;
+    }
+  }
+
+  .c-action-sheet--full {
+    left : 0;
+    right: 0;
+  }
+
+  .c-action-sheet__actions {
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+    margin         : 0.6666666667rem 1rem;
+  }
+  @media (max-width: 68.2rem) {
+    .c-action-sheet__actions {
+      margin: 0.3333333333rem;
+    }
+  }
+
+  .c-action-sheet__actions--grid {
+    flex-direction: row;
+    flex-wrap     : wrap;
+  }
+
+  .c-action-sheet__actions--grid px-action-sheet-button {
+    flex   : 1 0 80px;
+    padding: 0.6666666667rem;
+  }
+  @media (max-width: 51.1333333333rem) {
+    .c-action-sheet__actions--grid px-action-sheet-button {
+      margin: 0.3333333333rem;
+    }
+  }
+
+  .c-action-sheet__actions--list {
+    flex-direction: column !important;
+    flex-wrap     : wrap;
+  }
+
+  .c-action-sheet__actions--list px-action-sheet-button {
+    flex  : 1;
+    margin: 0;
+  }
+
+  .c-action-sheet__actions--list button {
+    display       : flex;
+    flex-direction: row;
+    align-items   : center;
+    flex          : 1;
+    margin        : 0 !important;
+    text-align    : left;
+  }
+
+  .c-action-sheet__actions--list button i {
+    margin-left : 0.6666666667rem;
+    margin-right: 0.6666666667rem;
+  }
+
+  .c-action-sheet__button {
+    box-shadow   : none;
+    border       : none;
+    display      : flex;
+    text-align   : center;
+    outline      : none;
+    user-select  : none;
+    width        : 100%;
+    cursor       : pointer;
+    outline      : none;
+    border-radius: 0;
+    padding      : 0.6666666667rem;
+    border-bottom: none;
+  }
+
+  .c-action-sheet__button > * {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select  : none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select   : none;
+    /* Konqueror */
+    -moz-user-select     : none;
+    /* Firefox */
+    -ms-user-select      : none;
+    /* Internet Explorer/Edge */
+    user-select          : none;
+    outline              : none;
+  }
+
+  .c-action-sheet__button btn {
+    height        : 100%;
+    width         : 100%;
+    align-self    : center;
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+  }
+
+  .c-action-sheet__button--danger {
+    color        : #ff5c5c !important;
+    border-bottom: none !important;
+  }
+
+  .c-action-sheet__button--info {
+    color         : #525156 !important;
+    pointer-events: none;
+    white-space   : pre-wrap;
+    line-height   : normal;
+  }
+
+  .c-action-sheet__button--info:active {
+    transition: none;
+    opacity   : 1;
+  }
+
+}

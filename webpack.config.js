@@ -1,4 +1,3 @@
-
 const path = require('path');
 const glob = require('glob');
 const webpack = require('webpack');
@@ -7,8 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SystemBellPlugin = require('system-bell-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-
-//const NpmInstallPlugin from 'npm-install-webpack-plugin';
+const PurifyCSSPlugin = require('purifycss-webpack');
 const pkg = require('./package.json');
 const ROOT_PATH = __dirname;
 
@@ -83,7 +81,7 @@ const sassRules = {
         loader: 'css-loader',
         options: {
           importLoaders: 1,
-        //  modules: true,
+          //modules: true,
           sourceMap: true,
           camelCase: true
         }
@@ -192,7 +190,6 @@ const common = {
   ]
 };
 
-
 const siteCommon = {
   plugins: [
     new HtmlWebpackPlugin({
@@ -258,13 +255,6 @@ const dev = merge(common, siteCommon, {
   }
 });
 
-
-
-
-
-
-
-
 /**
  * github pages configuration
  */
@@ -318,8 +308,8 @@ const ghPages = merge(common, siteCommon, {
 
 
 /**
- * dist configuration
- * // TODO: Dist build needs to have .css and js
+ *
+ * TODO: dist configuration build needs to have .css and js
  */
 const distCommon = {
   devtool: 'source-map',
@@ -363,7 +353,6 @@ const dist = merge(distCommon, {
   }
 });
 
-
 const distMin = merge(distCommon, {
   output: {
     filename: `${config.filename}.min.js`
@@ -377,17 +366,9 @@ const distMin = merge(distCommon, {
   ]
 });
 
-
-// TODO: Add in sass plugin and rules
-//distCommon.plugins.push(extractCss);
-
-
 module.exports = (env) => {
-
   process.env.BABEL_ENV = env;
-
   console.log('webpack.config.js', env);
-
   const targets = {
     dev,
     dist,
@@ -396,6 +377,5 @@ module.exports = (env) => {
   };
   const c = targets[env] ? targets[env] : common;
   console.log('webpack.config', JSON.stringify(c, null, 2));
-
   return c;
 };

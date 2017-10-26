@@ -1,9 +1,9 @@
 import React from 'react';
-import IronCollapse from './iron-collapse';
+import IronCollapse from './IronCollapse';
 import IronMediaQuery from './iron-media-query';
-import IconIcon from './iron-icon';
+import IronIcon from './iron-icon';
 import IronResizable from './iron-resizable';
-import IronSelector from './iron-selector';
+import IronSelector from './IronSelector';
 
 const IronComponents = {
   IronCollapse,

@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>px-components-react demo</title>
+    <title>Predix Sample Application (React)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       html,
@@ -15,26 +15,120 @@
         height: 100%;
       }
     </style>
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js'></script>
+
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   </head>
 
   <body translate="no">
-    <div id="app"><!-- App loaded here --></div>
+    <div id="root"><!-- App loaded here --></div>
 
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js'></script>
 
+    <!-- theme styles -->
+    <link rel="stylesheet" href="../dist/css/theme/px-theme.css"/>
 
+    <!-- base styles -->
     <link rel="stylesheet" href="../dist/predix-ui.css"/>
-    <script src="../dist/predix-ui.min.js"></script>
+
+    <script src="../dist/predix-ui.js"></script>
     <style media="screen">
       :root{
         --px-drawer-background-color: red;
-        --px-app-nav-background-color: black;
-        --px-app-nav-item-background-color: transparent;
       }
+
     </style>
-    <script src="main.es6.min.js"></script>
+    <script type="text/babel">
+    const { Component } = React;
+    const { render } = ReactDOM;
+    const {
+      AppHeader,
+      AppNav,
+      Button,
+      Card,
+      Drawer,
+      Navbar,
+      KeyValuePair,
+      Grid,
+      Gauge,
+      Layout,
+      Spinner,
+      ProgressBar,
+      Theme
+      } = PxReact;
+
+
+    const dashboardData = {
+      title: 'Predix Sample Application',
+      navItems: [{"label":"Home","id":"home","icon":"px-fea:home"},{"label":"Alerts","id":"alerts","icon":"px-fea:alerts","metadata":{"openCases":"12","closedCases":"82"}},{"label":"Assets","id":"assets","icon":"px-fea:asset","children":[{"label":"Asset #1","id":"a1"},{"label":"Asset #2","id":"a2"}]},{"label":"Dashboards","path":"dashboards","icon":"px-fea:dashboard","subitems":[{"label":"See Live Truck View","path":"trucks","icon":"px-obj:truck"},{"label":"Track Orders","path":"orders","icon":"px-fea:orders"},{"label":"Analyze Invoices","path":"invoices","icon":"px-fea:templates"}]}],
+      keyVals: [
+        {label: 'Total Alerts', value: 21},
+        {label: 'Connected Devices', value: 583},
+
+        {label: 'Utilization', value: '89', uom: '%'},
+        {label: 'Faults', value: 3},
+        {label: 'Output', value: 53, uom: 'mw'}
+      ],
+      cards: [
+        { title: 'Card 1', children: [ <div>Lorem ipsum dolor sit</div> ] },
+        { title: 'Card 2', children: [ <div>Lorem ipsum dolor sit</div> ] },
+        { title: 'Card 3', children: [ <div>Lorem ipsum dolor sit</div> ] },
+        { title: 'Card 4', children: [ <div>Lorem ipsum dolor sit</div> ] },
+        { title: 'Card 5', children: [ <div>Lorem ipsum dolor sit</div> ] },
+        { title: 'Card 6', children: [ <div>Lorem ipsum dolor sit</div> ] },
+        { title: 'Card 7', children: [ <div>Lorem ipsum dolor sit</div> ] }
+      ]
+    };
+
+    /**
+     * Example App
+     */
+    class App extends Component {
+      constructor(props){
+        super(props);
+      }
+
+      render(){
+        return (
+
+            <AppHeader
+              title={dashboardData.title}
+              items={dashboardData.navItems}>
+
+              <Card headerText='West Coast Fleet'>
+                <Grid container wrap justify>
+                  {dashboardData.keyVals.map((item, index) => (
+
+                      <KeyValuePair
+                        key={index}
+                        className='u-p'
+                        label={item.label}
+                        uom={item.uom}
+                        value={item.value}
+                        size="beta"/>
+                  ))}
+                </Grid>
+              </Card>
+
+              <Grid container wrap>
+              {dashboardData.cards && dashboardData.cards.map((card, index) => (
+                <Card key={index}
+                  headerText={card.title}>
+                  {card.children}
+                </Card>
+              ))}
+              </Grid>
+            </AppHeader>
+
+        )
+      }
+    }
+
+    render(<App />, document.querySelector('#root'));
+
+    </script>
 
   </body>
 

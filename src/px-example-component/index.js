@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
-import stylesheet from './style.css';
-import BaseComponent from '../base-component';
+import stylesheet from './px-example-component.scss';
+import BaseComponent from '../BaseComponent';
 
 /**
  * px-example-component component

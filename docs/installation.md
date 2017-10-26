@@ -1,4 +1,8 @@
-To use this library simply install it with `npm` or `yarn`:
+## Installation
+Predix-UI is available as an `npm` package.
+
+### npm
+To install and save in your package.json dependencies, run:
 
 ```code
 $ npm install predix-ui

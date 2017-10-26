@@ -163,7 +163,10 @@ export default class IronCollapse extends React.Component {
 				<style jsx>{`
 					.iron-collapse{
 						overflow:hidden;
+						display: block;
+						transition-duration: 300ms;
 					}
+
 				`}</style>
 			</div>
 		);

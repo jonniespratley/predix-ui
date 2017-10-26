@@ -1,4 +1,9 @@
-Example application.
+## Example application.
+It's super easy to create an application by combining components and design modules from the Predix Design System.
+
+We've created an example for you that combines branding, navigation, routing, asset selection, data visualization, and other components to illustrate several example layouts that are possible with the Predix components.
+
+
 
 ```react
 const {
@@ -38,8 +43,8 @@ const dashboardData = {
   ]
 };
 
-<Theme dark>
-<AppHeader
+
+<AppHeader log
   title={dashboardData.title}
   items={dashboardData.navItems}>
 
@@ -57,18 +62,14 @@ const dashboardData = {
     </Layout>
   </Card>
 
-
-
   {dashboardData.cards && dashboardData.cards.map((card, index) => (
     <Card key={index}
       headerText={card.title}>
-
-      <Spinner/>
 
       {card.children}
     </Card>
   ))}
   </AppHeader>
-</Theme>
+
 
 ```

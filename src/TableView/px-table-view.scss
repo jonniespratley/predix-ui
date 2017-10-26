@@ -1,0 +1,93 @@
+@import "variables";
+@import "mixins";
+@import "px-mobile-design/sass/_mixins.scss";
+
+// Generic
+//@import "px-normalize-design/_generic.normalize.scss";
+//@import "px-box-sizing-design/_generic.box-sizing.scss";
+
+
+@mixin c($el) {
+  #{$el} {
+    @content;
+  }
+}
+
+/**
+ * TableView styles
+ */
+.px-table-view {
+  // @import 'TableView/sass/TableView-predix.scss';
+
+  .table-row{
+    padding: $inuit-base-spacing-unit--tiny;
+  }
+
+  ///------------------------------------------------------
+  ///.table-view--tiny
+  @include modifier ('tiny') {
+    @include c ('.table-row') {
+      padding: $inuit-base-spacing-unit--tiny !important;
+    }
+  }
+
+  ///------------------------------------------------------
+  ///.table-view--small
+  @include modifier ('small') {
+    @include c ('.table-row') {
+      padding: $inuit-base-spacing-unit--small !important;
+    }
+  }
+
+  ///------------------------------------------------------
+  ///.table-view--large
+  @include modifier ('large') {
+    @include c ('.table-row') {
+      padding: $inuit-base-spacing-unit--large !important;
+    }
+  }
+
+  ///------------------------------------------------------
+  ///.table-view--huge
+  @include modifier ('huge') {
+    @include c ('.table-row') {
+      padding: $inuit-base-spacing-unit--huge !important;
+    }
+  }
+
+
+  ///------------------------------------------------------
+  ///.table-view--flush
+  @include modifier ('flush') {
+    @include c ('.table-row') {
+      padding: 0 !important;
+    }
+  }
+
+
+  // Base
+  @include block('table-view') {
+    @include clearfix();
+    @include pxFonts();
+    font-size      : $table-row-font-size;
+
+    list-style-type: none;
+    margin         : 0;
+    padding        : 0;
+    position       : relative;
+    display        : flex;
+    flex-direction : column;
+
+    ///------------------------------------------------------
+
+
+
+
+    &ul {
+      margin: 0 !important;
+    }
+  }
+
+  // Trumps
+
+}

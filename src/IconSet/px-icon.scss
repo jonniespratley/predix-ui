@@ -1,0 +1,30 @@
+.px-icon {
+  color: var(--iron-icon-stroke-color, inherit);
+	fill: var(--iron-icon-fill-color, none);
+	stroke: var(--iron-icon-stroke-color, currentColor);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	vertical-align: middle;
+	width: var(--iron-icon-width);
+	height: var(--iron-icon-height);
+
+  svg {
+    color         : var(--iron-icon-stroke-color, inherit);
+    fill          : var(--iron-icon-fill-color, none);
+    stroke        : var(--iron-icon-stroke-color, currentColor);
+    position      : relative;
+    vertical-align: middle;
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  svg {
+    color : inherit;
+    fill  : inherit;
+    stroke: inherit;
+  }
+}

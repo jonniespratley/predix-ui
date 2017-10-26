@@ -14,3 +14,5 @@ js-docs
 temp
 .tmp
 esdocs
+.idea
+.DS_Store
