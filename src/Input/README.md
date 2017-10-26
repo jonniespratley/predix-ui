@@ -1,61 +1,85 @@
-# px-input
-The `<input/>` component enables you to ...
+The `<Input/>` component enables you to use design system inputs in your app.
 
+
+
+```hint
+Reference https://www.predix-ui.com/#/css/visual/px-forms-design
+```
 
 
 ## Usage
 
 ```react
-const { Input } = px;
-const FormField = (props) => (<li>{props.children}</li>);
+const { Button, Input } = px;
+const FormField = (props) => (<div className='u-mb-'>{props.children}</div>);
 <form>
-  <FormField label='Username'>
-    <Input name='username'/>
+  <FormField>
+    <Input label='Username' name='username'/>
   </FormField>
+  <FormField>
+    <Input label='Password' name='password' type='password'/>
+  </FormField>
+  <Button label='Submit' type='submit' primary/>
+</form>
+```
+
+### Sizes
+
+```react
+const { Button, Input } = px;
+const FormField = (props) => (<div className='u-mb-'>{props.children}</div>);
+<form>
+  <FormField>
+    <Input label='Input Label' name='input1' tiny placeholder='Tiny size'/>
+  </FormField>
+  <FormField>
+    <Input label='Input Label' name='input2' small placeholder='Small size'/>
+  </FormField>
+  <FormField>
+    <Input label='Input Label' name='input3' regular placeholder='Regular size'/>
+  </FormField>
+  <FormField>
+    <Input label='Input Label' name='input4' large placeholder='Large size'/>
+  </FormField>
+  <FormField>
+    <Input label='Input Label' name='input5' huge placeholder='Huge size'/>
+  </FormField>
+  <FormField>
+    <Input label='Input Label' name='input6' placeholder='Auto size'/>
+  </FormField>
+  <Button label='Submit' type='submit' primary/>
+</form>
+```
+
+### Types
+
+```react
+const { Button, Input } = px;
+const FormField = (props) => (<div className='u-mb-'>{props.children}</div>);
+const inputTypes = ['color', 'date', 'datetime-local', 'email', 'file', 'month', 'number', 'password', 'range', 'search', 'tel', 'text', 'time', 'url', 'week'];
+<form>
+  {inputTypes.map((type, index) => (
+    <FormField key={index}>
+      <Input label={type} name={type} type={type}/>
+    </FormField>
+  ))}
+  <Button label='Submit' type='submit' primary/>
 </form>
 ```
 
 
+### Input Field
 
-```code
-const { Input } = px;
-<form >
-  <fieldset class="form-field" style="max-width:400px;">
-    <legend >Basic form</legend>
-    <ol class="list-bare">
-      <li class="form-field">
-        <label for="basic-form-name" >Name</label>
-        <input class="text-input" id="basic-form-name" type="text" placeholder="First name">
-      </li>
-      <li class="form-field">
-        <input id="basic-form-checkbox" type="checkbox" >
-        <span class="label--inline" for="basic-form-checkbox">No Lastname</span>
-      </li>
-      <li class="form-field">
-        <select >
-          <option >First</option>
-          <option >Second</option>
-          <option >Third</option>
-        </select>
-      </li>
-      <li class="form-field">
-        <textarea placeholder="Enter text here..." ></textarea>
-      </li>
-      <li class="form-field">
-        <input id="checkbox1" type="checkbox" >
-        <label class="label--inline" for="checkbox1">Option 1</label>
-        <br >
-        <input id="checkbox2" class="u-mt" type="checkbox">
-        <label class="label--inline" for="checkbox2">Option 2</label>
+```
+<label for="input1" >Input Label</label>
+<input class="text-input" id="input1" type="text" placeholder="Type something...">
+```
 
-      </li>
+### Checkbox
 
-
-    </ol>
-    <input class="btn" type="reset" value="Cancel">
-    <input class="btn btn--primary" type="submit" value="Submit">
-  </fieldset>
-</form>
+```
+<input id="checkbox1" type="checkbox" disabled="" >
+<label class="label--inline" for="checkbox1">Checkbox</label>
 ```
 
 
@@ -64,9 +88,15 @@ const { Input } = px;
 ```table
 span: 6
 rows:
-  - Name: children
-    Type: node
-    Description: The child nodes.
+  - Name: name
+    Type: string
+    Description: The input name
+  - Name: label
+    Type: string
+    Description: The input label
+  - Name: type
+    Type: string
+    Description: The input type
 ```
 
 

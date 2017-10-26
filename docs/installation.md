@@ -1,13 +1,14 @@
-## Installation
-Predix-UI is available as an `npm` package.
+`predix-ui` is available as an `npm` package.
 
-### npm
-To install and save in your package.json dependencies, run:
+
+To install and save in your `package.json` dependencies, run:
 
 ```code
 $ npm install predix-ui
 ```
 
+
+### Usage
 Then import the library or just components you want.
 
 ```code
@@ -16,13 +17,20 @@ import { Button } from 'predix-ui';
 <Button label='My Button' primary/>
 ```
 
+### Theme
+The component styles are all in separate files or you can use the entire theme.
+
+
+```code
+//
+```
 
 
 ### Download
 You can grab the latest release below:
 
 ```download
-title: predix-ui-v0.0.3(.zip)
-subtitle: 150 KB
-url: https://github.com/jonniespratley/predix-ui/archive/v0.0.13.zip
+title: predix-ui-vx.x.x(.zip)
+subtitle: 300 KB
+url: https://github.com/jonniespratley/predix-ui/archive/v0.0.6.zip
 ```

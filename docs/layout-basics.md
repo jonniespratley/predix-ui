@@ -7,14 +7,14 @@ The basic components of a page include an optional branding area, navigation, ca
 ```image
 plain: true
 span: 3
-src: "https://www.predix-ui.com/img/guidelines/horizontal_layout.png"
+src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/horizontal_layout.webp"
 title: "Page assembly with horizontal navigation"
 ```
 
 ```image
 plain: true
 span: 3
-src: "https://www.predix-ui.com/img/guidelines/vertical_layout.png"
+src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/vertical_layout.webp"
 title: "Page assembly with vertical navigation"
 ```
 

@@ -14,17 +14,32 @@ class Input extends BaseComponent {
 	render() {
 
     const {
+      name,
 			label,
 			style,
+      value,
 
-      type = 'text',
-      className = 'px-input',
+      type,
+      className,
       placeholder,
+
+      //validation-states
+      error,
+      success,
+      warning,
+
+      //size lengths
+      regular,
+      tiny,
+      small,
+      large,
+      huge,
 
       onChange,
 
       autoFocus,
       disabled,
+      required,
 
       inputProps,
       inputRef,
@@ -38,17 +53,30 @@ class Input extends BaseComponent {
 
 		const inputClassnames = classnames(
       'text-input',
-      {'input--regular': true}
+      {'input--regular': regular},
+      {'input--tiny': tiny},
+      {'input--small': small},
+      {'input--large': large},
+      {'input--huge': huge},
+      {'validation-error': error},
+      {'validation-success': success},
+      {'validation-warning': warning}
     );
 
 		return (
 			<div className={baseClasses} style={style}>
-        {label && <label htmlFor="input1">{label}</label>}
-        <input id="input1"
-          {...inputProps}
+        {label && <label htmlFor={`${name}Input`}>{label}</label>}
+        <input id={`${name}Input`}
+          value={value}
+          onChange={onChange}
+          required={required}
+          disabled={disabled}
+          autoFocus={autoFocus}
+          name={name}
           placeholder={placeholder}
           className={inputClassnames}
-          type={type}/>
+          type={type}
+          {...inputProps}/>
 				<style jsx>{stylesheet}</style>
 			</div>
 		);
@@ -58,8 +86,9 @@ class Input extends BaseComponent {
 Input.defaultProps = {
   /** The label */
   label: null,
+  className: 'px-input',
   /** The input value, required for a controlled component. */
-  value: null,
+  value: undefined,
   /** Type of the input element. It should be a valid HTML5 input type. */
   type: 'text',
   /** If true, the input will be disabled. */

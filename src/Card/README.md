@@ -47,13 +47,9 @@ const { Card } = PxReact;
 <div className='custom'>
   <style>{`
     .custom{
-      --px-card-background-color: #ebeff2;
-      --px-card-border-color: #d8e0e5;
-      --px-card-header-color: #677e8c;
-      --px-card-icon-color: #677e8c;
-      --px-card-action-icon-color: #677e8c;
-      --px-card-action-icon-color--hover: #007acc;
-      --px-card-action-icon-color--pressed: #003d66;
+      --px-card-background-color: #fff;
+      --px-card-border-color: #222;
+      --px-card-header-color: #222;
     }
   `}</style>
   <Card headerText='My Card' icon='px-fea:analysis'>
