@@ -92,7 +92,7 @@ const pages = [
     pages: [
       {path: 'basics', title: 'Basics', component: require('./layout-basics.md')},
       {
-        path: 'grid',
+        path: 'layout-grid',
         title: 'Grid',
         responsiveSizes: responsiveSizes,
         component: require('./layout-grid.md')}

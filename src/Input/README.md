@@ -56,7 +56,12 @@ const FormField = (props) => (<div className='u-mb-'>{props.children}</div>);
 ```react
 const { Button, Input } = px;
 const FormField = (props) => (<div className='u-mb-'>{props.children}</div>);
-const inputTypes = ['color', 'date', 'datetime-local', 'email', 'file', 'month', 'number', 'password', 'range', 'search', 'tel', 'text', 'time', 'url', 'week'];
+const inputTypes = [
+'color', 'date', 'datetime-local', 'email', 'file', 'month', 'number',
+'password', 'range', 'search', 'tel', 'text', 'time', 'url', 'week',
+'radio',
+'checkbox'
+];
 <form>
   {inputTypes.map((type, index) => (
     <FormField key={index}>
@@ -68,20 +73,95 @@ const inputTypes = ['color', 'date', 'datetime-local', 'email', 'file', 'month',
 ```
 
 
-### Input Field
+## Use it in your project
+
+
+###Input Field:
 
 ```
 <label for="input1" >Input Label</label>
 <input class="text-input" id="input1" type="text" placeholder="Type something...">
 ```
 
-### Checkbox
-
+###Checkbox:
 ```
 <input id="checkbox1" type="checkbox" disabled="" >
 <label class="label--inline" for="checkbox1">Checkbox</label>
 ```
 
+###Radio Button:
+```
+<input id="radio1" name="radios" type="radio" disabled="" >
+<p class="label--inline" for="radio1">Option 1</p>
+<input id="radio2" name="radios" type="radio" disabled="" >
+<p class="label--inline" for="radio2">Option 2</p>
+```
+
+###Select (Dropdown):
+```
+<select disabled="" >
+  <optgroup label="Header 1" >
+    <option >Option 1</option>
+    <option >Option 2</option>
+    <option >Option 3</option>
+    <option >Option 4</option>
+  </optgroup>
+  <optgroup label="Header 2" >
+    <option >Option 1</option>
+    <option >Option 2</option>
+    <option >Option 3</option>
+    <option >Option 4</option>
+  </optgroup>
+</select>
+```
+
+###Multi-select:
+
+```
+<select multiple="" >
+  <option >Option 1</option>
+  <option >Option 2</option>
+  <option >Option 3</option>
+  <option >Option 4</option>
+</select>
+```
+
+
+###Text Area:
+
+<textarea placeholder="Type something..." ></textarea>
+
+
+### Inline Form:
+
+<label class="label--inline" for="inline1">Label Text</label>
+<input class="text-input input--small" id="inline1" type="text">
+
+
+###Basic Form:
+
+<form >
+  <fieldset class="form-field">
+    <legend >Basic form</legend>
+    <ol class="list-bare">
+      <li class="form-field">
+        <label for="basic-form-name" >Name</label>
+        <input id="basic-form-name" class="text-input" type="text" placeholder="First name">
+        <span class="form-field__help">Hint Text</span>
+      </li>
+      <li class="form-field">
+        <input id="basic-form-checkbox" type="checkbox" >
+        <label class="label--inline" for="basic-form-checkbox">No Lastname</label>
+      </li>
+    </ol>
+    <input class="btn" type="reset" value="Cancel">
+    <input class="btn btn--primary" type="submit" value="Submit">
+  </fieldset>
+</form>
+
+
+
+---
 
 ## Properties
 
