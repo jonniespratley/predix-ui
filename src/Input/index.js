@@ -40,6 +40,7 @@ class Input extends BaseComponent {
       autoFocus,
       disabled,
       required,
+      inline,
 
       inputProps,
       inputRef,
@@ -48,7 +49,13 @@ class Input extends BaseComponent {
 		} = this.props;
 
 		const baseClasses = classnames(
+      'px-input',
+      {'flex': inline},
+      {'flex-middle': inline},
       className
+    );
+		const labelClasses = classnames(
+      {'label--inline': inline}
     );
 
 		const inputClassnames = classnames(
@@ -65,7 +72,7 @@ class Input extends BaseComponent {
 
 		return (
 			<div className={baseClasses} style={style}>
-        {label && <label htmlFor={`${name}Input`}>{label}</label>}
+        {label && <label htmlFor={`${name}Input`} className={labelClasses}>{label}</label>}
         <input id={`${name}Input`}
           value={value}
           onChange={onChange}
@@ -86,7 +93,7 @@ class Input extends BaseComponent {
 Input.defaultProps = {
   /** The label */
   label: null,
-  className: 'px-input',
+  className: null,
   /** The input value, required for a controlled component. */
   value: undefined,
   /** Type of the input element. It should be a valid HTML5 input type. */

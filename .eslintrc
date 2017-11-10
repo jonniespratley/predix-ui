@@ -1,4 +1,4 @@
-module.exports = {
+{
   "extends": "",
   "parser": "babel-eslint",
   "env": {
@@ -24,4 +24,4 @@ module.exports = {
     "react/no-multi-comp": 0,
     "react/require-extension": 0
   }
-};
+}

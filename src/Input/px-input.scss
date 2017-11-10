@@ -29,4 +29,10 @@
   $inuit-enable-input--bare   : true;
   $inuit-enable-validation-states: true;
   @import 'px-forms-design/_base.forms.scss';
+  display: flex;
+  flex-direction: column;
+  .text-input {
+    flex: 1;
+    width: auto;
+  }
 }

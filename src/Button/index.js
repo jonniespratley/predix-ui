@@ -10,6 +10,7 @@ import stylesheet from './px-button.scss';
 const Button = (props) => {
   const {
   	label,
+    className,
     type = 'button',
 
     //colors
@@ -34,6 +35,7 @@ const Button = (props) => {
 	let cssClasses = classnames(
     'px-button',
     'btn',
+    className,
     { 'btn--primary': primary },
     { 'btn--tertiary': tertiary },
     { 'btn--bare': bare },

@@ -72,34 +72,53 @@ const inputTypes = [
 </form>
 ```
 
+---
 
-## Use it in your project
+### Input Field:
 
-
-###Input Field:
-
+```react
+const { Input } = px;
+<Input
+  name='input1'
+  type='text'
+  label='Input Label'
+  placeholder='Type something...'/>
 ```
-<label for="input1" >Input Label</label>
-<input class="text-input" id="input1" type="text" placeholder="Type something...">
-```
 
-###Checkbox:
-```
+### Checkbox:
+
+```html
 <input id="checkbox1" type="checkbox" disabled="" >
 <label class="label--inline" for="checkbox1">Checkbox</label>
 ```
 
-###Radio Button:
+```react
+const { Input } = px;
+<div>
+  <Input
+    name='checkbox1'
+    type='checkbox'
+    label='Checkbox'
+    disabled
+    inline/>
+  <Input
+    name='checkbox2'
+    type='checkbox'
+    label='Checkbox 2'/>
+</div>
 ```
+
+### Radio Button:
+```html
 <input id="radio1" name="radios" type="radio" disabled="" >
 <p class="label--inline" for="radio1">Option 1</p>
 <input id="radio2" name="radios" type="radio" disabled="" >
 <p class="label--inline" for="radio2">Option 2</p>
 ```
 
-###Select (Dropdown):
-```
-<select disabled="" >
+### Select (Dropdown):
+```html
+<select>
   <optgroup label="Header 1" >
     <option >Option 1</option>
     <option >Option 2</option>
@@ -115,9 +134,9 @@ const inputTypes = [
 </select>
 ```
 
-###Multi-select:
+### Multi-select:
 
-```
+```html
 <select multiple="" >
   <option >Option 1</option>
   <option >Option 2</option>
@@ -127,19 +146,22 @@ const inputTypes = [
 ```
 
 
-###Text Area:
+### Text Area:
 
+```html
 <textarea placeholder="Type something..." ></textarea>
-
+```
 
 ### Inline Form:
 
+```html
 <label class="label--inline" for="inline1">Label Text</label>
 <input class="text-input input--small" id="inline1" type="text">
+```
 
+### Basic Form:
 
-###Basic Form:
-
+```html
 <form >
   <fieldset class="form-field">
     <legend >Basic form</legend>
@@ -158,7 +180,7 @@ const inputTypes = [
     <input class="btn btn--primary" type="submit" value="Submit">
   </fieldset>
 </form>
-
+```
 
 
 ---

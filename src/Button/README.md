@@ -18,6 +18,7 @@ const { Button } = PxReact;
 </div>
 ```
 
+### Sizes
 ```react|lang-jsx
 const { Button } = PxReact;
 <div>
@@ -28,11 +29,35 @@ const { Button } = PxReact;
 </div>
 ```
 
+### Custom classnames
+
+```react|lang-jsx
+const { Button } = PxReact;
+<div>
+  <Button label='Danger' className='btn--danger' large/>
+  <style>{`
+    .btn--danger {
+      color: white;
+      background-color: red;
+    }
+    .btn--danger:hover,
+    .btn--danger:focus,
+    .btn--danger:active {
+      color: white;
+      background-color: darkred;
+    }
+  `}</style>
+</div>
+```
+
 ## Properties
 
 ```table
 span: 6
 rows:
+  - Name: className
+    Type: String
+    Description: Additional class names to apply
   - Name: label
     Type: String
     Description: Label for the button

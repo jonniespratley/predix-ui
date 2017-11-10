@@ -33,8 +33,9 @@ class Icon extends React.Component {
 			height: '100%',
 			width: '100%'
     };
+    const icn = icon && icon.replace(':', '-');
     return (
-			<i className={classnames('px-icon', className)} style={styles}>
+			<i className={classnames('px-icon', className, icn)} style={styles}>
 				<svg viewBox={`0 0 ${size} ${size}`}
           preserveAspectRatio="xMidYMid meet"
           dangerouslySetInnerHTML={this.createMarkup(icon)}
