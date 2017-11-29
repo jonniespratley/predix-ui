@@ -38,7 +38,7 @@
     "dist:min": "webpack --env distMin",
     "dist:modules": "rimraf ./dist/modules && BABEL_ENV=modules babel ./src --out-dir ./dist/modules",
     "preversion": "npm run test && npm run dist && npm run dist:min && git commit --allow-empty -am ''",
-    "prepublish": "npm run dist:es6 && npm run dist:modules",
+    "prepublish": "npm run dist",
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy"
   },
   "engines": {
