@@ -49,5 +49,4 @@ import {Button} from 'predix-ui';
 ---
 
 ## License
-
-Available under MIT. See LICENSE for more details.
+See LICENSE for more details.
