@@ -1,7 +1,5 @@
 pipeline {
-  agent {
-    docker { image 'node:7-alpine' }
-  }
+  agent {}
   stages {
     stage('System Info') {
       steps {
