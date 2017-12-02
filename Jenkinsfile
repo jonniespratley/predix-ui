@@ -1,5 +1,7 @@
 pipeline {
-  agent {}
+  agent {
+    any
+  }
   stages {
     stage('System Info') {
       steps {
