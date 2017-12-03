@@ -1,7 +1,11 @@
+/*
+pipeline
+*/
 pipeline {
-  agent {
-    any
-  }
+  agent any
+	environment {
+		DEBUG = '*'
+	}
   stages {
     stage('System Info') {
       steps {
@@ -12,18 +16,32 @@ pipeline {
     }
     stage('Build') {
       steps {
-          echo 'Building..'
+        echo 'Building...'
+        sh 'npm install'
       }
     }
     stage('Test') {
       steps {
-        echo 'Testing..'
+        echo 'Testing...'
+        sh 'npm test'
+      }
+    }
+    stage('Package') {
+      steps {
+        echo 'Packaging...'
+        sh 'npm run build'
       }
     }
     stage('Deploy') {
       steps {
-        echo 'Deploying....'
+        echo 'Deploying...'
       }
+    }
+  }
+	post {
+    always {
+			echo 'Done.'
+			//junit 'coverage/*.xml'
     }
   }
 }
