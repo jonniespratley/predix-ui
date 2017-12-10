@@ -1,6 +1,6 @@
 'use strict';
 const sass = require('node-sass');
-const importOnce = require('node-sass-import-once')
+const importOnce = require('node-sass-import-once');
 const fs = require('fs-extra');
 const path = require('path');
 const glob = require('glob');

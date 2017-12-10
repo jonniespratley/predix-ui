@@ -1,7 +1,5 @@
 import {Component} from 'react';
-import {findDOMNode} from 'react-dom';
 import debug from 'debug';
-import classnames from 'classnames';
 
 /**
  * @description Base component class that all ui components extend.

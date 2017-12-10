@@ -4,14 +4,15 @@
   ],
   "presets": [
     "react",
-    ["env", {
-      "targets": {
-        "browsers": ["last 2 versions", "safari >= 9"],
-        "node": "8"
+    [
+      "env",
+      {
+        "modules": false
       }
-    }]
+    ]
   ],
   "plugins": [
+    "external-helpers",
     "styled-jsx/babel",
     [
       "transform-react-remove-prop-types",
