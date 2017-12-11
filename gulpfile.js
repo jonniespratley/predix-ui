@@ -247,9 +247,11 @@ gulp.task('webpack',  'Run webpack build', () => {
 
 const babel = require('gulp-babel');
 
+
 ///
 gulp.task('babel-es6', 'Run scripts through babel to es6', () =>{
   process.env.BABEL_ENV = 'es6';
+  console.log('env', process.env);
   return gulp.src(config.scripts.src)
   //  .pipe($.filelog())
     .pipe(babel({
@@ -263,6 +265,8 @@ gulp.task('babel-es6', 'Run scripts through babel to es6', () =>{
 ///
 gulp.task('babel-modules', 'Run scripts through babel to modules', () =>{
   process.env.BABEL_ENV = 'modules';
+
+  console.log('env', process.env);
   return gulp.src(config.scripts.src)
   //.pipe($.filelog())
   .pipe(babel({

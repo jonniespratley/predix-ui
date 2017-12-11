@@ -1,9 +1,10 @@
 import React from 'react';
 import classnames from 'classnames';
-import stylesheet from './px-app-nav.scss';
+
 import NavItem from './px-app-nav-item';
 import BaseComponent from '../BaseComponent';
 import Icon from '../IconSet/px-icon';
+import stylesheet from './px-app-nav.scss';
 
 import AppNavSubGroup from './px-app-nav-sub-group';
 /**
