@@ -32,7 +32,7 @@ const bundles = [
       'transform-es2015-function-name',
       'transform-es2015-parameters'
     ]
-  },
+  }
   /*
   {
     format: 'cjs', ext: '.browser.js', plugins: [],
