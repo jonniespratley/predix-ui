@@ -1,14 +1,14 @@
 'use strict';
 const path = require('path');
-//const gulp = require('gulp');
-
 const gulp = require('gulp-help')(require('gulp'));
-
 const pkg = require('./package.json');
 const $ = require('gulp-load-plugins')();
 const gulpSequence = require('gulp-sequence');
 const importOnce = require('node-sass-import-once');
-
+const gulpWebpack = require('webpack-stream');
+const webpack = require('webpack');
+const babel = require('gulp-babel');
+const bower = require('gulp-bower');
 
 const sassOptions = {
   //sourceComments: true,
@@ -19,7 +19,6 @@ const sassOptions = {
     bower: true
   }
 };
-
 
 const config = {
   dest: './dist',
@@ -218,11 +217,6 @@ gulp.task('autoprefixer:watch', function() {
   gulp.watch('./css/**/*.css', ['autoprefixer']);
 });
 
-
-
-
-
-
 ///
 gulp.task('lint', 'Lint all source scripts', () => {
   return gulp.src(['./src/**/*.js','!node_modules/**'])
@@ -232,8 +226,6 @@ gulp.task('lint', 'Lint all source scripts', () => {
 });
 
 ///
-const gulpWebpack = require('webpack-stream');
-const webpack = require('webpack');
 gulp.task('webpack',  'Run webpack build', () => {
   return gulp.src('src/index.js')
     .pipe(gulpWebpack({
@@ -244,14 +236,9 @@ gulp.task('webpack',  'Run webpack build', () => {
 });
 
 
-
-const babel = require('gulp-babel');
-
-
 ///
 gulp.task('babel-es6', 'Run scripts through babel to es6', () =>{
   process.env.BABEL_ENV = 'es6';
-  console.log('env', process.env);
   return gulp.src(config.scripts.src)
   //  .pipe($.filelog())
     .pipe(babel({
@@ -265,8 +252,6 @@ gulp.task('babel-es6', 'Run scripts through babel to es6', () =>{
 ///
 gulp.task('babel-modules', 'Run scripts through babel to modules', () =>{
   process.env.BABEL_ENV = 'modules';
-
-  console.log('env', process.env);
   return gulp.src(config.scripts.src)
   //.pipe($.filelog())
   .pipe(babel({
@@ -294,11 +279,10 @@ gulp.task('compile:demo', () =>{
 gulp.task('watch', ['sass:watch', 'autoprefixer:watch']);
 gulp.task('styles', gulpSequence('clean', 'sass', 'autoprefixer', 'cssmin'));
 
-const bower = require('gulp-bower');
+
 gulp.task('bower', () => {
   return bower();
 });
-
 
 gulp.task('dist', 'Lint, build ES6 and modules.', gulpSequence(
   'clean:dist',

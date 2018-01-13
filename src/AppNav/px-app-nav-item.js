@@ -1,7 +1,7 @@
 import React from 'react';
 import BaseComponent from '../BaseComponent';
 import classnames from 'classnames';
-import stylesheet from './px-app-nav-item.scss';
+import stylesheet from './styles/px-app-nav-item.scss';
 import Icon from '../IconSet/px-icon';
 
 

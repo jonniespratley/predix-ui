@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import stylesheet from './px-app-nav-subgroup.scss';
+import stylesheet from './styles/px-app-nav-subgroup.scss';
 
 
 import BaseComponent from '../BaseComponent';

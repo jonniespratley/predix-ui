@@ -187,7 +187,8 @@ const common = {
   },
   plugins: [
     new SystemBellPlugin()
-  ]
+  ],
+  stats: 'minimal'
 };
 
 const siteCommon = {
@@ -374,7 +375,6 @@ const distMin = merge(distCommon, {
 
 module.exports = (env) => {
   process.env.BABEL_ENV = env;
-  console.log('webpack.config.js', env);
   const targets = {
     dev,
     dist,
@@ -382,6 +382,6 @@ module.exports = (env) => {
     ghPages
   };
   const c = targets[env] ? targets[env] : common;
-  console.log('webpack.config', JSON.stringify(c, null, 2));
+
   return c;
 };

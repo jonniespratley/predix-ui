@@ -4,6 +4,7 @@
   "author": "Jonnie Spratley",
   "user": "jonniespratley",
   "version": "0.0.9",
+  "license": "",
   "repository": {
     "type": "git",
     "url": "https://github.com/jonniespratley/predix-ui.git"
@@ -51,7 +52,7 @@
     "reactjs",
     "boilerplate"
   ],
-  "license": "GE",
+
   "pre-push": [
     "test"
   ],
@@ -167,7 +168,8 @@
     "webpack-stream": "^4.0.0"
   },
   "peerDependencies": {
-    "react": ">=16.0.0"
+    "react": ">=16.0.0",
+    "react-jss": "^8.2.1"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>__tests__/setup.js",

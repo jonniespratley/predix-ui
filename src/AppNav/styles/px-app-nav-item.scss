@@ -1,52 +1,40 @@
-
-
+// Settings
+@import "px-defaults-design/_settings.defaults.scss";
+/* Item State: Hover */
+$px-app-nav-item-icon-color--hover: var(--px-app-nav-item-icon-color--hover, lightgray);
+$px-app-nav-item-text-color--hover: var(--px-app-nav-item-text-color--hover, lightgray);
+$px-app-nav-item-background-color--hover: var(--px-app-nav-item-background-color--hover, darkgray);
+/* Item State: Pressed */
+$px-app-nav-item-icon-color--pressed: var(--px-app-nav-item-icon-color--pressed, darkgray);
+$px-app-nav-item-text-color--pressed: var(--px-app-nav-item-text-color--pressed, darkgray);
+$px-app-nav-item-background-color--pressed: var(--px-app-nav-item-background-color--pressed, lightgray);
+/* Item State: Selected */
+$px-app-nav-item-icon-color--selected: var(--px-app-nav-item-icon-color--selected, darkgray);
+$px-app-nav-item-text-color--selected: var(--px-app-nav-item-text-color--selected, darkgray);
+$px-app-nav-item-background-color--selected: var(--px-app-nav-item-background-color--selected, white);
+$px-app-nav-item-stripe-size--selected: var(--px-app-nav-item-stripe-size--selected, calculateRem(2px));
+$px-app-nav-item-stripe-color--selected: var(--px-app-nav-item-stripe-color--selected, blue);
+/* Item State: Default */
+$px-app-nav-item-height: var(--px-app-nav-height, calculateRem(60px));
+$px-app-nav-item-padding: var(--px-app-nav-item-padding, calculateRem(15px));
+$px-app-nav-item-icon-size: var(--px-app-nav-item-icon-size, calculateRem(30px));
+$px-app-nav-item-icon-color: var(--px-app-nav-item-icon-color, darkgray);
+$px-app-nav-item-text-color: var(--px-app-nav-item-text-color, darkgray);
+$px-app-nav-item-background-color: var(--px-app-nav-item-background-color, lightgray);
+/* Item State: Selected+Collapsed */
+$px-app-nav-item-icon-color--collapsed: var(--px-app-nav-item-icon-color--collapsed, darkgray);
+$px-app-nav-item-text-color--collapsed: var(--px-app-nav-item-text-color--collapsed, darkgray);
+$px-app-nav-item-background-color--collapsed: var(--px-app-nav-item-background-color--collapsed, white);
+/* Item State: Empty */
+$px-app-nav-item-background-color--empty: var(--px-app-nav-item-background-color--empty, lightgray);
+// Generic
+@import "px-box-sizing-design/_generic.box-sizing.scss";
 // Component
 .px-app-nav-item {
-
-  // Settings
-  @import "px-defaults-design/_settings.defaults.scss";
-
-  /* Item State: Hover */
-  $px-app-nav-item-icon-color--hover: var(--px-app-nav-item-icon-color--hover, lightgray);
-  $px-app-nav-item-text-color--hover: var(--px-app-nav-item-text-color--hover, lightgray);
-  $px-app-nav-item-background-color--hover: var(--px-app-nav-item-background-color--hover, darkgray);
-
-  /* Item State: Pressed */
-  $px-app-nav-item-icon-color--pressed: var(--px-app-nav-item-icon-color--pressed, darkgray);
-  $px-app-nav-item-text-color--pressed: var(--px-app-nav-item-text-color--pressed, darkgray);
-  $px-app-nav-item-background-color--pressed: var(--px-app-nav-item-background-color--pressed, lightgray);
-
-  /* Item State: Selected */
-  $px-app-nav-item-icon-color--selected: var(--px-app-nav-item-icon-color--selected, darkgray);
-  $px-app-nav-item-text-color--selected: var(--px-app-nav-item-text-color--selected, darkgray);
-  $px-app-nav-item-background-color--selected: var(--px-app-nav-item-background-color--selected, white);
-  $px-app-nav-item-stripe-size--selected: var(--px-app-nav-item-stripe-size--selected, calculateRem(2px));
-  $px-app-nav-item-stripe-color--selected: var(--px-app-nav-item-stripe-color--selected, blue);
-
-  /* Item State: Default */
-  $px-app-nav-item-height: var(--px-app-nav-height, calculateRem(60px));
-  $px-app-nav-item-padding: var(--px-app-nav-item-padding, calculateRem(15px));
-  $px-app-nav-item-icon-size: var(--px-app-nav-item-icon-size, calculateRem(30px));
-  $px-app-nav-item-icon-color: var(--px-app-nav-item-icon-color, darkgray);
-  $px-app-nav-item-text-color: var(--px-app-nav-item-text-color, darkgray);
-  $px-app-nav-item-background-color: var(--px-app-nav-item-background-color, lightgray);
-
-  /* Item State: Selected+Collapsed */
-  $px-app-nav-item-icon-color--collapsed: var(--px-app-nav-item-icon-color--collapsed, darkgray);
-  $px-app-nav-item-text-color--collapsed: var(--px-app-nav-item-text-color--collapsed, darkgray);
-  $px-app-nav-item-background-color--collapsed: var(--px-app-nav-item-background-color--collapsed, white);
-
-  /* Item State: Empty */
-  $px-app-nav-item-background-color--empty: var(--px-app-nav-item-background-color--empty, lightgray);
-
-  // Generic
-  @import "px-box-sizing-design/_generic.box-sizing.scss";
-
   line-height             : $inuit-base-line-height / $inuit-base-font-size;
   text-size-adjust        : 100%;
   -moz-osx-font-smoothing : grayscale;
   -webkit-font-smoothing  : antialiased;
-
   position                : relative;
   display                 : flex;
   align-items             : center;
@@ -57,9 +45,9 @@
   color                   : $px-app-nav-item-text-color;
   background-color        : $px-app-nav-item-background-color;
   --iron-icon-stroke-color: $px-app-nav-item-icon-color;
+  user-select             : none;
+  outline                 : none;
 
-  user-select: none;
-  outline: none;
   &:hover {
     color                   : $px-app-nav-item-text-color--hover;
     background-color        : $px-app-nav-item-background-color--hover;
@@ -71,7 +59,6 @@
     background-color        : $px-app-nav-item-background-color--pressed;
     --iron-icon-stroke-color: $px-app-nav-item-icon-color--pressed;
   }
-
   /* Item State: Selected */
   &.selected {
     color                   : $px-app-nav-item-text-color--selected;
@@ -90,9 +77,7 @@
     height          : $px-app-nav-item-stripe-size--selected;
     background-color: $px-app-nav-item-stripe-color--selected;
   }
-
   /* Item State: Selected+Collapsed */
-
   &.selected.collapsed {
     color                   : $px-app-nav-item-text-color--collapsed;
     background-color        : $px-app-nav-item-background-color--collapsed;
@@ -107,9 +92,7 @@
     height: 100%;
     width : $px-app-nav-item-stripe-size--selected;
   }
-
   /* Item State: Empty */
-
   /* Sub-components */
   .app-nav-item__label {
     margin       : 0;
@@ -161,5 +144,4 @@
   &.only-show-icon .app-nav-item__label {
     display: none;
   }
-
 }
