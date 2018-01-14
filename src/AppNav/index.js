@@ -4,7 +4,8 @@ import classnames from 'classnames';
 import NavItem from './px-app-nav-item';
 import BaseComponent from '../BaseComponent';
 import Icon from '../IconSet/px-icon';
-import stylesheet from './styles';
+
+import stylesheet from './styles/px-app-nav.scss';
 
 import AppNavSubGroup from './px-app-nav-sub-group';
 /**
