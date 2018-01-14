@@ -5,8 +5,11 @@ import PxInput from './';
 
 describe('Input', () => {
   test('should...', () =>{
+    const inputProps = {
+      'data-name': 'test'
+    };
     const wrapper = shallow(
-      <PxInput/>
+      <PxInput type='text' inputProps={inputProps}/>
     );
     console.log(wrapper.debug());
     expect(true).to.equal(true);

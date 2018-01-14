@@ -42,7 +42,7 @@ class Input extends BaseComponent {
       required,
       inline,
 
-      inputProps,
+      inputProps = {},
       inputRef,
 
 			children
