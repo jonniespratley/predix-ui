@@ -14,7 +14,8 @@
     "test",
     "tests"
   ],
-  "dependencies": {
+  "devDependencies": {
+    "px-forms-design": "^2.0.6",
     "px-starter-kit-design": "^1.0.1",
     "px-mobile-design": "^1.0.0",
     "inuit-responsive-settings": "^0.1.5",
@@ -23,12 +24,6 @@
     "px-actionable-design": "^2.0.4",
     "px-layout-design": "^1.0.1",
     "px-shadows-design": "^1.0.2",
-    "px-forms-design": "^2.0.6"
-  },
-  "resolutions": {
-    "webcomponentsjs": "^v1.0.2"
-  },
-  "devDependencies": {
     "px-forms-design": "^2.0.6"
   }
 }

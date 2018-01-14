@@ -61,8 +61,8 @@ gulp.task('sassdoc', function() {
 gulp.task('clean', function() {
   return gulp.src([
     '.tmp',
-    './dist/es6',
-    './dist/umd',
+
+    './dist',
     config.styles.dest
   ], {
     read: false
@@ -112,9 +112,9 @@ gulp.task('sass', 'Compile all .sass/.scss files', function() {
   return gulp.src(config.styles.src)
 
     .pipe($.sass(sassOptions).on('error', $.sass.logError))
-    .pipe($.size())
+  //  .pipe($.size())
     //.pipe($.rename(pkg.name + '.css'))
-    .pipe($.filelog('sass'))
+  //  .pipe($.filelog('sass'))
     .pipe(gulp.dest(config.styles.dest));
 });
 
@@ -133,7 +133,7 @@ gulp.task('sass:all', 'Combine all .sass/.scss files', function() {
 ///
 gulp.task('autoprefixer', function() {
   return gulp.src(`${config.styles.dest}/**/*.css`)
-    .pipe($.filelog('autoprefixer'))
+  //  .pipe($.filelog('autoprefixer'))
     .pipe($.autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
@@ -141,35 +141,37 @@ gulp.task('autoprefixer', function() {
     .pipe($.rename({
       //suffix: '.prefixed'
     }))
-    .pipe($.size())
+  //  .pipe($.size())
     .pipe(gulp.dest(config.styles.dest));
 });
 
 ///
-gulp.task('cssmin', 'Take all css and min with source maps', ['sass'],function() {
+gulp.task('cssmin', 'Take all css and min with source maps', function() {
   return gulp.src([
     `${config.dest}/**/*.css`,
     `!${config.dest}/**/*.min.css`
   ])
-    //.pipe($.sourcemaps.init())
+    .pipe($.sourcemaps.init())
     .pipe($.cssmin())
-    //.pipe($.sourcemaps.write('.'))
+    .pipe($.sourcemaps.write('.'))
     .pipe($.rename({
       suffix: '.min'
     }))
-    .pipe($.filelog('cssmin'))
-    .pipe($.size())
+  //  .pipe($.filelog('cssmin'))
+
     .pipe(gulp.dest('./dist'))
+    .pipe($.size())
     ;
 });
 
 ///
-gulp.task('postcss', 'Run files throught postcss', ['sass'], function () {
+gulp.task('postcss', 'Run files throught postcss', function () {
     const postcss    = require('gulp-postcss');
     const sourcemaps = require('gulp-sourcemaps');
     return gulp.src([
       `${config.styles.dest}/**/*.css`,
-      `!./dist/**/*.min.css`
+      //`./dist/**/*.css`,
+      `!./dist/**/*.min.css`,
       `./dist/${pkg.name}.css`
     ])
     .pipe( sourcemaps.init() )
@@ -274,7 +276,22 @@ gulp.task('compile:demo', () =>{
     .pipe(gulp.dest(`./demo`));
 });
 gulp.task('watch', ['sass:watch', 'autoprefixer:watch']);
-gulp.task('styles', gulpSequence('clean', 'sass', 'autoprefixer', 'cssmin'));
+
+
+// TODO: Handle all the styles for right now
+gulp.task('styles', gulpSequence(
+  'bower',
+  'sass',
+  'postcss',
+  'cssmin'
+));
+
+// TODO: Handle all the scripts for right now
+gulp.task('scripts', gulpSequence(
+  'lint',
+  ['babel-es6', 'babel-modules'],
+  'webpack'
+));
 
 
 gulp.task('bower', () => {
@@ -283,15 +300,10 @@ gulp.task('bower', () => {
 
 gulp.task('dist', 'Lint, build ES6 and modules.', gulpSequence(
   'clean:dist',
-  'bower',
-  'sass',
-  'lint',
-  'dist:es6',
-  'dist:modules',
-  'webpack',
-  'cssmin'
+  'styles',
+  'scripts'
 ));
 
 gulp.task('dist:es6', gulpSequence('babel-es6'));
 gulp.task('dist:modules', gulpSequence('babel-modules'));
-gulp.task('default', gulpSequence('clean', 'dist'));
+gulp.task('default', gulpSequence('dist'));
