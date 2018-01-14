@@ -1,13 +1,12 @@
-import BaseComponent from '../BaseComponent';
+
 import React from 'react';
-import classnames from 'classnames';
+import BaseComponent from '../BaseComponent';
+import classNames from 'classnames';
 import stylesheet from './px-accordion.scss';
 import IronCollapse from '../iron-components/IronCollapse';
+import CSSModules from 'react-css-modules';
 
-/**
- * Accordion component
- */
-export default class Accordion extends BaseComponent {
+class Accordion extends BaseComponent {
   constructor(props){
     super(props, {displayName: 'Accordion'});
     this.state = {
@@ -35,14 +34,14 @@ export default class Accordion extends BaseComponent {
       children
     } = this.props;
 
-    const baseClasses = classnames(
+    const baseClasses = classNames(
       'px-accordion',
       {'px-accordion--disabled': disabled},
       {'px-accordion--open': open}
     );
 
 
-    const headerClasses = classnames(
+    const headerClasses = classNames(
       'accordion__header',
       'flex',
       'flex--row',
@@ -51,7 +50,7 @@ export default class Accordion extends BaseComponent {
       'heading--subsection'
     );
 
-    const iconClasses = classnames(
+    const iconClasses = classNames(
       'accordion__icon',
       'actionable--action',
       'flex',
@@ -60,30 +59,31 @@ export default class Accordion extends BaseComponent {
     );
 
     return (
-      <div className={baseClasses} style={style}>
-        <section className="accordion__container">
-          <header className={headerClasses} onClick={this.onClick} disabled={disabled}>
-            <div className="flex flex--middle">
-              <span className={iconClasses}>
+      <div styleName={baseClasses} style={style}>
+        <section styleName="accordion__container">
+          <header styleName={headerClasses} onClick={this.onClick} disabled={disabled}>
+            <div styleName="flex flex--middle">
+              <span styleName={iconClasses}>
                 {open && '-'}
                 {!open && '+'}
               </span>
               <span>{headerValue}</span>
             </div>
-            <div className="flex flex--middle">
-              <span className="accordion__status">{status}</span>
-              {showAction && <span className={iconClasses}>action</span>}
+            <div styleName="flex flex--middle">
+              <span styleName="accordion__status">{status}</span>
+              {showAction && <span styleName={iconClasses}>action</span>}
             </div>
           </header>
 
           <IronCollapse ref="collapse" opened={open}>
-            <div className="accordion__body u-p--">
+            <div styleName="accordion__body u-p--">
               {children}
             </div>
           </IronCollapse>
         </section>
-        <style jsx>{stylesheet}</style>
+
       </div>
     );
   }
 }
+export default CSSModules(Accordion, stylesheet, {allowMultiple: true, handleNotFoundStyleName: 'log'});

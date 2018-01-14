@@ -7112,7 +7112,7 @@ lodash.values@~2.4.1:
   dependencies:
     lodash.keys "~2.4.1"
 
-lodash@4.x.x, "lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.0.1, lodash@^4.1.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1, lodash@~4.17.4:
+lodash@4.x.x, "lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.0.1, lodash@^4.1.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.16.6, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1, lodash@~4.17.4:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -7890,6 +7890,10 @@ object-keys@^1.0.11, object-keys@^1.0.8:
 object-keys@~0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-0.4.0.tgz#28a6aae7428dd2c3a92f3d95f21335dd204e0336"
+
+object-unfreeze@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/object-unfreeze/-/object-unfreeze-1.1.0.tgz#69628bea1f3c9d29f4eb0ba63b38002d70ea3ce9"
 
 object-visit@^1.0.0:
   version "1.0.1"
@@ -9258,6 +9262,14 @@ react-color@^2.11.4:
     prop-types "^15.5.10"
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
+
+react-css-modules@^4.7.1:
+  version "4.7.1"
+  resolved "https://registry.yarnpkg.com/react-css-modules/-/react-css-modules-4.7.1.tgz#08fff65c034780b4352f0a1bb879cab0ee43d820"
+  dependencies:
+    hoist-non-react-statics "^1.2.0"
+    lodash "^4.16.6"
+    object-unfreeze "^1.1.0"
 
 react-datetime@^2.11.1:
   version "2.11.1"

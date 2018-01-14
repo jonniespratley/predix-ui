@@ -46,12 +46,12 @@ const extractCss = new ExtractTextPlugin({
 
 const extractSass = new ExtractTextPlugin({
 	filename: `${pkg.name}.css`,
-//  disable: EXTRACT_CSS,
+  disable: process.env.NODE_ENV !== 'production',
   allChunks: true
 });
 
 const cssRules = {
-  test: /\.css$/,
+  test: /\.module.css$/,
   use: extractCss.extract({
     fallback: 'style-loader',
     //resolve-url-loader may be chained before sass-loader if necessary
@@ -75,23 +75,22 @@ const sassRules = {
   use: extractSass.extract({
     fallback: 'style-loader',
     use: [
-      'babel-loader',
-      //'raw-loader',
+    //  'babel-loader',
       {
         loader: 'css-loader',
         options: {
+          modules: true,
           importLoaders: 1,
-          //modules: true,
           sourceMap: true,
-          camelCase: true
+          localIdentName: '[path]___[name]___[local]___[hash:base64:5]'
         }
       },
-      {
+      /*{
         loader: 'postcss-loader',
         options: {
           sourceMap: true
         }
-      },
+      },*/
       {
         loader: 'sass-loader',
         options: {
@@ -104,8 +103,8 @@ const sassRules = {
            },
           includePaths: [
             'sass',
-            'styles',
-            'node_modules'
+            'styles'
+            //'node_modules'
           ].map((d) => path.join(__dirname, d)).map((g) => glob.sync(g)).reduce((a, c) => a.concat(c), [])
         }
       }
