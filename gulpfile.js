@@ -110,11 +110,11 @@ gulp.task('sass:copy:modules', 'Copy all .sass/.scss files', function() {
 ///
 gulp.task('sass', 'Compile all .sass/.scss files', function() {
   return gulp.src(config.styles.src)
-    .pipe($.filelog())
+
     .pipe($.sass(sassOptions).on('error', $.sass.logError))
     .pipe($.size())
     //.pipe($.rename(pkg.name + '.css'))
-    .pipe($.filelog())
+    .pipe($.filelog('sass'))
     .pipe(gulp.dest(config.styles.dest));
 });
 
@@ -133,7 +133,7 @@ gulp.task('sass:all', 'Combine all .sass/.scss files', function() {
 ///
 gulp.task('autoprefixer', function() {
   return gulp.src(`${config.styles.dest}/**/*.css`)
-    .pipe($.filelog())
+    .pipe($.filelog('autoprefixer'))
     .pipe($.autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
@@ -151,13 +151,13 @@ gulp.task('cssmin', 'Take all css and min with source maps', ['sass'],function()
     `${config.dest}/**/*.css`,
     `!${config.dest}/**/*.min.css`
   ])
-    .pipe($.filelog())
     //.pipe($.sourcemaps.init())
     .pipe($.cssmin())
     //.pipe($.sourcemaps.write('.'))
     .pipe($.rename({
       suffix: '.min'
     }))
+    .pipe($.filelog('cssmin'))
     .pipe($.size())
     .pipe(gulp.dest('./dist'))
     ;
@@ -167,12 +167,9 @@ gulp.task('cssmin', 'Take all css and min with source maps', ['sass'],function()
 gulp.task('postcss', 'Run files throught postcss', ['sass'], function () {
     const postcss    = require('gulp-postcss');
     const sourcemaps = require('gulp-sourcemaps');
-
     return gulp.src([
       `${config.styles.dest}/**/*.css`,
-      `!./dist/**/*.min.css`,
-      '!./dist/AppNav/*.css',
-
+      `!./dist/**/*.min.css`
       `./dist/${pkg.name}.css`
     ])
     .pipe( sourcemaps.init() )
@@ -187,8 +184,8 @@ const purify = require('gulp-purifycss');
 gulp.task('purifycss', function() {
   return gulp.src([
     `dist/**/*.css`,
-    `!dist/**/*.min.css`,
-    '!dist/AppNav/*.css'
+    `!dist/**/*.min.css`
+
   ])
     .pipe($.filelog())
     .pipe($.size())
@@ -295,6 +292,6 @@ gulp.task('dist', 'Lint, build ES6 and modules.', gulpSequence(
   'cssmin'
 ));
 
-gulp.task('dist:es6', gulpSequence('clean:es6', 'sass:copy', 'babel-es6'));
-gulp.task('dist:modules', gulpSequence('clean:modules', 'sass:copy:modules', 'babel-modules'));
+gulp.task('dist:es6', gulpSequence('babel-es6'));
+gulp.task('dist:modules', gulpSequence('babel-modules'));
 gulp.task('default', gulpSequence('clean', 'dist'));

@@ -48,7 +48,14 @@ const {
   return (<div>{content}</div>);
 });
 
+import ExampleComponent from '../src/px-example-component';
 
+///
+storiesOf('Styled Component', module)
+	.addDecorator(withKnobs)
+	.add('default', () => (
+		<ExampleComponent label='Header'>Content</ExampleComponent>
+	));
 
 ///
 storiesOf('Accordion', module)

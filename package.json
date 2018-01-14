@@ -52,7 +52,6 @@
     "reactjs",
     "boilerplate"
   ],
-
   "pre-push": [
     "test"
   ],
@@ -64,7 +63,7 @@
     "babel-core": "^6.24.1",
     "babel-eslint": "^8.0.0",
     "babel-jest": "^21.0.2",
-    "babel-loader": "^7.0.0",
+    "babel-loader": "^7.1.2",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -168,7 +167,8 @@
     "webpack-stream": "^4.0.0"
   },
   "peerDependencies": {
-    "react": ">=16.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-jss": "^8.2.1"
   },
   "jest": {
@@ -198,5 +198,8 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
     }
+  },
+  "dependencies": {
+    "react-jss": "^8.2.1"
   }
 }

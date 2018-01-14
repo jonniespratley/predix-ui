@@ -1,31 +1,42 @@
-import React from 'react';
-import classnames from 'classnames';
-import stylesheet from './px-example-component.scss';
-import BaseComponent from '../BaseComponent';
+import React from 'react'
+import injectSheet from 'react-jss'
 
 /**
- * px-example-component component
+ * ExampleComponent styles
  */
-export default class ExampleComponent extends BaseComponent {
+const styles = {
+  root: {
+    background: props => props.color || 'green',
+    padding: '1rem'
+  },
+  label: {
+    fontWeight: 'bold'
+  }
+};
+
+/**
+ * ExampleComponent component
+ */
+class ExampleComponent extends React.Component {
   constructor(props){
-    super(props, {name: 'ExampleComponent'});
+    super(props);
+    this.displayName = 'ExampleComponent';
   }
 	render() {
 		const {
 			label = 'px-example-component',
 			style,
+      classes,
 			children
 		} = this.props;
 
-		const baseClasses = classnames('px-example-component', {'px-example-component--children': children});
-
 		return (
-			<div className={baseClasses} style={style}>
-				<h4 className={stylesheet.title}>{label}</h4>
+			<div className={classes.root} style={style}>
+				{label && <h4 className={classes.label}>{ label }</h4>}
 				<div>{children}</div>
-				<style jsx>{stylesheet}</style>
 			</div>
 		);
 	}
-
 }
+
+export default injectSheet(styles)(ExampleComponent);
