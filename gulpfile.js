@@ -282,14 +282,15 @@ gulp.task('watch', ['sass:watch', 'autoprefixer:watch']);
 gulp.task('styles', gulpSequence(
   'bower',
   'sass',
-  'postcss',
+  'autoprefixer',
   'cssmin'
 ));
 
 // TODO: Handle all the scripts for right now
 gulp.task('scripts', gulpSequence(
   'lint',
-  ['babel-es6', 'babel-modules'],
+  'babel-es6',
+  'babel-modules',
   'webpack'
 ));
 

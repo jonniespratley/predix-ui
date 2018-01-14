@@ -2,8 +2,8 @@ language: node_js
 node_js:
 - '8'
 before_script:
-- npm i -g bower
-- bower install --force-latest
+#- npm i -g bower
+#- bower install --force-latest
 script:
 - yarn test:lint
 - yarn test:coverage
