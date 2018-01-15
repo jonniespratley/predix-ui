@@ -1,5 +1,5 @@
 import React from 'react';
-import BaseComponent from '../BaseComponent';
+import BaseComponent from '../px/BaseComponent';
 
 export default class IronResizable extends BaseComponent {
 	constructor(props) {

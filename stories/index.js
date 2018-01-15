@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, array, object, boolean, number } from '@storybook/addon-knobs';
 
-import '../src/Theme/px-theme.scss';
+import '../src/components/px/Theme/px-theme.scss';
 
 import px from '../src/';
 

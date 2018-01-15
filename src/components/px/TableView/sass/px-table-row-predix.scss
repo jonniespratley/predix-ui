@@ -1,13 +1,13 @@
-@import '_variables.scss';
+@import 'variables';
 @import 'mixins';
-@import 'px-table-row-sketch.scss';
+@import 'px-table-row-sketch';
 
 
 /// @group px-table-row
 /// @access public
 .table-row {
   @include noselect();
-  @import 'elements/_table-row__actions.scss';
+  @import 'elements/table-row__actions';
 
   min-height      : $table-row-min-height;
   line-height     : $table-row-line-height;

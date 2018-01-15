@@ -18,7 +18,7 @@ function createMockItem(i) {
 		}
 	};
 }
-describe('iron-components', () => {
+describe('iron', () => {
 
   describe('IronSelectable', () => {
     test('should set selectedItem', () => {
@@ -60,7 +60,7 @@ describe('iron-components', () => {
   });
 
   describe('iron-pages', () => {
-    test('should render', () => {
+    test('should render selected page', () => {
       const wrapper = shallow(
         <IronPages selected={0}>
           <div>One</div>
@@ -68,15 +68,14 @@ describe('iron-components', () => {
           <div>Three</div>
         </IronPages>
       );
-      console.log(wrapper.debug());
       expect(wrapper.find('.iron-selected')).to.have.length(1);
     });
   });
 
   describe('iron-selector', () => {
-    test('should render', () => {
+    test('should render selected item', () => {
       const wrapper = shallow(
-        <IronSelector selected={0}>
+        <IronSelector selected={1}>
           <div>1</div>
           <div>2</div>
           <div>3</div>

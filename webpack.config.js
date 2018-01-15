@@ -334,7 +334,7 @@ const distCommon = {
       root: 'ReactDOM'
     }
   },
-  stats: 'minimal',
+  stats: 'normal',
   module: {
     rules: [
       {

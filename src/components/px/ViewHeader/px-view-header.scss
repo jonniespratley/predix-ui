@@ -1,21 +1,21 @@
-.px-view-header {
-  @import "../sass/_helpers.scss";
-  $viewheader-background-color           : var(--px-view-header-background-color, whitesmoke);
-  ///
-  $navbar-height                         : 56px;
-  $navbar-padding                        : $inuit-base-spacing-unit--tiny;
-  ///
-  $navbar-button-font-size               : $inuit-base-font-size;
-  $navbar-button-padding                 : $inuit-base-spacing-unit--tiny;
-  $navbar-button-height                  : calculateRem(44px);
-  $navbar-button-width                   : calculateRem(44px);
-  $navbar-button-background-color        : rgba(0, 0, 0, 0);
-  $navbar-button-color                   : var(--px-navbar-button-color, blue);
-  $navbar-button-border-radius           : 2px;
-  $navbar-button-border                  : 1px solid transparent;
-  $navbar-button-background-color--active: rgba(0, 0, 0, .5);
-  $navbar-button-opacity--active         : 0.5;
+@import '../../../sass/_helpers.scss';
 
+
+$viewheader-background-color: var(--px-view-header-background-color, whitesmoke); ///
+$navbar-height: 56px;
+$navbar-padding: $inuit-base-spacing-unit--tiny; ///
+$navbar-button-font-size: $inuit-base-font-size;
+$navbar-button-padding: $inuit-base-spacing-unit--tiny;
+$navbar-button-height: calculateRem(44px);
+$navbar-button-width: calculateRem(44px);
+$navbar-button-background-color: rgba(0, 0, 0, 0);
+$navbar-button-color: var(--px-navbar-button-color, blue);
+$navbar-button-border-radius: 2px;
+$navbar-button-border: 1px solid transparent;
+$navbar-button-background-color--active: rgba(0, 0, 0, .5);
+$navbar-button-opacity--active: 0.5;
+
+.px-view-header {
   &.vh-header {
     height          : 4rem;
     background-color: var(--px-view-header-background-color, whitesmoke);
@@ -141,7 +141,6 @@
       box-shadow: none;
       transition: none;
     }
-
     @include modifier ('back') {
       i.fa-angle-left {
         margin-right: 0.5rem;
@@ -150,7 +149,7 @@
   }
 
   .toggle__menu {
-    background : url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24h-24z" fill="none"/><path d="M3 18h18v-2h-18v2zm0-5h18v-2h-18v2zm0-7v2h18v-2h-18z" fill="currentcolor"/></svg>') center center no-repeat;
+    background : url('data:image/svg+xml;utf8, <svg xmlns=\"http://www.w3.org/2000/svg\" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24h-24z" fill="none"/><path d="M3 18h18v-2h-18v2zm0-5h18v-2h-18v2zm0-7v2h18v-2h-18z" fill="currentcolor"/></svg>') center center no-repeat;
     width      : 30px;
     height     : 30px;
     //margin-right: 16px;

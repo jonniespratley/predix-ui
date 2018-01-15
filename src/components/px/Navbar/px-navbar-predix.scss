@@ -1,5 +1,5 @@
 @import 'variables';
-@import 'px-navbar-sketch.scss'; // TODO: This is the theme (colors);
+@import 'px-navbar-sketch'; // TODO: This is the theme (colors);
 
 :root{
   --px-navbar-background-color: var(--px-base-background-color, white);

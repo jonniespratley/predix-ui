@@ -9,7 +9,7 @@ import AppNav from '../../AppNav';
 import Navbar from '../../Navbar';
 
 import BaseComponent from '../../BaseComponent';
-import IronMediaQuery from '../../iron-components/iron-media-query';
+import IronMediaQuery from '../../../iron/iron-media-query';
 /**
  * Layout component
  */

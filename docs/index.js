@@ -10,41 +10,41 @@ import px from '../src';
 import DemoHelpers from '../src/DemoHelpers';
 
 // TODO: extract
-import IronComponents from '../src/iron-components';
-import ironComponentsDocs from '../src/iron-components/README';
+import IronComponents from '../src/iron';
+import ironComponentsDocs from '../src/components/iron/README';
 
 // TODO: Use this format
-import pxAppHeaderDocs from '../src/AppHeader/README';
-import pxAppNavDocs from '../src/AppNav/README';
-import pxAccordionDocs from '../src/Accordion/README';
-import pxActionSheetDocs from '../src/ActionSheet/README';
-import pxAlertLabelDocs from '../src/AlertLabel/README';
-import pxAlertMessageDocs from '../src/AlertMessage/README';
-import pxButtonDocs from '../src/Button/README';
-import pxBreadcrumbsDocs from '../src/Breadcrumbs/README';
-import pxBrandingBarDocs from '../src/BrandingBar/README';
-import pxCardDocs from '../src/Card/README';
-import pxChipDocs from '../src/Chip/README';
-import pxInputDocs from '../src/Input/README';
-import pxIconSetDocs from '../src/IconSet/README';
+import pxAppHeaderDocs from '../src/components/px/AppHeader/README';
+import pxAppNavDocs from '../src/components/px/AppNav/README';
+import pxAccordionDocs from '../src/components/px/Accordion/README';
+import pxActionSheetDocs from '../src/components/px/ActionSheet/README';
+import pxAlertLabelDocs from '../src/components/px/AlertLabel/README';
+import pxAlertMessageDocs from '../src/components/px/AlertMessage/README';
+import pxButtonDocs from '../src/components/px/Button/README';
+import pxBreadcrumbsDocs from '../src/components/px/Breadcrumbs/README';
+import pxBrandingBarDocs from '../src/components/px/BrandingBar/README';
+import pxCardDocs from '../src/components/px/Card/README';
+import pxChipDocs from '../src/components/px/Chip/README';
+import pxInputDocs from '../src/components/px/Input/README';
+import pxIconSetDocs from '../src/components/px/IconSet/README';
 //import pxIconSetDocs from '../src/px-icon-set/README';
-import pxDrawerDocs from '../src/Drawer/README';
-import pxDatatableDocs from '../src/DataTable/README';
-import pxDropDownDocs from '../src/Dropdown/README';
-import pxGridDocs from '../src/Grid/README';
-import pxLayoutDocs from '../src/Layout/README';
-import pxModalDocs from '../src/Modal/README';
-import pxNavbarDocs from '../src/Navbar/README';
-import pxSpinnerDocs from '../src/Spinner/README';
-import pxTableViewDocs from '../src/TableView/README';
-import pxTabsDocs from '../src/Tabs/README';
-import pxProgressbarDocs from '../src/ProgressBar/README';
-import pxPopoverDocs from '../src/Popover/README';
-import pxOverlayDocs from '../src/Overlay/README';
-import pxTileDocs from '../src/Tile/README';
-import pxTreeDocs from '../src/Tree/README';
-import pxKeyValuePairDocs from '../src/KeyValuePair/README';
-import pxViewHeaderDocs from '../src/ViewHeader/README';
+import pxDrawerDocs from '../src/components/px/Drawer/README';
+import pxDatatableDocs from '../src/components/px/DataTable/README';
+import pxDropDownDocs from '../src/components/px/Dropdown/README';
+import pxGridDocs from '../src/components/px/Grid/README';
+import pxLayoutDocs from '../src/components/px/Layout/README';
+import pxModalDocs from '../src/components/px/Modal/README';
+import pxNavbarDocs from '../src/components/px/Navbar/README';
+import pxSpinnerDocs from '../src/components/px/Spinner/README';
+import pxTableViewDocs from '../src/components/px/TableView/README';
+import pxTabsDocs from '../src/components/px/Tabs/README';
+import pxProgressbarDocs from '../src/components/px/ProgressBar/README';
+import pxPopoverDocs from '../src/components/px/Popover/README';
+import pxOverlayDocs from '../src/components/px/Overlay/README';
+import pxTileDocs from '../src/components/px/Tile/README';
+import pxTreeDocs from '../src/components/px/Tree/README';
+import pxKeyValuePairDocs from '../src/components/px/KeyValuePair/README';
+import pxViewHeaderDocs from '../src/components/px/ViewHeader/README';
 
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import IronSelector from '../iron-components/IronSelector';
+import IronSelector from '../../iron/IronSelector';
 import DeviceView from './device-view';
 import stylesheet from './px-demo-helpers.scss';
 

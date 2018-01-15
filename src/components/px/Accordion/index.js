@@ -3,7 +3,7 @@ import React from 'react';
 import BaseComponent from '../BaseComponent';
 import classNames from 'classnames';
 import stylesheet from './px-accordion.scss';
-import IronCollapse from '../iron-components/IronCollapse';
+import IronCollapse from '../../iron/IronCollapse';
 import CSSModules from 'react-css-modules';
 
 class Accordion extends BaseComponent {
