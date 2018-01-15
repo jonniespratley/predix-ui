@@ -1,5 +1,5 @@
 import React from 'react'
-import injectSheet from 'react-jss'
+//import injectSheet from 'react-jss'
 
 /**
  * ExampleComponent styles
@@ -17,7 +17,7 @@ const styles = {
 /**
  * ExampleComponent component
  */
-class ExampleComponent extends React.Component {
+export default class ExampleComponent extends React.Component {
   constructor(props){
     super(props);
     this.displayName = 'ExampleComponent';
@@ -39,4 +39,4 @@ class ExampleComponent extends React.Component {
 	}
 }
 
-export default injectSheet(styles)(ExampleComponent);
+//export default injectSheet(styles)(ExampleComponent);
