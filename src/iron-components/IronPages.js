@@ -23,7 +23,7 @@ class IronPages extends React.Component {
 		}
 
 
-    const selectedClassName = classnames('iron-selected');
+    const selectedClassName = classnames(this.props.selectedClassName);
 
 		return (<div className={selectedClassName}>{child}</div>);
 	}

@@ -4,18 +4,7 @@ import React from 'react';
 import stylesheet from './px-button.scss';
 
 
-
-import injectSheet from 'react-jss';
-
-const styles = theme => ({
-  button: {
-    background: theme.colorPrimary
-  },
-  label: {
-    fontWeight: 'bold'
-  }
-})
-
+ 
 
 /**
  * Button component will render a button with Predix Design.
