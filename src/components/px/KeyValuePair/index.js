@@ -37,7 +37,7 @@ const _getAdjustedSize = (s) => {
         {value}
         {uom && <span className={_getAdjustedSize(size)}>{uom}</span>}
       </div>
-      <style jsx>{stylesheet}</style>
+      <style>{`${stylesheet}`}</style>
     </div>
   );
 }

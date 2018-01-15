@@ -68,7 +68,7 @@ export default class TreeNode extends React.Component {
       <div className={baseClasses}>
         {this._renderNode(this.props, this.state)}
         {children}
-        <style jsx>{stylesheet}</style>
+        <style>{`${stylesheet}`}</style>
       </div>
     );
   }
@@ -153,7 +153,7 @@ class TreeNode extends BaseComponent {
         </ul>}
 
 
-        <style jsx>{stylesheet}</style>
+        <style>{`${stylesheet}`}</style>
 			</li>
 		);
 	}

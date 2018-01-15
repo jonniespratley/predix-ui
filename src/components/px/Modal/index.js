@@ -54,6 +54,6 @@ export default ({
         </div>
       </section>
     </div>
-    <style jsx>{stylesheet}</style>
+    <style>{`${stylesheet}`}</style>
   </div>);
 }

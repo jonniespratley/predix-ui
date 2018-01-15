@@ -39,6 +39,6 @@ export default({
 			</div>
 		</nav>
 
-		<style jsx>{stylesheet}</style>
+		<style>{`${stylesheet}`}</style>
 	</div>
 );

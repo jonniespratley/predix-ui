@@ -81,7 +81,7 @@ class AppNavItem extends BaseComponent {
         {dropdown && <Icon icon='px-utl:chevron' size={16} className='app-nav-item__dropdown-icon'/>}
 
 
-        <style jsx>{stylesheet}</style>
+        <style>{`${stylesheet}`}</style>
       </div>
     );
   }

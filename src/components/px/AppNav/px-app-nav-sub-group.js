@@ -43,7 +43,7 @@ class AppNavSubGroup extends BaseComponent {
         <div className='app-nav-subgroup__dropdown'>
           <div className='app-nav-subgroup__dropdown__content'>{children}</div>
         </div>
-        <style jsx>{stylesheet}</style>
+        <style>{`${stylesheet}`}</style>
       </div>
     );
   }

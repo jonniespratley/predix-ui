@@ -17,6 +17,6 @@ export default ({
       <span className='epsilon caps'>{headerText}</span>
     </header>}
     <section>{children}</section>
-    <style jsx>{stylesheet}</style>
+    <style>{`${stylesheet}`}</style>
   </div>
 );

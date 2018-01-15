@@ -8,6 +8,7 @@ import { withKnobs, text, array, object, boolean, number } from '@storybook/addo
 
 //component
 import Button from './';
+import StyledButton from './styles';
 
 //stories
 const stories = storiesOf('Button', module);
@@ -19,8 +20,11 @@ stories
       <Button>Click the "?" mark at top-right to view the info.</Button>
     )
   )
+.add('StyledButton', () => (
+	<Button onClick={action('clicked')}>Button</Button>
+))
 .add('default', () => (
-	<Button onClick={action('clicked')} label='Button'/>
+	<Button onClick={action('clicked')}>Button</Button>
 ))
 .add('with text', () => (
 	<Button onClick={action('clicked')}>Hello Button</Button>
@@ -30,11 +34,24 @@ stories
 ))
 .add('with theme', () => (
 	<div>
-		<Button onClick={action('clicked')} label='Button'/>
-		<Button onClick={action('clicked')} label='Button' primary/>
-		<Button onClick={action('clicked')} label='Button' tertiary/>
-		<Button onClick={action('clicked')} label='Button' disabled/>
+		<Button onClick={action('clicked')} >Button</Button>
+		<Button onClick={action('clicked')} primary>Button</Button>
+		<Button onClick={action('clicked')} tertiary>Button</Button>
+		<Button onClick={action('clicked')} disabled>Button</Button>
 	</div>
-));
+))
+.add('with sizes', () => (
+	<div>
+		<Button onClick={action('clicked')} small>Button</Button>
+		<Button onClick={action('clicked')} large>Button</Button>
+		<Button onClick={action('clicked')} huge>Button</Button>
+    <Button onClick={action('clicked')} small primary>Button</Button>
+    <Button onClick={action('clicked')} large primary>Button</Button>
+    <Button onClick={action('clicked')} huge primary>Button</Button>
+		<Button onClick={action('clicked')} huge tertiary>Button</Button>
+		<Button onClick={action('clicked')} disabled>Button</Button>
+	</div>
+))
+;
 
 module.exports = stories;

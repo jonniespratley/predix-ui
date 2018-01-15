@@ -38,7 +38,7 @@ export default class Tree extends BaseComponent {
 		return (
 			<div className={baseClasses} style={style}>
         <TreeNode data={items} onCategorySelect={this.onSelect}/>
-				<style jsx>{stylesheet}</style>
+				<style>{`${stylesheet}`}</style>
 			</div>
 		);
 	}

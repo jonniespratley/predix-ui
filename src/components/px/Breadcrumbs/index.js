@@ -45,7 +45,7 @@ export default ({label = 'Breadcrumbs', children}) => {
         </ul>
       </div>
 
-      <style jsx>{stylesheet}</style>
+      <style>{`${stylesheet}`}</style>
     </div>
   );
 }

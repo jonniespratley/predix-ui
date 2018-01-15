@@ -64,7 +64,7 @@ export default ({
     return (
       <div className={classnames(baseClasses, layoutSizeClasses)} style={style}>
         {children}
-        <style jsx>{stylesheet}</style>
+        <style>{`${stylesheet}`}</style>
       </div>
     )
 };

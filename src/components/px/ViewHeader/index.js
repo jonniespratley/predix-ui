@@ -25,6 +25,6 @@ export default ({
       {subtitle && <div className='zeta vh-subtitle truncate' title={subtitle}>{subtitle}</div>}
     </div>
     <div className='right'>{rightContent}</div>
-    <style jsx>{stylesheet}</style>
+    <style>{`${stylesheet}`}</style>
   </div>
 );

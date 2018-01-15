@@ -24,7 +24,7 @@ class DeviceLayoutViewer extends React.Component {
             <DeviceView device="phone" src={src} >{children}</DeviceView>
           </IronSelector>
         </div>
-        <style jsx>{stylesheet}</style>
+        <style>{`${stylesheet}`}</style>
     </div>
     );
   }

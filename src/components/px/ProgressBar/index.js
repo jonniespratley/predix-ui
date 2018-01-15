@@ -34,7 +34,7 @@ export default ({
       <div id="background" className='background'>
         <div id="fill" className='fill' style={fillStyle}></div>
       </div>
-      <style jsx>{stylesheet}</style>
+      <style>{`${stylesheet}`}</style>
     </div>
   );
 }

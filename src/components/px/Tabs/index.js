@@ -92,8 +92,8 @@ class Tabs extends BaseComponent {
           {this._renderTitles()}
           {this._renderContent()}
         </div>
-        <style jsx global>{style}</style>
-        <style jsx global>{tabStyle}</style>
+        <style>{`${style}`}</style>
+        <style>{`${tabStyle}`}</style>
       </div>
 		);
 	}

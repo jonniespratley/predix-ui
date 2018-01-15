@@ -182,7 +182,8 @@ class AppNav extends BaseComponent {
           </section>
 
         </section>
-        <style jsx>{stylesheet}</style>
+
+        <style>{`${stylesheet}`}</style>
       </nav>
     );
   }

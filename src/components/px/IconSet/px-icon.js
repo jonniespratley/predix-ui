@@ -12,7 +12,7 @@ class Icon extends React.Component {
 		return Object.assign({}, ...args);
 	}
 	createMarkup(icon){
-    let name = icon.replace(':', '-');
+    let name = icon && icon.replace(':', '-');
 		let html = this.getIcon(name);
 		return { __html: html };
 	}
@@ -22,7 +22,7 @@ class Icon extends React.Component {
 		}
 	}
 	render(){
-    const { icon, size, style, className } = this.props;
+    const { icon = '', size, style, className } = this.props;
 		const styles = {
      width: `${size}px`,
      height: `${size}px`
@@ -41,7 +41,7 @@ class Icon extends React.Component {
           dangerouslySetInnerHTML={this.createMarkup(icon)}
         	style={this.mergeStyles(svgStyles, style)}>
 	      </svg>
-        <style jsx>{stylesheet}</style>
+        <style>{`${stylesheet}`}</style>
 			</i>
     );
 	}

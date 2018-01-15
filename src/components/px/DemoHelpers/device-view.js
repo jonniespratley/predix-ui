@@ -32,7 +32,7 @@ export default class DeviewView extends BaseComponent {
           {src && <iframe src={src}></iframe>}
           {children && <div className="device-view-content">{children}</div>}
         </div>
-				<style jsx>{stylesheet}</style>
+				<style>{`${stylesheet}`}</style>
 			</div>
 		);
 	}

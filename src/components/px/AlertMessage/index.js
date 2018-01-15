@@ -64,7 +64,7 @@ export default ({
       </div>
 
 
-      <style jsx>{stylesheet}</style>
+      <style>{`${stylesheet}`}</style>
 
     </div>
   </div>

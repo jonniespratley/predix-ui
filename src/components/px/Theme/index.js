@@ -22,7 +22,7 @@ export default ({
   return (
     <div className={baseClasses}>
       <div>{children}</div>
-      <style jsx>{stylesheet}</style>
+      <style>{`${stylesheet}`}</style>
     </div>
   );
 }

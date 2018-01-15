@@ -36,7 +36,7 @@ export default class Dropdown extends BaseComponent {
 			<div className={baseClasses} style={style}>
 				<h4 className={stylesheet.title}>{label}</h4>
 				<div>{children}</div>
-				<style jsx>{stylesheet}</style>
+				<style>{`${stylesheet}`}</style>
 			</div>
 		);
 	}

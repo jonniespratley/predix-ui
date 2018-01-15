@@ -49,7 +49,7 @@ export default class Gauge extends BaseComponent {
           <span className="text-value">{_valueOfProcess}</span>
           <span className="text-unit">{unit}</span>
         </div>
-				<style jsx>{stylesheet}</style>
+				<style>{`${stylesheet}`}</style>
 			</div>
 		);
 	}

@@ -15,6 +15,6 @@ export default ({ title = 'Predix Design System', powered = 'Powered by', childr
 			<span className='u-mr-- px-branding-bar__powered-by-text'>{powered}</span>
 			<span className='u-mr'><PredixLogo size={10}/></span>
 		</div>
-		<style jsx>{stylesheet}</style>
+		<style>{`${stylesheet}`}</style>
 	</div>
 );

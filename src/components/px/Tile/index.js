@@ -37,7 +37,7 @@ export default ({
         </div>
        </div>
      </div>
-      <style jsx>{stylesheet}</style>
+      <style>{`${stylesheet}`}</style>
     </div>
   );
 }

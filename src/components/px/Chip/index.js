@@ -26,7 +26,7 @@ export default ({
           {showIcon && <span className='chip__actionable-icon'>{icon}</span>}
         </div>
       </div>
-      <style jsx>{stylesheet}</style>
+      <style>{`${stylesheet}`}</style>
     </div>
   );
 }

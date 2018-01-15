@@ -84,7 +84,7 @@ class Input extends BaseComponent {
           className={inputClassnames}
           type={type}
           {...inputProps}/>
-				<style jsx>{stylesheet}</style>
+				<style>{`${stylesheet}`}</style>
 			</div>
 		);
 	}

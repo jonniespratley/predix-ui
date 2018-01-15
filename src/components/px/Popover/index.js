@@ -53,7 +53,7 @@ export default class Popover extends BaseComponent {
             {body && <p>{body}</p>}
             {children && <div>{children}</div>}
           </div>
-          <style jsx>{stylesheet}</style>
+          <style>{`${stylesheet}`}</style>
         </div>
       </div>
     );

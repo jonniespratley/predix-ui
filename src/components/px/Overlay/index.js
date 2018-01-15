@@ -69,7 +69,7 @@ class Overlay extends BaseComponent {
     return (
       <div className={baseClasses} onClick={this._handleOverlayClick} style={style}>
         {children}
-        <style jsx>{stylesheet}</style>
+        <style>{`${stylesheet}`}</style>
       </div>
     );
   }

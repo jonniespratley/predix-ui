@@ -48,7 +48,7 @@ export default ({label, type = 'info', badge, children}) => {
           <span className='label__text'>{label}</span>
         </div>
       </span>
-      <style jsx>{stylesheet}</style>
+      <style>{`${stylesheet}`}</style>
     </div>
   );
 
