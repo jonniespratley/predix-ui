@@ -5,11 +5,11 @@ const VERSION = require('../package.json').version;
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import GithubCorner from 'react-github-corner';
+//import GithubCorner from 'react-github-corner';
 import { Catalog, CodeSpecimen, ReactSpecimen } from 'catalog';
 
 //import 'purecss/build/pure.css';
-import './main.css';
+//import './main.css';
 import px from '../src';
 import DemoHelpers from '../src/components/px/DemoHelpers';
 
@@ -140,14 +140,7 @@ const pages = [
 // Catalog - logoSrc="../images/logo.png"
 ReactDOM.render(
   <div>
-    <GithubCorner
-      href={`https://github.com/${project}`}
-      bannerColor="#fff"
-      octoColor="#000"
-      width={80}
-      height={80}
-      direction="right"
-    />
+
     <Catalog
       //logoSrc={logo}
       imports={documentationImports}

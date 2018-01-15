@@ -18,6 +18,12 @@ $inuit-enable-paddings--tiny: true;
 
 
 .accordion {
+  &--disabled {
+    .accordion__header {
+      cursor        : not-allowed;
+      pointer-events: none;
+    }
+  }
   &__header {
     margin-bottom   : 0.3333rem;
     cursor          : pointer;
@@ -48,11 +54,4 @@ $inuit-enable-paddings--tiny: true;
 
 .accordion__expand__collapse {
   margin-bottom: 1.5rem;
-}
-
-&--disabled {
-  .accordion__header {
-    cursor        : not-allowed;
-    pointer-events: none;
-  }
 }

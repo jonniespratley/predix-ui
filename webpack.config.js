@@ -15,7 +15,7 @@ const config = {
     bower: path.join(ROOT_PATH, 'bower_components'),
     dist: path.join(ROOT_PATH, 'dist'),
     src: path.join(ROOT_PATH, 'src'),
-    docs: path.join(ROOT_PATH, 'docs'),
+    docs: path.join(ROOT_PATH, 'catalog'),
     ghPages: path.join(ROOT_PATH, 'gh-pages')
   },
   filename: pkg.name,
@@ -34,7 +34,6 @@ const analyzeBundle = new BundleAnalyzerPlugin({
 });
 
 
-
 const EXTRACT_CSS = (process.env.EXTRACT_CSS === true);
 
 
@@ -50,6 +49,10 @@ const extractSass = new ExtractTextPlugin({
   allChunks: true
 });
 
+
+/**
+ * CSS Rules
+ */
 const cssRules = {
   test: /\.module.css$/,
   use: extractCss.extract({
@@ -70,6 +73,10 @@ const cssRules = {
   })
 };
 
+
+/**
+ * Sass Rules
+ */
 const sassRules = {
   test: /\.s(a|c)ss$/,
   use: extractSass.extract({
@@ -149,6 +156,7 @@ const common = {
       'styles': './styles'
     }
   },
+  stats: 'full',
   module: {
     rules: [
       {
@@ -162,7 +170,7 @@ const common = {
       },
       {
         test: /\.md$/,
-        use: ['catalog/lib/loader', 'raw-loader']
+        use: ['catalog/loader', 'raw-loader']
       },
       {
         test: /\.svg$/,
@@ -193,8 +201,14 @@ const common = {
   stats: 'minimal'
 };
 
+
+/**
+ * Site configuration
+ */
 const siteCommon = {
   plugins: [
+    extractCss,
+    extractSass,
     new HtmlWebpackPlugin({
       template: require('html-webpack-template'), // eslint-disable-line global-require
       inject: false,
@@ -357,12 +371,20 @@ const distCommon = {
   ]
 };
 
+
+/**
+ * Dist configuration
+ */
 const dist = merge(distCommon, {
   output: {
     filename: `${config.filename}.js`
   }
 });
 
+
+/**
+ * Dist Min configuration
+ */
 const distMin = merge(distCommon, {
   output: {
     filename: `${config.filename}.min.js`
