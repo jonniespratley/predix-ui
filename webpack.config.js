@@ -144,7 +144,10 @@ const common = {
     modules: [
       'bower_components',
       'node_modules'
-    ]
+    ],
+    alias: {
+      'styles': './styles'
+    }
   },
   module: {
     rules: [

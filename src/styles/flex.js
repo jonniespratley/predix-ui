@@ -32,5 +32,4 @@ const Flex = styled.div`
 
 `;
 
-const comp = {Flex};
-export default comp;
+export default Flex;

@@ -2,8 +2,57 @@
 import React from 'react';
 import BaseComponent from '../BaseComponent';
 import classNames from 'classnames';
-import stylesheet from './px-accordion.scss';
+
+//import stylesheet from './px-accordion.scss';
+
 import IronCollapse from '../../iron/IronCollapse';
+import Flex from '../../../styles/flex';
+
+import styled from 'styled-components';
+
+
+const AccordionHeader = styled.div`
+  padding: .5rem;
+  margin-bottom   : 0.3333rem;
+  cursor          : pointer;
+  user-select     : none;
+  background-color: var(--px-accordion-header-background-color, white);
+  color           : var(--px-accordion-header-color, black);
+  display         : flex;
+  justify-content : space-between;
+  > * {
+    user-select   : none;
+  }
+`;
+
+const AccordionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const AccordionSection = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+
+const AccordionBody = styled.div`
+  margin  : 0;
+  overflow: auto;
+  padding: .5rem;
+`;
+
+const AccordionIcon = styled.div`
+  display: flex;
+  width : 1rem;
+  height: 1rem;
+`;
+
+const AccordionStatus = styled.div`
+  margin-right  : 1rem;
+  text-transform: none;
+`;
+
+
 import CSSModules from 'react-css-modules';
 
 class Accordion extends BaseComponent {
@@ -40,16 +89,6 @@ class Accordion extends BaseComponent {
       {'px-accordion--open': open}
     );
 
-
-    const headerClasses = classNames(
-      'accordion__header',
-      'flex',
-      'flex--row',
-      'flex--justify',
-      'u-p--',
-      'heading--subsection'
-    );
-
     const iconClasses = classNames(
       'accordion__icon',
       'actionable--action',
@@ -59,31 +98,34 @@ class Accordion extends BaseComponent {
     );
 
     return (
-      <div styleName={baseClasses} style={style}>
-        <section styleName="accordion__container">
-          <header styleName={headerClasses} onClick={this.onClick} disabled={disabled}>
-            <div styleName="flex flex--middle">
-              <span styleName={iconClasses}>
+      <div className={baseClasses} style={style}>
+        <AccordionContainer>
+
+          <AccordionHeader onClick={this.onClick} disabled={disabled}>
+            <Flex middle>
+              <span className={iconClasses}>
                 {open && '-'}
                 {!open && '+'}
               </span>
               <span>{headerValue}</span>
-            </div>
-            <div styleName="flex flex--middle">
-              <span styleName="accordion__status">{status}</span>
-              {showAction && <span styleName={iconClasses}>action</span>}
-            </div>
-          </header>
+            </Flex>
+            <Flex middle>
+              <AccordionStatus>{status}</AccordionStatus>
+              {showAction && <span className={iconClasses}>action</span>}
+            </Flex>
+          </AccordionHeader>
 
           <IronCollapse ref="collapse" opened={open}>
-            <div styleName="accordion__body u-p--">
+            <AccordionBody>
               {children}
-            </div>
+            </AccordionBody>
           </IronCollapse>
-        </section>
+
+        </AccordionContainer>
 
       </div>
     );
   }
 }
-export default CSSModules(Accordion, stylesheet, {allowMultiple: true, handleNotFoundStyleName: 'log'});
+//export default CSSModules(Accordion, stylesheet, {allowMultiple: true, handleNotFoundStyleName: 'log'});
+export default Accordion;

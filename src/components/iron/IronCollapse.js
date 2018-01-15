@@ -159,7 +159,7 @@ export default class IronCollapse extends React.Component {
 				aria-hidden={!opened}
 				aria-expanded={opened}>
 				{children}
-				<style jsx>{`
+				<style>{`
 					.iron-collapse {
 					  display: block;
 					  -webkit-transition-duration: 300ms;
