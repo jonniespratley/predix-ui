@@ -31,8 +31,8 @@ export default class ExampleComponent extends React.Component {
 		} = this.props;
 
 		return (
-			<div className={classes.root} style={style}>
-				{label && <h4 className={classes.label}>{ label }</h4>}
+			<div style={style}>
+				{label && <h4>{ label }</h4>}
 				<div>{children}</div>
 			</div>
 		);
