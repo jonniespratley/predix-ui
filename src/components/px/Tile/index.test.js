@@ -6,7 +6,16 @@ import PxTile from './';
 describe('Tile', () => {
   test('should...', () =>{
     const wrapper = shallow(
-      <PxTile/>
+      <PxTile />
+    );
+    console.log(wrapper.debug());
+    expect(true).to.equal(true);
+  });
+  test('should render with images', () =>{
+    const wrapper = shallow(
+      <PxTile
+        title='My Tile'
+        image='https://www.predix-ui.com/bower_components/Tile/turbine.jpg'>This is the tile</PxTile>
     );
     console.log(wrapper.debug());
     expect(true).to.equal(true);
