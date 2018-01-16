@@ -39,13 +39,13 @@ const EXTRACT_CSS = (process.env.EXTRACT_CSS === true);
 
 const extractCss = new ExtractTextPlugin({
 	filename: `[name].css`,
-  disable: EXTRACT_CSS,
+  //disable: EXTRACT_CSS,
   allChunks: true
 });
 
 const extractSass = new ExtractTextPlugin({
 	filename: `${pkg.name}.css`,
-  disable: process.env.NODE_ENV !== 'production',
+  //disable: process.env.NODE_ENV !== 'production',
   allChunks: true
 });
 
@@ -86,8 +86,9 @@ const sassRules = {
       {
         loader: 'css-loader',
         options: {
-          modules: true,
+          modules: false,
           importLoaders: 1,
+          minimize: true,
           sourceMap: true,
           localIdentName: '[path]___[name]___[local]___[hash:base64:5]'
         }
