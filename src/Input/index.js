@@ -28,6 +28,8 @@ class Input extends BaseComponent {
       success,
       warning,
 
+      errorMessage,
+
       //size lengths
       regular,
       tiny,
@@ -58,6 +60,10 @@ class Input extends BaseComponent {
       {'label--inline': inline}
     );
 
+    const errorClasses = classnames(
+      'error-message'
+    );
+
 		const inputClassnames = classnames(
       'text-input',
       {'input--regular': regular},
@@ -84,6 +90,9 @@ class Input extends BaseComponent {
           className={inputClassnames}
           type={type}
           {...inputProps}/>
+
+          <div className={errorClasses}>{error && errorMessage}</div>
+
 				<style jsx>{stylesheet}</style>
 			</div>
 		);
