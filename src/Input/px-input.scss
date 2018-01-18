@@ -35,4 +35,12 @@
     flex: 1;
     width: auto;
   }
+
+  .error-message {
+    @import 'px-forms-design/_base.forms.scss';
+    font-size: 12px;
+    padding-top: 0.3em;
+    margin-left: .33333rem;
+    color: #f34336;
+  }
 }

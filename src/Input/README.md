@@ -85,6 +85,19 @@ const { Input } = px;
   placeholder='Type something...'/>
 ```
 
+### Error Message:
+
+```react
+const { Input } = px;
+<Input
+  name='input1'
+  type='text'
+  label='Input Label'
+  placeholder='Type something...'
+  error
+  errorMessage='This is an error message'/>
+```
+
 ### Checkbox:
 
 ```html
