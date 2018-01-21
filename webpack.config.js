@@ -45,16 +45,10 @@ const extractCss = new ExtractTextPlugin({
 });
 
 const extractSass = new ExtractTextPlugin({
-<<<<<<< HEAD
 	filename: process.env.NODE_ENV === 'production' ? `${pkg.name}.min.css` : `${pkg.name}.css`,
   //disable: process.env.NODE_ENV !== 'production',
-=======
-	filename: process.env.NODE_ENV == 'production' ? `${pkg.name}.min.css` : `${pkg.name}.css`,
-  //disable: process.env.NODE_ENV == 'production',
->>>>>>> e6f2170f114b236028b2aec57f727743139efa3d
   allChunks: true
 });
-
 
 /**
  * CSS Rules
@@ -88,7 +82,6 @@ const sassRules = {
   use: extractSass.extract({
     fallback: 'style-loader',
     use: [
-    //  'babel-loader',
       {
         loader: 'css-loader',
         options: {
@@ -114,12 +107,7 @@ const sassRules = {
              index: true,
              css: true,
              bower: true
-           },
-          includePaths: [
-            'sass',
-            'styles'
-            //'node_modules'
-          ].map((d) => path.join(__dirname, d)).map((g) => glob.sync(g)).reduce((a, c) => a.concat(c), [])
+           }
         }
       }
     ]
@@ -170,10 +158,7 @@ const common = {
         test: /\.js$/,
         enforce: 'pre',
         use: 'eslint-loader',
-        include: [
-          config.paths.docs,
-          config.paths.src
-        ]
+        include: [ config.paths.docs, config.paths.src ]
       },
       {
         test: /\.md$/,
@@ -209,9 +194,7 @@ const common = {
 };
 
 
-/**
- * Site configuration
- */
+
 const siteCommon = {
   plugins: [
     extractCss,
@@ -282,9 +265,7 @@ const dev = merge(common, siteCommon, {
   }
 });
 
-/**
- * github pages configuration
- */
+
 const ghPages = merge(common, siteCommon, {
   entry: {
     app: config.paths.docs
@@ -334,10 +315,6 @@ const ghPages = merge(common, siteCommon, {
 });
 
 
-/**
- *
- * TODO: dist configuration build needs to have .css and js
- */
 const distCommon = {
   devtool: 'source-map',
   resolve: common.resolve,
@@ -381,20 +358,11 @@ const distCommon = {
   ]
 };
 
-
-/**
- * Dist configuration
- */
 const dist = merge(distCommon, {
   output: {
     filename: `${config.filename}.js`
   }
 });
-
-
-/**
- * Dist Min configuration
- */
 const distMin = merge(distCommon, {
   output: {
     filename: `${config.filename}.min.js`
