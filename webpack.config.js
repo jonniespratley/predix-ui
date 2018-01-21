@@ -44,7 +44,7 @@ const extractCss = new ExtractTextPlugin({
 });
 
 const extractSass = new ExtractTextPlugin({
-	filename: `${pkg.name}.css`,
+	filename: process.env.NODE_ENV === 'production' ? `${pkg.name}.min.css` : `${pkg.name}.css`,
   //disable: process.env.NODE_ENV !== 'production',
   allChunks: true
 });
