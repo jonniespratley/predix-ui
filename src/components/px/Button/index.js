@@ -50,10 +50,10 @@ const Button = styled.button`
     background-color: var(--px-btn-background--pressed, #889aa5);
   }
 
-  /* Sizes */
   ${props => props.active && css`
     outline: none;
   `}
+  
   ${props => props.icon && css`
     height: var(--px-btn-height, 2em);
     width: var(--px-btn-height, 2em);
@@ -63,32 +63,32 @@ const Button = styled.button`
     border: var(--px-btn-icon-border, 0px solid) !important;
     background-color: var(--px-btn-icon-background, transparent) !important;
   `}
+
   ${props => props.small && css`
     height: 1.66667em;
     font-size: 0.8rem;
     line-height: calc(1.66667em - 2px);
   `}
+
   ${props => props.large && css`
     font-size: 1.33333rem;
   `}
+
   ${props => props.huge && css`
     font-size: 2rem;
   `}
+
   ${props => props.full && css`
     width: 100%;
-
     padding-right: 0;
     padding-left: 0;
   `}
 
-
-  /* Colors - primary, tertiary bare */
   ${props => props.primary && css`
     color: var(--px-btn-primary-color, white);
     border-color: var(--px-btn-primary-border-color, transparent);
     box-shadow: var(--px-btn-shadow, none);
     background-color: var(--px-btn-primary-background, #364c59);
-
 
     &:link,
     &:visited,
@@ -105,8 +105,8 @@ const Button = styled.button`
       border-color: transparent;
       background-color: var(--px-btn-primary-background--pressed, #121f26);
     }
-
   `}
+
   ${props => props.tertiary && css`
     border-color: var(--px-btn-tertiary-border-color, #889aa5);
     border: 1px solid;
@@ -132,7 +132,6 @@ const Button = styled.button`
       box-shadow: none;
       background-color: var(--px-btn-tertiary-background--pressed, #96a8b2);
     }
-
   `}
 
 

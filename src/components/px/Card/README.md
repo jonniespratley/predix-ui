@@ -69,9 +69,6 @@ rows:
   - Name: icon
     Type: string
     Description: Icon that appears to the left of the card header text. Should be a valid icon name from the Predix icon set.
-  - Name: children
-    Type: node
-    Description: The children content.
 ```
 
 
@@ -81,18 +78,6 @@ The following custom properties are available for styling:
 ```table
 span: 6
 rows:
-  - Property: --px-view-header-background-color
-    Default: null
-    Description: Background color for the view header
-
-  - Property: --px-headings-heading-subsection-color
-    Default: null
-    Description: Text color for the accordion header
-
-  - Property: --px-headings-heading-subsection-background
-    Default: null
-    Description: Background color for the accordion header
-
   - Property: --px-card-background-color
     Default: null
     Description: Background color of the card
