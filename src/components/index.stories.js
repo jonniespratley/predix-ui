@@ -62,12 +62,6 @@ storiesOf('Styled Component', module)
 		<ExampleComponent label='Header'>Content</ExampleComponent>
 	));
 
-///
-storiesOf('Alert Label', module)
-	.addDecorator(withKnobs)
-	.add('default', () => (
-    <AlertLabel label= {text('label', 'Alert Label')} type='info'/>
-	));
 
 ///
 storiesOf('App Header', module)

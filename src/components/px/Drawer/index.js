@@ -140,7 +140,7 @@ export default class Drawer extends BaseComponent {
             <div>{children}</div>
           </div>
         </div>
-        <style>{`${stylesheet}`}</style>
+      
       </div>
     );
   }

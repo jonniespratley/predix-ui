@@ -176,6 +176,7 @@
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.11.1",
+    "webpack-jarvis": "^0.2.2",
     "webpack-merge": "^4.1.0",
     "webpack-stream": "^4.0.0"
   },

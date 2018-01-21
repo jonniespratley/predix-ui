@@ -20,9 +20,6 @@ stories
       <Button>Click the "?" mark at top-right to view the info.</Button>
     )
   )
-.add('StyledButton', () => (
-	<Button onClick={action('clicked')}>Button</Button>
-))
 .add('default', () => (
 	<Button onClick={action('clicked')}>Button</Button>
 ))
@@ -43,13 +40,9 @@ stories
 .add('with sizes', () => (
 	<div>
 		<Button onClick={action('clicked')} small>Button</Button>
+    <Button onClick={action('clicked')}>Button</Button>
 		<Button onClick={action('clicked')} large>Button</Button>
 		<Button onClick={action('clicked')} huge>Button</Button>
-    <Button onClick={action('clicked')} small primary>Button</Button>
-    <Button onClick={action('clicked')} large primary>Button</Button>
-    <Button onClick={action('clicked')} huge primary>Button</Button>
-		<Button onClick={action('clicked')} huge tertiary>Button</Button>
-		<Button onClick={action('clicked')} disabled>Button</Button>
 	</div>
 ))
 ;

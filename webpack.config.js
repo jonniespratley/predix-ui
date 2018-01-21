@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SystemBellPlugin = require('system-bell-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
+const Jarvis = require('webpack-jarvis');
 const pkg = require('./package.json');
 const ROOT_PATH = __dirname;
 
@@ -44,8 +45,13 @@ const extractCss = new ExtractTextPlugin({
 });
 
 const extractSass = new ExtractTextPlugin({
+<<<<<<< HEAD
 	filename: process.env.NODE_ENV === 'production' ? `${pkg.name}.min.css` : `${pkg.name}.css`,
   //disable: process.env.NODE_ENV !== 'production',
+=======
+	filename: process.env.NODE_ENV == 'production' ? `${pkg.name}.min.css` : `${pkg.name}.css`,
+  //disable: process.env.NODE_ENV == 'production',
+>>>>>>> e6f2170f114b236028b2aec57f727743139efa3d
   allChunks: true
 });
 
@@ -215,7 +221,7 @@ const siteCommon = {
       inject: false,
       mobile: true,
       title: pkg.name,
-      appMountId: 'app'
+      appMountId: 'catalog'
     }),
     new webpack.DefinePlugin({
       NAME: JSON.stringify(pkg.name),
@@ -240,6 +246,9 @@ const dev = merge(common, siteCommon, {
       'process.env.NODE_ENV': '"development"'
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new Jarvis({
+     port: 1337
+   }),
     extractCss,
     extractSass
   ],

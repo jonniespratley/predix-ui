@@ -11,10 +11,11 @@ Reference https://github.com/PredixDev/px-buttons-design
 ```react|lang-jsx
 const { Button } = PxReact;
 <div>
-  <Button label='Button'/>
-  <Button label='Button' primary/>
-  <Button label='Button' tertiary/>
-  <Button label='Button' disabled/>
+  <Button>Button</Button>
+  <Button bare>Button</Button>
+  <Button primary>Button</Button>
+  <Button tertiary>Button</Button>
+  <Button disabled>Button</Button>
 </div>
 ```
 
@@ -22,19 +23,19 @@ const { Button } = PxReact;
 ```react|lang-jsx
 const { Button } = PxReact;
 <div>
-  <Button label='Button' small/>
-  <Button label='Button' />
-  <Button label='Button' large/>
-  <Button label='Button' huge/>
+  <Button small>Button</Button>
+  <Button>Button</Button>
+  <Button large>Button</Button>
+  <Button huge>Button</Button>
 </div>
 ```
 
-### Custom classnames
+### Custom style
 
 ```react|lang-jsx
 const { Button } = PxReact;
 <div>
-  <Button label='Danger' className='btn--danger' large/>
+  <Button className='btn--danger' large>Button</Button>
   <style>{`
     .btn--danger {
       color: white;
@@ -55,15 +56,12 @@ const { Button } = PxReact;
 ```table
 span: 6
 rows:
-  - Name: className
-    Type: String
-    Description: Additional class names to apply
-  - Name: label
-    Type: String
-    Description: Label for the button
   - Name: primary
     Type: Boolean
     Description: Enable primary button
+  - Name: bare
+    Type: Boolean
+    Description: Enable bare button
   - Name: tertiary
     Type: Boolean
     Description: Enable tertiary button
