@@ -30,8 +30,8 @@ class Icon extends React.Component {
 		const svgStyles = {
 			pointerEvents: 'none',
 			display: 'block',
-			height: '100%',
-			width: '100%'
+			height: styles.height,
+			width: styles.width
     };
     const icn = icon && icon.replace(':', '-');
     return (

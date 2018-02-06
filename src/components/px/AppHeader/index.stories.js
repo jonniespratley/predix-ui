@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import AppHeader from './';
+
 const navItems = [
   {
     "path": "/page1",
@@ -17,7 +18,10 @@ const navItems = [
 storiesOf('App Header', module)
 	.add('default', () => (
 		<AppHeader/>
+  ))
+  .add('with custom "title"', () => (
+		<AppHeader title='My App'/>
 	))
-	.add('with title', () => (
+	.add('with items', () => (
 		<AppHeader title='App Header' items={navItems}/>
 	));

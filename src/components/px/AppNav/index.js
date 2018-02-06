@@ -15,12 +15,12 @@ class AppNav extends BaseComponent {
   constructor(props){
     super(props, {displayName: 'AppNav'});
     this.state = {
-      selected: this.props.selected,
-      onlyShowIcon: this.props.onlyShowIcon || this.props.vertical,
-      selectedItem: null,
-      vertical: this.props.vertical,
-      verticalOpened: this.props.verticalOpened || !this.props.vertical,
-      propForSelect: this.props.propForSelect
+      selected: props.selected || 0,
+      onlyShowIcon: props.onlyShowIcon ||  props.vertical,
+      selectedItem: props.selectedItem || null,
+      vertical: props.vertical || false,
+      verticalOpened: props.verticalOpened || !props.vertical,
+      propForSelect: props.propForSelect
     };
     this._items = [];
     this._keys = [];
@@ -35,6 +35,9 @@ class AppNav extends BaseComponent {
       this.base.addEventListener('mouseleave', this._handleMouseExit);
       this.base.addEventListener('mouseenter', this._handleMouseEnter);
     }
+  }
+  componentWillReceiveProps(nextProps){
+    console.log('componentWillReceiveProps', nextProps);
   }
   componentWillUnmount(){
     if(this.base){
@@ -165,23 +168,23 @@ class AppNav extends BaseComponent {
 
     return (
       <nav className={baseClasses} style={style} ref={this._handleRef}>
-        <section className={appNavClasses}>
+        <div className={appNavClasses}>
 
-          <section className='app-nav__items'>
+          <div className='app-nav__items'>
             {/* app-nav__items */}
             {this._renderItems(items)}
-          </section>
+          </div>
 
           {/* STATE: Horizontal or menu nav, any visible items */}
 
           {/* STATE: Items overflowed or collapsed */}
 
           {/* Actions */}
-          <section className="app-nav__actions">
+          <div className="app-nav__actions">
             {children}
-          </section>
+          </div>
 
-        </section>
+        </div>
 
         <style>{`${stylesheet}`}</style>
       </nav>
@@ -195,13 +198,14 @@ AppNav.defaultProps = {
   collapseAll: false,
   collapseAt: null,
   collapseWithIcon: false,
+  onlyShowIcon: false,
   collapseOpened: false,
   verticalOpened: false,
   selected: 0,
   selectedItem: null,
   visibleItems: null,
   items: null,
-  opened: true
+  opened: null
 };
 
 export default AppNav;

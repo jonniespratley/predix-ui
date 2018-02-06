@@ -9,14 +9,14 @@ import stylesheet from './px-alert-message.scss';
 export default ({
   messageTitle,
   message,
-
   action = 'dismiss',
   visible,
   expanded,
   type = 'information',
   autoDismiss = 5000,
   language = 'en',
-  children}) => {
+  children
+}) => {
 
   const baseClasses = classnames(
     'alert-message',
@@ -62,9 +62,6 @@ export default ({
           onClick={(e) => {this.close(e);}}
           className="btn btn--tertiary">OK</button>}
       </div>
-
-
-      <style>{`${stylesheet}`}</style>
 
     </div>
   </div>
