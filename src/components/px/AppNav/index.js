@@ -36,9 +36,11 @@ class AppNav extends BaseComponent {
       this.base.addEventListener('mouseenter', this._handleMouseEnter);
     }
   }
+
   componentWillReceiveProps(nextProps){
-    console.log('componentWillReceiveProps', nextProps);
+    //console.log('componentWillReceiveProps', nextProps);
   }
+
   componentWillUnmount(){
     if(this.base){
       this.base.removeEventListener('mouseleave', this._handleMouseExit);

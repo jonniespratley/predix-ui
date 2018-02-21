@@ -50,6 +50,7 @@ const navItems = array('navItems', [{
 storiesOf('App Nav', module)
   .add('default', () => (<AppNav items={navItems}/>))
   .add('with "horizontal"', () => (<AppNav items={navItems}/>))
+  .add('with "selected"', () => (<AppNav items={navItems} selected={2}/>))
   .add('with "vertical"', () => (<AppNav items={navItems} vertical/>))
 ;
 storiesOf('App Nav Item', module)
