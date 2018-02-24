@@ -80,10 +80,10 @@ const pages = [
     path: '/getting-started',
     title: 'Getting Started',
     pages: [
-      {path: 'installation', title: 'Installation', component: require('./installation.md')},
-      {path: 'customization', title: 'Customization', component: require('./customization.md')},
+      {path: 'installation', title: 'Installation', component: require('./installation.md')}
+     // {path: 'customization', title: 'Customization', component: require('./customization.md')},
     //  {path: 'tutorial', title: 'Turorial', component: require('./tutorial.md')},
-      {path: 'example', title: 'Example', component: require('./example.md')}
+   //   {path: 'example', title: 'Example', component: require('./example.md')}
     ]
   },
   {
@@ -113,15 +113,15 @@ const pages = [
       { path: 'Breadcrumbs', title: 'Breadcrumbs', component: pxBreadcrumbsDocs},
       { path: 'Card', title: 'Card', component: pxCardDocs },
       { path: 'Chip', title: 'Chip', component: pxChipDocs },
-      { path: 'Drawer', title: 'Drawer', component: pxDrawerDocs },
+     // { path: 'Drawer', title: 'Drawer', component: pxDrawerDocs },
       { path: 'DataTable', title: 'DataTable', component: pxDatatableDocs },
       { path: 'Dropdown', title: 'Dropdown', component: pxDropDownDocs },
-      { path: 'Grid', title: 'Grid', component: pxGridDocs },
+   //   { path: 'Grid', title: 'Grid', component: pxGridDocs },
       { path: 'px-icon-set', title: 'Icon Set', component: pxIconSetDocs },
       { path: 'Input', title: 'Input', component: pxInputDocs },
       { path: 'KeyValuePair', title: 'Key-Value Pair', component: pxKeyValuePairDocs },
       { path: 'Layout', title: 'Layout', component: pxLayoutDocs },
-      { path: 'Navbar', title: 'Navbar', component: pxNavbarDocs },
+      //{ path: 'Navbar', title: 'Navbar', component: pxNavbarDocs },
       { path: 'Modal', title: 'Modal', component: pxModalDocs },
       { path: 'Overlay', title: 'Overlay', component: pxOverlayDocs },
       { path: 'Popover', title: 'Popover', component: pxPopoverDocs },

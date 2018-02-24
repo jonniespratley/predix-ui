@@ -8,6 +8,7 @@ import styled, {css} from 'styled-components';
 
 
 const Button = styled.button`
+  font-family: "GE Inspira Sans";
   outline: none;
   user-select: none;
   display: inline-block;

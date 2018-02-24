@@ -12,6 +12,7 @@ import styled from 'styled-components';
 
 
 const AccordionHeader = styled.div`
+  font-family: "GE Inspira Sans";
   padding: .5rem;
   margin-bottom   : 0.3333rem;
   cursor          : pointer;

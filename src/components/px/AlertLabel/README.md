@@ -11,43 +11,47 @@ Reference https://www.predix-ui.com/#/elements/px-alert-label
 span: 2
 ---
 const {AlertLabel} = PxReact;
-<AlertLabel
-  label='Info'
-  type='info'/>
+<AlertLabel info 
+  label='Info'/>
 ```
 
 ```react
 span: 2
 ---
 const {AlertLabel} = PxReact;
-<AlertLabel
-  label='warning'
-  type='warning'/>
+<AlertLabel warning
+  label='warning'/>
 ```
 
 ```react
 span: 2
 ---
 const {AlertLabel} = PxReact;
-<AlertLabel
-  label='healthy'
-  type='healthy'/>
+<AlertLabel healthy
+  label='healthy'/>
 ```
 
 ```react
 span: 2
 ---
 const {AlertLabel} = PxReact;
-<AlertLabel
-  label='error'
-  type='error'/>
+<AlertLabel error
+  label='error'/>
 ```
 
 ```react
 span: 2
 ---
 const {AlertLabel} = PxReact;
-<AlertLabel
-  label='important'
-  type='important'/>
+<AlertLabel important
+  label='important'/>
+```
+
+
+```react
+span: 2
+---
+const {AlertLabel} = PxReact;
+<AlertLabel unknown
+  label='unknown'/>
 ```

@@ -46,6 +46,9 @@ const RenderIconSet = ({icons, size}) => (
   <RenderIconSet icons={ObjIcons} size={32}/>
 
   <style>{`
+    .cheatsheet{
+      color: black;
+    }
     .cheatsheet ul {
       display: flex;
       flex-wrap: wrap;
