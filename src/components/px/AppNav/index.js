@@ -171,7 +171,6 @@ class AppNav extends BaseComponent {
     return (
       <nav className={baseClasses} style={style} ref={this._handleRef}>
         <div className={appNavClasses}>
-
           <div className='app-nav__items'>
             {/* app-nav__items */}
             {this._renderItems(items)}
@@ -185,10 +184,7 @@ class AppNav extends BaseComponent {
           <div className="app-nav__actions">
             {children}
           </div>
-
         </div>
-
-        <style>{`${stylesheet}`}</style>
       </nav>
     );
   }

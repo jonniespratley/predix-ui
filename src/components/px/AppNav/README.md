@@ -29,7 +29,7 @@ This data should be passed into the `items` property on the component.
 
 ```react
 state:
-  selected: 0
+  selected: 2
   selectedItem: null
 ---
 const { AppNav } = PxReact;
@@ -41,19 +41,6 @@ const navItems = [
 ];
 <AppNav selected={state.selected} items={navItems}/>
 ```
-
-
-```react
-
-const {AppNavItem} = PxReact;
-<div>
-  <AppNavItem label="Label" icon="px-fea:home"/>
-  <AppNavItem label="Label" icon="px-fea:home" onlyShowIcon/>
-</div>
-```
-
-
-
 
 
 ### With propForSelect
@@ -93,8 +80,9 @@ const navItems = [
 const { AppNav, AppNavItem } = PxReact;
 const navItems = [
   {id : "home", label: "Home", icon: "px-fea:home"},
-  {id : "settings", label: "Settings", icon: "px-fea:settings"},
-  {id : "alert", label: "Alerts", icon: "px-fea:alerts"}
+  {id : "assets", label: "Assets", icon: "px-fea:asset"},
+  {id : "alerts", label: "Alerts", icon: "px-fea:alerts"},
+  {id : "dashboards", label: "Dashboards", icon: "px-fea:dashboard"}
 ];
 const style = {
   position: 'relative',

@@ -76,6 +76,7 @@ const pages = [
     title: 'Introduction',
     component: require('../README.md')
   },
+  /*
   {
     path: '/getting-started',
     title: 'Getting Started',
@@ -86,6 +87,7 @@ const pages = [
    //   {path: 'example', title: 'Example', component: require('./example.md')}
     ]
   },
+  */
   {
     path: '/layout',
     title: 'Layout',

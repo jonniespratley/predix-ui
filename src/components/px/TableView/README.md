@@ -4,24 +4,18 @@ Use the `px.TableView` component to create list-style interfaces like menus or t
 
 
 
-Use the component in your application:
-
-```code
-import px from 'px-components-react';
-import {TableView, TableRow} from 'px-components-react';
-
-<px.TableView>
-  <px.TableRow title="Text Label"/>
-  <px.TableRow title="Tappable Item" tappable/>
-</px.TableView>
-```
-
 ## Usage
 
 ```react
-<px.TableView large>
-  <px.TableRow title="Tappable Item" tappable/>
-</px.TableView>
+function makeRows(count = 100){
+	let items = [];
+	while(count--){ 
+		items.push({title: `Item ${count}`});
+	}
+	return items;
+}
+const items = makeRows();
+<px.TableView items={items} tappable/>
 ```
 
 

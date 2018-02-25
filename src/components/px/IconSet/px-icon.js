@@ -30,8 +30,8 @@ class Icon extends React.Component {
 		const svgStyles = {
 			pointerEvents: 'none',
 			display: 'block',
-			height: styles.height,
-			width: styles.width
+			height: '100%',
+			width: '100%'
     };
     const icn = icon && icon.replace(':', '-');
     return (
@@ -41,7 +41,6 @@ class Icon extends React.Component {
           dangerouslySetInnerHTML={this.createMarkup(icon)}
         	style={this.mergeStyles(svgStyles, style)}>
 	      </svg>
-        <style>{`${stylesheet}`}</style>
 			</i>
     );
 	}

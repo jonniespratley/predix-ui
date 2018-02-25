@@ -1,6 +1,4 @@
-@import "variables";
-@import "mixins";
-@import "px-mobile-design/sass/_mixins.scss";
+
 
 // Generic
 //@import "px-normalize-design/_generic.normalize.scss";
@@ -17,6 +15,12 @@
  * TableView styles
  */
 .px-table-view {
+  @import "variables";
+  @import "mixins";
+  @import "px-mobile-design/sass/_mixins.scss";
+
+  color: var(--px-base-text-color, black);
+
   // @import 'TableView/sass/TableView-predix.scss';
 
   .table-row{
