@@ -1,7 +1,9 @@
 // Generic
-@import "px-normalize-design/_generic.normalize.scss";
+//@import "px-normalize-design/_generic.normalize.scss";
 //@import "px-box-sizing-design/_generic.box-sizing.scss";
 @import "px-helpers-design/_generic.helpers.scss";
+$inuit-base-spacing-unit--large: 2rem;
+$inuit-base-spacing-unit--small: .5rem;
 
 /**
  * Modal styles

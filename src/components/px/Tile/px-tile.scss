@@ -1,16 +1,18 @@
+$inuit-namespace: '';
+
 /**
  * px-tile styles
  */
 .px-tile {
   // Generic
-  @import "px-normalize-design/_generic.normalize.scss";
+  //@import "px-normalize-design/_generic.normalize.scss";
   //@import "px-box-sizing-design/_generic.box-sizing.scss";
   @import "px-helpers-design/_generic.helpers.scss";
   // Base
   //@import "px-headings-design/_base.headings.scss";
   // Meta
   // Objects
-  @import "px-shadows-design/_objects.shadows.scss";
+  //@import "px-shadows-design/_objects.shadows.scss";
   width   : var(--px-tile-width, 20rem);
   height  : var(--px-tile-height, 15.3333rem);
   overflow: hidden;
