@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import stylesheet from './px-breadcrumbs.scss';
+//import stylesheet from './px-breadcrumbs.scss';
 
 /**
  * Breadcrumbs component
@@ -44,8 +44,7 @@ export default ({label = 'Breadcrumbs', children}) => {
           */}
         </ul>
       </div>
-
-      <style>{`${stylesheet}`}</style>
+ 
     </div>
   );
 }

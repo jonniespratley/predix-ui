@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import stylesheet from './px-dropdown.scss';
+//import stylesheet from './px-dropdown.scss';
 import BaseComponent from '../BaseComponent';
 
 /**
@@ -34,9 +34,8 @@ export default class Dropdown extends BaseComponent {
 
 		return (
 			<div className={baseClasses} style={style}>
-				<h4 className={stylesheet.title}>{label}</h4>
-				<div>{children}</div>
-				<style>{`${stylesheet}`}</style>
+			 
+				
 			</div>
 		);
 	}

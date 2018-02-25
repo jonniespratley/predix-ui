@@ -261,7 +261,7 @@ const dev = merge(common, siteCommon, {
     open: true,
     host: process.env.HOST,
     port: process.env.PORT,
-    stats: true
+    stats: 'errors-only'
   }
 });
 

@@ -9,8 +9,7 @@ Reference https://www.predix-ui.com/#/elements/px-branding-bar
 
 ```react
 const {BrandingBar} = PxReact;
-<BrandingBar
-  application-title="Predix Design System"/>
+<BrandingBar title="Predix Design System" showLogo/>
 ```
 
 ## Properties
@@ -18,7 +17,7 @@ const {BrandingBar} = PxReact;
 ```table
 span: 6
 rows:
-  - Name: applicationTitle
+  - Name: title
     Type: String
     Description: The application title to display in the lefthand corner of the branding bar.
 ```

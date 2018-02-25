@@ -26,6 +26,12 @@ $ npm install predix-ui
 
 Then import the components you want to use.
 
+If you're not using a module bundler or package manager we also have a global ("UMD") build hosted on the unpkg CDN. Simply add the following `<script>` tag to the bottom of your HTML file:
+
+```code
+<script src="https://unpkg.com/predix-ui/dist/predix-ui.min.js"></script>
+```
+
 ```js
 import { Card } from 'predix-ui';
 
@@ -35,11 +41,11 @@ import { Card } from 'predix-ui';
 ```
 
 ### Theme
-The component styles are all in separate .css files or you can use the entire theme.
+The component styles are all in separate `.css` files or you can use the entire theme.
 
 ```code
-<link rel='stylesheet prefetch' href='https://unpkg.com/predix-ui@0.0.9/dist/predix-ui.min.css'/>
-<link rel='stylesheet prefetch' href='https://unpkg.com/predix-ui@0.0.9/dist/css/Theme/px-dark-theme.min.css'/>
+<link rel='stylesheet prefetch' href='https://unpkg.com/predix-ui/dist/predix-ui.min.css'/>
+<link rel='stylesheet prefetch' href='https://unpkg.com/predix-ui/dist/css/Theme/px-dark-theme.min.css'/>
 ```
 
 ## Starter Project

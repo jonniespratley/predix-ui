@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import BaseComponent from '../BaseComponent';
-import stylesheet from './px-popover.scss';
+
 
 /**
  * Popover component
@@ -53,7 +53,7 @@ export default class Popover extends BaseComponent {
             {body && <p>{body}</p>}
             {children && <div>{children}</div>}
           </div>
-          <style>{`${stylesheet}`}</style>
+          
         </div>
       </div>
     );

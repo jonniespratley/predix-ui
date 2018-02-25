@@ -1,11 +1,5 @@
-//import classnames from 'classnames';
-//import PropTypes from 'prop-types';
 import React from 'react';
-//import stylesheet from './px-button.scss';
-
-
 import styled, {css} from 'styled-components';
-
 
 const Button = styled.button`
   font-family: "GE Inspira Sans";
@@ -135,7 +129,6 @@ const Button = styled.button`
     }
   `}
 
-
   ${props => props.bare && css`
     height: var(--px-btn-height, 2em);
     border: 0 !important;
@@ -172,9 +165,6 @@ const Button = styled.button`
     background-color: var(--px-btn-disabled-background, transparent);
     pointer-events: none;
   `}
-
-
-
 
 `;
 

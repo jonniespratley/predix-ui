@@ -22,14 +22,14 @@ export default ({
   children
 }) =>  {
 
-    const modalClassnames = classnames(
-      'modal',
-      'flex',
-      'flex--middle',
-      'flex--center',
-      'full-height',
-      {'invisible' : !opened}
-    );
+  const modalClassnames = classnames(
+    'modal',
+    'flex',
+    'flex--middle',
+    'flex--center',
+    'full-height',
+    {'invisible' : !opened}
+  );
 
   return (
   <div className='px-modal'>
@@ -42,18 +42,22 @@ export default ({
         </div>
         <div className="modal__buttons flex flex--right">
           <div className='flex'>
-            {btnModalNegative && <Button id="btnModalNegative"
-              label={btnModalNegative}
-              onClick={onBtnModalNegativeClick}/>}
-            {btnModalPositive && <Button primary
-              disabled={btnModalPositiveDisabled}
+            {btnModalNegative && 
+            <Button id="btnModalNegative"
+                onClick={onBtnModalNegativeClick}>{btnModalNegative}</Button>
+            }
+            {btnModalPositive && 
+            <Button primary
               id="btnModalPositive"
-              label={btnModalPositive}
-              onClick={onBtnModalPositiveClick}/>}
+              disabled={btnModalPositiveDisabled}
+              onClick={onBtnModalPositiveClick}>
+                {btnModalPositive}
+              </Button>
+              }
           </div>
         </div>
       </section>
     </div>
-    <style>{`${stylesheet}`}</style>
-  </div>);
+  </div>
+  );
 }

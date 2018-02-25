@@ -1,15 +1,9 @@
-
 import React from 'react';
-import BaseComponent from '../BaseComponent';
 import classNames from 'classnames';
-
-//import stylesheet from './px-accordion.scss';
-
+import BaseComponent from '../BaseComponent';
 import IronCollapse from '../../iron/IronCollapse';
 import Flex from '../../../styles/flex';
-
 import styled from 'styled-components';
-
 
 const AccordionHeader = styled.div`
   font-family: "GE Inspira Sans";
@@ -30,11 +24,11 @@ const AccordionContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 const AccordionSection = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
 
 const AccordionBody = styled.div`
   margin  : 0;
@@ -54,7 +48,6 @@ const AccordionStatus = styled.div`
 `;
 
 
-import CSSModules from 'react-css-modules';
 
 class Accordion extends BaseComponent {
   constructor(props){

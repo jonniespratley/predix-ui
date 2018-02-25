@@ -11,22 +11,9 @@
 //@import "px-spacing-responsive-design/_trumps.spacing-responsive.scss";
 // Component
 .px-branding-bar {
-  display         : flex;
-  align-items     : center;
-  width           : inherit;
-  justify-content : space-between;
-  height          : var(--px-branding-bar-height, calculateRem(30px));
-  max-height      : calculateRem(67px);
-  min-height      : calculateRem(30px);
-  background-color: var(--px-branding-bar-background-color, black);
-  font-size       : var(--px-branding-bar-font-size, calculateRem(15px));
-  color           : var(--px-branding-bar-logo-and-title-text-color, gray);
+  
   @include media-query(palm) {
-    display   : none !important;
-    visibility: hidden;
+   
   }
 
-  &__powered-by-text {
-    font-size: calculateRem(12px);
-  }
 }

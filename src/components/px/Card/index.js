@@ -1,5 +1,5 @@
 import React from 'react';
-import stylesheet from './px-card.scss';
+
 import classnames from 'classnames';
 import Icon from '../IconSet/px-icon';
 
@@ -17,6 +17,6 @@ export default ({
       <span className='epsilon caps'>{headerText}</span>
     </header>}
     <section>{children}</section>
-    <style>{`${stylesheet}`}</style>
+
   </div>
 );

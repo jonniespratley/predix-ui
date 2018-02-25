@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import stylesheet from './px-chip.scss';
+ 
 
 /**
  * Chip component
@@ -26,7 +26,7 @@ export default ({
           {showIcon && <span className='chip__actionable-icon'>{icon}</span>}
         </div>
       </div>
-      <style>{`${stylesheet}`}</style>
+      
     </div>
   );
 }

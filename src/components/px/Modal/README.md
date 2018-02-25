@@ -7,7 +7,7 @@ The `<Modal/>` component provides a way to open and close an overlay modal dialo
 state:
   opened: false
 ---
-const {Button, Modal} = PxReact;
+const { Button, Modal } = PxReact;
 <div>
   <Modal
     modalHeading="Sign in required"
@@ -18,9 +18,9 @@ const {Button, Modal} = PxReact;
     This is the children content of the modal.
   </Modal>
 
-  <Button
-    label='Open Modal'
-    onClick={() => setState({opened: !state.opened})}/>
+  <Button onClick={() => setState({opened: !state.opened})}>
+    Open Modal
+  </Button>
 </div>
 ```
 

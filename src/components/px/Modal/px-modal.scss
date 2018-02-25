@@ -21,26 +21,16 @@
       visibility      : hidden;
       background-color: transparent;
     }
-
   }
 
   // Components
   .modal {
     position        : absolute;
-  //  top             : 0;
-//    right           : 0;
-    //bottom          : 0;
-    //left            : 0;
     z-index         : 999;
-  //  background-color: var(--Modal-overlay-color, rgba(black, 0.65));
-//    transition      : background-color 0.3s cubic-bezier(.78,.13,.16,.87);
-    @apply(--px-modal);
     background-color: transparent;
     &.invisible {
       visibility      : hidden;
-      //background-color: transparent;
     }
-
     &.fadeout {
       animation: fadeout 0.2s cubic-bezier(.78,.13,.16,.87);
     }
@@ -62,7 +52,7 @@
   .modal__title {
     margin-bottom: $inuit-base-spacing-unit--large;
     margin-top   : 0;
-    @apply(--px-modal-title);
+    
   }
 
   .modal__content {
@@ -80,7 +70,7 @@
     color           : var(--px-modal-text-color, black);
     box-shadow      : 0 6px 12px 0 rgba(0,0,0,0.20);
     padding         : $inuit-base-spacing-unit--large;
-    @apply(--px-modal-content);
+    
     @include media-query(palm) {
       width: 100%;
     }
@@ -98,10 +88,7 @@
     &:nth-last-of-type(2) {
       margin-right: $inuit-base-spacing-unit--small;
     }
-    @apply(--px-modal-buttons);
+
   }
 
-  .modal__buttons button.btn--call-to-action {
-    @apply(--px-modal-positive-button);
-  }
 }

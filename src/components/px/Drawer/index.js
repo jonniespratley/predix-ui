@@ -2,7 +2,7 @@ import React from 'react';
 import BaseComponent from '../BaseComponent';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import stylesheet from './px-drawer.scss';
+//import stylesheet from './px-drawer.scss';
 
 
 
