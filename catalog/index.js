@@ -114,7 +114,7 @@ const pages = [
       { path: 'BrandingBar', title: 'Branding Bar', component: pxBrandingBarDocs},
     //  { path: 'Breadcrumbs', title: 'Breadcrumbs', component: pxBreadcrumbsDocs},
       { path: 'Card', title: 'Card', component: pxCardDocs },
-    //  { path: 'Chip', title: 'Chip', component: pxChipDocs },
+      { path: 'Chip', title: 'Chip', component: pxChipDocs },
      // { path: 'Drawer', title: 'Drawer', component: pxDrawerDocs },
     //  { path: 'DataTable', title: 'DataTable', component: pxDatatableDocs },
       { path: 'Dropdown', title: 'Dropdown', component: pxDropDownDocs },
