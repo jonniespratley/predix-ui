@@ -87,7 +87,7 @@ const pages = [
    //   {path: 'example', title: 'Example', component: require('./example.md')}
     ]
   },
-  */
+  
   {
     path: '/layout',
     title: 'Layout',
@@ -100,7 +100,7 @@ const pages = [
         responsiveSizes: responsiveSizes,
         component: require('./layout-grid.md')}
     ]
-  },
+  },*/
   {
     title: 'Component Demos',
     pages: [
@@ -122,11 +122,11 @@ const pages = [
       { path: 'px-icon-set', title: 'Icon Set', component: pxIconSetDocs },
       { path: 'Input', title: 'Input', component: pxInputDocs },
       { path: 'KeyValuePair', title: 'Key-Value Pair', component: pxKeyValuePairDocs },
-      { path: 'Layout', title: 'Layout', component: pxLayoutDocs },
+   //   { path: 'Layout', title: 'Layout', component: pxLayoutDocs },
       //{ path: 'Navbar', title: 'Navbar', component: pxNavbarDocs },
       { path: 'Modal', title: 'Modal', component: pxModalDocs },
       { path: 'Overlay', title: 'Overlay', component: pxOverlayDocs },
-      { path: 'Popover', title: 'Popover', component: pxPopoverDocs },
+   //   { path: 'Popover', title: 'Popover', component: pxPopoverDocs },
       { path: 'ProgressBar', title: 'Progress Bar', component: pxProgressbarDocs },
       { path: 'Spinner', title: 'Spinner', component: pxSpinnerDocs },
 

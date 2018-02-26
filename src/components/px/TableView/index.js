@@ -1,5 +1,5 @@
 import React from 'react';
-import { List } from 'react-virtualized';
+//import { List } from 'react-virtualized';
 import classnames from 'classnames';
 import styleheet from './px-table-view.scss';
 import TableRow from './TableRow';
@@ -73,17 +73,16 @@ class TableView extends React.Component {
 
     return (
       <div className={baseClassnames}>
-        <List 
-          style={style}
-          className={tableViewClassnames} 
-          width={width}
-          height={height}
-          rowHeight={rowHeight} 
-          rowCount={items.length}
-          rowRenderer={this.renderRow}>
-          {children}
-        </List>
-
+        {children}
+        {items && items.map((item, index) => (
+           <TableRow 
+            tappable={this.props.tappable}
+            key={index}
+            index={index}
+            {...item}
+            onClick={this._handleSelect}>
+          </TableRow>
+        ))}
       </div>
     );
   }
