@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import stylesheet from './px-grid.scss';
+//import stylesheet from './px-grid.scss';
 
 /**
  * Grid component
@@ -53,7 +53,6 @@ export default ({
   return (
     <div className={baseClasses} style={style}>
       {children}
-      <style>{`${stylesheet}`}</style>
     </div>
   );
 }

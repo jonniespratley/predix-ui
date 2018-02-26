@@ -1,7 +1,7 @@
 import React from 'react';
 
 import classnames from 'classnames';
-import stylesheet from './px-layout.scss';
+//import stylesheet from './px-layout.scss';
 
 /**
  * Layout component
@@ -64,7 +64,7 @@ export default ({
     return (
       <div className={classnames(baseClasses, layoutSizeClasses)} style={style}>
         {children}
-        <style>{`${stylesheet}`}</style>
+       
       </div>
     )
 };

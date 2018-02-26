@@ -33,8 +33,7 @@ If you're not using a module bundler or package manager we also have a global ("
 ```
 
 ```js
-import { Card } from 'predix-ui';
-
+import { Card } from 'predix-ui';                  
 <Card headerText='My Card'>
     This is a card
 </Card>

@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import stylesheet from './px-key-value-pair.scss';
+//import stylesheet from './px-key-value-pair.scss';
 
 /**
  * KeyValuePair component
@@ -37,7 +37,7 @@ const _getAdjustedSize = (s) => {
         {value}
         {uom && <span className={_getAdjustedSize(size)}>{uom}</span>}
       </div>
-      <style>{`${stylesheet}`}</style>
+      
     </div>
   );
 }

@@ -13,8 +13,7 @@ state:
 const {Button, Overlay} = PxReact;
 <div>
   <Button
-    label='Open Overlay'
-    onClick={(e) => setState({open: !state.open})}/>
+    onClick={(e) => setState({open: !state.open})}>Open Overlay</Button>
   <Overlay
     opened={state.open}
     onOverlayClick={(e) => setState({open: !state.open})}/>

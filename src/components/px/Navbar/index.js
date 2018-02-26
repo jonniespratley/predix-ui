@@ -1,5 +1,5 @@
 import React from 'react';
-import stylesheet from './px-navbar.scss';
+//import stylesheet from './px-navbar.scss';
 
 /**
  * Navbar component
@@ -39,6 +39,5 @@ export default({
 			</div>
 		</nav>
 
-		<style>{`${stylesheet}`}</style>
 	</div>
 );

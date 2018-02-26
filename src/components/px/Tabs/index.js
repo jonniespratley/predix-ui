@@ -1,13 +1,66 @@
 import React from 'react';
 import BaseComponent from '../BaseComponent';
 import classnames from 'classnames';
+import styled, {css} from 'styled-components';
 import Tab from './Tab';
-import tabStyle  from './sass/px-tab.scss';
-import style from './px-tabs.scss';
+
 
 const Pane = (props) => {
   return (<div>{props.children}</div>);
 };
+
+//Container
+const TabsContainer = styled.div`
+  color: var(--px-tabs-color, black);
+  border: 0;
+  padding: 0;
+  &:focus {
+    outline: var(--px-tab-outline-style, none);
+  }
+`;
+TabsContainer.displayName = 'TabsContainer';
+
+//Nav
+const TabsContainerNav = styled.ul`
+  font: inherit;
+  margin: 0;
+  border-bottom: 1px solid var(--px-tab-border-color, gray);
+  padding: 0 1rem 0;
+  display: flex;
+`;
+TabsContainerNav.displayName = 'TabsContainerNav';
+
+//Tab Title
+const TabTitle = styled.a`
+  line-height: 1.3;
+  font: inherit;
+  text-align: center;
+  vertical-align: middle;
+  padding-bottom: 10px;
+  margin: 1px 20px 0 0;
+  color: var(--px-tab-color, black);
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+
+  &:hover {
+    color: var(--px-tab-color--hover, black);
+  }
+
+  &:active {
+    color: var(--px-tab-color--active, black);
+  }
+`;
+TabTitle.displayName = 'TabTitle';
+
+const TabItem = styled.li`
+  list-style-type: none;
+  ${props => props.active && css`
+    color: var(--px-tab-color--selected, black);
+    border-bottom: 2px solid var(--px-tab-color--selected, black);
+    font-weight: bold;
+  `}
+`;
 
 /**
  * Tabs component
@@ -32,8 +85,13 @@ class Tabs extends BaseComponent {
   handleClick(index, event) {
     this._log('handleClick', index);
     event.preventDefault();
+    const selected = this._getIndexForValue(index);
+    if(this.props.onChange){
+      this.props.onChange(index, event);
+    }
+    
     this.setState({
-      selected: this._getIndexForValue(index)
+      selected: selected
     });
   }
 
@@ -55,50 +113,39 @@ class Tabs extends BaseComponent {
       //selected index is selected key
       let selected = (this.state.selected === this._getIndexForValue(propForSelect));
       let baseClasses = classnames(
-        'px-tab',
         {'iron-selected': selected}
       );
       return (
-        <li key={index} className={baseClasses} >
-          <a href='#' onClick={this.handleClick.bind(this, propForSelect)} className='tab-title'>
+        <TabItem key={index} className={baseClasses} active={selected}>
+          <TabTitle href='#' onClick={this.handleClick.bind(this, propForSelect)}>
             {child.props.label}
-          </a>
-        </li>
+          </TabTitle>
+        </TabItem>
       );
     }
-    return (
-      <ul className="tabs-container__nav flex">
-        {this.props.children && this.props.children.map(labels.bind(this))}
-      </ul>
-    );
+    const {children} = this.props;
+    return React.Children.map(children, labels.bind(this));
   }
 
 	_renderContent() {
-		return (
-			<div className='tabs-container__content'>
-				{this.props.children && this.props.children[this.state.selected]}
-			</div>
-		);
+    return this.props.children && this.props.children[this.state.selected];
 	}
 
 	render() {
-    let cssClasses = classnames(
-      'px-tabs',
-      'root'
-    );
+   const {style} = this.props;
 		return (
-      <div className={cssClasses}>
-        <div className='tabs-container'>
+      <TabsContainer style={style}>
+        <TabsContainerNav>
           {this._renderTitles()}
-          {this._renderContent()}
-        </div>
-        <style>{`${style}`}</style>
-        <style>{`${tabStyle}`}</style>
-      </div>
+        </TabsContainerNav>
+        {this._renderContent()}
+      </TabsContainer>
 		);
 	}
 }
 Tabs.defaultProps = {
   selected: 0
 };
+Tabs.displayName = 'Tabs';
+
 export default Tabs;

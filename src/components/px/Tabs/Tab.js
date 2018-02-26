@@ -1,13 +1,12 @@
 import React from 'react';
-import classnames from 'classnames';
+import styled, {css} from 'styled-components';
 
-/**
- * px-tab component
- */
-export default ({children}) => {
-  return (
-    <div>
-      {children}
-    </div>
-  );
-}
+const Tab = styled.div`
+  background-color: transparent;
+ 
+ 
+`;
+
+Tab.displayName = 'Tab';
+
+export default Tab;

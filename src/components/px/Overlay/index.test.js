@@ -13,17 +13,14 @@ describe('px-overlay', () => {
 
   test('should has open class', () =>{
     const wrapper = shallow(<Overlay opened/>);
-    expect(wrapper.find('.px-overlay--is-open')).to.have.length(1);
+    expect(wrapper.state('opened')).to.equal(true);
   });
 
-  xtest('closes on backdrop click', () => {
+  test('onOverlayClick triggers on backdrop click', () => {
     const onButtonClick = sinon.spy();
     const wrapper = shallow(<Overlay opened onOverlayClick={onButtonClick}/>);
-
     wrapper.simulate('click');
     expect(onButtonClick.calledOnce).to.equal(true);
-    expect(wrapper.find('.px-overlay--is-open')).to.have.length(0);
-    expect(wrapper.find('.px-overlay--invisible')).to.have.length(1);
   });
 
   test('does not close on ignoreBackdropClick click', () => {
