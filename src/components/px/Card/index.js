@@ -59,12 +59,12 @@ const CardComponent = ({
   fullBleed,
   children
 }) => (
-  <Card>
-    <CardHeader>
+  <Card className='px-card'>
+    <CardHeader className='px-card-header'>
       {icon && <CardIcon><Icon icon={icon} size={22} /></CardIcon>}
       <CardTitle>{headerText}</CardTitle>
     </CardHeader>
-    <CardBody fullBleed={fullBleed}>
+    <CardBody fullBleed={fullBleed} className='px-card-body'>
       {children}
     </CardBody>
   </Card>

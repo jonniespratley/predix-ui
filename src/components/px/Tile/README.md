@@ -12,6 +12,26 @@ const { Tile } = PxReact;
 </Tile>
 ```
 
+### As Images
+```react
+const { Tile, Flex } = PxReact;
+const images = [
+  {title: 'Image 1', src:'http://via.placeholder.com/350x220', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  {title: 'Image 2', src:'http://via.placeholder.com/350x220', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  {title: 'Image 3', src:'http://via.placeholder.com/350x220', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  {title: 'Image 4', src:'http://via.placeholder.com/350x220', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' }
+];
+<Flex wrap='true'>
+  {images.map((img, index) => (
+    <Flex item className='u-mr' key={index}>
+      <Tile title={img.title} image={img.src}>
+        {img.body}
+      </Tile>
+    </Flex>
+  ))}
+</Flex>
+```
+
 
 ## Properties
 

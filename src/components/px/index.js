@@ -41,7 +41,7 @@ import TreeNode from './Tree/px-tree-node';
 import Tree from './Tree';
 import Tile from './Tile';
 import ViewHeader from './ViewHeader';
-
+import Flex from '../flex';
 
 //import Partials from './px-partials';
 import ExampleComponent from './px-example-component';
@@ -103,7 +103,8 @@ const px = {
 	Tile,
 	Tree,
   	TreeNode,
-	ViewHeader
+	ViewHeader,
+	Flex
 };
 
 
