@@ -4,7 +4,18 @@ import BaseComponent from '../BaseComponent';
 import IronCollapse from '../../iron/IronCollapse';
 import Flex from '../../../styles/flex';
 import styled from 'styled-components';
-
+const styles = {
+  width: `16px`,
+  height: `16px`
+};
+const svgStyles = {
+  pointerEvents: 'none',
+  display: 'block',
+  height: '100%',
+  width: '100%'
+};
+const CloseIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron" style={styles} ><svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" style={svgStyles}><g id="px-utl-chevron-right"><path strokeLinejoin="round" d="M6.2 13.2l5.4-5.5-5.5-5.5"></path></g></svg></i>);
+const OpenIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron-down" style={styles}><svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" style={svgStyles}><g id="px-utl-chevron"><path d="M2.4 6.2l5.5 5.5 5.5-5.5"></path></g></svg></i>);
 const AccordionHeader = styled.div`
   font-family: "GE Inspira Sans";
   padding: .5rem;
@@ -40,6 +51,7 @@ const AccordionIcon = styled.div`
   display: flex;
   width : 1rem;
   height: 1rem;
+  
 `;
 
 const AccordionStatus = styled.div`
@@ -98,8 +110,8 @@ class Accordion extends BaseComponent {
           <AccordionHeader onClick={this.onClick} disabled={disabled}>
             <Flex middle>
               <span className={iconClasses}>
-                {open && '-'}
-                {!open && '+'}
+                {open && <OpenIcon/>}
+                {!open && <CloseIcon/>}
               </span>
               <span>{headerValue}</span>
             </Flex>

@@ -10,8 +10,20 @@ Reference https://www.predix-ui.com/#/elements/px-view-header
   const { ViewHeader } = PxReact;
   <ViewHeader
     title='Current View Title'
-    subtitle='A subtitle describing the view.'
-    showMenuButton/>
+    subtitle='A subtitle describing the view.'/>
+```
+```react
+  const { ViewHeader } = PxReact;
+  <ViewHeader
+    title='Current View Title'
+    subtitle='A subtitle describing the view.'>
+    <div>
+      Left
+    </div>
+    <div>
+      Right
+    </div>
+  </ViewHeader>
 ```
 
 

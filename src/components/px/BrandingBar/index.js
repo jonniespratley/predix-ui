@@ -15,7 +15,7 @@ const BrandingBar = styled.div`
 	background-color: var(--px-branding-bar-background-color, black);
 	font-size       : var(--px-branding-bar-font-size, 15px);
 	color           : var(--px-branding-bar-logo-and-title-text-color, gray);
-	padding			: 0 .5rem;
+	padding			: 0 1rem;
 	@media (max-width: 44.9375em) {
 		display   : none !important;
 		visibility: hidden;

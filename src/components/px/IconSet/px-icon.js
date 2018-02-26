@@ -47,7 +47,7 @@ class Icon extends React.Component {
 }
 
 Icon.defaultProps = {
-  size: 32
+  size: 24
 };
 
 export default Icon;
