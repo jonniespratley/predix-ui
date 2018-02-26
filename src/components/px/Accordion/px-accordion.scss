@@ -1,0 +1,57 @@
+// Base
+@import "px-flexbox-design/_base.flexbox.scss";
+//@import "px-headings-design/_base.headings.scss";
+
+// Objects
+@import "px-actionable-design/_objects.actionable.scss";
+
+// Generic
+//@import "px-normalize-design/_generic.normalize.scss";
+//@import "px-box-sizing-design/_generic.box-sizing.scss";
+//@import "px-helpers-design/_generic.helpers.scss";
+
+// Trumps
+$inuit-enable-paddings--tiny: true;
+@import "px-spacing-design/_trumps.spacing.scss";
+@import "px-flexbox-design/_base.flexbox.scss";
+@import "px-actionable-design/_objects.actionable.scss";
+
+
+.accordion {
+  &--disabled {
+    .accordion__header {
+      cursor        : not-allowed;
+      pointer-events: none;
+    }
+  }
+  &__header {
+    margin-bottom   : 0.3333rem;
+    cursor          : pointer;
+    user-select     : none;
+    background-color: var(--px-accordion-header-background-color, white);
+    color           : var(--px-accordion-header-color, black);
+
+    > * {
+      user-select: none;
+    }
+  }
+
+  &__icon {
+    width : 1rem;
+    height: 1rem;
+  }
+
+  &__body {
+    margin  : 0;
+    overflow: auto;
+  }
+
+  &__status {
+    margin-right  : 1rem;
+    text-transform: none;
+  }
+}
+
+.accordion__expand__collapse {
+  margin-bottom: 1.5rem;
+}

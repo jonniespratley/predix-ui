@@ -1,0 +1,19 @@
+// Generic
+//@import "px-normalize-design/_generic.normalize-mini.scss";
+//@import "px-box-sizing-design/_generic.box-sizing.scss";
+//@import "px-headings-design/_base.headings.scss";
+@import "px-helpers-design/_generic.helpers.scss";
+// Base
+//@import "px-flexbox-design/_base.flexbox.scss";
+//$inuit-enable-margins : true;
+//@import 'px-spacing-design/_trumps.spacing.scss';
+//$inuit-enable-responsive-margins : true;
+//@import "px-spacing-responsive-design/_trumps.spacing-responsive.scss";
+// Component
+.px-branding-bar {
+  
+  @include media-query(palm) {
+   
+  }
+
+}

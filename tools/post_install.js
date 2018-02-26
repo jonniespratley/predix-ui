@@ -23,6 +23,6 @@ stat('dist-modules', function(error, stat) {
 
   if (error || !stat.isDirectory()) {
     //exec('yarn add babel-cli babel-preset-env babel-preset-react --dev');
-  //  exec('npm run dist:modules');
+    //exec('npm run dist:modules');
   }
 });

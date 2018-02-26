@@ -1,0 +1,40 @@
+@import "px-colors-design/_settings.colors.scss";
+@import "px-defaults-design/_settings.defaults.scss";
+
+.px-app-nav-group {
+  color                             : $inuit-base-text-color;
+  line-height                       : $inuit-base-line-height / $inuit-base-font-size;
+  /* [1] */
+  //text-size-adjust                  : 100%;
+  /* [4] */
+  -moz-osx-font-smoothing           : grayscale;
+  /* [5] */
+  -webkit-font-smoothing            : antialiased;
+  /* [5] */
+  position                          : relative;
+  display                           : flex;
+  height                            : auto;
+  overflow                          : hidden;
+  // Component
+  $px-app-nav-group-height          : var(--px-app-nav-height, calculateRem(60px));
+
+  px-app-nav-item {
+    flex: 1 1 auto;
+  }
+  $px-app-nav-group-background-color: var(--px-app-nav-subitem-background-color, white); // Same background color as subitem
+
+  .app-nav-group__dropdown {
+    display: block;
+    height : calc(100vh - #{$px-app-nav-group-height});
+    z-index: 399;
+  }
+
+  .app-nav-group__dropdown__content {
+    background-color: $px-app-nav-group-background-color;
+    box-shadow      : 0 1px 3px 0 rgba(0,0,0,0.30);
+    max-width       : inherit;
+    margin          : 1px;
+    position        : relative;
+    top             : -1px;
+  }
+}

@@ -1,6 +1,10 @@
 const modulePath = "pages/{{camelCase name}}.js";
 const SRC_PATH = './';
 const ns = 'px-';
+
+const COMP_SRC = './src/components';
+
+
 /**
 helpers
 camelCase: changeFormatToThis
@@ -17,6 +21,14 @@ pkg: look up a property from a package.json file in the same folder as the plopf
 
 */
 module.exports = function(plop) {
+
+  const ACTIONS = {
+    ADD_COMPONENT: {
+      type: "add",
+      path: COMP_SRC + "/{{dashCase name}}/index.js",
+      templateFile: "plop-templates/component.tmpl.js"
+    }
+  };
 
 
   plop.addHelper("upperCase", function(text) {
@@ -38,28 +50,26 @@ module.exports = function(plop) {
 			}
 		],
 		actions: [
+
 			//component
+			ACTIONS.ADD_COMPONENT,
+			//scss styles
 			{
 				type: "add",
-				path: "src/{{dashCase name}}/index.js",
-				templateFile: "plop-templates/component.tmpl.js"
-			},
-			//style
-			{
-				type: "add",
-				path: "src/{{dashCase name}}/{{dashCase name}}.scss",
+				path: COMP_SRC + "/{{dashCase name}}/styles/index.scss",
 				templateFile: "plop-templates/component.tmpl.scss"
 			},
+
 			//test
 			{
 				type: "add",
-				path: "src/{{dashCase name}}/{{dashCase name}}.test.js",
+				path: COMP_SRC +"/{{dashCase name}}/{{dashCase name}}.test.js",
 				templateFile: "plop-templates/component.test.tmpl.js"
 			},
 			//readme
 			{
 				type: "add",
-				path: "src/{{dashCase name}}/README.md",
+				path: COMP_SRC +"/{{dashCase name}}/README.md",
 				templateFile: "plop-templates/component.tmpl.md"
 			}
 		]

@@ -6,19 +6,13 @@
     "react",
     ["env", {
       "targets": {
-        "browsers": ["last 2 versions", "safari >= 9"],
-        "node": "8"
+        "browsers": ["last 2 versions", "safari >= 7"]
       }
     }]
   ],
   "plugins": [
-    "styled-jsx/babel",
-    [
-      "transform-react-remove-prop-types",
-      {
-        "mode": "wrap"
-      }
-    ]
+    ["transform-decorators"],
+    ["transform-react-remove-prop-types",{"mode": "wrap"}]
   ],
   "env": {
     "dev": {
@@ -32,11 +26,7 @@
         "es2015"
       ]
     },
-    "dist": {
-      "presets": [
-        "es2015"
-      ]
-    },
+
     "distMin": {
       "presets": [
         "es2015"
@@ -50,7 +40,7 @@
     "modules": {
       "presets": [
         [
-          "es2015",
+          "env",
           {
             "modules": "umd"
           }
@@ -60,7 +50,7 @@
     "es6": {
       "presets": [
         [
-          "es2015",
+          "env",
           {
             "modules": false
           }

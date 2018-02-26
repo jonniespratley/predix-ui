@@ -1,0 +1,11 @@
+import React from 'react';
+import stylesheet from './px-spinner.scss';
+
+export default ({ size=100, finished = false}) => (
+	<div>
+		{!finished && <svg viewBox='0 0 100 100' className="px-spinner" height={size} width={size}>
+			<circle className="circle1" cx="50" cy="50" r="45"></circle>
+			<circle className="circle2" cx="50" cy="50" r="45" transform="rotate(-45,50,50)"></circle>
+		</svg>}
+	</div>
+);

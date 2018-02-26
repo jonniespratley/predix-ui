@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SystemBellPlugin = require('system-bell-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
+const Jarvis = require('webpack-jarvis');
 const pkg = require('./package.json');
 const ROOT_PATH = __dirname;
 
@@ -15,7 +16,7 @@ const config = {
     bower: path.join(ROOT_PATH, 'bower_components'),
     dist: path.join(ROOT_PATH, 'dist'),
     src: path.join(ROOT_PATH, 'src'),
-    docs: path.join(ROOT_PATH, 'docs'),
+    docs: path.join(ROOT_PATH, 'catalog'),
     ghPages: path.join(ROOT_PATH, 'gh-pages')
   },
   filename: pkg.name,
@@ -34,24 +35,26 @@ const analyzeBundle = new BundleAnalyzerPlugin({
 });
 
 
-
 const EXTRACT_CSS = (process.env.EXTRACT_CSS === true);
 
 
 const extractCss = new ExtractTextPlugin({
 	filename: `[name].css`,
-  disable: EXTRACT_CSS,
+  //disable: EXTRACT_CSS,
   allChunks: true
 });
 
 const extractSass = new ExtractTextPlugin({
-	filename: `${pkg.name}.css`,
-//  disable: EXTRACT_CSS,
+	filename: process.env.NODE_ENV === 'production' ? `${pkg.name}.min.css` : `${pkg.name}.css`,
+  //disable: process.env.NODE_ENV !== 'production',
   allChunks: true
 });
 
+/**
+ * CSS Rules
+ */
 const cssRules = {
-  test: /\.css$/,
+  test: /\.module.css$/,
   use: extractCss.extract({
     fallback: 'style-loader',
     //resolve-url-loader may be chained before sass-loader if necessary
@@ -70,28 +73,31 @@ const cssRules = {
   })
 };
 
+
+/**
+ * Sass Rules
+ */
 const sassRules = {
   test: /\.s(a|c)ss$/,
   use: extractSass.extract({
     fallback: 'style-loader',
     use: [
-      'babel-loader',
-      //'raw-loader',
       {
         loader: 'css-loader',
         options: {
+          modules: false,
           importLoaders: 1,
-          //modules: true,
+          minimize: true,
           sourceMap: true,
-          camelCase: true
+          localIdentName: '[path]___[name]___[local]___[hash:base64:5]'
         }
       },
-      {
+      /*{
         loader: 'postcss-loader',
         options: {
           sourceMap: true
         }
-      },
+      },*/
       {
         loader: 'sass-loader',
         options: {
@@ -101,12 +107,7 @@ const sassRules = {
              index: true,
              css: true,
              bower: true
-           },
-          includePaths: [
-            'sass',
-            'styles',
-            'node_modules'
-          ].map((d) => path.join(__dirname, d)).map((g) => glob.sync(g)).reduce((a, c) => a.concat(c), [])
+           }
         }
       }
     ]
@@ -145,22 +146,23 @@ const common = {
     modules: [
       'bower_components',
       'node_modules'
-    ]
+    ],
+    alias: {
+      'styles': './styles'
+    }
   },
+  stats: 'full',
   module: {
     rules: [
       {
         test: /\.js$/,
         enforce: 'pre',
         use: 'eslint-loader',
-        include: [
-          config.paths.docs,
-          config.paths.src
-        ]
+        include: [ config.paths.docs, config.paths.src ]
       },
       {
         test: /\.md$/,
-        use: ['catalog/lib/loader', 'raw-loader']
+        use: ['catalog/loader', 'raw-loader']
       },
       {
         test: /\.svg$/,
@@ -187,17 +189,22 @@ const common = {
   },
   plugins: [
     new SystemBellPlugin()
-  ]
+  ],
+  stats: 'minimal'
 };
+
+
 
 const siteCommon = {
   plugins: [
+    extractCss,
+    extractSass,
     new HtmlWebpackPlugin({
       template: require('html-webpack-template'), // eslint-disable-line global-require
       inject: false,
       mobile: true,
       title: pkg.name,
-      appMountId: 'app'
+      appMountId: 'catalog'
     }),
     new webpack.DefinePlugin({
       NAME: JSON.stringify(pkg.name),
@@ -222,6 +229,9 @@ const dev = merge(common, siteCommon, {
       'process.env.NODE_ENV': '"development"'
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new Jarvis({
+     port: 1337
+   }),
     extractCss,
     extractSass
   ],
@@ -251,13 +261,11 @@ const dev = merge(common, siteCommon, {
     open: true,
     host: process.env.HOST,
     port: process.env.PORT,
-    stats: true
+    stats: 'errors-only'
   }
 });
 
-/**
- * github pages configuration
- */
+
 const ghPages = merge(common, siteCommon, {
   entry: {
     app: config.paths.docs
@@ -307,10 +315,6 @@ const ghPages = merge(common, siteCommon, {
 });
 
 
-/**
- *
- * TODO: dist configuration build needs to have .css and js
- */
 const distCommon = {
   devtool: 'source-map',
   resolve: common.resolve,
@@ -334,6 +338,7 @@ const distCommon = {
       root: 'ReactDOM'
     }
   },
+  stats: 'verbose',
   module: {
     rules: [
       {
@@ -358,7 +363,6 @@ const dist = merge(distCommon, {
     filename: `${config.filename}.js`
   }
 });
-
 const distMin = merge(distCommon, {
   output: {
     filename: `${config.filename}.min.js`
@@ -374,7 +378,6 @@ const distMin = merge(distCommon, {
 
 module.exports = (env) => {
   process.env.BABEL_ENV = env;
-  console.log('webpack.config.js', env);
   const targets = {
     dev,
     dist,
@@ -382,6 +385,6 @@ module.exports = (env) => {
     ghPages
   };
   const c = targets[env] ? targets[env] : common;
-  console.log('webpack.config', JSON.stringify(c, null, 2));
+
   return c;
 };
