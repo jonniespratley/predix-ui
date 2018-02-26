@@ -119,7 +119,7 @@ const pages = [
     //  { path: 'DataTable', title: 'DataTable', component: pxDatatableDocs },
       { path: 'Dropdown', title: 'Dropdown', component: pxDropDownDocs },
    //   { path: 'Grid', title: 'Grid', component: pxGridDocs },
-      { path: 'px-icon-set', title: 'Icon Set', component: pxIconSetDocs },
+      { path: 'Icons', title: 'Icons', component: pxIconSetDocs },
       { path: 'Input', title: 'Input', component: pxInputDocs },
       { path: 'KeyValuePair', title: 'Key-Value Pair', component: pxKeyValuePairDocs },
    //   { path: 'Layout', title: 'Layout', component: pxLayoutDocs },

@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import IconSet from './';
 import stylesheet from './px-icon.scss';
+
 class Icon extends React.Component {
 	constructor(props){
 		super(props);
@@ -30,8 +31,8 @@ class Icon extends React.Component {
 		const svgStyles = {
 			pointerEvents: 'none',
 			display: 'block',
-			height: '100%',
-			width: '100%'
+			width: `${size}px`,
+     	height: `${size}px`
     };
     const icn = icon && icon.replace(':', '-');
     return (
