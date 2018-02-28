@@ -4,9 +4,17 @@ The `<Toggle/>` is a simple on/off switch component. Use it to create UI element
 ## Usage
 
 ```react
+state:
+  checked: false
+---
 const { Toggle } = PxReact;
 <div>
-  <Toggle id="toggle1" name='new' value="true"/>
+  <Toggle 
+    id='toggle-1' 
+    name='new' 
+    value='true'
+    onClick={setState({checked: !state.checked})}
+    checked={state.checked}/>
   <br/>
   <Toggle id="toggle2" name='used1' value="true" size='small'/>				
   <br/>

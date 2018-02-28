@@ -184,8 +184,8 @@ class ToggleInput extends React.Component {
 		}
 	}
 	render(){
-		const {name, value, id, disabled, className, size} = this.props;
-		const {checked} = this.state;
+		const {checked, name, value, id, disabled, className, size} = this.props;
+		//const {checked} = this.state;
 		const classes = classNames( 'toggle', {'toggle--disabled': disabled});
 		const inputClasses = classNames({'toggle--disabled': disabled});
 		const labelClasses = classNames({'toggle--disabled': disabled});
