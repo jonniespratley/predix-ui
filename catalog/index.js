@@ -30,6 +30,7 @@ import pxChipDocs from '../src/components/px/Chip/README.md';
 import pxInputDocs from '../src/components/px/Input/README.md';
 import pxIconSetDocs from '../src/components/px/IconSet/README.md';
 //import pxIconSetDocs from '../src/px-icon-set/README.md';
+import pxToggleInputDocs from '../src/components/px/ToggleInput/README.md';
 import pxDrawerDocs from '../src/components/px/Drawer/README.md';
 import pxDatatableDocs from '../src/components/px/DataTable/README.md';
 import pxDropDownDocs from '../src/components/px/Dropdown/README.md';
@@ -133,6 +134,7 @@ const pages = [
       { path: 'Tabs', title: 'Tabs', component: pxTabsDocs },
       { path: 'Tile', title: 'Tile', component: pxTileDocs },
       { path: 'Tree', title: 'Tree', component: pxTreeDocs },
+      { path: 'ToggleInput', title: 'Toggle Input', component: pxToggleInputDocs },
       { path: 'TableView', title: 'Table View', component: pxTableViewDocs },
       { path: 'ViewHeader', title: 'View Header', component: pxViewHeaderDocs }
     ]
