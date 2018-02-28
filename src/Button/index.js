@@ -30,6 +30,7 @@ const Button = (props) => {
     onClick,
     style,
     attrs,
+    id,
   	children
   } = props;
 	let cssClasses = classnames(
@@ -46,7 +47,7 @@ const Button = (props) => {
     { 'btn--huge': huge }
   );
 	return (
-    <button className={cssClasses} type={type} onClick={onClick} style={style} {...attrs}>
+    <button className={cssClasses} type={type} onClick={onClick} style={style} {...attrs} id={id}>
       {label}
       {children}
       <style jsx>{stylesheet}</style>
@@ -60,6 +61,7 @@ Button.defaultProps = {
   onClick: () => {},
   style: null,
   type: 'button',
+  id:null,
   attrs: {}
 };
 Button.propTypes = {
