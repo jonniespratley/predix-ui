@@ -22,7 +22,7 @@ import DrawerLayout from './Layout/px-drawer-layout';
 import Grid from './Grid';
 import Input from './Input';
 import IconSet from './IconSet';
-import ToggleInput from './ToggleInput';
+import Toggle from './Toggle';
 import Icon from './IconSet/px-icon';
 import KeyValuePair from './KeyValuePair';
 import Layout from './Layout';
@@ -106,7 +106,7 @@ const px = {
   	TreeNode,
 	ViewHeader,
 	Flex,
-	ToggleInput
+	Toggle
 };
 
 

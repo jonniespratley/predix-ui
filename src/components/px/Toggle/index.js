@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 import styled, {css} from 'styled-components';
 
-
 const ToggleLabel = styled.label`
     position: relative;
     display: block;
@@ -193,18 +192,18 @@ class ToggleInput extends React.Component {
 		return (
 			<div className={classes}>
 				<ToggleInputStyle 
-						id={id} 
-						size={size}
-						name={name} 
-						value={value} 
-						type='checkbox'		
-						checked={checked}
-					  disabled={disabled}/>
+					id={id} 
+					size={size}
+					name={name} 
+					value={value} 
+					type='checkbox'		
+					checked={checked}
+					disabled={disabled}/>
 				<ToggleLabel 
-						size={size}
-						classNames={labelClasses}
-						for={id} 
-						onClick={this.onClick.bind(this)}/>
+					size={size}
+					classNames={labelClasses}
+					for={id} 
+					onClick={this.onClick.bind(this)}/>
 			</div>)
 	}
 }

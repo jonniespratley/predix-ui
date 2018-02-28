@@ -1,22 +1,20 @@
-# toggle-input
-The `<ToggleInput/>` component enables you to ...
-
+The `<Toggle/>` is a simple on/off switch component. Use it to create UI elements that enable and disable things.
 
 
 ## Usage
 
 ```react
-const { ToggleInput } = PxReact;
+const { Toggle } = PxReact;
 <div>
-  <ToggleInput id="toggle1" name='new' value="true"/>
+  <Toggle id="toggle1" name='new' value="true"/>
   <br/>
-  <ToggleInput id="toggle2" name='used1' value="true" size='small'/>				
+  <Toggle id="toggle2" name='used1' value="true" size='small'/>				
   <br/>
-  <ToggleInput id="toggle3" name='used2' value="true" size='large'/>
+  <Toggle id="toggle3" name='used2' value="true" size='large'/>
   <br/>
-  <ToggleInput id="toggle4" name='used3' value="true" size='huge'/>
+  <Toggle id="toggle4" name='used3' value="true" size='huge'/>
   <br/>
-  <ToggleInput id="toggle5" name='used4' value="true" size='huge' disabled/>
+  <Toggle id="toggle5" name='used4' value="true" size='huge' disabled/>
 </div>
 ```
 

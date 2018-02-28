@@ -6,7 +6,7 @@ import ToggleInput from './';
 describe('toggle-input', () => {
   test('should...', () =>{
     const wrapper = shallow(
-      <ToggleInput/>
+      <Toggle/>
     );
     console.log(wrapper.debug());
     expect(true).to.equal(true);

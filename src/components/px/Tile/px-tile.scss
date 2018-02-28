@@ -23,7 +23,7 @@ $inuit-namespace: '';
 
   .overlay,
   .tile {
-    width : var(--px-tile-width,100%);
+    width : var(--px-tile-width, 100%);
     height: var(--px-tile-height, 15.3333rem);
   }
 
@@ -32,7 +32,7 @@ $inuit-namespace: '';
   }
 
   .thumbnail {
-    width           : var(--px-tile-thumbnail-width, 20rem);
+    width           : var(--px-tile-thumbnail-width, 100%);
     height          : var(--px-tile-thumbnail-height, 11.66667rem);
     background-color: var(--px-tile-thumbnail-background-color, white);
   }

@@ -11,7 +11,8 @@ export default ({
   className,
   description,
   image,
-  children
+  children,
+  imgStyle = {}
 }) => {
   const baseClasses = classnames('px-tile', className);
 
@@ -20,7 +21,7 @@ export default ({
       <div className="tile__container">
        <div id="tile" className="tile">
          <div id="thumbnail" className="thumbnail">
-           {image && <img src={image}/>}
+           {image && <img src={image} alt={title} style={imgStyle}/>}
          </div>
          <div className="title epsilon">
            <span className="title-span truncate">{title}</span>
