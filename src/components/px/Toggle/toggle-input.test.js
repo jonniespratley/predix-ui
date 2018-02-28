@@ -1,9 +1,9 @@
 import { expect } from 'chai';
 import React from 'react';
 import {shallow} from 'enzyme';
-import ToggleInput from './';
+import Toggle from './';
 
-describe('toggle-input', () => {
+describe('toggle', () => {
   test('should...', () =>{
     const wrapper = shallow(
       <Toggle/>
