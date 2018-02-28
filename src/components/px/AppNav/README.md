@@ -35,8 +35,8 @@ state:
 const { AppNav } = PxReact;
 const navItems = [
   {id : "home", label: "Home", icon: "px-fea:home"},
-  {id : "assets", label: "Assets", icon: "px-fea:asset"},
   {id : "alerts", label: "Alerts", icon: "px-fea:alerts"},
+  {id : "assets", label: "Assets", icon: "px-fea:asset"},
   {id : "dashboards", label: "Dashboards", icon: "px-fea:dashboard"}
 ];
 <AppNav selected={state.selected} items={navItems}/>
@@ -53,8 +53,8 @@ state:
 const { AppNav } = PxReact;
 const navItems = [
   {id : "home", label: "Home", icon: "px-fea:home"},
-  {id : "assets", label: "Assets", icon: "px-fea:asset"},
   {id : "alerts", label: "Alerts", icon: "px-fea:alerts"},
+  {id : "assets", label: "Assets", icon: "px-fea:asset"},
   {id : "dashboards", label: "Dashboards", icon: "px-fea:dashboard"}
 ];
 <div className='custom'>

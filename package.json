@@ -213,6 +213,7 @@
     }
   },
   "dependencies": {
+    "polished": "^1.9.2",
     "react-virtualized": "^9.18.5"
   }
 }
