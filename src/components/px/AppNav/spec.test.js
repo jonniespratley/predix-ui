@@ -17,14 +17,24 @@ describe('AppNav', () => {
     expect(wrapper.find('[label="Dashboard"]').exists());
   });
 
-  test('should set selected and seletedItem', () => {
+  test('should set selected, seletedItem, selectedIndex on "click"', () => {
     let spy = sinon.spy();
     const wrapper = shallow(<AppNav onChange={spy} selected={1} items={navItems}/>);
     const targetItem = wrapper.find('[label="Alerts"]').simulate('click');
     const selectedItem = wrapper.find('.selected');
-    console.log(wrapper.state());
-
+   
+    expect(wrapper.state().selectedIndex).to.equal(2);
     expect(wrapper.state().selectedItem.id).to.equal(navItems[2].id);
+    expect(selectedItem.exists());
+    expect(spy.calledOnce);
+  });
+
+  xtest('should set selected, seletedItem, selectedIndex when selected is not null', () => {
+    let spy = sinon.spy();
+    const wrapper = shallow(<AppNav onChange={spy} selected={1} items={navItems}/>);
+    expect(wrapper.state().selectedIndex).to.equal(1);
+    expect(wrapper.state().selectedItem.id).to.equal(navItems[1].id);
+    console.log(wrapper.state());
     expect(selectedItem.exists());
     expect(spy.calledOnce);
   });
@@ -32,16 +42,14 @@ describe('AppNav', () => {
   test('should work with propForSelect', () => {
     let spy = sinon.spy();
     const wrapper = shallow(<AppNav onChange={spy} selected='home' propForSelect='id' items={navItems}/>);
+    //expect(wrapper.state().selectedItem.id).to.equal('home');
     const targetItem = wrapper.find('[label="Alerts"]').simulate('click');
     const selectedItem = wrapper.find('.selected');
     console.log(wrapper.state());
 
-    expect(wrapper.state().selectedItem.id).to.equal(navItems[2].id);
+    expect(wrapper.state().selected).to.equal('alert');
+    expect(wrapper.state().selectedItem.id).to.equal('alert');
     expect(selectedItem.exists());
     expect(spy.calledOnce);
   });
-
-  //expect(wrapper.find('.delta')).to.have.length(1);
-  //expect(wrapper.find('.alpha')).to.have.length(1);
-  //expect(wrapper.contains(<div className='label'/>)).to.equal(true);
 });

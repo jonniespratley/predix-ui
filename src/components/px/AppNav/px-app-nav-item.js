@@ -1,9 +1,7 @@
 import React from 'react';
 import BaseComponent from '../BaseComponent';
 import classnames from 'classnames';
-import stylesheet from './styles/px-app-nav-item.scss';
 import Icon from '../IconSet/px-icon';
-
 
 /**
  * AppNav-item component
@@ -30,6 +28,7 @@ class AppNavItem extends BaseComponent {
       icon,
       id,
       item,
+      items,
       style,
       selected,
       collapsed,
@@ -72,11 +71,9 @@ class AppNavItem extends BaseComponent {
         {label && <span className='app-nav-item__label'>{label}</span>}
 
         {/* empty */}
-        {empty && <div>
-          <div className='app-nav-item__icon app-nav-item__icon--with-label app-nav-item__icon--empty'></div>
-          <div className='app-nav-item__label app-nav-item__label--empty'></div>
-        </div>}
-
+        {empty && <div className='app-nav-item__icon app-nav-item__icon--with-label app-nav-item__icon--empty'></div>}
+        {empty && <div className='app-nav-item__label app-nav-item__label--empty'></div>}
+        
         {/* dropdown */}
         {dropdown && <Icon icon='px-utl:chevron' size={16} className='app-nav-item__dropdown-icon'/>}
 
@@ -138,5 +135,7 @@ AppNavItem.defaultProps = {
   hideDropdownIcon: false
 
 };
+
+AppNavItem.displayName = 'AppNavItem';
 
 export default AppNavItem;

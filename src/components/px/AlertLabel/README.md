@@ -8,7 +8,6 @@ Reference https://www.predix-ui.com/#/elements/px-alert-label
 ## Usage
 
 ```react
-span: 2
 ---
 const {AlertLabel} = PxReact;
 <AlertLabel info 
@@ -16,23 +15,18 @@ const {AlertLabel} = PxReact;
 ```
 
 ```react
-span: 2
 ---
 const {AlertLabel} = PxReact;
-<AlertLabel warning
-  label='warning'/>
+<AlertLabel warning label='warning'/>
 ```
 
 ```react
-span: 2
 ---
 const {AlertLabel} = PxReact;
-<AlertLabel healthy
-  label='healthy'/>
+<AlertLabel healthy label='healthy'/>
 ```
 
 ```react
-span: 2
 ---
 const {AlertLabel} = PxReact;
 <AlertLabel error
@@ -40,18 +34,54 @@ const {AlertLabel} = PxReact;
 ```
 
 ```react
-span: 2
 ---
 const {AlertLabel} = PxReact;
 <AlertLabel important
   label='important'/>
 ```
 
-
 ```react
-span: 2
 ---
 const {AlertLabel} = PxReact;
 <AlertLabel unknown
   label='unknown'/>
 ```
+
+
+## Styling
+The following custom properties are available for styling
+
+```table
+rows:
+  - Custom property: --px-headings-heading-subsection-color
+    Description: Text color for the accordion header
+  - Custom property: --px-headings-heading-subsection-background
+    Description: Background color for the accordion header
+  - Custom property: --px-alert-label-border-color
+    Description: Border or outline color for all labels
+  - Custom property: --px-alert-label-background-color--alert
+    Description: Background color for 'alert' type labels
+  - Custom property: --px-alert-label-text-color--alert
+    Description: Text color for 'alert' type labels
+  - Custom property: --px-alert-label-background-color--warning
+    Description: Background color for 'warning' type labels
+  - Custom property: --px-alert-label-text-color--warning
+    Description: Text color for 'warning' type labels
+  - Custom property: --px-alert-label-background-color--error
+    Description: Background color for 'error' type labels
+  - Custom property: --px-alert-label-text-color--error
+    Description: Text color for 'error' type labels
+  - Custom property: --px-alert-label-background-color--information
+    Description: Background color for 'information' type labels
+  - Custom property: --px-alert-label-text-color--information
+    Description: Text color for 'information' type labels
+  - Custom property: --px-alert-label-background-color--healthy
+    Description: Background color for 'healthy' type labels
+  - Custom property: --px-alert-label-text-color--healthy
+    Description: Text color for 'healthy' type labels
+  - Custom property: --px-alert-label-background-color--unknown
+    Description: Background color for 'unknown' type labels
+  - Custom property: --px-alert-label-text-color--unknown
+    Description: Text color for 'unknown' type labels
+```
+

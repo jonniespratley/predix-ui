@@ -11,23 +11,23 @@
 // Settings
 @import "px-defaults-design/_settings.defaults.scss";
 // Normalize (excerpt)
-:host {
+.px-app-nav-subgroup{
   line-height: $inuit-base-line-height / $inuit-base-font-size; /* [1] */
   text-size-adjust: 100%; /* [4] */
   -moz-osx-font-smoothing: grayscale; /* [5] */
   -webkit-font-smoothing: antialiased; /* [5] */
-}
+   display: block;
+   height: auto;
 
-// Generic
-@import "px-box-sizing-design/_generic.box-sizing.scss";
+  
 
-// Component
-:host {
-  display: block;
-  height: auto;
-}
 
-.app-nav-subgroup__dropdown {
-  height: 0px;
-  overflow: hidden;
 }
+ .app-nav-subgroup__dropdown {
+   height: 0px;
+   overflow: hidden;
+   &--open {
+     height: auto;
+     overflow: auto;
+   }
+ }
