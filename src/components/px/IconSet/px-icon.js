@@ -23,7 +23,7 @@ class Icon extends React.Component {
 		}
 	}
 	render(){
-    const { icon = '', size, style, className } = this.props;
+    const { icon = '', size, style, className, viewBox } = this.props;
 		const styles = {
      width: `${size}px`,
      height: `${size}px`
@@ -34,10 +34,11 @@ class Icon extends React.Component {
 			width: `${size}px`,
      	height: `${size}px`
     };
-    const icn = icon && icon.replace(':', '-');
+		const icn = icon && icon.replace(':', '-');
+		const _viewBox = viewBox || `0 0 ${size} ${size}`;
     return (
 			<i className={classnames('px-icon', className, icn)} style={styles}>
-				<svg viewBox={`0 0 ${size} ${size}`}
+				<svg viewBox={_viewBox}
           preserveAspectRatio="xMidYMid meet"
           dangerouslySetInnerHTML={this.createMarkup(icon)}
         	style={this.mergeStyles(svgStyles, style)}>

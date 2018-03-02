@@ -38,6 +38,7 @@ import pxGridDocs from '../src/components/px/Grid/README.md';
 import pxLayoutDocs from '../src/components/px/Layout/README.md';
 import pxModalDocs from '../src/components/px/Modal/README.md';
 import pxNavbarDocs from '../src/components/px/Navbar/README.md';
+import pxNotificationDocs from '../src/components/px/Notification/README.md';
 import pxSpinnerDocs from '../src/components/px/Spinner/README.md';
 import pxTableViewDocs from '../src/components/px/TableView/README.md';
 import pxTabsDocs from '../src/components/px/Tabs/README.md';
@@ -125,6 +126,7 @@ const pages = [
       { path: 'KeyValuePair', title: 'Key-Value Pair', component: pxKeyValuePairDocs },
    //   { path: 'Layout', title: 'Layout', component: pxLayoutDocs },
       //{ path: 'Navbar', title: 'Navbar', component: pxNavbarDocs },
+      { path: 'Notification', title: 'Notification', component: pxNotificationDocs },
       { path: 'Modal', title: 'Modal', component: pxModalDocs },
       { path: 'Overlay', title: 'Overlay', component: pxOverlayDocs },
    //   { path: 'Popover', title: 'Popover', component: pxPopoverDocs },

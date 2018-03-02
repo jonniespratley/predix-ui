@@ -1,7 +1,7 @@
 //nav icons
 const nav = {
   'px-nav-back': '<g id="px-nav-back"><path stroke-linejoin="round" d="M7 5l-5.5 5.5L7 16m-5-5.5h20"/></g>',
-  'px-nav-close': '<g id="px-nav-close"><path stroke-miterlimit="10" d="M3 19L19 3M3 3l16 16"/></g>',
+  'px-nav-close': '<g id="px-nav-close"><path stroke-miterlimit="10" d="M3 19L19 3M3 3l16 16"></path></g>',
   'px-nav-collapse': '<g id="px-nav-collapse"><path stroke-linejoin="round" d="M22 20.5H1m6.5-8l4 4 4-4m-4 3.5V5"/><path d="M1.5 17.5v-15a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v15" stroke-linejoin="round"/></g>',
   'px-nav-confirmed': '<g id="px-nav-confirmed"><circle cx="11" cy="11" r="10.5" stroke-linejoin="round"/><path stroke-linejoin="round" d="M5.8 10.9l3.6 3.6 7.1-7.1"/></g>',
   'px-nav-down': '<g id="px-nav-down"><path d="M6 15.5l5.5 5.5 5.5-5.5m-5.5 5V.5"/></g>',

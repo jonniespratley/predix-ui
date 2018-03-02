@@ -49,7 +49,7 @@ import Tree from './Tree';
 import Tile from './Tile';
 import ViewHeader from './ViewHeader';
 import Flex from '../flex';
-
+import Notification from './Notification';
 //import Partials from './px-partials';
 import ExampleComponent from './px-example-component';
 
@@ -78,7 +78,7 @@ const px = {
 	ExampleComponent,
 	AppNav,
 	AppNavItem,
-  	AppNavSubGroup,
+	AppNavSubGroup,
 	AppHeader,
 	Accordion,
 	AlertLabel,
@@ -100,6 +100,7 @@ const px = {
 	Spinner,
 	Modal,
 	Navbar,
+	Notification,
 	Overlay,
 	DrawerLayout,
 	Layout,

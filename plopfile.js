@@ -64,7 +64,7 @@ module.exports = function(plop) {
 			//test
 			{
 				type: "add",
-				path: COMP_SRC +"/{{dashCase name}}/{{dashCase name}}.test.js",
+				path: COMP_SRC +"/{{dashCase name}}/index.test.js",
 				templateFile: "plop-templates/component.test.tmpl.js"
 			},
 			//readme
