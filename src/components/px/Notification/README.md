@@ -14,14 +14,23 @@ const { Notification } = px;
 
 ### Confirmation
 ```react
-const { Notification } = px;
-<Notification 
-  type='warning' 
-  actionIcon='px-nav:close' 
-  statusIcon='px-utl:filter'
-  opened>
-  26 Filters
-</Notification>
+state:
+  opened: true
+---
+const { Button, Notification } = px;
+<div>
+  <Notification 
+    type='warning' 
+    actionIcon='px-nav:close' 
+    statusIcon='px-utl:filter'
+    opened={state.opened}
+    onClick={e => setState({opened: !state.opened})}>
+    26 Filters
+  </Notification>
+  <br/>
+  <Button onClick={e => setState({opened: !state.opened})}>Toggle</Button>
+  <pre>{JSON.stringify(state, null, 2)}</pre>
+</div>
 ```
 
 

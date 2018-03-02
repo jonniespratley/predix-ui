@@ -81,7 +81,7 @@ const Notification = styled.div`
 		}
 	`}
 `;
-export default ({ opened, type, actionIcon, statusIcon, slotRight, children}) => (
+export default ({ opened, type, actionIcon, statusIcon, slotRight, onClick, children}) => (
 	<Notification opened={opened} type={type}>
 		<NotificationLeft>
 			<Icon size={16} icon={statusIcon}/>
@@ -92,7 +92,7 @@ export default ({ opened, type, actionIcon, statusIcon, slotRight, children}) =>
 		<NotificationRight>
 		{slotRight && slotRight}
 		{actionIcon && 
-			<NotificationIcon>
+			<NotificationIcon onClick={onClick}>
 				<Icon size={16} viewBox={`0 0 22 22`} icon={actionIcon}/>
 			</NotificationIcon>
 		}
