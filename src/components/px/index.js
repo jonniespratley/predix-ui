@@ -16,9 +16,9 @@ import Button from './Button';
 import Card from './Card';
 import Chip from './Chip';
 import Drawer from './Drawer';
-import DataTable from './DataTable';
+//import DataTable from './DataTable';
 import Dropdown from './Dropdown';
-import DrawerLayout from './Layout/px-drawer-layout';
+//import DrawerLayout from './Layout/px-drawer-layout';
 import Grid from './Grid';
 
 import Input from './Input';
@@ -33,7 +33,7 @@ import Icon from './IconSet/px-icon';
 import KeyValuePair from './KeyValuePair';
 import Layout from './Layout';
 import Modal from './Modal';
-import NavDrawer from './Drawer/px-nav-drawer';
+//import NavDrawer from './Drawer/px-nav-drawer';
 import Navbar from './Navbar';
 import Overlay from './Overlay';
 import Popover from './Popover';
@@ -51,10 +51,10 @@ import ViewHeader from './ViewHeader';
 import Flex from '../flex';
 import Notification from './Notification';
 //import Partials from './px-partials';
-import ExampleComponent from './px-example-component';
+//import ExampleComponent from './px-example-component';
 
 // TODO: DataViz
-import Gauge from './Gauge';
+//import Gauge from './Gauge';
 
 //import Theme from './Theme';
 
@@ -74,8 +74,8 @@ const px = {
 	Textarea,
 	FormField,
 	Label,
-	Gauge,
-	ExampleComponent,
+	//Gauge,
+	//ExampleComponent,
 	AppNav,
 	AppNavItem,
 	AppNavSubGroup,
@@ -89,20 +89,20 @@ const px = {
 	Breadcrumbs,
 	Card,
 	Chip,
-	DataTable,
+	//DataTable,
 	Dropdown,
 	Drawer,
-	NavDrawer,
-	Grid,
-  	Icon,
-  	IconSet,
+	//NavDrawer,
+	//Grid,
+  Icon,
+  IconSet,
 	KeyValuePair,
 	Spinner,
 	Modal,
 	Navbar,
 	Notification,
 	Overlay,
-	DrawerLayout,
+	//DrawerLayout,
 	Layout,
 	LayoutItem,
 	PredixSvgLogo,
@@ -114,7 +114,7 @@ const px = {
 	Tab,
 	Tile,
 	Tree,
-  	TreeNode,
+  TreeNode,
 	ViewHeader,
 	Flex,
 	Toggle

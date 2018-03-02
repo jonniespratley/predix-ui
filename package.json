@@ -178,13 +178,13 @@
     "webpack-dev-server": "^2.11.1",
     "webpack-jarvis": "^0.2.2",
     "webpack-merge": "^4.1.0",
-    "webpack-stream": "^4.0.0"
+    "webpack-stream": "^4.0.0",
+    "polished": "^1.9.2"
   },
   "peerDependencies": {
     "file-loader": "*",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-jss": "^8.2.1"
+    "react-dom": "^16.0.0"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>__tests__/setup.js",
@@ -211,8 +211,5 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
     }
-  },
-  "dependencies": {
-    "polished": "^1.9.2"
   }
 }
