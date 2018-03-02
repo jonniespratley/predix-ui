@@ -32,12 +32,8 @@ TabsContainerNav.displayName = 'TabsContainerNav';
 
 //Tab Title
 const TabTitle = styled.a`
-  line-height: 1.3;
-  font: inherit;
-  text-align: center;
-  vertical-align: middle;
-  padding-bottom: 10px;
-  margin: 1px 20px 0 0;
+ 
+ 
   color: var(--px-tab-color, black);
   cursor: pointer;
   text-decoration: none;
@@ -55,6 +51,14 @@ TabTitle.displayName = 'TabTitle';
 
 const TabItem = styled.li`
   list-style-type: none;
+  line-height: 1.3;
+  font: inherit;
+  text-align: center;
+  vertical-align: middle;
+  padding-bottom: 10px;
+  margin: 1px 20px 0 0;
+  color: var(--px-tab-color, black);
+
   ${props => props.active && css`
     color: var(--px-tab-color--selected, black);
     border-bottom: 2px solid var(--px-tab-color--selected, black);

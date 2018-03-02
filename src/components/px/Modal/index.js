@@ -5,6 +5,9 @@ import Button from '../Button';
 import classnames from 'classnames';
 import stylesheet from './px-modal.scss';
 
+import styled from 'styled-components';
+import Flex from '../../flex';
+
 /**
  * Modal component
  */
@@ -41,8 +44,8 @@ export default ({
           {children}
         </div>
         <div className="modal__buttons flex flex--right">
-          <div className='flex'>
-            {btnModalNegative && 
+          <Flex right>
+          {btnModalNegative && 
             <Button id="btnModalNegative"
                 onClick={onBtnModalNegativeClick}>{btnModalNegative}</Button>
             }
@@ -54,7 +57,7 @@ export default ({
                 {btnModalPositive}
               </Button>
               }
-          </div>
+          </Flex>
         </div>
       </section>
     </div>

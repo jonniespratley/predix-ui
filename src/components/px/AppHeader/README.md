@@ -41,7 +41,6 @@ The following custom properties are available for styling.
 ```table
 span: 6
 rows:
-  - Property: --px-app-header
-    Default: null
+  - Custom Property: --px-app-header
     Description: Mixin applied to entire element.
 ```

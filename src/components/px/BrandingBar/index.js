@@ -15,21 +15,25 @@ const BrandingBar = styled.div`
 	background-color: var(--px-branding-bar-background-color, black);
 	font-size       : var(--px-branding-bar-font-size, 15px);
 	color           : var(--px-branding-bar-logo-and-title-text-color, gray);
-	padding			: 0 .5rem;
+	padding			: 0 1rem;
 	@media (max-width: 44.9375em) {
 		display   : none !important;
 		visibility: hidden;
 	}
 `;
+BrandingBar.displayName = 'BrandingBar';
 
-const Title = styled.div`
+const BrandingBarTitle = styled.div`
 	margin-left: .5rem;
 `;
+BrandingBarTitle.displayName = 'BrandingBarTitle';
 
-const PoweredBy = styled.div`
+const BrandingBarPoweredBy = styled.div`
 	font-size: 12px;
 	margin-right: .2rem;
 `;
+BrandingBarPoweredBy.displayName = 'BrandingBarPoweredBy';
+
 //https://www.predix-ui.com/#/elements/px-branding-bar
 export default ({ 
 	title = 'Application Name', 
@@ -43,12 +47,12 @@ export default ({
 				<Logo/>
 			</Flex>
 			<Flex middle>
-				<Title>{title}</Title>
+				<BrandingBarTitle>{title}</BrandingBarTitle>
 			</Flex>
 			{children && <div>{children}</div>}
 		</Flex>
 		<Flex middle>
-			<PoweredBy>{powered}</PoweredBy>
+			<BrandingBarPoweredBy>{powered}</BrandingBarPoweredBy>
 			{showLogo && <PredixLogo size={10}/>}
 		</Flex>
 	</BrandingBar>

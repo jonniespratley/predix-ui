@@ -6,7 +6,7 @@ import BrandingBar from '../BrandingBar';
 /**
  * AppHeader component
  */
-export default ({
+const AppHeader = ({
   title,
   selected,
   selectedItem,
@@ -16,16 +16,14 @@ export default ({
   children
 }) => {
 
-  const baseClasses = classnames(
-    'px-app-header',
-    { 'px-app-header--children': children }
-  );
-
   return (
-    <div className={baseClasses} style={style}>
+    <div>
       <BrandingBar title={title}/>
       {items && <AppNav items={items} selected={selected} onChange={onChange}/>}
       {children && <div>{children}</div>}
     </div>
   );
-}
+};
+
+AppHeader.displayName = 'AppHeader';
+export default AppHeader;

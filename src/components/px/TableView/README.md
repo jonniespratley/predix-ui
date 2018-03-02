@@ -5,9 +5,10 @@ Use the `px.TableView` component to create list-style interfaces like menus or t
 
 
 ## Usage
+This component is best used with `react-virtualized`.
 
 ```react
-function makeRows(count = 100){
+function makeRows(count = 5){
 	let items = [];
 	while(count--){ 
 		items.push({title: `Item ${count}`});

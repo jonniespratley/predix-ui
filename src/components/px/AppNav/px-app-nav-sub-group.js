@@ -1,25 +1,40 @@
 import React from 'react';
 import classnames from 'classnames';
-import stylesheet from './styles/px-app-nav-subgroup.scss';
-
-
 import BaseComponent from '../BaseComponent';
-import AppNavItem from './px-app-nav-item';
 import Icon from '../IconSet/px-icon';
 
-
-const AppNavSubItem = ({label}) => {
-  return (<p className='app-nav-subitem__label'>{label}</p>);
-};
+import AppNavItem from './px-app-nav-item';
+import AppNavSubItem from './px-app-nav-sub-item';
 
 class AppNavSubGroup extends BaseComponent {
   constructor(props){
     super(props, {displayName: 'AppNavSubGroup'});
+    this.state = {
+      opened: props.opened || false
+    }
+  }
+  _handleClick(e, item, isChild){
+    this.setState({opened: !this.state.opened});
+    if(this.props.onClick){
+      this.props.onClick(item, isChild);
+    }
+    console.log('handleClick', e);
   }
   render(){
+    const { opened } = this.state;
+    const subgroupClasses = classnames(
+      'px-app-nav-sub-group',
+      { 'px-app-nav-sub-group--opened': opened }
+    );
+    const dropdownClasses = classnames(
+      'app-nav-subgroup__dropdown',
+      {'app-nav-subgroup__dropdown--open': opened}
+    );
     const {
+      onClick,
       children,
       icon,
+      item,
       label,
       selected,
       overflowed,
@@ -27,11 +42,13 @@ class AppNavSubGroup extends BaseComponent {
       onlyShowIcon,
       emptyIcon
     } = this.props;
+    
     return (
-      <div className='px-app-nav-group'>
+      <div className={subgroupClasses}>
         <AppNavItem
           dropdown
-          cancelSelect
+          onClick={this._handleClick.bind(this, item)}
+          item={item}
           label={label}
           selected={selected}
           overflowed={overflowed}
@@ -40,8 +57,15 @@ class AppNavSubGroup extends BaseComponent {
           emptyIcon={emptyIcon}
           icon={icon}
         />
-        <div className='app-nav-subgroup__dropdown'>
-          <div className='app-nav-subgroup__dropdown__content'>{children}</div>
+        <div className={dropdownClasses}>
+          <div className='app-nav-subgroup__dropdown__content'>
+            {item.children && item.children.map((child, index) => (
+              <AppNavSubItem 
+                onClick={this._handleClick.bind(this, child, true)}
+                key={index} 
+                item={child}/>
+            ))}
+          </div>
         </div>
        
       </div>
@@ -49,6 +73,7 @@ class AppNavSubGroup extends BaseComponent {
   }
 }
 
+AppNavSubGroup.displayName = 'AppNavSubGroup';
 AppNavSubGroup.defaultProps = {
   selected: false,
   collapsed: false,

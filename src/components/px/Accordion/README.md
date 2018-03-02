@@ -10,16 +10,12 @@ Reference https://www.predix-ui.com/#/elements/px-accordion
 ```react
 const { Accordion } = PxReact;
 <div>
-  <Accordion
-    headerText="Header Caption"
-    status="Last Updated: 3 Days Ago">
-    <p>Accordion content goes here.</p>
+  <Accordion headerText="Header Caption" status="Last Updated: 3 Days Ago">
+    Accordion content goes here.
   </Accordion>
 
-  <Accordion
-    headerText="Header Caption"
-    status="Last Updated: 3 Days Ago">
-    <p>Accordion content goes here.</p>
+  <Accordion headerText="Header Caption" status="Last Updated: 3 Days Ago">
+    Accordion content goes here.
   </Accordion>
 </div>
 ```
@@ -76,8 +72,8 @@ The following custom properties are available for styling
 
 ```table
 rows:
-  - Name: --px-headings-heading-subsection-color
+  - Custom Property: --px-headings-heading-subsection-color
     Description: Text color for the accordion header
-  - Name: --px-headings-heading-subsection-background
+  - Custom Property: --px-headings-heading-subsection-background
     Description: Background color for the accordion header
 ```

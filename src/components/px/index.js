@@ -20,8 +20,15 @@ import DataTable from './DataTable';
 import Dropdown from './Dropdown';
 import DrawerLayout from './Layout/px-drawer-layout';
 import Grid from './Grid';
+
 import Input from './Input';
+import Label from './Input/Label';
+import FormField from './Input/FormField';
+import Textarea from './Input/Textarea';
+import Select from './Input/Select';
+
 import IconSet from './IconSet';
+import Toggle from './Toggle';
 import Icon from './IconSet/px-icon';
 import KeyValuePair from './KeyValuePair';
 import Layout from './Layout';
@@ -41,8 +48,8 @@ import TreeNode from './Tree/px-tree-node';
 import Tree from './Tree';
 import Tile from './Tile';
 import ViewHeader from './ViewHeader';
-
-
+import Flex from '../flex';
+import Notification from './Notification';
 //import Partials from './px-partials';
 import ExampleComponent from './px-example-component';
 
@@ -62,12 +69,16 @@ const LayoutItem = ({style, children}) => {
  */
 const px = {
   //Theme,
-  	Input,
+	  Input,
+	Select,
+	Textarea,
+	FormField,
+	Label,
 	Gauge,
 	ExampleComponent,
 	AppNav,
 	AppNavItem,
-  	AppNavSubGroup,
+	AppNavSubGroup,
 	AppHeader,
 	Accordion,
 	AlertLabel,
@@ -89,6 +100,7 @@ const px = {
 	Spinner,
 	Modal,
 	Navbar,
+	Notification,
 	Overlay,
 	DrawerLayout,
 	Layout,
@@ -103,7 +115,9 @@ const px = {
 	Tile,
 	Tree,
   	TreeNode,
-	ViewHeader
+	ViewHeader,
+	Flex,
+	Toggle
 };
 
 

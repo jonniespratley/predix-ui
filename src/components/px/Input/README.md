@@ -10,8 +10,7 @@ Reference https://www.predix-ui.com/#/css/visual/px-forms-design
 ## Usage
 
 ```react
-const { Button, Input } = px;
-const FormField = (props) => (<div className='u-mb-'>{props.children}</div>);
+const { Button, Input, FormField } = px;
 <form>
   <FormField>
     <Input label='Username' name='username'/>
@@ -19,144 +18,156 @@ const FormField = (props) => (<div className='u-mb-'>{props.children}</div>);
   <FormField>
     <Input label='Password' name='password' type='password'/>
   </FormField>
-  <Button label='Submit' type='submit' primary/>
+  <Button type='submit' primary>Submit</Button>
 </form>
 ```
 
 ### Sizes
 
 ```react
-const { Button, Input } = px;
-const FormField = (props) => (<div className='u-mb-'>{props.children}</div>);
+const { Button, Input, FormField } = px;
 <form>
   <FormField>
-    <Input label='Input Label' name='input1' tiny placeholder='Tiny size'/>
+    <Input name='input1' tiny placeholder='Tiny size'/>
   </FormField>
   <FormField>
-    <Input label='Input Label' name='input2' small placeholder='Small size'/>
+    <Input name='input2' small placeholder='Small size'/>
   </FormField>
   <FormField>
-    <Input label='Input Label' name='input3' regular placeholder='Regular size'/>
+    <Input name='input3' regular placeholder='Regular size'/>
   </FormField>
   <FormField>
-    <Input label='Input Label' name='input4' large placeholder='Large size'/>
+    <Input name='input4' large placeholder='Large size'/>
   </FormField>
   <FormField>
-    <Input label='Input Label' name='input5' huge placeholder='Huge size'/>
+    <Input name='input5' huge placeholder='Huge size'/>
   </FormField>
   <FormField>
-    <Input label='Input Label' name='input6' placeholder='Auto size'/>
+    <Input name='input6' placeholder='Auto size'/>
   </FormField>
-  <Button label='Submit' type='submit' primary/>
+  <Button type='submit' primary>Submit</Button>
 </form>
 ```
 
-### Types
+### HTML5 Input Types
 
 ```react
-const { Button, Input } = px;
-const FormField = (props) => (<div className='u-mb-'>{props.children}</div>);
+const { Button, Input, FormField } = px;
 const inputTypes = [
-'color', 'date', 'datetime-local', 'email', 'file', 'month', 'number',
-'password', 'range', 'search', 'tel', 'text', 'time', 'url', 'week',
-'radio',
-'checkbox'
+  'color', 
+  'date', 'datetime-local', 
+  'month', 
+  'week', 
+  'time',
+  'email', 
+  'file', 
+  'number',
+  'password', 
+  'range', 
+  'search', 
+  'tel', 
+  'text', 
+  'url', 
+  'radio',
+  'checkbox'
 ];
 <form>
   {inputTypes.map((type, index) => (
-    <FormField key={index}>
-      <Input label={type} name={type} type={type}/>
+    <FormField key={index} label={type}>
+      <Input name={type} type={type}/>
     </FormField>
   ))}
-  <Button label='Submit' type='submit' primary/>
+  <Button type='submit' primary>Submit</Button>
 </form>
 ```
 
 ---
 
-### Input Field:
-
+#### Text Input:
 ```react
 const { Input } = px;
 <Input
   name='input1'
   type='text'
-  label='Input Label'
   placeholder='Type something...'/>
 ```
 
-### Checkbox:
-
-```html
-<input id="checkbox1" type="checkbox" disabled="" >
-<label class="label--inline" for="checkbox1">Checkbox</label>
-```
-
+#### Textarea:
 ```react
-const { Input } = px;
-<div>
-  <Input
-    name='checkbox1'
-    type='checkbox'
-    label='Checkbox'
-    disabled
-    inline/>
-  <Input
-    name='checkbox2'
-    type='checkbox'
-    label='Checkbox 2'/>
-</div>
+const { Textarea } = px;
+<form>
+  <Textarea placeholder='Enter text here...'></Textarea>
+  <Textarea placeholder='Disabled text area...' disabled></Textarea>
+</form>
 ```
 
-### Radio Button:
-```html
-<input id="radio1" name="radios" type="radio" disabled="" >
-<p class="label--inline" for="radio1">Option 1</p>
-<input id="radio2" name="radios" type="radio" disabled="" >
-<p class="label--inline" for="radio2">Option 2</p>
-```
-
-### Select (Dropdown):
-```html
-<select>
-  <optgroup label="Header 1" >
-    <option >Option 1</option>
-    <option >Option 2</option>
-    <option >Option 3</option>
-    <option >Option 4</option>
-  </optgroup>
-  <optgroup label="Header 2" >
-    <option >Option 1</option>
-    <option >Option 2</option>
-    <option >Option 3</option>
-    <option >Option 4</option>
-  </optgroup>
-</select>
-```
-
-### Multi-select:
-
-```html
-<select multiple="" >
-  <option >Option 1</option>
-  <option >Option 2</option>
-  <option >Option 3</option>
-  <option >Option 4</option>
-</select>
+#### Checkbox:
+```react
+const { Input, Label, FormField } = px;
+<form>
+  <Input id='checkbox1' type='checkbox'/>
+  <Label for='checkbox1' inline>Option 1</Label>
+  <br/>
+  <Input id='checkbox2' type='checkbox'/>
+  <Label for='checkbox2' inline>Option 2</Label>
+</form>
 ```
 
 
-### Text Area:
-
-```html
-<textarea placeholder="Type something..." ></textarea>
+#### Radio button:
+```react
+const { Input, Label } = px;
+<form>
+  <Input id='radio1' name='radio-group' type='radio'/>
+  <Label for='radio1' inline>Option 1</Label>
+  <br/>
+  <Input id='radio2' name='radio-group' type='radio'/>
+  <Label for='radio2' inline>Option 2</Label>
+</form>
 ```
 
-### Inline Form:
+#### Select (dropdown):
+```react
+const { Select } = px;
+<form>
+  <Select>
+    <optgroup label="Header 1" >
+      <option >Option 1</option>
+      <option >Option 2</option>
+      <option >Option 3</option>
+      <option >Option 4</option>
+    </optgroup>
+    <optgroup label="Header 2" >
+      <option >Option 1</option>
+      <option >Option 2</option>
+      <option >Option 3</option>
+      <option >Option 4</option>
+    </optgroup>
+  </Select>
+</form>
+```
 
-```html
-<label class="label--inline" for="inline1">Label Text</label>
-<input class="text-input input--small" id="inline1" type="text">
+#### Select (multiple):
+```react
+const { Select } = px;
+<form>
+  <Select multiple>
+    <option>First</option>
+    <option>Second</option>
+    <option>Third</option>
+  </Select>
+</form>
+```
+
+#### Inline fields
+```react
+const { Input, Label, Select } = px;
+<form>
+  <Label for='inline1' inline>From</Label>
+  <Input id='inline1' tiny/>
+  <Label for='inline2' inline>To</Label>
+  <Input id='inline2' tiny/>
+</form>
 ```
 
 ### Basic Form:
@@ -185,30 +196,91 @@ const { Input } = px;
 
 ---
 
-## Properties
+## Styling
+The following custom properties are available for styling
 
 ```table
 span: 6
 rows:
-  - Name: name
-    Type: string
-    Description: The input name
-  - Name: label
-    Type: string
-    Description: The input label
-  - Name: type
-    Type: string
-    Description: The input type
+  - Custom Property: --px-input-text-color
+    Description: Default font color
+            
+  - Custom Property: --px-input-label-text-color
+    Description: Label font color
+            
+  - Custom Property: --px-input-text-color--placeholder
+    Description: Placeholder font color
+            
+  - Custom Property: --px-input-text-color--placeholder--focused
+    Description: Placeholder font color on focus
+            
+  - Custom Property: --px-input-text-color--help
+    Description: Help font color
+            
+  - Custom Property: --px-input-background-color
+    Description: Background color
+            
+  - Custom Property: --px-input-background-color--hover
+    Description: Hover background color
+            
+  - Custom Property: --px-input-border-color--outer
+    Description: Outer border style
+            
+  - Custom Property: --px-input-text-color--focused
+    Description: Focused text color
+            
+  - Custom Property: --px-input-background-color--focused
+    Description: Focused Background color
+            
+  - Custom Property: --px-input-border-color--outer--focused
+    Description: Focused outer border color
+            
+  - Custom Property: --px-input-text-color--disabled
+    Description: Disabled font color
+            
+  - Custom Property: --px-input-border-color--disabled
+    Description: Disabled border color
+            
+  - Custom Property: --px-input-background-color--disabled
+    Description: Disabled background color
+            
+  - Custom Property: --px-input-textarea-background--focused
+    Description: Textarea focused background color
+            
+  - Custom Property: --px-select-text-color
+    Description: Select text color
+            
+  - Custom Property: --px-select-background-color
+    Description: Select background color
+            
+  - Custom Property: --px-select-background-color--hover
+    Description: Select hover background color
+            
+  - Custom Property: --px-select-background-color--active
+    Description: Select active background color
+            
+  - Custom Property: --px-select-border-color
+    Description: Select border color
+            
+  - Custom Property: --px-multiselect-background-color
+    Description: Multiple select background color
+            
+  - Custom Property: --px-validation-warning-text-color
+    Description: Validation warning text color
+            
+  - Custom Property: --px-validation-warning-background-color
+    Description: Validation warning background color
+            
+  - Custom Property: --px-validation-error-text-color
+    Description: Validation error text color
+            
+  - Custom Property: --px-validation-error-background-color
+    Description: Validation error background color
+            
+  - Custom Property: --px-validation-success-text-color
+    Description: Validation success text color
+            
+  - Custom Property: --px-validation-success-background-color
+    Description: Validation success background color
 ```
-
-
-### Styling
-The following custom properties are available for styling.
-
-```table
-span: 6
-rows:
-  - Property: --px-input
-    Default: null
-    Description: Mixin applied to entire element.
-```
+ 

@@ -19,8 +19,8 @@ $navbar-button-opacity--active: 0.5;
   &.vh-header {
     height          : 4rem;
     background-color: var(--px-view-header-background-color, whitesmoke);
-    padding-left    : $inuit-base-spacing-unit;
-    padding-right   : $inuit-base-spacing-unit;
+    padding-left    : 1rem;
+    padding-right   : 1rem;
     display         : flex;
     align-items     : center;
     flex-direction  : row;
@@ -51,8 +51,8 @@ $navbar-button-opacity--active: 0.5;
   }
 
   .vh-header-text {
-    padding-left : $inuit-base-spacing-unit;
-    padding-right: $inuit-base-spacing-unit;
+    padding-left : 1rem;
+    padding-right: 1rem;
     flex         : initial;
     min-width    : 0;
     margin-left  : auto;

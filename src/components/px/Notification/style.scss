@@ -1,0 +1,114 @@
+// Generic
+@import "px-normalize-design/_generic.normalize-mini.scss";
+@import "px-box-sizing-design/_generic.box-sizing.scss";
+@import "px-helpers-design/_generic.helpers.scss";
+
+// Base
+@import "px-headings-design/_base.headings.scss";
+
+// Object
+$inuit-enable-btn--bare : true;
+$inuit-enable-btn--icon : true;
+@import 'px-buttons-design/_objects.buttons.scss';
+
+// Component
+:host {
+  display: flex;
+  align-items: center;
+  padding-left: calculateRem(15px);
+  padding-right: calculateRem(15px);
+  width: inherit;
+  opacity: 0;
+  height: 0;
+  transition: height .5s ease-in-out, opacity .5s ease-in-out;
+}
+
+:host([opened]) {
+  opacity: 1;
+}
+
+:host([opened]) {
+  font-size: calculateRem(15px);
+  height: var(--px-notification-height, calculateRem(80px));
+  @include media-query(lap-and-up) {
+    height: var(--px-notification-height, calculateRem(40px));
+  }
+}
+
+:host([opened][small]) {
+  font-size: calculateRem(12px);
+  height: var(--px-notification-height, calculateRem(40px));
+  @include media-query(lap-and-up) {
+    height: var(--px-notification-height, calculateRem(20px));
+  }
+}
+
+.notification-content {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  margin-top: calculateRem(10px);
+  margin-bottom: calculateRem(10px);
+}
+
+.notification-left {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  margin-right: calculateRem(5px);
+}
+
+.notification-right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  margin-left: calculateRem(15px);
+  cursor: pointer;
+}
+
+.notification-icon {
+  color: white;
+  width: calculateRem(16px);
+  height: calculateRem(16px);
+  --iron-icon-width: 100%;
+  --iron-icon-height: 100%;
+}
+
+:host([type="error"]) .notification-icon {
+  color: var(--px-alert-label-text-color--error, black);
+}
+
+:host([type="important"]) {
+  background-color: var(--px-alert-label-background-color--important, red);
+  color: var(--px-alert-label-text-color--important, white);
+}
+
+:host([type="warning"]) {
+  background-color: var(--px-alert-label-background-color--warning, orange);
+  color: var(--px-alert-label-text-color--warning, white);
+}
+
+:host([type="error"]) {
+  background-color: var(--px-alert-label-background-color--error, yellow);
+  color: var(--px-alert-label-text-color--error, black);
+}
+
+:host([type="info"]), :host([type="information"]) {
+  background-color: var(--px-alert-label-background-color--information, blue);
+  color: var(--px-alert-label-text-color--information, white);
+}
+
+:host([type="healthy"]) {
+  background-color: var(--px-alert-label-background-color--healthy, green);
+  color: var(--px-alert-label-text-color--healthy, white);
+}
+
+:host([type="unknown"]) {
+  background-color: var(--px-alert-label-background-color--unknown, gray);
+  color: var(--px-alert-label-text-color--unknown, white);
+}
+
+// Trumps
+$inuit-enable-margins : true;
+@import "px-spacing-design/_trumps.spacing.scss";

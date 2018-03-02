@@ -7,9 +7,29 @@ The `<tile/>` component enables you to ...
 
 ```react
 const { Tile } = PxReact;
-<Tile image='https://www.predix-ui.com/bower_components/px-tile/turbine.jpg'>
+<Tile image='http://via.placeholder.com/750x200'>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna</p>
 </Tile>
+```
+
+### As Images
+```react
+const { Tile, Flex } = PxReact;
+const images = [
+  {title: 'Image 1', src:'http://via.placeholder.com/350x220', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  {title: 'Image 2', src:'http://via.placeholder.com/350x220', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  {title: 'Image 3', src:'http://via.placeholder.com/350x220', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  {title: 'Image 4', src:'http://via.placeholder.com/350x220', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' }
+];
+<Flex wrap='true'>
+  {images.map((img, index) => (
+    <Flex item className='u-mr' key={index}>
+      <Tile title={img.title} image={img.src}>
+        {img.body}
+      </Tile>
+    </Flex>
+  ))}
+</Flex>
 ```
 
 

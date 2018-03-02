@@ -30,6 +30,7 @@ import pxChipDocs from '../src/components/px/Chip/README.md';
 import pxInputDocs from '../src/components/px/Input/README.md';
 import pxIconSetDocs from '../src/components/px/IconSet/README.md';
 //import pxIconSetDocs from '../src/px-icon-set/README.md';
+import pxToggleInputDocs from '../src/components/px/Toggle/README.md';
 import pxDrawerDocs from '../src/components/px/Drawer/README.md';
 import pxDatatableDocs from '../src/components/px/DataTable/README.md';
 import pxDropDownDocs from '../src/components/px/Dropdown/README.md';
@@ -37,6 +38,7 @@ import pxGridDocs from '../src/components/px/Grid/README.md';
 import pxLayoutDocs from '../src/components/px/Layout/README.md';
 import pxModalDocs from '../src/components/px/Modal/README.md';
 import pxNavbarDocs from '../src/components/px/Navbar/README.md';
+import pxNotificationDocs from '../src/components/px/Notification/README.md';
 import pxSpinnerDocs from '../src/components/px/Spinner/README.md';
 import pxTableViewDocs from '../src/components/px/TableView/README.md';
 import pxTabsDocs from '../src/components/px/Tabs/README.md';
@@ -87,7 +89,7 @@ const pages = [
    //   {path: 'example', title: 'Example', component: require('./example.md')}
     ]
   },
-  */
+  
   {
     path: '/layout',
     title: 'Layout',
@@ -100,7 +102,7 @@ const pages = [
         responsiveSizes: responsiveSizes,
         component: require('./layout-grid.md')}
     ]
-  },
+  },*/
   {
     title: 'Component Demos',
     pages: [
@@ -114,25 +116,27 @@ const pages = [
       { path: 'BrandingBar', title: 'Branding Bar', component: pxBrandingBarDocs},
     //  { path: 'Breadcrumbs', title: 'Breadcrumbs', component: pxBreadcrumbsDocs},
       { path: 'Card', title: 'Card', component: pxCardDocs },
-    //  { path: 'Chip', title: 'Chip', component: pxChipDocs },
+      { path: 'Chip', title: 'Chip', component: pxChipDocs },
      // { path: 'Drawer', title: 'Drawer', component: pxDrawerDocs },
     //  { path: 'DataTable', title: 'DataTable', component: pxDatatableDocs },
       { path: 'Dropdown', title: 'Dropdown', component: pxDropDownDocs },
    //   { path: 'Grid', title: 'Grid', component: pxGridDocs },
-      { path: 'px-icon-set', title: 'Icon Set', component: pxIconSetDocs },
+      { path: 'Icons', title: 'Icons', component: pxIconSetDocs },
       { path: 'Input', title: 'Input', component: pxInputDocs },
       { path: 'KeyValuePair', title: 'Key-Value Pair', component: pxKeyValuePairDocs },
-      { path: 'Layout', title: 'Layout', component: pxLayoutDocs },
+   //   { path: 'Layout', title: 'Layout', component: pxLayoutDocs },
       //{ path: 'Navbar', title: 'Navbar', component: pxNavbarDocs },
+      { path: 'Notification', title: 'Notification', component: pxNotificationDocs },
       { path: 'Modal', title: 'Modal', component: pxModalDocs },
       { path: 'Overlay', title: 'Overlay', component: pxOverlayDocs },
-      { path: 'Popover', title: 'Popover', component: pxPopoverDocs },
+   //   { path: 'Popover', title: 'Popover', component: pxPopoverDocs },
       { path: 'ProgressBar', title: 'Progress Bar', component: pxProgressbarDocs },
       { path: 'Spinner', title: 'Spinner', component: pxSpinnerDocs },
 
       { path: 'Tabs', title: 'Tabs', component: pxTabsDocs },
       { path: 'Tile', title: 'Tile', component: pxTileDocs },
       { path: 'Tree', title: 'Tree', component: pxTreeDocs },
+      { path: 'Toggle', title: 'Toggle', component: pxToggleInputDocs },
       { path: 'TableView', title: 'Table View', component: pxTableViewDocs },
       { path: 'ViewHeader', title: 'View Header', component: pxViewHeaderDocs }
     ]
@@ -140,10 +144,31 @@ const pages = [
 ];
 
 // Catalog - logoSrc="../images/logo.png"
+const themeOptions = {
+  fontFamily: 'GE Inspira Sans',
+  //lightColor: 'green',
+  background: '#e8ecf0',
+  textColor: '#111',
+  linkColor: '#097691',
+
+  //Heading
+  pageHeadingBackground: '#fff',
+  pageHeadingTextColor: '#111',
+ // pageHeadingHeight: '50px',
+
+  //Sidebar
+  sidebarColor: '#1a252d',
+  sidebarColorHeading: '#fff',
+  sidebarColorLine: '#7d8f9b',
+  sidebarColorText: '#7d8f9b',
+  sidebarColorActive: '#097691',
+  sidebarColorTextActive: '#097691'
+}
 ReactDOM.render(
   <div>
 
     <Catalog
+      theme={themeOptions}
       //logoSrc={logo}
       imports={documentationImports}
       pages={pages}

@@ -7,11 +7,17 @@ The `<KeyValuePair/>` component allows you to prominently display information in
 span: 6
 ---
 const { KeyValuePair } = PxReact;
-<KeyValuePair
-  label="Lorem Ipsum"
-  value="12345"
-  uom="units"
-  size="alpha"/>
+const sizes = ['alpha', 'beta', 'gamma', 'delta', 'epsilon', 'regular'];
+<div>
+  {sizes.map((size, index) => (
+    <KeyValuePair
+      key={index}
+      label="Lorem Ipsum"
+      value="12345"
+      uom="units"
+      size={size}/>)
+  )}
+</div>
 ```
 
 

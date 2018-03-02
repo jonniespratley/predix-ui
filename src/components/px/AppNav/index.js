@@ -1,13 +1,12 @@
 import React from 'react';
 import classnames from 'classnames';
-
 import NavItem from './px-app-nav-item';
 import BaseComponent from '../BaseComponent';
 import Icon from '../IconSet/px-icon';
 
-import stylesheet from './styles/px-app-nav.scss';
-
 import AppNavSubGroup from './px-app-nav-sub-group';
+
+import stylesheet from './styles/index.scss';
 /**
  * AppNav component
  */
@@ -17,6 +16,7 @@ class AppNav extends BaseComponent {
     this.state = {
       selected: props.selected || 0,
       onlyShowIcon: props.onlyShowIcon ||  props.vertical,
+      selectedIndex: props.selectedIndex || null,
       selectedItem: props.selectedItem || null,
       vertical: props.vertical || false,
       verticalOpened: props.verticalOpened || !props.vertical,
@@ -31,18 +31,27 @@ class AppNav extends BaseComponent {
   }
 
   componentDidMount(){
-    if(this.base){
+    if(this.base && this.vertical){
       this.base.addEventListener('mouseleave', this._handleMouseExit);
       this.base.addEventListener('mouseenter', this._handleMouseEnter);
     }
+    console.log('componentDidMount', 'set selectedIndex and Item from', this.props.selected);
+    //this.handleClick(this.props.selected, this._getItemFromValue(this.props.selected));
   }
 
-  componentWillReceiveProps(nextProps){
-    //console.log('componentWillReceiveProps', nextProps);
+  componentWillMount(props){
+    console.log('Create keys');
+    if (this.props.items){
+      this.props.items.map((item, index) => {
+        this._keys.push(this.props.propForSelect ? item[this.props.propForSelect] : index);
+        this._items.push(item); 
+      });
+    }
+    console.log('componentWillMount', props);
   }
-
+  
   componentWillUnmount(){
-    if(this.base){
+    if (this.base && this.vertical) {
       this.base.removeEventListener('mouseleave', this._handleMouseExit);
       this.base.removeEventListener('mouseenter', this._handleMouseEnter);
     }
@@ -86,14 +95,31 @@ class AppNav extends BaseComponent {
   _getValueForIndex(index){
     return this._items[index];
   }
+  
+  _getItemFromValue(index){
+    return this._getValueForIndex(this._getIndexForValue(index));
+  }
 
-  handleClick(val, event) {
-    const index = this._getIndexForValue(val);
-    const item = this._getValueForIndex(index);
-    const state = {
-      selected: index,
-      selectedItem: item
+  handleClick(val, child, isSubItem) {
+    
+    let propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : val);
+    let index = (this.props.propForSelect ? child[this.props.propForSelect] : this._getIndexForValue(propForSelect));
+    let item = this._getValueForIndex(index);
+    
+    if (child && child.hasOwnProperty('children') && !isSubItem){
+      //console.warn('Item has children, do not set active');
+      return;
+    }
+    if(isSubItem){
+      item = val;
+    }
+    
+    let state = {
+      selected: propForSelect,
+      selectedIndex: this._getIndexForValue(propForSelect),
+      selectedItem: child
     };
+
     this.setState(state);
     if(this.props.onChange){
       this.props.onChange(state);
@@ -105,21 +131,27 @@ class AppNav extends BaseComponent {
     this._keys = [];
   }
 
+  _getItemFromPropForSelect(value){
+    let item = this.props.items.filter(val => val[this.props.propForSelect] === value);
+    return item ? item[0] : null;
+  }
+
   _renderItem(child, index){
     let propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : index);
-    this._items.push(child);
     this._keys.push(propForSelect);
+    this._items.push(child); 
     let selected = (this.state.selected === this._getIndexForValue(propForSelect));
     if(!child.children){
       return (
-        <NavItem key={index}
-          id={child.id}
+        <NavItem 
+          key={index}
           item={child}
+          id={child.id}
           icon={child.icon}
           label={child.label}
           selected={selected}
           onlyShowIcon={this.state.onlyShowIcon}
-          onClick={this.handleClick.bind(this, propForSelect)}
+          onClick={this.handleClick.bind(this, propForSelect, child)}
         />
       );
     } else {
@@ -132,7 +164,7 @@ class AppNav extends BaseComponent {
           label={child.label}
           onlyShowIcon={this.state.onlyShowIcon}
           selected={selected}
-          onClick={this.handleClick.bind(this, propForSelect)}
+          onClick={this.handleClick.bind(this, propForSelect, child)}
         />
       );
     }

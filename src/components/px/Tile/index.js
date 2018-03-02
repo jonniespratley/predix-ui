@@ -7,19 +7,21 @@ import stylesheet from './px-tile.scss';
  * Tile component
  */
 export default ({
-  title = 'Tile',
+  title,
+  className,
   description,
   image,
-  children
+  children,
+  imgStyle = {}
 }) => {
-  const baseClasses = classnames('px-tile');
+  const baseClasses = classnames('px-tile', className);
 
   return (
     <div className={baseClasses}>
       <div className="tile__container">
        <div id="tile" className="tile">
          <div id="thumbnail" className="thumbnail">
-           <img src={image}/>
+           {image && <img src={image} alt={title} style={imgStyle}/>}
          </div>
          <div className="title epsilon">
            <span className="title-span truncate">{title}</span>
@@ -37,7 +39,6 @@ export default ({
         </div>
        </div>
      </div>
-      <style>{`${stylesheet}`}</style>
     </div>
   );
 }

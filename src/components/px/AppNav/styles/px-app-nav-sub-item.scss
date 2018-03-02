@@ -12,64 +12,70 @@
 @import "px-defaults-design/_settings.defaults.scss";
 // Normalize (excerpt)
 :host {
-  line-height: $inuit-base-line-height / $inuit-base-font-size; /* [1] */
-  text-size-adjust: 100%; /* [4] */
-  -moz-osx-font-smoothing: grayscale; /* [5] */
-  -webkit-font-smoothing: antialiased; /* [5] */
+  line-height: $inuit-base-line-height / $inuit-base-font-size;
+  /* [1] */
+  text-size-adjust: 100%;
+  /* [4] */
+  -moz-osx-font-smoothing: grayscale;
+  /* [5] */
+  -webkit-font-smoothing: antialiased;
+  /* [5] */
 }
-
-// Generic
-@import "px-box-sizing-design/_generic.box-sizing.scss";
 
 // Component
 /* Subitem State: Default */
+
 $px-app-nav-subitem-height: var(--px-app-nav-subitem-height, calculateRem(30px));
 $px-app-nav-subitem-text-color: var(--px-app-nav-subitem-text-color, darkgray);
 $px-app-nav-subitem-background-color: var(--px-app-nav-subitem-background-color, white);
-:host {
+/* Subitem State: Hover */
+
+$px-app-nav-subitem-text-color--hover: var(--px-app-nav-subitem-text-color--hover, darkgray);
+$px-app-nav-subitem-background-color--hover: var(--px-app-nav-subitem-background-color--hover, lightgray);
+/* Subitem State: Collapsed */
+
+/* Subitem State: Selected */
+
+$px-app-nav-subitem-text-color--selected: var(--px-app-nav-subitem-text-color--selected, white);
+$px-app-nav-subitem-background-color--selected: var(--px-app-nav-subitem-background-color--selected, blue);
+/* Subitem State: Collapsed */
+
+$px-app-nav-subitem-text-color--collapsed: var(--px-app-nav-subitem-text-color--collapsed, darkgray);
+$px-app-nav-subitem-background-color--collapsed: var(--px-app-nav-subitem-background-color--collapsed, darkgray);
+/* Subitem State: Collapsed:hover */
+
+$px-app-nav-subitem-background-color--collapsed-hover: var(--px-app-nav-subitem-background-color--collapsed-hover, darkgray);
+.px-app-nav-subitem {
   position: relative;
   display: flex;
   align-items: center;
   padding-left: $inuit-base-spacing-unit;
   padding-right: $inuit-base-spacing-unit;
   cursor: pointer;
-
   height: $px-app-nav-subitem-height;
   color: $px-app-nav-subitem-text-color;
   background-color: $px-app-nav-subitem-background-color;
+  &:hover {
+    color: $px-app-nav-subitem-text-color--hover;
+    background-color: $px-app-nav-subitem-background-color--hover;
+  }
+  &.selected {
+    color: $px-app-nav-subitem-text-color--selected;
+    background-color: $px-app-nav-subitem-background-color--selected;
+  }
+  &.collapsed {
+    color: $px-app-nav-subitem-text-color--collapsed;
+    background-color: $px-app-nav-subitem-background-color--collapsed;
+    padding-left: calculateRem(55px);
+  }
 }
 
-/* Subitem State: Hover */
-$px-app-nav-subitem-text-color--hover: var(--px-app-nav-subitem-text-color--hover, darkgray);
-$px-app-nav-subitem-background-color--hover: var(--px-app-nav-subitem-background-color--hover, lightgray);
-:host(:hover) {
-  color: $px-app-nav-subitem-text-color--hover;
-  background-color: $px-app-nav-subitem-background-color--hover;
-}
-
-/* Subitem State: Selected */
-$px-app-nav-subitem-text-color--selected: var(--px-app-nav-subitem-text-color--selected, white);
-$px-app-nav-subitem-background-color--selected: var(--px-app-nav-subitem-background-color--selected, blue);
-:host([selected]) {
-  color: $px-app-nav-subitem-text-color--selected;
-  background-color: $px-app-nav-subitem-background-color--selected;
-}
-
-/* Subitem State: Collapsed */
-$px-app-nav-subitem-text-color--collapsed: var(--px-app-nav-subitem-text-color--collapsed, darkgray);
-$px-app-nav-subitem-background-color--collapsed: var(--px-app-nav-subitem-background-color--collapsed, darkgray);
-:host([collapsed]) {
-  color: $px-app-nav-subitem-text-color--collapsed;
-  background-color: $px-app-nav-subitem-background-color--collapsed;
-  padding-left: calculateRem(55px);
-}
-
-$px-app-nav-subitem-background-color--collapsed-hover: var(--px-app-nav-subitem-background-color--collapsed-hover, darkgray);
 :host([collapsed]:hover) {
   background-color: $px-app-nav-subitem-background-color--collapsed-hover;
 }
 
 /* Subitem State: Collapsed+Parent Selected+NOT selected */
+
 $px-app-nav-subitem-text-color--parent-collapsed-not-selected: var(--px-app-nav-subitem-text-color--parent-collapsed-not-selected, darkgray);
 $px-app-nav-subitem-background-color--parent-collapsed-not-selected: var(--px-app-nav-subitem-background-color--parent-collapsed-not-selected, white);
 :host([collapsed][parent-selected]) {
@@ -89,12 +95,14 @@ $px-app-nav-subitem-accent-color--parent-collapsed-selected: var(--px-app-nav-su
   width: 2px;
   height: 100%;
 }
+
 $px-app-nav-subitem-background-color--parent-collapsed-hover: var(--px-app-nav-subitem-background-color--parent-collapsed-hover, lightgray);
 :host([collapsed][parent-selected]:hover) {
   background-color: $px-app-nav-subitem-background-color--parent-collapsed-hover;
 }
 
 /* Subitem State: Collapsed+Parent Selected+Selected */
+
 $px-app-nav-subitem-background-color--parent-collapsed-selected: var(--px-app-nav-subitem-background-color--parent-collapsed-selected, lightgray);
 $px-app-nav-subitem-text-color--parent-collapsed-selected: var(--px-app-nav-subitem-text-color--parent-collapsed-selected, white);
 :host([collapsed][parent-selected][selected]) {
@@ -103,6 +111,7 @@ $px-app-nav-subitem-text-color--parent-collapsed-selected: var(--px-app-nav-subi
 }
 
 /* Sub-components */
+
 .app-nav-subitem__label {
   margin: 0;
   overflow: hidden;
