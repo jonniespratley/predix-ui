@@ -2,7 +2,7 @@ const modulePath = "pages/{{camelCase name}}.js";
 const SRC_PATH = './';
 const ns = 'px-';
 
-const COMP_SRC = './src/components';
+const COMP_SRC = './src/components/px';
 
 
 /**
@@ -54,12 +54,13 @@ module.exports = function(plop) {
 			//component
 			ACTIONS.ADD_COMPONENT,
 			//scss styles
+			/*
 			{
 				type: "add",
 				path: COMP_SRC + "/{{dashCase name}}/styles/index.scss",
 				templateFile: "plop-templates/component.tmpl.scss"
 			},
-
+*/
 			//test
 			{
 				type: "add",

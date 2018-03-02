@@ -35,6 +35,7 @@ AccordionHeader.displayName = 'AccordionHeader';
 
 const AccordionHeaderText = styled.span`
   text-transform:uppercase;
+  margin-left: .2rem;
 `;
 AccordionHeaderText.displayName = 'AccordionHeaderText';
 

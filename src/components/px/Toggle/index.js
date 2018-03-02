@@ -116,6 +116,27 @@ const ToggleInputStyle = styled.input`
     height: 1px !important;
     margin: -1px !important;
     clip: rect(0 0 0 0) !important;
+		
+		&:disabled + label{
+			background-color: var(--px-toggle__background-border--unchecked--disabled, rgba(0, 0, 0, 0.2));
+  		pointer-events: none;
+			&:after{
+				background-color: var(--px-toggle__switch--disabled, #fff);
+			}
+			&:before{
+				background-color: var(--px-toggle__background--unchecked--disabled, #fff);
+  			box-shadow: none;
+			}
+		}
+		&:disabled{
+			&:after{
+        background-color: var(--px-toggle__switch--disabled, #fff);
+    	}
+			&:before{
+					background-color: var(--px-toggle__background--unchecked--disabled, #fff);
+					box-shadow: none;
+			}
+		}
     &:checked + label {
 			background-color: var(--px-toggle__background--checked, #007acc);
 			&:before {
@@ -163,10 +184,6 @@ const ToggleInputStyle = styled.input`
 			${props => props.size === 'small' && css`
 			`}
     }
-
-
-		
-
 `;
 
 
@@ -174,13 +191,11 @@ const ToggleInputStyle = styled.input`
 class ToggleInput extends React.Component {
 	constructor(props){
 		super(props);
-		this.state = {
-			checked: props.checked
-		};
+	
 	}
-	onClick(){
-		if(!this.props.disabled){
-			this.setState({checked: !this.state.checked});
+	_handleClick(e){
+		if(!this.props.disabled && this.props.onClick){
+			this.props.onClick(e);
 		}
 	}
 	render(){
@@ -201,9 +216,9 @@ class ToggleInput extends React.Component {
 					disabled={disabled}/>
 				<ToggleLabel 
 					size={size}
+					onClick={this._handleClick.bind(this)}
 					classNames={labelClasses}
-					for={id} 
-					onClick={this.onClick.bind(this)}/>
+					for={id}/>
 			</div>)
 	}
 }

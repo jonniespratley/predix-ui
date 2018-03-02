@@ -20,7 +20,13 @@ import DataTable from './DataTable';
 import Dropdown from './Dropdown';
 import DrawerLayout from './Layout/px-drawer-layout';
 import Grid from './Grid';
+
 import Input from './Input';
+import Label from './Input/Label';
+import FormField from './Input/FormField';
+import Textarea from './Input/Textarea';
+import Select from './Input/Select';
+
 import IconSet from './IconSet';
 import Toggle from './Toggle';
 import Icon from './IconSet/px-icon';
@@ -63,7 +69,11 @@ const LayoutItem = ({style, children}) => {
  */
 const px = {
   //Theme,
-  	Input,
+	  Input,
+	Select,
+	Textarea,
+	FormField,
+	Label,
 	Gauge,
 	ExampleComponent,
 	AppNav,
