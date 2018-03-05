@@ -5,7 +5,7 @@ import Icons from './';
 //import DocIcons from './px-icon-set-document';
 
 const DocIcons = Object.keys(Icons);
-console.log(DocIcons);
+
 
 const RenderIconSet = ({icons, size}) => (
 <ul>

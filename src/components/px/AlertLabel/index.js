@@ -13,31 +13,31 @@ const AlertLabel = styled.div`
   text-align      : center;
   font-size       : 0.8rem;
   line-height     : 0.8rem;
-  background-color: var(--px-alert-label-background-color--important, black);
-  color           : var(--px-alert-label-text-color--important, white);
+  background-color: var(--px-alert-label-background-color--unknown, gray);
+  color           : var(--px-alert-label-text-color--unknown, white);
   border          : 1px solid var(--px-alert-label-border-color, transparent);
   
-  ${props => props.info && css`
+  ${props => props.type === 'info' && css`
     background-color: var(--px-alert-label-background-color--information, blue);
     color           : var(--px-alert-label-text-color--information, white);
   `}
-  ${props => props.error && css`
+  ${props => props.type === 'error' && css`
     background-color: var(--px-alert-label-background-color--error, yellow);
     color           : var(--px-alert-label-text-color--error, black);
   `}
-  ${props => props.unknown && css`
+  ${props => props.type === 'unknown' && css`
     background-color: var(--px-alert-label-background-color--unknown, gray);
     color           : var(--px-alert-label-text-color--unknown, white);
   `}
-  ${props => props.important && css`
+  ${props => props.type === 'important' && css`
     background-color: var(--px-alert-label-background-color--important, red);
     color           : var(--px-alert-label-text-color--important, white);
   `}
-  ${props => props.warning && css`
+  ${props => props.type === 'warning' && css`
     background-color: var(--px-alert-label-background-color--warning, orange);
     color           : var(--px-alert-label-text-color--warning, white);
   `}
-  ${props => props.healthy && css`
+  ${props => props.type === 'healthy' && css`
     background-color: var(--px-alert-label-background-color--healthy, green);
     color           : var(--px-alert-label-text-color--healthy, white);
   `}
@@ -63,14 +63,11 @@ const _getPoints = (t) => {
   }
 };
 
-/**
- * px-alert-label component
- */
-export default (props) => {
-  const {label, type = 'info', badge, children} = props;
+ 
+export default ({label, type, badge, children}) => {
   const classNames = classnames('alertlabel', type, badge);
   return (
-    <AlertLabel {...type} {...props}>
+    <AlertLabel type={type}>
       <span className={classNames}>
         {badge && <div>
           {!_isCircle(type) &&

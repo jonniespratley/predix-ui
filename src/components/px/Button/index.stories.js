@@ -8,7 +8,6 @@ import { withKnobs, text, array, object, boolean, number } from '@storybook/addo
 
 //component
 import Button from './';
-import StyledButton from './styles';
 
 //stories
 const stories = storiesOf('Button', module);

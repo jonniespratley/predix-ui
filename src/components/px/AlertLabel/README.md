@@ -10,40 +10,48 @@ Reference https://www.predix-ui.com/#/elements/px-alert-label
 ```react
 ---
 const {AlertLabel} = PxReact;
-<AlertLabel info 
+<AlertLabel
+  type='info'
   label='Info'/>
 ```
 
 ```react
 ---
 const {AlertLabel} = PxReact;
-<AlertLabel warning label='warning'/>
+<AlertLabel 
+  type='warning' 
+  label='warning'/>
 ```
 
 ```react
 ---
 const {AlertLabel} = PxReact;
-<AlertLabel healthy label='healthy'/>
+<AlertLabel 
+  type='healthy' 
+  label='healthy'/>
 ```
 
 ```react
 ---
 const {AlertLabel} = PxReact;
-<AlertLabel error
+<AlertLabel 
+  type='error'
   label='error'/>
 ```
 
 ```react
 ---
 const {AlertLabel} = PxReact;
-<AlertLabel important
+<AlertLabel 
+  type='important'
   label='important'/>
 ```
 
 ```react
 ---
 const {AlertLabel} = PxReact;
-<AlertLabel unknown
+<AlertLabel 
+  type='unknown'
   label='unknown'/>
 ```
 
@@ -53,10 +61,6 @@ The following custom properties are available for styling
 
 ```table
 rows:
-  - Custom property: --px-headings-heading-subsection-color
-    Description: Text color for the accordion header
-  - Custom property: --px-headings-heading-subsection-background
-    Description: Background color for the accordion header
   - Custom property: --px-alert-label-border-color
     Description: Border or outline color for all labels
   - Custom property: --px-alert-label-background-color--alert

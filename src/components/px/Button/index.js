@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
-
 const Button = styled.button`
   font-family: "GE Inspira Sans";
   outline: none;
@@ -168,4 +167,10 @@ const Button = styled.button`
 
 `;
 
+Button.displayName = 'Button';
+
+Button.propTypes = {
+
+};
 export default Button;
+
