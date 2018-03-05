@@ -14,13 +14,10 @@ const stories = storiesOf('Button', module);
 
 stories
 .addDecorator(withKnobs)
-.add('simple info',
-    withInfo({text: 'String or React Element with docs about my component'})(() =>
-      <Button>Click the "?" mark at top-right to view the info.</Button>
-    )
-  )
+
 .add('default', () => (
-	<Button onClick={action('clicked')}>Button</Button>
+	<Button 
+		onClick={action('clicked')}>{text('label', 'Button')}</Button>
 ))
 .add('with text', () => (
 	<Button onClick={action('clicked')}>Hello Button</Button>
@@ -44,6 +41,11 @@ stories
 		<Button onClick={action('clicked')} huge>Button</Button>
 	</div>
 ))
+.add('simple info',
+	withInfo({text: 'String or React Element with docs about my component'})(() =>
+		<Button>Click the "?" mark at top-right to view the info.</Button>
+	)
+)
 ;
 
 module.exports = stories;
