@@ -4,7 +4,10 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
 
 import px from './px';
-import './px/Theme/px-theme.scss';
+
+import './px/Theme/DarkTheme';
+
+//import './px/Theme/px-theme.scss';
 
 const stories = storiesOf('px', module);
 

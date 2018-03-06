@@ -3,7 +3,8 @@ import classNames from 'classnames';
 import BaseComponent from '../BaseComponent';
 import IronCollapse from '../../iron/IronCollapse';
 import Flex from '../../../styles/flex';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
+import Icon from '../IconSet/px-icon';
 const styles = {
   width: `16px`,
   height: `16px`
@@ -23,13 +24,23 @@ const AccordionHeader = styled.div`
   margin-bottom   : 0.3333rem;
   cursor          : pointer;
   user-select     : none;
+  
   background-color: var(--px-accordion-header-background-color, white);
   color           : var(--px-accordion-header-color, black);
+  
+  color: var(--px-headings-heading-subsection-color);
+  background-color: var(--px-headings-heading-subsection-background);
+  
   display         : flex;
   justify-content : space-between;
   > * {
     user-select   : none;
   }
+
+  ${props => props.disabled && css`
+    cursor:not-allowed;
+    pointerEvents: none;
+  `}
 `;
 AccordionHeader.displayName = 'AccordionHeader';
 
@@ -60,6 +71,8 @@ AccordionBody.displayName = 'AccordionBody';
 
 const AccordionIcon = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   width : 1rem;
   height: 1rem;
 `;
@@ -71,13 +84,25 @@ const AccordionStatus = styled.div`
 `;
 AccordionStatus.displayName = 'AccordionStatus';
 
+const AccordionAction = styled.div`
+  cursor: pointer;
+  color: var(--px-actionable-alt-text-color, blue);
+  background: transparent;
+  border: transparent;
+  outline: none;
+  --iron-icon-width: 1rem;
+  --iron-icon-height: 1rem;
+`;
+AccordionAction.displayName = 'AccordionAction';
+
+
 
 
 class Accordion extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      open: props.open || true
+      open: props.opened || true
     };
     this.onClick = this.onClick.bind(this);
   }
@@ -90,6 +115,24 @@ class Accordion extends React.Component {
     }
   }
 
+  onActionClick(e){
+    e.preventDefault();
+    console.log('onActionClick', e);
+  }
+  
+  componentDidUpdate(){
+    const {onCollapsed, onExpanded} = this.props;
+    if(this.state.open){
+      console.log('Trigger', 'onExpanded');
+    } else {
+      console.log('Trigger', 'onCollapsed');
+    }
+    
+  }
+  componentWillReceiveProps(nextProps){
+    this.setState({open: nextProps.opened});
+  }
+
   render(){
     const { open } = this.state;
     const {
@@ -97,40 +140,37 @@ class Accordion extends React.Component {
       status,
       disabled,
       showAction,
-      style,
+      onActionClick,
+      icons = {
+        more: 'px-utl:chevron-right',
+        left: 'px-utl:chevron',
+        action: 'px-utl:edit'
+      },
       children
     } = this.props;
-
+    const {more, less, action} = icons;
+    
     const baseClasses = classNames(
       'px-accordion',
       {'px-accordion--disabled': disabled},
       {'px-accordion--open': open}
     );
 
-    const iconClasses = classNames(
-      'accordion__icon',
-      'actionable--action',
-      'flex',
-      'flex--center',
-      'flex--middle'
-    );
-
     return (
       <AccordionContainer className={baseClasses}>
-        <AccordionHeader onClick={this.onClick} disabled={disabled}>
-          <Flex middle>
-            <span className={iconClasses}>
+        <AccordionHeader disabled={disabled}>
+          <Flex item={true} onClick={this.onClick} >
+            <span>
               {open && <OpenIcon />}
               {!open && <CloseIcon />}
             </span>
             <AccordionHeaderText>{headerValue}</AccordionHeaderText>
           </Flex>
           <Flex middle>
-            <AccordionStatus>{status}</AccordionStatus>
-            {showAction && <span className={iconClasses}>action</span>}
+            {status && <AccordionStatus>{status}</AccordionStatus>}
+            {showAction && <AccordionAction onClick={this.onActionClick.bind(this)}> <Icon icon={action} size={16}/> </AccordionAction>}
           </Flex>
         </AccordionHeader>
-
         <IronCollapse ref="collapse" opened={open}>
           <AccordionBody>
             {children}
