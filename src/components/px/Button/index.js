@@ -169,8 +169,8 @@ const Button = styled.button`
 
 Button.displayName = 'Button';
 
-Button.propTypes = {
-
+Button.defaultProps = {
+  className: 'px-button'
 };
 export default Button;
 

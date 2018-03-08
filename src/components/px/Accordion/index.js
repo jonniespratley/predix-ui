@@ -43,6 +43,9 @@ const AccordionHeader = styled.div`
   `}
 `;
 AccordionHeader.displayName = 'AccordionHeader';
+AccordionHeader.defaultProps = {
+  className: 'px-accordion__header'
+};
 
 const AccordionHeaderText = styled.span`
   text-transform:uppercase;
@@ -55,12 +58,18 @@ const AccordionContainer = styled.div`
   flex-direction: column;
 `;
 AccordionContainer.displayName = 'AccordionContainer';
+AccordionContainer.defaultProps = {
+  className: 'px-accordion__container'
+};
 
 const AccordionSection = styled.div`
   display: flex;
   flex-direction: column;
 `;
 AccordionSection.displayName = 'AccordionSection';
+AccordionSection.defaultProps = {
+  className: 'px-accordion__section'
+};
 
 const AccordionBody = styled.div`
   margin  : 0;
@@ -68,6 +77,9 @@ const AccordionBody = styled.div`
   padding: .5rem;
 `;
 AccordionBody.displayName = 'AccordionBody';
+AccordionBody.defaultProps = {
+  className: 'px-accordion__body'
+};
 
 const AccordionIcon = styled.div`
   display: flex;
