@@ -69,10 +69,12 @@ const ToggleLabel = styled.label`
       background-color: var(--px-toggle__switch--pressed, #96a8b2);
       border: 1px solid var(--px-toggle__switch-border--pressed, #889aa5);
     }
-		&--disabled{
+		${props => props.disabled && css`
+			cursor: not-allowed;
 			background-color: var(--px-toggle__background-border--unchecked--disabled, rgba(0, 0, 0, 0.2));
 			pointer-events: none;
-		}
+		`}
+		
 
 		${props => props.size === 'huge' && css`
 			width: 5.33333rem;
@@ -117,24 +119,31 @@ const ToggleInputStyle = styled.input`
     margin: -1px !important;
     clip: rect(0 0 0 0) !important;
 		
-		&:disabled + label{
+		&:disabled, 
+		&:disabled + label {
+			
 			background-color: var(--px-toggle__background-border--unchecked--disabled, rgba(0, 0, 0, 0.2));
   		pointer-events: none;
-			&:after{
-				background-color: var(--px-toggle__switch--disabled, #fff);
-			}
-			&:before{
-				background-color: var(--px-toggle__background--unchecked--disabled, #fff);
-  			box-shadow: none;
-			}
-		}
-		&:disabled{
+			
 			&:after{
         background-color: var(--px-toggle__switch--disabled, #fff);
     	}
 			&:before{
 					background-color: var(--px-toggle__background--unchecked--disabled, #fff);
 					box-shadow: none;
+			}
+		}
+		&:checked:disabled + label{
+			background-color: var(--px-toggle__background--checked--disabled, rgba(0, 0, 0, 0.2));
+			&:after{
+				box-shadow: none;
+	  		background-color: var(--px-toggle__switch--disabled, white);
+				border-width: 1px;
+				border-style: solid;
+				border-color: var(--px-toggle__switch-border--disabled, rgba(0, 0, 0, 0.2));
+			}
+			&:before{
+					background-color: transparent;
 			}
 		}
     &:checked + label {
@@ -215,6 +224,7 @@ class ToggleInput extends React.Component {
 					checked={checked}
 					disabled={disabled}/>
 				<ToggleLabel 
+					disabled={disabled}
 					size={size}
 					onClick={this._handleClick.bind(this)}
 					classNames={labelClasses}

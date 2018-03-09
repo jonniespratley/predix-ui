@@ -1,10 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
+
 import Spinner from './';
 
 
 // Spinner
 storiesOf('Spinner', module)
+	.addDecorator(withKnobs)
 	.add('default', () => (
-		<Spinner/>
+		<Spinner 
+			finished={boolean('finished', false)}
+			size={number('size', 125)}
+			/>
 	));

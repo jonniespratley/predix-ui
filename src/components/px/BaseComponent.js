@@ -1,6 +1,4 @@
 import {Component} from 'react';
-import debug from 'debug';
-
 /**
  * @description Base component class that all ui components extend.
  * @class BaseComponent
@@ -23,7 +21,7 @@ export default class BaseComponent extends Component {
 		// TODO: Find a way to flag on or off
 		options.log = true;
 		if (options && options.log) {
-			this._log = debug(`px:${options.displayName}`);
+			this._log = console.log;
 		} else {
 			this._log = () => {};
 		}

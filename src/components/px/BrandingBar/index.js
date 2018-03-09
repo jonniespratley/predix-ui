@@ -16,7 +16,7 @@ const BrandingBar = styled.div`
 	font-size       : var(--px-branding-bar-font-size, 15px);
 	color           : var(--px-branding-bar-logo-and-title-text-color, gray);
 	padding			: 0 1rem;
-	@media (max-width: 44.9375em) {
+	@media (max-width: 44em) {
 		display   : none !important;
 		visibility: hidden;
 	}
@@ -38,13 +38,14 @@ BrandingBarPoweredBy.displayName = 'BrandingBarPoweredBy';
 export default ({ 
 	title = 'Application Name', 
 	powered = 'Powered by React', 
-	showLogo,
+	hideLogo,
+	hidePowered,
 	children
  }) => (
 	<BrandingBar>
 		<Flex middle>
 			<Flex middle>
-				<Logo/>
+				{!hideLogo && <Logo/>}
 			</Flex>
 			<Flex middle>
 				<BrandingBarTitle>{title}</BrandingBarTitle>
@@ -52,8 +53,8 @@ export default ({
 			{children && <div>{children}</div>}
 		</Flex>
 		<Flex middle>
-			<BrandingBarPoweredBy>{powered}</BrandingBarPoweredBy>
-			{showLogo && <PredixLogo size={10}/>}
+			{!hidePowered && <BrandingBarPoweredBy>{powered}</BrandingBarPoweredBy>}
+			{!hideLogo && <PredixLogo size={10}/>}
 		</Flex>
 	</BrandingBar>
 );

@@ -65,6 +65,28 @@ rows:
     Type: bool
     Default: fals
     Description: Flag indicating whether the accordion should be disabled.
+  
+  - Name: onCollapsed
+    Type: Function
+    Default: 
+    Description: Callback function when accordion is collapsed.
+  
+  - Name: onExpanded
+    Type: Function
+    Default: 
+    Description: Callback function when accordion is expanded.
+
+  - Name: onActionClick
+    Type: Function
+    Default: 
+    Description: Callback function when action icon is clicked.
+  
+  - Name: opened
+    Type: bool
+    Default: false
+    Description: If true the accordion is opened. If false it is closed. Use to observe the user opening/closing the accordion, or set to programatically change the accordion state.
+
+
 ```
 
 ## Styling

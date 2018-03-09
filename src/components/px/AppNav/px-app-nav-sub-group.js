@@ -18,7 +18,6 @@ class AppNavSubGroup extends BaseComponent {
     if(this.props.onClick){
       this.props.onClick(item, isChild);
     }
-    console.log('handleClick', e);
   }
   render(){
     const { opened } = this.state;

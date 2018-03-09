@@ -9,9 +9,10 @@ const FormField = styled.div`
         margin-bottom: 2.6rem;
     }
 `;
-export default ({label, children}) => (
+FormField.displayName = 'FormField';
+export default ({label, htmlFor, children}) => (
     <FormField>
-        <Label>{label}</Label>
+        {label && <Label htmlFor={htmlFor}>{label}</Label>}
         {children}
     </FormField>
 );

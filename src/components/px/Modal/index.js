@@ -13,10 +13,10 @@ import Flex from '../../flex';
  */
 export default ({
   style,
-  modalHeading = 'Modal',
-  btnModalNegative,
+  headerText,
+  rejectText,
   onBtnModalNegativeClick,
-  btnModalPositive,
+  acceptText,
   onBtnModalPositiveClick,
   visible,
   opened,
@@ -39,22 +39,25 @@ export default ({
     <Overlay opened={opened} onOverlayClick={(e) => onBackdropClick(e)}/>
     <div className={modalClassnames} role="dialog">
       <section className="modal__content" role='region'>
-        <h3 className="modal__title epsilon weight--normal">{modalHeading}</h3>
+        <h3 className="modal__title epsilon weight--normal">{headerText}</h3>
         <div>
           {children}
         </div>
         <div className="modal__buttons flex flex--right">
           <Flex right>
-          {btnModalNegative && 
+          {rejectText && 
             <Button id="btnModalNegative"
-                onClick={onBtnModalNegativeClick}>{btnModalNegative}</Button>
+                onClick={onBtnModalNegativeClick}>
+                {rejectText}
+              </Button>
             }
-            {btnModalPositive && 
+            {acceptText && 
             <Button primary
               id="btnModalPositive"
+              primary
               disabled={btnModalPositiveDisabled}
               onClick={onBtnModalPositiveClick}>
-                {btnModalPositive}
+                {acceptText}
               </Button>
               }
           </Flex>

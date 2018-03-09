@@ -10,9 +10,9 @@ state:
 const { Button, Modal } = PxReact;
 <div>
   <Modal
-    modalHeading="Sign in required"
-    btnModalPositive="Sign In"
-    btnModalNegative="Back"
+    headerText="Sign in required"
+    acceptText="Sign In"
+    rejectText="Back"
     onBackdropClick={() => setState({opened: !state.opened})}
     opened={state.opened}>
     This is the children content of the modal.
@@ -31,15 +31,15 @@ const { Button, Modal } = PxReact;
 ```table
 span: 6
 rows:
-  - Name: modalHeading
+  - Name: headerText
     Type: String
     Description: Header text for the modal window.
 
-  - Name: btnModalPositive
+  - Name: acceptText
     Type: String
     Description: Text for button with positive action on modal.
 
-  - Name: btnModalNegative
+  - Name: rejectText
     Type: String
     Description: Text for button with negative action on modal.
 

@@ -3,6 +3,7 @@
 //@import "px-box-sizing-design/_generic.box-sizing.scss";
 @import "px-helpers-design/_generic.helpers.scss";
 $inuit-base-spacing-unit--large: 2rem;
+$inuit-base-spacing-unit: 1rem;
 $inuit-base-spacing-unit--small: .5rem;
 
 /**
@@ -71,7 +72,7 @@ $inuit-base-spacing-unit--small: .5rem;
     background-color: var(--px-modal-background-color, white);
     color           : var(--px-modal-text-color, black);
     box-shadow      : 0 6px 12px 0 rgba(0,0,0,0.20);
-    padding         : $inuit-base-spacing-unit--large;
+    padding         : $inuit-base-spacing-unit;
     
     @include media-query(palm) {
       width: 100%;
@@ -86,7 +87,7 @@ $inuit-base-spacing-unit--small: .5rem;
     border-top: 1px solid var(--px-modal-border-color, transparent);
   }
 
-  .modal__buttons button.btn {
+  .modal__buttons button {
     &:nth-last-of-type(2) {
       margin-right: $inuit-base-spacing-unit--small;
     }

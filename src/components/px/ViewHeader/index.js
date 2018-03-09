@@ -1,8 +1,5 @@
 import React from 'react';
-//import stylesheet from './px-view-header.scss';
 import styled, {css} from 'styled-components';
-import { left } from 'glamor';
-
 
 const VHeader = styled.div`
   height          : 4rem;
@@ -48,28 +45,7 @@ const VHeaderRight = styled.div`
   position: absolute;
   right: 0;
 `;
-/**
- * <div className='px-view-header vh-header'>
 
-    <div className='left'>
-      {leftContent}
-      {showMenuButton &&
-        <button className="btn flex flex--center toggle__menu" onClick={onMenuButtonClick}>
-          Menu
-        </button>}
-      {showBackButton && <button id="backButton" className="btn" onClick={onBackButtonClick}>{backButtonLabel}</button>}
-    </div>
-
-    <div className='vh-header-text vh-header-text--ms-fix vh-header__center'>
-      <div className='regular vh-title truncate'>{title}</div>
-      {subtitle && <div className='zeta vh-subtitle truncate' title={subtitle}>{subtitle}</div>}
-    </div>
-
-    <div className='right'>{rightContent}</div>
-    
-  </div>
-
- */
 export default ({
   title,
   subtitle,

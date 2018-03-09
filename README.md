@@ -47,6 +47,13 @@ The component styles are all in separate `.css` files or you can use the entire 
 <link rel='stylesheet prefetch' href='https://unpkg.com/predix-ui/dist/css/Theme/px-dark-theme.min.css'/>
 ```
 
+To use the `styled-components` theme that gets injected via the `injectGlobal` method just include one of the themes, for example:
+
+```js
+import 'px/Theme/DarkTheme';
+import 'px/Theme/LightTheme';
+```
+
 ## Starter Project
 You can get started quickly with this starter project.
 

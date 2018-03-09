@@ -1,70 +1,100 @@
-import React from 'react';
+import styled, {css} from 'styled-components';
 
-import classnames from 'classnames';
-//import stylesheet from './px-layout.scss';
+const Layout = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  
+  padding: 0;
 
-/**
- * Layout component
- * Renders a div with proper classes
- */
-export default ({
-  className,
-  style,
+  ${props => props.tiny && css` 
+    margin-left: -0.33333rem;
+    > div{
+      padding-left: 0.33333rem;
+    }
+  `}
+ 
+  ${props => props.small && css` 
+    margin-left: -0.66667rem;
+    > div{
+      padding-left: 0.66667rem;
+    }
+  `}
 
-  item,
-  container,
-  size,
+   ${props => props.large && css` 
+    margin-left: -1.33333rem;
+    > div{
+      padding-left: 1.33333rem;
+    }
+  `}
 
-  //padding
-  tiny,
-  small,
-  large,
-  huge,
-  flush,
+   ${props => props.huge && css` 
+    margin-left: -2rem;
+    > div{
+      padding-left: 2rem;
+    }
+  `}
+  
+  ${props => props.rev && css` flex-direction: row-reverse; `}
+  ${props => props.col && css` flex-direction: column; `}
+  ${props => props.colrev && css` flex-direction: column-reverse; `}
 
-  //position
-  rev,
-  middle,
-  bottom,
-  full,
+  ${props => props.inline && css`display: inline-flex;`}
 
-  //responsive sizes
-  xs,
-  sm,
-  md,
-  lg,
-  xl,
+  ${props => props.wrap && css`flex-wrap: wrap;`}
+  ${props => props.wraprev && css`flex-wrap: wrap-reverse;`}
+  ${props => props.nowrap && css`flex-wrap: nowrap;`}
 
-  children
-}) => {
-    const baseClasses = classnames (
-      className,
-      'px-layout',
-      {'layout': container},
-      {'layout__item': item},
-      {'layout--tiny': tiny},
-      {'layout--small': small},
-      {'layout--large': large},
-      {'layout--huge': huge},
-      {'layout--flush': flush},
-      {'layout--rev': rev},
-      {'layout--bottom': bottom},
-      {'layout--full': full}
-    );
 
-    const layoutSize = size || xs || sm || md || lg;
+  ${props => props.left && css`justify-content: flex-start;`}
+  ${props => props.center && css`justify-content: center;`}
+  ${props => props.right && css`justify-content: flex-end;`}
 
-    const layoutSizeClasses = classnames (
-      {[`u-1/${layoutSize}`]: size},
-      {[`u-1/${layoutSize}-xs`]: xs},
-      {[`u-1/${layoutSize}-sm`]: sm},
-      {[`u-1/${layoutSize}-md`]: md},
-      {[`u-1/${layoutSize}-lg`]: lg}
-    );
-    return (
-      <div className={classnames(baseClasses, layoutSizeClasses)} style={style}>
-        {children}
-       
-      </div>
-    )
+  ${props => props.justify && css`justify-content: space-between;`}
+  ${props => props.spaced && css`justify-content: space-around;`}
+
+  ${props => props.top && css`align-items: flex-start;`}
+  ${props => props.middle && css`align-items: center;`}
+  ${props => props.bottom && css`align-items: flex-end;`}
+
+  ${props => props.stretch && css`align-items: stretch;`}
+  ${props => props.baseline && css`align-items: baseline;`}
+
+
+    
+
+   
+  ${props => props.item && css`
+    padding-left: 1rem;
+    flex: 1;
+    flex-basis: 13.33333rem;
+    &:nth-last-child(-n+3):first-child,
+    &:nth-last-child(-n+3):first-child~.layout__item {
+    flex-basis: 26.66667rem;
+  }
+    &:nth-last-child(-n+4):first-child,
+    &:nth-last-child(-n+4):first-child ~ .layout__item {
+      flex-basis: 20rem;
+    }
+    @media screen and (min-width: 64em) {
+      flex-basis: 0;
+    }
+    @media screen and (min-width: 64em) {
+      &:nth-last-child(-n+3):first-child,
+      &:nth-last-child(-n+3):first-child ~  .layout__item {
+        flex-basis: 0;
+      }
+    }
+
+  `}
+
+  
+
+`;
+
+Layout.displayName = 'Layout';
+Layout.defaultProps = {
+  className: 'layout'
 };
+export default Layout;

@@ -32,8 +32,6 @@ TabsContainerNav.displayName = 'TabsContainerNav';
 
 //Tab Title
 const TabTitle = styled.a`
- 
- 
   color: var(--px-tab-color, black);
   cursor: pointer;
   text-decoration: none;
@@ -120,7 +118,7 @@ class Tabs extends BaseComponent {
         {'iron-selected': selected}
       );
       return (
-        <TabItem key={index} className={baseClasses} active={selected}>
+        <TabItem key={index} className={baseClasses} active={selected} className='px-tab__item'>
           <TabTitle href='#' onClick={this.handleClick.bind(this, propForSelect)}>
             {child.props.label}
           </TabTitle>
@@ -138,8 +136,8 @@ class Tabs extends BaseComponent {
 	render() {
    const {style} = this.props;
 		return (
-      <TabsContainer style={style}>
-        <TabsContainerNav>
+      <TabsContainer style={style} className='px-tabs__container'>
+        <TabsContainerNav className='px-tabs__nav'>
           {this._renderTitles()}
         </TabsContainerNav>
         {this._renderContent()}

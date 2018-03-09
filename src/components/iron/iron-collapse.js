@@ -8,12 +8,10 @@ import classnames from 'classnames';
 export default class IronCollapse extends React.Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			noAnimation: props.noAnimation || false,
 			horizontal: props.horizontal || false,
-			opened: props.opened || false,
-			style: null
+			opened: props.opened || false
 		};
 		this._handleRef = this._handleRef.bind(this);
 		this._transitionEndBound = this._transitionEnd.bind(this);
@@ -87,11 +85,6 @@ export default class IronCollapse extends React.Component {
 		this.base.style[this.dimension] = size;
 	}
 
-	/**
-	 * toggle - Toggle content
-	 *
-	 * @return {type}  description
-	 */
 	toggle() {
 		if (this.state.opened) {
 			this.hide();
@@ -139,19 +132,21 @@ export default class IronCollapse extends React.Component {
 
 	_handleRef(el){
 		this.base = el;
-		console.log('got ref', el);
 	}
 
 	render() {
-		const { opened, style } = this.state;
-		const { children } = this.props;
-		const baseClassnames = classnames(
-			'iron-collapse',
+		const { opened } = this.state;
+		const { 
+			style = {
+				overflow:'hidden',
+				display: 'block',
+				transitionDuration: '300ms'
+			}, children 
+		} = this.props;
+		const baseClassnames = classnames('iron-collapse',
 			{ 'iron-collapse-opened': opened }
 		//	{ "iron-collapse-closed": !opened }
 		);
-
-
 		return (
 			<div className={baseClassnames}
 				ref={this._handleRef}
@@ -160,14 +155,7 @@ export default class IronCollapse extends React.Component {
 				aria-hidden={!opened}
 				aria-expanded={opened}>
 				{children}
-				<style jsx>{`
-					.iron-collapse{
-						overflow:hidden;
-						display: block;
-						transition-duration: 300ms;
-					}
-
-				`}</style>
+				
 			</div>
 		);
 	}

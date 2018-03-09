@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Tabs from './';
+import Tab from './Tab';
 
 /// Tabs
 storiesOf('Tabs', module)

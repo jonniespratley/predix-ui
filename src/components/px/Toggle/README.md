@@ -13,7 +13,11 @@ const { Toggle } = PxReact;
     onClick={(e) => setState({checked: !state.checked})}
     checked={state.checked}/>
   <br/>
-  <Toggle id='toggle2' name='used1' value='true' size='small' checked={state.checked}/>				
+  <Toggle id='toggle2' 
+    name='used1' 
+    value='true' 
+    size='small' 
+    checked={state.checked}/>				
   <br/>
   <Toggle id='toggle3' name='used2' value='true' size='large' checked={state.checked}/>
   <br/>

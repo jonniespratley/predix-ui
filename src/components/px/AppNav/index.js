@@ -35,19 +35,16 @@ class AppNav extends BaseComponent {
       this.base.addEventListener('mouseleave', this._handleMouseExit);
       this.base.addEventListener('mouseenter', this._handleMouseEnter);
     }
-    console.log('componentDidMount', 'set selectedIndex and Item from', this.props.selected);
     //this.handleClick(this.props.selected, this._getItemFromValue(this.props.selected));
   }
 
   componentWillMount(props){
-    console.log('Create keys');
     if (this.props.items){
       this.props.items.map((item, index) => {
         this._keys.push(this.props.propForSelect ? item[this.props.propForSelect] : index);
         this._items.push(item); 
       });
     }
-    console.log('componentWillMount', props);
   }
   
   componentWillUnmount(){
