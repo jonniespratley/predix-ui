@@ -126,6 +126,9 @@ export default class IronCollapse extends React.Component {
 		if (this.state.noAnimation) {
 			this._transitionEnd();
 		}
+		if(this.props.onChange){
+			this.props.onChange(this.state);
+		}
 	}
 
 	componentDidMount() {

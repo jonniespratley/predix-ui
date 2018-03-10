@@ -1,16 +1,11 @@
 import React from 'react';
 import classnames from 'classnames';
 
-
-
 class IronPages extends React.Component {
 	constructor(props){
 		super(props);
-		this.state = {
-			selected: props.selected || 0,
-			selectedItem: null,
-			attrForSelected: props.attrForSelected || null
-		};
+		this.displayName = 'IronPages';
+		
 	}
 	_renderChildren(){
 		let selected = this.props.selected;
@@ -21,30 +16,29 @@ class IronPages extends React.Component {
 		} else {
 			child = this.props.children[selected];
 		}
-
-
     const selectedClassName = classnames(this.props.selectedClassName);
-
 		return (<div className={selectedClassName}>{child}</div>);
 	}
 	render(){
-
     const {
       children,
-      className = 'iron-selector',
-      selectedClassName = 'iron-selected',
-      style = null
+      className,
+      selectedClassName,
+      style
     } = this.props;
-
-    const { selected, selectedItem } = this.state;
-
-    const baseClassnames = classnames(className);
-
-		return (<div className={baseClassnames}>{this._renderChildren()}</div>)
+    
+		return (
+			<div className={classnames(className)}>{this._renderChildren()}</div>
+		)
 	}
 }
+
 IronPages.defaultProps = {
-  selectedClassName: 'iron-selected'
+	propForSelect: null,
+	selected: 0,
+	selectedItem: null,
+	selectedClassName: 'iron-selected',
+	className: 'iron-selector'
 };
 
 export default IronPages;

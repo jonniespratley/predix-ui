@@ -12,6 +12,7 @@ import IronSelector from './IronSelector';
 import IronMediaQuery from './iron-media-query';
 import IronPages from './IronPages';
 
+
 //stories
 const stories = storiesOf('IronComponents', module);
 
@@ -24,20 +25,34 @@ stories
   )
 
 .add('iron-collapse', () => (
-	<IronCollapse onClick={action('clicked')}>This is collapsable content.</IronCollapse>
+	<IronCollapse onClick={action('clicked')} opened={boolean('opened', true)}>
+  <p>This is collapsable content.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet augue sed massa malesuada bibendum vitae at mi. Donec aliquam blandit cursus. Pellentesque ullamcorper rutrum sollicitudin. In turpis massa, semper eget lobortis in, convallis quis metus. </p>
+  
+  </IronCollapse>
 ))
 .add('iron-selector', () => (
-	<IronSelector selected={1} onClick={action('clicked')}>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-  </IronSelector>
+	<div>
+    <IronSelector selected={number('selected', 1)} onChange={action('changed')}>
+      <div><p>0 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet augue sed massa malesuada bibendum vitae at mi. Donec aliquam blandit cursus.</p></div>
+      <div><p>1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet augue sed massa malesuada bibendum vitae at mi. Donec aliquam blandit cursus.</p></div>
+      <div><p>2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet augue sed massa malesuada bibendum vitae at mi. Donec aliquam blandit cursus.</p></div>
+      <div><p>3- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet augue sed massa malesuada bibendum vitae at mi. Donec aliquam blandit cursus.</p></div>
+      <div><p>4 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet augue sed massa malesuada bibendum vitae at mi. Donec aliquam blandit cursus.</p></div>
+      <div><p>5 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet augue sed massa malesuada bibendum vitae at mi. Donec aliquam blandit cursus.</p></div>
+    </IronSelector>
+    <style>{`
+      .iron-selected{
+        border: 1px solid blue;
+      }
+    `}</style>
+	</div>
 ))
 .add('iron-pages', () => (
-	<IronPages selected={1} onClick={action('clicked')}>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
+	<IronPages selected={number('selected', 1)} onChange={action('changed')}>
+    <div><p>0 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet augue sed massa malesuada bibendum vitae at mi. Donec aliquam blandit cursus.</p></div>
+    <div><p>1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet augue sed massa malesuada bibendum vitae at mi. Donec aliquam blandit cursus.</p></div>
+    <div><p>2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet augue sed massa malesuada bibendum vitae at mi. Donec aliquam blandit cursus.</p></div>
   </IronPages>
 ))
 

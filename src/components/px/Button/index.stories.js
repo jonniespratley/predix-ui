@@ -16,8 +16,7 @@ stories
 .addDecorator(withKnobs)
 
 .add('default', () => (
-	<Button 
-		onClick={action('clicked')}>{text('label', 'Button')}</Button>
+	<Button onClick={action('clicked')}>{text('label', 'Button')}</Button>
 ))
 .add('with text', () => (
 	<Button onClick={action('clicked')}>Hello Button</Button>
