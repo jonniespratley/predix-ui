@@ -21,6 +21,7 @@ export default class BaseComponent extends Component {
 		// TODO: Find a way to flag on or off
 		options.log = true;
 		if (options && options.log) {
+			// eslint-disable-next-line no-console
 			this._log = console.log;
 		} else {
 			this._log = () => {};

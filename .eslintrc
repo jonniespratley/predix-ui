@@ -3,13 +3,14 @@
   "parser": "babel-eslint",
   "env": {
     "browser": true,
-    "jasmine": true,
-    "node": true
+    "jest": true,
+    "es6": true
   },
   "plugins": [
     "react"
   ],
   "rules": {
+    "no-console": 1,
     "comma-dangle": ["error", "never"],
     "jsx-a11y/href-no-hash": 0,
     "global-require": 0,
@@ -24,5 +25,11 @@
     "react/sort-comp": 0,
     "react/no-multi-comp": 0,
     "react/require-extension": 0
-  }
+  },
+  "overrides": [
+    {
+      "files": [ "src/**/*.js"],
+      "excludedFiles": "src/**/*.test.js"
+    }
+  ]
 }

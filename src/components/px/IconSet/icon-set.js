@@ -3,15 +3,6 @@ import classnames from 'classnames';
 
 //IconSet - Take svg defs and make icon available
 export default class IconSet extends React.Component {
-
-	componentWillMount() {
-		console.log('componentWillMount');
-	}
-	componentDidMount() {
-		console.log('componentDidMount');
-		console.log('icon', this._createIconMap());
-	}
-
 	getIconNames() {
 		this._icons = this._createIconMap();
 		return Object.keys(this._icons).map(function(n) {
@@ -43,7 +34,6 @@ export default class IconSet extends React.Component {
 	_renderIcon(icon, size) {
 		let icons = this._createIconMap();
 		var svg = this._prepareSvgClone(icons[icon], size);
-		console.warn('Inject this icon', svg);
 		return svg;
 	}
 
@@ -74,7 +64,6 @@ export default class IconSet extends React.Component {
 
 	render() {
 		const { name, icon, children, size } = this.props;
-		console.warn('IconSet', name, ':', icon);
 		return (
 			<div ref={(e) => {
 				this.refs.root = e;

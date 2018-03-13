@@ -129,17 +129,15 @@ class Accordion extends React.Component {
 
   onActionClick(e){
     e.preventDefault();
-    console.log('onActionClick', e);
   }
   
   componentDidUpdate(){
     const {onCollapsed, onExpanded} = this.props;
     if(this.state.open){
-      console.log('Trigger', 'onExpanded');
+      //console.log('Trigger', 'onExpanded');
     } else {
-      console.log('Trigger', 'onCollapsed');
+      //console.log('Trigger', 'onCollapsed');
     }
-    
   }
   componentWillReceiveProps(nextProps){
     this.setState({open: nextProps.opened});

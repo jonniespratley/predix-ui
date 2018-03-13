@@ -20,7 +20,6 @@ class NavDrawer extends React.Component {
 		//this.sideNavContent = this.refs.rootElement.querySelector('.js-nav-drawer-content');
 		//this.sideNavBody = this.refs.rootElement.querySelector('.nav-drawer__body');
 		this.refs.sideNavContent.addEventListener('click', (e) => {
-			console.log('e.stopPropagation');
 			e.stopPropagation();
 		});
 		if (this.hasUnprefixedTransform) {
@@ -29,7 +28,7 @@ class NavDrawer extends React.Component {
 	}
 
   componentWillReceiveProps(nextProps){
-    console.log('NavDrawer.componentWillReceiveProps', nextProps);
+   // console.log('NavDrawer.componentWillReceiveProps', nextProps);
 
     //this.setState(nextProps);
     //this.toggle();
@@ -82,7 +81,7 @@ class NavDrawer extends React.Component {
 	}
 
 	close() {
-    console.log('px-nav-drawer', 'close', this);
+    //console.log('px-nav-drawer', 'close', this);
     //this.setState({opened: false});
 		this.refs.baseElement.classList.remove('px-nav-drawer--is-visible');
 		this.refs.rootElement.classList.remove('nav-drawer--visible');
@@ -121,7 +120,7 @@ class NavDrawer extends React.Component {
     if(this.props.onOpen){
       this.props.onOpen();
     }
-    console.log('px-nav-drawer', 'open', this);
+   // console.log('px-nav-drawer', 'open', this);
 	}
 
 	render() {

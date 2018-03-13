@@ -12,7 +12,6 @@ export default class extends React.Component {
         }
     }
     handleClick(e){
-        console.log('handleClick', e);
         if(this.props.onClick){
             this.props.onClick(e);
         }

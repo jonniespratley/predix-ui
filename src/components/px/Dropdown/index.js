@@ -124,7 +124,7 @@ class Dropdown extends BaseComponent {
     this.setState({items});
   }
   _handleChange(item, index, e){
-    console.log(item, index);
+
     if(item.disabled){
       return;
     }
@@ -137,7 +137,7 @@ class Dropdown extends BaseComponent {
       this._clearSelected();
       this._handleClick();
     } else {
-      console.log('Push item to selectedValues');  
+  
     }
     let items = this.state.items[index].selected = !this.state.items[index].selected;
     

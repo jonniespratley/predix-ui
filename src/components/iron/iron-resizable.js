@@ -41,7 +41,6 @@ export default class IronResizable extends BaseComponent {
 	}
 
 	notifyResize() {
-		console.log('notifyResize');
 		if (!this.isAttached) {
 			return;
 		}

@@ -26,7 +26,6 @@ class IronSelector extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    console.log('componentWillReceiveProps', nextProps);
     //this.setState({selected: nextProps.selected});
   }
   
