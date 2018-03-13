@@ -12,9 +12,9 @@ Reference https://github.com/PredixDev/px-buttons-design
 const { Button } = PxReact;
 <div>
   <Button>Button</Button>
-  <Button bare>Button</Button>
-  <Button primary>Button</Button>
-  <Button tertiary>Button</Button>
+  <Button size='bare'>Button</Button>
+  <Button size='primary'>Button</Button>
+  <Button size='tertiary'>Button</Button>
   <Button disabled>Button</Button>
 </div>
 ```
@@ -23,10 +23,11 @@ const { Button } = PxReact;
 ```react|lang-jsx
 const { Button } = PxReact;
 <div>
-  <Button small>Button</Button>
+  <Button size='small'>Button</Button>
   <Button>Button</Button>
-  <Button large>Button</Button>
-  <Button huge>Button</Button>
+  <Button size='large'>Button</Button>
+  <Button size='huge'>Button</Button>
+  <Button size='full'>Button</Button>
 </div>
 ```
 

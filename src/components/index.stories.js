@@ -5,7 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 import px from './px';
 
-import './px/Theme/DarkTheme';
+import './px/Theme/LightTheme';
 
 //import './px/Theme/px-theme.scss';
 

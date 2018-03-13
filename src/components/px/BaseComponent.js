@@ -22,7 +22,7 @@ export default class BaseComponent extends Component {
 		options.log = true;
 		if (options && options.log) {
 			// eslint-disable-next-line no-console
-			this._log = console.log;
+			this._log = () => {};
 		} else {
 			this._log = () => {};
 		}

@@ -4,10 +4,28 @@ import { storiesOf } from '@storybook/react';
 //addons
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
-import { withKnobs, text, array, object, boolean, number } from '@storybook/addon-knobs';
+import { withKnobs, text, array, object, boolean, number, select } from '@storybook/addon-knobs';
 
 //component
 import Button from './';
+import Icon from '../IconSet/px-icon';
+
+const buttonTypes = [
+	'primary', 
+	'secondary', 
+	'tertiary', 
+	'call-to-action',
+	'bare', 
+	'bare-primary'
+];
+
+const buttonSizes = [
+	'small',
+	'regular',
+	'large',
+	'huge',
+	'full'
+];
 
 //stories
 const stories = storiesOf('Button', module);
@@ -16,10 +34,27 @@ stories
 .addDecorator(withKnobs)
 
 .add('default', () => (
-	<Button onClick={action('clicked')}>{text('label', 'Button')}</Button>
+	<Button 
+		disabled={boolean('disabled', false)}
+		icon={boolean('icon', false)}
+		onClick={action('clicked')}
+		type={select('type', buttonTypes)}
+		size={select('size', buttonSizes)}
+		>{text('label', 'Button')}</Button>
 ))
-.add('with text', () => (
-	<Button onClick={action('clicked')}>Hello Button</Button>
+.add('with icon', () => (
+	<Button onClick={action('clicked')}
+		disabled={boolean('disabled', false)}
+		icon={boolean('icon', false)}
+		onClick={action('clicked')}
+		type={select('type', buttonTypes)}
+		size={select('size', buttonSizes)}>
+		<Icon 
+			icon={text('iconName', 'px-fea:home')} 
+			viewBox={text('viewBox', '0 0 32 32')}
+			size={number('iconSize', 32)}/>
+		{text('label', 'Button')}
+	</Button>
 ))
 .add('with emoji', () => (
 	<Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
