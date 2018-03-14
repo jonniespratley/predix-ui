@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, select, number } from '@storybook/addon-knobs/react';
 
-import Icon from './px-icon';
+import Icon from './Icon';
 import Icons from './';
 //import DocIcons from './px-icon-set-document';
 
