@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import Icon from '../IconSet/px-icon';
+import Icon from '../IconSet/Icon';
 
 const NotificationIcon = styled.div`
 	color: white;

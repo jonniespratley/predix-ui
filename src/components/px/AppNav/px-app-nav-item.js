@@ -1,8 +1,7 @@
 import React from 'react';
 import BaseComponent from '../BaseComponent';
 import classnames from 'classnames';
-import Icon from '../IconSet/px-icon';
-
+import Icon from '../IconSet/Icon';
 /**
  * AppNav-item component
  */

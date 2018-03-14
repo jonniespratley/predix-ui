@@ -28,6 +28,11 @@ const Button = styled.button`
   transition: background .4s, border-color .4s, color .4s;
   -webkit-appearance: button;
   -webkit-font-smoothing: antialiased;
+
+  color: var(--px-btn-color, #2c404c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &:link,
   &:visited,
   &:hover,
@@ -48,9 +53,9 @@ const Button = styled.button`
     background-color: var(--px-btn-background--pressed, #889aa5);
   }
 
-  ${props => props.active && css`
-    outline: none;
-  `}
+  > i {
+    margin-right: .3rem;
+  }
   
   ${props => props.icon && css`
     height: var(--px-btn-height, 2em);
@@ -86,7 +91,7 @@ const Button = styled.button`
     padding-left: 0;
   `}
 
-  ${props => props.type === 'primary' && css`
+  ${props => props.theme === 'primary' && css`
     color: var(--px-btn-primary-color, white);
     border-color: var(--px-btn-primary-border-color, transparent);
     box-shadow: var(--px-btn-shadow, none);
@@ -109,7 +114,7 @@ const Button = styled.button`
     }
   `}
 
-  ${props => props.type === 'tertiary' && css`
+  ${props => props.theme === 'tertiary' && css`
     border-color: var(--px-btn-tertiary-border-color, #889aa5);
     border: 1px solid;
     box-shadow: none;
@@ -136,7 +141,7 @@ const Button = styled.button`
     }
   `}
 
-  ${props => props.type === 'bare' && css`
+  ${props => props.theme === 'bare' && css`
     border: 0 !important;
     border-radius: 0 !important;
     line-height: inherit;
@@ -162,7 +167,7 @@ const Button = styled.button`
       color: var(--px-btn-bare-color--pressed, #003d66);
     }
   `}
-  ${props => props.type === 'bare-primary' && css`
+  ${props => props.theme === 'bare-primary' && css`
     border: 0 !important;
     border-radius: 0 !important;
     line-height: inherit;
@@ -192,7 +197,7 @@ const Button = styled.button`
         color: var(--px-btn-primary-bare-color--pressed, #003d66);
     }
   `}
-  ${props => props.type === 'call-to-action' && css`
+  ${props => props.theme === 'call-to-action' && css`
     color: var(--px-btn-call-to-action-color, white);
     border-color: var(--px-btn-call-to-action-border-color, transparent);
     box-shadow: var(--px-btn-shadow, none);
@@ -228,14 +233,15 @@ Button.displayName = 'Button';
 Button.defaultProps = {
   className: 'px-button',
   type: null,
+  theme: null,
   size: null,
-  icon: false
+  icon: null
 };
 
 Button.propTypes = {
+  theme: PropTypes.string,
   type: PropTypes.string,
-  size: PropTypes.string,
-  icon: PropTypes.bool
+  size: PropTypes.string
 };
 
 export default Button;

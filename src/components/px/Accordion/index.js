@@ -4,7 +4,7 @@ import BaseComponent from '../BaseComponent';
 import IronCollapse from '../../iron/IronCollapse';
 import Flex from '../../../styles/flex';
 import styled, {css} from 'styled-components';
-import Icon from '../IconSet/px-icon';
+import Icon from '../IconSet/Icon';
 const styles = {
   width: `16px`,
   height: `16px`

@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../IconSet/px-icon';
+import Icon from '../IconSet/Icon';
 import styled, {css} from 'styled-components';
 
 const Card = styled.div`

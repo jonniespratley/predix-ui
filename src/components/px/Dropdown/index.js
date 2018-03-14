@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 //import stylesheet from './px-dropdown.scss';
 import BaseComponent from '../BaseComponent';
-import Icon from '../IconSet/px-icon';
+import Icon from '../IconSet/Icon';
 import styled, {css} from 'styled-components';
 import Button from '../Button';
 

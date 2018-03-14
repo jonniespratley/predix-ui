@@ -8,9 +8,9 @@ import { withKnobs, text, array, object, boolean, number, select } from '@storyb
 
 //component
 import Button from './';
-import Icon from '../IconSet/px-icon';
+import Icon from '../IconSet/Icon';
 
-const buttonTypes = [
+const buttonThemes = [
 	'primary', 
 	'secondary', 
 	'tertiary', 
@@ -36,9 +36,9 @@ stories
 .add('default', () => (
 	<Button 
 		disabled={boolean('disabled', false)}
-		icon={boolean('icon', false)}
+		icon={boolean('icon')}
 		onClick={action('clicked')}
-		type={select('type', buttonTypes)}
+		theme={select('theme', buttonThemes)}
 		size={select('size', buttonSizes)}
 		>{text('label', 'Button')}</Button>
 ))
@@ -47,7 +47,7 @@ stories
 		disabled={boolean('disabled', false)}
 		icon={boolean('icon', false)}
 		onClick={action('clicked')}
-		type={select('type', buttonTypes)}
+		theme={select('theme', buttonThemes)}
 		size={select('size', buttonSizes)}>
 		<Icon 
 			icon={text('iconName', 'px-fea:home')} 
@@ -62,17 +62,17 @@ stories
 .add('with theme', () => (
 	<div>
 		<Button onClick={action('clicked')} >Button</Button>
-		<Button onClick={action('clicked')} primary>Button</Button>
-		<Button onClick={action('clicked')} tertiary>Button</Button>
-		<Button onClick={action('clicked')} disabled>Button</Button>
+		<Button onClick={action('clicked')} disabled>Button (disabled)</Button>
+		{buttonThemes.map((theme, index) => (
+			<Button onClick={action('clicked')} theme={theme} key={index}>Button ({theme})</Button>
+		))}
 	</div>
 ))
 .add('with sizes', () => (
 	<div>
-		<Button onClick={action('clicked')} small>Button</Button>
-    <Button onClick={action('clicked')}>Button</Button>
-		<Button onClick={action('clicked')} large>Button</Button>
-		<Button onClick={action('clicked')} huge>Button</Button>
+		{buttonSizes.map((size, index) => (
+			<Button onClick={action('clicked')} size={size}>Button ({size})</Button>
+		))}
 	</div>
 ))
 .add('simple info',

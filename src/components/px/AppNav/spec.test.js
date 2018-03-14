@@ -8,6 +8,7 @@ const navItems = [
   {id : "settings", label: "Settings", icon: "px-fea:settings"},
   {id : "alert", label: "Alerts", icon: "px-fea:alerts"}
 ];
+
 describe('AppNav', () => {
 
   test('should render', () => {

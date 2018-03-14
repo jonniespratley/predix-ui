@@ -39,11 +39,11 @@ const VHeaderSubTitle = styled.div`
 `;
 const VHeaderLeft = styled.div`
   position: absolute;
-  left: 0;
+  left: 1rem;
 `;
 const VHeaderRight = styled.div`
   position: absolute;
-  right: 0;
+  right: 1rem;
 `;
 
 export default ({

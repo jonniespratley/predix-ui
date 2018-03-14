@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './px-table-row-style.scss';
 import classnames from 'classnames';
-import Icon from '../IconSet/px-icon';
+import Icon from '../IconSet/Icon';
 
 /**
  * px-table-row component

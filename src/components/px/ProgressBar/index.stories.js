@@ -10,7 +10,4 @@ storiesOf('Progress Bar', module)
 			value={number('value', 50)}
 			infinite={boolean('infinite', false)}
 			/>
-	))
-	.add('with infinite', () => (
-		<ProgressBar value={75} infinite/>
 	));

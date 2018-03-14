@@ -67,8 +67,7 @@ const cssRules = {
           sourceMap: true,
           camelCase: true
         }
-      },
-      'postcss-loader'
+      }
     ]
   })
 };
