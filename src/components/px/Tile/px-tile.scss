@@ -13,18 +13,26 @@ $inuit-namespace: '';
   // Meta
   // Objects
   //@import "px-shadows-design/_objects.shadows.scss";
-  width   : var(--px-tile-width, 100%);
-  height  : var(--px-tile-height, 15.3333rem);
+  width: var(--px-tile-width,20rem);
+  max-height: var(--px-tile-height,20rem);
   overflow: hidden;
+  
   // Component
   .tile__container {
     position: relative;
+    //height: var(--px-tile-height,20rem);
+    width: var(--px-tile-width,20rem);
+    max-width: var(--px-tile-width,20rem);
+    max-height: var(--px-tile-height,20rem);
+    overflow: hidden;
   }
 
   .overlay,
   .tile {
-    width : var(--px-tile-width, 100%);
-    height: var(--px-tile-height, 15.3333rem);
+  //  width: var(--px-tile-width,20rem);
+    max-width: var(--px-tile-width,20rem);
+    //height: var(--px-tile-height,20rem);
+    max-height: var(--px-tile-height,20rem);
   }
 
   .title-span {
@@ -36,14 +44,20 @@ $inuit-namespace: '';
     height          : var(--px-tile-thumbnail-height, 11.66667rem);
     background-color: var(--px-tile-thumbnail-background-color, white);
   }
-
-  .title {
+  .header-wrapper {
+    margin-top: 1.6rem;
+    transition: margin-top .2s cubic-bezier(.78,.13,.16,.87) .1s;
     background-color: var(--px-tile-background-color, lightgray);
-    height          : 3.66667rem;
-    padding         : 0 1.3333rem;
-    display         : flex;
-    align-items     : center;
   }
+  .title {
+    background: 0 0;
+    margin-top: .6rem;
+    width: 100%;
+    padding: 0 1.3333rem;
+  }
+  .overlay-top-content {
+    overflow: hidden;
+}
 
   .overlay {
     position        : absolute;

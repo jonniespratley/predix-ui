@@ -27,7 +27,9 @@ const DropdownLabel = styled.div`
   flex-grow: 1;
   text-overflow: ellipsis;
   text-align: left;
-  
+  ~ i{
+    margin-left: .5rem; 
+  }
 `;
 DropdownLabel.displayName = 'DropdownLabel';
 
@@ -171,10 +173,10 @@ class Dropdown extends BaseComponent {
 		const baseClasses = classnames('px-dropdown');
 		return (
 			<div className={baseClasses}>
-        <DropdownTrigger {...buttonStyle} disabled={disabled} onClick={this._handleClick.bind(this)} style={triggerStyle}>
+        <Button theme={buttonStyle} disabled={disabled} onClick={this._handleClick.bind(this)} style={triggerStyle}>
           <DropdownLabel>{displayValue}</DropdownLabel>
           {!hideChevron && <Icon icon={icon} size={16} />}
-        </DropdownTrigger>
+        </Button>
         <DropdownContent opened={opened}>
           {items && items.map((item, index) => (
             <DropdownOption 
@@ -191,9 +193,7 @@ class Dropdown extends BaseComponent {
 }
 
 Dropdown.defaultProps = {
-  icon: 'px-utl:chevron',
-  showCaret: false,
-  hideChevron: true
+  icon: 'px-utl:chevron'
 };
 
 Dropdown.displayName = 'Dropdown';

@@ -47,10 +47,6 @@ const items = [
 <px.TableView items={items} tappable/>
 ```
 
-
-
-
-
 ### 3. With  images
 
 ```react
@@ -59,9 +55,8 @@ const items = [
   {title: 'Text Label', image:'http://placehold.it/44'},
   {title: 'Text Label', image:'http://placehold.it/44'}
 ];
-<px.TableView items={items} large tappable/>
+<px.TableView items={items} size='large' tappable/>
 ```
-
 
 ### 4. With labels
 
@@ -71,11 +66,10 @@ const items = [
   {title: 'Text Label', labelRight: 'New'},
   {title: 'Text Label', labelRight: 'New'}
 ];
-<px.TableView items={items} large tappable/>
+<px.TableView items={items} size='large' tappable/>
 ```
 
 ### 5. With descriptions
-
 
 ```react
 const items = [
@@ -93,7 +87,7 @@ const items = [
   }
 ];
 <div>
-  <px.TableView items={items} large tappable/>
+  <px.TableView items={items} size='large' tappable/>
 </div>
 ```
 
@@ -108,7 +102,7 @@ const items = [
 ```table
 span: 6
 rows:
-  - Name: label
+  - Name: size
     Type: String
-    Description: Label for the button
+    Description: The size of the rows
 ```

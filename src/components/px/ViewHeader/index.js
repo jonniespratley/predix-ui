@@ -10,6 +10,7 @@ const VHeader = styled.div`
   align-items     : center;
   flex-direction  : row;
   position: relative;
+  user-select:none;
 `;
 const VHeaderText = styled.div`
   padding-left : 1rem;

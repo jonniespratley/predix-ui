@@ -19,6 +19,7 @@ const buttonThemes = [
 	'bare-primary'
 ];
 
+
 const buttonSizes = [
 	'small',
 	'regular',

@@ -53,9 +53,7 @@ const Button = styled.button`
     background-color: var(--px-btn-background--pressed, #889aa5);
   }
 
-  > i {
-    margin-right: .3rem;
-  }
+  
   
   ${props => props.icon && css`
     height: var(--px-btn-height, 2em);
