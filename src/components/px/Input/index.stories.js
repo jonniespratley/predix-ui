@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
+import { withKnobs, text, boolean, number, select } from '@storybook/addon-knobs/react';
 import Input from './';
 
 import Button from '../Button';
@@ -12,12 +12,29 @@ import FormField from './FormField';
 const stories = storiesOf('Input', module);
 stories.addDecorator(withKnobs);
 
-
+const sizes = ['tiny', 'small', 'regular', 'large', 'huge'];
+const types = [
+	'color',
+	'date',
+	'datetime-local',
+	'email',
+	'file',
+	'month',
+	'number',
+	'password',
+	'search',
+	'tel',
+	'text',
+	'time',
+	'url',
+	'week'
+];
 stories
 .add('default', () => (
 	<form>
 		<Input 
-			type={text('type', 'text')}
+			type={select('type', types)}
+			size={select('size', sizes)}
 			placeholder={text('placeholder', 'Type text here...')}/>
 	</form>
 ))

@@ -72,13 +72,18 @@ class Tabs extends BaseComponent {
 		super(props, {displayName: 'Tabs'});
 
     this.state = {
-      selected: this.props.selected,
-      propForSelect: this.props.propForSelect
+      selected: this.props.selected || 0,
+      propForSelect: this.props.propForSelect || null
     };
 
     this._items = [];
     this._keys = [];
-	}
+  }
+  componentWillReceiveProps(nextProps){
+    if(nextProps.selected){
+      this.setState({selected: nextProps.selected});
+    }
+  }
 
   _getIndexForValue(val){
     return this._keys.indexOf(val);

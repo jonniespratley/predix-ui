@@ -23,7 +23,7 @@ storiesOf('ViewHeader', module)
       	<Button>Back</Button>
 			</div>
 			<div>
-				Right Action
+				<Button>Next</Button>
 			</div>
 			</ViewHeader>
 	))

@@ -38,7 +38,7 @@ const Notification = styled.div`
   height: 0;
   transition: height .5s ease-in-out, opacity .5s ease-in-out;
 	box-sizing: border-box;
-	
+	font-size: 1rem;
 	${props => props.type === 'error' && css`
 		background-color: var(--px-alert-label-background-color--error, yellow);
 		color: var(--px-alert-label-text-color--error, black);
@@ -66,7 +66,6 @@ const Notification = styled.div`
 
 	${props => props.opened && css`
 		opacity: 1;
-		font-size: 1rem;
   	height: var(--px-notification-height, 5.33333rem);
 		@media screen and (min-width: 45em) {
   		height: var(--px-notification-height, 2.66667rem);
@@ -74,15 +73,15 @@ const Notification = styled.div`
   `}
 
 	${props => props.small && css`
-		font-size: 0.8rem;
-		height: var(--px-notification-height, 2.66667rem);
+		font-size: 0.8rem !important;
+		height: var(--px-notification-height, 2.66667rem) !important;
 		@media screen and (min-width: 45em) {  
-	 		height: var(--px-notification-height, 1.33333rem);
+	 		height: var(--px-notification-height, 1.33333rem) !important;
 		}
 	`}
 `;
-export default ({ opened, type, actionIcon, statusIcon, slotRight, onClick, children}) => (
-	<Notification opened={opened} type={type}>
+export default ({ opened, type, actionIcon, statusIcon, slotRight, onClick, small = false, children}) => (
+	<Notification opened={opened} type={type} small={small}>
 		<NotificationLeft>
 			<Icon size={16} icon={statusIcon}/>
 		</NotificationLeft>
