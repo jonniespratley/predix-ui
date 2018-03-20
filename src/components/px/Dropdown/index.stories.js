@@ -20,6 +20,8 @@ storiesOf('Dropdown', module)
 			onChange={action('onChange')}
 			items={items}
 			sortMode="key" 
+			disabled={boolean('disabled', false)}
+			disableClear={boolean('disableClear', false)}
 			hideChevron={boolean('hideChevron', false)}
 			buttonStyle={text('buttonStyle', 'default')}
 			displayValue={text('displayValue', 'Select')}>

@@ -32,6 +32,9 @@ const DropdownLabel = styled.div`
   }
 `;
 DropdownLabel.displayName = 'DropdownLabel';
+DropdownLabel.defaultProps = {
+  className: 'px-dropdown__label'
+};
 
 const DropdownContent = styled.div`
   z-index: 10;
@@ -49,8 +52,15 @@ const DropdownContent = styled.div`
     display: block;
   `}
   
+  ${props => props.width && css`
+    width: width;
+  `}
+  
 `;
 DropdownContent.displayName = 'DropdownContent';
+DropdownContent.defaultProps = {
+  className:'px-dropdown__content'
+};
 
 const DropdownOption = styled.div`
     padding-left: var(--px-dropdown-item-padding,.66667rem);
@@ -86,6 +96,10 @@ const DropdownOption = styled.div`
     `}
 `;
 DropdownOption.displayName = 'DropdownOption';
+DropdownOption.defaultProps = {
+  className: 'px-dropdown__option'
+};
+
 
 const DropdownTrigger = Button.extend`
   max-width: inherit;
@@ -103,13 +117,12 @@ DropdownTrigger.displayName = 'DropdownTrigger';
 
 
 
-/**
- * px-example-component component
- */
 class Dropdown extends BaseComponent {
   constructor(props){
     super(props, {name: 'Dropdown'});
+    this.displayName = 'Dropdown';
     this.state = {
+      dropdownContentWidth: props.dropdownContentWidth || null,
       selected: props.selected || null,
       selectedItems: props.selectedItems || null,
       selectedValues: props.selectedValues || null,
@@ -118,19 +131,27 @@ class Dropdown extends BaseComponent {
     };
   }
   _handleClick(e){
-    this.setState({opened: !this.state.opened});
+    if(e && e.target && e.target.classList.contains('px-utl-close')){
+      this._clearSelected();
+      this.setState({
+        //opened: !this.state.opened,
+        selectedItem: null
+      });
+    } else {
+      this.setState({opened: !this.state.opened});
+    }
   }
+
   _clearSelected(){
     let items = this.state.items;
     items.map(item => item.selected = false);
     this.setState({items});
   }
-  _handleChange(item, index, e){
 
+  _handleChange(item, index, e){
     if(item.disabled){
       return;
     }
-    
     this.setState({
       selectedItem: item
     });
@@ -142,15 +163,21 @@ class Dropdown extends BaseComponent {
   
     }
     let items = this.state.items[index].selected = !this.state.items[index].selected;
-    
-
     if (this.props.onChange) {
       this.props.onChange(item, index, e);
     }
   }
+  handleClear(){
+   // console.log('handleClear');
+    this.setState({
+      selectedItem: null
+    });
+  }
+  _handleDropdownContentRef(el){
+    this.dropdownContent = el;
+  }
 	render() {
 		const {
-			label = 'px-example-component',
       selectBy,
       disabled,
       disableClear,
@@ -166,18 +193,30 @@ class Dropdown extends BaseComponent {
       multi,
 			children
     } = this.props;
+    
     const triggerStyle = {
       height: triggerHeight 
     };
-    const {opened, items, selectedItems, selectedValues, selected} = this.state;
+    const {
+      opened, 
+      items, 
+      selectedItem, 
+      selectedItems, 
+      selectedValues, 
+      selected,
+      dropdownContentWidth
+    } = this.state;
+
 		const baseClasses = classnames('px-dropdown');
 		return (
 			<div className={baseClasses}>
-        <Button theme={buttonStyle} disabled={disabled} onClick={this._handleClick.bind(this)} style={triggerStyle}>
-          <DropdownLabel>{displayValue}</DropdownLabel>
-          {!hideChevron && <Icon icon={icon} size={16} />}
+        <Button theme={buttonStyle} disabled={disabled} style={triggerStyle} onClick={this._handleClick.bind(this)}>
+          {selectedItem && <DropdownLabel>{selectedItem.val}</DropdownLabel>}
+          {!selectedItem && <DropdownLabel>{displayValue}</DropdownLabel>}
+          {(!hideChevron && !opened || !selectedItem) && <Icon icon={icon} size={16} />}
+          {(!disableClear && selectedItem && opened) && <Icon icon='px-utl:close' size={16} onClick={this.handleClear.bind(this)}/>}
         </Button>
-        <DropdownContent opened={opened}>
+        <DropdownContent opened={opened} width={dropdownContentWidth}>
           {items && items.map((item, index) => (
             <DropdownOption 
               disabled={item.disabled}
