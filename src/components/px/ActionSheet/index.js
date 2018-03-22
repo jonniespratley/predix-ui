@@ -17,14 +17,13 @@ export default class ActionSheet extends BaseComponent {
   }
   toggle() {
     this.setState({opened: !this.state.opened});
-    console.log('toggle');
   }
   open() {
-    console.log('open');
+   // console.log('open');
   }
 
   close() {
-    console.log('close');
+    //console.log('close');
   }
 
   render() {

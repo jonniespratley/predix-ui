@@ -4,6 +4,14 @@ import styled, { css } from 'styled-components';
 
 import { textInputs } from 'polished';
 
+const sizes = {
+  tiny: '7.06667rem',
+  small: '14.13333rem',
+  regular: '21.2rem',
+  large: '28.26667rem',
+  huge: '35.33333rem'
+};
+
 
 const BaseInput = styled.input`
   box-sizing: border-box;
@@ -104,8 +112,13 @@ const Input = BaseInput.extend`
   ${props => props.huge && css`
      max-width: 35.33333rem;
   `}
+
+   ${props => props.size && css`
+     max-width: ${sizes[props.size]};
+  `}
   
 `;
+
 
 Input.defaultProps = {
   /** The label */

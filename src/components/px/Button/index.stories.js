@@ -4,10 +4,29 @@ import { storiesOf } from '@storybook/react';
 //addons
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
-import { withKnobs, text, array, object, boolean, number } from '@storybook/addon-knobs';
+import { withKnobs, text, array, object, boolean, number, select } from '@storybook/addon-knobs';
 
 //component
 import Button from './';
+import Icon from '../IconSet/Icon';
+
+const buttonThemes = [
+	'primary', 
+	'secondary', 
+	'tertiary', 
+	'call-to-action',
+	'bare', 
+	'bare-primary'
+];
+
+
+const buttonSizes = [
+	'small',
+	'regular',
+	'large',
+	'huge',
+	'full'
+];
 
 //stories
 const stories = storiesOf('Button', module);
@@ -17,10 +36,26 @@ stories
 
 .add('default', () => (
 	<Button 
-		onClick={action('clicked')}>{text('label', 'Button')}</Button>
+		disabled={boolean('disabled', false)}
+		icon={boolean('icon')}
+		onClick={action('clicked')}
+		theme={select('theme', buttonThemes)}
+		size={select('size', buttonSizes)}
+		>{text('label', 'Button')}</Button>
 ))
-.add('with text', () => (
-	<Button onClick={action('clicked')}>Hello Button</Button>
+.add('with icon', () => (
+	<Button onClick={action('clicked')}
+		disabled={boolean('disabled', false)}
+		icon={boolean('icon', false)}
+		onClick={action('clicked')}
+		theme={select('theme', buttonThemes)}
+		size={select('size', buttonSizes)}>
+		<Icon 
+			icon={text('iconName', 'px-fea:home')} 
+			viewBox={text('viewBox', '0 0 32 32')}
+			size={number('iconSize', 32)}/>
+		{text('label', 'Button')}
+	</Button>
 ))
 .add('with emoji', () => (
 	<Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
@@ -28,17 +63,17 @@ stories
 .add('with theme', () => (
 	<div>
 		<Button onClick={action('clicked')} >Button</Button>
-		<Button onClick={action('clicked')} primary>Button</Button>
-		<Button onClick={action('clicked')} tertiary>Button</Button>
-		<Button onClick={action('clicked')} disabled>Button</Button>
+		<Button onClick={action('clicked')} disabled>Button (disabled)</Button>
+		{buttonThemes.map((theme, index) => (
+			<Button onClick={action('clicked')} theme={theme} key={index}>Button ({theme})</Button>
+		))}
 	</div>
 ))
 .add('with sizes', () => (
 	<div>
-		<Button onClick={action('clicked')} small>Button</Button>
-    <Button onClick={action('clicked')}>Button</Button>
-		<Button onClick={action('clicked')} large>Button</Button>
-		<Button onClick={action('clicked')} huge>Button</Button>
+		{buttonSizes.map((size, index) => (
+			<Button onClick={action('clicked')} size={size}>Button ({size})</Button>
+		))}
 	</div>
 ))
 .add('simple info',

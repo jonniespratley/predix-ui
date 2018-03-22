@@ -10,6 +10,7 @@ const VHeader = styled.div`
   align-items     : center;
   flex-direction  : row;
   position: relative;
+  user-select:none;
 `;
 const VHeaderText = styled.div`
   padding-left : 1rem;
@@ -39,11 +40,11 @@ const VHeaderSubTitle = styled.div`
 `;
 const VHeaderLeft = styled.div`
   position: absolute;
-  left: 0;
+  left: 1rem;
 `;
 const VHeaderRight = styled.div`
   position: absolute;
-  right: 0;
+  right: 1rem;
 `;
 
 export default ({

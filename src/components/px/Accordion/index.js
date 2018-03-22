@@ -4,7 +4,7 @@ import BaseComponent from '../BaseComponent';
 import IronCollapse from '../../iron/IronCollapse';
 import Flex from '../../../styles/flex';
 import styled, {css} from 'styled-components';
-import Icon from '../IconSet/px-icon';
+import Icon from '../IconSet/Icon';
 const styles = {
   width: `16px`,
   height: `16px`
@@ -129,17 +129,15 @@ class Accordion extends React.Component {
 
   onActionClick(e){
     e.preventDefault();
-    console.log('onActionClick', e);
   }
   
   componentDidUpdate(){
     const {onCollapsed, onExpanded} = this.props;
     if(this.state.open){
-      console.log('Trigger', 'onExpanded');
+      //console.log('Trigger', 'onExpanded');
     } else {
-      console.log('Trigger', 'onCollapsed');
+      //console.log('Trigger', 'onCollapsed');
     }
-    
   }
   componentWillReceiveProps(nextProps){
     this.setState({open: nextProps.opened});

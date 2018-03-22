@@ -11,6 +11,18 @@ const { Icon } = PxReact;
 <Icon icon='px-doc:chart' size={16}/>
 ```
 
+### Custom size
+
+```react
+const { Icon } = PxReact;
+<Icon 
+  icon='px-fea:home'
+  viewBox='0 0 32 32'
+  size={225}/>
+```
+
+> Note: When using a custom `size` property, be sure to set the `viewBox` property to fix scaling.
+
 ## Cheatsheet
 
 ```react

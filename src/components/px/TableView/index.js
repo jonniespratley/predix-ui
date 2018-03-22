@@ -41,12 +41,7 @@ class TableView extends React.Component {
       tappable,
 
       //sizes
-      flush,
-      tiny,
-      small,
-      regular,
-      large,
-      huge,
+      size,
       height = 300,
       width = 320,
       rowHeight = 44,
@@ -54,21 +49,21 @@ class TableView extends React.Component {
     } = this.props;
 
     const baseClassnames = classnames('px-table-view',
-      { 'px-table-view--flush': flush },
-      { 'px-table-view--tiny': tiny },
-      { 'px-table-view--small': small },
-      { 'px-table-view--regular': regular },
-      { 'px-table-view--large': large },
-      { 'px-table-view--huge': huge }
+      { 'px-table-view--flush': size === 'flush' },
+      { 'px-table-view--tiny': size === 'tiny' },
+      { 'px-table-view--small': size === 'small' },
+      { 'px-table-view--regular': size === 'regular' },
+      { 'px-table-view--large': size === 'large' },
+      { 'px-table-view--huge': size === 'huge' }
     );
     const tableViewClassnames = classnames(
       'table-view',
-      { 'table-view--flush': flush },
-      { 'table-view--tiny': tiny },
-      { 'table-view--small': small },
-      { 'table-view--regular': regular },
-      { 'table-view--large': large },
-      { 'table-view--huge': huge }
+      { 'table-view--flush': size === 'flush' },
+      { 'table-view--tiny': size === 'tiny' },
+      { 'table-view--small': size === 'small' },
+      { 'table-view--regular': size === 'regular' },
+      { 'table-view--large': size === 'large' },
+      { 'table-view--huge': size === 'huge' }
     );
 
     return (

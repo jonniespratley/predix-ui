@@ -23,7 +23,9 @@
     "px-table-view": "^3.0.5",
     "px-actionable-design": "^2.0.4",
     "px-layout-design": "^1.0.1",
-    "px-shadows-design": "^1.0.2",
-    "px-forms-design": "^2.0.6"
+    "px-shadows-design": "^1.0.2"
+  },
+  "dependencies": {
+    "px-meta-buttons-design": "^1.0.4"
   }
 }

@@ -29,7 +29,7 @@ import Select from './Input/Select';
 
 import IconSet from './IconSet';
 import Toggle from './Toggle';
-import Icon from './IconSet/px-icon';
+import Icon from './IconSet/Icon';
 import KeyValuePair from './KeyValuePair';
 import Layout from './Layout';
 import Modal from './Modal';
@@ -93,7 +93,7 @@ const px = {
 	Dropdown,
 	Drawer,
 	//NavDrawer,
-	//Grid,
+	Grid,
   Icon,
   IconSet,
 	KeyValuePair,
@@ -119,6 +119,5 @@ const px = {
 	Flex,
 	Toggle
 };
-
 
 module.exports = px;

@@ -12,9 +12,9 @@ Reference https://github.com/PredixDev/px-buttons-design
 const { Button } = PxReact;
 <div>
   <Button>Button</Button>
-  <Button bare>Button</Button>
-  <Button primary>Button</Button>
-  <Button tertiary>Button</Button>
+  <Button size='bare'>Button</Button>
+  <Button size='primary'>Button</Button>
+  <Button size='tertiary'>Button</Button>
   <Button disabled>Button</Button>
 </div>
 ```
@@ -23,10 +23,11 @@ const { Button } = PxReact;
 ```react|lang-jsx
 const { Button } = PxReact;
 <div>
-  <Button small>Button</Button>
+  <Button size='small'>Button</Button>
   <Button>Button</Button>
-  <Button large>Button</Button>
-  <Button huge>Button</Button>
+  <Button size='large'>Button</Button>
+  <Button size='huge'>Button</Button>
+  <Button size='full'>Button</Button>
 </div>
 ```
 
@@ -35,7 +36,7 @@ const { Button } = PxReact;
 ```react|lang-jsx
 const { Button } = PxReact;
 <div>
-  <Button className='btn--danger' large>Button</Button>
+  <Button className='btn--danger' size='large'>Button</Button>
   <style>{`
     .btn--danger {
       color: white;
@@ -56,27 +57,12 @@ const { Button } = PxReact;
 ```table
 span: 6
 rows:
-  - Name: primary
-    Type: Boolean
-    Description: Enable primary button
-  - Name: bare
-    Type: Boolean
-    Description: Enable bare button
-  - Name: tertiary
-    Type: Boolean
-    Description: Enable tertiary button
-  - Name: disabled
-    Type: Boolean
-    Description: Enable disabled button
-  - Name: small
-    Type: Boolean
-    Description: Enable small button
-  - Name: large
-    Type: Boolean
-    Description: Enable large button
-  - Name: huge
-    Type: Boolean
-    Description: Enable huge button
+  - Name: theme
+    Type: String
+    Description: The color scheme to use.
+  - Name: size
+    Type: String
+    Description: The size of the button. 
 ```
 
 
@@ -86,7 +72,6 @@ rows:
 ```table
 span: 6
 rows:
-  - Property: --my-prop
-    Default: null
-    Description: This is the style prop.
+  - Property: --px-btn-height
+    Description: The height of the button.
 ```

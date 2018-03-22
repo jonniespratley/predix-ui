@@ -2,14 +2,15 @@ import React from 'react';
 import classnames from 'classnames';
 
 
-export default class IronSelector extends React.Component {
+class IronSelector extends React.Component {
   constructor(props){
     super(props);
+    this.displayName = 'IronSelector';
     this.state = {
       selected: props.selected || 0,
       selectedItem: props.selectedItem || null,
       selectedClassName: props.selectedClassName || 'iron-selected',
-      propForSelected: props.propForSelected || null
+      propForSelected: props.propForSelect || null
     };
     this._items = [];
     this._keys = [];
@@ -24,26 +25,30 @@ export default class IronSelector extends React.Component {
     }
   }
 
+  componentWillReceiveProps(nextProps){
+    //this.setState({selected: nextProps.selected});
+  }
+  
+  componentDidUpdate(){
+    if(this.props.onChange){
+      this.props.onChange(this.state);
+    }
+  }
+
   _renderTitles() {
     this._keys = [];
     function labels(child, index) {
       let propForSelect = index;
-
-      //add child
       this._items.push(child);
-
-      //add prop to keys
       if(this.props.propForSelect){
          propForSelect = child.props[this.props.propForSelect];
         this._keys.push(propForSelect);
       } else {
         this._keys.push(index);
       }
-
-      //selected index is selected key
-      const selectedClassName = this.state.selectedClassName;
-      let selected = (this.state.selected === this._getIndexForValue(propForSelect));
-      let baseClasses = classnames(
+      const selectedClassName = this.props.selectedClassName;
+      const selected = (this.props.selected === this._getIndexForValue(propForSelect));
+      const baseClasses = classnames(
         {[`${selectedClassName}`]: selected}
       );
       return (
@@ -52,10 +57,9 @@ export default class IronSelector extends React.Component {
         </li>
       );
     }
-    let nodes = this.props.children.map(labels.bind(this));
+    const nodes = this.props.children.map(labels.bind(this));
     return nodes;
   }
-
 
   _getIndexForValue(val){
     return this._keys.indexOf(val);
@@ -64,7 +68,7 @@ export default class IronSelector extends React.Component {
   render(){
     const {
       children,
-      className = 'iron-selector',
+      className,
       selected,
       selectedItem,
       style = {
@@ -75,6 +79,7 @@ export default class IronSelector extends React.Component {
     } = this.props;
 
     const baseClassnames = classnames(
+      'iron-selector',
       className
     );
 
@@ -85,3 +90,11 @@ export default class IronSelector extends React.Component {
     );
   }
 }
+IronSelector.defaultProps = {
+  selectedClassName: 'iron-selected',
+  selectedStyle: null,
+  selected: 0,
+  selectedItem: null,
+  propForSelect: null
+};
+export default IronSelector;

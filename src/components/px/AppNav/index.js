@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import NavItem from './px-app-nav-item';
 import BaseComponent from '../BaseComponent';
-import Icon from '../IconSet/px-icon';
+import Icon from '../IconSet/Icon';
 
 import AppNavSubGroup from './px-app-nav-sub-group';
 

@@ -1,8 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import BaseComponent from '../BaseComponent';
-import Icon from '../IconSet/px-icon';
-
+import Icon from '../IconSet/Icon';
 import AppNavItem from './px-app-nav-item';
 import AppNavSubItem from './px-app-nav-sub-item';
 

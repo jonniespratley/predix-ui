@@ -2,5 +2,7 @@ bower_components
 node_modules
 /plop-templates/*
 sass
-
 lib
+gh-pages
+tools
+src/**/*.test.js
