@@ -5,11 +5,15 @@ import { withKnobs, text, boolean, number, select } from '@storybook/addon-knobs
 import Tabs from './';
 import Tab from './Tab';
 
+const onChange = (e) => {
+  console.log('onChange', e);
+};
+
 /// Tabs
 storiesOf('Tabs', module)
   .addDecorator(withKnobs)
 	.add('default', () => (
-    <Tabs selected={number('selected', 0)}>
+    <Tabs selected={number('selected', 0)} onChange={onChange}>
       <Tab label="Tab 1">
         <div>
           <p>This is the tab 1 content. </p>

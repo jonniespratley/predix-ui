@@ -8,11 +8,14 @@ import Icons from './';
 
 const AllIcons = Object.keys(Icons).sort();
 
-
+const cheatsheetStyles = {
+	//display: 'flex'
+	//flexWrap: 'wrap'
+};
 const RenderIconSet = ({icons, size}) => (
-<ul>
+<ul style={cheatsheetStyles}>
 	{icons && icons.map((item, key) => (
-    <li key={key}><Icon icon={item} size={size} />{item}</li>
+    <li key={key}><Icon icon={item} size={size} viewBox='0 0 32 32' />{item}</li>
 	))}
 </ul>
 );
@@ -24,5 +27,10 @@ storiesOf('Icon', module)
 			icon={select('icon', AllIcons, 'px-fea:home')}
 			viewBox={text('viewBox', '0 0 32 32')}
 			size={number('size', 225)}/>
+	))
+	.add('cheatsheet', () => (
+		<div>
+		{RenderIconSet({icons: AllIcons, size: 75})}
+		</div>
 	))
 	;
