@@ -1,19 +1,17 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { setAddon, storiesOf } from '@storybook/react';
 import { withKnobs, text, number, select } from '@storybook/addon-knobs/react';
-
+import JSXAddon from 'storybook-addon-jsx';
 import Tabs from './';
 import Tab from './Tab';
+import { action } from '@storybook/addon-actions';
 
-const onChange = (e) => {
-  console.log('onChange', e);
-};
 
 /// Tabs
 storiesOf('Tabs', module)
   .addDecorator(withKnobs)
-	.add('default', () => (
-    <Tabs selected={number('selected', 0)} onChange={onChange}>
+	.addWithJSX('default', () => (
+    <Tabs selected={number('selected', 0)} onChange={action('onChange')}>
       <Tab label="Tab 1">
         <div>
           <p>This is the tab 1 content. </p>
@@ -46,8 +44,8 @@ storiesOf('Tabs', module)
       </Tab>
     </Tabs>
   ))
-	.add('with propForSelect', () => (
-    <Tabs selected={text('selected', 'tab2')} propForSelect='id' onChange={onChange}>
+	.addWithJSX('with propForSelect', () => (
+    <Tabs selected={text('selected', 'tab2')} propForSelect='id' onChange={action('onChange')}>
       <Tab label="Tab 1" id='tab1'>
         <div>
           <p>This is the tab 1 content. </p>
