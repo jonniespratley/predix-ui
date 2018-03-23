@@ -34,7 +34,7 @@ const stories = storiesOf('Button', module);
 stories
 .addDecorator(withKnobs)
 
-.add('default', () => (
+.addWithJSX('default', () => (
 	<Button 
 		disabled={boolean('disabled', false)}
 		icon={boolean('icon')}
@@ -43,7 +43,7 @@ stories
 		size={select('size', buttonSizes)}
 		>{text('label', 'Button')}</Button>
 ))
-.add('with icon', () => (
+.addWithJSX('with icon', () => (
 	<Button onClick={action('clicked')}
 		disabled={boolean('disabled', false)}
 		icon={boolean('icon', false)}

@@ -79,14 +79,18 @@ class Tabs extends BaseComponent {
     this._items = [];
     this._keys = [];
   }
+
   componentWillReceiveProps(nextProps){
-    if(nextProps.selected){
-      this.setState({selected: nextProps.selected});
+    if(nextProps.selected !== undefined){
+      this.setState({
+        selected: nextProps.selected
+      });
     }
   }
 
   _getIndexForValue(val){
-    return this._keys.indexOf(val);
+    let index = this._keys.indexOf(val);
+    return index;
   }
 
   handleClick(index, event) {
@@ -94,7 +98,7 @@ class Tabs extends BaseComponent {
     event.preventDefault();
     const selected = this._getIndexForValue(index);
     if(this.props.onChange){
-      this.props.onChange(index, event);
+      this.props.onChange(selected, event);
     }
     
     this.setState({
@@ -104,20 +108,14 @@ class Tabs extends BaseComponent {
 
   _renderTitles() {
     this._keys = [];
+
     function labels(child, index) {
       let propForSelect = index;
-      //add child
-      this._items.push(child);
-
-      //add prop to keys
+      this._items[index] = child;
       if(this.props.propForSelect){
          propForSelect = child.props[this.props.propForSelect];
-        this._keys.push(propForSelect);
-      } else {
-        this._keys.push(index);
-      }
-
-      //selected index is selected key
+      } 
+      this._keys[index] = propForSelect;
       let selected = (this.state.selected === this._getIndexForValue(propForSelect));
       let baseClasses = classnames(
         {'iron-selected': selected}
@@ -130,7 +128,8 @@ class Tabs extends BaseComponent {
         </TabItem>
       );
     }
-    const {children} = this.props;
+
+    const { children } = this.props;
     return React.Children.map(children, labels.bind(this));
   }
 
