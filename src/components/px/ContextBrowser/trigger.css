@@ -1,0 +1,243 @@
+:host(:hover) {
+  background-color: var(--px-context-browser-trigger-hover-background, #d3d3d3)
+}
+
+px-icon {
+  stroke: var(--px-context-browser-trigger-icon-color, currentcolor)
+}
+
+/* Columns*/
+
+:host {
+  color: var(--px-base-text-color, #2c404c);
+  line-height: 1.33333;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  /*! Comment to prevent cssmin munging this rule with html above and borking Safari */
+  box-sizing: border-box
+}
+
+.column-animation>::slotted(:not(.active):not(.animating)) {
+  display: none !important
+}
+
+.column-animation>::slotted(.animating) {
+  opacity: 0
+}
+
+.column-animation>::slotted(.fade-in-right) {
+  animation-name: fadeInRight;
+  animation-duration: 350ms
+}
+
+.column-animation>::slotted(.fade-in-left) {
+  animation-name: fadeInLeft;
+  animation-duration: 350ms
+}
+
+.column-animation>::slotted(.fade-out-right) {
+  animation-name: fadeOutRight;
+  animation-duration: 350ms
+}
+
+.column-animation>::slotted(.fade-out-left) {
+  animation-name: fadeOutLeft;
+  animation-duration: 350ms
+}
+
+/*Item*/
+ 
+.context-browser-text__breadcrumbs,
+.context-browser-text__label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.context-browser-item {
+  box-sizing: border-box;
+  display: flex;
+  height: 2rem;
+  color: var(--px-context-browser-item-text-color, #000);
+  transition: background-color .2s ease-in-out;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  min-width: 0
+}
+
+:host([style-as-favorite]) {
+  height: 4rem
+}
+
+:host(:focus),
+:host(:hover) {
+  background-color: var(--px-context-browser-item-background-color--hover, #f5f5f5)
+}
+
+:host([collapsed]:focus),
+:host([collapsed]:hover) {
+  background-color: transparent
+}
+
+:host([collapsed]:active) {
+  background-color: var(--px-context-browser-item-background-color--hover, #f5f5f5)
+}
+
+:host(:focus) {
+  outline: 0
+}
+
+:host([selected]),
+:host([selected][collapsed]) {
+  background-color: var(--px-context-browser-item-background-color--selected, #4682b4);
+  color: var(--px-context-browser-item-text-color--selected, #fff)
+}
+
+.context-browser-text {
+  display: block;
+  width: 100%;
+  flex: 1 1 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-width: 0
+}
+
+.context-browser-text__breadcrumbs {
+  color: var(--px-context-browser-item-breadcrumbs-color, gray)
+}
+
+:host([selected]) .context-browser-text__breadcrumbs {
+  color: var(--px-context-browser-item-breadcrumbs-color--selected, #fff)
+}
+
+.actions {
+  margin-left: auto;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+  display: none;
+  flex: 0 0 auto
+}
+
+:host([style-as-favorite]) .actions {
+  display: flex;
+  opacity: 1
+}
+
+:host(:focus) .actions,
+:host(:hover) .actions,
+:host([selected]) .actions {
+  display: flex;
+  opacity: 1
+}
+
+:host([collapsed]:focus) .actions,
+:host([collapsed]:hover) .actions,
+:host([selected][collapsed]) .actions {
+  display: none
+}
+
+.action {
+  width: 1.33333rem;
+  height: 1.33333rem;
+  margin-left: .33333rem;
+  margin-right: .33333rem;
+  cursor: pointer;
+  color: var(--px-context-browser-icon-stroke, #696969)
+}
+
+:host([selected]) .action {
+  color: var(--px-context-browser-icon-stroke--item-selected, #fff)
+}
+
+.action:nth-last-child(3) {
+  margin-right: 1rem
+}
+
+:host([style-as-favorite]) .action {
+  margin-right: 1rem
+}
+
+/* Header */
+
+:host {
+  /*! Comment to prevent cssmin munging this rule with html above and borking Safari */
+  box-sizing: border-box;
+  display: none;
+  flex-direction: row;
+  position: relative;
+  height: 2.66667rem;
+  background-color: var(--px-context-browser-header-background-color, #f5f5f5);
+  border-bottom: 1px solid var(--px-context-browser-header-border-color, #d3d3d3);
+  box-shadow: 0 1px 1px var(--px-shadow-component, rgba(0, 0, 0, .2));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  z-index: 2
+}
+
+:host([active]) {
+  display: flex
+}
+
+:host([collapsed]) {
+  background-color: var(--px-context-browser-header-background-color, #fff);
+  border-bottom: 1px solid var(--px-context-browser-header-border-color, #d3d3d3)
+}
+
+.context-browser-header-label {
+  display: flex;
+  align-items: center;
+  color: var(--px-context-browser-header-text-color, teal);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-width: 0;
+  flex: 1 1 auto
+}
+
+.context-browser-header-label__arrow {
+  flex: 0 0 auto;
+  margin-right: .33333rem;
+  display: inline-flex
+}
+
+.context-browser-header-label__link {
+  flex: 1 1 auto;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.actions {
+  flex: 0 0 auto;
+  margin-left: .66667rem;
+  display: flex;
+  align-items: center
+}
+
+.action {
+  flex: 0 0 auto;
+  padding: .06667rem;
+  width: 1.33333rem;
+  height: 1.33333rem;
+  margin-left: .33333rem;
+  margin-right: .33333rem;
+  cursor: pointer;
+  color: var(--px-context-browser-icon-stroke, #696969)
+}
+
+.action--last {
+  margin-right: 0
+}
