@@ -18,6 +18,7 @@ function createMockItem(i) {
 		}
 	};
 }
+
 describe('iron', () => {
 
   describe('IronSelectable', () => {
@@ -46,6 +47,9 @@ describe('iron', () => {
       expect(instance.selectedItem).to.equal('page-2');
       instance.selectNext();
       expect(instance.selectedItem).to.equal('page-3');
+      instance.selectPrevious();
+      instance.selectPrevious();
+      expect(instance.selectedItem).to.equal('page-1');
       //instance.selectNext();
       //expect(instance.selectedItem).to.equal('page-3');
     });

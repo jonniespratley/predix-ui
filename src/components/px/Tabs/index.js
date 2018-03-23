@@ -6,7 +6,7 @@ import Tab from './Tab';
 
 
 const Pane = (props) => {
-  return (<div>{props.children}</div>);
+  return (<div className='px-tabs__pane'>{props.children}</div>);
 };
 
 //Container
@@ -31,7 +31,7 @@ const TabsContainerNav = styled.ul`
 TabsContainerNav.displayName = 'TabsContainerNav';
 
 //Tab Title
-const TabTitle = styled.a`
+const TabTitle = styled.span`
   color: var(--px-tab-color, black);
   cursor: pointer;
   text-decoration: none;
@@ -82,10 +82,22 @@ class Tabs extends BaseComponent {
 
   componentWillReceiveProps(nextProps){
     if(nextProps.selected !== undefined){
+      //const index = this._getIndexForValue(nextProps.selected);
+      const selected = this._getIndexForValue(nextProps.selected);
       this.setState({
-        selected: nextProps.selected
+        selected: selected
       });
     }
+  }
+
+  shouldComponentUpdate(nextProps, nextState){
+     if(
+      nextProps.selected !== this.props.selected || 
+      nextState.selected !== this.state.selected
+    ){
+      return true;
+    }
+    return false;
   }
 
   _getIndexForValue(val){
@@ -93,17 +105,21 @@ class Tabs extends BaseComponent {
     return index;
   }
 
-  handleClick(index, event) {
-    this._log('handleClick', index);
-    event.preventDefault();
-    const selected = this._getIndexForValue(index);
-    if(this.props.onChange){
-      this.props.onChange(selected, event);
-    }
-    
+  _getValueForIndex(index){
+    let val = this._keys[index];
+    return val;
+  }
+
+  handleClick(i, event) {    
+    const index = this._getIndexForValue(i);
+    const val = this._getValueForIndex(i);
     this.setState({
-      selected: selected
+      selected: index,
+      selectedValue: val
     });
+    if(this.props.onChange){
+      this.props.onChange(i, event);
+    }
   }
 
   _renderTitles() {
@@ -116,13 +132,16 @@ class Tabs extends BaseComponent {
          propForSelect = child.props[this.props.propForSelect];
       } 
       this._keys[index] = propForSelect;
-      let selected = (this.state.selected === this._getIndexForValue(propForSelect));
+      let selected = (this.state.selected === (this.props.propForSelect ? this._getIndexForValue(propForSelect) : index));
       let baseClasses = classnames(
         {'iron-selected': selected}
       );
       return (
-        <TabItem key={index} className={baseClasses} active={selected} className='px-tab__item'>
-          <TabTitle href='#' onClick={this.handleClick.bind(this, propForSelect)}>
+        <TabItem key={index} className={baseClasses} active={selected} className='px-tab__item' 
+          aria-controls={`panel-${index}`}
+          role='tab'>
+          <TabTitle {...child.props} 
+            onClick={this.handleClick.bind(this, propForSelect)}>
             {child.props.label}
           </TabTitle>
         </TabItem>
@@ -141,7 +160,7 @@ class Tabs extends BaseComponent {
    const {style} = this.props;
 		return (
       <TabsContainer style={style} className='px-tabs__container'>
-        <TabsContainerNav className='px-tabs__nav'>
+        <TabsContainerNav className='px-tabs__nav' role='tablist'>
           {this._renderTitles()}
         </TabsContainerNav>
         {this._renderContent()}
