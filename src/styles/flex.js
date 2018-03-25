@@ -33,6 +33,9 @@ const Flex = styled.div`
   ${props => props.item && css`
     flex: 1;
   `}
+  ${props => props.flex && css`
+    flex: ${props.flex};
+  `}
 
   ${props => (props.item && props.top) && css`
     align-self: flex-start;
