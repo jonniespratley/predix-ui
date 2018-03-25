@@ -17,4 +17,5 @@ esdocs
 .idea
 .DS_Store
 *.log
+docs
 package-lock.json

@@ -2,7 +2,7 @@ import React from 'react';
 import PredixLogo from './px-predix-svg-logo';
 import Logo from './px-ge-svg-logo';
 import styled, {css} from 'styled-components';
-import Flex from '../../flex';
+import Flex from '../../../styles/flex';
 
 const BrandingBar = styled.div`
 	display         : flex;

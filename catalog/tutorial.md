@@ -1,9 +1,3 @@
-# TODO
-
-```hint
-Work in progress....
-```
-
 
 ## Iron Components
 The following components are implemented to transition from web components.
