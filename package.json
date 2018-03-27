@@ -146,6 +146,7 @@
     "react-css-modules": "^4.7.1",
     "react-dom": "^16.2.0",
     "react-github-corner": "^2.1.0",
+    "react-popper": "^0.8.3",
     "react-test-renderer": "16",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.6",
