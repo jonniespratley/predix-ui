@@ -33,6 +33,7 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  
   &:link,
   &:visited,
   &:hover,
@@ -46,7 +47,7 @@ const Button = styled.button`
     box-shadow: var(--px-btn-shadow, none);
     background-color: var(--px-btn-background--hover, #a3b5bf);
   }
-  &:active{
+  &:active {
     outline: none;
     border-color: var(--px-btn-border-color--pressed, transparent);
     box-shadow: none;

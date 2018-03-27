@@ -6,6 +6,9 @@ import Icon from '../IconSet/Icon';
 import Button from '../Button';
 import Flex from '../../../styles/flex';
 
+const customLogo = () => (
+  <Icon icon='px-nav:home'/>
+);
 const btnStyles = {
   color: 'white'
 };
@@ -21,10 +24,14 @@ storiesOf('Branding Bar', module)
       title={text('title', 'Application Title')}/>
   ))
   .add('without logo', () => (
-    <BrandingBar title='Custom Title' noLogo/>
+    <BrandingBar title='Custom Title' hideLogo/>
   ))
+  
   .add('without powered by', () => (
-    <BrandingBar title='Custom Title' noPowered/>
+    <BrandingBar title='Custom Title' hidePowered/>
+  ))
+  .add('with custom logo', () => (
+    <BrandingBar title='Custom Logo' customLogo={customLogo} hidePowered/>
   ))
   .add('with custom children', () => (
     <BrandingBar 

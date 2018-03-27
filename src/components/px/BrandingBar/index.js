@@ -28,7 +28,7 @@ const BrandingBar = styled.div`
 `;
 BrandingBar.displayName = 'BrandingBar';
 BrandingBar.defaultProps = {
-	responsiveWidth: '768px'
+	//responsiveWidth: '768px'
 };
 
 const BrandingBarTitle = styled.div`
@@ -38,7 +38,7 @@ BrandingBarTitle.displayName = 'BrandingBarTitle';
 
 const BrandingBarPoweredBy = styled.div`
 	font-size: 12px;
-	margin-right: .2rem;
+	margin-right: .3rem;
 `;
 BrandingBarPoweredBy.displayName = 'BrandingBarPoweredBy';
 
@@ -54,8 +54,8 @@ export default ({
 	<BrandingBar>
 		<Flex middle flex={1}>
 			<Flex middle>
-				{!hideLogo && <Logo/>}
-				{customLogo && customLogo}
+				{customLogo || !hideLogo && <Logo/>}
+				{customLogo && customLogo()}
 			</Flex>
 			<Flex middle>
 				<BrandingBarTitle>{title}</BrandingBarTitle>
@@ -65,9 +65,9 @@ export default ({
 		
 			{!hidePowered && 
 			<Flex middle>	
-				<PredixLogo size={10}/>
 				<BrandingBarPoweredBy>{powered}</BrandingBarPoweredBy>
-				</Flex>
+				<PredixLogo size={10}/>
+			</Flex>
 			}
 			
 		
