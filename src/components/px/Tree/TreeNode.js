@@ -1,9 +1,10 @@
 import React from 'react';
 import classnames from 'classnames';
-import stylesheet from './px-tree-node.scss';
-import TreeIcon from './px-tree-icon';
+//import stylesheet from './px-tree-node.scss';
+import TreeIcon from './TreeNodeIcon';
 import BaseComponent from '../BaseComponent';
 import styled, {css} from 'styled-components';
+import Icon from '../IconSet/Icon';
 /*
 
 export default class TreeNode extends React.Component {
@@ -75,6 +76,38 @@ export default class TreeNode extends React.Component {
   }
 }
 */
+const TreeNodeStyled = styled.li`
+	list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.8rem;
+  user-select: none;
+  
+  ${props => props.selected && css`
+    color: var(--px-tree-text-color--selected,#fff);
+    background-color: var(--px-tree-background-color--selected,gray);
+  `}
+  
+	${props => props.leaf && css`
+		padding-left: 1.75rem;
+    color: green;
+    &:hover{
+      color: var(--px-tree-text-color--hover,#000);
+      background-color: var(--px-tree-background-color--hover,#d3d3d3);
+    }
+  `}
+
+	${props => props.branch && css`
+		padding-left: 1.75rem;
+    color: red;
+    &:hover{
+      color: var(--px-tree-text-color--hover,#000);
+      background-color: var(--px-tree-background-color--hover,#d3d3d3);
+    }
+  `}
+
+`;
+TreeNodeStyled.displayName = 'TreeNode';
 
 const TreeNodeIcon = styled.span`
   align-items: center;
@@ -84,31 +117,55 @@ const TreeNodeIcon = styled.span`
   margin-left: 0.25rem;
 	margin-right: 0.25rem;
 `;
+TreeNodeIcon.displayName = 'TreeNodeIcon';
+
+const TreeNodeContent = styled.ul`
+  margin: 0;
+  list-style:none;
+  padding-left: 1.5rem !important;
+  display: none;
+  ${props => props.active && css`
+    display: block;
+	`}
+  ${props => props.open && css`
+    display: block;
+	`}
+`;
+TreeNodeContent.displayName = 'TreeNodeContent';
 
 const TreeNodeLabel = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
 	&:hover {
-  	color: var(--px-tree-text-color--hover, black);
-  	background-color: var(--px-tree-background-color--hover, lightgray);
+    color: var(--px-tree-text-color--hover, black);
+    background-color: var(--px-tree-background-color--hover, lightgray);
 	}
 	${props => props.selected && css`
 		color: var(--px-tree-text-color--selected, white);
   	background-color: var(--px-tree-background-color--selected, gray);
 	`}
 `;
+TreeNodeLabel.displayName = 'TreeNodeLabel';
+
+
 class TreeNode extends BaseComponent {
 	constructor(props) {
 		super(props, {displayName:'TreeNode'});
 		this.state = {
-			children: props.children || []
+      children: [],
+      id: props.id || null,
+      label: props.label || null,
+      data: props.data || null,
+      selected: props.selected || false,
+      isSelectable: props.isSelectable || true
 		};
 		this.onCategorySelect = this.onCategorySelect.bind(this);
 		this.onChildDisplayToggle = this.onChildDisplayToggle.bind(this);
 	}
 
 	onCategorySelect(ev) {
-    this._log('onCategorySelect', ev);
+    console.log('onCategorySelect', ev);
 		if (this.props.onCategorySelect) {
 			this.props.onCategorySelect(this);
 		}
@@ -130,52 +187,43 @@ class TreeNode extends BaseComponent {
 		ev.stopPropagation();
 	}
 	render() {
-		if (!this.state.children) {
-			this.state.children = [];
-		}
     const icon = null;
-    const isOpen = this.state.children.length ? true : false;
+    const isOpen = this.state.children && this.state.children.length  ? true : false;
     const hasChildren = this.props && this.props.data && this.props.data.children;
-
-    let baseClasses = classnames(
-			'px-tree-node',
-      { tree__leaf: !hasChildren },
-			{ tree__branch: hasChildren },
-      { selected: this.state.selected },
-      { open: isOpen },
-			{ closed: this.state.children ? false : true }
-    );
-
-		const treeNodeClasses = classnames(
-			'tree-node',
-			{ active: this.state.selected }
-		);
-
-    const treeLabelClasses = classnames(
-      'tree__label',
-      { selected: this.state.selected }
-    );
-
+ 
+    const {id, label} = this.props || this.props.data;
+    const openIcon = (isOpen ? 'px-utl:chevron' : 'px-utl:chevron-right');
 		return (
-
-			<li className={baseClasses} ref="node" onClick={this.onChildDisplayToggle}>
-        <TreeNodeLabel data-id={this.props.data.id} selected={this.state.selected}>
-          {hasChildren && <TreeIcon className='tree-node__icon' open={isOpen}/>}
+			<TreeNodeStyled 
+        open={isOpen}
+        data-open={isOpen}
+        closed={this.state.children ? false : true}
+        leaf={!hasChildren} 
+        data-leaf={!hasChildren} 
+        branch={hasChildren ? true : false} 
+        data-branch={hasChildren ? true : false} 
+        selected={this.state.selected}
+        ref={(el) => {this.node = el;}} 
+        onClick={this.onChildDisplayToggle}>
+        
+        <TreeNodeLabel data-id={id} selected={this.state.selected}>
+          {hasChildren && <TreeNodeIcon><Icon icon={openIcon} size={16}/></TreeNodeIcon>}
           {icon && <TreeNodeIcon>{icon}</TreeNodeIcon>}
-          <span onClick={this.onCategorySelect}>{this.props.data.label}</span>
+          <span onClick={this.onCategorySelect}>{label}</span>
         </TreeNodeLabel>
 
         {this.state.children &&   
-        <ul className='collapse-content tree-node__content'>
+        <TreeNodeContent open={isOpen}>
           {this.state.children.map((child, index) => (
-            <TreeNode
-              key={index}
-              data={child}
-              onCategorySelect={this.props.onCategorySelect}/>
-          ))}
-        </ul>}
+              <TreeNode
+                key={index}
+                data={child}
+                {...child}
+                onCategorySelect={this.props.onCategorySelect}/>
+            ))}
+        </TreeNodeContent>}
 
-			</li>
+			</TreeNodeStyled>
 		);
 	}
 }
