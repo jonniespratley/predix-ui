@@ -1,14 +1,12 @@
 import {expect} from 'chai';
 import React from 'react';
 import {shallow, mount} from 'enzyme';
-import IronComponents from './';
 
-import IronCollapse from './IronCollapse';
-import IronSelector from './IronSelector';
 import IronPages from './IronPages';
-
+import IronCollapse from './IronCollapse';
 import IronSelectable from './IronSelectable';
-import IronMultiSelectable from './IronMultiSelectable';
+import IconSelector from './IronSelector';
+
 
 function createMockItem(i) {
 	return {
@@ -19,7 +17,7 @@ function createMockItem(i) {
 	};
 }
 
-describe('iron', () => {
+describe('Iron Components', () => {
 
   describe('IronSelectable', () => {
     test('should set selectedItem', () => {
@@ -55,15 +53,14 @@ describe('iron', () => {
     });
   });
 
-  xdescribe('iron-collapse', () => {
+  xdescribe('IronCollapse', () => {
     test('should render', () => {
       const wrapper = shallow(<IronCollapse/>);
-      console.log(wrapper.debug());
       expect(wrapper.find('.iron-collapse')).to.have.length(1);
     });
   });
 
-  describe('iron-pages', () => {
+  describe('IronPages', () => {
     test('should render selected page', () => {
       const wrapper = shallow(
         <IronPages selected={0}>
@@ -76,7 +73,7 @@ describe('iron', () => {
     });
   });
 
-  describe('iron-selector', () => {
+  xdescribe('IronSelector', () => {
     test('should render selected item', () => {
       const wrapper = shallow(
         <IronSelector selected={1}>
@@ -85,13 +82,7 @@ describe('iron', () => {
           <div>3</div>
         </IronSelector>
       );
-      console.log(wrapper.debug());
       expect(wrapper.find('.iron-selected')).to.have.length(1);
     });
   });
-
-  //expect(wrapper.find('.label')).to.have.length(1);
-  //expect(wrapper.find('.delta')).to.have.length(1);
-  //expect(wrapper.find('.alpha')).to.have.length(1);
-  //expect(wrapper.contains(<div className='label'/>)).to.equal(true);
 });

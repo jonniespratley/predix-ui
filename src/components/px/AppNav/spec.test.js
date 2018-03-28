@@ -3,6 +3,8 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import sinon from 'sinon';
 import AppNav from './';
+import AppNavItem from './px-app-nav-item';
+
 const navItems = [
   {id : "home", label: "Home", icon: "px-fea:home"},
   {id : "settings", label: "Settings", icon: "px-fea:settings"},
@@ -13,7 +15,6 @@ describe('AppNav', () => {
 
   test('should render', () => {
     const wrapper = shallow(<AppNav items={navItems}/>);
-    console.log(wrapper.children());
     expect(wrapper.find('.app-nav').exists());
     expect(wrapper.find('[label="Dashboard"]').exists());
   });
@@ -35,7 +36,6 @@ describe('AppNav', () => {
     const wrapper = shallow(<AppNav onChange={spy} selected={1} items={navItems}/>);
     expect(wrapper.state().selectedIndex).to.equal(1);
     expect(wrapper.state().selectedItem.id).to.equal(navItems[1].id);
-    console.log(wrapper.state());
     expect(selectedItem.exists());
     expect(spy.calledOnce);
   });
@@ -46,11 +46,71 @@ describe('AppNav', () => {
     //expect(wrapper.state().selectedItem.id).to.equal('home');
     const targetItem = wrapper.find('[label="Alerts"]').simulate('click');
     const selectedItem = wrapper.find('.selected');
-    console.log(wrapper.state());
 
     expect(wrapper.state().selected).to.equal('alert');
     expect(wrapper.state().selectedItem.id).to.equal('alert');
     expect(selectedItem.exists());
     expect(spy.calledOnce);
+  });
+  it('should not update if selected does not change', () =>{
+    let spy = sinon.spy();
+    const wrapper = shallow(<AppNav onChange={spy} selected={1} items={navItems}/>);
+    expect(wrapper.state().selected).to.equal(1);
+    wrapper.setProps({selected: 2});
+    expect(wrapper.state().selected).to.equal(2);
+    wrapper.setProps({selected: 0});
+    expect(wrapper.state().selected).to.equal(0);
+    expect(spy.callCount).to.equal(2);
+
+  });
+});
+
+describe('AppNavItem', () =>{
+  it('should render', () =>{
+    const wrapper = shallow(<AppNavItem item={navItems[0]}/>);
+    expect(wrapper.find('[label="Home"]').exists());
+  });
+  
+  it('should dispatch click handler', () =>{
+    let spy = sinon.spy();
+    const wrapper = shallow(<AppNavItem item={navItems[0]} onClick={spy}/>);
+    expect(wrapper.find('[label="Home"]').exists());
+    wrapper.find('.px-app-nav-item').simulate('click');
+    expect(spy.calledOnce);
+  });
+  it('should render icon', () =>{
+    const wrapper = shallow(<AppNavItem {...navItems[0]}/>);
+    expect(wrapper.find('[label="Home"]').exists());
+    expect(wrapper.find('.px-fea-home').exists());
+  });
+  it('should render dropdown icon if prop exists', () =>{
+    const wrapper = shallow(
+    <AppNavItem 
+      dropdown={true} 
+      {...navItems[0]}/>
+      );
+    expect(wrapper.find('[label="Home"]').exists());
+    expect(wrapper.find('.app-nav-item__dropdown-icon').exists());
+  });
+  it('should render empty icon/label if prop exists', () =>{
+    const wrapper = shallow(
+    <AppNavItem 
+      emptyIcon={true} 
+      emptyLabel={true} 
+      {...navItems[0]}/>
+      );
+    expect(wrapper.find('[label="Home"]').exists());
+    expect(wrapper.find('.app-nav-item__label--empty').exists());
+    expect(wrapper.find('.app-nav-item__icon--empty').exists());
+  });
+  it('should render empty icon/label if empty exists', () =>{
+    const wrapper = shallow(
+    <AppNavItem 
+      empty={true} 
+      {...navItems[0]}/>
+      );
+    expect(wrapper.find('[label="Home"]').exists());
+    expect(wrapper.find('.app-nav-item__label--empty').exists());
+    expect(wrapper.find('.app-nav-item__icon--empty').exists());
   });
 });

@@ -1,16 +1,29 @@
 import React from 'react';
+
 import IronCollapse from './IronCollapse';
-import IronMediaQuery from './iron-media-query';
-import IronIcon from './iron-icon';
-import IronResizable from './iron-resizable';
+import IronPages from './IronPages';
+import IronMediaQuery from './IronMediaQuery';
+import IronSelection from './IronSelection';
 import IronSelector from './IronSelector';
+import IronMultiSelectable from './IronMultiSelectable';
+import IronSelectable from './IronSelectable';
 
 const IronComponents = {
   IronCollapse,
+  IronPages,
   IronMediaQuery,
-  IronIcon,
-  IronResizable,
-  IronSelector
+  IronSelection,
+  IronSelector,
+  IronSelectable,
+  IronMultiSelectable
 };
 
-export default IronComponents;
+export default {
+  IronCollapse,
+  IronPages,
+  IronMediaQuery,
+  IronSelection,
+  IronSelector,
+  IronSelectable,
+  IronMultiSelectable
+};

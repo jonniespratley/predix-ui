@@ -90,6 +90,7 @@ class IronSelector extends React.Component {
     );
   }
 }
+
 IronSelector.defaultProps = {
   selectedClassName: 'iron-selected',
   selectedStyle: null,
@@ -97,4 +98,5 @@ IronSelector.defaultProps = {
   selectedItem: null,
   propForSelect: null
 };
+
 export default IronSelector;

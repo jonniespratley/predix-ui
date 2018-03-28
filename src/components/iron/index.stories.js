@@ -7,11 +7,8 @@ import { withInfo } from '@storybook/addon-info';
 import { withKnobs, text, array, object, boolean, number } from '@storybook/addon-knobs';
 
 //component
-import IronCollapse from './IronCollapse';
-import IronSelector from './IronSelector';
-import IronMediaQuery from './iron-media-query';
-import IronPages from './IronPages';
 
+import {IronPages, IronCollapse, IronMediaQuery, IronSelector} from './';
 
 //stories
 const stories = storiesOf('IronComponents', module);

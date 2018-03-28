@@ -3,7 +3,6 @@ import styled, {
   css
 } from 'styled-components';
 
-
 const Textarea = styled.textarea `
   width: 100%;
   color: var(--px-input-text-color, #2c404c);
@@ -58,4 +57,7 @@ const Textarea = styled.textarea `
         color: var(--px-input-text-color--focused, inherit);
     }
 `;
+
+Textarea.displayName = 'Textarea';
+
 export default Textarea;

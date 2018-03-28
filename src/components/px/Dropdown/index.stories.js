@@ -18,7 +18,7 @@ storiesOf('Dropdown', module)
 	.add('default', () => (
 		<Dropdown 
 			onChange={action('onChange')}
-			items={items}
+			items={array('items', items)}
 			sortMode="key" 
 			disabled={boolean('disabled', false)}
 			disableClear={boolean('disableClear', false)}

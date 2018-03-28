@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
+
 const Select = styled.select`
   font: inherit;
   outline: 0;
@@ -44,4 +45,7 @@ const Select = styled.select`
     display: none;
   }
 `;
+
+Select.displayName = 'Select';
+
 export default Select;
