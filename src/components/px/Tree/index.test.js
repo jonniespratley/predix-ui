@@ -2,7 +2,7 @@ import {expect} from 'chai';
 import React from 'react';
 import {shallow} from 'enzyme';
 import PxTree from './';
-var data = {
+var data = [{
 	id: 1,
 	label: "All Categories",
 	children: [
@@ -62,7 +62,7 @@ var data = {
 			]
 		}
 	]
-};
+}];
 
 
 describe('Tree', () => {
