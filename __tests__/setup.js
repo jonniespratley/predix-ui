@@ -1,7 +1,7 @@
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import chai from 'chai';
-import chaiJestSnapshot from 'chai-jest-snapshot';
+import chai from "chai";
+import chaiJestSnapshot from "chai-jest-snapshot";
 
 import 'jest-styled-components';
 /*
@@ -25,13 +25,4 @@ global.requestAnimationFrame = function(callback) {
   setTimeout(callback, 0);
 };
 
-
 chai.use(chaiJestSnapshot);
- 
-before(function() {
-  chaiJestSnapshot.resetSnapshotRegistry();
-});
- 
-beforeEach(function() {
-  chaiJestSnapshot.configureUsingMochaContext(this);
-});
