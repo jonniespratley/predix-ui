@@ -44,7 +44,7 @@ import TableView from './TableView';
 import TableRow from './TableView/TableRow';
 import Tabs from './Tabs';
 import Tab from './Tabs/Tab';
-import TreeNode from './Tree/px-tree-node';
+import TreeNode from './Tree/TreeNode';
 import Tree from './Tree';
 import Tile from './Tile';
 import ViewHeader from './ViewHeader';
