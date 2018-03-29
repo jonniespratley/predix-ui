@@ -201,6 +201,7 @@
     }
   },
   "dependencies": {
-    "esdoc-ecmascript-proposal-plugin": "^1.0.0"
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "symbol-tree": "^3.2.2"
   }
 }
