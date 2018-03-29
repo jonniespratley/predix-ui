@@ -4,12 +4,11 @@ import {shallow} from 'enzyme';
 import PxBrandingBar from './';
 
 describe('BrandingBar', () => {
-  test('should...', () =>{
+  test('should render', () =>{
     const wrapper = shallow(
       <PxBrandingBar/>
     );
-    console.log(wrapper.debug());
-    expect(true).to.equal(true);
+    expect(wrapper).to.matchSnapshot(true);
   });
   //expect(wrapper.find('.label')).to.have.length(1);
   //expect(wrapper.find('.delta')).to.have.length(1);
