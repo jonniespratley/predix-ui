@@ -2,38 +2,69 @@ import React from 'react';
 import BaseComponent from '../BaseComponent';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import stylesheet from './px-drawer.scss';
+//import stylesheet from './px-drawer.scss';
 
 
 
 import styled, {css} from 'styled-components';
 
+
+//Drawer
 const Drawer = styled.div`
-  z-index: var(--px-drawer-z-index, 20);
+  position: fixed;
+  z-index: -1;
   color: var(--px-drawer-font-color, black);
   background-color: var(--px-drawer-background-color, white);
   width: var(--px-drawer-width, 256px);
   height: var(--px-drawer-height, 100%);
   box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px, rgba(0, 0, 0, 0.23) 0 1px 4px;
-  position: fixed;
-  transition: var(--px-drawer-transition, transform 450ms cubic-bezier(0.23, 1, 0.32, 1));
-  transform: translateX(-110%);
-  top: 0;
-  left: 0;
-  bottom: 0;
-  opacity: 0;
-  visibility: hidden;
+  
+  transition: var(--px-drawer-transition, transform 350ms cubic-bezier(0.23, 1, 0.32, 1));
+  
+  
 
-  ${props => props.opened && css`
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
+  ${props => props.anchor === 'left' && css`
+    left: 0;
+    right: auto;
+    transform: translateX(-110%);
+    ${props => props.opened && css`
+      transform: translateX(0);
+    `}
   `}
-  ${props => props.docked && css`
-    transform: translateX(0);
+  ${props => props.anchor === 'right' && css`
+    left: auto;
+    right: 0;
+    transform: translateX(110%);
+    ${props => props.opened && css`
+      transform: translateX(0);
+    `}
   `}
-  ${props => props.fixed && css`
-    position: fixed;
+  ${props => props.anchor === 'top' && css`
+    top: 0;
+    left: 0;
+    bottom: auto;
+    right: 0;
+    height: auto;
+    max-height: 100vh;
+    transform: translateY(-110%);
+    width: 100%;
+    ${props => props.opened && css`
+      transform: translateY(0);
+    `}
+  `}
+  ${props => props.anchor === 'bottom' && css`
+    top: auto;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: auto;
+    max-height: 100vh;
+    width: 100%;
+    transform: translateY(105%);
+    width: 100%;
+    ${props => props.opened && css`
+      transform: translateY(0);
+    `}
   `}
   
   &::after {
@@ -45,14 +76,35 @@ const Drawer = styled.div`
     width: 20px;
     content: "";
   }
+
+  
+  ${props => props.opened && css`
+    z-index: var(--px-drawer-z-index, 25);
+    visibility: visible;
+  `}
+  
+  ${props => props.docked && css`
+    z-index: var(--px-drawer-z-index, 25);
+    visibility: visible;
+    transform: translateX(0);
+    flex: 0 0 auto;
+  `}
 `;
 Drawer.displayName = 'Drawer';
 
+//Content
 const DrawerContent = styled.div`
   overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  flex: 1 0 auto;
 `;
 DrawerContent.displayName = 'DrawerContent';
 
+//Overlay
 const DrawerOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -81,141 +133,33 @@ DrawerOverlay.displayName = 'DrawerOverlay';
 /**
  * Drawer component
  */
-export default class DrawerComponent extends BaseComponent {
+export default class DrawerComponent extends React.Component {
   constructor(props){
-    super(props, { name: 'Drawer' });
-    this.state = {
-      opened: props.opened || false,
-      docked: props.docked || false
-    };
-  }
+    super(props);
 
-  isOpen(){
-    return this.state.opened;
-  }
-
-  toggle(){
-    if(this.isOpen()){
-      this._close();
-    } else {
-      this._open();
-    }
-  }
-
-  _open(){
-    this._log('opened', this.state);
-    this.setState({opened: true});
-    if(this.props.onOpen){
-      this.props.onOpen();
-    }
-  }
-
-  _close(){
-    this._log('close', this.state);
-    this.setState({opened: false});
-    this.sideNavContent.style.transform = '';
-    if(this.props.onClose){
-      this.props.onClose();
-    }
-  }
-
-  componentDidMount() {
-    this.hasUnprefixedTransform = 'transform' in document.documentElement.style;
-    if (this.hasUnprefixedTransform) {
-      this._setupTouchHandlers();
-    }
-    if(this.sideNavContent){
-      this.sideNavContent.addEventListener('click', (e) =>{
-        if(!this.state.docked){
-          this._close();
-        }
-      });
-    }
-
-  }
-
-  componentWillReceiveProps(nextProps){
-    this.setState(nextProps);
-  }
-
-  _setupTouchHandlers() {
-    this.touchStartX = null;
-    this.sideNavTransform = null;
-    if(this.sideNavContent){
-      this.sideNavContent.addEventListener('touchstart', this.onSideNavTouchStart.bind(this));
-      this.sideNavContent.addEventListener('touchmove', this.onSideNavTouchMove.bind(this));
-      this.sideNavContent.addEventListener('touchend', this.onSideNavTouchEnd.bind(this));
-    }
-
-  }
-
-  onSideNavTouchStart(e) {
-    //e.preventDefault();
-    this.touchStartX = e.touches[0].pageX;
-  }
-
-  onSideNavTouchMove(e) {
-    e.preventDefault();
-    const newTouchX = e.touches[0].pageX;
-    this.sideNavTransform = Math.min(0, newTouchX - this.touchStartX);
-    this.sideNavContent.style.transform = 'translateX(' + this.sideNavTransform + 'px)';
-  }
-
-  onSideNavTouchEnd(e) {
-    let TOUCH_SLOP = 8 * window.devicePixelRatio * 3;
-    if (this.sideNavTransform < -TOUCH_SLOP) {
-      if(this.props.onSideNavTouchEnd){
-         return this.props.onSideNavTouchEnd(e);
-      }
-      this._close();
-
-      return;
-    }
-    this._open();
   }
 
   render(){
     const {
       style,
       fixed,
-      className = 'drawer',
       containerClassName,
       overlay,
-      //docked,
-      overlayClassName = 'drawer__overlay',
       overlayStyle,
       onOverlayClick,
-
-      type = 'persistent',
-      align = 'left',
+      opened,
+      docked,
+      type,
+      anchor,
       children
     } = this.props;
 
-    const { opened, docked } = this.state;
-
-    const baseClassName = 'px-drawer';
-    const baseClasses = classnames(
-      baseClassName,
-      {[`${baseClassName}--is-docked`]: docked},
-      {[`${baseClassName}--is-opened`]: opened}
-    );
-
-    const drawerClasses = classnames(
-      className,
-      { [`${className}--${type}`]: true },
-      { [`${className}--${align}`]: true },
-      {[`${className}--is-fixed`]: fixed},
-      {[`${className}--is-opened`]: opened},
-      {[`${className}--is-docked`]: docked},
-    );
 
     return (
-      <div className={baseClasses}>
-        {!docked && <DrawerOverlay onClick={onOverlayClick} opened={opened}/>}
-        <div id="drawer" className={drawerClasses} style={style} ref={(e) => {this.sideNavContent = e;}}>
-          <DrawerContent>{children}</DrawerContent>
-        </div>
-      </div>
+      <Drawer opened={opened} anchor={anchor}>
+        <DrawerContent>{children}</DrawerContent>
+        {overlay && <DrawerOverlay onClick={onOverlayClick} opened={opened}/>}
+      </Drawer>
     );
   }
 }
@@ -227,6 +171,7 @@ Drawer.propTypes = {
 
 Drawer.defaultProps = {
   opened: false,
-  docked: true,
-  align: 'left'
+  overlay: false,
+  docked: null,
+  anchor: 'left'
 };

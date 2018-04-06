@@ -1,6 +1,6 @@
 const SymbolTree = require('symbol-tree');
 
-class AssetGraph {
+export class AssetGraph {
 
   constructor(options) {
     /* Save options  */
@@ -394,32 +394,10 @@ class AssetGraph {
 
 
 
-var mockItems = [{
-    "label": "Home",
-    "id": "home"
-  },
-  {
-    "label": "Alerts",
-    "id": "alerts"
-  },
-  {
-    "label": "Assets",
-    "id": "assets",
-    "children": [{
-        "label": "Asset #1",
-        "id": "a1"
-      },
-      {
-        "label": "Asset #2",
-        "id": "a2"
-      }
-    ]
-  }
-];
 
-class AssetTree {
+
+export class AssetTree {
   constructor(){
-    console.log('New AssetTree');
     this.keys = {
       'id': 'id',
       'label': 'label',
@@ -515,8 +493,3 @@ class AssetTree {
   }
 }
 
-
-var tree = new AssetTree();
-tree.addChildren( null, mockItems, {recursive: true});
-
-console.log(tree);

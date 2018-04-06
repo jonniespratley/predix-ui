@@ -213,17 +213,20 @@ class Dropdown extends BaseComponent {
         <Button theme={buttonStyle} disabled={disabled} style={triggerStyle} onClick={this._handleClick.bind(this)}>
           {selectedItem && <DropdownLabel>{selectedItem.val}</DropdownLabel>}
           {!selectedItem && <DropdownLabel>{displayValue}</DropdownLabel>}
+          
           {(!hideChevron && !opened || !selectedItem) && <Icon icon={icon} size={16} />}
           {(!disableClear && selectedItem && opened) && <Icon icon='px-utl:close' size={16} onClick={this.handleClear.bind(this)}/>}
         </Button>
         <DropdownContent opened={opened} width={dropdownContentWidth}>
           {items && items.map((item, index) => (
-            <DropdownOption 
-              disabled={item.disabled}
-              selected={item.selected}
-              onClick={this._handleChange.bind(this, item, index)}
-              key={item.key}>{item.val}
-            </DropdownOption>)
+            <div key={index}>
+              <DropdownOption 
+                disabled={item.disabled}
+                selected={item.selected}
+                onClick={this._handleChange.bind(this, item, index)}>
+                {item.val}
+              </DropdownOption>
+            </div>)
           )}
         </DropdownContent>      
 			</div>

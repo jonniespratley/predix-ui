@@ -150,9 +150,7 @@ const Button = styled.button`
     background: none;
     outline: none;
     &:link,
-    &:visited,
-    &:hover,
-    &:active {
+    &:visited{
       box-shadow: none;
       background: none;
       outline: none;
@@ -161,9 +159,11 @@ const Button = styled.button`
     &:hover,
     &:focus {
       color: var(--px-btn-bare-color--hover, #007acc);
+      background-color: transparent;
     }
     &:active {
       color: var(--px-btn-bare-color--pressed, #003d66);
+      background-color: transparent;
     }
   `}
   ${props => props.theme === 'bare-primary' && css`

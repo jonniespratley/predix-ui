@@ -1,7 +1,12 @@
-import { expect } from 'chai';
 import React from 'react';
-import {shallow} from 'enzyme';
-import PxBreadcrumbs from './';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { withInfo } from '@storybook/addon-info';
+import { withKnobs, text, array, object, boolean, number, select } from '@storybook/addon-knobs';
+
+
+import Breadcrumbs from './';
+const selectedRoute = ["North America", "United States of America", "California", "San Ramon"];
 const items = [{
   "label": "North America",
   "id": "North America",
@@ -88,16 +93,11 @@ const items = [{
   "label": "South America",
   "id": "South America"
 }];
-describe('px-breadcrumbs', () => {
-  test('should...', () =>{
-    const wrapper = shallow(
-      <PxBreadcrumbs/>
-    );
-    console.log(wrapper.debug());
-    expect(true).to.equal(true);
-  });
-  //expect(wrapper.find('.label')).to.have.length(1);
-  //expect(wrapper.find('.delta')).to.have.length(1);
-  //expect(wrapper.find('.alpha')).to.have.length(1);
-  //expect(wrapper.contains(<div className='label'/>)).to.equal(true);
-});
+storiesOf('Breadcrumbs', module)
+	.addDecorator(withKnobs)
+	.add('default', () => (
+		<Breadcrumbs 
+            clickOnlyMode={boolean('clickOnlyMode', false)}
+            selectedRoute={array('selectedRoute', selectedRoute)}
+            items={items}/>
+	));

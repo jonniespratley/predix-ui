@@ -28,7 +28,7 @@ storiesOf('Drawer', module)
 			onOverlayClick={action('onOverlayClick')}
 			opened={boolean('opened', false)}
 			docked={boolean('docked', false)}
-			align={select('align', ['left', 'right'], 'left')}
+			anchor={select('anchor', ['left', 'right', 'top', 'bottom'], 'left')}
 			>
 			<p>This is the content of the drawer</p>
 		</Drawer>

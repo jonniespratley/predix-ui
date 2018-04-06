@@ -18,12 +18,4 @@ const IronComponents = {
   IronMultiSelectable
 };
 
-export default {
-  IronCollapse,
-  IronPages,
-  IronMediaQuery,
-  IronSelection,
-  IronSelector,
-  IronSelectable,
-  IronMultiSelectable
-};
+export default IronComponents;
