@@ -1,4 +1,4 @@
-const SymbolTree = require('symbol-tree');
+import SymbolTree from 'symbol-tree';
 
 export class AssetGraph {
 

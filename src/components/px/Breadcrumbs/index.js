@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
-import Breadcrumbs from './Breadcrumbs';
-import {AssetGraph} from '../ContextBrowser/AssetGraph';
+//import Breadcrumbs from './Breadcrumbs';
+//import {AssetGraph} from '../ContextBrowser/AssetGraph';
 //import stylesheet from './px-breadcrumbs.scss';
 import Dropdown from '../Dropdown';
 import Icon from '../IconSet/Icon';
@@ -10,7 +10,7 @@ class BreadcrumbsComponent extends React.Component {
   constructor(props){
     super(props);
     this.clickOnlyMode = props.clickOnlyMode || false;
-    this._assetGraph = new AssetGraph(props.items || []);
+  //  this._assetGraph = new AssetGraph(props.items || []);
 
     this.keys = props.keys;
 
@@ -29,7 +29,7 @@ class BreadcrumbsComponent extends React.Component {
   }
   componentDidMount(){
     if(this.refs.root){
-      this._breadcrumbsObj = new Breadcrumbs(this.refs.root, this._assetGraph, this.clickOnlyMode, this.props.items, this.keys);
+      //this._breadcrumbsObj = new Breadcrumbs(this.refs.root, this._assetGraph, this.clickOnlyMode, this.props.items, this.keys);
     }
   }
   handleRef(el){

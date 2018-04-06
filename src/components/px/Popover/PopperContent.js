@@ -4,11 +4,15 @@ import propTypes from 'prop-types';
 import {mapToCssModules, getTarget} from '../utils';
 import classNames from 'classnames';
 import {Arrow, Popper} from 'react-popper';
-import isFunction from 'lodash/fp/isFunction';
+
 import PopoverArrow from './PopoverArrow';
 
 import styled from 'styled-components';
 
+function isFunction(functionToCheck) {
+	return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
+ }
+ 
 const PopoverInner = styled.div`
   top: 0;
 	left: 0;
