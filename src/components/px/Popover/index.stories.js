@@ -35,7 +35,7 @@ class Example extends React.Component {
 
 		this.toggle = this.toggle.bind(this);
 		this.state = {
-			popoverOpen: false
+			popoverOpen: props.popoverOpen || false
 		};
 	}
 
@@ -74,11 +74,23 @@ class Example extends React.Component {
 }
 storiesOf('Popover', module)
 	.addDecorator(withKnobs)
+	/*
 	.add('default', () => (
-		<Popover>{text('children', 'Text Label')}</Popover>
+		<Popover 
+			toggle={action('toggle')}
+		
+			placement={select('placement', PopperPlacements, 'right')}
+		>
+			<PopoverHeader>{text('title', 'Popover Title')}</PopoverHeader>
+			<PopoverBody>
+				{text('children', 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.')}			
+			</PopoverBody>
+		</Popover>
 	))
+	*/
 	.add('with example', () => (
 		<Example 
 			title={text('title', 'Popover Title')}
+			popoverOpen={boolean('isOpen', false)}
 			placement={select('placement', PopperPlacements, 'right')}/>
 	));

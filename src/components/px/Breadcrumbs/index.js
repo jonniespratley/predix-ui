@@ -20,6 +20,12 @@ class BreadcrumbsComponent extends React.Component {
     this._isDropdown = this._isDropdown.bind(this);
     this._doesItemHaveSiblings = this._doesItemHaveSiblings.bind(this);
     this._isNotFirstItemInData = this._isNotFirstItemInData.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick(e, index, item){
+    if(this.props.onClick){
+      this.props.onClick(e, index, item);
+    }
   }
   componentDidMount(){
     if(this.refs.root){
@@ -95,21 +101,18 @@ class BreadcrumbsComponent extends React.Component {
       keys,
       selectedRoute
      } = this.props;
-    console.log('items', selectedRoute);
+    
     return (
       <div ref={this.handleRef}>
          
-          <div className="topPath flex">
-          {/*!this._isNotFirstItemInData(index, items).bind(this) && 
-            <li className="breadcrumbTopItem flex flex--middle">
-              <span className="rightAngle">
-                <Icon icon="px-utl:chevron-right"/>
-              </span>
-            </li>*/}
+          <div className="topPath flex flex--middle">
+          
             {selectedRoute && selectedRoute.map((label, index) =>(
-              <div data-index={index} className="breadcrumbTopItem  flex flex--row flex--middle">
-                <span key={index} className="actionable actionable--action u-ph-">{label}</span>
-                <Icon icon="px-utl:chevron-right" size={16} viewBox='0 0 16 16'/>
+              <div data-index={index} className="breadcrumbTopItem" key={index} >
+                <span className='flex flex--row flex--middle'>
+                  {this._isNotFirstItemInData(index, selectedRoute) && (<Icon icon="px-utl:chevron-right" size={24} viewBox='0 0 16 16'/>)}
+                  <span className="actionable actionable--action u-ph-" onClick={this.handleClick.bind(this, index, selectedRoute)}>{label}</span>
+                </span>
               </div>
             ))}
              {/*

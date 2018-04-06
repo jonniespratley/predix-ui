@@ -25,6 +25,7 @@ storiesOf('Icon', module)
 	.add('default', () => (
 		<Icon 
 			icon={select('icon', AllIcons, 'px-fea:home')}
+			color={text('color', 'blue')}
 			viewBox={text('viewBox', '0 0 32 32')}
 			size={number('size', 225)}/>
 	))

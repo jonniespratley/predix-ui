@@ -2,9 +2,10 @@ import React from 'react';
 import classnames from 'classnames';
 import IconSet from './';
 //import stylesheet from './px-icon.scss';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 const PxIcon = styled.i`
+  
 	color: var(--iron-icon-stroke-color, inherit);
 	fill: var(--iron-icon-fill-color, none);
 	stroke: var(--iron-icon-stroke-color, currentColor);
@@ -15,6 +16,10 @@ const PxIcon = styled.i`
 	vertical-align: middle;
 	width: var(--iron-icon-width);
 	height: var(--iron-icon-height);
+	${props => props.color && css`
+		color: ${props.color} !important;
+	`}
+	
 
   svg {
     color         : var(--iron-icon-stroke-color, inherit);
@@ -22,6 +27,7 @@ const PxIcon = styled.i`
     stroke        : var(--iron-icon-stroke-color, currentColor);
     position      : relative;
     vertical-align: middle;
+	
   }
 
   &.hidden {
@@ -58,12 +64,13 @@ class Icon extends React.Component {
 		}
 	}
 	render(){
-    const { icon = '', size, style, className, viewBox } = this.props;
+    const { icon = '', size, style, className, viewBox, color } = this.props;
 		const styles = {
      width: `${size}px`,
      height: `${size}px`
     };
 		const svgStyles = {
+			
 			pointerEvents: 'none',
 			display: 'block',
 			width: `${size}px`,
@@ -72,7 +79,7 @@ class Icon extends React.Component {
 		const icn = icon && icon.replace(':', '-');
 		const _viewBox = viewBox || `0 0 ${size} ${size}`;
     return (
-			<PxIcon className={classnames('px-icon', className, icn)} style={styles}>
+			<PxIcon className={classnames('px-icon', className, icn)} style={styles} color={color}>
 				<svg viewBox={_viewBox}
           preserveAspectRatio="xMidYMid meet"
           dangerouslySetInnerHTML={this.createMarkup(icon)}

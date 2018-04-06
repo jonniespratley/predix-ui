@@ -97,6 +97,7 @@ storiesOf('Breadcrumbs', module)
 	.addDecorator(withKnobs)
 	.add('default', () => (
 		<Breadcrumbs 
+            onClick={action('onClick')}
             clickOnlyMode={boolean('clickOnlyMode', false)}
             selectedRoute={array('selectedRoute', selectedRoute)}
             items={items}/>
