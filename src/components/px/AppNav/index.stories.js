@@ -2,7 +2,10 @@ import React from 'react';
 import {storiesOf} from '@storybook/react';
 import AppNav from './';
 import AppNavItem from './px-app-nav-item';
-import { array } from '@storybook/addon-knobs';
+import { array, number, text } from '@storybook/addon-knobs';
+
+import Icons from '../IconSet';
+const AllIcons = Object.keys(Icons).sort();
 
 const navItems = array('navItems', [{
   "label": "Home",
@@ -50,7 +53,7 @@ const navItems = array('navItems', [{
 storiesOf('App Nav', module)
   .add('default', () => (<AppNav items={navItems}/>))
   .add('with "horizontal"', () => (<AppNav items={navItems}/>))
-  .add('with "selected"', () => (<AppNav items={navItems} selected={2}/>))
+  .add('with "selected"', () => (<AppNav items={navItems} selected={number('selected', 2)}/>))
   .add('with "vertical"', () => (<AppNav items={navItems} vertical/>))
 ;
 storiesOf('App Nav Item', module)

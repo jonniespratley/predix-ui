@@ -1,45 +1,68 @@
 import React from 'react';
 import classnames from 'classnames';
-import stylesheet from './px-tree.scss';
-import TreeNode from './px-tree-node';
-
+//import stylesheet from './px-tree.scss';
+import TreeNode from './TreeNode';
 import BaseComponent from '../BaseComponent';
+import styled, {css} from 'styled-components';
+
+
+
+
 /**
  * Tree component
  */
-export default class Tree extends BaseComponent {
+class Tree extends BaseComponent {
 	constructor(props) {
 		super(props, {displayName: 'Tree'});
 		this.state = {
-			selectedNode: null
+			selectedNode: props.selectedNode || null,
+			selected: props.selected || null
 		};
 		this.onSelect = this.onSelect.bind(this);
 	}
 
-
   onSelect(node) {
+		console.log('onSelect', node);
 		if (this.state.selected) {
 			this.state.selected.setState({ selected: false });
 		}
 		this.setState({ selected: node });
 		node.setState({ selected: true });
-		if (this.props.onSelect) {
-			//this.props.onSelect(node);
+		if (this.props.onChange) {
+			this.props.onChange(node);
 		}
-    this._log('onSelect', node);
+    
 	}
 
+
 	render() {
-		const {style, items, children} = this.props;
+		const { items, children } = this.props;
 		const {selectedNode} = this.state;
 		const baseClasses = classnames('px-tree');
     const _items = items.length ? items : [items];
-
+		const treeStyle = {
+			margin: 0,
+			padding: 0
+		};
 		return (
-			<div className={baseClasses} style={style}>
-        <TreeNode data={items} onCategorySelect={this.onSelect}/>
-				<style>{`${stylesheet}`}</style>
-			</div>
+			<ul className='px-tree' style={treeStyle}>
+        {items &&
+					items.map((item, index) => (
+						<TreeNode 
+							key={index} 
+							data={item} 
+							{...item}
+							onCategorySelect={this.onSelect}/>
+					))
+				}
+			</ul>
 		);
 	}
 }
+
+Tree.defaultProps = {
+	items: [],
+	style: null,
+	selected: null
+};
+export default Tree;

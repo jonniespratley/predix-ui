@@ -1,27 +1,29 @@
 {
   "source": "./src",
-  "destination": "./esdocs",
+  "destination": "./docs",
   "plugins": [
   {
     "name": "esdoc-standard-plugin",
     "option": {
       "brand": {
-        "title": "px-components-react",
+        "title": "predix-ui",
         "author": "Jonnie Spratley"
       },
       "manual": {
-        "index": "./docs/getting-started.md",
-        "asset": "./docs/assets",
+        "index": "./catalog/getting-started.md",
+        "asset": "./catalog/assets",
         "files": [
-          "./docs/overview.md",
-          "./docs/installation.md",
-          "./docs/usage.md",
-          "./docs/tutorial.md",
-          "./docs/configuration.md",
-          "./docs/example.md",
+          "./catalog/overview.md",
+          "./catalog/installation.md",
+          "./catalog/usage.md",
+          "./catalog/tutorial.md",
+          "./catalog/configuration.md",
+          "./catalog/example.md",
           "./CHANGELOG"
         ]
       }
     }
-  }]
+  },
+  {"name": "esdoc-react-plugin"},
+  {"name": "esdoc-ecmascript-proposal-plugin", "option": {"all": true}}]
 }

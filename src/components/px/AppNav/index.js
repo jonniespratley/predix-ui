@@ -38,6 +38,18 @@ class AppNav extends BaseComponent {
     //this.handleClick(this.props.selected, this._getItemFromValue(this.props.selected));
   }
 
+  componentWillReceiveProps(nextProps){
+    if(this.state.selected !== nextProps.selected){
+      this.setState(nextProps);
+    }
+  }
+
+  componentDidUpdate(){
+    if(this.props.onChange){
+      this.props.onChange(this.state);
+    }
+  }
+
   componentWillMount(props){
     if (this.props.items){
       this.props.items.map((item, index) => {

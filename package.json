@@ -3,7 +3,7 @@
   "description": "px-* web components in React.js components",
   "author": "Jonnie Spratley",
   "user": "jonniespratley",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "license": "",
   "repository": {
     "type": "git",
@@ -43,7 +43,7 @@
     "dist:es6": "rimraf ./dist/es6 && BABEL_ENV=es6 babel ./src --out-dir ./dist/es6",
     "dist:min": "NODE_ENV=production webpack --env distMin --progress",
     "dist:modules": "rimraf ./dist/modules && BABEL_ENV=modules babel ./src --out-dir ./dist/modules",
-    "preversion": "npm run test && npm run dist && npm run dist:min && git commit --allow-empty -am ''",
+    "preversion": "npm run test && npm run dist && npm run dist:min && git commit --allow-empty -am 'tag'",
     "prepublish": "npm run dist",
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy"
   },
@@ -63,6 +63,8 @@
     "@storybook/addon-info": "^3.3.10",
     "@storybook/addon-knobs": "^3.3.10",
     "@storybook/addon-storyshots": "^3.3.10",
+    "@storybook/addon-viewport": "^3.3.15",
+    "@storybook/addons": "^3.3.15",
     "@storybook/react": "^3.3.10",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.24.1",
@@ -83,6 +85,7 @@
     "babel-runtime": "^6.23.0",
     "catalog": "^3.2.3",
     "chai": "^4.1.2",
+    "chai-jest-snapshot": "^2.0.0",
     "classnames": "^2.2.5",
     "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.1",
@@ -90,7 +93,9 @@
     "debug": "^3.0.1",
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.0",
+    "enzyme-to-json": "^3.3.3",
     "esdoc": "^1.0.3",
+    "esdoc-react-plugin": "^1.0.1",
     "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^4.16.0",
     "eslint-loader": "^1.7.1",
@@ -126,7 +131,7 @@
     "i": "^0.3.5",
     "imports-loader": "^0.7.1",
     "jest": "^22.1.4",
-    "jest-styled-components": "^4.10.0",
+    "jest-styled-components": "^5.0.0",
     "json-loader": "^0.5.4",
     "lodash": "^4.17.4",
     "node-sass": "^4.5.3",
@@ -134,6 +139,7 @@
     "npm-install-webpack-plugin": "^4.0.5",
     "polished": "^1.9.2",
     "prop-types": "^15.6.0",
+    "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
     "px-table-view": "https://github.com/PredixDev/px-table-view.git#master",
     "px-theme": "https://github.com/PredixDev/px-theme.git#master",
@@ -143,6 +149,7 @@
     "react-css-modules": "^4.7.1",
     "react-dom": "^16.2.0",
     "react-github-corner": "^2.1.0",
+    "react-popper": "^0.8.3",
     "react-test-renderer": "16",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.6",
@@ -150,7 +157,7 @@
     "storybook-addon-jsx": "^5.3.0",
     "strip-json-comments": "^2.0.1",
     "style-loader": "^0.19.0",
-    "styled-components": "^2.4.0",
+    "styled-components": "^3.2.3",
     "svg-inline-loader": "^0.8.0",
     "svgo": "^1.0.3",
     "sync-exec": "^0.6.2",
@@ -172,6 +179,9 @@
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>__tests__/setup.js",
     "collectCoverage": true,
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "testMatch": [
       "**/__tests__/**/*.test.js?(x)",
       "**/src/**/*.test.js?(x)"
@@ -194,5 +204,9 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
     }
+  },
+  "dependencies": {
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "symbol-tree": "^3.2.2"
   }
 }

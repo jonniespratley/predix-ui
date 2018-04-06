@@ -10,8 +10,7 @@ describe('Accordion', () => {
         <p>Accordion content goes here.</p>
       </Accordion>
     );
-    console.log(wrapper.debug())
-    //expect(wrapper.find('.accordion__header').exists());
+    expect(wrapper.find('.px-accordion__header').exists());
   });
 
   xtest('should toggle open/closed', () =>{
@@ -39,7 +38,6 @@ describe('Accordion', () => {
     expect(wrapper.find('.px-accordion--open').length).to.equal(1);
     wrapper.find('header').simulate('click');
 
-    console.log(wrapper.state())
     expect(wrapper.find('.px-accordion--open').length).to.equal(1);
     expect(wrapper.find('.px-accordion--disabled').length).to.equal(1);
 

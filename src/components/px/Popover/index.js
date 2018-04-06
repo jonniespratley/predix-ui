@@ -1,61 +1,324 @@
 import React from 'react';
-import classnames from 'classnames';
-import BaseComponent from '../BaseComponent';
+import propTypes from 'prop-types';
+import classNames from 'classnames';
+import styled, { css } from 'styled-components';
+import PopperContent from './PopperContent';
+import { omit, mapToCssModules, getTarget} from '../utils';
 
+const DEFAULT_DELAYS = {
+	show: 0,
+	hide: 0
+};
 
-/**
- * Popover component
- */
+const defaultProps = {
+	isOpen: false,
+	hideArrow: false,
+	placement: "right",
+	placementPrefix: "bs-popover",
+	delay: DEFAULT_DELAYS,
+	toggle: () => {}
+};
 
-export default class Popover extends BaseComponent {
-  constructor(props){
-    super(props, {displayName: 'Popover'});
-  }
-  render(){
-    const {
-      title,
-      body,
-      classes,
-      style,
-      anchorEl,
-      target,
-      open,
-      orientation = 'bottom',
-      children
-    } = this.props;
+class Popover extends React.Component {
+	constructor(props) {
+		super(props);
 
-    const baseClasses = classnames('px-popover',
-      { 'px-popover--is-open': open },
-      classes
-    );
+		this.addTargetEvents = this.addTargetEvents.bind(this);
+		this.handleDocumentClick = this.handleDocumentClick.bind(this);
+		this.removeTargetEvents = this.removeTargetEvents.bind(this);
+		this.getRef = this.getRef.bind(this);
+		this.toggle = this.toggle.bind(this);
+		this.show = this.show.bind(this);
+		this.hide = this.hide.bind(this);
+	}
 
-    const popoverWrapperClasses = classnames(
-      'popover__wrapper',
-      {'fadeFromVisible': !open},
-      {'fadeFromHidden': open}
-    );
+	componentDidMount() {
+		this._target = getTarget(this.props.target);
+		this.handleProps();
+	}
 
-    const popoverClasses = classnames(
-      'popover'
-    );
+	componentDidUpdate() {
+		this.handleProps();
+	}
 
-    const popoverCaretClasses = classnames(
-      'popover__carat',
-      {[`${orientation}`] : orientation}
-    );
+	componentWillUnmount() {
+		this.clearShowTimeout();
+		this.clearHideTimeout();
+		this.removeTargetEvents();
+	}
 
-    return (
-      <div className={baseClasses}>
-        <div id="popover__wrapper" className={popoverWrapperClasses}>
-          <div id="popover__carat" className={popoverCaretClasses}></div>
-          <div id="popover" className={popoverClasses}>
-            {title && <h5 className="epsilon">{title}</h5>}
-            {body && <p>{body}</p>}
-            {children && <div>{children}</div>}
-          </div>
-          
-        </div>
-      </div>
-    );
-  }
+	getRef(ref) {
+		this._popover = ref;
+	}
+
+	getDelay(key) {
+		const { delay } = this.props;
+		if (typeof delay === "object") {
+			return isNaN(delay[key]) ? DEFAULT_DELAYS[key] : delay[key];
+		}
+		return delay;
+	}
+
+	handleProps() {
+		if (this.props.isOpen) {
+			this.show();
+		} else {
+			this.hide();
+		}
+	}
+
+	show() {
+		this.clearHideTimeout();
+		this.addTargetEvents();
+		if (!this.props.isOpen) {
+			this.clearShowTimeout();
+			this._showTimeout = setTimeout(this.toggle, this.getDelay("show"));
+		}
+	}
+
+	hide() {
+		this.clearShowTimeout();
+		this.removeTargetEvents();
+		if (this.props.isOpen) {
+			this.clearHideTimeout();
+			this._hideTimeout = setTimeout(this.toggle, this.getDelay("hide"));
+		}
+	}
+
+	clearShowTimeout() {
+		clearTimeout(this._showTimeout);
+		this._showTimeout = undefined;
+	}
+
+	clearHideTimeout() {
+		clearTimeout(this._hideTimeout);
+		this._hideTimeout = undefined;
+	}
+
+	handleDocumentClick(e) {
+		if (
+			e.target !== this._target &&
+			!this._target.contains(e.target) &&
+			e.target !== this._popover &&
+			!(this._popover && this._popover.contains(e.target))
+		) {
+			if (this._hideTimeout) {
+				this.clearHideTimeout();
+			}
+
+			if (this.props.isOpen) {
+				this.toggle(e);
+			}
+		}
+	}
+
+	addTargetEvents() {
+		["click", "touchstart"].forEach(event =>
+			document.addEventListener(event, this.handleDocumentClick, true)
+		);
+	}
+
+	removeTargetEvents() {
+		["click", "touchstart"].forEach(event =>
+			document.removeEventListener(event, this.handleDocumentClick, true)
+		);
+	}
+
+	toggle(e) {
+		if (this.props.disabled) {
+			return e && e.preventDefault();
+		}
+
+		return this.props.toggle(e);
+	}
+
+	render() {
+		if (!this.props.isOpen) {
+			return null;
+		}
+
+		const attributes = omit(this.props, Object.keys(propTypes));
+		const classes = mapToCssModules(
+			classNames("popover-inner", this.props.innerClassName),
+			this.props.cssModule
+		);
+
+		const popperClasses = classNames(
+			"popover",
+			"show",
+			"bs-popover-" + this.props.placement,
+			this.props.className
+		);
+
+		return (
+			<PopperContent
+				className={popperClasses}
+				target={this.props.target}
+				isOpen={this.props.isOpen}
+				hideArrow={this.props.hideArrow}
+				placement={this.props.placement}
+				placementPrefix={this.props.placementPrefix}
+				container={this.props.container}
+				modifiers={this.props.modifiers}
+			>
+				<div {...attributes} className={classes} ref={this.getRef} />
+        <style>{`
+        .popover{
+          top: 0;
+          left: 0;
+          z-index: 1060;
+          max-width: 276px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 1.5;
+          text-align: left;
+          text-decoration: none;
+          text-shadow: none;
+          text-transform: none;
+          letter-spacing: normal;
+          word-break: normal;
+          word-spacing: normal;
+          white-space: normal;
+          line-break: auto;
+          font-size: 1rem;
+          word-wrap: break-word;
+          background-clip: padding-box;
+          border: 1px solid var(--px-popover-border-color, #000);
+          background: var(--px-popover-background-color, #fff);
+          color: var(--px-popover-text-color, #000);
+          box-shadow: 0 1px 3px 0 var(--px-popover-shadow-color, #000);
+          position: absolute;
+          display: block;
+        }
+.popover,
+.popover .arrow {
+    position: absolute;
+    display: block
 }
+
+.popover .arrow {
+    width: 1rem;
+    height: .5rem;
+    margin: 0 .3rem
+}
+
+.popover .arrow:after,.popover .arrow:before {
+    position: absolute;
+    display: block;
+    content: "";
+    border-color: transparent;
+    border-style: solid
+}
+
+.bs-popover-auto[x-placement^=top],.bs-popover-top {
+    margin-bottom: .5rem
+}
+
+.bs-popover-auto[x-placement^=top] .arrow,.bs-popover-top .arrow {
+    bottom: calc((.5rem + 1px) * -1)
+}
+
+.bs-popover-auto[x-placement^=top] .arrow:after,.bs-popover-auto[x-placement^=top] .arrow:before,.bs-popover-top .arrow:after,.bs-popover-top .arrow:before {
+    border-width: .5rem .5rem 0
+}
+
+.bs-popover-auto[x-placement^=top] .arrow:before,.bs-popover-top .arrow:before {
+    bottom: 0;
+    border-top-color: rgba(0,0,0,.25)
+}
+
+.bs-popover-auto[x-placement^=top] .arrow:after,.bs-popover-top .arrow:after {
+    bottom: 1px;
+    border-top-color: #fff
+}
+
+.bs-popover-auto[x-placement^=right],.bs-popover-right {
+    margin-left: .5rem
+}
+
+.bs-popover-auto[x-placement^=right] .arrow,.bs-popover-right .arrow {
+    left: calc((.5rem + 1px) * -1);
+    width: .5rem;
+    height: 1rem;
+    margin: .3rem 0
+}
+
+.bs-popover-auto[x-placement^=right] .arrow:after,.bs-popover-auto[x-placement^=right] .arrow:before,.bs-popover-right .arrow:after,.bs-popover-right .arrow:before {
+    border-width: .5rem .5rem .5rem 0
+}
+
+.bs-popover-auto[x-placement^=right] .arrow:before,.bs-popover-right .arrow:before {
+    left: 0;
+    border-right-color: rgba(0,0,0,.25)
+}
+
+.bs-popover-auto[x-placement^=right] .arrow:after,.bs-popover-right .arrow:after {
+    left: 1px;
+    border-right-color: #fff
+}
+
+.bs-popover-auto[x-placement^=bottom],.bs-popover-bottom {
+    margin-top: .5rem
+}
+
+.bs-popover-auto[x-placement^=bottom] .arrow,.bs-popover-bottom .arrow {
+    top: calc((.5rem + 1px) * -1)
+}
+
+.bs-popover-auto[x-placement^=bottom] .arrow:after,.bs-popover-auto[x-placement^=bottom] .arrow:before,.bs-popover-bottom .arrow:after,.bs-popover-bottom .arrow:before {
+    border-width: 0 .5rem .5rem
+}
+
+.bs-popover-auto[x-placement^=bottom] .arrow:before,.bs-popover-bottom .arrow:before {
+    top: 0;
+    border-bottom-color: rgba(0,0,0,.25)
+}
+
+.bs-popover-auto[x-placement^=bottom] .arrow:after,.bs-popover-bottom .arrow:after {
+    top: 1px;
+    border-bottom-color: #fff
+}
+
+.bs-popover-auto[x-placement^=bottom] .popover-header:before,.bs-popover-bottom .popover-header:before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: block;
+    width: 1rem;
+    margin-left: -.5rem;
+    content: "";
+    border-bottom: 1px solid #f7f7f7
+}
+
+.bs-popover-auto[x-placement^=left],.bs-popover-left {
+    margin-right: .5rem
+}
+
+.bs-popover-auto[x-placement^=left] .arrow,.bs-popover-left .arrow {
+    right: calc((.5rem + 1px) * -1);
+    width: .5rem;
+    height: 1rem;
+    margin: .3rem 0
+}
+
+.bs-popover-auto[x-placement^=left] .arrow:after,.bs-popover-auto[x-placement^=left] .arrow:before,.bs-popover-left .arrow:after,.bs-popover-left .arrow:before {
+    border-width: .5rem 0 .5rem .5rem
+}
+
+.bs-popover-auto[x-placement^=left] .arrow:before,.bs-popover-left .arrow:before {
+    right: 0;
+    border-left-color: rgba(0,0,0,.25)
+}
+
+.bs-popover-auto[x-placement^=left] .arrow:after,.bs-popover-left .arrow:after {
+    right: 1px;
+    border-left-color: #fff
+}
+        `}</style>
+			</PopperContent>
+		);
+	}
+}
+
+Popover.defaultProps = defaultProps;
+export default Popover;

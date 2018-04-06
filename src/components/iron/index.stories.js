@@ -8,9 +8,12 @@ import { withKnobs, text, array, object, boolean, number } from '@storybook/addo
 
 //component
 import IronCollapse from './IronCollapse';
-import IronSelector from './IronSelector';
-import IronMediaQuery from './iron-media-query';
 import IronPages from './IronPages';
+import IronMediaQuery from './IronMediaQuery';
+import IronSelection from './IronSelection';
+import IronSelector from './IronSelector';
+import IronMultiSelectable from './IronMultiSelectable';
+import IronSelectable from './IronSelectable';
 
 
 //stories

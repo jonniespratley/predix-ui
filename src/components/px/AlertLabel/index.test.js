@@ -1,24 +1,38 @@
-import { expect } from 'chai';
+//import { expect } from 'chai';
 import React from 'react';
 import {shallow} from 'enzyme';
-import PxAlertLabel from './';
-
-describe('px-alert-label', () => {
-  test('should...', () =>{
+import AlertLabel from './';
+const types = [
+	'healthy',
+	'important',
+	'warning',
+	'error',
+	'info',
+	'unknown'
+];
+describe('AlertLabel', () => {
+  test('should render', () =>{
     const wrapper = shallow(
-      <PxAlertLabel/>
+      <AlertLabel/>
     );
-    console.log(wrapper.debug());
-    expect(true).to.equal(true);
+    //expect(wrapper).toMatchSnapshot();
   });
+
   test('should render correctly', () =>{
     const wrapper = shallow(
-      <PxAlertLabel label='Test'/>
+      <AlertLabel label='Test'/>
     );
-    console.log(wrapper.debug());
-
-    expect(wrapper.find('.label')).to.have.length(1);
+    expect(wrapper.find('.label')).toBeTruthy();
     //expect(wrapper.contains(<span className='label__text'>Test</span>)).to.equal(true);
+  });
+
+  types.forEach(type => {
+    test(`should render type = ${type}`, () =>{
+      const wrapper = shallow(
+        <AlertLabel type={type} label={type}/>
+      );
+      expect(wrapper.props().type).toBe(type);
+    });
   });
 
 });

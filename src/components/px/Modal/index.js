@@ -6,7 +6,7 @@ import classnames from 'classnames';
 import stylesheet from './px-modal.scss';
 
 import styled from 'styled-components';
-import Flex from '../../flex';
+import Flex from '../../../styles/flex';
 
 /**
  * Modal component

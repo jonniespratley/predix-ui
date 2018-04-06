@@ -8,6 +8,10 @@ const KvpLabel = styled.div`
     line-height: 1.66667;
     color: var(--px-headings-label-color,gray);
 `;
+KvpLabel.displayName = 'KvpLabel';
+KvpLabel.defaultProps = {
+  className: 'kvp-label'
+};
 
 const KvpValue = styled.span`
   color: var(--px-headings-value-color, black);
@@ -29,7 +33,9 @@ const KvpValue = styled.span`
   `}
 `;
 KvpValue.displayName = 'KvpValue';
-
+KvpValue.defaultProps = {
+  className: 'kvp-value'
+};
 const KvpUom = styled.span`
   margin-left: ${rem('0px')};
   ${props => props.size === 'value' && css`
@@ -52,6 +58,9 @@ const KvpUom = styled.span`
   `}
 `;
 KvpUom.displayName = 'KvpUom';
+KvpUom.defaultProps = {
+  className: 'kvp-uom'
+};
 const _getAdjustedSize = (s) => {
   return (
     s === 'alpha' ? 'delta' :

@@ -1,4 +1,4 @@
-import React from 'react';
+import Reacpt from 'react';
 import styled, { css } from 'styled-components';
 
 const Label = styled.label`
@@ -17,4 +17,5 @@ const Label = styled.label`
     }
   `}
 `;
+Label.displayName = 'Label';
 export default Label;

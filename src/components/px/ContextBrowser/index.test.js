@@ -1,15 +1,12 @@
 import { expect } from 'chai';
 import React from 'react';
 import {shallow} from 'enzyme';
-import PxInput from './';
+import ContextBrowser from './';
 
-describe('Input', () => {
+describe('ContextBrowser', () => {
   test('should...', () =>{
-    const inputProps = {
-      'data-name': 'test'
-    };
     const wrapper = shallow(
-      <PxInput type='text' inputProps={inputProps}/>
+      <ContextBrowser/>
     );
     console.log(wrapper.debug());
     expect(true).to.equal(true);

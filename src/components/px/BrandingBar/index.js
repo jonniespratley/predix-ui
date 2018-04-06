@@ -2,7 +2,7 @@ import React from 'react';
 import PredixLogo from './px-predix-svg-logo';
 import Logo from './px-ge-svg-logo';
 import styled, {css} from 'styled-components';
-import Flex from '../../flex';
+import Flex from '../../../styles/flex';
 
 const BrandingBar = styled.div`
 	display         : flex;
@@ -16,12 +16,20 @@ const BrandingBar = styled.div`
 	font-size       : var(--px-branding-bar-font-size, 15px);
 	color           : var(--px-branding-bar-logo-and-title-text-color, gray);
 	padding			: 0 1rem;
-	@media (max-width: 44em) {
-		display   : none !important;
-		visibility: hidden;
-	}
+
+	
+	${props => props.responsiveWidth && css`
+    	@media (max-width: ${props && props.responsiveWidth}) {
+			display   : none !important;
+			visibility: hidden;
+		}
+  	`}
+
 `;
 BrandingBar.displayName = 'BrandingBar';
+BrandingBar.defaultProps = {
+	//responsiveWidth: '768px'
+};
 
 const BrandingBarTitle = styled.div`
 	margin-left: .5rem;
@@ -30,7 +38,7 @@ BrandingBarTitle.displayName = 'BrandingBarTitle';
 
 const BrandingBarPoweredBy = styled.div`
 	font-size: 12px;
-	margin-right: .2rem;
+	margin-right: .3rem;
 `;
 BrandingBarPoweredBy.displayName = 'BrandingBarPoweredBy';
 
@@ -39,22 +47,29 @@ export default ({
 	title = 'Application Name', 
 	powered = 'Powered by React', 
 	hideLogo,
+	customLogo,
 	hidePowered,
 	children
  }) => (
 	<BrandingBar>
-		<Flex middle>
+		<Flex middle flex={1}>
 			<Flex middle>
-				{!hideLogo && <Logo/>}
+				{customLogo || !hideLogo && <Logo/>}
+				{customLogo && customLogo()}
 			</Flex>
 			<Flex middle>
 				<BrandingBarTitle>{title}</BrandingBarTitle>
 			</Flex>
-			{children && <div>{children}</div>}
 		</Flex>
-		<Flex middle>
-			{!hidePowered && <BrandingBarPoweredBy>{powered}</BrandingBarPoweredBy>}
-			{!hideLogo && <PredixLogo size={10}/>}
-		</Flex>
+		{children && <div>{children}</div>}
+		
+			{!hidePowered && 
+			<Flex middle>	
+				<BrandingBarPoweredBy>{powered}</BrandingBarPoweredBy>
+				<PredixLogo size={10}/>
+			</Flex>
+			}
+			
+		
 	</BrandingBar>
 );

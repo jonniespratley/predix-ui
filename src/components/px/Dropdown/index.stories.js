@@ -5,7 +5,13 @@ import { withInfo } from '@storybook/addon-info';
 import { withKnobs, text, array, object, boolean, number, select } from '@storybook/addon-knobs';
 
 import Dropdown from './';
-
+const buttonStyles = [
+	'bare',
+	'bare-primary',
+	'default',
+	'tertiary',
+	'icon'
+];
 const items = [
   {"key":"1","val":"iPhone"},
   {"key":"2","val":"Android"},
@@ -18,12 +24,12 @@ storiesOf('Dropdown', module)
 	.add('default', () => (
 		<Dropdown 
 			onChange={action('onChange')}
-			items={items}
+			items={array('items', items)}
 			sortMode="key" 
 			disabled={boolean('disabled', false)}
 			disableClear={boolean('disableClear', false)}
 			hideChevron={boolean('hideChevron', false)}
-			buttonStyle={text('buttonStyle', 'default')}
+			buttonStyle={select('buttonStyle', buttonStyles, 'default')}
 			displayValue={text('displayValue', 'Select')}>
 		</Dropdown>
 	));
