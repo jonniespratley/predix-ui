@@ -30,7 +30,7 @@ export default class AssetSelectable {
   }
 
   fire(name, data){
-    console.log('fire', name, data);
+    //console.log('fire', name, data);
   }
 
   get multiSelect() {
@@ -270,7 +270,7 @@ export default class AssetSelectable {
       if (this.multiSelect && (ref.path === 'selected' || ref.path === 'selected.splices') && typeof this.selectedRoute !== 'undefined') {
         this._updateSelectedRouteMulti(ref.base);
       }
-    },
+    }
 
     _checkIfEmpty(item) {
       if (Array.isArray(item)) return !!item.length;
@@ -327,7 +327,7 @@ export default class AssetSelectable {
       } else if (this.multiSelect && !!this.selected && !this.selected.length && this.selectedRoute.length) {
         this._updateSelectedFromRouteMulti(this.selected);
       }
-    },
+    }
 
     _routeIsDifferent(r1, r2) {
       if (!r1 || !r2) return true;

@@ -410,7 +410,7 @@ export class AssetTree {
     this._assetGraph = new AssetGraph();
   }
   fire() {
-    console.log('fire', ...arguments);
+    //console.log('fire', ...arguments);
   }
   /**
    * Adds a child or children to the requested node. Pass a single object
