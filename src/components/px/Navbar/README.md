@@ -5,10 +5,32 @@ The `<Navbar/>` component enables navigation through an information hierarchy an
 
 
 ```react
+const styles = {
+  title: {
+    cursor: 'pointer',
+    fontSize: '2rem'
+  }
+};
+<px.Navbar
+  title={<span style={styles.title}>Title</span>}
+  showBackButton/>
+```
+
+### With buttons
+
+```react
+const {Navbar, Button} = PxReact;
+
+<Navbar
+  title='Title' 
+  iconElementRight={<Button>Save</Button>}/>
+```
+
+### With back button
+```react
 <px.Navbar
   title='Navbar'
   subtitle='Subtitle'
-  backButtonLabel='< Back'
   showBackButton/>
 ```
 
@@ -21,17 +43,27 @@ The `<Navbar/>` component enables navigation through an information hierarchy an
   showMenuButton/>
 ```
 
+### Custom icons
+
+```react
+<px.Navbar
+  title='Navbar'
+  subtitle='Subtitle'
+  iconNameLeft='px-nav:close'
+  iconNameRight='px-nav:menu'/>
+```
+
 ### With custom CSS
 
 ```react
 <div className='custom'>
-<style>{`
-  .custom{
-    --px-navbar-font-color: white;
-    --px-navbar-button-color: white;
-    --px-navbar-background-color: #0d5eb6;
-  }
-`}</style>
+  <style>{`
+    .custom{
+      --px-navbar-font-color: white;
+      --px-navbar-button-color: white;
+      --px-navbar-background-color: rgb(0, 188, 212);
+    }
+  `}</style>
   <px.Navbar
     title='Navbar'
     showMenuButton/>

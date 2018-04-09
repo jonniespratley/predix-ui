@@ -77,8 +77,13 @@ var data = [{
 }];
 
 <div className='flex'>
-  <Tree items={data} onSelect={(e) => {setState({selectedNode: e})}}/>
-  <div>{state.selectedNode}</div>
+  <Tree items={data} onChange={(e, o) => {
+		setState({selectedNode: e.state});
+		console.log(e, o);
+	}}/>
+  <pre>
+	{ JSON.stringify(state.selectedNode, null, 2) }
+	</pre>
 </div>
 ```
 
