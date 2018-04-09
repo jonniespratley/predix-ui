@@ -12,8 +12,8 @@ const styles = {
 const svgStyles = {
   pointerEvents: 'none',
   display: 'block',
-  height: '100%',
-  width: '100%'
+  height: '16px',
+  width: '16px'
 };
 const CloseIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron" style={styles} ><svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" style={svgStyles}><g id="px-utl-chevron-right"><path strokeLinejoin="round" d="M6.2 13.2l5.4-5.5-5.5-5.5"></path></g></svg></i>);
 const OpenIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron-down" style={styles}><svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" style={svgStyles}><g id="px-utl-chevron"><path d="M2.4 6.2l5.5 5.5 5.5-5.5"></path></g></svg></i>);

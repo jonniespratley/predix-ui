@@ -53,7 +53,7 @@ state:
 ---
 const { AppNav } = PxReact;
 const navItems = [
-  {id : "home", label: "Home", icon: "px-fea:home"},
+  {id : "home", label: "Home", icon: "px-fea-home"},
   {id : "alerts", label: "Alerts", icon: "px-fea:alerts"},
   {
     id : "assets", 

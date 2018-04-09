@@ -46,8 +46,7 @@ class Tree extends BaseComponent {
 		};
 		return (
 			<ul className='px-tree' style={treeStyle}>
-        {items &&
-					items.map((item, index) => (
+        {items && items.map((item, index) => (
 						<TreeNode 
 							key={index} 
 							data={item} 
@@ -61,7 +60,7 @@ class Tree extends BaseComponent {
 }
 
 Tree.defaultProps = {
-	items: [],
+	items: null,
 	style: null,
 	selected: null
 };

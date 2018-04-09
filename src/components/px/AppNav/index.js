@@ -35,18 +35,15 @@ class AppNav extends BaseComponent {
       this.base.addEventListener('mouseleave', this._handleMouseExit);
       this.base.addEventListener('mouseenter', this._handleMouseEnter);
     }
+    if(this.props.onChange){
+      this.props.onChange(this.state);
+    }
     //this.handleClick(this.props.selected, this._getItemFromValue(this.props.selected));
   }
 
   componentWillReceiveProps(nextProps){
     if(this.state.selected !== nextProps.selected){
       this.setState(nextProps);
-    }
-  }
-
-  componentDidUpdate(){
-    if(this.props.onChange){
-      this.props.onChange(this.state);
     }
   }
 

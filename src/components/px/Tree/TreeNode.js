@@ -83,28 +83,7 @@ const TreeNodeStyled = styled.li`
   line-height: 1.8rem;
   user-select: none;
   
-  ${props => props.selected && css`
-    color: var(--px-tree-text-color--selected,#fff);
-    background-color: var(--px-tree-background-color--selected,gray);
-  `}
   
-	${props => props.leaf && css`
-		padding-left: 1.75rem;
-    color: green;
-    &:hover{
-      color: var(--px-tree-text-color--hover,#000);
-      background-color: var(--px-tree-background-color--hover,#d3d3d3);
-    }
-  `}
-
-	${props => props.branch && css`
-		padding-left: 1.75rem;
-    color: red;
-    &:hover{
-      color: var(--px-tree-text-color--hover,#000);
-      background-color: var(--px-tree-background-color--hover,#d3d3d3);
-    }
-  `}
 
 `;
 TreeNodeStyled.displayName = 'TreeNode';
@@ -141,10 +120,29 @@ const TreeNodeLabel = styled.div`
     color: var(--px-tree-text-color--hover, black);
     background-color: var(--px-tree-background-color--hover, lightgray);
 	}
-	${props => props.selected && css`
-		color: var(--px-tree-text-color--selected, white);
-  	background-color: var(--px-tree-background-color--selected, gray);
-	`}
+	
+  
+  
+  ${props => props.selected && css`
+    color: var(--px-tree-text-color--selected,#fff);
+    background-color: var(--px-tree-background-color--selected,gray);
+  `}
+  
+	${props => props.leaf && css`
+		padding-left: 1.75rem;
+    &:hover{
+      color: var(--px-tree-text-color--hover,#000);
+      background-color: var(--px-tree-background-color--hover,#d3d3d3);
+    }
+  `}
+
+	${props => props.branch && css`
+		padding-left: 1.75rem;
+    &:hover{
+      color: var(--px-tree-text-color--hover,#000);
+      background-color: var(--px-tree-background-color--hover,#d3d3d3);
+    }
+  `}
 `;
 TreeNodeLabel.displayName = 'TreeNodeLabel';
 
@@ -165,7 +163,6 @@ class TreeNode extends BaseComponent {
 	}
 
 	onCategorySelect(ev) {
-    console.log('onCategorySelect', ev);
 		if (this.props.onCategorySelect) {
 			this.props.onCategorySelect(this);
 		}
@@ -174,7 +171,6 @@ class TreeNode extends BaseComponent {
 	}
 
 	onChildDisplayToggle(ev) {
-		console.log('onChildDisplayToggle', ev, this.props, this.state);
 
 		if (this.props.data.children) {
 			if (this.state.children && this.state.children.length) {
@@ -187,28 +183,33 @@ class TreeNode extends BaseComponent {
 		ev.stopPropagation();
 	}
 	render() {
-    const icon = null;
+
     const isOpen = this.state.children && this.state.children.length  ? true : false;
     const hasChildren = this.props && this.props.data && this.props.data.children;
  
-    const {id, label} = this.props || this.props.data;
+    const {id, label, icon} = this.props || this.props.data;
     const openIcon = (isOpen ? 'px-utl:chevron' : 'px-utl:chevron-right');
 		return (
 			<TreeNodeStyled 
         open={isOpen}
-        data-open={isOpen}
+        
         closed={this.state.children ? false : true}
         leaf={!hasChildren} 
-        data-leaf={!hasChildren} 
         branch={hasChildren ? true : false} 
+        data-open={isOpen}
+        data-leaf={!hasChildren} 
         data-branch={hasChildren ? true : false} 
         selected={this.state.selected}
         ref={(el) => {this.node = el;}} 
         onClick={this.onChildDisplayToggle}>
         
-        <TreeNodeLabel data-id={id} selected={this.state.selected}>
+        <TreeNodeLabel 
+          data-id={id} 
+          selected={this.state.selected} 
+          leaf={!hasChildren}  
+          branch={hasChildren ? true : false} >
           {hasChildren && <TreeNodeIcon><Icon icon={openIcon} size={16}/></TreeNodeIcon>}
-          {icon && <TreeNodeIcon>{icon}</TreeNodeIcon>}
+          {icon && <TreeNodeIcon><Icon icon={icon} size={16}/></TreeNodeIcon>}
           <span onClick={this.onCategorySelect}>{label}</span>
         </TreeNodeLabel>
 

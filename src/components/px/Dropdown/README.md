@@ -24,8 +24,7 @@ const items = [
     items={items}
     sortMode="key" 
     buttonStyle="default" 
-    displayValue="Select" 
-    triggerHeight={30}>
+    displayValue="Select">
   </Dropdown>
   <pre>selectedItem: {JSON.stringify(state.selectedItem, null, 2)}</pre>
 </div>
@@ -51,8 +50,7 @@ const items = [
     buttonStyle="default" 
     displayValue="Select" 
     searchMode
-    multi 
-    triggerHeight={30}>
+    multi >
   </Dropdown>
   <pre>selectedItem: {JSON.stringify(state.selectedItem, null, 2)}</pre>
 </div>
@@ -64,9 +62,15 @@ const items = [
 ```table
 span: 6
 rows:
-  - Name: children
-    Type: node
-    Description: The children content.
+  - Name: buttonStyle
+    Type: String
+    Description: The style for the button.
+  - Name: items
+    Type: Array
+    Description: Array of dropdown items.
+  - Name: displayValue
+    Type: String
+    Description: The value to display.
 ```
 
 

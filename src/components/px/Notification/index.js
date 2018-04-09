@@ -36,7 +36,7 @@ const Notification = styled.div`
   width: inherit;
   opacity: 0;
   height: 0;
-  transition: height .5s ease-in-out, opacity .5s ease-in-out;
+  transition: var(--px-notification-transition, height .3s ease-in-out, opacity .3s ease-in-out);
 	box-sizing: border-box;
 	font-size: 1rem;
 	${props => props.type === 'error' && css`

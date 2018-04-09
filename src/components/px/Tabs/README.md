@@ -14,7 +14,7 @@ const {Tabs, Tab} = PxReact;
 const style = {
   color: 'black'
 };
-<Tabs propForSelect='url' style={style}>
+<Tabs selected={0} style={style}>
   <Tab label="Tab 1" url='/tab1'>
     <div>
       <p>This is the tab 1 content. </p>
@@ -41,8 +41,11 @@ const style = {
 
 ```react
 const {Tabs, Tab} = PxReact;
-<Tabs>
+<Tabs selected={0}>
   <Tab label="Tab 1">
+    This is content.
+  </Tab>
+  <Tab label="Tab 2">
     This is content.
   </Tab>
 </Tabs>
