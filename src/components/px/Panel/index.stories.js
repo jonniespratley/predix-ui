@@ -6,6 +6,7 @@ import { withKnobs, text, array, object, boolean, number, select } from '@storyb
 
 
 import Panel from './';
+import Card from '../Card';
 
 const demoStyles = {
 	position: 'relative',
@@ -44,4 +45,30 @@ storiesOf('Panel', module)
 			</Panel>
 		</div>
 		
-	));
+	))
+	.add('with multiple', () => (
+		<div style={demoStyles}>
+			<p>Here is multiple panels</p>
+			<Panel id='p1' 
+			opened={boolean('p1Opened', true)} 
+			fullSize={boolean('p1FullSize', false)}
+			persistent>
+				<Card headerText='Main Card'>This is p1 content</Card>
+			</Panel>
+			<Panel id='p2' 
+				persistent 
+				fullSize={boolean('p2FullSize', false)}
+				opened={boolean('p2Opened', true)} 
+				background='medium'>
+				<Card headerText='Secondary Card'>This is p2 content</Card>
+			</Panel>
+			<Panel id='p3' 
+				persistent 
+				fullSize={boolean('p3FullSize', false)}
+				opened={boolean('p3Opened', false)} 
+				background='dark'>
+				<Card headerText='Action Card'>This is p3 content</Card>
+			</Panel>
+		</div>
+	))
+	;

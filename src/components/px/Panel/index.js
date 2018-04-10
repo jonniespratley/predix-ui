@@ -37,7 +37,8 @@ const Panel = styled.div`
   `}
 
   ${props => props.persistent && css`
-    
+    position: relative;
+    flex: 0 1 320px;
   `}
   
   ${props => ( props.position === 'left' || props.position === 'right' ) && css`
@@ -51,6 +52,10 @@ const Panel = styled.div`
     ${props => props.opened && css`
       width: var(--px-panel-size, 320px);
       overflow-y: auto;
+      ${props => props.fullSize && css`
+        width: 100%;
+        overflow-y: auto;
+      `}
     `}
   `}
   
@@ -86,6 +91,7 @@ const Panel = styled.div`
     right: 0;
     left: 0;
     transition: height 0.4s cubic-bezier(.78,.13,.16,.87);
+    
     ${props => props.opened && css`
       height: var(--px-panel-size, 320px);
       overflow-y: auto;
@@ -96,6 +102,7 @@ const Panel = styled.div`
   ${props => props.position === 'top'  && css`
     top: 0;
     border-bottom: 1px solid var(--px-panel-border-color, gray);
+    
     ${props => props.fullSize && css`
       right: var(--px-panel-offset--right, 2rem);
       left: var(--px-panel-offset--left, 2rem);
@@ -106,6 +113,7 @@ const Panel = styled.div`
   ${props => props.position === 'bottom'  && css`
     bottom: 0;
     border-top: 1px solid var(--px-panel-border-color, gray);
+    
     ${props => props.fullSize && css`
       right: var(--px-panel-offset--right, 2rem);
       left: var(--px-panel-offset--left, 2rem);
