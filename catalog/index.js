@@ -52,6 +52,7 @@ import pxTreeDocs from '../src/components/px/Tree/README.md';
 import pxKeyValuePairDocs from '../src/components/px/KeyValuePair/README.md';
 import pxViewHeaderDocs from '../src/components/px/ViewHeader/README.md';
 
+import pxPanelDocs from '../src/components/px/Panel/README.md';
 
 const logo = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/predix_ds_logo.webp';
 
@@ -131,6 +132,7 @@ const pages = [
       { path: 'Notification', title: 'Notification', component: pxNotificationDocs },
       { path: 'Modal', title: 'Modal', component: pxModalDocs },
       { path: 'Overlay', title: 'Overlay', component: pxOverlayDocs },
+      { path: 'Panel', title: 'Panel', component: pxPanelDocs },
       { path: 'Popover', title: 'Popover', component: pxPopoverDocs },
       { path: 'ProgressBar', title: 'Progress Bar', component: pxProgressbarDocs },
       { path: 'Spinner', title: 'Spinner', component: pxSpinnerDocs },

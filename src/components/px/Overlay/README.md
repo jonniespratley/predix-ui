@@ -1,8 +1,5 @@
 The `<Overlay/>` is a component used for modal dialogues, popovers, and other use cases where the remainder of the application content is obscured or falls away from the primary actionable component. The overlay covers the entire screen.
 
-```hint
-Reference https://www.predix-ui.com/#/elements/px-overlay
-```
 
 ## Usage
 

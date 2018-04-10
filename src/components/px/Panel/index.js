@@ -15,6 +15,15 @@ const Panel = styled.div`
   
   
  
+  ${props => props.background === 'light' && css`
+    background: var(--px-panel-bg-color--light, #fff);
+  `}
+  ${props => props.background === 'medium' && css`
+    background: var(--px-panel-bg-color--medium, #eee);
+  `}
+  ${props => props.background === 'dark' && css`
+    background: var(--px-panel-bg-color--dark, #ddd);
+  `}
   ${props => props.light && css`
     position: fixed;
   `}
@@ -24,11 +33,11 @@ const Panel = styled.div`
   `}
  
   ${props => props.minimizable && css`
-    
+    width: var(--px-panel-size--minimized,4rem);
   `}
 
   ${props => props.persistent && css`
-    position: fixed;
+    
   `}
   
   ${props => ( props.position === 'left' || props.position === 'right' ) && css`
@@ -37,18 +46,20 @@ const Panel = styled.div`
     top: 0;
     bottom: 0;
     transition: width 0.4s cubic-bezier(.78,.13,.16,.87);
+    white-space: nowrap;
 
     ${props => props.opened && css`
       width: var(--px-panel-size, 320px);
       overflow-y: auto;
     `}
-
   `}
   
-
    ${props => props.position === 'left'  && css`
     left: 0;
-    ${props => props.fullSize && css`
+    border-right: 1px solid var(--px-panel-border-color,gray);
+    
+    ${props => props.floating && css`
+      border-right: none;
       left: var(--px-panel-offset--left, 2rem);
       top: var(--px-panel-offset--top, 2rem);
       bottom: var(--px-panel-offset--bottom, 2rem);
@@ -58,11 +69,15 @@ const Panel = styled.div`
 
   ${props => props.position === 'right'  && css`
     right: 0;
-    ${props => props.fullSize && css`
+    border-left: 1px solid var(--px-panel-border-color,gray);
+    
+    ${props => props.floating && css`
+      border-left: none;
       right: var(--px-panel-offset--right, 2rem);
       top: var(--px-panel-offset--top, 2rem);
       bottom: var(--px-panel-offset--bottom, 2rem);
     `} 
+
   `}
 
   ${props => ( props.position === 'top' || props.position === 'bottom' ) && css`
@@ -103,6 +118,11 @@ const Panel = styled.div`
     
 `;
 
+Panel.displayName = 'Panel';
+Panel.defaultProps = {
+  className: 'px-panel'
+};
+
 const PanelContent = styled.div`
   display: block;
   ${props => props.opened && css`
@@ -110,33 +130,38 @@ const PanelContent = styled.div`
     height: 100%;
   `}
 `;
-
+PanelContent.displayName = 'PanelContent';
+PanelContent.defaultProps = {
+  className: 'px-panel-content'
+};
 /**
  * Panel component
  */
 export default ({
   style,
-  
-
-  position,
-  fullSize,
-  opened,
-  fixed,
-  persistent,
-  floating,
-  minimizable,
+  className,
+  background = 'light',
+  position = 'right',
+  fullSize = false,
+  opened = false,
+  fixed = false,
+  persistent = false,
+  floating = false,
+  minimizable = false,
   children
 }) => {
   return (
     <Panel 
+      background={background}
+      style={style}
+      className={className}
       position={position} 
       minimizable={minimizable} 
       fullSize={fullSize} 
       floating={floating} 
       opened={opened} 
-      fixed={fixed} >
+      fixed={fixed}>
       <PanelContent>{children}</PanelContent>
     </Panel>
-
   );
 }

@@ -21,6 +21,10 @@ injectGlobal `
 		color: var( --px-base-text-color, black);
 	}
 
+  * {
+    box-sizing: border-box;
+  }
+
 .invisible { visibility:hidden!important; }
 
 .truncate { overflow:hidden;text-overflow:ellipsis;white-space:nowrap}

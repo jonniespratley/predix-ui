@@ -1,9 +1,5 @@
 The `<Accordion/>` component provides expandable and collapsible subsection headers for a page.
 
-```hint
-Reference https://www.predix-ui.com/#/elements/px-accordion
-```
-
 
 ## Usage
 

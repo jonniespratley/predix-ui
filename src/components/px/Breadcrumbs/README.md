@@ -1,9 +1,7 @@
 
 The `<Breadcrumbs/>` component displays the navigational path of the user through a context browser. The breadcrumb links provide a way to see the path of navigation or contextual relationship between objects. It also provides a quick way to navigate backwards within a path or within a specific context.
 
-```hint
-Work in progress
-```
+
 
 ## Usage
 

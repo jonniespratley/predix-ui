@@ -1,10 +1,4 @@
-The `<Input/>` component enables you to use design system inputs in your app.
-
-
-
-```hint
-Reference https://www.predix-ui.com/#/css/visual/px-forms-design
-```
+The `<Input/>`, `<FormField/>`, `<Select/>`, `<Textarea/>` components enables you to use design system form inputs in your app.
 
 
 ## Usage
@@ -12,11 +6,11 @@ Reference https://www.predix-ui.com/#/css/visual/px-forms-design
 ```react
 const { Button, Input, FormField } = px;
 <form>
-  <FormField>
-    <Input label='Username' name='username'/>
+  <FormField label='Username'>
+    <Input name='username' placeholder='Username'/>
   </FormField>
-  <FormField>
-    <Input label='Password' name='password' type='password'/>
+  <FormField label='Password' >
+    <Input name='password' type='password' placeholder='Password'/>
   </FormField>
   <Button type='submit' primary>Submit</Button>
 </form>

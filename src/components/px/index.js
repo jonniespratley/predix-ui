@@ -36,6 +36,9 @@ import Modal from './Modal';
 //import NavDrawer from './Drawer/px-nav-drawer';
 import Navbar from './Navbar';
 import Overlay from './Overlay';
+
+import Panel from './Panel';
+
 import Popover from './Popover';
 import PopoverHeader from './Popover/PopoverHeader';
 import PopoverBody from './Popover/PopoverBody';
@@ -111,6 +114,7 @@ const px = {
 	LayoutItem,
 	PredixSvgLogo,
 	ProgressBar,
+	Panel,
 	Popover,
 	PopoverHeader,
 	PopoverArrow,

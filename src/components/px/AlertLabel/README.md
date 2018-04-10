@@ -1,9 +1,5 @@
 The `<AlertLabel/>` component labels are used to draw attention to a particular piece of information on the screen.
 
-```hint
-Reference https://www.predix-ui.com/#/elements/px-alert-label
-```
-
 
 ## Usage
 

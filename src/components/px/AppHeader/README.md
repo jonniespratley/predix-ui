@@ -3,9 +3,6 @@ It provides a container that stays fixed to the top of the screen.
 
 By default, the `<BrandingBar/>` will shrink to a minimized state as the user scrolls down the page, unless the `fixed` property is set.
 
-```hint
-Reference https://www.predix-ui.com/#/elements/px-app-header
-```
 
 
 ## Usage

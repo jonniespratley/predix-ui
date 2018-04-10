@@ -11,6 +11,8 @@ const { Button } = PxReact;
   <Button theme='bare'>Button</Button>
   <Button theme='primary'>Button</Button>
   <Button theme='tertiary'>Button</Button>
+  <Button theme='bare-primary'>Button</Button>
+  <Button theme='call-to-action'>Button</Button>
   <Button disabled>Button</Button>
   <Button>😀 😎 👍 💯</Button>
 </div>

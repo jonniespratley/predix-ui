@@ -84,23 +84,20 @@ rows:
 
 
 ### Styling
+The following custom properties are available for styling:
 
 ```table
 span: 6
 rows:
-  - Property: --px-popover-background-color
-    Default: null
+  - Custom Property: --px-popover-background-color
     Description: Background color for the popover
 
-  - Property: --px-popover-border-color
-    Default: null
+  - Custom Property: --px-popover-border-color
     Description: Border color for the popover
 
-  - Property: --px-popover-text-color
-    Default: null
+  - Custom Property: --px-popover-text-color
     Description: Color for the text
 
-  - Property: --px-popover-max-width
-    Default: null
+  - Custom Property: --px-popover-max-width
     Description: Maximum width of the popover
 ```

@@ -4,14 +4,14 @@ import {shallow} from 'enzyme';
 import Panel from './';
 
 describe('Panel', () => {
-  test('should...', () =>{
+  test('should render', () =>{
     const wrapper = shallow(
-      <Panel>
+      <Panel position='left'>
         Panel content goes here.
       </Panel>
     );
     console.log(wrapper.debug());
-    expect(true).to.equal(true);
+    expect(wrapper.props().position).to.equal('left');
   });
   //expect(wrapper.find('.label')).to.have.length(1);
   //expect(wrapper.find('.delta')).to.have.length(1);

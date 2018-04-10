@@ -31,6 +31,10 @@ const { Button, Modal } = PxReact;
 ```table
 span: 6
 rows:
+  - Name: actions
+    Type: Function
+    Description: This can be rendered for the actions.
+  
   - Name: headerText
     Type: String
     Description: Header text for the modal window.
@@ -64,16 +68,13 @@ The following custom properties are available for styling:
 
 ```table
 rows:
-  - Property: --px-modal-background-color
-    Default: null
+  - Custom Property: --px-modal-background-color
     Description: Background color of the modal dialog
 
-  - Property: --px-modal-overlay-color
-    Default: null
+  - Custom Property: --px-modal-overlay-color
     Description: Base color for the semi-opaque overlay
 
-  - Property: --px-modal-border-color
-    Default: null
+  - Custom Property: --px-modal-border-color
     Description: Color used for the separator line in the modal dialog
 ```
 
@@ -81,23 +82,19 @@ In addition, the following mixins can be used to completely override the style o
 
 ```table
 rows:
-   - Property: --px-modal
-     Default: null
+   - Custom Property: --px-modal
      Description: Style mixin to be applied to the modal overlay (background layer)
 
-   - Property: --px-modal-content
+   - Custom Property: --px-modal-content
      Default: null
      Description: Style mixin to be applied to the modal content box
 
-   - Property: --px-modal-title
-     Default: null
+   - Custom Property: --px-modal-title
      Description: Style mixin to be applied to the title of the modal content box
 
-   - Property: --px-modal-buttons
-     Default: null
+   - Custom Property: --px-modal-buttons
      Description: Style mixin to be applied to all of the buttons at the bottom of the overlay
 
-   - Property: --px-modal-positive-button
-     Default: null
+   - Custom Property: --px-modal-positive-button
      Description: Style mixin to be applied specifically to the positive action button of the overlay
 ```

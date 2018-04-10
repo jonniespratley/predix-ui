@@ -78,32 +78,25 @@ The following custom properties are available for styling:
 ```table
 span: 6
 rows:
-  - Property: --px-card-background-color
-    Default: null
+  - Custom Property: --px-card-background-color
     Description: Background color of the card
 
-  - Property: --px-card-border-color
-    Default: null
+  - Custom Property: --px-card-border-color
     Description: Border color for the top of the card
 
-  - Property: --px-card-header-color
-    Default: null
+  - Custom Property: --px-card-header-color
     Description: Color of the header text
 
-  - Property: --px-card-icon-color
-    Default: null
+  - Custom Property: --px-card-icon-color
     Description: Color of the card's main icon'
 
-  - Property: --px-card-action-icon-color
-    Default: null
+  - Custom Property: --px-card-action-icon-color
     Description: Color of icons in actions slot
 
-  - Property: --px-card-action-icon-color--hover
-    Default: null
+  - Custom Property: --px-card-action-icon-color--hover
     Description: Color of icons in actions slot when hovered
 
-  - Property: --px-card-action-icon-color--pressed
-    Default: null
+  - Custom Property: --px-card-action-icon-color--pressed
     Description: Color of icons in actions slot when pressed
 
 ```

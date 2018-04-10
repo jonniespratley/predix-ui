@@ -22,16 +22,17 @@ class Tree extends BaseComponent {
 	}
 
   onSelect(node) {
-		console.log('onSelect', node);
 		if (this.state.selected) {
 			this.state.selected.setState({ selected: false });
 		}
-		this.setState({ selected: node });
-		node.setState({ selected: true });
-		if (this.props.onChange) {
-			this.props.onChange(node);
-		}
-    
+		node.setState({ selected: !node.state.selected }, () => {
+			this.setState({ selectedNode: node }, () => {
+				if (this.props.onChange) {
+					this.props.onChange(this.state);
+				}
+			});
+		});
+		
 	}
 
 

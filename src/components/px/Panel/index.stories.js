@@ -16,6 +16,12 @@ const demoStyles = {
 	border: '1px solid gray',
 	padding: '1rem'
 };
+const positions = ['top', 'right', 'left', 'bottom'];
+const bgColors = [
+	'light',
+	'medium',
+	'dark'
+];
 
 storiesOf('Panel', module)
 	.addDecorator(withKnobs)
@@ -23,14 +29,18 @@ storiesOf('Panel', module)
 		<div style={demoStyles}>
 			<p>Use the toggles in properties to invoke the panel.</p>
 			<Panel 
-				position={select('position', ['top', 'right', 'left', 'bottom'])}
+				position={select('position', positions, 'right')}
+				background={select('background', bgColors, 'light')}
 				fullSize={boolean('fullSize', false)}
 				minimizable={boolean('minimizable', false)}
 				floating={boolean('floating', false)}
 				fixed={boolean('fixed', false)}
 				persistent={boolean('persistent', false)}
 				opened={boolean('opened', true)}>
-				{text('children', 'Text Label')}
+				
+				<p>This can be any type of content.</p>
+				<p>A form or a map</p>
+
 			</Panel>
 		</div>
 		

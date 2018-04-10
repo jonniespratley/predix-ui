@@ -1,8 +1,5 @@
 The `<AlertMessage/>` component appear in a queue within the message container. Each message consists of an icon, title, body, and action.
 
-```hint
-Reference https://www.predix-ui.com/#/elements/px-alert-message
-```
 
 ## Usage
 

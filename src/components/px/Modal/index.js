@@ -74,6 +74,7 @@ const ModalTitle = styled.h3`
 export default ({
   style,
   headerText,
+  actions,
   rejectText,
   onBtnModalNegativeClick,
   acceptText,
@@ -104,6 +105,7 @@ export default ({
             </div>
             <div className="modal__buttons flex flex--right">
               <Flex right>
+              {actions && actions}
               {rejectText && 
                 <Button id="btnModalNegative"
                     onClick={onBtnModalNegativeClick}>
