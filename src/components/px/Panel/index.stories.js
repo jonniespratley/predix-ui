@@ -24,6 +24,12 @@ const bgColors = [
 	'dark'
 ];
 
+const actions = () => (
+	<div>
+		Expand
+	</div>
+);
+
 storiesOf('Panel', module)
 	.addDecorator(withKnobs)
 	.add('default', () => (
@@ -67,7 +73,7 @@ storiesOf('Panel', module)
 				fullSize={boolean('p3FullSize', false)}
 				opened={boolean('p3Opened', false)} 
 				background='dark'>
-				<Card headerText='Action Card'>This is p3 content</Card>
+				<Card headerText='Action Card' actions={actions}>This is p3 content</Card>
 			</Panel>
 		</div>
 	))
