@@ -18,6 +18,31 @@ const { Button } = PxReact;
 </div>
 ```
 
+### Themes
+```react|lang-jsx
+const { Button, Flex } = PxReact;
+const buttonThemes = [
+	'primary', 
+	'secondary', 
+	'tertiary', 
+	'call-to-action',
+	'bare', 
+	'bare-primary',
+	'info',
+	'healthy',
+	'warning',
+	'error', 
+	'important'
+];
+
+<Flex wrap='true' middle spaced>
+ {buttonThemes.map((theme, index) => (
+    <Button 
+      theme={theme} 
+      key={index}>Button ({theme})</Button>
+  ))}
+</Flex>
+```
 ### Sizes
 ```react|lang-jsx
 const { Button } = PxReact;

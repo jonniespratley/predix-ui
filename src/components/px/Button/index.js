@@ -113,6 +113,31 @@ const Button = styled.button`
     }
   `}
 
+  ${props => props.theme === 'error' && css`
+    background-color: var(--px-alert-label-background-color--error, yellow);
+    color           : var(--px-alert-label-text-color--error, black);
+  `}
+  ${props => props.theme === 'unknown' && css`
+    background-color: var(--px-alert-label-background-color--unknown, gray);
+    color           : var(--px-alert-label-text-color--unknown, white);
+  `}
+  ${props => props.theme === 'important' && css`
+    background-color: var(--px-alert-label-background-color--important, red);
+    color           : var(--px-alert-label-text-color--important, white);
+  `}
+  ${props => props.theme === 'warning' && css`
+    background-color: var(--px-alert-label-background-color--warning, orange);
+    color           : var(--px-alert-label-text-color--warning, white);
+  `}
+  ${props => props.theme === 'healthy' && css`
+    background-color: var(--px-alert-label-background-color--healthy, green);
+    color           : var(--px-alert-label-text-color--healthy, white);
+  `}
+  ${props => (props.theme === 'information' || props.theme === 'info') && css`
+    background-color: var(--px-alert-label-background-color--info, blue);
+    color           : var(--px-alert-label-text-color--info, white);
+  `}
+
   ${props => props.theme === 'tertiary' && css`
     border-color: var(--px-btn-tertiary-border-color, #889aa5);
     border: 1px solid;

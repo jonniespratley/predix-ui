@@ -16,7 +16,12 @@ const buttonThemes = [
 	'tertiary', 
 	'call-to-action',
 	'bare', 
-	'bare-primary'
+	'bare-primary',
+	'info',
+	'healthy',
+	'warning',
+	'error', 
+	'important'
 ];
 
 

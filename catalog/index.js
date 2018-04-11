@@ -10,7 +10,7 @@ import { Catalog, CodeSpecimen, ReactSpecimen } from 'catalog';
 
 //import 'purecss/build/pure.css';
 import './main.css';
-//import '../dist/predix-ui.min.css';
+import '../dist/predix-ui.min.css';
 import px from '../src';
 import DemoHelpers from '../src/components/px/DemoHelpers';
 
@@ -120,7 +120,7 @@ const pages = [
       { path: 'Breadcrumbs', title: 'Breadcrumbs', component: pxBreadcrumbsDocs},
       { path: 'Card', title: 'Card', component: pxCardDocs },
       { path: 'Chip', title: 'Chip', component: pxChipDocs },
-      { path: 'Drawer', title: 'Drawer', component: pxDrawerDocs },
+     // { path: 'Drawer', title: 'Drawer', component: pxDrawerDocs },
     //  { path: 'DataTable', title: 'DataTable', component: pxDatatableDocs },
       { path: 'Dropdown', title: 'Dropdown', component: pxDropDownDocs },
       { path: 'Grid', title: 'Grid', component: pxGridDocs },
