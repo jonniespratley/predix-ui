@@ -9,8 +9,8 @@ import ReactDOM from 'react-dom';
 import { Catalog, CodeSpecimen, ReactSpecimen } from 'catalog';
 
 //import 'purecss/build/pure.css';
-import './main.css';
-import '../dist/predix-ui.min.css';
+//import './main.css';
+//import '../dist/predix-ui.min.css';
 import px from '../src';
 import DemoHelpers from '../src/components/px/DemoHelpers';
 
