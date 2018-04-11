@@ -6,7 +6,7 @@ import Card from '../Card';
 
 storiesOf('Grid', module)
 	.addDecorator(withKnobs)
-	.add('default', () => (
+	.addWithJSX('default', () => (
 		<Grid>
 			<Grid item>
 				<Card headerText='Card 1'>

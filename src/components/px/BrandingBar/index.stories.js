@@ -15,7 +15,7 @@ const btnStyles = {
 /// BrandingBar
 storiesOf('Branding Bar', module)
   .addDecorator(withKnobs)
-  .add('default', () => (
+  .addWithJSX('default', () => (
     <BrandingBar 
       hideLogo={boolean('hideLogo', false)}
       hidePowered={boolean('hidePowered', false)}
@@ -23,17 +23,17 @@ storiesOf('Branding Bar', module)
       responsiveWidth={text('responsiveWidth', '500px')}
       title={text('title', 'Application Title')}/>
   ))
-  .add('without logo', () => (
+  .addWithJSX('without logo', () => (
     <BrandingBar title='Custom Title' hideLogo/>
   ))
   
-  .add('without powered by', () => (
+  .addWithJSX('without powered by', () => (
     <BrandingBar title='Custom Title' hidePowered/>
   ))
-  .add('with custom logo', () => (
+  .addWithJSX('with custom logo', () => (
     <BrandingBar title='Custom Logo' customLogo={customLogo} hidePowered/>
   ))
-  .add('with custom children', () => (
+  .addWithJSX('with custom children', () => (
     <BrandingBar 
       title='Platform'
       hidePowered={true}>

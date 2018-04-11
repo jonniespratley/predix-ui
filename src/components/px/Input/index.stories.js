@@ -30,7 +30,7 @@ const types = [
 	'week'
 ];
 stories
-.add('default', () => (
+.addWithJSX('default', () => (
 	<form>
 		<Input 
 			type={select('type', types)}
@@ -38,7 +38,7 @@ stories
 			placeholder={text('placeholder', 'Type text here...')}/>
 	</form>
 ))
-.add('sizes', () => (
+.addWithJSX('sizes', () => (
 	<form>
 		<FormField>
 			<Input name='input1' tiny placeholder='Tiny size'/>
@@ -60,7 +60,7 @@ stories
 		</FormField>
 	</form>
 ))
-.add('with inline fields', () => (
+.addWithJSX('with inline fields', () => (
 	<form>
 		<Label for='inline1' inline>From</Label>
 		<Input id='inline1' tiny/>
@@ -68,12 +68,12 @@ stories
 		<Input id='inline2' tiny/>
 	</form>
 ))
-.add('with Textarea', () => (
+.addWithJSX('with Textarea', () => (
 	<form>
 		<Textarea placeholder={text('placeholder', 'Type text here...')}></Textarea>
 	</form>
 ))
-.add('with Checkbox', () => (
+.addWithJSX('with Checkbox', () => (
 	<form>
 		<Input id='checkbox1' type='checkbox'/>
 		<Label for='checkbox1' inline>Option 1</Label>
@@ -82,7 +82,7 @@ stories
 		<Label for='checkbox2' inline>Option 2</Label>
 	</form>
 ))
-.add('with Radio button', () => (
+.addWithJSX('with Radio button', () => (
 	<form>
 		<Input id='radio1' name='radio-group' type='radio'/>
 		<Label for='radio1' inline>Option 1</Label>
@@ -91,7 +91,7 @@ stories
 		<Label for='radio2' inline>Option 2</Label>
 	</form>
 ))
-.add('with Select', () => (
+.addWithJSX('with Select', () => (
 	<form>
 		<Select>
 			<optgroup label="Header 1" >
@@ -109,7 +109,7 @@ stories
 		</Select>
 	</form>
 ))
-.add('with Select multiple', () => (
+.addWithJSX('with Select multiple', () => (
 	<form>
 		<Select multiple>
 			<option >Option 1</option>
@@ -120,7 +120,7 @@ stories
 	</form>
 ))
 
-.add('with FormField', () => (
+.addWithJSX('with FormField', () => (
 	<form>
 		<FormField label={text('label1', 'Username')} htmlFor='username'>
 			<Input 

@@ -3,17 +3,19 @@ import styled, { css } from 'styled-components';
 
 import Label from './Label';
 
-const FormField = styled.div`
+const FormFieldStyled = styled.div`
     margin-bottom: 1.3rem;
     &:last-child {
         margin-bottom: 2.6rem;
     }
 `;
-FormField.displayName = 'FormField';
+//FormField.displayName = 'FormField';
 
-export default ({label, htmlFor, children}) => (
-    <FormField>
+const FormField = ({label, htmlFor, children}) => (
+    <FormFieldStyled>
         {label && <Label htmlFor={htmlFor}>{label}</Label>}
         {children}
-    </FormField>
+    </FormFieldStyled>
 );
+FormField.displayName = 'FormField';
+export default FormField;
