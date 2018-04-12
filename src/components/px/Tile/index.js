@@ -57,7 +57,7 @@ export default ({
       <TileContainer className="tile__container">
        {image && 
           <TileThumbnail>
-            <img src={image} alt={title} style={imgStyle}/>}
+            <img src={image} alt={title} style={imgStyle}/>
           </TileThumbnail>
         }
 
