@@ -1,9 +1,7 @@
 
 The `Tabs` and `Tab` components together provide the tabbed interface.
 
-```hint
-Reference https://www.predix-ui.com/#/elements/px-tabs
-```
+
 
 
 
@@ -37,19 +35,6 @@ const style = {
 ```
 
 
-### Minimal
-
-```react
-const {Tabs, Tab} = PxReact;
-<Tabs selected={0}>
-  <Tab label="Tab 1">
-    This is content.
-  </Tab>
-  <Tab label="Tab 2">
-    This is content.
-  </Tab>
-</Tabs>
-```
 
 
 ## Properties
@@ -57,6 +42,12 @@ const {Tabs, Tab} = PxReact;
 ```table
 span: 6
 rows:
+  - Name: selected
+    Type: Number
+    Description: The selected tab index.
+  - Name: label
+    Type: String
+    Description: The label for the tab.
   - Name: children
     Type: node
     Description: The children content.

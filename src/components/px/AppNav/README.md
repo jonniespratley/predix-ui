@@ -35,7 +35,15 @@ const navItems = [
   {id : "assets", label: "Assets", icon: "px-fea:asset"},
   {id : "dashboards", label: "Dashboards", icon: "px-fea:dashboard"}
 ];
-<AppNav selected={state.selected} items={navItems}/>
+<div>
+  <AppNav 
+    selected={state.selected} 
+    items={navItems} 
+    onChange={(e) => setState(e)}/>
+
+  {state && <pre>selected: {state.selected}</pre>}
+  {state && <pre>selectedItem: {JSON.stringify(state.selectedItem, null, 2)}</pre>}
+</div>
 ```
 
 

@@ -114,7 +114,7 @@ const pages = [
       { path: 'AlertMessage', title: 'Alert Message', component: pxAlertMessageDocs},
       { path: 'AppHeader', title: 'App Header', component: pxAppHeaderDocs},
       { path: 'AppNav', title: 'App Nav', component: pxAppNavDocs},
-      { path: 'ActionSheet', title: 'Action Sheet', component: pxActionSheetDocs},
+    //  { path: 'ActionSheet', title: 'Action Sheet', component: pxActionSheetDocs},
       { path: 'Button', title: 'Button', component: pxButtonDocs},
       { path: 'BrandingBar', title: 'Branding Bar', component: pxBrandingBarDocs},
       { path: 'Breadcrumbs', title: 'Breadcrumbs', component: pxBreadcrumbsDocs},

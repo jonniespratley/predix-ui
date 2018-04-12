@@ -32,6 +32,24 @@ const images = [
 </Flex>
 ```
 
+### With buttons
+```react
+const { Tile, Flex } = PxReact;
+
+<Flex wrap='true'>
+  <Flex item className='u-mr'>
+    <Tile 
+      mainTitle="SF_722101_IR_WDMMYYXX_GHEIXYZ_SS45"
+      subtitle="Subtitle text"
+      description="07/30/2017 by Anita Lazman">
+      THis is actions
+    </Tile>
+  </Flex>
+</Flex>
+```
+
+
+
 
 ## Properties
 
