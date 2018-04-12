@@ -1,13 +1,5 @@
 The `<Spinner/>` indicates an ongoing activity with an indefinite end, such as loading data. 
 
-
-```hint
-Reference https://www.predix-ui.com/#/elements/px-spinner
-```
-
-
-
-
 ## Usage
 
 ```react

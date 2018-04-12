@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './px-action-sheet.scss';
+//import style from './px-action-sheet.scss';
 import classnames from 'classnames';
 import BaseComponent from '../BaseComponent';
 
@@ -59,7 +59,6 @@ export default class ActionSheet extends BaseComponent {
             {children}
           </div>
         </div>
-        <style jsx>{style}</style>
       </div>
     );
   }

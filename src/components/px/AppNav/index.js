@@ -4,13 +4,61 @@ import NavItem from './px-app-nav-item';
 import BaseComponent from '../BaseComponent';
 import Icon from '../IconSet/Icon';
 
-import AppNavSubGroup from './px-app-nav-sub-group';
+//import AppNavSubGroup from './px-app-nav-sub-group';
 
-import stylesheet from './styles/index.scss';
+//import stylesheet from './styles/index.scss';
+
+
+import styled, {css} from 'styled-components';
+
+const AppNav = styled.div`
+  height: var(--px-app-nav-height, 4rem);
+  background-color: var(--px-app-nav-background-color, whitesmoke);
+  box-shadow: var(--px-app-nav-box-shadow, 0px 2px 4px var(--px-shadow-navigation, rgba(0, 0, 0, 0.2)));
+  display: block;
+  width: 100%;
+  text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  ${props => props.vertical && css`
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: var(--px-app-nav-vertical-position, absolute);
+    height: var(--px-app-nav-vertical-height, 100%);
+    left: 0;
+    top: 0;
+    min-width: var(--px-app-nav-vertical-width, 4rem);
+    max-width: var(--px-app-nav-vertical-width, 4rem);
+    transition: var(--px-app-nav-vertical-transition, max-width 250ms ease);
+
+    ${props => props.verticalOpened && css`
+      overflow-y: auto;
+      max-width: var(--px-app-nav-vertical-width--opened, 21.33333rem);
+    `}
+  `}
+`;
+
+
+const AppNavItems = styled.div`
+  flex: 1 1 auto;
+  display: flex;
+  max-width: 100%;
+  ${props => props.vertical && css`
+    flex-direction: column;
+    height: 100%;
+  `}
+  
+
+`;
+const AppNavSubGroup = styled.div`
+
+`;
+
 /**
  * AppNav component
  */
-class AppNav extends BaseComponent {
+class AppNavComponent extends BaseComponent {
   constructor(props){
     super(props, {displayName: 'AppNav'});
     this.state = {
@@ -207,29 +255,26 @@ class AppNav extends BaseComponent {
 
 
     return (
-      <nav className={baseClasses} style={style} ref={this._handleRef}>
-        <div className={appNavClasses}>
-          <div className='app-nav__items'>
-            {/* app-nav__items */}
-            {this._renderItems(items)}
-          </div>
+      <AppNav className={baseClasses} ref={this._handleRef} vertical={vertical} verticalOpened={verticalOpened}>
+       <AppNavItems vertical={vertical}>
+          {this._renderItems(items)}
+        </AppNavItems>
+        
 
           {/* STATE: Horizontal or menu nav, any visible items */}
 
           {/* STATE: Items overflowed or collapsed */}
 
           {/* Actions */}
-          <div className="app-nav__actions">
-            {children}
-          </div>
-        </div>
-      </nav>
+          
+        {children}
+      </AppNav>
     );
   }
 
 }
 
-AppNav.defaultProps = {
+AppNavComponent.defaultProps = {
   vertical: false,
   collapseAll: false,
   collapseAt: null,
@@ -244,4 +289,4 @@ AppNav.defaultProps = {
   opened: null
 };
 
-export default AppNav;
+export default AppNavComponent;

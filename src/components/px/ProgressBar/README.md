@@ -1,9 +1,5 @@
 The `<ProgressBar/>` component enables you to use the design system progress bar.
 
-```hint
-Reference https://www.predix-ui.com/#/elements/px-progressbar
-```
-
 
 ## Usage
 
