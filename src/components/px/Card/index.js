@@ -16,6 +16,10 @@ const CardHeader = styled.header`
  padding-top: 1.33333rem; 
  border-bottom: 1px solid var(--px-card-border-color, transparent); 
  margin-bottom: 1rem; 
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ user-select: none;
 `;
 
 const CardTitle = styled.span`
@@ -34,13 +38,13 @@ const CardBody = styled.section`
 `;
 
 const CardIcon = styled.span`
-  height: 2rem; 
-  width: 2rem; 
+ 
   color: var(--px-card-icon-color, black); 
   cursor: auto; 
   
   color: var(--px-card-action-icon-color, black); 
   cursor: pointer; 
+  margin-right: .5rem;
   
   &:hover{
     color: var(--px-card-action-icon-color--hover, blue);
@@ -56,13 +60,19 @@ const CardIcon = styled.span`
 const CardComponent = ({
   headerText,
   icon,
+  actions,
   fullBleed,
   children
 }) => (
   <Card className='px-card'>
     <CardHeader className='px-card-header'>
+    
+      <CardTitle>
       {icon && <CardIcon><Icon icon={icon} size={22} /></CardIcon>}
-      <CardTitle>{headerText}</CardTitle>
+        {headerText}
+      </CardTitle>
+
+      {actions && actions()}
     </CardHeader>
     <CardBody fullBleed={fullBleed} className='px-card-body'>
       {children}

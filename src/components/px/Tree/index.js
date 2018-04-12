@@ -22,16 +22,17 @@ class Tree extends BaseComponent {
 	}
 
   onSelect(node) {
-		console.log('onSelect', node);
 		if (this.state.selected) {
 			this.state.selected.setState({ selected: false });
 		}
-		this.setState({ selected: node });
-		node.setState({ selected: true });
-		if (this.props.onChange) {
-			this.props.onChange(node);
-		}
-    
+		node.setState({ selected: !node.state.selected }, () => {
+			this.setState({ selectedNode: node }, () => {
+				if (this.props.onChange) {
+					this.props.onChange(this.state);
+				}
+			});
+		});
+		
 	}
 
 
@@ -46,8 +47,7 @@ class Tree extends BaseComponent {
 		};
 		return (
 			<ul className='px-tree' style={treeStyle}>
-        {items &&
-					items.map((item, index) => (
+        {items && items.map((item, index) => (
 						<TreeNode 
 							key={index} 
 							data={item} 
@@ -61,7 +61,7 @@ class Tree extends BaseComponent {
 }
 
 Tree.defaultProps = {
-	items: [],
+	items: null,
 	style: null,
 	selected: null
 };

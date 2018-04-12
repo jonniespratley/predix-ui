@@ -1,10 +1,4 @@
-The `<Input/>` component enables you to use design system inputs in your app.
-
-
-
-```hint
-Reference https://www.predix-ui.com/#/css/visual/px-forms-design
-```
+The `<Input/>`, `<FormField/>`, `<Select/>`, `<Textarea/>` components enables you to use design system form inputs in your app.
 
 
 ## Usage
@@ -12,11 +6,11 @@ Reference https://www.predix-ui.com/#/css/visual/px-forms-design
 ```react
 const { Button, Input, FormField } = px;
 <form>
-  <FormField>
-    <Input label='Username' name='username'/>
+  <FormField label='Username'>
+    <Input name='username' placeholder='Username'/>
   </FormField>
-  <FormField>
-    <Input label='Password' name='password' type='password'/>
+  <FormField label='Password' >
+    <Input name='password' type='password' placeholder='Password'/>
   </FormField>
   <Button type='submit' primary>Submit</Button>
 </form>
@@ -170,28 +164,6 @@ const { Input, Label, Select } = px;
 </form>
 ```
 
-### Basic Form:
-
-```html
-<form >
-  <fieldset class="form-field">
-    <legend >Basic form</legend>
-    <ol class="list-bare">
-      <li class="form-field">
-        <label for="basic-form-name" >Name</label>
-        <input id="basic-form-name" class="text-input" type="text" placeholder="First name">
-        <span class="form-field__help">Hint Text</span>
-      </li>
-      <li class="form-field">
-        <input id="basic-form-checkbox" type="checkbox" >
-        <label class="label--inline" for="basic-form-checkbox">No Lastname</label>
-      </li>
-    </ol>
-    <input class="btn" type="reset" value="Cancel">
-    <input class="btn btn--primary" type="submit" value="Submit">
-  </fieldset>
-</form>
-```
 
 
 ---

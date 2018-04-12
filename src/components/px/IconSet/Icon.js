@@ -16,12 +16,8 @@ const PxIcon = styled.i`
 	vertical-align: middle;
 	width: var(--iron-icon-width);
 	height: var(--iron-icon-height);
-	${props => props.color && css`
-		color: ${props.color} !important;
-	`}
-	
 
-  svg {
+  > svg {
     color         : var(--iron-icon-stroke-color, inherit);
     fill          : var(--iron-icon-fill-color, none);
     stroke        : var(--iron-icon-stroke-color, currentColor);
@@ -29,16 +25,17 @@ const PxIcon = styled.i`
     vertical-align: middle;
 	
   }
+	
+	${props => props.color !== null && css`
+		color: ${props.color} !important;
+	`}
+	
 
   &.hidden {
     display: none;
   }
 
-  svg {
-    color : inherit;
-    fill  : inherit;
-    stroke: inherit;
-  }
+ 
 `;
 
 

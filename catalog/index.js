@@ -10,6 +10,7 @@ import { Catalog, CodeSpecimen, ReactSpecimen } from 'catalog';
 
 //import 'purecss/build/pure.css';
 //import './main.css';
+//import '../dist/predix-ui.min.css';
 import px from '../src';
 import DemoHelpers from '../src/components/px/DemoHelpers';
 
@@ -47,9 +48,11 @@ import pxPopoverDocs from '../src/components/px/Popover/README.md';
 import pxOverlayDocs from '../src/components/px/Overlay/README.md';
 import pxTileDocs from '../src/components/px/Tile/README.md';
 import pxTreeDocs from '../src/components/px/Tree/README.md';
+
 import pxKeyValuePairDocs from '../src/components/px/KeyValuePair/README.md';
 import pxViewHeaderDocs from '../src/components/px/ViewHeader/README.md';
 
+import pxPanelDocs from '../src/components/px/Panel/README.md';
 
 const logo = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/predix_ds_logo.webp';
 
@@ -111,25 +114,26 @@ const pages = [
       { path: 'AlertMessage', title: 'Alert Message', component: pxAlertMessageDocs},
       { path: 'AppHeader', title: 'App Header', component: pxAppHeaderDocs},
       { path: 'AppNav', title: 'App Nav', component: pxAppNavDocs},
-      //{ path: 'ActionSheet', title: 'Action Sheet', component: pxActionSheetDocs},
+      { path: 'ActionSheet', title: 'Action Sheet', component: pxActionSheetDocs},
       { path: 'Button', title: 'Button', component: pxButtonDocs},
       { path: 'BrandingBar', title: 'Branding Bar', component: pxBrandingBarDocs},
-    //  { path: 'Breadcrumbs', title: 'Breadcrumbs', component: pxBreadcrumbsDocs},
+      { path: 'Breadcrumbs', title: 'Breadcrumbs', component: pxBreadcrumbsDocs},
       { path: 'Card', title: 'Card', component: pxCardDocs },
       { path: 'Chip', title: 'Chip', component: pxChipDocs },
      // { path: 'Drawer', title: 'Drawer', component: pxDrawerDocs },
     //  { path: 'DataTable', title: 'DataTable', component: pxDatatableDocs },
       { path: 'Dropdown', title: 'Dropdown', component: pxDropDownDocs },
-   //   { path: 'Grid', title: 'Grid', component: pxGridDocs },
+      { path: 'Grid', title: 'Grid', component: pxGridDocs },
       { path: 'Icons', title: 'Icons', component: pxIconSetDocs },
       { path: 'Input', title: 'Input', component: pxInputDocs },
       { path: 'KeyValuePair', title: 'Key-Value Pair', component: pxKeyValuePairDocs },
    //   { path: 'Layout', title: 'Layout', component: pxLayoutDocs },
-      //{ path: 'Navbar', title: 'Navbar', component: pxNavbarDocs },
+      { path: 'Navbar', title: 'Navbar', component: pxNavbarDocs },
       { path: 'Notification', title: 'Notification', component: pxNotificationDocs },
       { path: 'Modal', title: 'Modal', component: pxModalDocs },
       { path: 'Overlay', title: 'Overlay', component: pxOverlayDocs },
-   //   { path: 'Popover', title: 'Popover', component: pxPopoverDocs },
+      { path: 'Panel', title: 'Panel', component: pxPanelDocs },
+      { path: 'Popover', title: 'Popover', component: pxPopoverDocs },
       { path: 'ProgressBar', title: 'Progress Bar', component: pxProgressbarDocs },
       { path: 'Spinner', title: 'Spinner', component: pxSpinnerDocs },
 

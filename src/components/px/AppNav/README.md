@@ -2,10 +2,6 @@ The `<AppNav/>` component is an app-level navigation element that allows users t
 current view. The element is designed to work on desktop and mobile/touch
 devices, supporting any viewport size.
 
-```hint
-Reference https://www.predix-ui.com/#/elements/px-app-nav
-```
-
 This data should be passed into the `items` Custom property on the component.
 
 ```code
@@ -53,7 +49,7 @@ state:
 ---
 const { AppNav } = PxReact;
 const navItems = [
-  {id : "home", label: "Home", icon: "px-fea:home"},
+  {id : "home", label: "Home", icon: "px-fea-home"},
   {id : "alerts", label: "Alerts", icon: "px-fea:alerts"},
   {
     id : "assets", 

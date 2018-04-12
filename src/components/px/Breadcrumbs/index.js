@@ -5,6 +5,7 @@ import classnames from 'classnames';
 //import stylesheet from './px-breadcrumbs.scss';
 import Dropdown from '../Dropdown';
 import Icon from '../IconSet/Icon';
+import Flex from '../../../styles/flex';
 
 class BreadcrumbsComponent extends React.Component {
   constructor(props){
@@ -105,14 +106,18 @@ class BreadcrumbsComponent extends React.Component {
     return (
       <div ref={this.handleRef}>
          
-          <div className="topPath flex flex--middle">
+          <Flex middle>
           
             {selectedRoute && selectedRoute.map((label, index) =>(
               <div data-index={index} className="breadcrumbTopItem" key={index} >
-                <span className='flex flex--row flex--middle'>
+                <Flex middle>
                   {this._isNotFirstItemInData(index, selectedRoute) && (<Icon icon="px-utl:chevron-right" size={24} viewBox='0 0 16 16'/>)}
-                  <span className="actionable actionable--action u-ph-" onClick={this.handleClick.bind(this, index, selectedRoute)}>{label}</span>
-                </span>
+                  <span 
+                    className="actionable actionable--action u-ph-" 
+                    onClick={this.handleClick.bind(this, index, selectedRoute)}>
+                    {label}
+                  </span>
+                </Flex>
               </div>
             ))}
              {/*
@@ -154,7 +159,7 @@ class BreadcrumbsComponent extends React.Component {
             </template>
   
             */}
-          </div>
+          </Flex>
        
    
       </div>

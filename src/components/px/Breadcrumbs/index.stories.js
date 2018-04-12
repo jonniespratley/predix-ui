@@ -95,7 +95,7 @@ const items = [{
 }];
 storiesOf('Breadcrumbs', module)
 	.addDecorator(withKnobs)
-	.add('default', () => (
+	.addWithJSX('default', () => (
 		<Breadcrumbs 
             onClick={action('onClick')}
             clickOnlyMode={boolean('clickOnlyMode', false)}

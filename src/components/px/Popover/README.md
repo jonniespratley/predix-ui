@@ -4,29 +4,69 @@ The `<Popover/>` component is similar to a tooltip, but is invoked by clicking i
 Work in progress
 ```
 
-```hint
-Reference https://www.predix-ui.com/#/elements/px-popover
-```
 
 
 ## Usage
 
 ```react
 state:
-  open: false
+  id: 'popover1'
+  popoverOpen: false
+  placement: 'bottom'
 ---
+const { 
+  Button, 
+  Popover, 
+  PopoverHeader, 
+  PopoverBody,
+  Select
+} = PxReact;
 
-const { Button, Popover } = PxReact;
-<div>
-  <Button
-    label='Toggle'
-    onClick={(e) => setState({open: !state.open})}/>
-  <Popover
-    orientation='right'
-    open={state.open}
-    title='This is a popover'
-    body='this can be the body'>
-    This is the children
+const exampleStyle = {
+  padding: '4rem',
+  display: 'flex',
+  justifyContent: 'center'
+};
+
+const PopperPlacements = [
+	"auto-start",
+	"auto",
+	"auto-end",
+	"top-start",
+	"top",
+	"top-end",
+	"right-start",
+	"right",
+	"right-end",
+	"bottom-end",
+	"bottom",
+	"bottom-start",
+	"left-end",
+	"left",
+	"left-start"
+];
+<div style={exampleStyle}>
+  <div>
+    <Button id={state.id} onClick={(e) => setState({popoverOpen: !state.popoverOpen})}>
+      Launch Popover
+    </Button>
+    <Select onChange={(e) => setState({placement: e.target.value})}>
+      {PopperPlacements.map((o, i) =>(
+        <option key={i} >{o}</option>
+      ))}
+    </Select>
+  </div>
+  <Popover 
+    placement={state.placement}
+    isOpen={state.popoverOpen}
+    target={state.id}
+    toggle={(e) => setState({popoverOpen: !state.popoverOpen})}>
+    <PopoverHeader>
+      Popover Header
+    </PopoverHeader>
+    <PopoverBody>
+      Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+    </PopoverBody>
   </Popover>
 </div>
 ```
@@ -44,23 +84,20 @@ rows:
 
 
 ### Styling
+The following custom properties are available for styling:
 
 ```table
 span: 6
 rows:
-  - Property: --px-popover-background-color
-    Default: null
+  - Custom Property: --px-popover-background-color
     Description: Background color for the popover
 
-  - Property: --px-popover-border-color
-    Default: null
+  - Custom Property: --px-popover-border-color
     Description: Border color for the popover
 
-  - Property: --px-popover-text-color
-    Default: null
+  - Custom Property: --px-popover-text-color
     Description: Color for the text
 
-  - Property: --px-popover-max-width
-    Default: null
+  - Custom Property: --px-popover-max-width
     Description: Maximum width of the popover
 ```

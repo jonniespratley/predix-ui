@@ -1,9 +1,5 @@
 The `<Icon/>` component enables you to use Predix Design System icons.
 
-```hint
-Reference https://www.predix-ui.com/#/elements/px-icon-set
-```
-
 ## Usage
 
 ```react
@@ -11,12 +7,13 @@ const { Icon } = PxReact;
 <Icon icon='px-doc:chart' size={16}/>
 ```
 
-### Custom size
+### Custom size/color
 
 ```react
 const { Icon } = PxReact;
 <Icon 
   icon='px-fea:home'
+  color='green'
   viewBox='0 0 32 32'
   size={225}/>
 ```
@@ -89,11 +86,20 @@ const RenderIconSet = ({icons, size}) => (
 ```table
 span: 6
 rows:
+  - Name: color
+    Type: String
+    Description: The color to apply.
+  
+  - Name: viewBox
+    Type: String
+    Description: The size of the svg viewBox.
+  
   - Name: size
-    Type: number
+    Type: Number
     Description: The size of the icon.
+ 
   - Name: icon
-    Type: string
+    Type: String
     Description: The name of the icon.
 ```
 
@@ -104,7 +110,10 @@ The following custom properties are available for styling.
 ```table
 span: 6
 rows:
-  - Property: --px-icon-width
-    Default: 22px
-    Description: Width applied to the icon.
+
+  - Custom Property: --px-icon-fill-color
+    Description: Fill color for icon
+
+  - Custom Property: --px-icon-stroke-color
+    Description: Stroke color for icon
 ```

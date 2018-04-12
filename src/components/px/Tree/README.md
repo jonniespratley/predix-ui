@@ -10,7 +10,7 @@ state:
   selectedNode: null
 ---
 const { Tree, TreeNode } = PxReact;
-var data = {
+var data = [{
 	id: 1,
 	label: "All Categories",
 	children: [
@@ -74,11 +74,16 @@ var data = {
 			]
 		}
 	]
-};
+}];
 
 <div className='flex'>
-  <Tree items={data} onSelect={(e) => {setState({selectedNode: e})}}/>
-  <div>{state.selectedNode}</div>
+  <Tree items={data} onChange={(e, o) => {
+		setState({selectedNode: e.state});
+		console.log(e, o);
+	}}/>
+  <pre>
+	{ JSON.stringify(state.selectedNode, null, 2) }
+	</pre>
 </div>
 ```
 
@@ -89,11 +94,12 @@ var data = {
 const { Tree, TreeNode } = PxReact;
 const data = {
   id: 0,
-  label: 'Tree Node'
+	label: 'Tree Node',
+	icon: 'px-utl:confirmed'
 };
 
 <div>
-  <TreeNode data={data}/>
+  <TreeNode {...data}/>
 </div>
 ```
 
@@ -103,9 +109,9 @@ const data = {
 ```table
 span: 6
 rows:
-  - Name: children
-    Type: node
-    Description: The children content.
+  - Name: items
+    Type: Array
+    Description: Array of tree nodes.
 ```
 
 

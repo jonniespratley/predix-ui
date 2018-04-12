@@ -36,7 +36,7 @@ const Notification = styled.div`
   width: inherit;
   opacity: 0;
   height: 0;
-  transition: height .5s ease-in-out, opacity .5s ease-in-out;
+  transition: var(--px-notification-transition, height .3s ease-in-out, opacity .3s ease-in-out);
 	box-sizing: border-box;
 	font-size: 1rem;
 	${props => props.type === 'error' && css`
@@ -82,9 +82,13 @@ const Notification = styled.div`
 `;
 export default ({ opened, type, actionIcon, statusIcon, slotRight, onClick, small = false, children}) => (
 	<Notification opened={opened} type={type} small={small}>
-		<NotificationLeft>
-			<Icon size={16} icon={statusIcon}/>
-		</NotificationLeft>
+		{statusIcon && 
+			<NotificationLeft>
+				<Icon size={16} icon={statusIcon}/>
+			</NotificationLeft>
+		}
+		
+
 		<NotificationContent>
 			{children}
 		</NotificationContent>

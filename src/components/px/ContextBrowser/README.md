@@ -2,10 +2,6 @@ The `<Chip/>` component is a persistent object that can be toggled on and off.
 The static chip is not meant to be dismissed or removed. A Static Chip is best used for curated filters.
 
 
-```hint
-Work in progress
-```
-
 ## Usage
 
 ```react

@@ -7,7 +7,7 @@ import Card from '../Card';
 
 storiesOf('Layout', module)
 	.addDecorator(withKnobs)
-	.add('default', () => (
+	.addWithJSX('default', () => (
 		<Layout>
 			<LayoutItem item>
 				<Card headerText='Card 1'>

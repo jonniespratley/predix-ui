@@ -21,7 +21,7 @@ const items = [
 ];
 storiesOf('Dropdown', module)
 	.addDecorator(withKnobs)
-	.add('default', () => (
+	.addWithJSX('default', () => (
 		<Dropdown 
 			onChange={action('onChange')}
 			items={array('items', items)}

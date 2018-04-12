@@ -1,28 +1,31 @@
-# px-breadcrumbs
-The `<breadcrumbs/>` component enables you to ...
 
-```hint
-Work in progress
-```
+The `<Breadcrumbs/>` component displays the navigational path of the user through a context browser. The breadcrumb links provide a way to see the path of navigation or contextual relationship between objects. It also provides a quick way to navigate backwards within a path or within a specific context.
+
+
 
 ## Usage
 
 ```react
-const { breadcrumbs } = px;
-<breadcrumbs>
-  This is the children
-</breadcrumbs>
+const { Breadcrumbs } = PxReact;
+const selectedRoute = ["North America", "United States of America", "California", "San Ramon"];
+<Breadcrumbs 
+  clickOnlyMode
+  selectedRoute={selectedRoute}/>
 ```
 
+> Note: This is an uncontrolled component.
 
 ## Properties
 
 ```table
 span: 6
 rows:
-  - Name: children
-    Type: node
-    Description: The children content.
+  - Name: clickOnlyMode
+    Type: Bool
+    Description: Enable click only mode.
+  - Name: selectedRoute
+    Type: Array
+    Description: Array of items to display.
 ```
 
 
@@ -31,7 +34,8 @@ rows:
 ```table
 span: 6
 rows:
-  - Property: --my-prop
-    Default: null
-    Description: This is the style prop.
+  - Custom Property: --px-breadcrumbs-chevron-color
+    Description: Color of the chevrons between breadcrumb items
+  - Custom Property: --px-breadcrumbs-text-color--disabled
+    Description: Text color for a non-selectable top-level item
 ```

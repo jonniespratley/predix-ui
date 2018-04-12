@@ -12,7 +12,33 @@ const { Notification } = px;
 </Notification>
 ```
 
-### Confirmation
+> Note: This is an uncontrolled component.
+
+### Types 
+
+```react
+const { Notification } = px;
+const types = [
+	'healthy',
+	'important',
+	'warning',
+	'error',
+	'info',
+	'unknown'
+];
+<div>
+{types && types.map((type, index) => (
+  <Notification 
+    key={index}
+    type={type} 
+    opened>
+    This is an {type} notification.
+  </Notification>
+))}
+</div>
+```
+
+### Confirmation Example
 ```react
 state:
   opened: true

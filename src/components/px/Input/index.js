@@ -118,7 +118,7 @@ const Input = BaseInput.extend`
   `}
   
 `;
-
+Input.displayName = 'Input';
 
 Input.defaultProps = {
   /** The label */

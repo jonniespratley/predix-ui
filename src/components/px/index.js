@@ -36,7 +36,14 @@ import Modal from './Modal';
 //import NavDrawer from './Drawer/px-nav-drawer';
 import Navbar from './Navbar';
 import Overlay from './Overlay';
+
+import Panel from './Panel';
+
 import Popover from './Popover';
+import PopoverHeader from './Popover/PopoverHeader';
+import PopoverBody from './Popover/PopoverBody';
+import PopoverArrow from './Popover/PopoverArrow';
+
 import PredixSvgLogo from './BrandingBar/px-predix-svg-logo';
 import ProgressBar from './ProgressBar';
 import Spinner from './Spinner';
@@ -107,7 +114,11 @@ const px = {
 	LayoutItem,
 	PredixSvgLogo,
 	ProgressBar,
+	Panel,
 	Popover,
+	PopoverHeader,
+	PopoverArrow,
+	PopoverBody,
 	TableView,
 	TableRow,
 	Tabs,

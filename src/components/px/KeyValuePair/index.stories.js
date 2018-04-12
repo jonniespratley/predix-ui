@@ -14,7 +14,7 @@ storiesOf('KeyValuePair', module)
 	.addDecorator(withKnobs)
 	.add('default', () => (
 		<KeyValuePair
-      ley={text('key', 'item-1')}
+      key={text('key', 'item-1')}
       label={text('label', 'Lorem Ipsum')}
       value={text('value', '12345')}
       uom={text('uom', 'units')}
