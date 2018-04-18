@@ -3,7 +3,7 @@
   "description": "px-* web components in React.js components",
   "author": "Jonnie Spratley",
   "user": "jonniespratley",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "license": "",
   "repository": {
     "type": "git",
@@ -25,7 +25,7 @@
     "catalog-start": "catalog start",
     "catalog-build": "catalog build",
     "plop": "./node_modules/.bin/plop",
-    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook": "start-storybook -p 8181 -c .storybook",
     "storybook:build": "build-storybook -c .storybook -o .out",
     "docs": "esdoc",
     "dist:icons": "node ./tools/icons-optimize-and-fix.js",
