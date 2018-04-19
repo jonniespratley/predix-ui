@@ -16,6 +16,7 @@ const sassOptions = {
   importer: importOnce,
   importOnce: {
     index: true,
+    css: true,
     bower: true
   }
 };
@@ -34,7 +35,8 @@ const config = {
     dest: './dist/css',
     src: [
       'src/sass/index.scss',
-      'src/**/*.scss'
+      'src/**/*.scss',
+      '!src/**/_*.scss'
     ]
   }
 };
@@ -110,11 +112,19 @@ gulp.task('sass:copy:modules', 'Copy all .sass/.scss files', function() {
 ///
 gulp.task('sass', 'Compile all .sass/.scss files', function() {
   return gulp.src(config.styles.src)
-
     .pipe($.sass(sassOptions).on('error', $.sass.logError))
-  //  .pipe($.size())
+    .pipe($.size())
     //.pipe($.rename(pkg.name + '.css'))
-  //  .pipe($.filelog('sass'))
+    //.pipe($.filelog('sass'))
+    .pipe(gulp.dest(config.styles.dest));
+});
+
+gulp.task('sass:theme', 'Compile all theme scss files', function() {
+  return gulp.src(config.styles.src)
+    .pipe($.filelog('sass'))
+    .pipe($.sass(sassOptions).on('error', $.sass.logError))
+    .pipe($.size())
+    //.pipe($.rename(pkg.name + '.css'))
     .pipe(gulp.dest(config.styles.dest));
 });
 
@@ -125,7 +135,7 @@ gulp.task('sass:all', 'Combine all .sass/.scss files', function() {
     .pipe($.sass(sassOptions).on('error', $.sass.logError))
     .pipe($.concat(pkg.name + '.all.css'))
     .pipe($.size())
-  //  .pipe($.filelog())
+   // .pipe($.filelog())
     .pipe(gulp.dest(config.styles.dest));
 });
 
@@ -146,7 +156,7 @@ gulp.task('autoprefixer', function() {
 });
 
 ///
-gulp.task('cssmin', 'Take all css and min with source maps', function() {
+gulp.task('cssmin', 'Take all css and min with source maps', ['sass'],function() {
   return gulp.src([
     `${config.dest}/**/*.css`,
     `!${config.dest}/**/*.min.css`
@@ -305,6 +315,6 @@ gulp.task('dist', 'Lint, build ES6 and modules.', gulpSequence(
   'scripts'
 ));
 
-gulp.task('dist:es6', gulpSequence('babel-es6'));
+gulp.task('dist:es6', gulpSequence('babel-es6', 'sass:copy'));
 gulp.task('dist:modules', gulpSequence('babel-modules'));
 gulp.task('default', gulpSequence('dist'));

@@ -8,13 +8,11 @@ const Panel = styled.div`
   display: block;
   position: absolute;
   z-index: var(--px-panel-z-index, 100);
-  background: var(--px-panel-bg-color--light, #FFF);
-  box-shadow: -1px -1px 3px rgba(0,0,0,0.2),
-               1px  1px 3px rgba(0,0,0,0.2);
+  box-shadow: var(--px-panel-box-shadow, -1px -1px 3px rgba(0,0,0,0.2), 1px  1px 3px rgba(0,0,0,0.2));
+  background: var(--px-panel-background-color, white);
+  border: var(--px-panel-border, none);
+  transition: var(--px-panel-transition, none);
   
-  
-  
- 
   ${props => props.background === 'light' && css`
     background: var(--px-panel-bg-color--light, #fff);
   `}
@@ -24,6 +22,9 @@ const Panel = styled.div`
   ${props => props.background === 'dark' && css`
     background: var(--px-panel-bg-color--dark, #ddd);
   `}
+
+ 
+
   ${props => props.light && css`
     position: fixed;
   `}
