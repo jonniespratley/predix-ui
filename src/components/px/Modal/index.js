@@ -33,10 +33,8 @@ const ModalContent = styled.div`
     z-index      : ${props.zIndex}
   `}
   top: 50%;
-  left: 50%;
-  
+  left: 50%;  
   transform: translate(-50%, -50%);
- 
   max-height: calc(100% - 2rem);
   max-width: calc(100% - 2rem);
   overflow: auto;
@@ -58,10 +56,19 @@ const ModalContent = styled.div`
     min-width: 400px;
   }
 `;
+ModalContent.displayName = 'ModalContent';
 
 const ModalTitle = styled.h3`
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   margin-top: 0;
+  font-size: 1.33333rem;
+  line-height: 1;
+  font-weight: 400;
+`;
+ModalTitle.displayName = 'ModalTitle';
+
+const ModalBody = styled.div`
+  padding: 1rem;
 `;
 
 
@@ -100,9 +107,10 @@ export default ({
           <div>
            
             <ModalTitle>{headerText}</ModalTitle>
-            <div>
+            
+            <ModalBody>
               {children}
-            </div>
+            </ModalBody>
             <div className="modal__buttons flex flex--right">
               <Flex right>
               {actions && actions}

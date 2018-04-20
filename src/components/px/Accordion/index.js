@@ -113,13 +113,16 @@ class Accordion extends React.Component {
       open: props.opened || true
     };
     this.onClick = this.onClick.bind(this);
+    this.onActionClick = this.onActionClick.bind(this);
   }
 
   onClick(){
     if(!this.props.disabled){
-      this.setState((prevState, props) => ({
-        open: !prevState.open
-      }));
+      this.setState((prevState, props) => {
+        return {
+          open: !prevState.open
+        };
+      });
     }
   }
 
@@ -130,8 +133,8 @@ class Accordion extends React.Component {
   componentDidUpdate(){
     const {onCollapsed, onExpanded} = this.props;
     this.state.open && !this.props.disabled ? 
-    (this.props.onCollapsed ? this.props.onCollapsed(this.state) : null) : 
-    (this.props.onExpanded ? this.props.onExpanded(this.state) : null);
+    (this.props.onExpanded ? this.props.onExpanded(this.state) : null) :
+    (this.props.onCollapsed ? this.props.onCollapsed(this.state) : null);
     
   }
   componentWillReceiveProps(nextProps){
@@ -145,6 +148,7 @@ class Accordion extends React.Component {
       headerValue,
       status,
       disabled,
+      actions,
       showAction,
       onActionClick,
       icons = {
@@ -177,7 +181,14 @@ class Accordion extends React.Component {
           </Flex>
           <Flex middle>
             {status && <AccordionStatus>{status}</AccordionStatus>}
-            {showAction && <AccordionAction onClick={this.onActionClick.bind(this)}> <Icon icon={action} size={16}/> </AccordionAction>}
+            {showAction && 
+            <AccordionAction onClick={onActionClick}> 
+              <Icon icon={action} size={16}/> 
+            </AccordionAction>}
+            {actions && 
+            <AccordionAction> 
+              {actions()}
+            </AccordionAction>}
           </Flex>
         </AccordionHeader>
         <IronCollapse ref="collapse" opened={open}>

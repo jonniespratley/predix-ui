@@ -35,7 +35,7 @@ storiesOf('Alert Message', module)
   .addDecorator(withReadme(README))
 	.add('default', () => (
 		<AlertMessage
-      onDismissClick={action('onDismissClick')}
+      onDismiss={action('onDismiss')}
       onActionClick={action('onActionClick')}
       type={select('type', Object.keys(typeOptions))}
       action={select('action', ['acknowledge', 'dismiss'])}

@@ -85,6 +85,18 @@ const AlertMessageContainer = styled.div`
   margin-right: 0.66667rem;
 `;
 
+const AlertMessageActions = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .dismiss {
+    width: 44px;
+    height: 44px;
+    min-width: auto;
+  }
+`;
+
 const AlertMessageSeverity = styled.div`
   min-height: 4rem;
   width: 4rem;
@@ -142,7 +154,7 @@ export default ({
   actions,
   expanded,
   onActionClick,
-  onDismissClick,
+  onDismiss,
   type = 'information',
   autoDismiss = 5000,
   language = 'en',
@@ -160,10 +172,10 @@ export default ({
         <div>{children}</div>
       </Message>
       </AlertMessageContainer>
-      <div className='action flex flex--middle flex--center'>
+      <AlertMessageActions>
 
         {action === 'dismiss' && 
-        <Button onClick={onDismissClick} theme='bare' className='dismiss'>
+        <Button onClick={onDismiss} theme='bare' className='dismiss'>
           <svg viewBox="0 0 22 22" preserveAspectRatio="xMidYMid meet" focusable="false">
             <g>
               <path strokeMiterlimit="10" d="M3 19L19 3M3 3l16 16"></path>
@@ -177,7 +189,9 @@ export default ({
         <Button id="actionButton"
           onClick={onActionClick}
           theme='tertiary'>OK</Button>}
-      </div>
+
+      </AlertMessageActions>
+     
 
   </AlertMessage>
   );
