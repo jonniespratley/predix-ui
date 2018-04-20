@@ -69,7 +69,7 @@ storiesOf('TableView', module)
 			})}
 			tappable={boolean('tappable', true)}/>
   ))
-  .add('Table Row', () => (
+  .addWithJSX('Table Row', () => (
 		<TableRow 
       title={text('title', 'Table Row Title')}
       image={text('image', '')}

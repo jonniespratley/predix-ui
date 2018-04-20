@@ -12,6 +12,8 @@ const VHeader = styled.div`
   position: relative;
   user-select:none;
 `;
+VHeader.displayName = 'ViewHeader';
+
 const VHeaderText = styled.div`
   padding-left : 1rem;
   padding-right: 1rem;
@@ -21,6 +23,8 @@ const VHeaderText = styled.div`
   margin-right : auto;
   min-width: 1px; 
 `;
+VHeaderText.displayName = 'ViewHeaderText';
+
 const VHeaderTitle = styled.div`
   text-align: center;
   color     : var(--px-view-header-title-color, black);
@@ -28,6 +32,8 @@ const VHeaderTitle = styled.div`
   text-overflow: ellipsis;
   white-space  : nowrap;
 `;
+VHeaderTitle.displayName = 'ViewHeaderTitle';
+
 const VHeaderSubTitle = styled.div`
   text-align: center;
   color     : var(--px-view-header-subtitle-color, gray);
@@ -38,14 +44,19 @@ const VHeaderSubTitle = styled.div`
   text-overflow: ellipsis;
   white-space  : nowrap;
 `;
+VHeaderSubTitle.displayName = 'ViewHeaderSubTitle';
+
 const VHeaderLeft = styled.div`
   position: absolute;
   left: 1rem;
 `;
+VHeaderLeft.displayName = 'ViewHeaderLeft';
+
 const VHeaderRight = styled.div`
   position: absolute;
   right: 1rem;
 `;
+VHeaderRight.displayName = 'ViewHeaderRight';
 
 export default ({
   title,

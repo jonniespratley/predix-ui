@@ -13,7 +13,9 @@ const svgStyles = {
   pointerEvents: 'none',
   display: 'block',
   height: '16px',
-  width: '16px'
+  width: '16px',
+  fill: 'none',
+  stroke: 'currentColor'
 };
 const CloseIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron" style={styles} ><svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" style={svgStyles}><g id="px-utl-chevron-right"><path strokeLinejoin="round" d="M6.2 13.2l5.4-5.5-5.5-5.5"></path></g></svg></i>);
 const OpenIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron-down" style={styles}><svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" style={svgStyles}><g id="px-utl-chevron"><path d="M2.4 6.2l5.5 5.5 5.5-5.5"></path></g></svg></i>);
@@ -25,7 +27,7 @@ const AccordionHeader = styled.div`
   cursor          : pointer;
   user-select     : none;
   
-  background-color: var(--px-accordion-header-background-color, white);
+  background-color: var(--px-accordion-header-background-color, whitesmoke);
   color           : var(--px-accordion-header-color, black);
   
   display         : flex;
@@ -104,9 +106,6 @@ const AccordionAction = styled.div`
 `;
 AccordionAction.displayName = 'AccordionAction';
 
-
-
-
 class Accordion extends React.Component {
   constructor(props){
     super(props);
@@ -130,11 +129,10 @@ class Accordion extends React.Component {
   
   componentDidUpdate(){
     const {onCollapsed, onExpanded} = this.props;
-    if(this.state.open){
-      //console.log('Trigger', 'onExpanded');
-    } else {
-      //console.log('Trigger', 'onCollapsed');
-    }
+    this.state.open && !this.props.disabled ? 
+    (this.props.onCollapsed ? this.props.onCollapsed(this.state) : null) : 
+    (this.props.onExpanded ? this.props.onExpanded(this.state) : null);
+    
   }
   componentWillReceiveProps(nextProps){
     this.setState({open: nextProps.opened});
@@ -143,7 +141,8 @@ class Accordion extends React.Component {
   render(){
     const { open } = this.state;
     const {
-      headerValue = 'Accordion',
+      headerText,
+      headerValue,
       status,
       disabled,
       showAction,
@@ -162,16 +161,19 @@ class Accordion extends React.Component {
       {'px-accordion--disabled': disabled},
       {'px-accordion--open': open}
     );
+    const headerClasses = classNames(
+      'px-accordion__header'
+    );
 
     return (
       <AccordionContainer className={baseClasses}>
-        <AccordionHeader disabled={disabled}>
+        <AccordionHeader disabled={disabled} className={headerClasses}>
           <Flex item={true} onClick={this.onClick} >
             <span>
               {open && <OpenIcon />}
               {!open && <CloseIcon />}
             </span>
-            <AccordionHeaderText>{headerValue}</AccordionHeaderText>
+            <AccordionHeaderText>{headerText || headerValue}</AccordionHeaderText>
           </Flex>
           <Flex middle>
             {status && <AccordionStatus>{status}</AccordionStatus>}

@@ -3,7 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs/react';
 
 import AlertLabel from './';
-
+import README from './README.md';
+import { withReadme } from 'storybook-readme';
 const typeOptions = {
   info: 'Info',
   error: 'Error',
@@ -14,7 +15,8 @@ const typeOptions = {
 };
 
 storiesOf('Alert Label', module)
-	.addDecorator(withKnobs)
+  .addDecorator(withKnobs)
+  .addDecorator(withReadme(README))
 	.add('default', () => (
 		<AlertLabel
 		  label={text('label', 'Info')}

@@ -138,7 +138,7 @@ const pages = [
       { path: 'Spinner', title: 'Spinner', component: pxSpinnerDocs },
 
       { path: 'Tabs', title: 'Tabs', component: pxTabsDocs },
-      { path: 'Tile', title: 'Tile', component: pxTileDocs },
+     // { path: 'Tile', title: 'Tile', component: pxTileDocs },
       { path: 'Tree', title: 'Tree', component: pxTreeDocs },
       { path: 'Toggle', title: 'Toggle', component: pxToggleInputDocs },
       { path: 'TableView', title: 'Table View', component: pxTableViewDocs },

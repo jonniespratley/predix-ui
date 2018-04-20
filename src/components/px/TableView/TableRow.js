@@ -32,13 +32,10 @@ const TableRow = styled.div`
     content: ' ';
   }
 
-  &:active {
-    color: var(--px-table-row-selected-color, white) !important;
-  }
   ${props => props.tappable && css`
     cursor: pointer;
     &:active {
-      color: var(--px-table-row-selected-color, white);
+      color: var(--px-table-row-selected-color, white) !important;
       background: var(--px-table-row-selected-background-color, black);
     }
   `}
@@ -90,10 +87,10 @@ const TableRow = styled.div`
     padding: 2rem;
   `}
 `;
+TableRow.displayName = 'TableRow';
 
 const TableRowTitle = styled.div`
   user-select: none;
-  
   line-height: normal;
   flex: 1 0 auto;
   align-items: center;
@@ -103,23 +100,38 @@ const TableRowTitle = styled.div`
   font-size: var(--px-table-row-title-font-size, 15px);
   color: var(--px-table-row-title-color, inherit);
 `;
+TableRowTitle.displayName = 'TableRowTitle';
 
 const TableRowBody = styled.div`
   font-size: var(--px-table-row-body-font-size, 15px);
-  
   order: 5;
   align-self: stretch;
   flex: 1 0 auto;
   white-space: normal;
   line-height: normal;
 `;
+TableRowBody.displayName = 'TableRowBody';
 
 const TableRowMedia = styled.div`
-  padding: .5rem;
+  flex: 0 1 auto;
+  order: 0;
+  display: flex;
+  align-self: stretch;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin-left: var(--px-table-row-media-margin, 0);
+  margin-right: var(--px-table-row-media-margin, 0.66667rem);
+  
+  img {
+    display: block;
+    max-width: 80px;
+    max-height: 80px;
+  }
 `;
+TableRowMedia.displayName = 'TableRowMedia';
 
 const TableRowLabel = styled.div`
- 
   -webkit-touch-callout: none;
   user-select: none;
   order: 0;
@@ -140,6 +152,7 @@ const TableRowLabel = styled.div`
    
   `}
 `;
+TableRowLabel.displayName = 'TableRowLabel';
 
 const TableRowSubtitle = styled.div`
   font-size: var(--px-table-row-subtitle-font-size, 15px);
@@ -154,8 +167,9 @@ const TableRowContent = styled.div`
   
   flex: 1;
   user-select: none;
-}
 `;
+TableRowContent.displayName = 'TableRowContent';
+
 //const TableRowMedia = styled.div``;
 
 const TableRowActions = styled.div`
@@ -234,27 +248,33 @@ export default ({
 
         {labelLeft && <TableRowLabel labelLeft={true} className="table-row__label table-row__label--left">{labelLeft}</TableRowLabel>}
         
-        {image || icon && 
-        <TableRowMedia>
-          {image && <div className="table-row__media table-row__media--image"><img src={image} alt={title}/></div>}
-          {icon && <div className={mediaClassnames}><Icon icon={icon}/></div>}
-        </TableRowMedia>}
+        {image && 
+            <TableRowMedia>
+              <img src={image} alt={title}/>
+            </TableRowMedia>
+        }
+
+        {icon && 
+          <TableRowMedia>
+            <Icon icon={icon}/>
+          </TableRowMedia>
+        }
        
 
         {editMode && <div className="table-row__media table-row__media--icon table-row__media--right"><button className="btn btn--bare table-row__handle">hamburger</button></div>}
        
         {title && 
-        <TableRowContent className="table-row__content">
-          {title && <TableRowTitle className="table-row__title">{title}</TableRowTitle>}
-          {subtitle && <TableRowSubtitle className="table-row__subtitle">{subtitle}</TableRowSubtitle>}
-          {body && <TableRowBody className="table-row__body">{body}</TableRowBody>}
+        <TableRowContent >
+          {title && <TableRowTitle >{title}</TableRowTitle>}
+          {subtitle && <TableRowSubtitle>{subtitle}</TableRowSubtitle>}
+          {body && <TableRowBody>{body}</TableRowBody>}
           {rowContent}
         </TableRowContent>}
 
         {labelRight && <TableRowLabel labelRight={true} className="table-row__label table-row__label--right">{labelRight}</TableRowLabel>}
 
       {children && 
-      <TableRowContent className="table-row__content">
+      <TableRowContent>
         {children}
       </TableRowContent>}
       
