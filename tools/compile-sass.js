@@ -13,8 +13,8 @@ const scss_filename = path.resolve(__dirname, SRC, 'theme/px-dark-theme.scss' );
 
 const config = {
   src: path.resolve(__dirname, '../src'),
-  dest: path.resolve(__dirname, '../temp/css'),
-  sass: path.resolve(__dirname, '../src/sass/index.scss')
+  dest: path.resolve(__dirname, '../dist/css'),
+  sass: path.resolve(__dirname, '../src/components/px/Theme/px-theme.scss')
 };
 
 glob(config.sass, (err, files) =>{

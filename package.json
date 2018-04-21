@@ -1,9 +1,9 @@
 {
   "name": "predix-ui",
-  "description": "px-* web components in React.js components",
+  "description": "px-* web components as React styled components",
   "author": "Jonnie Spratley",
   "user": "jonniespratley",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "license": "",
   "repository": {
     "type": "git",
@@ -25,7 +25,7 @@
     "catalog-start": "catalog start",
     "catalog-build": "catalog build",
     "plop": "./node_modules/.bin/plop",
-    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook": "start-storybook -p 8181 -c .storybook",
     "storybook:build": "build-storybook -c .storybook -o .out",
     "docs": "esdoc",
     "dist:icons": "node ./tools/icons-optimize-and-fix.js",
@@ -52,9 +52,8 @@
     "npm": "^5.0.0"
   },
   "keywords": [
-    "react",
     "reactjs",
-    "boilerplate"
+    "predix-ui"
   ],
   "pre-push": [
     "test"
@@ -109,7 +108,7 @@
     "git-prepush-hook": "^1.0.2",
     "glob": "^7.1.2",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
     "gulp-babel": "^7.0.0",
     "gulp-bower": "^0.0.14",
     "gulp-clean": "^0.4.0",
@@ -122,7 +121,7 @@
     "gulp-postcss": "^7.0.0",
     "gulp-purifycss": "^0.2.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^4.0.0",
     "gulp-sequence": "^1.0.0",
     "gulp-size": "^3.0.0",
     "gulp-sourcemaps": "^2.6.1",
@@ -152,9 +151,10 @@
     "react-popper": "^0.8.3",
     "react-test-renderer": "16",
     "rimraf": "^2.6.1",
-    "sass-loader": "^6.0.6",
+    "sass-loader": "^7.0.0",
     "sinon": "^4.2.0",
     "storybook-addon-jsx": "^5.3.0",
+    "storybook-readme": "^3.3.0",
     "strip-json-comments": "^2.0.1",
     "style-loader": "^0.19.0",
     "styled-components": "^3.2.3",
@@ -169,7 +169,9 @@
     "webpack-dev-server": "^2.11.1",
     "webpack-jarvis": "^0.2.2",
     "webpack-merge": "^4.1.0",
-    "webpack-stream": "^4.0.0"
+    "webpack-stream": "^4.0.0",
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "symbol-tree": "^3.2.2"
   },
   "peerDependencies": {
     "file-loader": "^1.1.6",
@@ -204,9 +206,5 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
     }
-  },
-  "dependencies": {
-    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
-    "symbol-tree": "^3.2.2"
   }
 }

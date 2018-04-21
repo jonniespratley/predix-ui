@@ -5,6 +5,7 @@ import { withInfo } from '@storybook/addon-info';
 import { withKnobs, text, array, object, boolean, number, select } from '@storybook/addon-knobs';
 
 import TableView from './';
+import TableRow from './TableRow';
 
 function makeRows(count = 5, obj){
 	let items = [];
@@ -66,6 +67,23 @@ storiesOf('TableView', module)
 				body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 				labelRight: 'New'
 			})}
+			tappable={boolean('tappable', true)}/>
+  ))
+  .addWithJSX('Table Row', () => (
+		<TableRow 
+      title={text('title', 'Table Row Title')}
+      image={text('image', '')}
+      icon={text('icon', '')}
+      labelLeft={text('labelLeft', '')}
+      labelRight={text('labelRight', '')}
+      subtitle={text('subtitle', '')}
+      body={text('body', 'Table Row Body')}
+      size={select('size', ['flush', 'tiny', 'small', 'regular', 'large', 'huge'])}
+			header={boolean('header', false)}
+			iconLeft={boolean('iconLeft', false)}
+			iconRight={boolean('iconRight', false)}
+			swipeable={boolean('swipeable', false)}
+			selected={boolean('selected', false)}
 			tappable={boolean('tappable', true)}/>
 	))
 	;

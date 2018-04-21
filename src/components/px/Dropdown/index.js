@@ -178,6 +178,11 @@ class Dropdown extends BaseComponent {
   }
 	render() {
 		const {
+      keys = {
+        key: 'key',
+        val: 'val'
+      },
+      className,
       selectBy,
       disabled,
       disableClear,
@@ -207,11 +212,11 @@ class Dropdown extends BaseComponent {
       dropdownContentWidth
     } = this.state;
 
-		const baseClasses = classnames('px-dropdown');
+		const baseClasses = classnames('px-dropdown', className);
 		return (
 			<div className={baseClasses}>
         <Button theme={buttonStyle} disabled={disabled} style={triggerStyle} onClick={this._handleClick.bind(this)}>
-          {selectedItem && <DropdownLabel>{selectedItem.val}</DropdownLabel>}
+          {selectedItem && <DropdownLabel>{selectedItem[keys.val]}</DropdownLabel>}
           {!selectedItem && <DropdownLabel>{displayValue}</DropdownLabel>}
           
           {(!hideChevron && !opened || !selectedItem) && <Icon icon={icon} size={16} />}
@@ -224,7 +229,7 @@ class Dropdown extends BaseComponent {
                 disabled={item.disabled}
                 selected={item.selected}
                 onClick={this._handleChange.bind(this, item, index)}>
-                {item.val}
+                {item[keys.val]}
               </DropdownOption>
             </div>)
           )}

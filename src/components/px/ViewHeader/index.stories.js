@@ -9,13 +9,13 @@ import Button from '../Button';
 
 storiesOf('ViewHeader', module)
 	.addDecorator(withKnobs)
-	.add('default', () => (
+	.addWithJSX('default', () => (
 		<ViewHeader
 			title={text('title', 'Current View Title')}
 			subtitle={text('subtitle', 'A subtitle describing the view.')}
 			/>
 	))
-	.add('with actions', () => (
+	.addWithJSX('with actions', () => (
 		<ViewHeader
 			title={text('title', 'Current View Title')}
 			subtitle={text('subtitle', 'A subtitle describing the view.')}>

@@ -25,16 +25,29 @@ const TableRow = styled.div`
   flex-direction: row;
   appearance: normal;
   flex: 1;
+
+  &:after,
+  &:before{
+    display: table;
+    content: ' ';
+  }
+
   ${props => props.tappable && css`
+    cursor: pointer;
     &:active {
-      color: var(--px-table-row-selected-color, white);
+      color: var(--px-table-row-selected-color, white) !important;
       background: var(--px-table-row-selected-background-color, black);
     }
   `}
+
   ${props => props.selected && css`
-    background-color: var(--px-table-row-selected-background-color, black);
-    color: var(--px-table-row-selected-color, white);
+    background-color: var(--px-table-row-selected-background-color, black) !important;
+    color: var(--px-table-row-selected-color, white) !important;
+    .px-table-row-body{
+      color: inherit;
+    }
   `}
+
   ${props => props.header && css`
     padding: var(--px-table-row-header-padding, 0.33333rem);
     font-size: var(--px-table-row-header-font-size, 15px);
@@ -46,9 +59,7 @@ const TableRow = styled.div`
     border-top: none;
     border-bottom: none;
   `}
-  ${props => props.size === 'large' && css`
-    
-  `}
+  
   ${props => props.swipeable && css`
     background-color: var(--px-table-row-background-color, white);
     overflow: hidden;
@@ -56,11 +67,30 @@ const TableRow = styled.div`
     transition: transform cubic-bezier(0.55, 0, 0.1, 1) 0.3s;
     z-index: 10;
   `}
+
+  ${props => props.size === 'flush' && css`
+    padding: 0;
+  `}
+  ${props => props.size === 'tiny' && css`
+    padding: 0.33333rem;
+  `}
+  ${props => props.size === 'small' && css`
+    padding: 0.66667rem;
+  `}
+  ${props => props.size === 'regular' && css`
+    padding: 1rem;
+  `}
+  ${props => props.size === 'large' && css`
+    padding: 1.33333rem;
+  `}
+  ${props => props.size === 'huge' && css`
+    padding: 2rem;
+  `}
 `;
+TableRow.displayName = 'TableRow';
 
 const TableRowTitle = styled.div`
   user-select: none;
-  
   line-height: normal;
   flex: 1 0 auto;
   align-items: center;
@@ -70,15 +100,65 @@ const TableRowTitle = styled.div`
   font-size: var(--px-table-row-title-font-size, 15px);
   color: var(--px-table-row-title-color, inherit);
 `;
+TableRowTitle.displayName = 'TableRowTitle';
+
+const TableRowBody = styled.div`
+  font-size: var(--px-table-row-body-font-size, 15px);
+  order: 5;
+  align-self: stretch;
+  flex: 1 0 auto;
+  white-space: normal;
+  line-height: normal;
+`;
+TableRowBody.displayName = 'TableRowBody';
 
 const TableRowMedia = styled.div`
-  padding: .5rem;
+  flex: 0 1 auto;
+  order: 0;
+  display: flex;
+  align-self: stretch;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin-left: var(--px-table-row-media-margin, 0);
+  margin-right: var(--px-table-row-media-margin, 0.66667rem);
+  
+  img {
+    display: block;
+    max-width: 80px;
+    max-height: 80px;
+  }
 `;
+TableRowMedia.displayName = 'TableRowMedia';
+
+const TableRowLabel = styled.div`
+  -webkit-touch-callout: none;
+  user-select: none;
+  order: 0;
+  align-self: center;
+  white-space: nowrap;
+  position: relative;
+  top: 2px;
+  
+  ${props => props.labelLeft && css`
+    flex: 0 1 0;
+    text-align: right;
+   
+  `}
+
+  ${props => props.labelRight && css`
+    text-align: left;
+    order: 4;
+   
+  `}
+`;
+TableRowLabel.displayName = 'TableRowLabel';
 
 const TableRowSubtitle = styled.div`
   font-size: var(--px-table-row-subtitle-font-size, 15px);
   color: var(--px-table-row-subtitle-color, black);
 `;
+
 const TableRowContent = styled.div`
   user-select: none;
   display: flex;
@@ -87,8 +167,9 @@ const TableRowContent = styled.div`
   
   flex: 1;
   user-select: none;
-}
 `;
+TableRowContent.displayName = 'TableRowContent';
+
 //const TableRowMedia = styled.div``;
 
 const TableRowActions = styled.div`
@@ -127,6 +208,7 @@ export default ({
   body,
   image,
   icon, 
+  selected,
   labelLeft,
   labelRight,
 
@@ -134,8 +216,11 @@ export default ({
   iconRight,
 
   editMode,
+  size,
 
   tappable,
+  swipeable,
+  header,
   underlayContent,
   rowContent,
   children
@@ -148,32 +233,48 @@ export default ({
 
   const mediaClassnames = classnames(
     'table-row__media',
-    { 'table-row__media--icon': icon || iconLeft || iconRight },
-    { 'table-row__media--left': icon || iconLeft },
+    { 'table-row__media--icon': icon },
+    { 'table-row__media--left': iconLeft },
     { 'table-row__media--right': iconRight }
   );
 
   return (
-    <TableRow className='px-table-row' tappable={tappable}>
-        {labelLeft && <span className="table-row__label table-row__label--left">{labelLeft}</span>}
-        {image || icon && <TableRowMedia>
-          {image && <div className="table-row__media table-row__media--image"><img src={image} alt={title}/></div>}
-          {icon && <div className={mediaClassnames}><Icon icon={icon}/></div>}
-        </TableRowMedia>}
-        {(iconLeft || iconLeft) && <div className={mediaClassnames}><Icon icon={icon}/></div>}
+    <TableRow className='px-table-row' 
+      size={size}
+      tappable={tappable} 
+      selected={selected} 
+      swipeable={swipeable} 
+      header={header}>
 
+        {labelLeft && <TableRowLabel labelLeft={true} className="table-row__label table-row__label--left">{labelLeft}</TableRowLabel>}
+        
+        {image && 
+            <TableRowMedia>
+              <img src={image} alt={title}/>
+            </TableRowMedia>
+        }
+
+        {icon && 
+          <TableRowMedia>
+            <Icon icon={icon}/>
+          </TableRowMedia>
+        }
+       
 
         {editMode && <div className="table-row__media table-row__media--icon table-row__media--right"><button className="btn btn--bare table-row__handle">hamburger</button></div>}
-        {labelRight && <span className="table-row__label table-row__label--right">{labelRight}</span>}
-
-        <TableRowContent className="table-row__content">
-          {title && <TableRowTitle className="table-row__title">{title}</TableRowTitle>}
-          {subtitle && <TableRowSubTitle className="table-row__subtitle">{subtitle}</TableRowSubTitle>}
-          {body && <span className="table-row__body">{body}</span>}
+       
+        {title && 
+        <TableRowContent >
+          {title && <TableRowTitle >{title}</TableRowTitle>}
+          {subtitle && <TableRowSubtitle>{subtitle}</TableRowSubtitle>}
+          {body && <TableRowBody>{body}</TableRowBody>}
           {rowContent}
-        </TableRowContent>
+        </TableRowContent>}
 
-      {children && <TableRowContent className="table-row__content">
+        {labelRight && <TableRowLabel labelRight={true} className="table-row__label table-row__label--right">{labelRight}</TableRowLabel>}
+
+      {children && 
+      <TableRowContent>
         {children}
       </TableRowContent>}
       

@@ -13,7 +13,7 @@ const sizeOptions = {
 const stories = storiesOf('Toggle', module);
 stories.addDecorator(withKnobs);
 
-stories.add('default', () => (
+stories.addWithJSX('default', () => (
 	<form>
 		<Toggle id='toggle2' 
     	name='used1' 

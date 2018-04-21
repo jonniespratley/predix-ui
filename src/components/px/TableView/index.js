@@ -76,6 +76,7 @@ class TableView extends React.Component {
         {items && items.map((item, index) => (
            <TableRow 
             tappable={this.props.tappable}
+            size={size}
             key={index}
             index={index}
             {...item}

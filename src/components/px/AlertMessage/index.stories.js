@@ -5,9 +5,10 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, text, array, object, boolean, number, select } from '@storybook/addon-knobs';
+import { withReadme } from 'storybook-readme';
 
 import AlertMessage from './';
-
+import README from './README.md';
 const typeOptions = {
   information: 'Info',
   error: 'Error',
@@ -31,9 +32,10 @@ const navItems = [
 ///
 storiesOf('Alert Message', module)
   .addDecorator(withKnobs)
+  .addDecorator(withReadme(README))
 	.add('default', () => (
 		<AlertMessage
-      onDismissClick={action('onDismissClick')}
+      onDismiss={action('onDismiss')}
       onActionClick={action('onActionClick')}
       type={select('type', Object.keys(typeOptions))}
       action={select('action', ['acknowledge', 'dismiss'])}

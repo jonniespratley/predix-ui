@@ -31,7 +31,7 @@ const fadeOut = keyframes`
 const AlertMessage = styled.div`
   visibility: hidden;
   display: none;
-  width: 26.66667rem;
+  width: var(--px-alert-message-width, auto);
   margin: 0.33333rem;
   padding: 0.66667rem;
   min-height: 4rem;
@@ -58,8 +58,8 @@ const AlertMessage = styled.div`
     animation: ${fadeIn} 0.4s cubic-bezier(0.78, 0.13, 0.16, 0.87);
   `}
 
-  
-  
+
+
 
   button{
     color: var(--px-alert-message-dismiss-icon-color, gray);
@@ -78,11 +78,23 @@ const AlertMessage = styled.div`
 
 const AlertMessageContainer = styled.div`
   display: flex;
-  
+
   align-items: center;
   flex: 2;
   margin-left: 0.66667rem;
   margin-right: 0.66667rem;
+`;
+
+const AlertMessageActions = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .dismiss {
+    width: 44px;
+    height: 44px;
+    min-width: auto;
+  }
 `;
 
 const AlertMessageSeverity = styled.div`
@@ -92,27 +104,27 @@ const AlertMessageSeverity = styled.div`
   margin-top: -0.6666rem;
   margin-bottom: -0.6666rem;
   padding-top: 1rem;
-  
+
   ${props => props.type === 'important' && css`
     background-color: var(--px-alert-message-color--important, red);
   `}
-  
+
   ${props => (props.type === 'information' || props.type === 'info') && css`
     background-color: var(--px-alert-message-color--information, blue);
   `}
-  
+
   ${props => props.type === 'warning' && css`
     background-color: var(--px-alert-message-color--warning, orange);
   `}
-  
+
   ${props => props.type === 'error' && css`
     background-color: var(--px-alert-message-color--error, yellow);
   `}
-  
+
   ${props => props.type === 'unknown' && css`
     background-color: var(--px-alert-message-color--unknown, gray);
   `}
-  
+
   ${props => props.type === 'healthy' && css`
     background-color: var(--px-alert-label-background-color--healthy,green);
   `}
@@ -142,7 +154,7 @@ export default ({
   actions,
   expanded,
   onActionClick,
-  onDismissClick,
+  onDismiss,
   type = 'information',
   autoDismiss = 5000,
   language = 'en',
@@ -160,10 +172,10 @@ export default ({
         <div>{children}</div>
       </Message>
       </AlertMessageContainer>
-      <div className='action flex flex--middle flex--center'>
+      <AlertMessageActions>
 
-        {action === 'dismiss' && 
-        <Button onClick={onDismissClick} theme='bare' className='dismiss'>
+        {action === 'dismiss' &&
+        <Button onClick={onDismiss} theme='bare' className='dismiss'>
           <svg viewBox="0 0 22 22" preserveAspectRatio="xMidYMid meet" focusable="false">
             <g>
               <path strokeMiterlimit="10" d="M3 19L19 3M3 3l16 16"></path>
@@ -172,12 +184,14 @@ export default ({
         </Button>}
 
         {actions && actions()}
-        
-        {action === 'acknowledge' && 
+
+        {action === 'acknowledge' &&
         <Button id="actionButton"
           onClick={onActionClick}
           theme='tertiary'>OK</Button>}
-      </div>
+
+      </AlertMessageActions>
+
 
   </AlertMessage>
   );
