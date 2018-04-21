@@ -1,12 +1,12 @@
 # predix-ui
 Unoffical React components that implement Predix's Design System CSS.
 
-[![Build Status](https://travis-ci.org/jonniespratley/predix-ui.svg?branch=master)](https://travis-ci.org/jonniespratley/predix-ui)[![codecov](https://codecov.io/gh/jonniespratley/predix-ui/branch/develop/graph/badge.svg)](https://codecov.io/gh/jonniespratley/predix-ui)[![Dependency Status](https://img.shields.io/david/jonniespratley/predix-ui.svg)](https://david-dm.org/jonniespratley/predix-ui)[![devDependencies Status](https://david-dm.org/jonniespratley/predix-ui/dev-status.svg)](https://david-dm.org/jonniespratley/predix-ui?type=dev)[![peerDependencies Status](https://david-dm.org/jonniespratley/predix-ui/peer-status.svg)](https://david-dm.org/jonniespratley/predix-ui?type=peer)[![npm](https://img.shields.io/npm/dw/predix-ui.svg)]()[![npm](https://img.shields.io/npm/v/predix-ui.svg)]()
+[![Build Status](https://travis-ci.org/jonniespratley/predix-ui/develop.svg)](https://travis-ci.org/jonniespratley/predix-ui) [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components) [![Dependency Status](https://img.shields.io/david/jonniespratley/predix-ui.svg)](https://david-dm.org/jonniespratley/predix-ui)
+[![npm downloads](https://img.shields.io/npm/dm/predix-ui.svg)]() [![npm version](https://img.shields.io/npm/v/predix-ui.svg)]() [![Module Formats](https://img.shields.io/badge/module%20formats-umd%2C%20cjs%2C%20esm-green.svg)]()
 
 > For more information on Predix UI visit [https://www.predix-ui.com/#/home](https://www.predix-ui.com/#/home)
 
-Why? Well the current `px` component library is built with Polymer and Web Components. So this port will attempt to bring those components to a React compatible library.
-
+Why? Well the `predix-ui` library is built with Polymer. This project attempts to bring those components to React.
 
 
 
@@ -37,15 +37,10 @@ The component styles are all in separate `.css` files or you can use the entire 
 
 ```code
 <link rel='stylesheet prefetch' href='https://unpkg.com/predix-ui/dist/predix-ui.min.css'/>
-<link rel='stylesheet prefetch' href='https://unpkg.com/predix-ui/dist/css/components/px/Theme/px-dark-theme.min.css'/>
+<link rel='stylesheet prefetch' href='https://unpkg.com/predix-ui/dist/px-dark-theme.min.css'/>
 ```
 
-To use the `styled-components` theme that gets injected via the `injectGlobal` method just include one of the themes, for example:
 
-```js
-import 'px/Theme/DarkTheme';
-import 'px/Theme/LightTheme';
-```
 
 ## Starter Project
 You can get started quickly with this starter project.

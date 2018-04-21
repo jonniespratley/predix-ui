@@ -110,14 +110,21 @@ gulp.task('sass:copy:modules', 'Copy all .sass/.scss files', function() {
 });
 
 ///
-gulp.task('sass', 'Compile all .sass/.scss files', function() {
-  return gulp.src(config.styles.src)
+gulp.task('sass', 'Compile all .sass/.scss files', () => (
+  gulp.src(config.styles.src)
     .pipe($.sass(sassOptions).on('error', $.sass.logError))
     .pipe($.size())
-    //.pipe($.rename(pkg.name + '.css'))
-    //.pipe($.filelog('sass'))
-    .pipe(gulp.dest(config.styles.dest));
-});
+    .pipe(gulp.dest(config.styles.dest))
+) );
+
+gulp.task('sass:themes', 'Compile all theme files', () => (
+  gulp.src([
+    'src/components/px/Theme/*.scss'
+  ])
+  .pipe($.sass(sassOptions).on('error', $.sass.logError))
+  .pipe($.size())
+  .pipe(gulp.dest('./dist'))
+) );
 
 gulp.task('sass:theme', 'Compile all theme scss files', function() {
   return gulp.src(config.styles.src)
@@ -162,13 +169,12 @@ gulp.task('cssmin', 'Take all css and min with source maps', ['sass'],function()
     `!${config.dest}/**/*.min.css`
   ])
     .pipe($.sourcemaps.init())
+
     .pipe($.cssmin())
     .pipe($.sourcemaps.write('.'))
     .pipe($.rename({
       suffix: '.min'
     }))
-  //  .pipe($.filelog('cssmin'))
-
     .pipe(gulp.dest('./dist'))
     .pipe($.size())
     ;
@@ -292,6 +298,7 @@ gulp.task('watch', ['sass:watch', 'autoprefixer:watch']);
 gulp.task('styles', gulpSequence(
   'bower',
   'sass',
+  'sass:themes',
   'autoprefixer',
   'cssmin'
 ));

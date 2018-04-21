@@ -21,6 +21,7 @@ storiesOf('Notification', module)
 				<Notification 
 				type={select('type', types, 'important')}
 				statusIcon={text('statusIcon', 'px-utl:delete')}
+        onClick={action('onClick')}
 				opened={boolean('opened', true)}>
 				{text('content', 'Widget has been removed from your dashboard.')}
 			</Notification>
@@ -31,6 +32,7 @@ storiesOf('Notification', module)
 				statusIcon={text('statusIcon', 'px-utl:filter')}
 				actionIcon={text('actionIcon', 'px-nav:close')}
 				opened={boolean('opened', true)}
+        onClick={action('onClick')}
 				small={boolean('small', true)}
 				>
 				{text('content', '36 Filters')}

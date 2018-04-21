@@ -1,5 +1,5 @@
 import React from 'react';
-
+//import PropTypes from 'prop-types';
 import Overlay from '../Overlay';
 import Button from '../Button';
 import classnames from 'classnames';
@@ -68,7 +68,18 @@ const ModalTitle = styled.h3`
 ModalTitle.displayName = 'ModalTitle';
 
 const ModalBody = styled.div`
-  padding: 1rem;
+  
+`;
+const ModalActions = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 1rem;
+  border-top: 1px solid var(--px-modal-border-color, transparent);
+  button:nth-last-of-type(2) {
+    margin-right: 1rem;
+  }
+
 `;
 
 
@@ -111,9 +122,9 @@ export default ({
             <ModalBody>
               {children}
             </ModalBody>
-            <div className="modal__buttons flex flex--right">
-              <Flex right>
-              {actions && actions}
+            <ModalActions>
+              {actions && actions()}
+              
               {rejectText && 
                 <Button id="btnModalNegative"
                     onClick={onBtnModalNegativeClick}>
@@ -129,8 +140,8 @@ export default ({
                     {acceptText}
                   </Button>
                   }
-              </Flex>
-            </div>
+              
+            </ModalActions>
           </div>
         }
         

@@ -1,6 +1,6 @@
 {
   "name": "predix-ui",
-  "description": "px-* web components in React.js components",
+  "description": "px-* web components as React styled components",
   "author": "Jonnie Spratley",
   "user": "jonniespratley",
   "version": "0.0.18",
@@ -52,9 +52,8 @@
     "npm": "^5.0.0"
   },
   "keywords": [
-    "react",
     "reactjs",
-    "boilerplate"
+    "predix-ui"
   ],
   "pre-push": [
     "test"
@@ -170,7 +169,9 @@
     "webpack-dev-server": "^2.11.1",
     "webpack-jarvis": "^0.2.2",
     "webpack-merge": "^4.1.0",
-    "webpack-stream": "^4.0.0"
+    "webpack-stream": "^4.0.0",
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "symbol-tree": "^3.2.2"
   },
   "peerDependencies": {
     "file-loader": "^1.1.6",
@@ -205,9 +206,5 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
     }
-  },
-  "dependencies": {
-    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
-    "symbol-tree": "^3.2.2"
   }
 }
