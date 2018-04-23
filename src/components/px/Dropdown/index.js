@@ -28,7 +28,7 @@ const DropdownLabel = styled.div`
   text-overflow: ellipsis;
   text-align: left;
   ~ i{
-    margin-left: .5rem; 
+    margin-left: .5rem;
   }
 `;
 DropdownLabel.displayName = 'DropdownLabel';
@@ -51,11 +51,11 @@ const DropdownContent = styled.div`
   ${props => props.opened && css`
     display: block;
   `}
-  
+
   ${props => props.width && css`
     width: width;
   `}
-  
+
 `;
 DropdownContent.displayName = 'DropdownContent';
 DropdownContent.defaultProps = {
@@ -85,7 +85,7 @@ const DropdownOption = styled.div`
       cursor: not-allowed;
       pointer-events: none;
     `}
-    
+
     ${props => props.selected && css`
       background-color: var(--px-dropdown-bg-color--selected,#00f);
       color: var(--px-dropdown-text-color--selected,#fff);
@@ -101,14 +101,12 @@ DropdownOption.defaultProps = {
 };
 
 
-const DropdownTrigger = Button.extend`
+const DropdownTrigger = styled.div`
   max-width: inherit;
   width: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: .66667rem;
-  padding-right: .66667rem;
   outline: 0;
   font-weight: var(--px-dropdown-font-weight,normal);
   height: auto;
@@ -155,12 +153,12 @@ class Dropdown extends BaseComponent {
     this.setState({
       selectedItem: item
     });
-    
+
     if(!this.props.multi){
       this._clearSelected();
       this._handleClick();
     } else {
-  
+
     }
     let items = this.state.items[index].selected = !this.state.items[index].selected;
     if (this.props.onChange) {
@@ -198,16 +196,17 @@ class Dropdown extends BaseComponent {
       multi,
 			children
     } = this.props;
-    
+
     const triggerStyle = {
-      height: triggerHeight 
+      height: triggerHeight
     };
+
     const {
-      opened, 
-      items, 
-      selectedItem, 
-      selectedItems, 
-      selectedValues, 
+      opened,
+      items,
+      selectedItem,
+      selectedItems,
+      selectedValues,
       selected,
       dropdownContentWidth
     } = this.state;
@@ -216,16 +215,20 @@ class Dropdown extends BaseComponent {
 		return (
 			<div className={baseClasses}>
         <Button theme={buttonStyle} disabled={disabled} style={triggerStyle} onClick={this._handleClick.bind(this)}>
-          {selectedItem && <DropdownLabel>{selectedItem[keys.val]}</DropdownLabel>}
-          {!selectedItem && <DropdownLabel>{displayValue}</DropdownLabel>}
-          
-          {(!hideChevron && !opened || !selectedItem) && <Icon icon={icon} size={16} />}
-          {(!disableClear && selectedItem && opened) && <Icon icon='px-utl:close' size={16} onClick={this.handleClear.bind(this)}/>}
+          {children && children}
+          {!children &&
+          <DropdownTrigger>
+            {selectedItem && <DropdownLabel>{selectedItem[keys.val]}</DropdownLabel>}
+            {!selectedItem && <DropdownLabel>{displayValue}</DropdownLabel>}
+
+            {(!hideChevron && !opened || !selectedItem) && <Icon icon={icon} size={16} />}
+            {(!disableClear && selectedItem && opened) && <Icon icon='px-utl:close' size={16} onClick={this.handleClear.bind(this)}/>}
+          </DropdownTrigger>}
         </Button>
         <DropdownContent opened={opened} width={dropdownContentWidth}>
           {items && items.map((item, index) => (
             <div key={index}>
-              <DropdownOption 
+              <DropdownOption
                 disabled={item.disabled}
                 selected={item.selected}
                 onClick={this._handleChange.bind(this, item, index)}>
@@ -233,7 +236,7 @@ class Dropdown extends BaseComponent {
               </DropdownOption>
             </div>)
           )}
-        </DropdownContent>      
+        </DropdownContent>
 			</div>
 		);
 	}

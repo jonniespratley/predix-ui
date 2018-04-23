@@ -180,6 +180,8 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>__tests__/setup.js",
+    "verbose": true,
+    "testEnvironment": "jsdom",
     "collectCoverage": true,
     "snapshotSerializers": [
       "enzyme-to-json/serializer"

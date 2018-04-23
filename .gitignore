@@ -19,4 +19,4 @@ esdocs
 *.log
 docs
 package-lock.json
-__snapshots__
+#__snapshots__

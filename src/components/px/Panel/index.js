@@ -1,6 +1,5 @@
 import React from 'react';
 import classnames from 'classnames';
-
 import styled, {css} from 'styled-components';
 
 const Panel = styled.div`
@@ -12,27 +11,27 @@ const Panel = styled.div`
   background: var(--px-panel-background-color, white);
   border: var(--px-panel-border, none);
   transition: var(--px-panel-transition, none);
-  
+
   ${props => props.background === 'light' && css`
     background: var(--px-panel-bg-color--light, #fff);
   `}
+
   ${props => props.background === 'medium' && css`
     background: var(--px-panel-bg-color--medium, #eee);
   `}
+
   ${props => props.background === 'dark' && css`
     background: var(--px-panel-bg-color--dark, #ddd);
   `}
 
- 
-
   ${props => props.light && css`
     position: fixed;
   `}
- 
+
   ${props => props.fixed && css`
     position: fixed;
   `}
- 
+
   ${props => props.minimizable && css`
     width: var(--px-panel-size--minimized,4rem);
   `}
@@ -41,13 +40,13 @@ const Panel = styled.div`
     position: relative;
     flex: 0 1 320px;
   `}
-  
+
   ${props => ( props.position === 'left' || props.position === 'right' ) && css`
     height: auto;
     width: 0;
     top: 0;
     bottom: 0;
-    transition: width 0.4s cubic-bezier(.78,.13,.16,.87);
+    transition: var(--px-panel-transition, width 0.4s cubic-bezier(.78,.13,.16,.87));
     white-space: nowrap;
 
     ${props => props.opened && css`
@@ -59,31 +58,29 @@ const Panel = styled.div`
       `}
     `}
   `}
-  
+
    ${props => props.position === 'left'  && css`
     left: 0;
     border-right: 1px solid var(--px-panel-border-color,gray);
-    
+
     ${props => props.floating && css`
       border-right: none;
       left: var(--px-panel-offset--left, 2rem);
       top: var(--px-panel-offset--top, 2rem);
       bottom: var(--px-panel-offset--bottom, 2rem);
-    `} 
+    `}
   `}
-  
 
   ${props => props.position === 'right'  && css`
     right: 0;
     border-left: 1px solid var(--px-panel-border-color,gray);
-    
+
     ${props => props.floating && css`
       border-left: none;
       right: var(--px-panel-offset--right, 2rem);
       top: var(--px-panel-offset--top, 2rem);
       bottom: var(--px-panel-offset--bottom, 2rem);
-    `} 
-
+    `}
   `}
 
   ${props => ( props.position === 'top' || props.position === 'bottom' ) && css`
@@ -91,40 +88,35 @@ const Panel = styled.div`
     height: 0;
     right: 0;
     left: 0;
-    transition: height 0.4s cubic-bezier(.78,.13,.16,.87);
-    
+    transition: var(--px-panel-transition, height 0.4s cubic-bezier(.78,.13,.16,.87));
+
     ${props => props.opened && css`
       height: var(--px-panel-size, 320px);
       overflow-y: auto;
     `}
   `}
 
-  
   ${props => props.position === 'top'  && css`
     top: 0;
     border-bottom: 1px solid var(--px-panel-border-color, gray);
-    
+
     ${props => props.fullSize && css`
       right: var(--px-panel-offset--right, 2rem);
       left: var(--px-panel-offset--left, 2rem);
       top: var(--px-panel-offset--bottom, 2rem);
-    `} 
+    `}
   `}
-  
+
   ${props => props.position === 'bottom'  && css`
     bottom: 0;
     border-top: 1px solid var(--px-panel-border-color, gray);
-    
+
     ${props => props.fullSize && css`
       right: var(--px-panel-offset--right, 2rem);
       left: var(--px-panel-offset--left, 2rem);
       bottom: var(--px-panel-offset--bottom, 2rem);
-    `} 
+    `}
   `}
-
- 
-  
-    
 `;
 
 Panel.displayName = 'Panel';
@@ -160,15 +152,15 @@ export default ({
   children
 }) => {
   return (
-    <Panel 
+    <Panel
       background={background}
       style={style}
       className={className}
-      position={position} 
-      minimizable={minimizable} 
-      fullSize={fullSize} 
-      floating={floating} 
-      opened={opened} 
+      position={position}
+      minimizable={minimizable}
+      fullSize={fullSize}
+      floating={floating}
+      opened={opened}
       fixed={fixed}>
       <PanelContent>{children}</PanelContent>
     </Panel>
