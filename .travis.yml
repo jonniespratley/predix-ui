@@ -6,7 +6,7 @@ before_script:
 #- bower install --force-latest
 script:
 - yarn test:lint
-- yarn test:coverage
+- yarn test:coverage --ci
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 - yarn gh-pages

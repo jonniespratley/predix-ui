@@ -1,6 +1,6 @@
-import { expect } from 'chai';
+import { shallow } from 'enzyme';
 import React from 'react';
-import {shallow} from 'enzyme';
+import renderer from 'react-test-renderer';
 import Panel from './';
 
 describe('Panel', () => {
@@ -10,11 +10,17 @@ describe('Panel', () => {
         Panel content goes here.
       </Panel>
     );
-    console.log(wrapper.debug());
-    expect(wrapper.props().position).to.equal('left');
+    expect(wrapper.props().position).toEqual('left');
   });
-  //expect(wrapper.find('.label')).to.have.length(1);
-  //expect(wrapper.find('.delta')).to.have.length(1);
-  //expect(wrapper.find('.alpha')).to.have.length(1);
-  //expect(wrapper.contains(<div className='label'/>)).to.equal(true);
+
+  test('renders block when visible', () => {
+    const tree = renderer.create(<Panel position='left' visible />).toJSON();
+    expect(tree).toMatchSnapshot();
+    expect(tree).toHaveStyleRule('display', 'block');
+  });
+  test('fixed renders correctly', () => {
+    const tree = renderer.create(<Panel position='right' fixed visible />).toJSON();
+    expect(tree).toMatchSnapshot();
+    expect(tree).toHaveStyleRule('position', 'fixed');
+  });
 });

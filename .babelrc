@@ -12,6 +12,7 @@
     }]
   ],
   "plugins": [
+    ["babel-plugin-styled-components"],
     ["transform-decorators"],
     ["transform-react-remove-prop-types",{"mode": "wrap"}]
   ],

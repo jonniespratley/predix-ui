@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlertLabel matches snapshot 1`] = `
+.c0 {
+  display: inline-block;
+  position: relative;
+  padding: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  background-color: var(--px-alert-label-background-color--unknown,gray);
+  color: var(--px-alert-label-text-color--unknown,white);
+  border: 1px solid var(--px-alert-label-border-color,transparent);
+  background-color: var(--px-alert-label-background-color--information,blue);
+  color: var(--px-alert-label-text-color--information,white);
+}
+
+<div
+  className="c0"
+  type="info"
+>
+  <span
+    className="alertlabel info"
+  >
+    <div
+      className="label"
+    >
+      <span
+        className="label__text"
+      />
+    </div>
+  </span>
+</div>
+`;

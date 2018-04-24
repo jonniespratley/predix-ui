@@ -1,83 +1,52 @@
-import React from 'react';
 import './styles';
-
+import React from 'react';
 import AppHeader from './AppHeader';
-
 import AppNav from './AppNav';
 import AppNavItem from './AppNav/px-app-nav-item';
 import AppNavSubGroup from './AppNav/px-app-nav-sub-group';
-
 import Accordion from './Accordion';
-
 import AlertMessage from './AlertMessage';
 import AlertLabel from './AlertLabel';
-
-//import ActionSheet from './ActionSheet';
 import BrandingBar from './BrandingBar';
 import Breadcrumbs from './Breadcrumbs';
 import Button from './Button';
 import Card from './Card';
 import Chip from './Chip';
 import Drawer from './Drawer';
-//import DataTable from './DataTable';
-//import DrawerLayout from './Layout/px-drawer-layout';
 import Dropdown from './Dropdown';
 import Grid from './Grid';
-
 import Input from './Input';
 import Label from './Input/Label';
 import FormField from './Input/FormField';
 import Textarea from './Input/Textarea';
 import Select from './Input/Select';
-
 import IconSet from './IconSet';
 import Icon from './IconSet/Icon';
-
 import Toggle from './Toggle';
-
 import KeyValuePair from './KeyValuePair';
 import Layout from './Layout';
 import Modal from './Modal';
-//import NavDrawer from './Drawer/px-nav-drawer';
 import Navbar from './Navbar';
 import Overlay from './Overlay';
-
 import Panel from './Panel';
-
 import Popover from './Popover';
 import PopoverHeader from './Popover/PopoverHeader';
 import PopoverBody from './Popover/PopoverBody';
 import PopoverArrow from './Popover/PopoverArrow';
-
 import PredixSvgLogo from './BrandingBar/px-predix-svg-logo';
-
 import ProgressBar from './ProgressBar';
 import Spinner from './Spinner';
-
 import TableView from './TableView';
 import TableRow from './TableView/TableRow';
-
 import Tabs from './Tabs';
 import Tab from './Tabs/Tab';
-
 import Tree from './Tree';
 import TreeNode from './Tree/TreeNode';
-
 import Tile from './Tile';
 import ViewHeader from './ViewHeader';
-
 import Notification from './Notification';
-
 import Flex from '../../styles/flex';
 
-// TODO: DataViz
-//import Gauge from './Gauge';
-
-//import Theme from './Theme';
-
-const LayoutItem = ({style, children}) => {
-  return (<div style={style} className='layout__item'>{children}</div>);
-};
 /**
  * @access public
  * @example
@@ -86,13 +55,11 @@ const LayoutItem = ({style, children}) => {
  */
 const px = {
   //Theme,
-	  Input,
+	Input,
 	Select,
 	Textarea,
 	FormField,
 	Label,
-	//Gauge,
-	//ExampleComponent,
 	AppNav,
 	AppNavItem,
 	AppNavSubGroup,
@@ -100,16 +67,13 @@ const px = {
 	Accordion,
 	AlertLabel,
 	AlertMessage,
-	//ActionSheet,
 	Button,
 	BrandingBar,
 	Breadcrumbs,
 	Card,
 	Chip,
-	//DataTable,
 	Dropdown,
 	Drawer,
-	//NavDrawer,
 	Grid,
   Icon,
   IconSet,
@@ -119,9 +83,7 @@ const px = {
 	Navbar,
 	Notification,
 	Overlay,
-	//DrawerLayout,
 	Layout,
-	LayoutItem,
 	PredixSvgLogo,
 	ProgressBar,
 	Panel,

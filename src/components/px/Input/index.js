@@ -1,9 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-
-import { textInputs } from 'polished';
-
 const sizes = {
   tiny: '7.06667rem',
   small: '14.13333rem',
@@ -30,12 +27,12 @@ const Input = BaseInput.extend`
   background-color: var(--px-input-background-color, transparent);
   transition: background .4s, border-color .4s, color .4s;
 
-    
+
   &:focus::placeholder,
   &:disabled::placeholder{
     color: var(--px-input-text-color--placeholder--focused, rgba(0, 0, 0, 0.3));
   }
-  
+
   &::placeholder{
     color: var(--px-input-text-color--placeholder, rgba(0, 0, 0, 0.3));
   }
@@ -43,11 +40,11 @@ const Input = BaseInput.extend`
   &:disabled::placeholder{
     color: var(--px-input-text-color--disabled, rgba(0, 0, 0, 0.2));
   }
-  
+
   &::-ms-clear {
     display: none;
   }
-  
+
   &:readonly,
   &:disabled {
     border-color: var(--px-input-border-color--disabled, rgba(0, 0, 0, 0.2));
@@ -55,17 +52,17 @@ const Input = BaseInput.extend`
     cursor: not-allowed;
     background-color: var(--px-input-background-color--disabled, transparent);
   }
-  
+
   &:hover{
     background-color: var(--px-input-background-color--hover, #d8e0e5);
   }
-  
+
   &:focus{
     border-color: var(--px-input-border-color--outer--focused, #007acc);
     background-color: var(--px-input-background-color--focused, #eefbff);
     color: var(--px-input-text-color--focused, inherit);
   }
-  
+
   &::placeholder {
     padding-top: 1px;
   }
@@ -77,7 +74,7 @@ const Input = BaseInput.extend`
   &[type=radio] + label {
     padding-left: 3px;
   }
-  
+
   &[type=checkbox],
   &[type=radio]{
     margin: 0;
@@ -116,7 +113,7 @@ const Input = BaseInput.extend`
    ${props => props.size && css`
      max-width: ${sizes[props.size]};
   `}
-  
+
 `;
 Input.displayName = 'Input';
 

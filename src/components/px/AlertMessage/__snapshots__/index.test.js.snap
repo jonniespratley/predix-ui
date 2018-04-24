@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlertMessage matches snapshot 1`] = `
+.c5 {
+  font-family: "GE Inspira Sans";
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+  overflow: visible;
+  height: var(--px-btn-height,auto);
+  min-height: var(--px-btn-min-height,2rem);
+  min-width: var(--px-btn-min-width,4.66667em);
+  margin: 0;
+  border: 1px solid var(--px-btn-border-color,transparent);
+  border-radius: 0 !important;
+  padding: calc(var(--px-btn-height,2em) / 10) calc(var(--px-btn-height,2em) / 2);
+  box-shadow: var(--px-btn-shadow--light,none);
+  font: inherit;
+  line-height: calc(var(--px-btn-height,2em) - 2px);
+  cursor: pointer;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  background-color: var(--px-btn-background,#d8e0e5);
+  -webkit-transition: background .4s,border-color .4s,color .4s;
+  transition: background .4s,border-color .4s,color .4s;
+  -webkit-appearance: button;
+  -webkit-font-smoothing: antialiased;
+  color: var(--px-btn-color,#2c404c);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 0 !important;
+  border-radius: 0 !important;
+  line-height: inherit;
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: none;
+  background: none;
+  outline: none;
+}
+
+.c5:link,
+.c5:visited,
+.c5:hover,
+.c5:active {
+  color: var(--px-btn-color,#2c404c);
+}
+
+.c5:hover,
+.c5:focus {
+  border-color: var(--px-btn-border-color--hover,transparent);
+  box-shadow: var(--px-btn-shadow,none);
+  background-color: var(--px-btn-background--hover,#a3b5bf);
+}
+
+.c5:active {
+  outline: none;
+  border-color: var(--px-btn-border-color--pressed,transparent);
+  box-shadow: none;
+  background-color: var(--px-btn-background--pressed,#889aa5);
+}
+
+.c5:link,
+.c5:visited {
+  box-shadow: none;
+  background: none;
+  outline: none;
+  color: var(--px-btn-bare-color,#2c404c);
+}
+
+.c5:hover,
+.c5:focus {
+  color: var(--px-btn-bare-color--hover,#007acc);
+  background-color: transparent;
+}
+
+.c5:active {
+  color: var(--px-btn-bare-color--pressed,#003d66);
+  background-color: transparent;
+}
+
+.c0 {
+  visibility: hidden;
+  display: none;
+  width: var(--px-alert-message-width,auto);
+  margin: 0.33333rem;
+  padding: 0.66667rem;
+  min-height: 4rem;
+  word-wrap: break-word;
+  word-break: break-word;
+  background-color: var(--px-alert-message-background-color,white);
+  position: relative;
+  min-height: 0px;
+  opacity: 0;
+  max-height: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  box-shadow: 0px 4px 8px var(--px-shadow-notification,rgba(0,0,0,0.2));
+  -webkit-animation: LkNfV 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  animation: LkNfV 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  visibility: visible;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+  max-height: none;
+  padding-top: 0.66667rem;
+  padding-bottom: 0.66667rem;
+  -webkit-animation: ayxbO 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  animation: ayxbO 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+}
+
+.c0 button {
+  color: var(--px-alert-message-dismiss-icon-color,gray);
+  outline: none;
+  max-width: 50px;
+}
+
+.c0 button svg {
+  height: 1.33333rem;
+  width: 1.33333rem;
+  fill: var(--px-alert-message-dismiss-icon-color,gray);
+  stroke: var(--px-alert-message-dismiss-icon-color,gray);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  margin-left: 0.66667rem;
+  margin-right: 0.66667rem;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.c4 .dismiss {
+  width: 44px;
+  height: 44px;
+  min-width: auto;
+}
+
+.c1 {
+  min-height: 4rem;
+  width: 4rem;
+  margin-left: -0.6666rem;
+  margin-top: -0.6666rem;
+  margin-bottom: -0.6666rem;
+  padding-top: 1rem;
+  background-color: var(--px-alert-message-color--important,red);
+}
+
+.c3 {
+  color: var(--px-alert-message-text-color,black);
+  line-height: 1.06667rem;
+  font-size: 0.8rem;
+  padding: 0;
+  margin: 0;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    type="important"
+  />
+  <div
+    className="c2"
+  >
+    <div
+      className="c3"
+    >
+      <strong>
+         
+      </strong>
+      <span />
+      <div />
+    </div>
+  </div>
+  <div
+    className="c4"
+  >
+    <button
+      className="dismiss c5"
+      icon={null}
+      onClick={undefined}
+      size={null}
+      type={null}
+    >
+      <svg
+        focusable="false"
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 22 22"
+      >
+        <g>
+          <path
+            d="M3 19L19 3M3 3l16 16"
+            strokeMiterlimit="10"
+          />
+        </g>
+      </svg>
+    </button>
+  </div>
+</div>
+`;

@@ -2,7 +2,7 @@ import React from 'react';
 //import stylesheet from './px-navbar.scss';
 import Icon from '../IconSet/Icon';
 import styled, {css} from 'styled-components';
-import {rem} from 'polished';
+
 
 const Navbar = styled.div`
 	position: absolute;
@@ -41,11 +41,11 @@ const Navbar = styled.div`
 		align-content: center;
 		justify-content: center;
 		box-sizing: border-box;
-		
+
 		min-width: 2.93333rem;
   	height: 2.93333rem;
 
-	
+
 		border: 0 !important;
     border-radius: 0 !important;
     line-height: inherit;
@@ -54,7 +54,7 @@ const Navbar = styled.div`
     box-shadow: none;
     background: none;
     outline: none;
-		
+
 		cursor: pointer;
 
 		&:disabled{
@@ -87,9 +87,9 @@ const Navbar = styled.div`
 		}
 		&:active {
 			color: var(--px-btn-bare-color--pressed, #003d66);
-			
+
 		}
-	
+
 	}
 `;
 
@@ -105,16 +105,11 @@ const NavbarInner = styled.div`
 `;
 
 const NavbarCenter = styled.div`
- 	/*
-	position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-	*/
+
   order: 2;
   flex: 1 0 auto;
   align-self: center;
-	
+
 	margin-left: 1rem;
 `;
 
@@ -163,13 +158,13 @@ export default({
 
   onBackButtonClick,
   onMenuButtonClick,
-	
+
 	iconNameLeft,
 	iconNameRight,
-	
+
 	iconElementLeft,
 	iconElementRight,
-	
+
 	onLeftIconButtonClick,
 	onRightIconButtonClick,
 	children
@@ -177,19 +172,19 @@ export default({
 		<Navbar>
 			<NavbarInner>
 				<NavbarLeft>
-					
+
 					{showMenuButton &&
 						<button className="navbar__button flex flex--center toggle__menu" onClick={onMenuButtonClick}>
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24h-24z" fill="none"/><path d="M3 18h18v-2h-18v2zm0-5h18v-2h-18v2zm0-7v2h18v-2h-18z"/></svg>
             </button>}
-					
-					{showBackButton && 
+
+					{showBackButton &&
 						<button className="navbar__button" onClick={onBackButtonClick}>
 						{backButtonLabel}
 						</button>
 						}
-					
-					{iconNameLeft && 
+
+					{iconNameLeft &&
 					<button onClick={onLeftIconButtonClick}>
 						<Icon icon={iconNameLeft} size={22}/>
 					</button>}
@@ -201,7 +196,7 @@ export default({
 					<NavbarSubTitle>{subtitle}</NavbarSubTitle>
 				</NavbarCenter>
 				<NavbarRight>
-					{iconNameRight && 
+					{iconNameRight &&
 					<button onClick={onRightIconButtonClick}>
 						<Icon icon={iconNameRight} size={22}/>
 					</button>}
