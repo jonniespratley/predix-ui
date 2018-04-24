@@ -17,7 +17,9 @@ deploy:
     secure: vMsGZaTQYW7PzEUqP+o3tk/Vtlfhu4LMrUuaIupDxfU3q3nAjWQOuBxuKG7oa12N31gqD7IZeiUV/WheIbSxI1RAmyE9qYBD4yP46XyXt8qngsYom0jAI5hXUL9niXldg1EZBwtNkmc0z7x87mqJwc1xWiscxqRTPzpTryw/qsJ2PdVs9Kz+QrYNB+oLPp32SvZPAN8I5mbkWdeZJTh5KUmDmyN0dYzRUy/NvFCF5EDz76iGmakyPr2B3Lg+QBFSq1/stwClfRZqBz5Dy7/V53v/RDM6vR9R802WZ/bksyZ6aVlUxar/6RBxUNrEcpG5neX6A6RDkJg0jwadL4ASxmdPJnNUCSl/hmRLR0Lz20ApDv2BjGHtCFaxgsEo44RdWPzqqLpsXZ4jR/QjK5vz+e90IAop+OHP62NgcLnUJEcu2p6wBIKHjMKXeAlEiYQFkMf5Nv6sRVRHxS8f24RNzGQK7R9l5KbNjcEt1JepOIb0dy2aM3cJ6ZcRGKGJ7gNAf4KAmp6IGnyFMAqZ6qESiySXUiasV3r2ckMzE1BCE+ph23HbqezkMXViyaP+EyfBAj1QszVSXfQkJCRoLAs3FdYJoMSaYxjybmYBGjKqA4gAzS5o7VdJwBOWwqDvz3oLneHpn0ELeFb3So69127mVJ538ull1VninM8/LgFm/G0=
   on:
     tags: true
-    repo: jonniespratley/predix-ui
+    skip_cleanup: true
+    all_branches: true
+    tag: next
 deploy:
   provider: pages
   skip_cleanup: true
