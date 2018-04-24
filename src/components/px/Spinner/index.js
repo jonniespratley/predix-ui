@@ -33,12 +33,12 @@ const SpinnerCircle2 = styled.circle`
 	animation: ${SpinnerRotateAnimation} 1.5s infinite cubic-bezier(0.78, 0.13, 0.16, 0.87);
 `;
 
-export default ({ size=100, finished = false}) => (
-	<div>
-		{!finished && 
-		<svg viewBox='0 0 100 100' height={size} width={size}>
-			<SpinnerCircle1 cx="50" cy="50" r="45"/>
-			<SpinnerCircle2 cx="50" cy="50" r="45" transform="rotate(-45,50,50)"/>
-		</svg>}
-	</div>
+export default ({ size = 100, finished = false }) => (
+  <div>
+    {!finished &&
+    <svg viewBox="0 0 100 100" height={size} width={size}>
+      <SpinnerCircle1 cx="50" cy="50" r="45" />
+      <SpinnerCircle2 cx="50" cy="50" r="45" transform="rotate(-45,50,50)" />
+    </svg>}
+  </div>
 );

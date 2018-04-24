@@ -1,9 +1,7 @@
 import React from 'react';
-import styled, {
-  css
-} from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const Textarea = styled.textarea `
+const Textarea = styled.textarea`
   width: 100%;
   color: var(--px-input-text-color, #2c404c);
   overflow: auto;

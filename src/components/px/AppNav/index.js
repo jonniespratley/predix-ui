@@ -4,12 +4,12 @@ import NavItem from './px-app-nav-item';
 import BaseComponent from '../BaseComponent';
 import Icon from '../IconSet/Icon';
 
-//import AppNavSubGroup from './px-app-nav-sub-group';
+// import AppNavSubGroup from './px-app-nav-sub-group';
 
-//import stylesheet from './styles/index.scss';
+// import stylesheet from './styles/index.scss';
 
 
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const AppNav = styled.div`
   height: var(--px-app-nav-height, 4rem);
@@ -59,11 +59,11 @@ const AppNavSubGroup = styled.div`
  * AppNav component
  */
 class AppNavComponent extends BaseComponent {
-  constructor(props){
-    super(props, {displayName: 'AppNav'});
+  constructor(props) {
+    super(props, { displayName: 'AppNav' });
     this.state = {
       selected: props.selected || 0,
-      onlyShowIcon: props.onlyShowIcon ||  props.vertical,
+      onlyShowIcon: props.onlyShowIcon || props.vertical,
       selectedIndex: props.selectedIndex || null,
       selectedItem: props.selectedItem || null,
       vertical: props.vertical || false,
@@ -78,45 +78,45 @@ class AppNavComponent extends BaseComponent {
     this._handleMouseExit = this._handleMouseExit.bind(this);
   }
 
-  componentDidMount(){
-    if(this.base && this.vertical){
+  componentDidMount() {
+    if (this.base && this.vertical) {
       this.base.addEventListener('mouseleave', this._handleMouseExit);
       this.base.addEventListener('mouseenter', this._handleMouseEnter);
     }
-    if(this.props.onChange){
+    if (this.props.onChange) {
       this.props.onChange(this.state);
     }
-    //this.handleClick(this.props.selected, this._getItemFromValue(this.props.selected));
+    // this.handleClick(this.props.selected, this._getItemFromValue(this.props.selected));
   }
 
-  componentWillReceiveProps(nextProps){
-    if(this.state.selected !== nextProps.selected){
+  componentWillReceiveProps(nextProps) {
+    if (this.state.selected !== nextProps.selected) {
       this.setState(nextProps);
     }
   }
 
-  componentWillMount(props){
-    if (this.props.items){
+  componentWillMount(props) {
+    if (this.props.items) {
       this.props.items.map((item, index) => {
         this._keys.push(this.props.propForSelect ? item[this.props.propForSelect] : index);
-        this._items.push(item); 
+        this._items.push(item);
       });
     }
   }
-  
-  componentWillUnmount(){
+
+  componentWillUnmount() {
     if (this.base && this.vertical) {
       this.base.removeEventListener('mouseleave', this._handleMouseExit);
       this.base.removeEventListener('mouseenter', this._handleMouseEnter);
     }
   }
 
-  _handleRef(el){
+  _handleRef(el) {
     this.base = el;
   }
 
-  _handleMouseEnter(e){
-    if (!this.state.vertical){
+  _handleMouseEnter(e) {
+    if (!this.state.vertical) {
       return;
     }
     this._mouseIsOverNav = true;
@@ -125,8 +125,8 @@ class AppNavComponent extends BaseComponent {
     }
   }
 
-  _handleMouseExit(e){
-    if (!this.state.vertical){
+  _handleMouseExit(e) {
+    if (!this.state.vertical) {
       return;
     }
     this._mouseIsOverNav = false;
@@ -135,69 +135,68 @@ class AppNavComponent extends BaseComponent {
     }
   }
 
-  _setVerticalOpened(bool){
+  _setVerticalOpened(bool) {
     this.setState({
       verticalOpened: bool,
       onlyShowIcon: !bool
     });
   }
 
-  _getIndexForValue(val){
+  _getIndexForValue(val) {
     return this._keys.indexOf(val);
   }
 
-  _getValueForIndex(index){
+  _getValueForIndex(index) {
     return this._items[index];
   }
-  
-  _getItemFromValue(index){
+
+  _getItemFromValue(index) {
     return this._getValueForIndex(this._getIndexForValue(index));
   }
 
   handleClick(val, child, isSubItem) {
-    
-    let propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : val);
-    let index = (this.props.propForSelect ? child[this.props.propForSelect] : this._getIndexForValue(propForSelect));
+    const propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : val);
+    const index = (this.props.propForSelect ? child[this.props.propForSelect] : this._getIndexForValue(propForSelect));
     let item = this._getValueForIndex(index);
-    
-    if (child && child.hasOwnProperty('children') && !isSubItem){
-      //console.warn('Item has children, do not set active');
+
+    if (child && child.hasOwnProperty('children') && !isSubItem) {
+      // console.warn('Item has children, do not set active');
       return;
     }
-    if(isSubItem){
+    if (isSubItem) {
       item = val;
     }
-    
-    let state = {
+
+    const state = {
       selected: propForSelect,
       selectedIndex: this._getIndexForValue(propForSelect),
       selectedItem: child
     };
 
     this.setState(state);
-    if(this.props.onChange){
+    if (this.props.onChange) {
       this.props.onChange(state);
     }
   }
 
-  _reset(){
+  _reset() {
     this._items = [];
     this._keys = [];
   }
 
-  _getItemFromPropForSelect(value){
-    let item = this.props.items.filter(val => val[this.props.propForSelect] === value);
+  _getItemFromPropForSelect(value) {
+    const item = this.props.items.filter(val => val[this.props.propForSelect] === value);
     return item ? item[0] : null;
   }
 
-  _renderItem(child, index){
-    let propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : index);
+  _renderItem(child, index) {
+    const propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : index);
     this._keys.push(propForSelect);
-    this._items.push(child); 
-    let selected = (this.state.selected === this._getIndexForValue(propForSelect));
-    if(!child.children){
+    this._items.push(child);
+    const selected = (this.state.selected === this._getIndexForValue(propForSelect));
+    if (!child.children) {
       return (
-        <NavItem 
+        <NavItem
           key={index}
           item={child}
           id={child.id}
@@ -205,31 +204,30 @@ class AppNavComponent extends BaseComponent {
           label={child.label}
           selected={selected}
           onlyShowIcon={this.state.onlyShowIcon}
-          onClick={this.handleClick.bind(this, propForSelect, child)}
-        />
-      );
-    } else {
-      return (
-        <AppNavSubGroup
-          key={index}
-          id={child.id}
-          item={child}
-          icon={child.icon}
-          label={child.label}
-          onlyShowIcon={this.state.onlyShowIcon}
-          selected={selected}
           onClick={this.handleClick.bind(this, propForSelect, child)}
         />
       );
     }
+    return (
+      <AppNavSubGroup
+        key={index}
+        id={child.id}
+        item={child}
+        icon={child.icon}
+        label={child.label}
+        onlyShowIcon={this.state.onlyShowIcon}
+        selected={selected}
+        onClick={this.handleClick.bind(this, propForSelect, child)}
+      />
+    );
   }
 
-  _renderItems(items){
+  _renderItems(items) {
     this._reset();
     return items.map(this._renderItem.bind(this));
   }
 
-  render(){
+  render() {
     const {
       classes,
       style,
@@ -247,7 +245,7 @@ class AppNavComponent extends BaseComponent {
 
     const baseClasses = classnames(
       'px-app-nav',
-      { 'vertical': vertical },
+      { vertical },
       { 'vertical-opened': vertical && verticalOpened }
     );
 
@@ -256,22 +254,21 @@ class AppNavComponent extends BaseComponent {
 
     return (
       <AppNav className={baseClasses} ref={this._handleRef} vertical={vertical} verticalOpened={verticalOpened}>
-       <AppNavItems vertical={vertical}>
+        <AppNavItems vertical={vertical}>
           {this._renderItems(items)}
         </AppNavItems>
-        
 
-          {/* STATE: Horizontal or menu nav, any visible items */}
 
-          {/* STATE: Items overflowed or collapsed */}
+        {/* STATE: Horizontal or menu nav, any visible items */}
 
-          {/* Actions */}
-          
+        {/* STATE: Items overflowed or collapsed */}
+
+        {/* Actions */}
+
         {children}
       </AppNav>
     );
   }
-
 }
 
 AppNavComponent.defaultProps = {

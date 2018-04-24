@@ -1,15 +1,15 @@
 
-/* src/styles/index - Hold methods that components use to export component with theme.*/
+/* src/styles/index - Hold methods that components use to export component with theme. */
 
 const $baseFontSize = '15px';
 
 function calculateRem($size) {
-  let $remSize = $size / $baseFontSize;
-  let $remUnit = '1rem';
+  const $remSize = $size / $baseFontSize;
+  const $remUnit = '1rem';
   return $remSize * $remUnit;
 }
 function remToPx($size) {
-  let $remUnit = '1rem';
+  const $remUnit = '1rem';
   return ($rem / $remUnit) * $baseFontSize;
 }
 /*
@@ -24,5 +24,5 @@ const $base-spacing-unit--small = calculateRem(round($-base-line-height / 2));
 const $base-spacing-unit--large = calculateRem($-base-line-height);
 const $base-spacing-unit--huge  = calculateRem(round($inuit-base-line-height * 1.5));
 */
-const helpers = {calculateRem, remToPx};
+const helpers = { calculateRem, remToPx };
 export default helpers;

@@ -80,26 +80,28 @@ const Notification = styled.div`
 		}
 	`}
 `;
-export default ({ opened, type, actionIcon, statusIcon, slotRight, onClick, small = false, children}) => (
-	<Notification opened={opened} type={type} small={small}>
-		{statusIcon && 
-			<NotificationLeft>
-				<Icon size={16} icon={statusIcon}/>
-			</NotificationLeft>
+export default ({
+  opened, type, actionIcon, statusIcon, slotRight, onClick, small = false, children
+}) => (
+  <Notification opened={opened} type={type} small={small}>
+    {statusIcon &&
+    <NotificationLeft>
+      <Icon size={16} icon={statusIcon} />
+    </NotificationLeft>
 		}
-		
 
-		<NotificationContent>
-			{children}
-		</NotificationContent>
-		<NotificationRight>
-		{slotRight && slotRight}
-		{actionIcon && 
-			<NotificationIcon onClick={onClick}>
-				<Icon size={16} viewBox={`0 0 22 22`} icon={actionIcon}/>
-			</NotificationIcon>
+
+    <NotificationContent>
+      {children}
+    </NotificationContent>
+    <NotificationRight>
+      {slotRight && slotRight}
+      {actionIcon &&
+      <NotificationIcon onClick={onClick}>
+        <Icon size={16} viewBox="0 0 22 22" icon={actionIcon} />
+      </NotificationIcon>
 		}
-			
-		</NotificationRight>
-	</Notification>
+
+    </NotificationRight>
+  </Notification>
 );

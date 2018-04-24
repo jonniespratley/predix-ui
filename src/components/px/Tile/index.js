@@ -50,32 +50,29 @@ export default ({
   actionButtons,
   children,
   imgStyle = {}
-}) => {
-  
-  return (
-    <Tile>
-      <TileContainer className="tile__container">
-       {image && 
-          <TileThumbnail>
-            <img src={image} alt={title} style={imgStyle}/>
-          </TileThumbnail>
+}) => (
+  <Tile>
+    <TileContainer className="tile__container">
+      {image &&
+        <TileThumbnail>
+          <img src={image} alt={title} style={imgStyle} />
+        </TileThumbnail>
         }
 
-        {title && <TileTitle>{title}</TileTitle>}
-        {subtitle && <TileSubTitle>{subtitle}</TileSubTitle>}
-         
-       
-       <TileOverlay id="overlay" className="overlay">
-         <header className="title epsilon">
-           <span className="title-span truncate">{title}</span>
-          </header>
-          <section className="text">
-            {overlayDescription && overlayDescription}
-            {children && children}
-          </section>
-          {actionButtons && <footer className="footer">{actionButtons}</footer>}
-       </TileOverlay>
-     </TileContainer>
-    </Tile>
-  );
-}
+      {title && <TileTitle>{title}</TileTitle>}
+      {subtitle && <TileSubTitle>{subtitle}</TileSubTitle>}
+
+
+      <TileOverlay id="overlay" className="overlay">
+        <header className="title epsilon">
+          <span className="title-span truncate">{title}</span>
+        </header>
+        <section className="text">
+          {overlayDescription && overlayDescription}
+          {children && children}
+        </section>
+        {actionButtons && <footer className="footer">{actionButtons}</footer>}
+      </TileOverlay>
+    </TileContainer>
+  </Tile>
+);

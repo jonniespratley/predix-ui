@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Panel = styled.div`
   overflow:hidden;
@@ -41,7 +41,7 @@ const Panel = styled.div`
     flex: 0 1 320px;
   `}
 
-  ${props => ( props.position === 'left' || props.position === 'right' ) && css`
+  ${props => (props.position === 'left' || props.position === 'right') && css`
     height: auto;
     width: 0;
     top: 0;
@@ -59,7 +59,7 @@ const Panel = styled.div`
     `}
   `}
 
-   ${props => props.position === 'left'  && css`
+   ${props => props.position === 'left' && css`
     left: 0;
     border-right: 1px solid var(--px-panel-border-color,gray);
 
@@ -71,7 +71,7 @@ const Panel = styled.div`
     `}
   `}
 
-  ${props => props.position === 'right'  && css`
+  ${props => props.position === 'right' && css`
     right: 0;
     border-left: 1px solid var(--px-panel-border-color,gray);
 
@@ -83,7 +83,7 @@ const Panel = styled.div`
     `}
   `}
 
-  ${props => ( props.position === 'top' || props.position === 'bottom' ) && css`
+  ${props => (props.position === 'top' || props.position === 'bottom') && css`
     width: auto;
     height: 0;
     right: 0;
@@ -96,7 +96,7 @@ const Panel = styled.div`
     `}
   `}
 
-  ${props => props.position === 'top'  && css`
+  ${props => props.position === 'top' && css`
     top: 0;
     border-bottom: 1px solid var(--px-panel-border-color, gray);
 
@@ -107,7 +107,7 @@ const Panel = styled.div`
     `}
   `}
 
-  ${props => props.position === 'bottom'  && css`
+  ${props => props.position === 'bottom' && css`
     bottom: 0;
     border-top: 1px solid var(--px-panel-border-color, gray);
 
@@ -150,19 +150,18 @@ export default ({
   floating = false,
   minimizable = false,
   children
-}) => {
-  return (
-    <Panel
-      background={background}
-      style={style}
-      className={className}
-      position={position}
-      minimizable={minimizable}
-      fullSize={fullSize}
-      floating={floating}
-      opened={opened}
-      fixed={fixed}>
-      <PanelContent>{children}</PanelContent>
-    </Panel>
-  );
-}
+}) => (
+  <Panel
+    background={background}
+    style={style}
+    className={className}
+    position={position}
+    minimizable={minimizable}
+    fullSize={fullSize}
+    floating={floating}
+    opened={opened}
+    fixed={fixed}
+  >
+    <PanelContent>{children}</PanelContent>
+  </Panel>
+);

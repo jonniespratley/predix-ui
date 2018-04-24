@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import Button from '../Button';
-import styled, {css, keyframes} from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 const fadeIn = keyframes`
   from {
@@ -141,7 +141,7 @@ const Message = styled.div`
   margin: 0;
 `;
 
-//import stylesheet from './px-alert-message.scss';
+// import stylesheet from './px-alert-message.scss';
 
 /**
  * AlertMessage component
@@ -159,40 +159,39 @@ export default ({
   autoDismiss = 5000,
   language = 'en',
   children
-}) => {
-
-
-  return (
+}) => (
   <AlertMessage visible={visible}>
-  <AlertMessageSeverity type={type}/>
+    <AlertMessageSeverity type={type} />
     <AlertMessageContainer>
       <Message>
         <strong>{messageTitle} </strong>
         <span>{message}</span>
         <div>{children}</div>
       </Message>
-      </AlertMessageContainer>
-      <AlertMessageActions>
+    </AlertMessageContainer>
+    <AlertMessageActions>
 
-        {action === 'dismiss' &&
-        <Button onClick={onDismiss} theme='bare' className='dismiss'>
+      {action === 'dismiss' &&
+        <Button onClick={onDismiss} theme="bare" className="dismiss">
           <svg viewBox="0 0 22 22" preserveAspectRatio="xMidYMid meet" focusable="false">
             <g>
-              <path strokeMiterlimit="10" d="M3 19L19 3M3 3l16 16"></path>
+              <path strokeMiterlimit="10" d="M3 19L19 3M3 3l16 16" />
             </g>
           </svg>
         </Button>}
 
-        {actions && actions()}
+      {actions && actions()}
 
-        {action === 'acknowledge' &&
-        <Button id="actionButton"
+      {action === 'acknowledge' &&
+        <Button
+          id="actionButton"
           onClick={onActionClick}
-          theme='tertiary'>OK</Button>}
+          theme="tertiary"
+        >OK
+        </Button>}
 
-      </AlertMessageActions>
+    </AlertMessageActions>
 
 
   </AlertMessage>
-  );
-}
+);

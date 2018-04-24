@@ -14,8 +14,8 @@ import IronMediaQuery from '../../../iron/iron-media-query';
  * Layout component
  */
 export default class DrawerLayout extends BaseComponent {
-  constructor(props){
-    super(props, {displayName: 'DrawerLayout'});
+  constructor(props) {
+    super(props, { displayName: 'DrawerLayout' });
     this.isAttached = false;
     this.state = {
       isNarrow: false
@@ -23,33 +23,31 @@ export default class DrawerLayout extends BaseComponent {
     this.handleMediaChange = this.handleMediaChange.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.isAttached = true;
   }
 
   // TODO: Implement changes to position containter based on drawer width;
-  handleMediaChange(e){
-    let narrow = !e.queryMatches;
-    let contentContainer = this.contentContainer;
-    let drawer = this.drawer;
-    let drawerWidth = drawer.offsetWidth || '256';
-    if(narrow){
+  handleMediaChange(e) {
+    const narrow = !e.queryMatches;
+    const contentContainer = this.contentContainer;
+    const drawer = this.drawer;
+    const drawerWidth = drawer.offsetWidth || '256';
+    if (narrow) {
       contentContainer.style.marginLeft = '';
       contentContainer.style.marginRight = '';
+    } else if (drawer.props.align == 'right') {
+      contentContainer.style.marginLeft = '';
+      contentContainer.style.marginRight = `${drawerWidth}px`;
     } else {
-      if (drawer.props.align == 'right') {
-        contentContainer.style.marginLeft = '';
-        contentContainer.style.marginRight = drawerWidth + 'px';
-      } else {
-        contentContainer.style.marginLeft = drawerWidth + 'px';
-        contentContainer.style.marginRight = '';
-      }
+      contentContainer.style.marginLeft = `${drawerWidth}px`;
+      contentContainer.style.marginRight = '';
     }
-    this.setState({isNarrow: narrow});
+    this.setState({ isNarrow: narrow });
   }
 
-  _handleDrawerToggle(){
-    var drawer = this.drawer;
+  _handleDrawerToggle() {
+    const drawer = this.drawer;
     drawer.toggle();
   }
 
@@ -71,14 +69,14 @@ export default class DrawerLayout extends BaseComponent {
 
     const baseClassNames = classnames(
       'px-drawer-layout',
-      {'px-drawer-layout--is-narrow': isNarrow},
+      { 'px-drawer-layout--is-narrow': isNarrow },
       'l-drawer-layout'
     );
 
     const headerContent = (
-      <div className='flex'>
+      <div className="flex">
         <div className="flex__item">
-          <BrandingBar title={title}/>
+          <BrandingBar title={title} />
         </div>
       </div>
     );
@@ -98,11 +96,12 @@ export default class DrawerLayout extends BaseComponent {
               ref={(el) => { this.drawer = el; }}
               open={isOpen}
               docked={!isNarrow}
-              onOverlayClick={(e) => this.setState({isOpen: false})}
+              onOverlayClick={e => this.setState({ isOpen: false })}
             >
               <AppNav
                 vertical
-                items={navItems}/>
+                items={navItems}
+              />
 
               {drawerContent}
             </Drawer>
@@ -110,9 +109,11 @@ export default class DrawerLayout extends BaseComponent {
 
           <div id="contentContainer" className="l-drawer-layout__content" ref={(el) => { this.contentContainer = el; }}>
             <nav id="navbarContent">
-              <Navbar title={title}
+              <Navbar
+                title={title}
                 showMenuButton={isNarrow}
-                onMenuButtonClick={(e) => this._handleDrawerToggle(e)}/>
+                onMenuButtonClick={e => this._handleDrawerToggle(e)}
+              />
             </nav>
             <div id="content">{children}</div>
           </div>
@@ -120,7 +121,9 @@ export default class DrawerLayout extends BaseComponent {
 
         <IronMediaQuery
           onChange={this.handleMediaChange}
-          query={`(min-width: ${this.props.responsiveWidth})`} full/>
+          query={`(min-width: ${this.props.responsiveWidth})`}
+          full
+        />
         <style jsx >{stylesheet}</style>
       </div>
     );

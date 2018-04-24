@@ -4,6 +4,4 @@ export default ({
   light = false,
   dark = false,
   children
-}) => {
-  return (<div>{children}</div>);
-}
+}) => (<div>{children}</div>);

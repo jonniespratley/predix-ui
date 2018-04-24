@@ -9,9 +9,11 @@ import Drawer from './';
 import Navbar from '../Navbar';
 
 const navItems = [
-  {id : "home", label: "Home", icon: "px-fea:home", selected: true},
-  {id : "settings", label: "Settings", icon: "px-fea:settings"},
-  {id : "alert", label: "Alerts", icon: "px-fea:alerts"}
+  {
+    id: 'home', label: 'Home', icon: 'px-fea:home', selected: true
+  },
+  { id: 'settings', label: 'Settings', icon: 'px-fea:settings' },
+  { id: 'alert', label: 'Alerts', icon: 'px-fea:alerts' }
 ];
 const style = {
   height: 300,
@@ -19,42 +21,44 @@ const style = {
   position: 'relative'
 };
 storiesOf('Drawer', module)
-	.addDecorator(withKnobs)
-	.add('default', () => (
-		<Drawer
-			overlay={boolean('overlay', false)}
-			onClose={action('onClose')}
-			onOpen={action('onOpen')}
-			onOverlayClick={action('onOverlayClick')}
-			opened={boolean('opened', false)}
-			docked={boolean('docked', false)}
-			anchor={select('anchor', ['left', 'right', 'top', 'bottom'], 'left')}
-			>
-			<p>This is the content of the drawer</p>
-		</Drawer>
-	))
-	.add('with layout', () => (
-		<div>
-  <div style={style}>
-    <Navbar
-      title='Navbar'
-      subtitle='Subtitle'
-      onMenuButtonClick={action('onMenuButtonClick')}
-      showMenuButton/>
-
+  .addDecorator(withKnobs)
+  .add('default', () => (
     <Drawer
-			overlay={boolean('overlay', false)}
+      overlay={boolean('overlay', false)}
       onClose={action('onClose')}
       onOpen={action('onOpen')}
       onOverlayClick={action('onOverlayClick')}
       opened={boolean('opened', false)}
-      docked={boolean('docked', false)}>
-			<p>This is the content of the drawer</p>
+      docked={boolean('docked', false)}
+      anchor={select('anchor', ['left', 'right', 'top', 'bottom'], 'left')}
+    >
+      <p>This is the content of the drawer</p>
     </Drawer>
-    <div className='content u-p'>
-      <p>This is content</p>
-    </div>
+  ))
+  .add('with layout', () => (
+    <div>
+      <div style={style}>
+        <Navbar
+          title="Navbar"
+          subtitle="Subtitle"
+          onMenuButtonClick={action('onMenuButtonClick')}
+          showMenuButton
+        />
 
-  </div>
-</div>
-	));
+        <Drawer
+          overlay={boolean('overlay', false)}
+          onClose={action('onClose')}
+          onOpen={action('onOpen')}
+          onOverlayClick={action('onOverlayClick')}
+          opened={boolean('opened', false)}
+          docked={boolean('docked', false)}
+        >
+          <p>This is the content of the drawer</p>
+        </Drawer>
+        <div className="content u-p">
+          <p>This is content</p>
+        </div>
+
+      </div>
+    </div>
+  ));

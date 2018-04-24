@@ -8,7 +8,7 @@ import { withKnobs, text, array, object, boolean, number, select } from '@storyb
 import Chip from './';
 
 storiesOf('Chip', module)
-	.addDecorator(withKnobs)
-	.add('default', () => (
-		<Chip>{text('children', 'Text Label')}</Chip>
-	));
+  .addDecorator(withKnobs)
+  .add('default', () => (
+    <Chip>{text('children', 'Text Label')}</Chip>
+  ));

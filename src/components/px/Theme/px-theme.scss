@@ -5,14 +5,13 @@ $predix-font-family: "GE Inspira Sans", sans-serif !default;
 @import "px-typography-design/_base.typography.scss";
 
 body {
-  color: $red;
-  background: $gray10;
+  color: var(--px-base-text-color, $gray14);
+  background: var(--px-base-background-color, $white);
 }
 html {
   font-family: $predix-font-family;
   font-size  : $inuit-base-font-size;
 }
-
 
 :root {
   // Defaults

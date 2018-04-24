@@ -3,11 +3,12 @@ import classNames from 'classnames';
 import BaseComponent from '../BaseComponent';
 import IronCollapse from '../../iron/IronCollapse';
 import Flex from '../../../styles/flex';
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 import Icon from '../IconSet/Icon';
+
 const styles = {
-  width: `16px`,
-  height: `16px`
+  width: '16px',
+  height: '16px'
 };
 const svgStyles = {
   pointerEvents: 'none',
@@ -17,8 +18,8 @@ const svgStyles = {
   fill: 'none',
   stroke: 'currentColor'
 };
-const CloseIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron" style={styles} ><svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" style={svgStyles}><g id="px-utl-chevron-right"><path strokeLinejoin="round" d="M6.2 13.2l5.4-5.5-5.5-5.5"></path></g></svg></i>);
-const OpenIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron-down" style={styles}><svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" style={svgStyles}><g id="px-utl-chevron"><path d="M2.4 6.2l5.5 5.5 5.5-5.5"></path></g></svg></i>);
+const CloseIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron" style={styles} ><svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" style={svgStyles}><g id="px-utl-chevron-right"><path strokeLinejoin="round" d="M6.2 13.2l5.4-5.5-5.5-5.5" /></g></svg></i>);
+const OpenIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron-down" style={styles}><svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" style={svgStyles}><g id="px-utl-chevron"><path d="M2.4 6.2l5.5 5.5 5.5-5.5" /></g></svg></i>);
 
 const AccordionHeader = styled.div`
   font-family: "GE Inspira Sans";
@@ -107,7 +108,7 @@ const AccordionAction = styled.div`
 AccordionAction.displayName = 'AccordionAction';
 
 class Accordion extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       open: props.opened || true
@@ -116,32 +117,29 @@ class Accordion extends React.Component {
     this.onActionClick = this.onActionClick.bind(this);
   }
 
-  onClick(){
-    if(!this.props.disabled){
-      this.setState((prevState, props) => {
-        return {
-          open: !prevState.open
-        };
-      });
+  onClick() {
+    if (!this.props.disabled) {
+      this.setState((prevState, props) => ({
+        open: !prevState.open
+      }));
     }
   }
 
-  onActionClick(e){
+  onActionClick(e) {
     e.preventDefault();
   }
-  
-  componentDidUpdate(){
-    const {onCollapsed, onExpanded} = this.props;
-    this.state.open && !this.props.disabled ? 
-    (this.props.onExpanded ? this.props.onExpanded(this.state) : null) :
-    (this.props.onCollapsed ? this.props.onCollapsed(this.state) : null);
-    
+
+  componentDidUpdate() {
+    const { onCollapsed, onExpanded } = this.props;
+    this.state.open && !this.props.disabled ?
+      (this.props.onExpanded ? this.props.onExpanded(this.state) : null) :
+      (this.props.onCollapsed ? this.props.onCollapsed(this.state) : null);
   }
-  componentWillReceiveProps(nextProps){
-    this.setState({open: nextProps.opened});
+  componentWillReceiveProps(nextProps) {
+    this.setState({ open: nextProps.opened });
   }
 
-  render(){
+  render() {
     const { open } = this.state;
     const {
       headerText,
@@ -158,21 +156,19 @@ class Accordion extends React.Component {
       },
       children
     } = this.props;
-    const {more, less, action} = icons;
-    
+    const { more, less, action } = icons;
+
     const baseClasses = classNames(
       'px-accordion',
-      {'px-accordion--disabled': disabled},
-      {'px-accordion--open': open}
+      { 'px-accordion--disabled': disabled },
+      { 'px-accordion--open': open }
     );
-    const headerClasses = classNames(
-      'px-accordion__header'
-    );
+    const headerClasses = classNames('px-accordion__header');
 
     return (
       <AccordionContainer className={baseClasses}>
         <AccordionHeader disabled={disabled} className={headerClasses}>
-          <Flex item={true} onClick={this.onClick} >
+          <Flex item onClick={this.onClick} >
             <span>
               {open && <OpenIcon />}
               {!open && <CloseIcon />}
@@ -181,12 +177,12 @@ class Accordion extends React.Component {
           </Flex>
           <Flex middle>
             {status && <AccordionStatus>{status}</AccordionStatus>}
-            {showAction && 
-            <AccordionAction onClick={onActionClick}> 
-              <Icon icon={action} size={16}/> 
+            {showAction &&
+            <AccordionAction onClick={onActionClick}>
+              <Icon icon={action} size={16} />
             </AccordionAction>}
-            {actions && 
-            <AccordionAction> 
+            {actions &&
+            <AccordionAction>
               {actions()}
             </AccordionAction>}
           </Flex>

@@ -3,7 +3,7 @@ import BaseComponent from '../BaseComponent';
 import classnames from 'classnames';
 import Icon from '../IconSet/Icon';
 
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const AppNavItem = styled.div`
   
@@ -126,27 +126,26 @@ const AppNavItemIcon = styled.div`
 `;
 
 
-
 /**
  * AppNav-item component
  */
 class AppNavItemComponent extends BaseComponent {
-  constructor(props){
-    super(props, {displayName: 'AppNavItem'});
+  constructor(props) {
+    super(props, { displayName: 'AppNavItem' });
     this.state = {
       selected: this.props.selected
     };
     this._handleClick = this._handleClick.bind(this);
   }
-  _handleClick(e){
-    if(!this.props.cancelSelect && this.props.onClick){
+  _handleClick(e) {
+    if (!this.props.cancelSelect && this.props.onClick) {
       this.props.onClick(e);
     }
   }
   shouldComponentUpdate(nextProps, nextState) {
     return nextProps.selected !== this.props.selected || nextProps.onlyShowIcon !== this.props.onlyShowIcon;
   }
-  render(){
+  render() {
     const {
       label,
       icon,
@@ -168,37 +167,37 @@ class AppNavItemComponent extends BaseComponent {
 
     const baseClasses = classnames(
       'px-app-nav-item',
-      {'selected': selected}
+      { selected }
     );
-    let itemProps = {
+    const itemProps = {
       label, icon, id, items, selected, dropdown, collapsed
     };
     return (
       <AppNavItem onClick={this._handleClick} className={baseClasses} data-id={id} {...itemProps}>
 
         {/* icon */}
-        {icon && <AppNavItemIcon withLabel><Icon size={32} icon={icon}/></AppNavItemIcon>}
+        {icon && <AppNavItemIcon withLabel><Icon size={32} icon={icon} /></AppNavItemIcon>}
 
         {/* emptyIcon */}
-        {emptyIcon && <AppNavItemIcon emptyIcon withLabel/>}
+        {emptyIcon && <AppNavItemIcon emptyIcon withLabel />}
 
         {/* emptyLabel */}
-        {emptyLabel && <AppNavItemLabel emptyLabel/>}
+        {emptyLabel && <AppNavItemLabel emptyLabel />}
 
         {/* label */}
         {label && <AppNavItemLabel empty={empty} onlyShowIcon={onlyShowIcon}>{label}</AppNavItemLabel>}
 
         {/* empty */}
-        {empty && <AppNavItemIcon emtpy withLabel/>}
-        {empty && <AppNavItemLabel emtpy/>}
-        
+        {empty && <AppNavItemIcon emtpy withLabel />}
+        {empty && <AppNavItemLabel emtpy />}
+
         {/* dropdown */}
-        {dropdown && 
+        {dropdown &&
           <AppNavItemIcon dropdownIcon>
-            <Icon icon='px-utl:chevron' size={16}/>
+            <Icon icon="px-utl:chevron" size={16} />
           </AppNavItemIcon>
         }
-          
+
 
       </AppNavItem>
     );

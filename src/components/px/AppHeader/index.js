@@ -14,16 +14,13 @@ const AppHeader = ({
   items,
   style,
   children
-}) => {
-
-  return (
-    <div>
-      <BrandingBar title={title}/>
-      {items && <AppNav items={items} selected={selected} onChange={onChange}/>}
-      {children && <div>{children}</div>}
-    </div>
-  );
-};
+}) => (
+  <div>
+    <BrandingBar title={title} />
+    {items && <AppNav items={items} selected={selected} onChange={onChange} />}
+    {children && <div>{children}</div>}
+  </div>
+);
 
 AppHeader.displayName = 'AppHeader';
 export default AppHeader;

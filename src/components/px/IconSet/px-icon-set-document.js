@@ -1,4 +1,4 @@
-//doc icons
+// doc icons
 const doc = {
   'px-doc-chart': '<g id="px-doc-chart"><g><path stroke-linejoin="round" d="M1.5 5.5h3v7h-3zm5 2h3v5h-3zm5-6h3v11h-3zM0 14.5h16"/></g></g>',
   'px-doc-document': '<g id="px-doc-document"><g><path stroke-linejoin="round" d="M2.5.5v15h11v-12l-3-3h-8z"/><path stroke-linejoin="round" d="M9.5.5v4h4"/></g></g>',
@@ -10,5 +10,5 @@ const doc = {
   'px-doc-note': '<g id="px-doc-note"><g><path stroke-linejoin="round" d="M15.5 1.5H.5v13h12l3-3v-10z"/><path stroke-linejoin="round" d="M11.5 14.5v-4h4M3 4.5h10m-10 3h7m-7 3h4"/></g></g>',
   'px-doc-website': '<g id="px-doc-website"><g><path stroke-linejoin="round" d="M.5 1.5h15v13H.5zm0 3h15m-12 0v-3"/></g></g>'
 };
-//done
-export default doc
+// done
+export default doc;

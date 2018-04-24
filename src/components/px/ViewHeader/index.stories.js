@@ -1,30 +1,25 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import ViewHeader from './';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, text, array, object, boolean, number, select } from '@storybook/addon-knobs';
-import Icon from '../IconSet/Icon';
+import { withKnobs, text } from '@storybook/addon-knobs';
+
 import Button from '../Button';
+import ViewHeader from './';
 
 storiesOf('ViewHeader', module)
-	.addDecorator(withKnobs)
-	.addWithJSX('default', () => (
-		<ViewHeader
-			title={text('title', 'Current View Title')}
-			subtitle={text('subtitle', 'A subtitle describing the view.')}
-			/>
-	))
-	.addWithJSX('with actions', () => (
-		<ViewHeader
-			title={text('title', 'Current View Title')}
-			subtitle={text('subtitle', 'A subtitle describing the view.')}>
-			<div>
-      	<Button>Back</Button>
-			</div>
-			<div>
-				<Button>Next</Button>
-			</div>
-			</ViewHeader>
-	))
-	;
+  .addDecorator(withKnobs)
+  .addWithJSX('default', () => (
+    <ViewHeader
+      title={text('title', 'Current View Title')}
+      subtitle={text('subtitle', 'A subtitle describing the view.')}
+    />
+  ))
+  .addWithJSX('with actions', () => (
+    <ViewHeader
+      title={text('title', 'Current View Title')}
+      subtitle={text('subtitle', 'A subtitle describing the view.')}
+    >
+      <Button onClick={action('back')}>Back</Button>
+      <Button onClick={action('next')}>Next</Button>
+    </ViewHeader>
+  ));

@@ -1,9 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
-//import stylesheet from './px-tree-node.scss';
+// import stylesheet from './px-tree-node.scss';
 import TreeIcon from './TreeNodeIcon';
 import BaseComponent from '../BaseComponent';
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 import Icon from '../IconSet/Icon';
 /*
 
@@ -148,84 +148,85 @@ TreeNodeLabel.displayName = 'TreeNodeLabel';
 
 
 class TreeNode extends BaseComponent {
-	constructor(props) {
-		super(props, {displayName:'TreeNode'});
-		this.state = {
+  constructor(props) {
+    super(props, { displayName: 'TreeNode' });
+    this.state = {
       children: [],
       id: props.id || null,
       label: props.label || null,
       data: props.data || null,
       selected: props.selected || false,
       isSelectable: props.isSelectable || true
-		};
-		this.onCategorySelect = this.onCategorySelect.bind(this);
-		this.onChildDisplayToggle = this.onChildDisplayToggle.bind(this);
-	}
+    };
+    this.onCategorySelect = this.onCategorySelect.bind(this);
+    this.onChildDisplayToggle = this.onChildDisplayToggle.bind(this);
+  }
 
-	onCategorySelect(ev) {
-		if (this.props.onCategorySelect) {
-			this.props.onCategorySelect(this);
-		}
-		ev.preventDefault();
-		ev.stopPropagation();
-	}
+  onCategorySelect(ev) {
+    if (this.props.onCategorySelect) {
+      this.props.onCategorySelect(this);
+    }
+    ev.preventDefault();
+    ev.stopPropagation();
+  }
 
-	onChildDisplayToggle(ev) {
-
-		if (this.props.data.children) {
-			if (this.state.children && this.state.children.length) {
-				this.setState({ children: null });
-			} else {
-				this.setState({ children: this.props.data.children });
-			}
-		}
-		ev.preventDefault();
-		ev.stopPropagation();
-	}
-	render() {
-
-    const isOpen = this.state.children && this.state.children.length  ? true : false;
+  onChildDisplayToggle(ev) {
+    if (this.props.data.children) {
+      if (this.state.children && this.state.children.length) {
+        this.setState({ children: null });
+      } else {
+        this.setState({ children: this.props.data.children });
+      }
+    }
+    ev.preventDefault();
+    ev.stopPropagation();
+  }
+  render() {
+    const isOpen = !!(this.state.children && this.state.children.length);
     const hasChildren = this.props && this.props.data && this.props.data.children;
- 
-    const {id, label, icon} = this.props || this.props.data;
+
+    const { id, label, icon } = this.props || this.props.data;
     const openIcon = (isOpen ? 'px-utl:chevron' : 'px-utl:chevron-right');
-		return (
-			<TreeNodeStyled 
+    return (
+      <TreeNodeStyled
         open={isOpen}
-        
-        closed={this.state.children ? false : true}
-        leaf={!hasChildren} 
-        branch={hasChildren ? true : false} 
+
+        closed={!this.state.children}
+        leaf={!hasChildren}
+        branch={!!hasChildren}
         data-open={isOpen}
-        data-leaf={!hasChildren} 
-        data-branch={hasChildren ? true : false} 
+        data-leaf={!hasChildren}
+        data-branch={!!hasChildren}
         selected={this.state.selected}
-        ref={(el) => {this.node = el;}} 
-        onClick={this.onChildDisplayToggle}>
-        
-        <TreeNodeLabel 
-          data-id={id} 
-          selected={this.state.selected} 
-          leaf={!hasChildren}  
-          branch={hasChildren ? true : false} >
-          {hasChildren && <TreeNodeIcon><Icon icon={openIcon} size={16}/></TreeNodeIcon>}
-          {icon && <TreeNodeIcon><Icon icon={icon} size={16}/></TreeNodeIcon>}
+        ref={(el) => { this.node = el; }}
+        onClick={this.onChildDisplayToggle}
+      >
+
+        <TreeNodeLabel
+          data-id={id}
+          selected={this.state.selected}
+          leaf={!hasChildren}
+          branch={!!hasChildren}
+        >
+          {hasChildren && <TreeNodeIcon><Icon icon={openIcon} size={16} /></TreeNodeIcon>}
+          {icon && <TreeNodeIcon><Icon icon={icon} size={16} /></TreeNodeIcon>}
           <span onClick={this.onCategorySelect}>{label}</span>
         </TreeNodeLabel>
 
-        {this.state.children &&   
+        {this.state.children &&
         <TreeNodeContent open={isOpen}>
           {this.state.children.map((child, index) => (
-              <TreeNode
-                key={index}
-                data={child}
-                {...child}
-                onCategorySelect={this.props.onCategorySelect}/>
+            <TreeNode
+              key={index}
+              data={child}
+              {...child}
+              onCategorySelect={this.props.onCategorySelect}
+            />
             ))}
         </TreeNodeContent>}
 
-			</TreeNodeStyled>
-		);
-	}
+      </TreeNodeStyled>
+    );
+  }
 }
 export default TreeNode;

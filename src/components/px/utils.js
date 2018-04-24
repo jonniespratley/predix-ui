@@ -1,4 +1,4 @@
-var globalCssModule = {};
+let globalCssModule = {};
 
 export function isFunction(functionToCheck) {
   return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
@@ -6,10 +6,8 @@ export function isFunction(functionToCheck) {
 
 export function DOMElement(props, propName, componentName) {
   if (!(props[propName] instanceof Element)) {
-    return new Error(
-      'Invalid prop `' + propName + '` supplied to `' + componentName +
-      '`. Expected prop to be an instance of Element. Validation failed.'
-    );
+    return new Error(`Invalid prop \`${propName}\` supplied to \`${componentName
+    }\`. Expected prop to be an instance of Element. Validation failed.`);
   }
 }
 
@@ -17,12 +15,12 @@ export function setGlobalCssModule(cssModule) {
   globalCssModule = cssModule;
 }
 
-export function mapToCssModules(className = "", cssModule = globalCssModule) {
+export function mapToCssModules(className = '', cssModule = globalCssModule) {
   if (!cssModule) return className;
   return className
-    .split(" ")
+    .split(' ')
     .map(c => cssModule[c] || c)
-    .join(" ");
+    .join(' ');
 }
 
 export function getTarget(target) {
@@ -30,15 +28,13 @@ export function getTarget(target) {
     return target();
   }
 
-  if (typeof target === "string" && document) {
+  if (typeof target === 'string' && document) {
     let selection = document.querySelector(target);
     if (selection === null) {
       selection = document.querySelector(`#${target}`);
     }
     if (selection === null) {
-      throw new Error(
-        `The target '${target}' could not be identified in the dom, tip: check spelling`
-      );
+      throw new Error(`The target '${target}' could not be identified in the dom, tip: check spelling`);
     }
     return selection;
   }
@@ -47,26 +43,26 @@ export function getTarget(target) {
 }
 
 export const PopperPlacements = [
-  "auto-start",
-  "auto",
-  "auto-end",
-  "top-start",
-  "top",
-  "top-end",
-  "right-start",
-  "right",
-  "right-end",
-  "bottom-end",
-  "bottom",
-  "bottom-start",
-  "left-end",
-  "left",
-  "left-start"
+  'auto-start',
+  'auto',
+  'auto-end',
+  'top-start',
+  'top',
+  'top-end',
+  'right-start',
+  'right',
+  'right-end',
+  'bottom-end',
+  'bottom',
+  'bottom-start',
+  'left-end',
+  'left',
+  'left-start'
 ];
 
 export function omit(obj, omitKeys) {
   const result = {};
-  Object.keys(obj).forEach(key => {
+  Object.keys(obj).forEach((key) => {
     if (omitKeys.indexOf(key) === -1) {
       result[key] = obj[key];
     }

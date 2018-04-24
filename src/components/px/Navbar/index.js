@@ -1,7 +1,7 @@
 import React from 'react';
-//import stylesheet from './px-navbar.scss';
+// import stylesheet from './px-navbar.scss';
 import Icon from '../IconSet/Icon';
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 
 const Navbar = styled.div`
@@ -140,68 +140,65 @@ const NavbarSubTitle = styled.div`
 `;
 
 
-
-
-
 /**
  * Navbar component
  */
 export default({
-	className,
-	backButtonLabel = '<',
-	title,
-	subtitle,
-	onTitleClick,
+  className,
+  backButtonLabel = '<',
+  title,
+  subtitle,
+  onTitleClick,
 
-	showBackButton,
-	showMenuButton,
+  showBackButton,
+  showMenuButton,
 
   onBackButtonClick,
   onMenuButtonClick,
 
-	iconNameLeft,
-	iconNameRight,
+  iconNameLeft,
+  iconNameRight,
 
-	iconElementLeft,
-	iconElementRight,
+  iconElementLeft,
+  iconElementRight,
 
-	onLeftIconButtonClick,
-	onRightIconButtonClick,
-	children
+  onLeftIconButtonClick,
+  onRightIconButtonClick,
+  children
 }) => (
-		<Navbar>
-			<NavbarInner>
-				<NavbarLeft>
+  <Navbar>
+    <NavbarInner>
+      <NavbarLeft>
 
-					{showMenuButton &&
-						<button className="navbar__button flex flex--center toggle__menu" onClick={onMenuButtonClick}>
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24h-24z" fill="none"/><path d="M3 18h18v-2h-18v2zm0-5h18v-2h-18v2zm0-7v2h18v-2h-18z"/></svg>
-            </button>}
+        {showMenuButton &&
+        <button className="navbar__button flex flex--center toggle__menu" onClick={onMenuButtonClick}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24h-24z" fill="none" /><path d="M3 18h18v-2h-18v2zm0-5h18v-2h-18v2zm0-7v2h18v-2h-18z" /></svg>
+        </button>}
 
-					{showBackButton &&
-						<button className="navbar__button" onClick={onBackButtonClick}>
-						{backButtonLabel}
-						</button>
+        {showBackButton &&
+        <button className="navbar__button" onClick={onBackButtonClick}>
+          {backButtonLabel}
+        </button>
 						}
 
-					{iconNameLeft &&
-					<button onClick={onLeftIconButtonClick}>
-						<Icon icon={iconNameLeft} size={22}/>
-					</button>}
+        {iconNameLeft &&
+        <button onClick={onLeftIconButtonClick}>
+          <Icon icon={iconNameLeft} size={22} />
+        </button>}
 
-					{iconElementLeft && iconElementLeft}
-				</NavbarLeft>
-				<NavbarCenter>
-					<NavbarTitle>{title}</NavbarTitle>
-					<NavbarSubTitle>{subtitle}</NavbarSubTitle>
-				</NavbarCenter>
-				<NavbarRight>
-					{iconNameRight &&
-					<button onClick={onRightIconButtonClick}>
-						<Icon icon={iconNameRight} size={22}/>
-					</button>}
-					{iconElementRight && iconElementRight}
-				</NavbarRight>
-			</NavbarInner>
-		</Navbar>
+        {iconElementLeft && iconElementLeft}
+      </NavbarLeft>
+      <NavbarCenter>
+        <NavbarTitle>{title}</NavbarTitle>
+        <NavbarSubTitle>{subtitle}</NavbarSubTitle>
+      </NavbarCenter>
+      <NavbarRight>
+        {iconNameRight &&
+        <button onClick={onRightIconButtonClick}>
+          <Icon icon={iconNameRight} size={22} />
+        </button>}
+        {iconElementRight && iconElementRight}
+      </NavbarRight>
+    </NavbarInner>
+  </Navbar>
 );

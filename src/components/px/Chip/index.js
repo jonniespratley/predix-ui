@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Chip = styled.div`
   display         : inline-block;
@@ -51,11 +51,9 @@ export default ({
   selected,
   showIcon,
   children
-}) => {
-  return (
-    <Chip selected={selected}>
-      <ChipContent>{children}</ChipContent>
-    </Chip>
+}) => (
+  <Chip selected={selected}>
+    <ChipContent>{children}</ChipContent>
+  </Chip>
 
-  );
-}
+);

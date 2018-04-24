@@ -22,4 +22,4 @@ export default {
     paddingTop: '0.33333rem !important',
     paddingBottom: '0.33333rem !important'
   }
-}
+};

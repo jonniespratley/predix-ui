@@ -1,9 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
-//import stylesheet from './px-overlay.scss';
+// import stylesheet from './px-overlay.scss';
 import BaseComponent from '../BaseComponent';
 
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Overlay = styled.div`
   position        : fixed;
@@ -22,8 +22,8 @@ const Overlay = styled.div`
 `;
 
 class OverlayComponent extends BaseComponent {
-  constructor(props){
-    super(props, {displayName: 'Overlay'});
+  constructor(props) {
+    super(props, { displayName: 'Overlay' });
     this.state = {
       opened: props.opened
     };
@@ -31,41 +31,41 @@ class OverlayComponent extends BaseComponent {
     this._handleEscKeyUp = this._handleEscKeyUp.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     window.addEventListener('keyup', this._handleEscKeyUp);
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     window.removeEventListener('keyup', this._handleEscKeyUp);
   }
 
-  componentWillReceiveProps(nextProps){
-    this.setState({opened: nextProps.opened});
+  componentWillReceiveProps(nextProps) {
+    this.setState({ opened: nextProps.opened });
   }
 
-  _handleEscKeyUp(e){
-    if(e.keyCode === 27 && !this.props.ignoreEscapeKeyUp){
-      if(this.props.onEscapeKeyUp){
+  _handleEscKeyUp(e) {
+    if (e.keyCode === 27 && !this.props.ignoreEscapeKeyUp) {
+      if (this.props.onEscapeKeyUp) {
         this.props.onEscapeKeyUp(e);
       }
     }
   }
 
-  _handleOverlayClick(e){
-    if(this.props.onOverlayClick && !this.props.ignoreOverlayClick){
+  _handleOverlayClick(e) {
+    if (this.props.onOverlayClick && !this.props.ignoreOverlayClick) {
       this.props.onOverlayClick(e);
     }
   }
 
-  close(){
-    this.setState({opened: false});
+  close() {
+    this.setState({ opened: false });
   }
 
-  open(){
-    this.setState({opened: true});
+  open() {
+    this.setState({ opened: true });
   }
 
-  render(){
+  render() {
     const {
       style,
       onOverlayClick,

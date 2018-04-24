@@ -1,4 +1,4 @@
-//utl icons
+// utl icons
 const utl = {
   'px-utl-add': '<g id="px-utl-add"><path stroke-linejoin="round" d="M7.5 16V1m0 15V1M0 8.5h15"/></g>',
   'px-utl-alert': '<g id="px-utl-alert"><path stroke-linejoin="round" d="M13.5 6.32v6.18H9.17L7 15l-2.17-2.5H.5v-10h8.86M3 6.5h5m-5 2h8"/><circle cx="12.5" cy="3.5" r="3" stroke-linejoin="round"/></g>',
@@ -45,5 +45,5 @@ const utl = {
   'px-utl-upload': '<g id="px-utl-upload"><path stroke-linejoin="round" d="M.5 12v3.5h14V12m-7 0V2m4 3.5l-4-4-4 4"/></g>',
   'px-utl-zoom': '<g id="px-utl-zoom"><circle cx="6" cy="6" r="5.5" stroke-linejoin="round"/><path stroke-linejoin="round" d="M15.5 15.5L10 10"/></g>'
 };
-//done
-export default utl
+// done
+export default utl;

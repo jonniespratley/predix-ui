@@ -1,96 +1,72 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-//import { List } from 'react-virtualized';
-import classnames from 'classnames';
-import styleheet from './px-table-view.scss';
+import styled, { css } from 'styled-components';
 import TableRow from './TableRow';
 
-import styled, {css} from 'styled-components';
+const TableView = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
-
-/**
- * TableView component
- */
-
-class TableView extends React.Component {
-  constructor(props){
-    super(props);
-    this.displayName = 'TableView';
-    this.renderRow = this.renderRow.bind(this);
+  .px-table-row {
+    ${props => props.size === 'flush' && css`
+      padding: 0 !important;
+    `}
+    ${props => props.size === 'tiny' && css`
+      padding: 0.33333rem !important;
+    `}
+    ${props => props.size === 'small' && css`
+      padding: 0.66667rem !important;
+    `}
+    ${props => props.size === 'large' && css`
+      padding: 1.33333rem !important;
+    `}
+    ${props => props.size === 'huge' && css`
+      padding: 2rem !important;
+    `}
   }
-  _handleSelect(e){
-    if(this.props.onSelect){
-      this.props.onSelect(e);
-    }
-  }
-  renderRow({ key, index, isScrolling, isVisible, style }) {
-    const content = /* isScrolling ? '...' :*/ this.props.items[index];
-    return (
-      <TableRow 
-        tappable={this.props.tappable}
-        key={key}
-        index={index}
-        {...content}
-        onClick={this._handleSelect}>
-      </TableRow>
-    );
-  }
-  render(){
-    const {
-      style = {
-        outline: 'none'
-      },
-      items = [],
-      selectedItem,
-      selected,
-      tappable,
+`;
 
-      //sizes
-      size,
-      height = 300,
-      width = 320,
-      rowHeight = 44,
-      children 
-    } = this.props;
+const TableViewComponent = ({
+  items,
+  tappable,
+  size,
+  onSelect,
+  children
+}) => (
+  <TableView size={size}>
+    {children}
+    {items && items.map(item => (
+      <TableRow
+        tappable={tappable}
+        size={size}
+        key={item.id}
+        {...item}
+        onClick={onSelect}
+      />
+    ))}
+  </TableView>
+);
 
-    const baseClassnames = classnames('px-table-view',
-      { 'px-table-view--flush': size === 'flush' },
-      { 'px-table-view--tiny': size === 'tiny' },
-      { 'px-table-view--small': size === 'small' },
-      { 'px-table-view--regular': size === 'regular' },
-      { 'px-table-view--large': size === 'large' },
-      { 'px-table-view--huge': size === 'huge' }
-    );
-    const tableViewClassnames = classnames(
-      'table-view',
-      { 'table-view--flush': size === 'flush' },
-      { 'table-view--tiny': size === 'tiny' },
-      { 'table-view--small': size === 'small' },
-      { 'table-view--regular': size === 'regular' },
-      { 'table-view--large': size === 'large' },
-      { 'table-view--huge': size === 'huge' }
-    );
-
-    return (
-      <div className={baseClassnames}>
-        {children}
-        {items && items.map((item, index) => (
-           <TableRow 
-            tappable={this.props.tappable}
-            size={size}
-            key={index}
-            index={index}
-            {...item}
-            onClick={this._handleSelect}>
-          </TableRow>
-        ))}
-      </div>
-    );
-  }
-}
-TableView.defaultProps = {
-  items: []
+TableViewComponent.propTypes = {
+  tappable: PropTypes.bool,
+  size: PropTypes.string,
+  onSelect: PropTypes.func,
+  children: PropTypes.node,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    icon: PropTypes.string,
+    body: PropTypes.string
+  }))
 };
 
+TableViewComponent.defaultProps = {
+  tappable: null,
+  size: null,
+  onSelect: null,
+  children: null,
+  items: null
+};
 
-
-export default TableView;
+export default TableViewComponent;

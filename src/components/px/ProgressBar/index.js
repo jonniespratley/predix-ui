@@ -19,9 +19,7 @@ const ProgressAnimation = keyframes`
   }
 `;
 
-const _computeRatio = (v) => {
-  return v < 0 ? 0 : (v > 100 ? 1 : v / 100);
-};
+const _computeRatio = v => (v < 0 ? 0 : (v > 100 ? 1 : v / 100));
 
 const ProgressFill = styled.div`
   background-color        : var(--px-progress-bar-fill-color,black);
@@ -55,14 +53,12 @@ export default ({
   max = 100,
   min = 0,
   infinite
-}) => {
-  return (
-    <div aria-valuemin={min} aria-valuemax={max}>
-      <ProgressBar>
-        <ProgressBackground>
-          <ProgressFill value={value} infinite={infinite} />
-        </ProgressBackground>
-      </ProgressBar>
-    </div>
-  );
-}
+}) => (
+  <div aria-valuemin={min} aria-valuemax={max}>
+    <ProgressBar>
+      <ProgressBackground>
+        <ProgressFill value={value} infinite={infinite} />
+      </ProgressBackground>
+    </ProgressBar>
+  </div>
+);

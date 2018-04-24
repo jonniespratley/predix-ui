@@ -54,11 +54,11 @@ export default class Breadcrumbs {
    */
   get shortenedItems() {
     this.__shortenedItems = this.__shortenedItems || this.breadcrumbs.map((item) => {
-      var wrapper = {};
+      const wrapper = {};
       wrapper.source = item;
       wrapper.isTruncated = true;
-      var labelKey = this.keys.label;
-      var childrenKey = this.keys.children;
+      const labelKey = this.keys.label;
+      const childrenKey = this.keys.children;
       wrapper[labelKey] = this._getShortenedText(item);
       wrapper[childrenKey] = this._getItemProp(item, this.keys.children);
       wrapper.selectedItem = item.selectedItem;
@@ -100,7 +100,7 @@ export default class Breadcrumbs {
    * each item.
    */
   _preShortenItems(items) {
-    for (let item of items) {
+    for (const item of items) {
       this._getShortenedText(item);
     }
   }
@@ -112,7 +112,7 @@ export default class Breadcrumbs {
     const cachedItem = this.map.get(item) || {};
     const label = this._getItemProp(item, this.keys.label);
     if (!cachedItem.shortText && label.length > 13) {
-      cachedItem.shortText = `${label.substr(0,6)}...${label.substr(label.length-6)}`;
+      cachedItem.shortText = `${label.substr(0, 6)}...${label.substr(label.length - 6)}`;
     } else if (!cachedItem.shortText) {
       cachedItem.shortText = label;
     }
@@ -151,23 +151,23 @@ export default class Breadcrumbs {
         i = 0,
         len = strArray.length,
         sizeOfItem;
-      //run through all the items, and get the sizes.
+      // run through all the items, and get the sizes.
       for (i = 0; i < len; i++, sizeOfItem = null) {
         if (useFullSize) {
           sizeOfItem = this._sizeOfIndividualFullItem(strArray[i]);
         } else {
           sizeOfItem = this._sizeOfIndividualShortItem(strArray[i]);
         }
-        var source = strArray[i].source ? strArray[i].source : strArray[i];
-        //add the size of the of the item into our accumulator
+        const source = strArray[i].source ? strArray[i].source : strArray[i];
+        // add the size of the of the item into our accumulator
         accum += sizeOfItem;
-        //if the item has siblings, we need to add the size of the down chevron.
-        if (this._getItemProp(strArray[i], this.keys.label) !== "..." && this.graph.hasSiblings(source) && !this.clickOnlyMode) {
+        // if the item has siblings, we need to add the size of the down chevron.
+        if (this._getItemProp(strArray[i], this.keys.label) !== '...' && this.graph.hasSiblings(source) && !this.clickOnlyMode) {
           accum += 21;
         }
-        //padding on each item (10 on each side)
+        // padding on each item (10 on each side)
         accum += 20;
-        //right angle arrow - the last item doesn't get a right angle.
+        // right angle arrow - the last item doesn't get a right angle.
         if (i !== len - 1) {
           accum += this.clickOnlyMode ? 30 : 15;
         }
@@ -180,14 +180,14 @@ export default class Breadcrumbs {
    * We also set the font and font size.
    */
   _createCanvas(breadcrumbEl) {
-    var style = window.getComputedStyle(breadcrumbEl, null),
+    let style = window.getComputedStyle(breadcrumbEl, null),
       fontSize = style.getPropertyValue('font-size'),
       fontFamily = style.getPropertyValue('font-family');
     const canvas = document.createElement('canvas');
     canvas.height = 20;
     canvas.width = 9999;
     const ctx = canvas.getContext('2d');
-    ctx.font = fontSize + " " + fontFamily;
+    ctx.font = `${fontSize} ${fontFamily}`;
     return ctx;
   }
   /**

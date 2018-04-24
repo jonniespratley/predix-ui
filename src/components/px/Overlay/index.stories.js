@@ -7,9 +7,10 @@ import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 
 storiesOf('Overlay', module)
-	.addDecorator(withKnobs)
-	.add('default', () => (
-		<Overlay 
-			opened={boolean('opened', false)}
-			onOverlayClick={action('clicked')}/>
-	));
+  .addDecorator(withKnobs)
+  .add('default', () => (
+    <Overlay
+      opened={boolean('opened', false)}
+      onOverlayClick={action('clicked')}
+    />
+  ));

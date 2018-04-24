@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const ContextBrowser = styled.div`
   display         : inline-block;
@@ -51,12 +51,10 @@ export default ({
   selected,
   showIcon,
   children
-}) => {
-  return (
-    <ContextBrowser selected={selected}>
-      <ContextBrowserContent>{children}</ContextBrowserContent>
-    </ContextBrowser>
+}) => (
+  <ContextBrowser selected={selected}>
+    <ContextBrowserContent>{children}</ContextBrowserContent>
+  </ContextBrowser>
 
-  );
-}
+);
 

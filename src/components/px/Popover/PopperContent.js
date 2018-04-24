@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import propTypes from 'prop-types';
-import {mapToCssModules, getTarget} from '../utils';
+import { mapToCssModules, getTarget } from '../utils';
 import classNames from 'classnames';
-import {Arrow, Popper} from 'react-popper';
+import { Arrow, Popper } from 'react-popper';
 
 import PopoverArrow from './PopoverArrow';
 
 import styled from 'styled-components';
 
 function isFunction(functionToCheck) {
-	return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
- }
- 
+  return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
+}
+
 const PopoverInner = styled.div`
   top: 0;
 	left: 0;
@@ -44,138 +44,138 @@ const PopoverInner = styled.div`
 PopoverInner.displayName = 'PopoverInner';
 
 class PopperContent extends React.Component {
-	constructor(props) {
-		super(props);
+  constructor(props) {
+    super(props);
 
-		this.handlePlacementChange = this.handlePlacementChange.bind(this);
-		this.setTargetNode = this.setTargetNode.bind(this);
-		this.getTargetNode = this.getTargetNode.bind(this);
-		this.state = {};
-	}
+    this.handlePlacementChange = this.handlePlacementChange.bind(this);
+    this.setTargetNode = this.setTargetNode.bind(this);
+    this.getTargetNode = this.getTargetNode.bind(this);
+    this.state = {};
+  }
 
-	getChildContext() {
-		return {
-			popperManager: {
-				setTargetNode: this.setTargetNode,
-				getTargetNode: this.getTargetNode
-			}
-		};
-	}
+  getChildContext() {
+    return {
+      popperManager: {
+        setTargetNode: this.setTargetNode,
+        getTargetNode: this.getTargetNode
+      }
+    };
+  }
 
-	componentDidMount() {
-		this.handleProps();
-	}
+  componentDidMount() {
+    this.handleProps();
+  }
 
-	componentDidUpdate(prevProps) {
-		if (this.props.isOpen !== prevProps.isOpen) {
-			this.handleProps();
-		} else if (this._element) {
-			// rerender
-			this.renderIntoSubtree();
-		}
-	}
+  componentDidUpdate(prevProps) {
+    if (this.props.isOpen !== prevProps.isOpen) {
+      this.handleProps();
+    } else if (this._element) {
+      // rerender
+      this.renderIntoSubtree();
+    }
+  }
 
-	componentWillUnmount() {
-		this.hide();
-	}
+  componentWillUnmount() {
+    this.hide();
+  }
 
-	setTargetNode(node) {
-		this.targetNode = node;
-	}
+  setTargetNode(node) {
+    this.targetNode = node;
+  }
 
-	getTargetNode() {
-		return this.targetNode;
-	}
+  getTargetNode() {
+    return this.targetNode;
+  }
 
-	getContainerNode() {
-		return getTarget(this.props.container);
-	}
+  getContainerNode() {
+    return getTarget(this.props.container);
+  }
 
-	handlePlacementChange(data) {
-		if (this.state.placement !== data.placement) {
-			this.setState({ placement: data.placement });
-		}
-		return data;
-	}
+  handlePlacementChange(data) {
+    if (this.state.placement !== data.placement) {
+      this.setState({ placement: data.placement });
+    }
+    return data;
+  }
 
-	handleProps() {
-		if (this.props.container !== "inline") {
-			if (this.props.isOpen) {
-				this.show();
-			} else {
-				this.hide();
-			}
-		}
-	}
+  handleProps() {
+    if (this.props.container !== 'inline') {
+      if (this.props.isOpen) {
+        this.show();
+      } else {
+        this.hide();
+      }
+    }
+  }
 
-	hide() {
-		if (this._element) {
-			this.getContainerNode().removeChild(this._element);
-			ReactDOM.unmountComponentAtNode(this._element);
-			this._element = null;
-		}
-	}
+  hide() {
+    if (this._element) {
+      this.getContainerNode().removeChild(this._element);
+      ReactDOM.unmountComponentAtNode(this._element);
+      this._element = null;
+    }
+  }
 
-	show() {
-		this._element = document.createElement("div");
-		this.getContainerNode().appendChild(this._element);
-		this.renderIntoSubtree();
-		if (
-			this._element.childNodes &&
+  show() {
+    this._element = document.createElement('div');
+    this.getContainerNode().appendChild(this._element);
+    this.renderIntoSubtree();
+    if (
+      this._element.childNodes &&
 			this._element.childNodes[0] &&
 			this._element.childNodes[0].focus
-		) {
-			this._element.childNodes[0].focus();
-		}
-	}
+    ) {
+      this._element.childNodes[0].focus();
+    }
+  }
 
-	renderIntoSubtree() {
-		ReactDOM.unstable_renderSubtreeIntoContainer(
-			this,
-			this.renderChildren(),
-			this._element
-		);
-	}
+  renderIntoSubtree() {
+    ReactDOM.unstable_renderSubtreeIntoContainer(
+      this,
+      this.renderChildren(),
+      this._element
+    );
+  }
 
-	renderChildren() {
-		const {
-			cssModule,
-			children,
-			isOpen,
-			flip,
-			target,
-			offset,
-			fallbackPlacement,
-			placementPrefix,
-			hideArrow,
-			className,
-			tag,
-			container,
-			modifiers,
-			...attrs
+  renderChildren() {
+    const {
+      cssModule,
+      children,
+      isOpen,
+      flip,
+      target,
+      offset,
+      fallbackPlacement,
+      placementPrefix,
+      hideArrow,
+      className,
+      tag,
+      container,
+      modifiers,
+      ...attrs
     } = this.props;
-    
-		const arrowClassName = mapToCssModules("arrow", cssModule);
-		const placement = (this.state.placement || attrs.placement).split("-")[0];
-		const popperClassName = mapToCssModules(
-			classNames(
-				className,
-				placementPrefix ? `${placementPrefix}-${placement}` : placement
-			),
-			this.props.cssModule
-		);
 
-		const extendedModifiers = {
-			offset: { offset },
-			flip: { enabled: flip, behavior: fallbackPlacement },
-			update: {
-				enabled: true,
-				order: 950,
-				fn: this.handlePlacementChange
-			},
-			...modifiers
-		};
-/*
+    const arrowClassName = mapToCssModules('arrow', cssModule);
+    const placement = (this.state.placement || attrs.placement).split('-')[0];
+    const popperClassName = mapToCssModules(
+      classNames(
+        className,
+        placementPrefix ? `${placementPrefix}-${placement}` : placement
+      ),
+      this.props.cssModule
+    );
+
+    const extendedModifiers = {
+      offset: { offset },
+      flip: { enabled: flip, behavior: fallbackPlacement },
+      update: {
+        enabled: true,
+        order: 950,
+        fn: this.handlePlacementChange
+      },
+      ...modifiers
+    };
+    /*
 		return (
 			<Popper
 				modifiers={extendedModifiers}
@@ -185,7 +185,7 @@ class PopperContent extends React.Component {
         {({ popperProps, restProps }) => (
          <PopoverInner {...popperProps} {...at}>
             {children}
-            {!hideArrow && 
+            {!hideArrow &&
           <Arrow>
             {({ arrowProps, restProps }) => (
               <PopoverArrow
@@ -195,46 +195,46 @@ class PopperContent extends React.Component {
             )}
           </Arrow>}
           </PopoverInner>
-        )}    
+        )}
 			</Popper>
 		);
 */
-      return (
-        <Popper
-          modifiers={extendedModifiers}
-          {...attrs}
-          component={tag}
-          className={popperClassName}
-        >
-          {children}
-          {!hideArrow && <Arrow className={arrowClassName} />}
-        </Popper>
-      );
-	}
+    return (
+      <Popper
+        modifiers={extendedModifiers}
+        {...attrs}
+        component={tag}
+        className={popperClassName}
+      >
+        {children}
+        {!hideArrow && <Arrow className={arrowClassName} />}
+      </Popper>
+    );
+  }
 
-	render() {
-		this.setTargetNode(getTarget(this.props.target));
+  render() {
+    this.setTargetNode(getTarget(this.props.target));
 
-		if (this.props.container === "inline") {
-			return this.props.isOpen ? this.renderChildren() : null;
-		}
+    if (this.props.container === 'inline') {
+      return this.props.isOpen ? this.renderChildren() : null;
+    }
 
-		return null;
-	}
+    return null;
+  }
 }
 
 PopperContent.childContextTypes = {
-	popperManager: propTypes.object.isRequired
+  popperManager: propTypes.object.isRequired
 };
 
 PopperContent.defaultProps = {
-	placement: "auto",
-	hideArrow: false,
-	isOpen: false,
-	offset: 0,
-	fallbackPlacement: "flip",
-	flip: true,
-	container: "body",
-	modifiers: {}
+  placement: 'auto',
+  hideArrow: false,
+  isOpen: false,
+  offset: 0,
+  fallbackPlacement: 'flip',
+  flip: true,
+  container: 'body',
+  modifiers: {}
 };
 export default PopperContent;

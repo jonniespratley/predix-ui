@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const KvpLabel = styled.div`
   font-size: .8rem;
@@ -60,14 +60,12 @@ KvpUom.displayName = 'KvpUom';
 KvpUom.defaultProps = {
   className: 'kvp-uom'
 };
-const _getAdjustedSize = (s) => {
-  return (
-    s === 'alpha' ? 'delta' :
+const _getAdjustedSize = s => (
+  s === 'alpha' ? 'delta' :
     s === 'beta' ? 'epsilon' :
-    s === 'gamma' ? 'value' :
-    s === 'delta' ? 'value' : 'zeta'
-  );
-};
+      s === 'gamma' ? 'value' :
+        s === 'delta' ? 'value' : 'zeta'
+);
 /**
  * KeyValuePair component
  */
@@ -77,16 +75,13 @@ export default ({
   size,
   uom,
   children
-}) => {
+}) => (
+  <div className="px-key-value-pair">
+    <KvpLabel >{label}</KvpLabel>
+    <KvpValue size={_getAdjustedSize(size)} className={size}>
+      {value}
+      {uom && <KvpUom size={_getAdjustedSize(size)} className={_getAdjustedSize(size)}>{uom}</KvpUom>}
+    </KvpValue>
 
-  return (
-    <div className='px-key-value-pair'>
-      <KvpLabel >{label}</KvpLabel>
-      <KvpValue size={_getAdjustedSize(size)} className={size}>
-        {value}
-        {uom && <KvpUom size={_getAdjustedSize(size)} className={_getAdjustedSize(size)}>{uom}</KvpUom>}
-      </KvpValue>
-
-    </div>
-  );
-}
+  </div>
+);

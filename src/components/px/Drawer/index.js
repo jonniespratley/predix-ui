@@ -2,14 +2,13 @@ import React from 'react';
 import BaseComponent from '../BaseComponent';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-//import stylesheet from './px-drawer.scss';
+// import stylesheet from './px-drawer.scss';
 
 
+import styled, { css } from 'styled-components';
 
-import styled, {css} from 'styled-components';
 
-
-//Drawer
+// Drawer
 const Drawer = styled.div`
   position: fixed;
   z-index: -1;
@@ -92,7 +91,7 @@ const Drawer = styled.div`
 `;
 Drawer.displayName = 'Drawer';
 
-//Content
+// Content
 const DrawerContent = styled.div`
   overflow-x: hidden;
   overflow-y: auto;
@@ -104,7 +103,7 @@ const DrawerContent = styled.div`
 `;
 DrawerContent.displayName = 'DrawerContent';
 
-//Overlay
+// Overlay
 const DrawerOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -134,12 +133,11 @@ DrawerOverlay.displayName = 'DrawerOverlay';
  * Drawer component
  */
 export default class DrawerComponent extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-
   }
 
-  render(){
+  render() {
     const {
       style,
       fixed,
@@ -158,7 +156,7 @@ export default class DrawerComponent extends React.Component {
     return (
       <Drawer opened={opened} anchor={anchor}>
         <DrawerContent>{children}</DrawerContent>
-        {overlay && <DrawerOverlay onClick={onOverlayClick} opened={opened}/>}
+        {overlay && <DrawerOverlay onClick={onOverlayClick} opened={opened} />}
       </Drawer>
     );
   }

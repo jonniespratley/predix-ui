@@ -14,13 +14,14 @@ const stories = storiesOf('Toggle', module);
 stories.addDecorator(withKnobs);
 
 stories.addWithJSX('default', () => (
-	<form>
-		<Toggle id='toggle2' 
-    	name='used1' 
-    	value='true' 
-    	size={select('size', sizeOptions, 'regular')} 
-    	disabled={boolean('disabled', false)}
-    	checked={boolean('checked', false)}
-			/>	
-	</form>
+  <form>
+    <Toggle
+      id="toggle2"
+      name="used1"
+      value="true"
+      size={select('size', sizeOptions, 'regular')}
+      disabled={boolean('disabled', false)}
+      checked={boolean('checked', false)}
+    />
+  </form>
 ));

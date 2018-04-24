@@ -1,9 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
-//import stylesheet from './px-dropdown.scss';
+// import stylesheet from './px-dropdown.scss';
 import BaseComponent from '../BaseComponent';
 import Icon from '../IconSet/Icon';
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 import Button from '../Button';
 
 
@@ -59,7 +59,7 @@ const DropdownContent = styled.div`
 `;
 DropdownContent.displayName = 'DropdownContent';
 DropdownContent.defaultProps = {
-  className:'px-dropdown__content'
+  className: 'px-dropdown__content'
 };
 
 const DropdownOption = styled.div`
@@ -114,10 +114,9 @@ const DropdownTrigger = styled.div`
 DropdownTrigger.displayName = 'DropdownTrigger';
 
 
-
 class Dropdown extends BaseComponent {
-  constructor(props){
-    super(props, {name: 'Dropdown'});
+  constructor(props) {
+    super(props, { name: 'Dropdown' });
     this.displayName = 'Dropdown';
     this.state = {
       dropdownContentWidth: props.dropdownContentWidth || null,
@@ -128,54 +127,54 @@ class Dropdown extends BaseComponent {
       items: props.items || null
     };
   }
-  _handleClick(e){
-    if(e && e.target && e.target.classList.contains('px-utl-close')){
+  _handleClick(e) {
+    if (e && e.target && e.target.classList.contains('px-utl-close')) {
       this._clearSelected();
       this.setState({
-        //opened: !this.state.opened,
+        // opened: !this.state.opened,
         selectedItem: null
       });
     } else {
-      this.setState({opened: !this.state.opened});
+      this.setState({ opened: !this.state.opened });
     }
   }
 
-  _clearSelected(){
-    let items = this.state.items;
+  _clearSelected() {
+    const items = this.state.items;
     items.map(item => item.selected = false);
-    this.setState({items});
+    this.setState({ items });
   }
 
-  _handleChange(item, index, e){
-    if(item.disabled){
+  _handleChange(item, index, e) {
+    if (item.disabled) {
       return;
     }
     this.setState({
       selectedItem: item
     });
 
-    if(!this.props.multi){
+    if (!this.props.multi) {
       this._clearSelected();
       this._handleClick();
     } else {
 
     }
-    let items = this.state.items[index].selected = !this.state.items[index].selected;
+    const items = this.state.items[index].selected = !this.state.items[index].selected;
     if (this.props.onChange) {
       this.props.onChange(item, index, e);
     }
   }
-  handleClear(){
-   // console.log('handleClear');
+  handleClear() {
+    // console.log('handleClear');
     this.setState({
       selectedItem: null
     });
   }
-  _handleDropdownContentRef(el){
+  _handleDropdownContentRef(el) {
     this.dropdownContent = el;
   }
-	render() {
-		const {
+  render() {
+    const {
       keys = {
         key: 'key',
         val: 'val'
@@ -194,7 +193,7 @@ class Dropdown extends BaseComponent {
       preventCloseOnOutsideClick,
       displayValue,
       multi,
-			children
+      children
     } = this.props;
 
     const triggerStyle = {
@@ -211,9 +210,9 @@ class Dropdown extends BaseComponent {
       dropdownContentWidth
     } = this.state;
 
-		const baseClasses = classnames('px-dropdown', className);
-		return (
-			<div className={baseClasses}>
+    const baseClasses = classnames('px-dropdown', className);
+    return (
+      <div className={baseClasses}>
         <Button theme={buttonStyle} disabled={disabled} style={triggerStyle} onClick={this._handleClick.bind(this)}>
           {children && children}
           {!children &&
@@ -222,7 +221,7 @@ class Dropdown extends BaseComponent {
             {!selectedItem && <DropdownLabel>{displayValue}</DropdownLabel>}
 
             {(!hideChevron && !opened || !selectedItem) && <Icon icon={icon} size={16} />}
-            {(!disableClear && selectedItem && opened) && <Icon icon='px-utl:close' size={16} onClick={this.handleClear.bind(this)}/>}
+            {(!disableClear && selectedItem && opened) && <Icon icon="px-utl:close" size={16} onClick={this.handleClear.bind(this)} />}
           </DropdownTrigger>}
         </Button>
         <DropdownContent opened={opened} width={dropdownContentWidth}>
@@ -231,15 +230,15 @@ class Dropdown extends BaseComponent {
               <DropdownOption
                 disabled={item.disabled}
                 selected={item.selected}
-                onClick={this._handleChange.bind(this, item, index)}>
+                onClick={this._handleChange.bind(this, item, index)}
+              >
                 {item[keys.val]}
               </DropdownOption>
-            </div>)
-          )}
+            </div>))}
         </DropdownContent>
-			</div>
-		);
-	}
+      </div>
+    );
+  }
 }
 
 Dropdown.defaultProps = {

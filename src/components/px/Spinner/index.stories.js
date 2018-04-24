@@ -7,10 +7,10 @@ import Spinner from './';
 
 // Spinner
 storiesOf('Spinner', module)
-	.addDecorator(withKnobs)
-	.add('default', () => (
-		<Spinner 
-			finished={boolean('finished', false)}
-			size={number('size', 125)}
-			/>
-	));
+  .addDecorator(withKnobs)
+  .add('default', () => (
+    <Spinner
+      finished={boolean('finished', false)}
+      size={number('size', 125)}
+    />
+  ));

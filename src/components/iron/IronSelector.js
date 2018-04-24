@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 
 class IronSelector extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.displayName = 'IronSelector';
     this.state = {
@@ -16,21 +16,21 @@ class IronSelector extends React.Component {
     this._keys = [];
   }
 
-  _renderChildren(){
-    let selected = this.props.selected;
-    let children = this.props.children;
-    let child = children[selected];
-    if(child){
-      return <div>{child}</div>
+  _renderChildren() {
+    const selected = this.props.selected;
+    const children = this.props.children;
+    const child = children[selected];
+    if (child) {
+      return <div>{child}</div>;
     }
   }
 
-  componentWillReceiveProps(nextProps){
-    //this.setState({selected: nextProps.selected});
+  componentWillReceiveProps(nextProps) {
+    // this.setState({selected: nextProps.selected});
   }
-  
-  componentDidUpdate(){
-    if(this.props.onChange){
+
+  componentDidUpdate() {
+    if (this.props.onChange) {
       this.props.onChange(this.state);
     }
   }
@@ -40,17 +40,15 @@ class IronSelector extends React.Component {
     function labels(child, index) {
       let propForSelect = index;
       this._items.push(child);
-      if(this.props.propForSelect){
-         propForSelect = child.props[this.props.propForSelect];
+      if (this.props.propForSelect) {
+        propForSelect = child.props[this.props.propForSelect];
         this._keys.push(propForSelect);
       } else {
         this._keys.push(index);
       }
       const selectedClassName = this.props.selectedClassName;
       const selected = (this.props.selected === this._getIndexForValue(propForSelect));
-      const baseClasses = classnames(
-        {[`${selectedClassName}`]: selected}
-      );
+      const baseClasses = classnames({ [`${selectedClassName}`]: selected });
       return (
         <li key={index} className={baseClasses}>
           {child}
@@ -61,11 +59,11 @@ class IronSelector extends React.Component {
     return nodes;
   }
 
-  _getIndexForValue(val){
+  _getIndexForValue(val) {
     return this._keys.indexOf(val);
   }
 
-  render(){
+  render() {
     const {
       children,
       className,

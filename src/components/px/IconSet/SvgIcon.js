@@ -1,8 +1,11 @@
 import React from 'react';
 import classnames from 'classnames';
+
 export default class SvgIcon extends React.Component {
-  render(){
-    const {children, classes, className, titleAccess, viewBox} = this.props;
+  render() {
+    const {
+      children, classes, className, titleAccess, viewBox
+    } = this.props;
     return (
       <svg
         className={classnames(classes, className)}

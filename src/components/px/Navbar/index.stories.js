@@ -3,26 +3,31 @@ import { storiesOf } from '@storybook/react';
 import Navbar from './';
 import { action } from '@storybook/addon-actions';
 
-  // Navbar
-  storiesOf('Navbar', module)
+// Navbar
+storiesOf('Navbar', module)
   	.add('default', () => (
-  		<Navbar
-    title='Navbar'/>
+    <Navbar
+      title="Navbar"
+    />
   	))
   	.add('with subtitle', () => (
-  		<Navbar
-    title='Navbar' subtitle='Some View Name'/>
+    <Navbar
+      title="Navbar"
+      subtitle="Some View Name"
+    />
   	))
   	.add('with back button', () => (
-  		<Navbar
-  		  title='Navbar'
-  			onBackButtonClick={action('clicked')}
-  			backButtonLabel='< Back'
-    showBackButton/>
+    <Navbar
+      title="Navbar"
+      onBackButtonClick={action('clicked')}
+      backButtonLabel="< Back"
+      showBackButton
+    />
   	))
   	.add('with menu button', () => (
-  		<Navbar
-  		  title='Navbar'
-  			onMenuButtonClick={action('clicked')}
-    showMenuButton/>
+    <Navbar
+      title="Navbar"
+      onMenuButtonClick={action('clicked')}
+      showMenuButton
+    />
   	));

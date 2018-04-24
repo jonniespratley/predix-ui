@@ -1,14 +1,12 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Overlay from '../Overlay';
 import Button from '../Button';
 import classnames from 'classnames';
-//import stylesheet from './px-modal.scss';
+// import stylesheet from './px-modal.scss';
 
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 import Flex from '../../../styles/flex';
-
-
 
 
 const Modal = styled.div`
@@ -83,9 +81,6 @@ const ModalActions = styled.div`
 `;
 
 
-
-
-
 /**
  * Modal component
  */
@@ -102,50 +97,50 @@ export default ({
   onBackdropClick,
   btnModalPositiveDisabled = false,
   children,
-  fixed, 
+  fixed,
   zIndex,
   modalContentElement
-}) =>  {
-
-
-  return (
+}) => (
   <Modal opened={opened} fixed={fixed} zIndex={zIndex}>
-    <Overlay opened={opened} onOverlayClick={(e) => onBackdropClick(e)}/>
-      
-      <ModalContent role='region'  fixed={fixed} zIndex={zIndex}>
-        {modalContentElement && modalContentElement}
-        {!modalContentElement && 
-          <div>
-           
-            <ModalTitle>{headerText}</ModalTitle>
-            
-            <ModalBody>
-              {children}
-            </ModalBody>
-            <ModalActions>
-              {actions && actions()}
-              
-              {rejectText && 
-                <Button id="btnModalNegative"
-                    onClick={onBtnModalNegativeClick}>
-                    {rejectText}
-                  </Button>
+    <Overlay opened={opened} onOverlayClick={e => onBackdropClick(e)} />
+
+    <ModalContent role="region" fixed={fixed} zIndex={zIndex}>
+      {modalContentElement && modalContentElement}
+      {!modalContentElement &&
+        <div>
+
+          <ModalTitle>{headerText}</ModalTitle>
+
+          <ModalBody>
+            {children}
+          </ModalBody>
+          <ModalActions>
+            {actions && actions()}
+
+            {rejectText &&
+            <Button
+              id="btnModalNegative"
+              onClick={onBtnModalNegativeClick}
+            >
+              {rejectText}
+            </Button>
                 }
-                {acceptText && 
-                <Button primary
-                  id="btnModalPositive"
-                  primary
-                  disabled={btnModalPositiveDisabled}
-                  onClick={onBtnModalPositiveClick}>
-                    {acceptText}
-                  </Button>
+            {acceptText &&
+            <Button
+              primary
+              id="btnModalPositive"
+              primary
+              disabled={btnModalPositiveDisabled}
+              onClick={onBtnModalPositiveClick}
+            >
+              {acceptText}
+            </Button>
                   }
-              
-            </ModalActions>
-          </div>
+
+          </ModalActions>
+        </div>
         }
-        
-      </ModalContent>
+
+    </ModalContent>
   </Modal>
-  );
-}
+);

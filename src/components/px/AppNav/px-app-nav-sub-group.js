@@ -6,19 +6,19 @@ import AppNavItem from './px-app-nav-item';
 import AppNavSubItem from './px-app-nav-sub-item';
 
 class AppNavSubGroup extends BaseComponent {
-  constructor(props){
-    super(props, {displayName: 'AppNavSubGroup'});
+  constructor(props) {
+    super(props, { displayName: 'AppNavSubGroup' });
     this.state = {
       opened: props.opened || false
-    }
+    };
   }
-  _handleClick(e, item, isChild){
-    this.setState({opened: !this.state.opened});
-    if(this.props.onClick){
+  _handleClick(e, item, isChild) {
+    this.setState({ opened: !this.state.opened });
+    if (this.props.onClick) {
       this.props.onClick(item, isChild);
     }
   }
-  render(){
+  render() {
     const { opened } = this.state;
     const subgroupClasses = classnames(
       'px-app-nav-sub-group',
@@ -26,7 +26,7 @@ class AppNavSubGroup extends BaseComponent {
     );
     const dropdownClasses = classnames(
       'app-nav-subgroup__dropdown',
-      {'app-nav-subgroup__dropdown--open': opened}
+      { 'app-nav-subgroup__dropdown--open': opened }
     );
     const {
       onClick,
@@ -40,7 +40,7 @@ class AppNavSubGroup extends BaseComponent {
       onlyShowIcon,
       emptyIcon
     } = this.props;
-    
+
     return (
       <div className={subgroupClasses}>
         <AppNavItem
@@ -56,16 +56,17 @@ class AppNavSubGroup extends BaseComponent {
           icon={icon}
         />
         <div className={dropdownClasses}>
-          <div className='app-nav-subgroup__dropdown__content'>
+          <div className="app-nav-subgroup__dropdown__content">
             {item.children && item.children.map((child, index) => (
-              <AppNavSubItem 
+              <AppNavSubItem
                 onClick={this._handleClick.bind(this, child, true)}
-                key={index} 
-                item={child}/>
+                key={index}
+                item={child}
+              />
             ))}
           </div>
         </div>
-       
+
       </div>
     );
   }

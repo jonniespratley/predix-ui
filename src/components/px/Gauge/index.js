@@ -7,15 +7,14 @@ import BaseComponent from '../BaseComponent';
  * px-example-component component
  */
 export default class Gauge extends BaseComponent {
-  constructor(props){
-    super(props, {displayName: 'Gauge'});
+  constructor(props) {
+    super(props, { displayName: 'Gauge' });
     this.state = {};
   }
-	render() {
-
+  render() {
     const {
-			label = 'Gauge',
-			style,
+      label = 'Gauge',
+      style,
       value = 0,
       unit,
       min = 0,
@@ -25,23 +24,25 @@ export default class Gauge extends BaseComponent {
       normal,
       anormal,
       abnormal,
-			children
-		} = this.props;
+      children
+    } = this.props;
     const _valueOfProcess = value;
-		const baseClasses = classnames(
+    const baseClasses = classnames(
       'Gauge',
-      {'px-gauge--children': children}
+      { 'px-gauge--children': children }
     );
 
-		return (
-			<div className={baseClasses} style={style}>
+    return (
+      <div className={baseClasses} style={style}>
         <div id="chart">
-          <svg xmlns="http://www.w3.org/2000/svg"
-            id="chartSVG">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="chartSVG"
+          >
             <g id="chartG">
-              <path className="arc chart-filled"></path>
-              <path className="arc chart-empty"></path>
-              <path className="needle" transform="rotate(-180)"></path>
+              <path className="arc chart-filled" />
+              <path className="arc chart-empty" />
+              <path className="needle" transform="rotate(-180)" />
             </g>
           </svg>
         </div>
@@ -49,8 +50,8 @@ export default class Gauge extends BaseComponent {
           <span className="text-value">{_valueOfProcess}</span>
           <span className="text-unit">{unit}</span>
         </div>
-				<style>{`${stylesheet}`}</style>
-			</div>
-		);
-	}
+        <style>{`${stylesheet}`}</style>
+      </div>
+    );
+  }
 }

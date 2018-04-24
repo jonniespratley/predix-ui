@@ -1,15 +1,13 @@
 import React from 'react';
 import BaseComponent from '../BaseComponent';
 import classnames from 'classnames';
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 import Tab from './Tab';
 
 
-const Pane = (props) => {
-  return (<div className='px-tabs__pane'>{props.children}</div>);
-};
+const Pane = props => (<div className="px-tabs__pane">{props.children}</div>);
 
-//Container
+// Container
 const TabsContainer = styled.div`
   color: var(--px-tabs-color, black);
   border: 0;
@@ -20,7 +18,7 @@ const TabsContainer = styled.div`
 `;
 TabsContainer.displayName = 'TabsContainer';
 
-//Nav
+// Nav
 const TabsContainerNav = styled.ul`
   font: inherit;
   margin: 0;
@@ -30,7 +28,7 @@ const TabsContainerNav = styled.ul`
 `;
 TabsContainerNav.displayName = 'TabsContainerNav';
 
-//Tab Title
+// Tab Title
 const TabTitle = styled.span`
   color: var(--px-tab-color, black);
   cursor: pointer;
@@ -68,8 +66,8 @@ const TabItem = styled.li`
  * Tabs component
  */
 class Tabs extends BaseComponent {
-	constructor(props) {
-		super(props, {displayName: 'Tabs'});
+  constructor(props) {
+    super(props, { displayName: 'Tabs' });
 
     this.state = {
       selected: this.props.selected || 0,
@@ -80,44 +78,44 @@ class Tabs extends BaseComponent {
     this._keys = [];
   }
 
-  componentWillReceiveProps(nextProps){
-    if(nextProps.selected !== undefined){
-      //const index = this._getIndexForValue(nextProps.selected);
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.selected !== undefined) {
+      // const index = this._getIndexForValue(nextProps.selected);
       const selected = this._getIndexForValue(nextProps.selected);
       this.setState({
-        selected: selected
+        selected
       });
     }
   }
 
-  shouldComponentUpdate(nextProps, nextState){
-     if(
-      nextProps.selected !== this.props.selected || 
+  shouldComponentUpdate(nextProps, nextState) {
+    if (
+      nextProps.selected !== this.props.selected ||
       nextState.selected !== this.state.selected
-    ){
+    ) {
       return true;
     }
     return false;
   }
 
-  _getIndexForValue(val){
-    let index = this._keys.indexOf(val);
+  _getIndexForValue(val) {
+    const index = this._keys.indexOf(val);
     return index;
   }
 
-  _getValueForIndex(index){
-    let val = this._keys[index];
+  _getValueForIndex(index) {
+    const val = this._keys[index];
     return val;
   }
 
-  handleClick(i, event) {    
+  handleClick(i, event) {
     const index = this._getIndexForValue(i);
     const val = this._getValueForIndex(i);
     this.setState({
       selected: index,
       selectedValue: val
     });
-    if(this.props.onChange){
+    if (this.props.onChange) {
       this.props.onChange(i, event);
     }
   }
@@ -128,20 +126,25 @@ class Tabs extends BaseComponent {
     function labels(child, index) {
       let propForSelect = index;
       this._items[index] = child;
-      if(this.props.propForSelect){
-         propForSelect = child.props[this.props.propForSelect];
-      } 
+      if (this.props.propForSelect) {
+        propForSelect = child.props[this.props.propForSelect];
+      }
       this._keys[index] = propForSelect;
-      let selected = (this.state.selected === (this.props.propForSelect ? this._getIndexForValue(propForSelect) : index));
-      let baseClasses = classnames(
-        {'iron-selected': selected}
-      );
+      const selected = (this.state.selected === (this.props.propForSelect ? this._getIndexForValue(propForSelect) : index));
+      const baseClasses = classnames({ 'iron-selected': selected });
       return (
-        <TabItem key={index} className={baseClasses} active={selected} className='px-tab__item' 
+        <TabItem
+          key={index}
+          className={baseClasses}
+          active={selected}
+          className="px-tab__item"
           aria-controls={`panel-${index}`}
-          role='tab'>
-          <TabTitle {...child.props} 
-            onClick={this.handleClick.bind(this, propForSelect)}>
+          role="tab"
+        >
+          <TabTitle
+            {...child.props}
+            onClick={this.handleClick.bind(this, propForSelect)}
+          >
             {child.props.label}
           </TabTitle>
         </TabItem>
@@ -152,21 +155,21 @@ class Tabs extends BaseComponent {
     return React.Children.map(children, labels.bind(this));
   }
 
-	_renderContent() {
+  _renderContent() {
     return this.props.children && this.props.children[this.state.selected];
-	}
+  }
 
-	render() {
-   const {style} = this.props;
-		return (
-      <TabsContainer style={style} className='px-tabs__container'>
-        <TabsContainerNav className='px-tabs__nav' role='tablist'>
+  render() {
+    const { style } = this.props;
+    return (
+      <TabsContainer style={style} className="px-tabs__container">
+        <TabsContainerNav className="px-tabs__nav" role="tablist">
           {this._renderTitles()}
         </TabsContainerNav>
         {this._renderContent()}
       </TabsContainer>
-		);
-	}
+    );
+  }
 }
 Tabs.defaultProps = {
   selected: 0

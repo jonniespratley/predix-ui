@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-//addons
+// addons
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, text, array, object, boolean, number, select } from '@storybook/addon-knobs';
@@ -9,6 +9,7 @@ import { withReadme } from 'storybook-readme';
 
 import AlertMessage from './';
 import README from './README.md';
+
 const typeOptions = {
   information: 'Info',
   error: 'Error',
@@ -19,69 +20,76 @@ const typeOptions = {
 };
 const navItems = [
   {
-    "path": "/page1",
-    "icon": "px-fea:analysis",
-    "label": "Page 1"
+    path: '/page1',
+    icon: 'px-fea:analysis',
+    label: 'Page 1'
   },
   {
-    "path": "/page2",
-    "icon": "px-fea:dashboard",
-    "label": "Page 2"
+    path: '/page2',
+    icon: 'px-fea:dashboard',
+    label: 'Page 2'
   }
 ];
-///
+// /
 storiesOf('Alert Message', module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(README))
-	.add('default', () => (
-		<AlertMessage
+  .add('default', () => (
+    <AlertMessage
       onDismiss={action('onDismiss')}
       onActionClick={action('onActionClick')}
       type={select('type', Object.keys(typeOptions))}
       action={select('action', ['acknowledge', 'dismiss'])}
       message={text('message', 'This is the message content.')}
       messageTitle={text('messageTitle', 'Alert')}
-      visible={boolean('visible', true)}/>
+      visible={boolean('visible', true)}
+    />
   ))
   .add('with message', () => (
-		<AlertMessage
-      messageTitle='Alert'
-      message='This is an information message'
-      visible/>
+    <AlertMessage
+      messageTitle="Alert"
+      message="This is an information message"
+      visible
+    />
   ))
   .add('with type "information"', () => (
-		<AlertMessage
-      messageTitle='Alert'
-      message='This is a message'
-      type='information'
-      visible/>
+    <AlertMessage
+      messageTitle="Alert"
+      message="This is a message"
+      type="information"
+      visible
+    />
   ))
   .add('with type "important"', () => (
-		<AlertMessage
-      messageTitle='Alert'
-      message='This is a message'
-      type='important'
-      visible/>
+    <AlertMessage
+      messageTitle="Alert"
+      message="This is a message"
+      type="important"
+      visible
+    />
   ))
   .add('with type "error"', () => (
-		<AlertMessage
-      messageTitle='Alert'
-      message='This is a message'
-      type='error'
-      visible/>
+    <AlertMessage
+      messageTitle="Alert"
+      message="This is a message"
+      type="error"
+      visible
+    />
   ))
   .add('with type "warning"', () => (
-		<AlertMessage
-      messageTitle='Alert'
-      message='This is a message'
-      type='warning'
-      visible/>
+    <AlertMessage
+      messageTitle="Alert"
+      message="This is a message"
+      type="warning"
+      visible
+    />
   ))
   .add('with type "unkown"', () => (
-		<AlertMessage
-      messageTitle='Alert'
-      message='This is a message'
-      type='unkown'
-      visible/>
-	))
-	;
+    <AlertMessage
+      messageTitle="Alert"
+      message="This is a message"
+      type="unkown"
+      visible
+    />
+  ));
+

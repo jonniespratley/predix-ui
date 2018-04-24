@@ -1,5 +1,5 @@
 import React from 'react';
-//import style from './px-action-sheet.scss';
+// import style from './px-action-sheet.scss';
 import classnames from 'classnames';
 import BaseComponent from '../BaseComponent';
 
@@ -7,8 +7,8 @@ import BaseComponent from '../BaseComponent';
     * ActionSheet component
     */
 export default class ActionSheet extends BaseComponent {
-  constructor(props){
-    super(props, {displayName: 'ActionSheet'});
+  constructor(props) {
+    super(props, { displayName: 'ActionSheet' });
 
     this.onOverlayClick = this.onOverlayClick.bind(this);
   }
@@ -16,14 +16,14 @@ export default class ActionSheet extends BaseComponent {
     this.toggle();
   }
   toggle() {
-    this.setState({opened: !this.state.opened});
+    this.setState({ opened: !this.state.opened });
   }
   open() {
-   // console.log('open');
+    // console.log('open');
   }
 
   close() {
-    //console.log('close');
+    // console.log('close');
   }
 
   render() {
@@ -34,28 +34,29 @@ export default class ActionSheet extends BaseComponent {
     } = this.props;
 
 
-
-    //base
-    let baseClasses = classnames(
+    // base
+    const baseClasses = classnames(
       'px-action-sheet',
-      {'px-action-sheet--is-opened': opened}
+      { 'px-action-sheet--is-opened': opened }
     );
 
-    //overlay
-    let overlayClasses = classnames('c-action-dialog__mask',
-      {'c-action-dialog__mask--is-opened': opened}
+    // overlay
+    const overlayClasses = classnames(
+      'c-action-dialog__mask',
+      { 'c-action-dialog__mask--is-opened': opened }
     );
 
-    //style
-    let classes = classnames(
+    // style
+    const classes = classnames(
       'c-action-sheet',
-    { 'c-action-sheet--is-open': opened });
+      { 'c-action-sheet--is-open': opened }
+    );
 
     return (
-      <div className={baseClasses} ref='baseElement'>
-        <div id="overlay" ref='overlay' onClick={onOverlayClick} className={overlayClasses}></div>
-        <div id="sheet" ref='sheet' className={classes}>
-          <div id="actions" ref='actions' className="c-action-sheet__actions">
+      <div className={baseClasses} ref="baseElement">
+        <div id="overlay" ref="overlay" onClick={onOverlayClick} className={overlayClasses} />
+        <div id="sheet" ref="sheet" className={classes}>
+          <div id="actions" ref="actions" className="c-action-sheet__actions">
             {children}
           </div>
         </div>
