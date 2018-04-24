@@ -12,7 +12,7 @@ import { Catalog, CodeSpecimen, ReactSpecimen } from 'catalog';
 //import './main.css';
 //import '../dist/predix-ui.min.css';
 import px from '../src';
-import DemoHelpers from '../src/components/px/DemoHelpers';
+//import DemoHelpers from '../src/components/px/DemoHelpers';
 
 // TODO: extract
 import IronComponents from '../src/components/iron';
@@ -33,7 +33,6 @@ import pxIconSetDocs from '../src/components/px/IconSet/README.md';
 //import pxIconSetDocs from '../src/px-icon-set/README.md';
 import pxToggleInputDocs from '../src/components/px/Toggle/README.md';
 import pxDrawerDocs from '../src/components/px/Drawer/README.md';
-import pxDatatableDocs from '../src/components/px/DataTable/README.md';
 import pxDropDownDocs from '../src/components/px/Dropdown/README.md';
 import pxGridDocs from '../src/components/px/Grid/README.md';
 import pxLayoutDocs from '../src/components/px/Layout/README.md';
@@ -92,7 +91,7 @@ const pages = [
    //   {path: 'example', title: 'Example', component: require('./example.md')}
     ]
   },
-  
+
   {
     path: '/layout',
     title: 'Layout',

@@ -199,14 +199,14 @@ const siteCommon = {
     extractCss,
     extractSass,
     new HtmlWebpackPlugin({
-      //template: require('html-webpack-template'), // eslint-disable-line global-require
-      template: './catalog/index.ejs',
+      template: require('html-webpack-template'), // eslint-disable-line global-require
+      //template: './catalog/index.ejs',
       inject: false,
       mobile: true,
       title: pkg.name,
       appMountId: 'catalog',
       googleAnalytics: {
-        id: 'UA-58422623-3'
+        trackingId: 'UA-58422623-3'
       }
     }),
     new webpack.DefinePlugin({
