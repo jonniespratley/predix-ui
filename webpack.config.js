@@ -328,6 +328,7 @@ const distCommon = {
   },
   entry: config.paths.src,
   externals: {
+    //'styled-components': 'styled-components',
     react: {
       commonjs: 'react',
       commonjs2: 'react',
@@ -367,11 +368,13 @@ const dist = merge(distCommon, {
   }
 });
 const distMin = merge(distCommon, {
+  devtool: 'source-map',
   output: {
     filename: `${config.filename}.min.js`
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
       compress: {
         warnings: false
       }

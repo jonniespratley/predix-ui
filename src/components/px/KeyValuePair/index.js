@@ -1,12 +1,11 @@
 import React from 'react';
 import classnames from 'classnames';
 import styled, {css} from 'styled-components';
-import {rem} from 'polished';
 
 const KvpLabel = styled.div`
-    font-size: .8rem;
-    line-height: 1.66667;
-    color: var(--px-headings-label-color,gray);
+  font-size: .8rem;
+  line-height: 1.66667;
+  color: var(--px-headings-label-color,gray);
 `;
 KvpLabel.displayName = 'KvpLabel';
 KvpLabel.defaultProps = {
@@ -15,21 +14,21 @@ KvpLabel.defaultProps = {
 
 const KvpValue = styled.span`
   color: var(--px-headings-value-color, black);
-  margin-top: ${rem('-4px')};
+  margin-top: -4px;
   ${props => props.size === 'alpha' && css`
-    margin-top: ${rem('-10px')}
+    margin-top: -10px;
   `}
   ${props => props.size === 'beta' && css`
-    margin-top: ${rem('-6px')}
+    margin-top: -6px;
   `}
   ${props => props.size === 'gamma' && css`
-    margin-top: ${rem('-12px')}
+    margin-top:-12px;
   `}
   ${props => props.size === 'delta' && css`
-    margin-top: ${rem('-8px')}
+    margin-top: -8px;
   `}
   ${props => props.size === 'epsilon' && css`
-    margin-top: ${rem('-2px')}
+    margin-top: -2px;
   `}
 `;
 KvpValue.displayName = 'KvpValue';
@@ -37,24 +36,24 @@ KvpValue.defaultProps = {
   className: 'kvp-value'
 };
 const KvpUom = styled.span`
-  margin-left: ${rem('0px')};
+  margin-left: 0px;
   ${props => props.size === 'value' && css`
     font-size: 1rem;
   `}
   ${props => props.size === 'alpha' && css`
-    margin-left: ${rem('-12px')}
+    margin-left: -12px;
   `}
   ${props => props.size === 'beta' && css`
-    margin-left: ${rem('-10px')}
+    margin-left: -10px;
   `}
   ${props => props.size === 'gamma' && css`
-    margin-left: ${rem('-8px')}
+    margin-left: -8px;
   `}
   ${props => props.size === 'delta' && css`
-    margin-left: ${rem('-4px')}
+    margin-left: -4px;
   `}
   ${props => props.size === 'epsilon' && css`
-    margin-left: ${rem('-2px')}
+    margin-left: -2px;
   `}
 `;
 KvpUom.displayName = 'KvpUom';
@@ -87,7 +86,7 @@ export default ({
         {value}
         {uom && <KvpUom size={_getAdjustedSize(size)} className={_getAdjustedSize(size)}>{uom}</KvpUom>}
       </KvpValue>
-      
+
     </div>
   );
 }

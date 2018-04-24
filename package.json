@@ -72,6 +72,7 @@
     "babel-loader": "^7.1.2",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-module-resolver": "^3.0.0",
+    "babel-plugin-styled-components": "^1.5.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-decorators": "^6.24.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.4",
@@ -94,6 +95,7 @@
     "enzyme-adapter-react-16": "^1.0.0",
     "enzyme-to-json": "^3.3.3",
     "esdoc": "^1.0.3",
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
     "esdoc-react-plugin": "^1.0.1",
     "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^4.16.0",
@@ -136,8 +138,6 @@
     "node-sass": "^4.5.3",
     "node-sass-import-once": "^1.2.0",
     "npm-install-webpack-plugin": "^4.0.5",
-    "polished": "^1.9.2",
-    "prop-types": "^15.6.0",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
     "px-table-view": "https://github.com/PredixDev/px-table-view.git#master",
@@ -148,7 +148,6 @@
     "react-css-modules": "^4.7.1",
     "react-dom": "^16.2.0",
     "react-github-corner": "^2.1.0",
-    "react-popper": "^0.8.3",
     "react-test-renderer": "16",
     "rimraf": "^2.6.1",
     "sass-loader": "^7.0.0",
@@ -157,9 +156,9 @@
     "storybook-readme": "^3.3.0",
     "strip-json-comments": "^2.0.1",
     "style-loader": "^0.19.0",
-    "styled-components": "^3.2.3",
     "svg-inline-loader": "^0.8.0",
     "svgo": "^1.0.3",
+    "symbol-tree": "^3.2.2",
     "sync-exec": "^0.6.2",
     "system-bell-webpack-plugin": "^1.0.0",
     "url-loader": "^0.6.0",
@@ -170,13 +169,17 @@
     "webpack-jarvis": "^0.2.2",
     "webpack-merge": "^4.1.0",
     "webpack-stream": "^4.0.0",
-    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
-    "symbol-tree": "^3.2.2"
+    "polished": "^1.9.2",
+    "prop-types": "^15.6.0",
+    "react-popper": "^0.8.3",
+    "styled-components": "^3.2.3"
   },
   "peerDependencies": {
     "file-loader": "^1.1.6",
+
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
+
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>__tests__/setup.js",
