@@ -329,6 +329,11 @@ const distCommon = {
   entry: config.paths.src,
   externals: {
     //'styled-components': 'styled-components',
+    'styled-components': {
+      commonjs: 'styled-components',
+      commonjs2: 'styled-components',
+      amd: 'styled-components'
+    },
     react: {
       commonjs: 'react',
       commonjs2: 'react',
