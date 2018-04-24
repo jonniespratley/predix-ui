@@ -142,13 +142,12 @@ export default class IronCollapse extends React.Component {
 
 	_handleRef(el){
 		this.base = el;
-		console.log('handleRef', el);
 	}
 
 	render() {
 		const { opened } = this.state;
 		const { style, children } = this.props;
-		
+
 		const baseClassnames = classnames(
 			'iron-collapse'
 			//{ 'iron-collapse-opened': opened }

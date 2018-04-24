@@ -1,7 +1,7 @@
 # predix-ui
 Unoffical React components that implement Predix's Design System CSS.
 
-[![Build Status](https://travis-ci.org/jonniespratley/predix-ui/develop.svg)](https://travis-ci.org/jonniespratley/predix-ui) [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components) [![Dependency Status](https://img.shields.io/david/jonniespratley/predix-ui.svg)](https://david-dm.org/jonniespratley/predix-ui)
+[![Build Status](https://travis-ci.org/jonniespratley/predix-ui.svg?branch=develop)](https://travis-ci.org/jonniespratley/predix-ui) [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components) [![Dependency Status](https://img.shields.io/david/jonniespratley/predix-ui.svg)](https://david-dm.org/jonniespratley/predix-ui)
 [![npm downloads](https://img.shields.io/npm/dm/predix-ui.svg)]() [![npm version](https://img.shields.io/npm/v/predix-ui.svg)]() [![Module Formats](https://img.shields.io/badge/module%20formats-umd%2C%20cjs%2C%20esm-green.svg)]()
 
 > For more information on Predix UI visit [https://www.predix-ui.com/#/home](https://www.predix-ui.com/#/home)
