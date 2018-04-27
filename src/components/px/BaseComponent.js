@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Component } from 'react';
 /**
  * @description Base component class that all ui components extend.

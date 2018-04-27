@@ -1,10 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-// addons
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, text, array, object, boolean, number, select } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
 import { withReadme } from 'storybook-readme';
 
 import AlertMessage from './';
@@ -18,19 +15,7 @@ const typeOptions = {
   warning: 'Warning',
   success: 'Success'
 };
-const navItems = [
-  {
-    path: '/page1',
-    icon: 'px-fea:analysis',
-    label: 'Page 1'
-  },
-  {
-    path: '/page2',
-    icon: 'px-fea:dashboard',
-    label: 'Page 2'
-  }
-];
-// /
+
 storiesOf('Alert Message', module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(README))

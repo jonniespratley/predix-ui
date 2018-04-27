@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * @class IronMediaQuery
  * @description React implementation of https://github.com/PolymerElements/iron-media-query
  */
-export default class IronMediaQuery extends React.Component {
+class IronMediaQuery extends React.Component {
   constructor(props) {
     super(props);
     this._mq = null;
@@ -16,9 +17,8 @@ export default class IronMediaQuery extends React.Component {
       onChange: null
     };
     this.state = {
-      full: props.full || false,
       queryMatches: false,
-      query: props.query || null
+      query: props.query
     };
     this.namedQueries = {
       xs: '(max-width: 21.33rem)',
@@ -28,6 +28,7 @@ export default class IronMediaQuery extends React.Component {
       xl: '(min-width: 85.33rem)'
     };
   }
+
   _setQueryMatches(m) {
     const s = this.state;
     s.queryMatches = m;
@@ -39,20 +40,23 @@ export default class IronMediaQuery extends React.Component {
       this.props.onMatch(s);
     }
   }
+
   _add() {
     if (this._mq) {
       this._mq.addListener(this._boundMQHandler);
     }
   }
+
   _remove() {
     if (this._mq) {
       this._mq.removeListener(this._boundMQHandler);
     }
     this._mq = null;
   }
+
   queryChanged() {
     this._remove();
-    let query = this.state.query;
+    let { query } = this.state;
     if (this.namedQueries[query]) {
       query = this.namedQueries[query];
     }
@@ -66,19 +70,19 @@ export default class IronMediaQuery extends React.Component {
     this._add();
     this.queryHandler(this._mq);
   }
+
   queryHandler(mq) {
-    this.fire('px-media-query-change', mq);
     this._setQueryMatches(mq.matches);
   }
-  fire(e, d) {
-    // console.log('fire', e, d);
-  }
+
   componentDidMount() {
     this.queryChanged();
   }
+
   componentWillUnmount() {
     this._remove();
   }
+
   render() {
     const { children } = this.props;
     const { queryMatches } = this.state;
@@ -87,3 +91,21 @@ export default class IronMediaQuery extends React.Component {
     );
   }
 }
+
+IronMediaQuery.defaultProps = {
+  children: null,
+  onChange: null,
+  onMatch: null,
+  query: null,
+  full: false
+};
+
+IronMediaQuery.propTypes = {
+  children: PropTypes.node,
+  onChange: PropTypes.func,
+  onMatch: PropTypes.func,
+  query: PropTypes.string,
+  full: PropTypes.bool
+};
+
+export default IronMediaQuery;

@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-
+import PropTypes from 'prop-types';
 
 class IronSelector extends React.Component {
   constructor(props) {
@@ -8,7 +8,6 @@ class IronSelector extends React.Component {
     this.displayName = 'IronSelector';
     this.state = {
       selected: props.selected || 0,
-      selectedItem: props.selectedItem || null,
       selectedClassName: props.selectedClassName || 'iron-selected',
       propForSelected: props.propForSelect || null
     };
@@ -17,16 +16,12 @@ class IronSelector extends React.Component {
   }
 
   _renderChildren() {
-    const selected = this.props.selected;
-    const children = this.props.children;
+    const { selected, children } = this.props;
     const child = children[selected];
     if (child) {
       return <div>{child}</div>;
     }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    // this.setState({selected: nextProps.selected});
+    return null;
   }
 
   componentDidUpdate() {
@@ -46,7 +41,7 @@ class IronSelector extends React.Component {
       } else {
         this._keys.push(index);
       }
-      const selectedClassName = this.props.selectedClassName;
+      const { selectedClassName } = this.props;
       const selected = (this.props.selected === this._getIndexForValue(propForSelect));
       const baseClasses = classnames({ [`${selectedClassName}`]: selected });
       return (
@@ -65,15 +60,8 @@ class IronSelector extends React.Component {
 
   render() {
     const {
-      children,
       className,
-      selected,
-      selectedItem,
-      style = {
-        listStyleType: 'none',
-        margin: 0,
-        padding: 0
-      }
+      style
     } = this.props;
 
     const baseClassnames = classnames(
@@ -90,11 +78,29 @@ class IronSelector extends React.Component {
 }
 
 IronSelector.defaultProps = {
-  selectedClassName: 'iron-selected',
-  selectedStyle: null,
+  onChange: null,
+  style: {
+    listStyleType: 'none',
+    margin: 0,
+    padding: 0
+  },
+  propForSelect: null,
   selected: 0,
-  selectedItem: null,
-  propForSelect: null
+  children: null,
+  // selectedItem: null,
+  selectedClassName: 'iron-selected',
+  className: 'iron-selector'
+};
+
+IronSelector.propTypes = {
+  onChange: PropTypes.func,
+  style: null,
+  children: PropTypes.node,
+  propForSelect: PropTypes.string,
+  selected: PropTypes.number,
+  // selectedItem: PropTypes.string,
+  selectedClassName: PropTypes.string,
+  className: PropTypes.string
 };
 
 export default IronSelector;

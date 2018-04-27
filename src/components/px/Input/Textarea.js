@@ -1,5 +1,4 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const Textarea = styled.textarea`
   width: 100%;
@@ -15,45 +14,45 @@ const Textarea = styled.textarea`
   background-color: var(--px-input-background-color, transparent);
   transition: background .4s, border-color .4s, color .4s;
   box-sizing: border-box;
-    &:focus{
-        color: var(--px-input-text-color--focused, inherit);
-        background-color: var(--px-input-textarea-background--focused, #eefbff);
-        border: 1px solid var(--px-input-border-color--outer--focused, #007acc);
-    }
-    &:focus::placeholder,
-    &:disabled::placeholder{
-        color: var(--px-input-text-color--placeholder--focused, rgba(0, 0, 0, 0.3));
-    }
+  &:focus{
+      color: var(--px-input-text-color--focused, inherit);
+      background-color: var(--px-input-textarea-background--focused, #eefbff);
+      border: 1px solid var(--px-input-border-color--outer--focused, #007acc);
+  }
+  &:focus::placeholder,
+  &:disabled::placeholder{
+      color: var(--px-input-text-color--placeholder--focused, rgba(0, 0, 0, 0.3));
+  }
 
-    &::placeholder{
-        color: var(--px-input-text-color--placeholder, rgba(0, 0, 0, 0.3));
-    }
+  &::placeholder{
+      color: var(--px-input-text-color--placeholder, rgba(0, 0, 0, 0.3));
+  }
 
-    &:disabled::placeholder{
-        color: var(--px-input-text-color--disabled, rgba(0, 0, 0, 0.2));
-    }
+  &:disabled::placeholder{
+      color: var(--px-input-text-color--disabled, rgba(0, 0, 0, 0.2));
+  }
 
-    &::-ms-clear {
-        display: none;
-    }
+  &::-ms-clear {
+      display: none;
+  }
 
-    &[readonly],
-    &:disabled {
-        border-color: var(--px-input-border-color--disabled, rgba(0, 0, 0, 0.2));
-        color: var(--px-input-text-color--disabled, rgba(0, 0, 0, 0.2));
-        cursor: not-allowed;
-        background-color: var(--px-input-background-color--disabled, transparent);
-    }
+  &[readonly],
+  &:disabled {
+      border-color: var(--px-input-border-color--disabled, rgba(0, 0, 0, 0.2));
+      color: var(--px-input-text-color--disabled, rgba(0, 0, 0, 0.2));
+      cursor: not-allowed;
+      background-color: var(--px-input-background-color--disabled, transparent);
+  }
 
-    &:hover{
-        background-color: var(--px-input-background-color--hover, #d8e0e5);
-    }
+  &:hover{
+      background-color: var(--px-input-background-color--hover, #d8e0e5);
+  }
 
-    &:focus{
-        border-color: var(--px-input-border-color--outer--focused, #007acc);
-        background-color: var(--px-input-background-color--focused, #eefbff);
-        color: var(--px-input-text-color--focused, inherit);
-    }
+  &:focus{
+      border-color: var(--px-input-border-color--outer--focused, #007acc);
+      background-color: var(--px-input-background-color--focused, #eefbff);
+      color: var(--px-input-text-color--focused, inherit);
+  }
 `;
 
 Textarea.displayName = 'Textarea';

@@ -1,12 +1,15 @@
+/* eslint-ignore */
 import React from 'react';
+import cx from 'classnames';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, text, array, object, boolean, number, select } from '@storybook/addon-knobs';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 
-import { Viewport } from '@storybook/addon-viewport';
 import Tree from './';
+import Grid from '../Grid';
 import TreeNode from './TreeNode';
+import UiTree from './UiTree';
+
 
 const treeData = [{
   label: 'Leaf 0.0',
@@ -209,6 +212,67 @@ const mockNode = {
     { id: 'node-1-c', label: 'Node 1c' }
   ]
 };
+
+const mockTree = {
+  module: 'react-ui-tree',
+  children: treeData
+};
+
+class ExampleApp extends React.Component {
+  state = {
+    active: null,
+    tree: mockTree
+  };
+
+  renderNode = node => (
+    <span
+      className={cx('node', { 'is-active': node === this.state.active })}
+      onClick={this.onClickNode.bind(null, node)}
+    >
+      {node.module}
+    </span>
+  );
+
+  onClickNode = (node) => {
+    this.setState({
+      active: node
+    });
+  };
+
+  handleChange = (tree) => {
+    this.setState({
+      tree
+    });
+  };
+
+  updateTree = () => {
+    const { tree } = this.state;
+    tree.children.push({ module: 'test' });
+    this.setState({
+      tree
+    });
+  };
+
+  render() {
+    return (
+      <Grid>
+        <UiTree
+          paddingLeft={20}
+          tree={this.state.tree}
+          onChange={this.handleChange}
+          isNodeCollapsed={this.isNodeCollapsed}
+          renderNode={this.renderNode}
+        />
+        <div>
+          <button onClick={this.updateTree}>update tree</button>
+          <pre>{JSON.stringify(this.state.tree, null, '  ')}</pre>
+        </div>
+      </Grid>
+    );
+  }
+}
+
+
 storiesOf('Tree', module)
   .addDecorator(withKnobs)
   .add('default', () => (
@@ -217,15 +281,17 @@ storiesOf('Tree', module)
       onChange={action('onChange')}
     />
   ))
+  .add('with UI Tree', () => (
+    <ExampleApp />
+  ))
   .add('with TreeNode', () => (
     <TreeNode
+      onChange={action('onChange')}
+      onCategorySelect={action('onCategorySelect')}
       isSelectable={boolean('isSelectable', true)}
       selected={boolean('selected', false)}
       open={boolean('open', false)}
       data={mockNode}
-      children={mockNode.children}
-      id={text('id', mockNode.id)}
-      label={text('label', mockNode.label)}
     />
   ));
 

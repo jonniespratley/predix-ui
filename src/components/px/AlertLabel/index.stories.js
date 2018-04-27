@@ -6,7 +6,6 @@ import { withReadme } from 'storybook-readme';
 import AlertLabel from './';
 import README from './README.md';
 
-
 const typeOptions = {
   info: 'Info',
   error: 'Error',

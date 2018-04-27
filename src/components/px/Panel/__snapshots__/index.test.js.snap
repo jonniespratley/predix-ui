@@ -29,8 +29,8 @@ exports[`Panel fixed renders correctly 1`] = `
 }
 
 <div
-  className="px-panel c0"
-  style={undefined}
+  className="c0"
+  style={null}
 >
   <div
     className="px-panel-content c1"
@@ -66,8 +66,8 @@ exports[`Panel renders block when visible 1`] = `
 }
 
 <div
-  className="px-panel c0"
-  style={undefined}
+  className="c0"
+  style={null}
 >
   <div
     className="px-panel-content c1"

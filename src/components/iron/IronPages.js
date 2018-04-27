@@ -1,29 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 class IronPages extends React.Component {
-  constructor(props) {
-    super(props);
-    this.displayName = 'IronPages';
-  }
   _renderChildren() {
-    const selected = this.props.selected;
+    const {
+      selected,
+      selectedClassName
+    } = this.props;
+    const len = React.Children.count(this.props.children);
     let child = null;
-    const len = this.props.children.length;
     if (selected > len - 1) {
-      child = this.props.children[0];
+      [child] = this.props.children;
     } else {
       child = this.props.children[selected];
     }
-    const selectedClassName = classnames(this.props.selectedClassName);
-    return (<div className={selectedClassName}>{child}</div>);
+    return (<div className={classnames(selectedClassName)}>{child}</div>);
   }
+
   render() {
     const {
-      children,
-      className,
-      selectedClassName,
-      style
+      className
     } = this.props;
 
     return (
@@ -33,11 +30,23 @@ class IronPages extends React.Component {
 }
 
 IronPages.defaultProps = {
-  propForSelect: null,
+  // propForSelect: null,
   selected: 0,
-  selectedItem: null,
+  children: null,
+  // selectedItem: null,
   selectedClassName: 'iron-selected',
   className: 'iron-selector'
 };
+
+IronPages.propTypes = {
+  children: PropTypes.node,
+  // propForSelect: PropTypes.string,
+  selected: PropTypes.number,
+  // selectedItem: PropTypes.string,
+  selectedClassName: PropTypes.string,
+  className: PropTypes.string
+};
+
+IronPages.displayName = 'IronPages';
 
 export default IronPages;

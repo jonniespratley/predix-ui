@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * observers: [
     '_selectedChanged(selected.*)',

@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { array, number } from '@storybook/addon-knobs';
+
 import AppNav from './';
 import AppNavItem from './px-app-nav-item';
-import { array, number, text } from '@storybook/addon-knobs';
+// import Icons from '../IconSet';
 
-import Icons from '../IconSet';
-
-const AllIcons = Object.keys(Icons).sort();
+// const AllIcons = Object.keys(Icons).sort();
 
 const navItems = array('navItems', [{
   label: 'Home',

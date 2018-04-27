@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, select, number } from '@storybook/addon-knobs/react';
 
@@ -14,11 +15,15 @@ const cheatsheetStyles = {
 };
 const RenderIconSet = ({ icons, size }) => (
   <ul style={cheatsheetStyles}>
-    {icons && icons.map((item, key) => (
-      <li key={key}><Icon icon={item} size={size} viewBox="0 0 32 32" />{item}</li>
-	))}
+    {icons && icons.map(item => (
+      <li key={item}><Icon icon={item} size={size} viewBox="0 0 32 32" />{item}</li>
+    ))}
   </ul>
 );
+RenderIconSet.propTypes = {
+  icons: PropTypes.arrayOf(PropTypes.string).isRequired,
+  size: PropTypes.number.isRequired
+};
 
 storiesOf('Icon', module)
   .addDecorator(withKnobs)

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import SymbolTree from 'symbol-tree';
 
 export class AssetGraph {

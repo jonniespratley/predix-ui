@@ -1,5 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
+import PropTypes from 'prop-types';
 import AppNav from '../AppNav';
 import BrandingBar from '../BrandingBar';
 
@@ -9,10 +9,8 @@ import BrandingBar from '../BrandingBar';
 const AppHeader = ({
   title,
   selected,
-  selectedItem,
   onChange,
   items,
-  style,
   children
 }) => (
   <div>
@@ -22,5 +20,24 @@ const AppHeader = ({
   </div>
 );
 
+AppHeader.defaultProps = {
+  title: null,
+  selected: null,
+  onChange: null,
+  items: null,
+  children: null
+};
+
+AppHeader.propTypes = {
+  title: PropTypes.string,
+  selected: PropTypes.number,
+  onChange: PropTypes.func,
+  items: PropTypes.arrayOf([
+    PropTypes.any
+  ]),
+  children: PropTypes.node
+};
+
 AppHeader.displayName = 'AppHeader';
+
 export default AppHeader;

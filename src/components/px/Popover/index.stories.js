@@ -1,14 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, text, array, object, boolean, number, select } from '@storybook/addon-knobs';
-
+import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
 
 import Popover from './';
 import PopoverBody from './PopoverBody';
 import PopoverHeader from './PopoverHeader';
-
 
 const PopperPlacements = [
   'auto-start',
@@ -27,11 +23,10 @@ const PopperPlacements = [
   'left',
   'left-start'
 ];
-
+/* eslint-disable */
 class Example extends React.Component {
   constructor(props) {
     super(props);
-
     this.toggle = this.toggle.bind(this);
     this.state = {
       popoverOpen: props.popoverOpen || false
@@ -72,22 +67,9 @@ class Example extends React.Component {
     );
   }
 }
+/* eslint-enable */
 storiesOf('Popover', module)
   .addDecorator(withKnobs)
-/*
-	.add('default', () => (
-		<Popover
-			toggle={action('toggle')}
-
-			placement={select('placement', PopperPlacements, 'right')}
-		>
-			<PopoverHeader>{text('title', 'Popover Title')}</PopoverHeader>
-			<PopoverBody>
-				{text('children', 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.')}
-			</PopoverBody>
-		</Popover>
-	))
-	*/
   .add('with example', () => (
     <Example
       title={text('title', 'Popover Title')}

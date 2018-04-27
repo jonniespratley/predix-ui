@@ -1,5 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 const Panel = styled.div`
@@ -49,10 +49,10 @@ const Panel = styled.div`
     transition: var(--px-panel-transition, width 0.4s cubic-bezier(.78,.13,.16,.87));
     white-space: nowrap;
 
-    ${props => props.opened && css`
+    ${props.opened && css`
       width: var(--px-panel-size, 320px);
       overflow-y: auto;
-      ${props => props.fullSize && css`
+      ${props.fullSize && css`
         width: 100%;
         overflow-y: auto;
       `}
@@ -63,7 +63,7 @@ const Panel = styled.div`
     left: 0;
     border-right: 1px solid var(--px-panel-border-color,gray);
 
-    ${props => props.floating && css`
+    ${props.floating && css`
       border-right: none;
       left: var(--px-panel-offset--left, 2rem);
       top: var(--px-panel-offset--top, 2rem);
@@ -75,7 +75,7 @@ const Panel = styled.div`
     right: 0;
     border-left: 1px solid var(--px-panel-border-color,gray);
 
-    ${props => props.floating && css`
+    ${props.floating && css`
       border-left: none;
       right: var(--px-panel-offset--right, 2rem);
       top: var(--px-panel-offset--top, 2rem);
@@ -90,7 +90,7 @@ const Panel = styled.div`
     left: 0;
     transition: var(--px-panel-transition, height 0.4s cubic-bezier(.78,.13,.16,.87));
 
-    ${props => props.opened && css`
+    ${props.opened && css`
       height: var(--px-panel-size, 320px);
       overflow-y: auto;
     `}
@@ -100,7 +100,7 @@ const Panel = styled.div`
     top: 0;
     border-bottom: 1px solid var(--px-panel-border-color, gray);
 
-    ${props => props.fullSize && css`
+    ${props.fullSize && css`
       right: var(--px-panel-offset--right, 2rem);
       left: var(--px-panel-offset--left, 2rem);
       top: var(--px-panel-offset--bottom, 2rem);
@@ -111,7 +111,7 @@ const Panel = styled.div`
     bottom: 0;
     border-top: 1px solid var(--px-panel-border-color, gray);
 
-    ${props => props.fullSize && css`
+    ${props.fullSize && css`
       right: var(--px-panel-offset--right, 2rem);
       left: var(--px-panel-offset--left, 2rem);
       bottom: var(--px-panel-offset--bottom, 2rem);
@@ -138,20 +138,21 @@ PanelContent.defaultProps = {
 /**
  * Panel component
  */
-export default ({
+const Component = ({
   style,
   className,
-  background = 'light',
-  position = 'right',
-  fullSize = false,
-  opened = false,
-  fixed = false,
-  persistent = false,
-  floating = false,
-  minimizable = false,
+  background,
+  position,
+  fullSize,
+  opened,
+  fixed,
+  persistent,
+  floating,
+  minimizable,
   children
 }) => (
   <Panel
+    persistent={persistent}
     background={background}
     style={style}
     className={className}
@@ -165,3 +166,33 @@ export default ({
     <PanelContent>{children}</PanelContent>
   </Panel>
 );
+
+Component.defaultProps = {
+  style: null,
+  className: null,
+  background: 'light',
+  position: 'right',
+  fullSize: false,
+  opened: false,
+  fixed: false,
+  persistent: false,
+  floating: false,
+  minimizable: false,
+  children: null
+};
+
+Component.propTypes = {
+  style: null,
+  className: null,
+  background: PropTypes.string,
+  position: PropTypes.string,
+  fullSize: PropTypes.bool,
+  opened: PropTypes.bool,
+  fixed: PropTypes.bool,
+  persistent: PropTypes.bool,
+  floating: PropTypes.bool,
+  minimizable: PropTypes.bool,
+  children: PropTypes.node
+};
+
+export default Component;

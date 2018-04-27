@@ -1,9 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, text, array, object, boolean, number, select } from '@storybook/addon-knobs';
-
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 
 import Panel from './';
 import Card from '../Card';
@@ -17,18 +14,21 @@ const demoStyles = {
   border: '1px solid gray',
   padding: '1rem'
 };
-const positions = ['top', 'right', 'left', 'bottom'];
+
+const positions = [
+  'top',
+  'right',
+  'left',
+  'bottom'
+];
+
 const bgColors = [
   'light',
   'medium',
   'dark'
 ];
 
-const actions = () => (
-  <div>
-		Expand
-  </div>
-);
+const actions = () => (<div>Expand</div>);
 
 storiesOf('Panel', module)
   .addDecorator(withKnobs)

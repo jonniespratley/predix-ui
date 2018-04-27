@@ -12,14 +12,16 @@
     }]
   ],
   "plugins": [
-    ["babel-plugin-styled-components"],
-    ["transform-decorators"],
+    "babel-plugin-styled-components",
+    "transform-decorators",
+    ["transform-class-properties", { "spec": true }],
     ["transform-react-remove-prop-types",{"mode": "wrap"}]
   ],
   "env": {
     "dev": {
       "presets": [
-        "es2015",
+        "env",
+        "stage-0",
         "react-hmre"
       ]
     },
@@ -57,12 +59,6 @@
             "modules": false
           }
         ]
-      ]
-    },
-    "test": {
-      "presets": [
-        "es2015",
-        "react"
       ]
     }
   }

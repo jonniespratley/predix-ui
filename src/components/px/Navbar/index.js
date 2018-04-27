@@ -1,96 +1,90 @@
 import React from 'react';
-// import stylesheet from './px-navbar.scss';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import Icon from '../IconSet/Icon';
-import styled, { css } from 'styled-components';
-
 
 const Navbar = styled.div`
-	position: absolute;
+ position: absolute;
   top: 0;
   left: 0;
   right: 0;
   -webkit-touch-callout: none;
   user-select: none;
   transform: translate3d(0, 0, 0);
-	transition: var(--px-navbar-transition, transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1));
+ transition: var(--px-navbar-transition, transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1));
 
-	font-size: 15px;
-	border-bottom: 1px solid gray;
-	border-bottom: var(--px-navbar-border-bottom, 1px solid gray);
-	background-color: var(--px-navbar-background-color, white);
-	color: var(--px-navbar-color, black);
-	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
-	svg {
-		stroke: none;
-		fill: var(--px-navbar-color, currentColor);
-		color: currentColor;
-	}
-	button {
-		padding: 0.33333rem;
-		letter-spacing: 0;
-		line-height: 20px;
-		padding: 0.33333rem;
-		min-width: 2.93333rem;
-		min-height: 2.93333rem;
-		transition: none;
-		vertical-align: middle;
-		-webkit-box-shadow: none;
-		box-shadow: none;
-		display: flex;
-		align-items: center;
-		align-content: center;
-		justify-content: center;
-		box-sizing: border-box;
+ font-size: 15px;
+ border-bottom: 1px solid gray;
+ border-bottom: var(--px-navbar-border-bottom, 1px solid gray);
+ background-color: var(--px-navbar-background-color, white);
+ color: var(--px-navbar-color, black);
+ box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+ svg {
+  stroke: none;
+  fill: var(--px-navbar-color, currentColor);
+  color: currentColor;
+ }
+ button {
+  padding: 0.33333rem;
+  letter-spacing: 0;
+  line-height: 20px;
+  padding: 0.33333rem;
+  min-width: 2.93333rem;
+  min-height: 2.93333rem;
+  transition: none;
+  vertical-align: middle;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 2.93333rem;
+  height: 2.93333rem;
+  border: 0 !important;
+  border-radius: 0 !important;
+  line-height: inherit;
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: none;
+  background: none;
+  outline: none;
 
-		min-width: 2.93333rem;
-  	height: 2.93333rem;
+  cursor: pointer;
 
+  &:disabled{
+   opacity: 0.3;
+   cursor: default;
+   pointer-events: none;
+  }
 
-		border: 0 !important;
-    border-radius: 0 !important;
-    line-height: inherit;
-    padding-left: 0;
-    padding-right: 0;
-    box-shadow: none;
-    background: none;
-    outline: none;
+  &:focus {
+   outline: none;
+   transition: none;
+  }
 
-		cursor: pointer;
+  &:hover {
+   box-shadow: none;
+   transition: none;
+  }
 
-		&:disabled{
-			opacity: 0.3;
-			cursor: default;
-			pointer-events: none;
-		}
-
-		&:focus {
-			outline: none;
-			transition: none;
-		}
-
-		&:hover {
-			box-shadow: none;
-			transition: none;
-		}
-
-	&:link,
-		&:visited{
-			box-shadow: none;
-			background: none;
-			outline: none;
-			color: var(--px-btn-bare-color, #2c404c);
-		}
-		&:hover,
-		&:focus {
-			color: var(--px-btn-bare-color--hover, #007acc);
-			background-color: transparent;
-		}
-		&:active {
-			color: var(--px-btn-bare-color--pressed, #003d66);
-
-		}
-
-	}
+ &:link,
+  &:visited{
+   box-shadow: none;
+   background: none;
+   outline: none;
+   color: var(--px-btn-bare-color, #2c404c);
+  }
+  &:hover,
+  &:focus {
+   color: var(--px-btn-bare-color--hover, #007acc);
+   background-color: transparent;
+  }
+  &:active {
+   color: var(--px-btn-bare-color--pressed, #003d66);
+  }
+ }
 `;
 
 const NavbarInner = styled.div`
@@ -105,12 +99,10 @@ const NavbarInner = styled.div`
 `;
 
 const NavbarCenter = styled.div`
-
   order: 2;
   flex: 1 0 auto;
   align-self: center;
-
-	margin-left: 1rem;
+  margin-left: 1rem;
 `;
 
 const NavbarLeft = styled.div`
@@ -128,34 +120,28 @@ const NavbarRight = styled.div`
 `;
 
 const NavbarTitle = styled.div`
-	display: block;
+  display: block;
   margin: 0;
   padding: 0;
-
   user-select: none;
 `;
 
 const NavbarSubTitle = styled.div`
-	display: block;
+ display: block;
 `;
-
 
 /**
  * Navbar component
  */
-export default({
-  className,
+const Component = ({
   backButtonLabel = '<',
   title,
   subtitle,
   onTitleClick,
-
   showBackButton,
   showMenuButton,
-
   onBackButtonClick,
   onMenuButtonClick,
-
   iconNameLeft,
   iconNameRight,
 
@@ -163,8 +149,7 @@ export default({
   iconElementRight,
 
   onLeftIconButtonClick,
-  onRightIconButtonClick,
-  children
+  onRightIconButtonClick
 }) => (
   <Navbar>
     <NavbarInner>
@@ -179,7 +164,7 @@ export default({
         <button className="navbar__button" onClick={onBackButtonClick}>
           {backButtonLabel}
         </button>
-						}
+        }
 
         {iconNameLeft &&
         <button onClick={onLeftIconButtonClick}>
@@ -189,7 +174,7 @@ export default({
         {iconElementLeft && iconElementLeft}
       </NavbarLeft>
       <NavbarCenter>
-        <NavbarTitle>{title}</NavbarTitle>
+        <NavbarTitle onClick={onTitleClick}>{title}</NavbarTitle>
         <NavbarSubTitle>{subtitle}</NavbarSubTitle>
       </NavbarCenter>
       <NavbarRight>
@@ -202,3 +187,39 @@ export default({
     </NavbarInner>
   </Navbar>
 );
+
+Component.defaultProps = {
+  title: null,
+  subtitle: null,
+  backButtonLabel: null,
+  onTitleClick: null,
+  showBackButton: null,
+  showMenuButton: null,
+  onBackButtonClick: null,
+  onMenuButtonClick: null,
+  iconNameLeft: null,
+  iconNameRight: null,
+  iconElementLeft: null,
+  iconElementRight: null,
+  onLeftIconButtonClick: null,
+  onRightIconButtonClick: null
+};
+
+Component.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  backButtonLabel: PropTypes.string,
+  onTitleClick: PropTypes.func,
+  showBackButton: PropTypes.bool,
+  showMenuButton: PropTypes.bool,
+  onBackButtonClick: PropTypes.func,
+  onMenuButtonClick: PropTypes.func,
+  iconNameLeft: PropTypes.string,
+  iconNameRight: PropTypes.string,
+  iconElementLeft: PropTypes.node,
+  iconElementRight: PropTypes.node,
+  onLeftIconButtonClick: PropTypes.func,
+  onRightIconButtonClick: PropTypes.func
+};
+
+export default Component;

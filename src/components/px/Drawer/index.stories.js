@@ -1,25 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, text, array, object, boolean, number, select } from '@storybook/addon-knobs';
-
-
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import Drawer from './';
 import Navbar from '../Navbar';
 
-const navItems = [
-  {
-    id: 'home', label: 'Home', icon: 'px-fea:home', selected: true
-  },
-  { id: 'settings', label: 'Settings', icon: 'px-fea:settings' },
-  { id: 'alert', label: 'Alerts', icon: 'px-fea:alerts' }
-];
 const style = {
   height: 300,
   overflow: 'hidden',
   position: 'relative'
 };
+
 storiesOf('Drawer', module)
   .addDecorator(withKnobs)
   .add('default', () => (

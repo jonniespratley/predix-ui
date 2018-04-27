@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default class Breadcrumbs {
   constructor(breadcrumbEl, graph, clickOnlyMode, breadcrumbs = [], keys) {
     this.keys = keys;

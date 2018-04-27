@@ -1,5 +1,4 @@
 import './styles';
-import React from 'react';
 import AppHeader from './AppHeader';
 import AppNav from './AppNav';
 import AppNavItem from './AppNav/px-app-nav-item';

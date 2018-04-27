@@ -1,15 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import NavItem from './px-app-nav-item';
-import BaseComponent from '../BaseComponent';
-import Icon from '../IconSet/Icon';
-
-// import AppNavSubGroup from './px-app-nav-sub-group';
-
-// import stylesheet from './styles/index.scss';
-
-
 import styled, { css } from 'styled-components';
+import NavItem from './px-app-nav-item';
 
 const AppNav = styled.div`
   height: var(--px-app-nav-height, 4rem);
@@ -32,7 +25,7 @@ const AppNav = styled.div`
     max-width: var(--px-app-nav-vertical-width, 4rem);
     transition: var(--px-app-nav-vertical-transition, max-width 250ms ease);
 
-    ${props => props.verticalOpened && css`
+    ${props.verticalOpened && css`
       overflow-y: auto;
       max-width: var(--px-app-nav-vertical-width--opened, 21.33333rem);
     `}
@@ -48,7 +41,7 @@ const AppNavItems = styled.div`
     flex-direction: column;
     height: 100%;
   `}
-  
+
 
 `;
 const AppNavSubGroup = styled.div`
@@ -58,7 +51,7 @@ const AppNavSubGroup = styled.div`
 /**
  * AppNav component
  */
-class AppNavComponent extends BaseComponent {
+class AppNavComponent extends React.Component {
   constructor(props) {
     super(props, { displayName: 'AppNav' });
     this.state = {
@@ -66,7 +59,13 @@ class AppNavComponent extends BaseComponent {
       onlyShowIcon: props.onlyShowIcon || props.vertical,
       selectedIndex: props.selectedIndex || null,
       selectedItem: props.selectedItem || null,
+      collapseOpened: props.collapseOpened || false,
       vertical: props.vertical || false,
+      visibleItems: props.visibleItems,
+      collapseWithIcon: props.collapseWithIcon || false,
+      opened: props.opened || false,
+      collapseAll: props.collapseAll,
+      collapseAt: props.collapseAt,
       verticalOpened: props.verticalOpened || !props.vertical,
       propForSelect: props.propForSelect
     };
@@ -95,11 +94,12 @@ class AppNavComponent extends BaseComponent {
     }
   }
 
-  componentWillMount(props) {
+  componentWillMount() {
     if (this.props.items) {
       this.props.items.map((item, index) => {
         this._keys.push(this.props.propForSelect ? item[this.props.propForSelect] : index);
         this._items.push(item);
+        return item;
       });
     }
   }
@@ -115,7 +115,7 @@ class AppNavComponent extends BaseComponent {
     this.base = el;
   }
 
-  _handleMouseEnter(e) {
+  _handleMouseEnter() {
     if (!this.state.vertical) {
       return;
     }
@@ -125,7 +125,7 @@ class AppNavComponent extends BaseComponent {
     }
   }
 
-  _handleMouseExit(e) {
+  _handleMouseExit() {
     if (!this.state.vertical) {
       return;
     }
@@ -156,10 +156,10 @@ class AppNavComponent extends BaseComponent {
 
   handleClick(val, child, isSubItem) {
     const propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : val);
-    const index = (this.props.propForSelect ? child[this.props.propForSelect] : this._getIndexForValue(propForSelect));
-    let item = this._getValueForIndex(index);
+    const index = (this.props.propForSelect ? child[this.props.propForSelect] : this._getIndexForValue(propForSelect));/* eslint-disable-line */
+    let item = this._getValueForIndex(index); /* eslint-disable-line */
 
-    if (child && child.hasOwnProperty('children') && !isSubItem) {
+    if (child && child.children && !isSubItem) {
       // console.warn('Item has children, do not set active');
       return;
     }
@@ -204,7 +204,7 @@ class AppNavComponent extends BaseComponent {
           label={child.label}
           selected={selected}
           onlyShowIcon={this.state.onlyShowIcon}
-          onClick={this.handleClick.bind(this, propForSelect, child)}
+          onClick={this.handleClick.bind(this, propForSelect, child)} /* eslint-disable-line */
         />
       );
     }
@@ -217,7 +217,7 @@ class AppNavComponent extends BaseComponent {
         label={child.label}
         onlyShowIcon={this.state.onlyShowIcon}
         selected={selected}
-        onClick={this.handleClick.bind(this, propForSelect, child)}
+        onClick={this.handleClick.bind(this, propForSelect, child)} /* eslint-disable-line */
       />
     );
   }
@@ -229,12 +229,7 @@ class AppNavComponent extends BaseComponent {
 
   render() {
     const {
-      classes,
-      style,
       items,
-      selected,
-      selectedItem,
-      onChange,
       children
     } = this.props;
 
@@ -249,22 +244,19 @@ class AppNavComponent extends BaseComponent {
       { 'vertical-opened': vertical && verticalOpened }
     );
 
-    const appNavClasses = classnames('app-nav');
-
-
     return (
-      <AppNav className={baseClasses} ref={this._handleRef} vertical={vertical} verticalOpened={verticalOpened}>
+      <AppNav
+        className={baseClasses}
+        ref={this._handleRef}
+        vertical={vertical}
+        verticalOpened={verticalOpened}
+      >
         <AppNavItems vertical={vertical}>
           {this._renderItems(items)}
         </AppNavItems>
-
-
         {/* STATE: Horizontal or menu nav, any visible items */}
-
         {/* STATE: Items overflowed or collapsed */}
-
         {/* Actions */}
-
         {children}
       </AppNav>
     );
@@ -281,9 +273,35 @@ AppNavComponent.defaultProps = {
   verticalOpened: false,
   selected: 0,
   selectedItem: null,
+  selectedIndex: null,
   visibleItems: null,
   items: null,
+  propForSelect: null,
+  children: null,
+  onChange: null,
   opened: null
+};
+AppNavComponent.propTypes = {
+  onChange: PropTypes.func,
+  vertical: PropTypes.bool,
+  collapseAll: PropTypes.bool,
+  collapseAt: PropTypes.number,
+  collapseWithIcon: PropTypes.bool,
+  onlyShowIcon: PropTypes.bool,
+  collapseOpened: PropTypes.bool,
+  verticalOpened: PropTypes.bool,
+  selected: PropTypes.number,
+  selectedIndex: PropTypes.number,
+  selectedItem: PropTypes.shape,
+  visibleItems: PropTypes.shape,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    label: PropTypes.string,
+    icon: PropTypes.string
+  })),
+  children: PropTypes.node,
+  propForSelect: PropTypes.string,
+  opened: PropTypes.bool
 };
 
 export default AppNavComponent;

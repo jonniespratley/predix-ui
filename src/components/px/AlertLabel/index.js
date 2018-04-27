@@ -1,8 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-// import stylesheet from './px-alert-label.scss';
-// import BaseComponent from '../BaseComponent';
-
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 const AlertLabel = styled.div`
@@ -16,7 +14,7 @@ const AlertLabel = styled.div`
   background-color: var(--px-alert-label-background-color--unknown, gray);
   color           : var(--px-alert-label-text-color--unknown, white);
   border          : 1px solid var(--px-alert-label-border-color, transparent);
-  
+
   ${props => props.type === 'info' && css`
     background-color: var(--px-alert-label-background-color--information, blue);
     color           : var(--px-alert-label-text-color--information, white);
@@ -41,7 +39,7 @@ const AlertLabel = styled.div`
     background-color: var(--px-alert-label-background-color--healthy, green);
     color           : var(--px-alert-label-text-color--healthy, white);
   `}
-  
+
 `;
 
 const _isCircle = t => t === 'unknown';
@@ -59,14 +57,15 @@ const _getPoints = (t) => {
 };
 
 
-export default ({
-  label, type, badge, children
+const Component = ({
+  label, type, badge
 }) => {
   const classNames = classnames('alertlabel', type, badge);
   return (
     <AlertLabel type={type}>
       <span className={classNames}>
-        {badge && <div>
+        {badge &&
+        <div>
           {!_isCircle(type) &&
             <svg className="svg-canvas" viewBox="0 0 33 33">
               <polygon id="polygon" points={_getPoints(type)} />
@@ -85,3 +84,17 @@ export default ({
     </AlertLabel>
   );
 };
+
+Component.defaultProps = {
+  label: null,
+  type: null,
+  badge: null
+};
+
+Component.propTypes = {
+  label: PropTypes.string,
+  type: PropTypes.string,
+  badge: PropTypes.string
+};
+
+export default Component;

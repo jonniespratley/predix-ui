@@ -1,14 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
 
 /**
  * IronCollapse component implementation.
  */
-export default class IronCollapse extends React.Component {
+class IronCollapse extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       noAnimation: props.noAnimation || false,
       horizontal: props.horizontal || false,
@@ -24,15 +23,17 @@ export default class IronCollapse extends React.Component {
       ? 'width'
       : 'height';
   }
-
+  /* eslint-ignore-start */
   get _isDisplayed() {
     const rect = this.base.getBoundingClientRect();
-    for (const prop in rect) {
-      if (rect[prop] !== 0) { return true; }
-    }
-    return false;
+    return Object.keys(rect).forEach((key) => {
+      if (rect[key] !== 0) {
+        return true;
+      }
+      return false;
+    });
   }
-
+  /* eslint-ignore-stop */
   _calcSize() {
     return `${this.base.getBoundingClientRect()[this.dimension]}px`;
   }
@@ -51,7 +52,6 @@ export default class IronCollapse extends React.Component {
     }
     this._updateTransition(false);
     this.toggleClass('iron-collapse-closed', !this.state.opened);
-    //	this.toggleClass('iron-collapse-opened', this.state.opened);
   }
 
   _updateTransition(enabled) {
@@ -65,7 +65,7 @@ export default class IronCollapse extends React.Component {
   }
 
   updateSize(size, animated) {
-    const style = this.base.style;
+    let newSize = size;
     if (this.base.style[this.dimension] === size) {
       return;
     }
@@ -77,20 +77,19 @@ export default class IronCollapse extends React.Component {
       // After the transition is done, _transitionEnd will set the size back to `auto`.
       if (size === 'auto') {
         this.base.style[this.dimension] = size;
-        size = this._calcSize();
+        newSize = this._calcSize();
       }
       this.base.style[this.dimension] = startSize;
       this.base.style.height = this.base.offsetHeight;
       this._updateTransition(true);
     }
-    this.base.style[this.dimension] = size;
+    this.base.style[this.dimension] = newSize;
   }
 
   /**
-	 * toggle - Toggle content
-	 *
-	 * @return {type}  description
-	 */
+  * toggle - Toggle content
+  * @return {type}  description
+  */
   toggle() {
     if (this.state.opened) {
       this.hide();
@@ -145,37 +144,49 @@ export default class IronCollapse extends React.Component {
 
   render() {
     const { opened } = this.state;
-    const { style, children } = this.props;
-
-    const baseClassnames = classnames('iron-collapse'
-      // { 'iron-collapse-opened': opened }
-      //	{ "iron-collapse-closed": !opened }
-    );
+    const { children } = this.props;
+    const baseClassnames = classnames('iron-collapse');
 
     return (
       <div
         className={baseClassnames}
         ref={(el) => { this.base = el; }}
-        className={baseClassnames}
-        style={style}
         aria-hidden={!opened}
         aria-expanded={opened}
       >
         {children}
         <style>{`
-					.iron-collapse {
-					  display: block;
-					  -webkit-transition-duration: 300ms;
-					  -moz-transition-duration: 300ms;
-					  transition-duration: 300ms;
-					  overflow: visible;
-					}
-					.iron-collapse:not(.iron-collapse-opened) {
-					  overflow: hidden;
-					}
-				`}
-        </style>
+        .iron-collapse {
+          display: block;
+          -webkit-transition-duration: 300ms;
+          -moz-transition-duration: 300ms;
+          transition-duration: 300ms;
+          overflow: visible;
+        }
+        .iron-collapse:not(.iron-collapse-opened) {
+          overflow: hidden;
+        }
+      `}</style>
       </div>
     );
   }
 }
+
+
+IronCollapse.defaultProps = {
+  horizontal: false,
+  onChange: null,
+  noAnimation: null,
+  opened: false,
+  children: null
+};
+
+IronCollapse.propTypes = {
+  onChange: PropTypes.func,
+  horizontal: PropTypes.bool,
+  noAnimation: PropTypes.bool,
+  opened: PropTypes.bool,
+  children: PropTypes.node
+};
+
+export default IronCollapse;

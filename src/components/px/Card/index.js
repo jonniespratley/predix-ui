@@ -1,6 +1,7 @@
 import React from 'react';
-import Icon from '../IconSet/Icon';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
+import Icon from '../IconSet/Icon';
 
 const Card = styled.div`
   display: block;
@@ -82,5 +83,21 @@ const CardComponent = ({
 );
 
 CardComponent.displayName = 'Card';
+
+CardComponent.defaultProps = {
+  headerText: null,
+  icon: null,
+  actions: null,
+  fullBleed: null,
+  children: null
+};
+
+CardComponent.propTypes = {
+  headerText: PropTypes.string,
+  icon: PropTypes.string,
+  actions: PropTypes.func,
+  fullBleed: PropTypes.bool,
+  children: PropTypes.node
+};
 
 export default CardComponent;

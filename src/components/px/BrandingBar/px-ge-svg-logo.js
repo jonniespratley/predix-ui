@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './px-ge-svg-logo.scss';
 
 export default () => (
   <svg x="0" y="0" width="20" height="20" viewBox="-280 372 50 50">

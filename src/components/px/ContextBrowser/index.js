@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import classnames from 'classnames';
 
@@ -17,12 +18,12 @@ const ContextBrowser = styled.div`
     background-color: var(--px-chip-background-color--hover, rgba(gray, 0.2));
     border          : 1px solid var(--px-chip-border-color--hover, gray);
   }
-  
+
   ${props => props.selected && css`
   background-color: var(--px-chip-background-color--selected, white);
     border          : 1px solid var(--px-chip-border-color--selected, blue);
   `}
-    
+
 `;
 
 const ContextBrowserContent = styled.div`

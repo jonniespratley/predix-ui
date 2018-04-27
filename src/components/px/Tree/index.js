@@ -44,15 +44,15 @@ class Tree extends BaseComponent {
     };
     return (
       <ul className="px-tree" style={treeStyle}>
-        {items && items.map((item, index) => (
+        {items && items.map(item => (
           <TreeNode
-            key={index}
+            key={item}
             data={item}
             {...item}
             onCategorySelect={this.onSelect}
           />
-					))
-				}
+          ))
+        }
       </ul>
     );
   }

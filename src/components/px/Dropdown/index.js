@@ -1,12 +1,11 @@
 import React from 'react';
 import classnames from 'classnames';
-// import stylesheet from './px-dropdown.scss';
-import BaseComponent from '../BaseComponent';
-import Icon from '../IconSet/Icon';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
+import Icon from '../IconSet/Icon';
 import Button from '../Button';
 
-
+/*
 const SearchInput = styled.input`
   height: 2em;
   width: 100%;
@@ -21,7 +20,7 @@ const SearchInput = styled.input`
     color: var(--px-input-text-color--focused,inherit);
   }
 `;
-
+*/
 const DropdownLabel = styled.div`
   overflow: hidden;
   flex-grow: 1;
@@ -100,7 +99,6 @@ DropdownOption.defaultProps = {
   className: 'px-dropdown__option'
 };
 
-
 const DropdownTrigger = styled.div`
   max-width: inherit;
   width: inherit;
@@ -114,24 +112,26 @@ const DropdownTrigger = styled.div`
 DropdownTrigger.displayName = 'DropdownTrigger';
 
 
-class Dropdown extends BaseComponent {
+class Dropdown extends React.Component {
   constructor(props) {
-    super(props, { name: 'Dropdown' });
+    super(props);
     this.displayName = 'Dropdown';
+    this._handleClear = this._handleClear.bind(this);
+    this._handleClick = this._handleClick.bind(this);
     this.state = {
-      dropdownContentWidth: props.dropdownContentWidth || null,
-      selected: props.selected || null,
-      selectedItems: props.selectedItems || null,
-      selectedValues: props.selectedValues || null,
+      dropdownContentWidth: props.dropdownContentWidth,
+      selected: props.selected, /* eslint-disable-line */
+      selectedItems: props.selectedItems || null, /* eslint-disable-line */
+      selectedValues: props.selectedValues || null, /* eslint-disable-line */
       opened: props.opened || false,
       items: props.items || null
     };
   }
+
   _handleClick(e) {
     if (e && e.target && e.target.classList.contains('px-utl-close')) {
       this._clearSelected();
       this.setState({
-        // opened: !this.state.opened,
         selectedItem: null
       });
     } else {
@@ -140,8 +140,12 @@ class Dropdown extends BaseComponent {
   }
 
   _clearSelected() {
-    const items = this.state.items;
-    items.map(item => item.selected = false);
+    const { items } = this.state;
+    items.forEach((item) => {
+      const i = item;
+      i.selected = false;
+      return i;
+    });
     this.setState({ items });
   }
 
@@ -156,16 +160,14 @@ class Dropdown extends BaseComponent {
     if (!this.props.multi) {
       this._clearSelected();
       this._handleClick();
-    } else {
-
     }
-    const items = this.state.items[index].selected = !this.state.items[index].selected;
+    // const items = this.state.items[index].selected = !this.state.items[index].selected;
     if (this.props.onChange) {
       this.props.onChange(item, index, e);
     }
   }
-  handleClear() {
-    // console.log('handleClear');
+
+  _handleClear() {
     this.setState({
       selectedItem: null
     });
@@ -173,6 +175,7 @@ class Dropdown extends BaseComponent {
   _handleDropdownContentRef(el) {
     this.dropdownContent = el;
   }
+
   render() {
     const {
       keys = {
@@ -180,19 +183,13 @@ class Dropdown extends BaseComponent {
         val: 'val'
       },
       className,
-      selectBy,
       disabled,
       disableClear,
-      hover,
       icon,
       triggerHeight,
-      focusedItem,
       hideChevron,
       buttonStyle,
-      boundTarget,
-      preventCloseOnOutsideClick,
       displayValue,
-      multi,
       children
     } = this.props;
 
@@ -204,33 +201,34 @@ class Dropdown extends BaseComponent {
       opened,
       items,
       selectedItem,
-      selectedItems,
-      selectedValues,
-      selected,
       dropdownContentWidth
     } = this.state;
 
     const baseClasses = classnames('px-dropdown', className);
     return (
       <div className={baseClasses}>
-        <Button theme={buttonStyle} disabled={disabled} style={triggerStyle} onClick={this._handleClick.bind(this)}>
+        <Button
+          theme={buttonStyle}
+          disabled={disabled}
+          style={triggerStyle}
+          onClick={this._handleClick}
+        >
           {children && children}
           {!children &&
           <DropdownTrigger>
             {selectedItem && <DropdownLabel>{selectedItem[keys.val]}</DropdownLabel>}
             {!selectedItem && <DropdownLabel>{displayValue}</DropdownLabel>}
-
-            {(!hideChevron && !opened || !selectedItem) && <Icon icon={icon} size={16} />}
-            {(!disableClear && selectedItem && opened) && <Icon icon="px-utl:close" size={16} onClick={this.handleClear.bind(this)} />}
+            {(!hideChevron && !opened && !selectedItem) && <Icon icon={icon} size={16} />}
+            {(!disableClear && selectedItem && opened) && <Icon icon="px-utl:close" size={16} onClick={this._handleClear} />}
           </DropdownTrigger>}
         </Button>
         <DropdownContent opened={opened} width={dropdownContentWidth}>
           {items && items.map((item, index) => (
-            <div key={index}>
+            <div key={item[keys.key]}>
               <DropdownOption
                 disabled={item.disabled}
                 selected={item.selected}
-                onClick={this._handleChange.bind(this, item, index)}
+                onClick={this._handleChange.bind(this, item, index)} /* eslint-disable-line */
               >
                 {item[keys.val]}
               </DropdownOption>
@@ -242,7 +240,51 @@ class Dropdown extends BaseComponent {
 }
 
 Dropdown.defaultProps = {
+  keys: {
+    key: 'key',
+    val: 'val'
+  },
+  className: null,
+  disabled: null,
+  disableClear: null,
+  triggerHeight: null,
+  selected: null,
+  hideChevron: null,
+  buttonStyle: null,
+  dropdownContentWidth: null,
+  displayValue: null,
+  multi: null,
+  opened: null,
+  children: null,
+  items: null,
+  onChange: null,
+  selectedItems: null,
+  selectedValues: null,
   icon: 'px-utl:chevron'
+};
+
+Dropdown.propTypes = {
+  keys: PropTypes.shape({
+    key: PropTypes.string,
+    val: PropTypes.string
+  }),
+  items: PropTypes.arrayOf(PropTypes.any),
+  selectedItems: PropTypes.arrayOf(PropTypes.any),
+  selectedValues: PropTypes.arrayOf(PropTypes.any),
+  selected: PropTypes.string,
+  className: PropTypes.string,
+  disabled: PropTypes.bool,
+  disableClear: PropTypes.bool,
+  dropdownContentWidth: PropTypes.number,
+  triggerHeight: PropTypes.number,
+  hideChevron: PropTypes.bool,
+  buttonStyle: PropTypes.string,
+  displayValue: PropTypes.string,
+  opened: PropTypes.bool,
+  multi: PropTypes.bool,
+  children: PropTypes.node,
+  onChange: PropTypes.func,
+  icon: PropTypes.string
 };
 
 Dropdown.displayName = 'Dropdown';

@@ -221,7 +221,7 @@ exports[`AlertMessage matches snapshot 1`] = `
     <button
       className="dismiss c5"
       icon={null}
-      onClick={undefined}
+      onClick={null}
       size={null}
       type={null}
     >

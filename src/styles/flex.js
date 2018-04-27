@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 const Flex = styled.div`
   display: flex;
 
-  
+
   ${props => props.row && css` flex-direction: row; `}
   ${props => props.rowrev && css` flex-direction: row-reverse; `}
   ${props => props.col && css` flex-direction: column; `}

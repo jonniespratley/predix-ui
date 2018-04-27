@@ -1,6 +1,6 @@
-import { expect } from 'chai';
+import renderer from 'react-test-renderer';
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 import Notification from './';
 
 const types = [
@@ -17,17 +17,14 @@ describe('Notification', () => {
     const wrapper = shallow(
       <Notification statusIcon='px-utl:delete' opened={true}>Message</Notification>
     );
-    console.log(wrapper.debug());
-    expect(wrapper.props().opened).to.equal(true);
+    expect(wrapper.props().opened).toEqual(true);
   });
-
 
   test('should render open', () =>{
     const wrapper = shallow(
       <Notification opened={true}>Message</Notification>
     );
-    console.log(wrapper.debug());
-    expect(wrapper.props().opened).to.equal(true);
+    expect(wrapper.props().opened).toEqual(true);
   });
 
   types.forEach(type => {
@@ -35,7 +32,9 @@ describe('Notification', () => {
       const wrapper = shallow(
         <Notification type={type}>Message</Notification>
       );
-      expect(wrapper.props().type).to.equal(type);
+      expect(wrapper.props().type).toEqual(type);
+      const tree = renderer.create(<Notification type={type}>Message</Notification>).toJSON();
+      expect(tree).toMatchSnapshot();
     });
   });
 
@@ -43,11 +42,7 @@ describe('Notification', () => {
     const wrapper = shallow(
       <Notification type='error'>Message</Notification>
     );
-    console.log(expect(wrapper));
-    expect(wrapper.props().type).to.equal('error');
+    expect(wrapper.props().type).toEqual('error');
   });
 
-  //expect(wrapper.find('.delta')).to.have.length(1);
-  //expect(wrapper.find('.alpha')).to.have.length(1);
-  //expect(wrapper.contains(<div className='label'/>)).to.equal(true);
 });

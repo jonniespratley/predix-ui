@@ -1,6 +1,6 @@
 import React from 'react';
 import BaseComponent from '../px/BaseComponent';
-
+/* eslint-ignore */
 export default class IronResizable extends BaseComponent {
   constructor(props) {
     super(props, { displayName: 'IronResizable' });
@@ -66,11 +66,12 @@ export default class IronResizable extends BaseComponent {
     }
   }
 
-  resizerShouldNotify(element) {
+  resizerShouldNotify() {
+    this.isAttached;
     return true;
   }
 
-  _notifyDescendant() {
+  _notifyDescendant(descendant) {
     // NOTE(cdata): In IE10, attached is fired on children first, so it's
     // important not to notify them if the parent is not attached yet (or
     // else they will get redundantly notified when the parent attaches).

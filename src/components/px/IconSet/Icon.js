@@ -93,7 +93,7 @@ Icon.propTypes = {
   viewBox: PropTypes.string,
   color: PropTypes.string,
   className: PropTypes.string,
-  style: null
+  style: PropTypes.func
 };
 
 export default Icon;

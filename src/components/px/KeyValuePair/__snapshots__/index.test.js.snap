@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`KeyValuePair alpha renders correctly 1`] = `
+.c0 {
+  font-size: .8rem;
+  line-height: 1.66667;
+  color: var(--px-headings-label-color,gray);
+}
+
+.c1 {
+  color: var(--px-headings-value-color,black);
+  margin-top: -4px;
+  margin-top: -8px;
+}
+
+.c2 {
+  margin-left: 0px;
+  margin-left: -4px;
+}
+
+<div
+  className="px-key-value-pair"
+>
+  <div
+    className="kvp-label c0"
+  >
+    Lorem Ipsum
+  </div>
+  <span
+    className="alpha c1"
+    size="delta"
+  >
+    12345
+    <span
+      className="delta c2"
+      size="delta"
+    >
+      units
+    </span>
+  </span>
+</div>
+`;
+
+exports[`KeyValuePair beta renders correctly 1`] = `
+.c0 {
+  font-size: .8rem;
+  line-height: 1.66667;
+  color: var(--px-headings-label-color,gray);
+}
+
+.c1 {
+  color: var(--px-headings-value-color,black);
+  margin-top: -4px;
+  margin-top: -2px;
+}
+
+.c2 {
+  margin-left: 0px;
+  margin-left: -2px;
+}
+
+<div
+  className="px-key-value-pair"
+>
+  <div
+    className="kvp-label c0"
+  >
+    Lorem Ipsum
+  </div>
+  <span
+    className="beta c1"
+    size="epsilon"
+  >
+    12345
+    <span
+      className="epsilon c2"
+      size="epsilon"
+    >
+      units
+    </span>
+  </span>
+</div>
+`;
+
+exports[`KeyValuePair delta renders correctly 1`] = `
+.c0 {
+  font-size: .8rem;
+  line-height: 1.66667;
+  color: var(--px-headings-label-color,gray);
+}
+
+.c1 {
+  color: var(--px-headings-value-color,black);
+  margin-top: -4px;
+}
+
+.c2 {
+  margin-left: 0px;
+  font-size: 1rem;
+}
+
+<div
+  className="px-key-value-pair"
+>
+  <div
+    className="kvp-label c0"
+  >
+    Lorem Ipsum
+  </div>
+  <span
+    className="delta c1"
+    size="value"
+  >
+    12345
+    <span
+      className="value c2"
+      size="value"
+    >
+      units
+    </span>
+  </span>
+</div>
+`;
+
+exports[`KeyValuePair epsilon renders correctly 1`] = `
+.c0 {
+  font-size: .8rem;
+  line-height: 1.66667;
+  color: var(--px-headings-label-color,gray);
+}
+
+.c1 {
+  color: var(--px-headings-value-color,black);
+  margin-top: -4px;
+}
+
+.c2 {
+  margin-left: 0px;
+}
+
+<div
+  className="px-key-value-pair"
+>
+  <div
+    className="kvp-label c0"
+  >
+    Lorem Ipsum
+  </div>
+  <span
+    className="epsilon c1"
+    size="zeta"
+  >
+    12345
+    <span
+      className="zeta c2"
+      size="zeta"
+    >
+      units
+    </span>
+  </span>
+</div>
+`;
+
+exports[`KeyValuePair gamma renders correctly 1`] = `
+.c0 {
+  font-size: .8rem;
+  line-height: 1.66667;
+  color: var(--px-headings-label-color,gray);
+}
+
+.c1 {
+  color: var(--px-headings-value-color,black);
+  margin-top: -4px;
+}
+
+.c2 {
+  margin-left: 0px;
+  font-size: 1rem;
+}
+
+<div
+  className="px-key-value-pair"
+>
+  <div
+    className="kvp-label c0"
+  >
+    Lorem Ipsum
+  </div>
+  <span
+    className="gamma c1"
+    size="value"
+  >
+    12345
+    <span
+      className="value c2"
+      size="value"
+    >
+      units
+    </span>
+  </span>
+</div>
+`;
+
+exports[`KeyValuePair regular renders correctly 1`] = `
+.c0 {
+  font-size: .8rem;
+  line-height: 1.66667;
+  color: var(--px-headings-label-color,gray);
+}
+
+.c1 {
+  color: var(--px-headings-value-color,black);
+  margin-top: -4px;
+}
+
+.c2 {
+  margin-left: 0px;
+}
+
+<div
+  className="px-key-value-pair"
+>
+  <div
+    className="kvp-label c0"
+  >
+    Lorem Ipsum
+  </div>
+  <span
+    className="regular c1"
+    size="zeta"
+  >
+    12345
+    <span
+      className="zeta c2"
+      size="zeta"
+    >
+      units
+    </span>
+  </span>
+</div>
+`;
