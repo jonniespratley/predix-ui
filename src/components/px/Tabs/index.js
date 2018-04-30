@@ -1,11 +1,7 @@
 import React from 'react';
-import BaseComponent from '../BaseComponent';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styled, { css } from 'styled-components';
-import Tab from './Tab';
-
-
-const Pane = props => (<div className="px-tabs__pane">{props.children}</div>);
 
 // Container
 const TabsContainer = styled.div`
@@ -43,6 +39,7 @@ const TabTitle = styled.span`
     color: var(--px-tab-color--active, black);
   }
 `;
+
 TabTitle.displayName = 'TabTitle';
 
 const TabItem = styled.li`
@@ -65,13 +62,12 @@ const TabItem = styled.li`
 /**
  * Tabs component
  */
-class Tabs extends BaseComponent {
+class Tabs extends React.Component {
   constructor(props) {
-    super(props, { displayName: 'Tabs' });
+    super(props);
 
     this.state = {
-      selected: this.props.selected || 0,
-      propForSelect: this.props.propForSelect || null
+      selected: props.selected || 0
     };
 
     this._items = [];
@@ -110,10 +106,9 @@ class Tabs extends BaseComponent {
 
   handleClick(i, event) {
     const index = this._getIndexForValue(i);
-    const val = this._getValueForIndex(i);
+    // const val = this._getValueForIndex(i);
     this.setState({
-      selected: index,
-      selectedValue: val
+      selected: index
     });
     if (this.props.onChange) {
       this.props.onChange(i, event);
@@ -130,20 +125,21 @@ class Tabs extends BaseComponent {
         propForSelect = child.props[this.props.propForSelect];
       }
       this._keys[index] = propForSelect;
-      const selected = (this.state.selected === (this.props.propForSelect ? this._getIndexForValue(propForSelect) : index));
+      const selected = (
+        this.state.selected === (this.props.propForSelect
+          ? this._getIndexForValue(propForSelect) : index));
       const baseClasses = classnames({ 'iron-selected': selected });
       return (
         <TabItem
           key={index}
           className={baseClasses}
           active={selected}
-          className="px-tab__item"
           aria-controls={`panel-${index}`}
           role="tab"
         >
           <TabTitle
             {...child.props}
-            onClick={this.handleClick.bind(this, propForSelect)}
+            onClick={this.handleClick.bind(this, propForSelect)} /* eslint-disable-line */
           >
             {child.props.label}
           </TabTitle>
@@ -171,9 +167,23 @@ class Tabs extends BaseComponent {
     );
   }
 }
+
 Tabs.defaultProps = {
-  selected: 0
+  selected: 0,
+  onChange: null,
+  style: null,
+  children: null,
+  propForSelect: null
 };
+
+Tabs.propTypes = {
+  selected: PropTypes.number,
+  onChange: PropTypes.func,
+  style: PropTypes.objectOf(PropTypes.string),
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  propForSelect: PropTypes.string
+};
+
 Tabs.displayName = 'Tabs';
 
 export default Tabs;

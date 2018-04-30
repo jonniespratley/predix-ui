@@ -1,15 +1,8 @@
 import React from 'react';
-import classnames from 'classnames';
-// import stylesheet from './px-tree.scss';
+import PropTypes from 'prop-types';
 import TreeNode from './TreeNode';
-import BaseComponent from '../BaseComponent';
-import styled, { css } from 'styled-components';
 
-
-/**
- * Tree component
- */
-class Tree extends BaseComponent {
+class Tree extends React.Component {
   constructor(props) {
     super(props, { displayName: 'Tree' });
     this.state = {
@@ -32,12 +25,8 @@ class Tree extends BaseComponent {
     });
   }
 
-
   render() {
-    const { items, children } = this.props;
-    const { selectedNode } = this.state;
-    const baseClasses = classnames('px-tree');
-    const _items = items.length ? items : [items];
+    const { items } = this.props;
     const treeStyle = {
       margin: 0,
       padding: 0
@@ -60,7 +49,20 @@ class Tree extends BaseComponent {
 
 Tree.defaultProps = {
   items: null,
+  children: null,
   style: null,
+  onChange: null,
+  selectedNode: null,
   selected: null
 };
+
+Tree.propTypes = {
+  items: null,
+  onChange: PropTypes.func,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  style: PropTypes.objectOf(PropTypes.string),
+  selectedNode: PropTypes.objectOf(PropTypes.string),
+  selected: null
+};
+
 export default Tree;

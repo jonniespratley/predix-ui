@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default ({ className = 'chevron', open }) => (
+const TreeNodeIcon = ({ open }) => (
   <svg
     viewBox="0 0 16 16"
     preserveAspectRatio="xMidYMid meet"
@@ -20,3 +21,13 @@ export default ({ className = 'chevron', open }) => (
     {!open && <use href="#closed" />}
   </svg>
 );
+
+TreeNodeIcon.defaultProps = {
+  open: false
+};
+
+TreeNodeIcon.propTypes = {
+  open: PropTypes.bool
+};
+
+export default TreeNodeIcon;

@@ -223,7 +223,7 @@ class ExampleApp extends React.Component {
     active: null,
     tree: mockTree
   };
-
+  /* eslint-disable */
   renderNode = node => (
     <span
       className={cx('node', { 'is-active': node === this.state.active })}
@@ -232,7 +232,7 @@ class ExampleApp extends React.Component {
       {node.module}
     </span>
   );
-
+  /* eslint-enable */
   onClickNode = (node) => {
     this.setState({
       active: node

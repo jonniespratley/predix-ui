@@ -74,7 +74,7 @@ class Icon extends React.Component {
         <svg
           viewBox={_viewBox}
           preserveAspectRatio="xMidYMid meet"
-          dangerouslySetInnerHTML={this.createMarkup(icon)}
+          dangerouslySetInnerHTML={this.createMarkup(icon) /* eslint-disable-line */ }
           style={Object.assign({}, svgStyles, style)}
         />
       </PxIcon>

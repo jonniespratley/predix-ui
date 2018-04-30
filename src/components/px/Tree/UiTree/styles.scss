@@ -1,11 +1,19 @@
 .m-tree {
-  .m-mode {}
-  .inner {}
+  .m-mode {
+    color: green;
+  }
+  .inner {
+    color: red;
+  }
   .collapse {
-    &.caret-right {}
+    &.caret-right {
+      display: inline;
+    }
   }
   .node {
-    &.is-active {}
+    &.is-active {
+      color: blue;
+    }
   }
 }
 
@@ -20,13 +28,13 @@
 .m-tree {
   position: relative;
   overflow: hidden;
-  .f-no-select;
+ 
 }
 
 .m-draggable {
   position: absolute;
   opacity: 0.8;
-  .f-no-select;
+ 
 }
 
 .m-node {

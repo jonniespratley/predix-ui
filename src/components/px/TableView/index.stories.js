@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, text, array, object, boolean, number, select } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
 import { withReadme } from 'storybook-readme';
 import README from './README.md';
 import TableView from './';
@@ -9,7 +9,7 @@ import TableRow from './TableRow';
 
 function makeRows(count = 5, obj) {
   const items = [];
-  for (let i = 1; i <= count; i++) {
+  for (let i = 1; i <= count; i++)/* eslint-disable-line */ {
     items.push(Object.assign({
       id: i
     }, obj, {
@@ -55,26 +55,28 @@ storiesOf('TableView', module)
   .addWithJSX('with labels', () => (
     <TableView
       items={makeRows(5, {
-				title: 'Item',
-				labelRight: 'New'
-			})}
+        title: 'Item',
+        labelRight: 'New'
+      })}
       size={select('size', tableSizes)}
       tappable={boolean('tappable', true)}
     />
   ))
   .addWithJSX('with descriptions', () => (
     <TableView
+      onSelect={action('onSelect')}
       size={select('size', tableSizes)}
       items={makeRows(5, {
-				title: 'Item',
-				body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-				labelRight: 'New'
-			})}
+        title: 'Item',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        labelRight: 'New'
+      })}
       tappable={boolean('tappable', true)}
     />
   ))
   .addWithJSX('Table Row', () => (
     <TableRow
+      onClick={action('onClick')}
       title={text('title', 'Table Row Title')}
       image={text('image', '')}
       icon={text('icon', '')}

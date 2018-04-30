@@ -126,7 +126,7 @@ class TreeNode extends React.Component {
         >
           {hasChildren && <TreeNodeIcon><Icon icon={openIcon} size={16} /></TreeNodeIcon>}
           {icon && <TreeNodeIcon><Icon icon={icon} size={16} /></TreeNodeIcon>}
-          <span onClick={this.onCategorySelect}>{label}</span>
+          <span onClick={this.onCategorySelect}>{label}</span> {/* eslint-disable-line*/}
         </TreeNodeLabel>
 
         {this.state.children &&

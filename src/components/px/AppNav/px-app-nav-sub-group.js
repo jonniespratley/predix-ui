@@ -1,13 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import BaseComponent from '../BaseComponent';
-import Icon from '../IconSet/Icon';
+
 import AppNavItem from './px-app-nav-item';
 import AppNavSubItem from './px-app-nav-sub-item';
 
-class AppNavSubGroup extends BaseComponent {
+class AppNavSubGroup extends React.Component {
   constructor(props) {
-    super(props, { displayName: 'AppNavSubGroup' });
+    super(props);
     this.state = {
       opened: props.opened || false
     };
@@ -29,8 +29,6 @@ class AppNavSubGroup extends BaseComponent {
       { 'app-nav-subgroup__dropdown--open': opened }
     );
     const {
-      onClick,
-      children,
       icon,
       item,
       label,
@@ -45,7 +43,7 @@ class AppNavSubGroup extends BaseComponent {
       <div className={subgroupClasses}>
         <AppNavItem
           dropdown
-          onClick={this._handleClick.bind(this, item)}
+          onClick={this._handleClick.bind(this, item)} /* eslint-disable-line */
           item={item}
           label={label}
           selected={selected}
@@ -57,10 +55,10 @@ class AppNavSubGroup extends BaseComponent {
         />
         <div className={dropdownClasses}>
           <div className="app-nav-subgroup__dropdown__content">
-            {item.children && item.children.map((child, index) => (
+            {item.children && item.children.map(child => (
               <AppNavSubItem
-                onClick={this._handleClick.bind(this, child, true)}
-                key={index}
+                onClick={this._handleClick.bind(this, child, true)} /* eslint-disable-line */
+                key={child.label}
                 item={child}
               />
             ))}
@@ -77,12 +75,26 @@ AppNavSubGroup.defaultProps = {
   selected: false,
   collapsed: false,
   overflowed: false,
+  onClick: null,
   item: null,
   label: null,
   icon: null,
   emptyIcon: false,
   opened: false,
   onlyShowIcon: false
+};
+
+AppNavSubGroup.propTypes = {
+  onClick: PropTypes.func,
+  selected: PropTypes.bool,
+  collapsed: PropTypes.bool,
+  overflowed: PropTypes.bool,
+  item: PropTypes.shape,
+  label: PropTypes.string,
+  icon: PropTypes.string,
+  emptyIcon: PropTypes.bool,
+  opened: PropTypes.bool,
+  onlyShowIcon: PropTypes.bool
 };
 
 export default AppNavSubGroup;
