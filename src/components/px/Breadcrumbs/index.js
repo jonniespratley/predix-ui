@@ -93,11 +93,15 @@ class BreadcrumbsComponent extends React.Component {
    * Determines whether to display small or large chevrons based on whether
    * `clickOnlyMode` is enabled.
    */
-  _getSeparatorSize = clickOnlyMode => (clickOnlyMode ? 'small' : 'large')
+  _getSeparatorSize(clickOnlyMode){
+    return (clickOnlyMode ? 'small' : 'large');
+  }
   /**
   * Returns a disabled class if the item is set as non-selectable.
   */
-  _getDisabled = item => (item.isSelectable === false ? 'disabled' : '')
+  _getDisabled(item){
+    return (item.isSelectable === false ? 'disabled' : '');
+  }
 
   render() {
     const {

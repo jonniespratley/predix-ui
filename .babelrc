@@ -7,14 +7,14 @@
     "stage-0",
     ["env", {
       "targets": {
-        "browsers": ["last 2 versions", "safari >= 7"]
+        "browsers": ["last 2 versions"]
       }
     }]
   ],
   "plugins": [
     "babel-plugin-styled-components",
     "transform-decorators",
-    ["transform-class-properties", { "spec": true }],
+    "transform-class-properties",
     ["transform-react-remove-prop-types",{"mode": "wrap"}]
   ],
   "env": {
@@ -25,17 +25,6 @@
         "react-hmre"
       ]
     },
-    "development": {
-      "presets": [
-        "es2015"
-      ]
-    },
-
-    "distMin": {
-      "presets": [
-        "es2015"
-      ]
-    },
     "ghPages": {
       "presets": [
         "es2015"
@@ -43,22 +32,12 @@
     },
     "modules": {
       "presets": [
-        [
-          "env",
-          {
-            "modules": "umd"
-          }
-        ]
+        [ "env", { "modules": "umd" } ]
       ]
     },
     "es6": {
       "presets": [
-        [
-          "env",
-          {
-            "modules": false
-          }
-        ]
+        [ "env", { "modules": false } ]
       ]
     }
   }
