@@ -3,7 +3,7 @@
   "description": "px-* web components as React styled components",
   "author": "Jonnie Spratley",
   "user": "jonniespratley",
-  "version": "0.0.20",
+  "version": "0.0.20-development",
   "license": "",
   "repository": {
     "type": "git",
@@ -45,7 +45,9 @@
     "dist:modules": "rimraf ./dist/modules && BABEL_ENV=modules babel ./src --out-dir ./dist/modules",
     "preversion": "npm run test && npm run dist && npm run dist:min && git commit --allow-empty -am 'tag'",
     "prepublish": "npm run dist",
-    "postpublish": "npm run gh-pages && npm run gh-pages:deploy"
+    "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
   },
   "engines": {
     "node": ">=8.0.0",
@@ -174,7 +176,9 @@
     "webpack-dev-server": "^2.11.1",
     "webpack-jarvis": "^0.2.2",
     "webpack-merge": "^4.1.0",
-    "webpack-stream": "^4.0.0"
+    "webpack-stream": "^4.0.0",
+    "travis-deploy-once": "^5.0.0",
+    "semantic-release": "^15.1.8"
   },
   "peerDependencies": {
     "file-loader": "^1.1.6",
