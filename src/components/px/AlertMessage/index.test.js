@@ -9,7 +9,6 @@ describe('AlertMessage', () => {
     const wrapper = shallow(
       <AlertMessage/>
     );
-    console.log(wrapper.debug());
   });
 
   test('matches snapshot', () => {
