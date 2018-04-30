@@ -77,8 +77,8 @@ exports[`px-breadcrumbs renders correctly 1`] = `
           color={null}
           style={
             Object {
-              "height": "24px",
-              "width": "24px",
+              "height": 24,
+              "width": 24,
             }
           }
         >
@@ -92,9 +92,9 @@ exports[`px-breadcrumbs renders correctly 1`] = `
             style={
               Object {
                 "display": "block",
-                "height": "24px",
+                "height": 24,
                 "pointerEvents": "none",
-                "width": "24px",
+                "width": 24,
               }
             }
             viewBox="0 0 16 16"
@@ -120,8 +120,8 @@ exports[`px-breadcrumbs renders correctly 1`] = `
           color={null}
           style={
             Object {
-              "height": "24px",
-              "width": "24px",
+              "height": 24,
+              "width": 24,
             }
           }
         >
@@ -135,9 +135,9 @@ exports[`px-breadcrumbs renders correctly 1`] = `
             style={
               Object {
                 "display": "block",
-                "height": "24px",
+                "height": 24,
                 "pointerEvents": "none",
-                "width": "24px",
+                "width": 24,
               }
             }
             viewBox="0 0 16 16"
@@ -163,8 +163,8 @@ exports[`px-breadcrumbs renders correctly 1`] = `
           color={null}
           style={
             Object {
-              "height": "24px",
-              "width": "24px",
+              "height": 24,
+              "width": 24,
             }
           }
         >
@@ -178,9 +178,9 @@ exports[`px-breadcrumbs renders correctly 1`] = `
             style={
               Object {
                 "display": "block",
-                "height": "24px",
+                "height": 24,
                 "pointerEvents": "none",
-                "width": "24px",
+                "width": 24,
               }
             }
             viewBox="0 0 16 16"

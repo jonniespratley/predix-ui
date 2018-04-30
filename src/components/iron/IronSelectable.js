@@ -1,3 +1,4 @@
+/* eslint-disable */
 import IronMultiSelectable from './IronMultiSelectable';
 /**
  * IronSelectable - https://github.com/PolymerElements/iron-selector/blob/master/iron-selectable.html
@@ -25,7 +26,7 @@ export default class IronSelectable extends IronMultiSelectable {
     this.selectedItem = value;
   }
   selectPrevious() {
-    const length = this.items.length;
+    const { length } = this.items;
     const index = (Number(this._valueToIndex(this.selected)) - 1 + length) % length;
     this.select(this._indexToValue(index));
   }

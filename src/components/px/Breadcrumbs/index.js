@@ -122,76 +122,13 @@ class BreadcrumbsComponent extends React.Component {
               </Flex>
             </div>
             ))}
-          {
-          /*
-            {items && items.map((item, index) => (
-              <div key={index}
-              data-text={item.label}
-              data-index={index}
-              className="breadcrumbTopItem u-ph- flex flex--row flex--middle">
-                {this._isLabel(item, clickOnlyMode) &&
-                <span
-                  className="actionable actionable--action">
-                  {this._getItemProp(item, keys.label)}
-                </span>}
-                {this._isDropdown(item, clickOnlyMode) &&
-                <Dropdown
-                  disableClear={true}
-                  displayValue={this._getItemProp(item, keys.label)}
-                  items={this._getItemProp(item, keys.children)}
-                  buttonStyle='bare'/>}
-              </div>
-            ))}
-
-            <template is="dom-repeat" items="[[_mainPathItems]]">
-
-              <template is="dom-if" if="[[_isNotFirstItemInData(index, _mainPathItems)]]">
-                <li className="breadcrumbTopItem flex flex--middle">
-                  <span className="rightAngle [[_getSeparatorSize(clickOnlyMode)]]">
-                    <px-icon icon="px-utl:chevron-right"></px-icon>
-                  </span>
-                </li>
-              </template>
-
-              <li data-text="[[item.label]]"
-                data-item="[[item]]"
-                data-index="[[index]]"
-                class="breadcrumbTopItem u-ph- flex flex--row flex--middle"
-                on-tap="_onPathTap">
-
-                <template is="dom-if" if="[[_isLabel(item, clickOnlyMode)]]">
-                  <span className="actionable actionable--action">[[item.label]]</span>
-                </template>
-
-                <template is="dom-if" if="[[_isDropdown(item, clickOnlyMode)]]">
-                  <px-dropdown
-                    displayValue="[[item.label]]"
-                    items="[[_clickedItemChildren]]"
-                    searchMode="[[searchMode]]"
-                    buttonStyle="bare"
-                    disableClear></px-dropdown>
-                </template>
-
-                <template is="dom-if" if="[[_isOverflow(item)]]">
-                  <px-dropdown id="dropdown"
-                    items="[[_clickedItemChildren]]"
-                    buttonStyle="icon"
-                    icon="px-nav:more"></px-dropdown>
-                </template>
-
-              </li>
-            </template>
-            */}
         </Flex>
-
-
       </div>
     );
   }
 }
 BreadcrumbsComponent.defaultProps = {
   clickOnlyMode: false,
-  // items: null,
   onClick: null,
   selectedRoute: null,
   keys: {
@@ -209,9 +146,8 @@ const shape = PropTypes.shape({
 
 BreadcrumbsComponent.propTypes = {
   clickOnlyMode: PropTypes.bool,
-  // items: PropTypes.arrayOf(shape),
   onClick: PropTypes.func,
-  selectedRoute: null,
+  selectedRoute: PropTypes.arrayOf(PropTypes.string),
   keys: PropTypes.shape({
     id: PropTypes.string,
     label: PropTypes.string,

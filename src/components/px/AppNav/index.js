@@ -292,8 +292,8 @@ AppNavComponent.propTypes = {
   verticalOpened: PropTypes.bool,
   selected: PropTypes.number,
   selectedIndex: PropTypes.number,
-  selectedItem: PropTypes.shape,
-  visibleItems: PropTypes.shape,
+  selectedItem: PropTypes.object, /* eslint-disable-line */
+  visibleItems: PropTypes.any, /* eslint-disable-line */
   items: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     label: PropTypes.string,

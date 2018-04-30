@@ -1,3 +1,5 @@
+
+/* eslint-disable */
 import IronSelection from './IronSelection';
 
 export default class IronMultiSelectable extends IronSelection {
@@ -51,14 +53,14 @@ export default class IronMultiSelectable extends IronSelection {
         return this._valueToItem(value);
       }, this);
   }
-  _selectMulti(values) {
-    values = values || [];
+  _selectMulti(values = []) {
     const selectedItems = (this._valuesToItems(values) || []).filter(function (item) {
       return item !== null && item !== undefined;
     });
     // clear all but the current selected items
     this._selection.clear(selectedItems);
-    // select only those not selected yet
+
+
     for (let i = 0; i < selectedItems.length; i++) {
       this._selection.setItemSelected(selectedItems[i], true);
     }

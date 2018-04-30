@@ -21,7 +21,6 @@ const PxIcon = styled.i`
     stroke        : var(--iron-icon-stroke-color, currentColor);
     position      : relative;
     vertical-align: middle;
-
   }
   ${props => props.color !== null && css`
     color: ${props.color} !important;
@@ -30,7 +29,6 @@ const PxIcon = styled.i`
     display: none;
   }
 `;
-
 
 class Icon extends React.Component {
   constructor(props) {
@@ -51,18 +49,24 @@ class Icon extends React.Component {
   }
   render() {
     const {
-      icon, size, style, className, viewBox, color
+      icon,
+      size,
+      style,
+      className,
+      viewBox,
+      color
     } = this.props;
+
     const styles = {
-      width: `${size}px`,
-      height: `${size}px`
+      width: size || null,
+      height: size || null
     };
-    const svgStyles = {
+
+    const svgStyles = Object.assign({
       pointerEvents: 'none',
-      display: 'block',
-      width: `${size}px`,
-      height: `${size}px`
-    };
+      display: 'block'
+    }, styles);
+
     const icn = icon && icon.replace(':', '-');
     const _viewBox = viewBox || `0 0 ${size} ${size}`;
     return (

@@ -1,8 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
-// import stylesheet from './px-overlay.scss';
-import BaseComponent from '../BaseComponent';
-
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 const Overlay = styled.div`
@@ -14,14 +11,17 @@ const Overlay = styled.div`
   z-index         : 900;
   background-color: var(--px-modal-overlay-color, rgba(0, 0, 0, 0.5));
   transition      : background-color 0.2s cubic-bezier(.78,.13,.16,.87);
-  
   ${props => props.invisible && css`
      visibility      : hidden;
      background-color: transparent;
   `}
 `;
+Overlay.defaultProps = {
+  className: 'px-overlay'
+};
+Overlay.displayName = 'Overlay';
 
-class OverlayComponent extends BaseComponent {
+class OverlayComponent extends React.Component {
   constructor(props) {
     super(props, { displayName: 'Overlay' });
     this.state = {
@@ -58,6 +58,9 @@ class OverlayComponent extends BaseComponent {
   }
 
   close() {
+    if (this.props.onRequestClose) {
+      this.props.onRequestClose(this.state);
+    }
     this.setState({ opened: false });
   }
 
@@ -67,16 +70,14 @@ class OverlayComponent extends BaseComponent {
 
   render() {
     const {
-      style,
-      onOverlayClick,
-      ignoreOverlayClick,
-      ignoreEscapeKeyUp,
-      zIndex = 900,
-      children
+      children,
+      fullScreen
     } = this.props;
-    const { opened } = this.state;
+    const {
+      opened
+    } = this.state;
     return (
-      <Overlay invisible={!opened} onClick={this._handleOverlayClick}>
+      <Overlay fullScreen={fullScreen} invisible={!opened} onClick={this._handleOverlayClick}>
         {children}
       </Overlay>
     );
@@ -84,13 +85,27 @@ class OverlayComponent extends BaseComponent {
 }
 
 OverlayComponent.defaultProps = {
+  children: null,
+  opened: false,
   fullScreen: false,
   onEscapeKeyUp: null,
   onOverlayClick: null,
   onRequestClose: null,
   ignoreEscapeKeyUp: false,
-  ignoreBackdropClick: false
+  ignoreOverlayClick: false
 };
+
+OverlayComponent.propTypes = {
+  children: PropTypes.node,
+  opened: PropTypes.bool,
+  fullScreen: PropTypes.bool,
+  onEscapeKeyUp: PropTypes.func,
+  onOverlayClick: PropTypes.func,
+  onRequestClose: PropTypes.func,
+  ignoreEscapeKeyUp: PropTypes.bool,
+  ignoreOverlayClick: PropTypes.bool
+};
+
 OverlayComponent.displayName = 'Overlay';
 
 export default OverlayComponent;

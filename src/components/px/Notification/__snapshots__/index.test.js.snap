@@ -56,6 +56,14 @@ exports[`Notification should type error 1`] = `
   font-size: 1rem;
   background-color: var(--px-alert-label-background-color--error,yellow);
   color: var(--px-alert-label-text-color--error,black);
+  opacity: 1;
+  height: var(--px-notification-height,5.33333rem);
+}
+
+@media screen and (min-width:45em) {
+  .c0 {
+    height: var(--px-notification-height,2.66667rem);
+  }
 }
 
 <div
@@ -129,6 +137,14 @@ exports[`Notification should type healthy 1`] = `
   font-size: 1rem;
   background-color: var(--px-alert-label-background-color--healthy,green);
   color: var(--px-alert-label-text-color--healthy,white);
+  opacity: 1;
+  height: var(--px-notification-height,5.33333rem);
+}
+
+@media screen and (min-width:45em) {
+  .c0 {
+    height: var(--px-notification-height,2.66667rem);
+  }
 }
 
 <div
@@ -202,6 +218,14 @@ exports[`Notification should type important 1`] = `
   font-size: 1rem;
   background-color: var(--px-alert-label-background-color--important,red);
   color: var(--px-alert-label-text-color--important,white);
+  opacity: 1;
+  height: var(--px-notification-height,5.33333rem);
+}
+
+@media screen and (min-width:45em) {
+  .c0 {
+    height: var(--px-notification-height,2.66667rem);
+  }
 }
 
 <div
@@ -275,6 +299,14 @@ exports[`Notification should type info 1`] = `
   font-size: 1rem;
   background-color: var(--px-alert-label-background-color--information,blue);
   color: var(--px-alert-label-text-color--information,white);
+  opacity: 1;
+  height: var(--px-notification-height,5.33333rem);
+}
+
+@media screen and (min-width:45em) {
+  .c0 {
+    height: var(--px-notification-height,2.66667rem);
+  }
 }
 
 <div
@@ -348,6 +380,14 @@ exports[`Notification should type unknown 1`] = `
   font-size: 1rem;
   background-color: var(--px-alert-label-background-color--unknown,gray);
   color: var(--px-alert-label-text-color--unknown,white);
+  opacity: 1;
+  height: var(--px-notification-height,5.33333rem);
+}
+
+@media screen and (min-width:45em) {
+  .c0 {
+    height: var(--px-notification-height,2.66667rem);
+  }
 }
 
 <div
@@ -421,6 +461,14 @@ exports[`Notification should type warning 1`] = `
   font-size: 1rem;
   background-color: var(--px-alert-label-background-color--warning,orange);
   color: var(--px-alert-label-text-color--warning,white);
+  opacity: 1;
+  height: var(--px-notification-height,5.33333rem);
+}
+
+@media screen and (min-width:45em) {
+  .c0 {
+    height: var(--px-notification-height,2.66667rem);
+  }
 }
 
 <div

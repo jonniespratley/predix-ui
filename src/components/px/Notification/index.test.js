@@ -33,7 +33,7 @@ describe('Notification', () => {
         <Notification type={type}>Message</Notification>
       );
       expect(wrapper.props().type).toEqual(type);
-      const tree = renderer.create(<Notification type={type}>Message</Notification>).toJSON();
+      const tree = renderer.create(<Notification opened={true} type={type}>Message</Notification>).toJSON();
       expect(tree).toMatchSnapshot();
     });
   });

@@ -182,8 +182,8 @@ Component.defaultProps = {
 };
 
 Component.propTypes = {
-  style: null,
-  className: null,
+  style: PropTypes.objectOf(PropTypes.string),
+  className: PropTypes.string,
   background: PropTypes.string,
   position: PropTypes.string,
   fullSize: PropTypes.bool,

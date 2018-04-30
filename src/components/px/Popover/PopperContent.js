@@ -1,44 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import propTypes from 'prop-types';
-import { mapToCssModules, getTarget } from '../utils';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Arrow, Popper } from 'react-popper';
-
-import PopoverArrow from './PopoverArrow';
-
 import styled from 'styled-components';
 
-function isFunction(functionToCheck) {
-  return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
-}
+import { mapToCssModules, getTarget } from '../utils';
 
 const PopoverInner = styled.div`
   top: 0;
-	left: 0;
-	z-index: 1060;
-	max-width: 276px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 1.5;
-	text-align: left;
-	text-decoration: none;
-	text-shadow: none;
-	text-transform: none;
-	letter-spacing: normal;
-	word-break: normal;
-	word-spacing: normal;
-	white-space: normal;
-	line-break: auto;
-	font-size: 1rem;
-	word-wrap: break-word;
-	background-clip: padding-box;
-	border: 1px solid var(--px-popover-border-color, #000);
-	background: var(--px-popover-background-color, #fff);
-	color: var(--px-popover-text-color, #000);
-	box-shadow: 0 1px 3px 0 var(--px-popover-shadow-color, #000);
-	position: absolute;
-	display: block;
+  left: 0;
+  z-index: 1060;
+  max-width: 276px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  font-size: 1rem;
+  word-wrap: break-word;
+  background-clip: padding-box;
+  border: 1px solid var(--px-popover-border-color, #000);
+  background: var(--px-popover-background-color, #fff);
+  color: var(--px-popover-text-color, #000);
+  box-shadow: 0 1px 3px 0 var(--px-popover-shadow-color, #000);
+  position: absolute;
+  display: block;
 `;
 
 PopoverInner.displayName = 'PopoverInner';
@@ -122,8 +116,8 @@ class PopperContent extends React.Component {
     this.renderIntoSubtree();
     if (
       this._element.childNodes &&
-			this._element.childNodes[0] &&
-			this._element.childNodes[0].focus
+      this._element.childNodes[0] &&
+      this._element.childNodes[0].focus
     ) {
       this._element.childNodes[0].focus();
     }
@@ -175,13 +169,12 @@ class PopperContent extends React.Component {
       },
       ...modifiers
     };
-    /*
-		return (
-			<Popper
-				modifiers={extendedModifiers}
-				{...attrs}
-				component={tag}
-				className={popperClassName}>
+    /* return (
+      <Popper
+        modifiers={extendedModifiers}
+        {...attrs}
+        component={tag}
+        className={popperClassName}>
         {({ popperProps, restProps }) => (
          <PopoverInner {...popperProps} {...at}>
             {children}
@@ -196,9 +189,8 @@ class PopperContent extends React.Component {
           </Arrow>}
           </PopoverInner>
         )}
-			</Popper>
-		);
-*/
+    </Popper>
+  ); */
     return (
       <Popper
         modifiers={extendedModifiers}
@@ -214,7 +206,6 @@ class PopperContent extends React.Component {
 
   render() {
     this.setTargetNode(getTarget(this.props.target));
-
     if (this.props.container === 'inline') {
       return this.props.isOpen ? this.renderChildren() : null;
     }
@@ -224,7 +215,7 @@ class PopperContent extends React.Component {
 }
 
 PopperContent.childContextTypes = {
-  popperManager: propTypes.object.isRequired
+  popperManager: PropTypes.object.isRequired
 };
 
 PopperContent.defaultProps = {
@@ -235,6 +226,46 @@ PopperContent.defaultProps = {
   fallbackPlacement: 'flip',
   flip: true,
   container: 'body',
-  modifiers: {}
+  modifiers: {},
+  cssModule: {},
+  children: null,
+  placementPrefix: null,
+  tag: 'div',
+  target: null,
+  className: null
 };
+
+PopperContent.propTypes = {
+  placement: PropTypes.oneOf([
+    'auto-start',
+    'auto',
+    'auto-end',
+    'top-start',
+    'top',
+    'top-end',
+    'right-start',
+    'right',
+    'right-end',
+    'bottom-end',
+    'bottom',
+    'bottom-start',
+    'left-end',
+    'left',
+    'left-start'
+  ]),
+  hideArrow: PropTypes.bool,
+  isOpen: PropTypes.bool,
+  offset: PropTypes.number,
+  fallbackPlacement: PropTypes.string,
+  flip: PropTypes.bool,
+  placementPrefix: PropTypes.string,
+  className: PropTypes.string,
+  container: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  tag: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  target: PropTypes.oneOfType([PropTypes.instanceOf(Element), Popper]),
+  cssModule: PropTypes.objectOf(PropTypes.string),
+  modifiers: PropTypes.objectOf(PropTypes.string)
+};
+
 export default PopperContent;

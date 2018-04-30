@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, text, array, object, boolean, number, select } from '@storybook/addon-knobs';
+import { withKnobs, text, array, boolean, select } from '@storybook/addon-knobs';
 
 import Dropdown from './';
 import Icon from '../IconSet/Icon';

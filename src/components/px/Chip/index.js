@@ -1,6 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
-
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 const Chip = styled.div`
@@ -17,16 +16,16 @@ const Chip = styled.div`
     background-color: var(--px-chip-background-color--hover, rgba(gray, 0.2));
     border          : 1px solid var(--px-chip-border-color--hover, gray);
   }
-  
+
   ${props => props.selected && css`
-  background-color: var(--px-chip-background-color--selected, white);
+    background-color: var(--px-chip-background-color--selected, white);
     border          : 1px solid var(--px-chip-border-color--selected, blue);
   `}
-    
+
 `;
 
 const ChipContent = styled.div`
- line-height: 18px;
+  line-height: 18px;
   display    : inline-block;
   min-width  : 0;
   max-width  : var(--px-chip-max-width, 120px);
@@ -44,16 +43,33 @@ const ChipIcon = styled.div`
 /**
  * Chip component
  */
-export default ({
-  style,
-  label = 'Chip',
+const Component = ({
   icon,
   selected,
   showIcon,
   children
 }) => (
   <Chip selected={selected}>
-    <ChipContent>{children}</ChipContent>
+    <ChipContent>
+      {children}
+      {showIcon && <ChipIcon>{icon}</ChipIcon>}
+    </ChipContent>
   </Chip>
 
 );
+
+Component.defaultProps = {
+  icon: null,
+  selected: null,
+  showIcon: false,
+  children: null
+};
+
+Component.propTypes = {
+  icon: PropTypes.string,
+  selected: PropTypes.bool,
+  showIcon: PropTypes.bool,
+  children: PropTypes.node
+};
+
+export default Component;
