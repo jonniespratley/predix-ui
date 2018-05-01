@@ -71,9 +71,9 @@ class TreeNode extends React.Component {
     super(props);
     this.state = {
       children: [],
-      data: props.data || null,
-      selected: props.selected || false,
-      isSelectable: props.isSelectable || true
+      data: props.data,
+      selected: props.selected,
+      isSelectable: props.isSelectable
     };
     this.onCategorySelect = this.onCategorySelect.bind(this);
     this.onChildDisplayToggle = this.onChildDisplayToggle.bind(this);
@@ -101,13 +101,13 @@ class TreeNode extends React.Component {
   render() {
     const isOpen = !!(this.state.children && this.state.children.length);
     const hasChildren = this.props && this.props.data && this.props.data.children;
-    const { data } = this.state;
+    const { data, selected, children } = this.state;
     const { id, label, icon } = data || this.props;
     const openIcon = (isOpen ? 'px-utl:chevron' : 'px-utl:chevron-right');
     return (
       <TreeNodeStyled
         open={isOpen}
-        closed={!this.state.children}
+        closed={!children}
         leaf={!hasChildren}
         branch={!!hasChildren}
         data-open={isOpen}
@@ -120,7 +120,7 @@ class TreeNode extends React.Component {
 
         <TreeNodeLabel
           data-id={id}
-          selected={this.state.selected}
+          selected={selected}
           leaf={!hasChildren}
           branch={!!hasChildren}
         >
@@ -133,7 +133,7 @@ class TreeNode extends React.Component {
         <TreeNodeContent open={isOpen}>
           {this.state.children.map(child => (
             <TreeNode
-              key={child}
+              key={child.id}
               data={child}
               {...child}
               onCategorySelect={this.props.onCategorySelect}
@@ -150,9 +150,9 @@ TreeNode.defaultProps = {
   id: null,
   label: null,
   data: null,
-  selected: null,
+  selected: false,
   onCategorySelect: null,
-  isSelectable: null
+  isSelectable: true
 };
 TreeNode.propTypes = {
   id: PropTypes.string,

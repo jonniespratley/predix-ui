@@ -23,15 +23,17 @@ class IronCollapse extends React.Component {
       ? 'width'
       : 'height';
   }
+
   /* eslint-ignore-start */
   get _isDisplayed() {
     const rect = this.base.getBoundingClientRect();
-    return Object.keys(rect).forEach((key) => {
+    Object.keys(rect).forEach((key) => {
       if (rect[key] !== 0) {
         return true;
       }
       return false;
     });
+    return false;
   }
   /* eslint-ignore-stop */
   _calcSize() {
@@ -86,10 +88,6 @@ class IronCollapse extends React.Component {
     this.base.style[this.dimension] = newSize;
   }
 
-  /**
-  * toggle - Toggle content
-  * @return {type}  description
-  */
   toggle() {
     if (this.state.opened) {
       this.hide();
@@ -130,12 +128,16 @@ class IronCollapse extends React.Component {
   }
 
   componentDidMount() {
-    this.base.addEventListener('transitionend', this._transitionEndBound);
-    this._transitionEnd();
+    if (this.base) {
+      this.base.addEventListener('transitionend', this._transitionEndBound);
+      this._transitionEnd();
+    }
   }
 
   componentWillUnmount() {
-    this.base.removeEventListener('transitionend', this._transitionEndBound);
+    if (this.base) {
+      this.base.removeEventListener('transitionend', this._transitionEndBound);
+    }
   }
 
   _handleRef(el) {
@@ -150,7 +152,7 @@ class IronCollapse extends React.Component {
     return (
       <div
         className={baseClassnames}
-        ref={(el) => { this.base = el; }}
+        ref={this._handleRef}
         aria-hidden={!opened}
         aria-expanded={opened}
       >

@@ -175,6 +175,7 @@ exports[`Modal should render 1`] = `
   <div
     className="px-overlay c1"
     onClick={[Function]}
+    onKeyUp={[Function]}
   />
   <div
     className="c2"

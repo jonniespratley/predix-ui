@@ -101,9 +101,9 @@ UITreeNode.defaultProps = {
   index: null
 };
 UITreeNode.propTypes = {
-  tree: PropTypes.node,
+  //tree: PropTypes.node,
   paddingLeft: PropTypes.number,
-  dragging: PropTypes.bool,
+  //dragging: PropTypes.number,
   onCollapse: PropTypes.func,
   onDragStart: PropTypes.func,
   index: PropTypes.shape({

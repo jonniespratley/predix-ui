@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Tree from './tree';
 import Node from './TreeNode';
+import './styles.scss';
 
 class UITree extends Component {
   constructor(props) {
@@ -228,7 +229,7 @@ class UITree extends Component {
 
 UITree.propTypes = {
   onChange: PropTypes.func,
-  tree: PropTypes.object.isRequired,
+  //tree: PropTypes.object.isRequired,
   paddingLeft: PropTypes.number,
   renderNode: PropTypes.func.isRequired
 };

@@ -1,7 +1,9 @@
-import { expect } from 'chai';
+import renderer from 'react-test-renderer';
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
+import sinon from 'sinon';
 import Dropdown from './';
+
 const items = [
   {"key":"1","val":"iPhone"},
   {"key":"2","val":"Android"},
@@ -9,22 +11,50 @@ const items = [
   {"key":"4","val":"Windows Phone"},
   {"key":"5","val":"Flip Phone","disabled":true}
 ];
+
 describe('Dropdown', () => {
   test('should render', () =>{
     const wrapper = shallow(
       <Dropdown/>
     );
-    expect(wrapper.find('.px-dropdown')).to.have.length(1);
+    expect(wrapper.find('.px-dropdown')).toHaveLength(1);
   });
+
+  test('matches snapshot', () => {
+    const tree = renderer.create(
+      <Dropdown
+        displayValue='My Val'
+        buttonStyle='default'
+        items={items} />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('should render with items', () =>{
     const wrapper = shallow(
       <Dropdown items={items}/>
     );
-    expect(wrapper.find('.px-button')).to.have.length(1);
-    expect(wrapper.find('.px-dropdown__option')).to.have.length(items.length);
+    expect(wrapper.find('.px-button')).toHaveLength(1);
+    expect(wrapper.find('.px-dropdown__option')).toHaveLength(items.length);
   });
-  //expect(wrapper.find('.px-dropdown')).to.have.length(1);
-  //expect(wrapper.find('.delta')).to.have.length(1);
-  //expect(wrapper.find('.alpha')).to.have.length(1);
-  //expect(wrapper.contains(<div className='label'/>)).to.equal(true);
+
+  test('should close when close icon clicked', () =>{
+    const wrapper = shallow(
+      <Dropdown items={items}/>
+    );
+    wrapper.setState({opened: true});
+    console.log('wrapper', wrapper.debug());
+    //expect(wrapper.find({icon: 'px-utl:chevron'})).toHaveLength(1);
+  });
+
+  test('should trigger onChange when item is changed', () =>{
+    let spy = sinon.spy();
+    const wrapper = shallow(
+      <Dropdown items={items} onChange={spy} />
+    );
+    expect(wrapper.find('.px-button')).toHaveLength(1);
+    expect(wrapper.find('.px-dropdown__option')).toHaveLength(items.length);
+    wrapper.setState({selected: 2});
+    expect(spy.called);
+  });
 });

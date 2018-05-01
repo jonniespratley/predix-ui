@@ -31,14 +31,6 @@ class OverlayComponent extends React.Component {
     this._handleEscKeyUp = this._handleEscKeyUp.bind(this);
   }
 
-  componentDidMount() {
-    window.addEventListener('keyup', this._handleEscKeyUp);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('keyup', this._handleEscKeyUp);
-  }
-
   componentWillReceiveProps(nextProps) {
     this.setState({ opened: nextProps.opened });
   }
@@ -77,7 +69,12 @@ class OverlayComponent extends React.Component {
       opened
     } = this.state;
     return (
-      <Overlay fullScreen={fullScreen} invisible={!opened} onClick={this._handleOverlayClick}>
+      <Overlay
+        onKeyUp={this._handleEscKeyUp}
+        fullScreen={fullScreen}
+        invisible={!opened}
+        onClick={this._handleOverlayClick}
+      >
         {children}
       </Overlay>
     );

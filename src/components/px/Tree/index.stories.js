@@ -214,8 +214,16 @@ const mockNode = {
 };
 
 const mockTree = {
-  module: 'react-ui-tree',
+  id: 0,
+  label: 'react-ui-tree',
   children: treeData
+};
+
+const nodeKeys = {
+  id: 'id',
+  label: 'label',
+  children: 'children',
+  icon: 'icon'
 };
 
 class ExampleApp extends React.Component {
@@ -223,15 +231,19 @@ class ExampleApp extends React.Component {
     active: null,
     tree: mockTree
   };
+
   /* eslint-disable */
   renderNode = node => (
     <span
+      data-id={node[nodeKeys.id]}
+      data-icon={node[nodeKeys.icon]}
       className={cx('node', { 'is-active': node === this.state.active })}
       onClick={this.onClickNode.bind(null, node)}
     >
-      {node.module}
+      {node[nodeKeys.label]}
     </span>
   );
+
   /* eslint-enable */
   onClickNode = (node) => {
     this.setState({
@@ -247,26 +259,53 @@ class ExampleApp extends React.Component {
 
   updateTree = () => {
     const { tree } = this.state;
-    tree.children.push({ module: 'test' });
+    tree.children.push({ module: 'Node Label' });
     this.setState({
       tree
     });
   };
 
   render() {
+    const demoGridStyles = {
+      position: 'relative',
+      minHeight: 500
+    };
+    const demoInspectorStyles = {
+      position: 'absolute',
+      left: 300
+    };
+    const demoTreeStyles = {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      bottom: 0,
+      width: 300,
+      overflowX: 'hidden',
+      overflowY: 'auto',
+      backgroundColor: '#fff'
+    };
     return (
-      <Grid>
-        <UiTree
-          paddingLeft={20}
-          tree={this.state.tree}
-          onChange={this.handleChange}
-          isNodeCollapsed={this.isNodeCollapsed}
-          renderNode={this.renderNode}
-        />
-        <div>
+      <Grid style={demoGridStyles}>
+        <div style={demoTreeStyles}>
+          <UiTree
+            paddingLeft={20}
+            tree={this.state.tree}
+            onChange={this.handleChange}
+            isNodeCollapsed={this.isNodeCollapsed}
+            renderNode={this.renderNode}
+          />
+        </div>
+        <div style={demoInspectorStyles}>
           <button onClick={this.updateTree}>update tree</button>
           <pre>{JSON.stringify(this.state.tree, null, '  ')}</pre>
         </div>
+
+        <style>{`
+          .is-active {
+            color: blue;
+          }
+        `}
+        </style>
       </Grid>
     );
   }

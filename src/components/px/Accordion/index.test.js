@@ -1,8 +1,9 @@
-import { expect } from 'chai';
 import React from 'react';
-import {shallow} from 'enzyme';
-import Accordion from './';
+import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import sinon from 'sinon';
+
+import Accordion from './';
 
 describe('Accordion', () => {
   test('should render open by default', () =>{
@@ -13,6 +14,14 @@ describe('Accordion', () => {
     );
     expect(wrapper.find('.px-accordion__header').exists());
     expect(wrapper.state().open === true);
+    wrapper.setProps({open: false})
+    expect(wrapper.state().open === false);
+    const tree = renderer.create(
+      <Accordion headerText="Header Caption" status="Last Updated: 3 Days Ago">
+        <p>Accordion content goes here.</p>
+      </Accordion>
+    ).toJSON();
+      expect(tree).toMatchSnapshot();
   });
 
   test('should toggle open/closed', () =>{
@@ -27,21 +36,24 @@ describe('Accordion', () => {
     expect(onExpanded.called);
     expect(wrapper.state().open === true);
 
+    expect(wrapper.find('.px-utl-chevron-down').exists());
     wrapper.find('.px-accordion__header').simulate('click');
     expect(onCollapsed.called);
     expect(wrapper.state().open === false);
+    expect(wrapper.find('.px-utl-chevron').exists());
   });
 
-  test('can be disabled', () =>{
+  test('can be disabled', () => {
+    let spy = sinon.spy();
     const wrapper = shallow(
-      <Accordion headerText='Should Toggle' disabled>
+      <Accordion headerText='Should Toggle' onCollapsed={spy} disabled>
         <p>Accordion content goes here.</p>
       </Accordion>
     );
-    expect(wrapper.find('.px-accordion--open').length).to.equal(1);
+    expect(wrapper.find('.px-accordion--open').length).toEqual(1);
     wrapper.find('.px-accordion__header').simulate('click');
-
-    expect(wrapper.find('.px-accordion--open').length).to.equal(1);
-    expect(wrapper.find('.px-accordion--disabled').length).to.equal(1);
+    expect(!spy.called);
+    expect(wrapper.find('.px-accordion--open').length).toEqual(1);
+    expect(wrapper.find('.px-accordion--disabled').length).toEqual(1);
   });
 });

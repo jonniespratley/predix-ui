@@ -13,6 +13,7 @@ export function DOMElement(props, propName, componentName) {
 
 export function setGlobalCssModule(cssModule) {
   globalCssModule = cssModule;
+  return globalCssModule;
 }
 
 export function mapToCssModules(className = '', cssModule = globalCssModule) {

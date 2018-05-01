@@ -58,11 +58,19 @@ exports[`Notification should type error 1`] = `
   color: var(--px-alert-label-text-color--error,black);
   opacity: 1;
   height: var(--px-notification-height,5.33333rem);
+  font-size: 0.8rem !important;
+  height: var(--px-notification-height,2.66667rem) !important;
 }
 
 @media screen and (min-width:45em) {
   .c0 {
     height: var(--px-notification-height,2.66667rem);
+  }
+}
+
+@media screen and (min-width:45em) {
+  .c0 {
+    height: var(--px-notification-height,1.33333rem) !important;
   }
 }
 
@@ -139,11 +147,19 @@ exports[`Notification should type healthy 1`] = `
   color: var(--px-alert-label-text-color--healthy,white);
   opacity: 1;
   height: var(--px-notification-height,5.33333rem);
+  font-size: 0.8rem !important;
+  height: var(--px-notification-height,2.66667rem) !important;
 }
 
 @media screen and (min-width:45em) {
   .c0 {
     height: var(--px-notification-height,2.66667rem);
+  }
+}
+
+@media screen and (min-width:45em) {
+  .c0 {
+    height: var(--px-notification-height,1.33333rem) !important;
   }
 }
 
@@ -220,11 +236,19 @@ exports[`Notification should type important 1`] = `
   color: var(--px-alert-label-text-color--important,white);
   opacity: 1;
   height: var(--px-notification-height,5.33333rem);
+  font-size: 0.8rem !important;
+  height: var(--px-notification-height,2.66667rem) !important;
 }
 
 @media screen and (min-width:45em) {
   .c0 {
     height: var(--px-notification-height,2.66667rem);
+  }
+}
+
+@media screen and (min-width:45em) {
+  .c0 {
+    height: var(--px-notification-height,1.33333rem) !important;
   }
 }
 
@@ -301,11 +325,19 @@ exports[`Notification should type info 1`] = `
   color: var(--px-alert-label-text-color--information,white);
   opacity: 1;
   height: var(--px-notification-height,5.33333rem);
+  font-size: 0.8rem !important;
+  height: var(--px-notification-height,2.66667rem) !important;
 }
 
 @media screen and (min-width:45em) {
   .c0 {
     height: var(--px-notification-height,2.66667rem);
+  }
+}
+
+@media screen and (min-width:45em) {
+  .c0 {
+    height: var(--px-notification-height,1.33333rem) !important;
   }
 }
 
@@ -382,11 +414,19 @@ exports[`Notification should type unknown 1`] = `
   color: var(--px-alert-label-text-color--unknown,white);
   opacity: 1;
   height: var(--px-notification-height,5.33333rem);
+  font-size: 0.8rem !important;
+  height: var(--px-notification-height,2.66667rem) !important;
 }
 
 @media screen and (min-width:45em) {
   .c0 {
     height: var(--px-notification-height,2.66667rem);
+  }
+}
+
+@media screen and (min-width:45em) {
+  .c0 {
+    height: var(--px-notification-height,1.33333rem) !important;
   }
 }
 
@@ -463,11 +503,19 @@ exports[`Notification should type warning 1`] = `
   color: var(--px-alert-label-text-color--warning,white);
   opacity: 1;
   height: var(--px-notification-height,5.33333rem);
+  font-size: 0.8rem !important;
+  height: var(--px-notification-height,2.66667rem) !important;
 }
 
 @media screen and (min-width:45em) {
   .c0 {
     height: var(--px-notification-height,2.66667rem);
+  }
+}
+
+@media screen and (min-width:45em) {
+  .c0 {
+    height: var(--px-notification-height,1.33333rem) !important;
   }
 }
 

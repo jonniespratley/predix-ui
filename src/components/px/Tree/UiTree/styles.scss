@@ -1,68 +1,78 @@
 .m-tree {
-  .m-mode {
-    color: green;
-  }
-  .inner {
-    color: red;
-  }
-  .collapse {
-    &.caret-right {
-      display: inline;
-    }
-  }
-  .node {
-    &.is-active {
-      color: blue;
-    }
-  }
-}
-
-.f-no-select {
+  position: relative;
+  overflow: hidden;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  .m-mode {
+    // color: green;
+  }
+  .inner {
+    // color: red;
+  }
+  .collapse {
+    &.caret-right {
+      display: inline;
+    }
+    &.caret-right {
+      display: inline;
+    }
+  }
+  .node {
+    display: flex;
+    padding: .2rem;
+    align-items: center;
+    line-height: 1.8rem;
+    font-size: 1rem;
+
+    &:hover {
+      color: var(--px-tree-text-color--hover,#000);
+      background-color: var(--px-tree-background-color--hover,#d3d3d3);
+    }
+    &.is-active {
+      color: var(--px-tree-text-color--selected,#fff);
+      background-color: var(--px-tree-background-color--selected,gray);
+    }
+  }
 }
 
-.m-tree {
-  position: relative;
-  overflow: hidden;
- 
-}
+
 
 .m-draggable {
   position: absolute;
   opacity: 0.8;
- 
 }
 
 .m-node {
-  &.placeholder > * {
+  &.placeholder>* {
     visibility: hidden;
   }
-
   &.placeholder {
     border: 1px dashed #ccc;
   }
-
   .inner {
     position: relative;
     cursor: pointer;
     padding-left: 10px;
   }
-
   .collapse {
     position: absolute;
     left: 0;
+    top: 5%;
     cursor: pointer;
   }
+}
 
-  .caret-right:before {
-    content: '\25B8';
-  }
-
-  .caret-down:before {
+.caret-down {
+  &:before {
     content: '\25BE';
+  }
+}
+
+.caret-right {
+  &:before {
+    content: '\25B8';
   }
 }

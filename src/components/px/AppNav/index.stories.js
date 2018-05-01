@@ -1,7 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { array, number } from '@storybook/addon-knobs';
+import { withKnobs, array, number, text, boolean } from '@storybook/addon-knobs';
+import { withReadme } from 'storybook-readme';
+import { action } from '@storybook/addon-actions';
 
+import README from './README.md';
 import AppNav from './';
 import AppNavItem from './px-app-nav-item';
 // import Icons from '../IconSet';
@@ -52,10 +55,24 @@ const navItems = array('navItems', [{
 
 // /
 storiesOf('App Nav', module)
-  .add('default', () => (<AppNav items={navItems} />))
-  .add('with "horizontal"', () => (<AppNav items={navItems} />))
-  .add('with "selected"', () => (<AppNav items={navItems} selected={number('selected', 2)} />))
-  .add('with "vertical"', () => (<AppNav items={navItems} vertical />));
-storiesOf('App Nav Item', module)
-  .add('default', () => (<AppNavItem {...navItems[0]} />))
-  .add('with dropdown', () => (<AppNavItem {...navItems[2]} dropdown />));
+  .addDecorator(withKnobs)
+  .addDecorator(withReadme(README))
+  .addWithJSX('default', () => (<AppNav items={navItems} />))
+  .addWithJSX('with "horizontal"', () => (<AppNav items={navItems} />))
+  .addWithJSX('with "selected"', () => (<AppNav items={navItems} selected={number('selected', 2)} />))
+  .addWithJSX('with "vertical"', () => (<AppNav items={navItems} vertical={boolean('vertical', true)} />))
+  .addWithJSX('nav item', () => (
+    <AppNavItem
+      id="item1"
+      onClick={action('onClick')}
+      label={text('label', 'Home')}
+      icon={text('icon', 'px-nav:home')}
+      collapsed={boolean('collapsed', false)}
+      dropdown={boolean('dropdown', false)}
+      selected={boolean('selected', false)}
+      empty={boolean('empty', false)}
+      onlyShowIcon={boolean('onlyShowIcon', false)}
+      emptyIcon={boolean('emptyIcon', false)}
+      emptyLabel={boolean('emptyLabel', false)}
+    />
+  ));

@@ -35,7 +35,7 @@ class Tree extends React.Component {
       <ul className="px-tree" style={treeStyle}>
         {items && items.map(item => (
           <TreeNode
-            key={item}
+            key={item.id}
             data={item}
             {...item}
             onCategorySelect={this.onSelect}
@@ -55,14 +55,19 @@ Tree.defaultProps = {
   selectedNode: null,
   selected: null
 };
+const treeItem = PropTypes.shape({
+  id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  label: PropTypes.string,
+  children: PropTypes.arrayOf(treeItem)
+});
 
 Tree.propTypes = {
-  items: null,
+  items: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
   onChange: PropTypes.func,
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   style: PropTypes.objectOf(PropTypes.string),
   selectedNode: PropTypes.objectOf(PropTypes.string),
-  selected: null
+  selected: PropTypes.number
 };
 
 export default Tree;

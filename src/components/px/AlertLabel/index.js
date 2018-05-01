@@ -1,5 +1,4 @@
 import React from 'react';
-import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
@@ -39,62 +38,28 @@ const AlertLabel = styled.div`
     background-color: var(--px-alert-label-background-color--healthy, green);
     color           : var(--px-alert-label-text-color--healthy, white);
   `}
-
+  ${props => props.type === 'success' && css`
+    background-color: var(--px-alert-label-background-color--healthy, green);
+    color           : var(--px-alert-label-text-color--healthy, white);
+  `}
 `;
 
-const _isCircle = t => t === 'unknown';
-
-const _getPoints = (t) => {
-  if (t === 'important') {
-    return '16.5,3 32,30 1,30';
-  } else if (t === 'warning') {
-    return '16,0.5 32.5,16 16,32.5, 0.5,16';
-  } else if (t === 'info' || t === 'information') {
-    return '6.6,32.5 26.4,32.5 32.5,13 16,0.5 0.5,13';
-  }
-
-  return '3,3 3,30 30,30 30,3';
-};
-
-
 const Component = ({
-  label, type, badge
-}) => {
-  const classNames = classnames('alertlabel', type, badge);
-  return (
-    <AlertLabel type={type}>
-      <span className={classNames}>
-        {badge &&
-        <div>
-          {!_isCircle(type) &&
-            <svg className="svg-canvas" viewBox="0 0 33 33">
-              <polygon id="polygon" points={_getPoints(type)} />
-            </svg>
-          }
-          {_isCircle(type) &&
-            <svg className="svg-canvas" viewBox="0 0 33 33">
-              <circle id="circle" cx="16" cy="16" r="15" />
-            </svg>
-          }
-        </div>}
-        <div className="label">
-          <span className="label__text">{label}</span>
-        </div>
-      </span>
-    </AlertLabel>
-  );
-};
+  label, type
+}) => (
+  <AlertLabel type={type}>
+    <span className="label__text">{label}</span>
+  </AlertLabel>
+);
 
 Component.defaultProps = {
   label: null,
-  type: null,
-  badge: null
+  type: null
 };
 
 Component.propTypes = {
   label: PropTypes.string,
-  type: PropTypes.string,
-  badge: PropTypes.string
+  type: PropTypes.string
 };
 
 export default Component;

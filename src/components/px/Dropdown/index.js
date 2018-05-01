@@ -110,7 +110,9 @@ const DropdownTrigger = styled.div`
   height: auto;
 `;
 DropdownTrigger.displayName = 'DropdownTrigger';
-
+DropdownTrigger.defaultProps = {
+  className: 'px-dropdown__trigger'
+};
 
 class Dropdown extends React.Component {
   constructor(props) {

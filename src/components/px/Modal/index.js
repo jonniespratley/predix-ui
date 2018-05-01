@@ -165,7 +165,7 @@ Component.propTypes = {
   children: PropTypes.node,
   fixed: PropTypes.bool,
   zIndex: PropTypes.number,
-  modalContentElement: null
+  modalContentElement: PropTypes.oneOfType([PropTypes.node, PropTypes.func])
 };
 
 export default Component;

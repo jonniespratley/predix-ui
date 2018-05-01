@@ -33,9 +33,13 @@ AppHeader.propTypes = {
   selected: PropTypes.number,
   onChange: PropTypes.func,
   items: PropTypes.arrayOf([
-    PropTypes.any
+    PropTypes.shape({
+      id: PropTypes.string,
+      label: PropTypes.string,
+      icon: PropTypes.string
+    })
   ]),
-  children: PropTypes.node
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func])
 };
 
 AppHeader.displayName = 'AppHeader';

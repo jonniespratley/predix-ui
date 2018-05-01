@@ -1,6 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withKnobs, text } from '@storybook/addon-knobs';
+import { withReadme } from 'storybook-readme';
+
 import AppHeader from './';
+import README from './README.md';
 
 const navItems = [
   {
@@ -16,12 +20,14 @@ const navItems = [
 ];
 // /
 storiesOf('App Header', module)
+  .addDecorator(withKnobs)
+  .addDecorator(withReadme(README))
   .add('default', () => (
-    <AppHeader />
-  ))
-  .add('with custom "title"', () => (
-    <AppHeader title="My App" />
+    <AppHeader title={text('title', 'Predix Application')} />
   ))
   .add('with items', () => (
-    <AppHeader title="App Header" items={navItems} />
+    <AppHeader
+      title={text('title', 'Predix Application')}
+      items={navItems}
+    />
   ));

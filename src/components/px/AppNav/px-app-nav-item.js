@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components';
 
 import Icon from '../IconSet/Icon';
 
-const AppNavItem = styled.div`  
+const AppNavItem = styled.div`
   line-height: 1.33333;
   text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -79,12 +79,12 @@ const AppNavItemLabel = styled.div`
   ${props => props.collapsed && css`
     flex: 1 1 auto;
     &:before {
-        
+
     }
   `}
   ${props => props.overflowed && css`
       &:before {
-        
+
       }
   `}
   ${props => props.empty && css`
@@ -93,7 +93,7 @@ const AppNavItemLabel = styled.div`
     height: 0.66667rem;
     background-color: var(--px-app-nav-item-background-color--empty, lightgray);
     &:before {
-      
+
     }
   `}
 `;
@@ -107,7 +107,7 @@ const AppNavItemIcon = styled.div`
     background-color: var(--px-app-nav-item-background-color--empty, lightgray);
     flex: none;
     &:before {
-      
+
     }
   `}
   ${props => props.withLabel && css`
@@ -161,32 +161,29 @@ class AppNavItemComponent extends React.Component {
     };
     return (
       <AppNavItem onClick={this._handleClick} className={baseClasses} data-id={id} {...itemProps}>
+        {icon &&
+          <AppNavItemIcon
+            withLabel
+            emptyIcon={emptyIcon}
+          >
+            <Icon size={32} icon={icon} viewBox="0 0 32 32" />
+          </AppNavItemIcon>
+        }
 
-        {/* icon */}
-        {icon && <AppNavItemIcon withLabel><Icon size={32} icon={icon} /></AppNavItemIcon>}
-
-        {/* emptyIcon */}
-        {emptyIcon && <AppNavItemIcon emptyIcon withLabel />}
-
-        {/* emptyLabel */}
-        {emptyLabel && <AppNavItemLabel emptyLabel />}
-
-        {/* label */}
         {label &&
-          <AppNavItemLabel empty={empty} onlyShowIcon={onlyShowIcon}>{label}</AppNavItemLabel>}
+          <AppNavItemLabel
+            emptyLabel={emptyLabel}
+            empty={empty}
+            onlyShowIcon={onlyShowIcon}
+          >{label}
+          </AppNavItemLabel>
+        }
 
-        {/* empty */}
-        {empty && <AppNavItemIcon emtpy withLabel />}
-        {empty && <AppNavItemLabel emtpy />}
-
-        {/* dropdown */}
         {dropdown &&
           <AppNavItemIcon dropdownIcon>
             <Icon icon="px-utl:chevron" size={16} />
           </AppNavItemIcon>
         }
-
-
       </AppNavItem>
     );
   }

@@ -29,6 +29,7 @@ storiesOf('Dropdown', module)
       onChange={action('onChange')}
       items={array('items', items)}
       sortMode="key"
+      opened={boolean('opened', false)}
       disabled={boolean('disabled', false)}
       disableClear={boolean('disableClear', false)}
       hideChevron={boolean('hideChevron', false)}

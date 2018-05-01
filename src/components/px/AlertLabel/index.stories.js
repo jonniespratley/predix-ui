@@ -21,6 +21,7 @@ storiesOf('Alert Label', module)
   .add('default', () => (
     <AlertLabel
       label={text('label', 'Info')}
+      badge={text('badge', '1')}
       type={select('type', typeOptions, 'info', 'alertType')}
     />
   ))
