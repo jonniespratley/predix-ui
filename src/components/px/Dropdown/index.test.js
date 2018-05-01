@@ -1,6 +1,6 @@
 import renderer from 'react-test-renderer';
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 import Dropdown from './';
 
@@ -43,6 +43,15 @@ describe('Dropdown', () => {
       <Dropdown items={items}/>
     );
     wrapper.setState({opened: true});
+    //expect(wrapper.find({icon: 'px-utl:chevron'})).toHaveLength(1);
+  });
+
+  test('should clear selected when px-utl-close is clicked', () =>{
+    const wrapper = mount(
+      <Dropdown items={items} selected={1}/>
+    );
+    expect(wrapper.state().selected).toEqual(1);
+    console.log(wrapper.state());
     console.log('wrapper', wrapper.debug());
     //expect(wrapper.find({icon: 'px-utl:chevron'})).toHaveLength(1);
   });
@@ -54,7 +63,10 @@ describe('Dropdown', () => {
     );
     expect(wrapper.find('.px-button')).toHaveLength(1);
     expect(wrapper.find('.px-dropdown__option')).toHaveLength(items.length);
-    wrapper.setState({selected: 2});
-    expect(spy.called);
+    wrapper.find('[data-val="iPhone"]').simulate('click');
+    console.log(wrapper.state());
+    //console.log(spy.getCalls());
+    expect(spy.calledOnce).toEqual(true);
+    //expect(spy.calledWith('test')).toEqual(true);
   });
 });

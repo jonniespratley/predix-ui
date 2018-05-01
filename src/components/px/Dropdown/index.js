@@ -226,15 +226,17 @@ class Dropdown extends React.Component {
         </Button>
         <DropdownContent opened={opened} width={dropdownContentWidth}>
           {items && items.map((item, index) => (
-            <div key={item[keys.key]}>
-              <DropdownOption
-                disabled={item.disabled}
-                selected={item.selected}
-                onClick={this._handleChange.bind(this, item, index)} /* eslint-disable-line */
-              >
-                {item[keys.val]}
-              </DropdownOption>
-            </div>))}
+            <DropdownOption
+              key={item[keys.key]}
+              data-key={item[keys.key]}
+              data-val={item[keys.val]}
+              disabled={item.disabled}
+              selected={item.selected}
+              onClick={this._handleChange.bind(this, item, index)} /* eslint-disable-line */
+            >
+              {item[keys.val]}
+            </DropdownOption>
+          ))}
         </DropdownContent>
       </div>
     );

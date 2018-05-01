@@ -270,55 +270,55 @@ exports[`Dropdown matches snapshot 1`] = `
     className="px-dropdown__content c4"
     width={null}
   >
-    <div>
-      <div
-        className="px-dropdown__option c5"
-        disabled={undefined}
-        onClick={[Function]}
-        selected={undefined}
-      >
-        iPhone
-      </div>
+    <div
+      className="px-dropdown__option c5"
+      data-key="1"
+      data-val="iPhone"
+      disabled={undefined}
+      onClick={[Function]}
+      selected={undefined}
+    >
+      iPhone
     </div>
-    <div>
-      <div
-        className="px-dropdown__option c5"
-        disabled={undefined}
-        onClick={[Function]}
-        selected={undefined}
-      >
-        Android
-      </div>
+    <div
+      className="px-dropdown__option c5"
+      data-key="2"
+      data-val="Android"
+      disabled={undefined}
+      onClick={[Function]}
+      selected={undefined}
+    >
+      Android
     </div>
-    <div>
-      <div
-        className="px-dropdown__option c5"
-        disabled={undefined}
-        onClick={[Function]}
-        selected={undefined}
-      >
-        Blackberry
-      </div>
+    <div
+      className="px-dropdown__option c5"
+      data-key="3"
+      data-val="Blackberry"
+      disabled={undefined}
+      onClick={[Function]}
+      selected={undefined}
+    >
+      Blackberry
     </div>
-    <div>
-      <div
-        className="px-dropdown__option c5"
-        disabled={undefined}
-        onClick={[Function]}
-        selected={undefined}
-      >
-        Windows Phone
-      </div>
+    <div
+      className="px-dropdown__option c5"
+      data-key="4"
+      data-val="Windows Phone"
+      disabled={undefined}
+      onClick={[Function]}
+      selected={undefined}
+    >
+      Windows Phone
     </div>
-    <div>
-      <div
-        className="px-dropdown__option c6"
-        disabled={true}
-        onClick={[Function]}
-        selected={undefined}
-      >
-        Flip Phone
-      </div>
+    <div
+      className="px-dropdown__option c6"
+      data-key="5"
+      data-val="Flip Phone"
+      disabled={true}
+      onClick={[Function]}
+      selected={undefined}
+    >
+      Flip Phone
     </div>
   </div>
 </div>
