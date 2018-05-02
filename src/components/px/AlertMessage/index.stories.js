@@ -19,7 +19,7 @@ const typeOptions = {
 storiesOf('Alert Message', module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(README))
-  .add('default', () => (
+  .addWithJSX('default', () => (
     <AlertMessage
       onDismiss={action('onDismiss')}
       onActionClick={action('onActionClick')}
@@ -30,7 +30,7 @@ storiesOf('Alert Message', module)
       visible={boolean('visible', true)}
     />
   ))
-  .add('with message', () => (
+  .addWithJSX('with message', () => (
     <AlertMessage
       messageTitle="Alert"
       message="This is an information message"
