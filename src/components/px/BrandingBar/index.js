@@ -92,4 +92,6 @@ Component.defaultProps = {
   children: null
 };
 
+Component.displayName = 'BrandingBar';
+
 export default Component;
