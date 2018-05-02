@@ -58,6 +58,7 @@
     "predix-ui"
   ],
   "pre-push": [
+    "lint",
     "test"
   ],
   "devDependencies": {
