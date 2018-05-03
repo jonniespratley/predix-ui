@@ -63,7 +63,8 @@ const Button = styled.button`
     padding-right: 0;
     padding-left: 0;
     border: var(--px-btn-icon-border, 0px solid) !important;
-    background-color: var(--px-btn-icon-background, transparent) !important;
+    color: var(--btn-color, black);
+    background-color: var(--px-btn-icon-background, transparent);
   `}
 
   ${props => props.size === 'large' && css`
