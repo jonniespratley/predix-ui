@@ -31,6 +31,9 @@ const AccordionHeader = styled.div`
   background-color: var(--px-accordion-header-background-color, whitesmoke);
   color           : var(--px-accordion-header-color, black);
 
+  color: var(--px-headings-heading-subsection-color);
+  background-color: var(--px-headings-heading-subsection-background);
+
   display         : flex;
   justify-content : space-between;
   > * {

@@ -30,6 +30,21 @@ const PxIcon = styled.i`
   }
 `;
 
+const IconSizes = {
+  doc: 16,
+  utl: 16,
+  nav: 22,
+  vis: 22,
+  com: 32,
+  fea: 32,
+  obj: 32
+};
+
+const getIconSetSize = (name = '') => {
+  const iconSet = name.replace(':', '-').split('-')[1];
+  return IconSizes[iconSet];
+};
+
 class Icon extends React.Component {
   constructor(props) {
     super(props);
@@ -57,9 +72,11 @@ class Icon extends React.Component {
       color
     } = this.props;
 
+    const iconSetSize = getIconSetSize(icon);
+
     const styles = {
-      width: size || null,
-      height: size || null
+      width: size || iconSetSize,
+      height: size || iconSetSize
     };
 
     const svgStyles = Object.assign({
@@ -67,10 +84,9 @@ class Icon extends React.Component {
       display: 'block'
     }, styles);
 
-    const icn = icon && icon.replace(':', '-');
     const _viewBox = viewBox || `0 0 ${size} ${size}`;
     return (
-      <PxIcon className={classnames('px-icon', className, icn)} style={styles} color={color}>
+      <PxIcon className={classnames('px-icon', className, icon.replace(':', '-'))} style={styles} color={color}>
         <svg
           viewBox={_viewBox}
           preserveAspectRatio="xMidYMid meet"

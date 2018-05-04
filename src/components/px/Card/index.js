@@ -71,7 +71,7 @@ const CardComponent = ({
   <Card className="px-card">
     <CardHeader className="px-card-header">
       <CardTitle>
-        {icon && <CardIcon><Icon icon={icon} size={22} /></CardIcon>}
+        {icon && <CardIcon><Icon icon={icon} /></CardIcon>}
         {headerText}
       </CardTitle>
       {actions && actions()}

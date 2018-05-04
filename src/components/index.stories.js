@@ -4,7 +4,9 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 import px from './px';
 import Flex from '../styles/flex';
-import './px/Theme/LightTheme';
+
+// import './px/Theme/LightTheme';
+import './px/Theme/DarkTheme';
 
 storiesOf('Welcome', module)
   .addDecorator(withKnobs)

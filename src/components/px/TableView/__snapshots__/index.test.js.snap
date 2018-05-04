@@ -191,8 +191,8 @@ exports[`TableView TableRow should render 1`] = `
       color={null}
       style={
         Object {
-          "height": null,
-          "width": null,
+          "height": 22,
+          "width": 22,
         }
       }
     >
@@ -206,9 +206,9 @@ exports[`TableView TableRow should render 1`] = `
         style={
           Object {
             "display": "block",
-            "height": null,
+            "height": 22,
             "pointerEvents": "none",
-            "width": null,
+            "width": 22,
           }
         }
         viewBox="0 0 null null"

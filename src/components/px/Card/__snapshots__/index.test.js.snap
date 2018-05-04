@@ -135,7 +135,7 @@ exports[`Card should render 1`] = `
                 "width": 22,
               }
             }
-            viewBox="0 0 22 22"
+            viewBox="0 0 null null"
           />
         </i>
       </i>

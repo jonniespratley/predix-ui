@@ -49,6 +49,8 @@ const AlertMessage = styled.div`
   align-items: center;
 
   ${props => props.visible && css`
+    overflow:hidden;
+    height: 4rem;
     visibility: visible;
     display: flex;
     opacity: 1;

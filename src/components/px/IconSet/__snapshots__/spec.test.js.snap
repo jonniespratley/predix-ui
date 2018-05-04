@@ -40,8 +40,8 @@ exports[`IconSet should render px-com-chat 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -55,9 +55,9 @@ exports[`IconSet should render px-com-chat 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -105,8 +105,8 @@ exports[`IconSet should render px-com-comment 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -120,9 +120,9 @@ exports[`IconSet should render px-com-comment 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -170,8 +170,8 @@ exports[`IconSet should render px-com-email 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -185,9 +185,9 @@ exports[`IconSet should render px-com-email 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -235,8 +235,8 @@ exports[`IconSet should render px-com-message 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -250,9 +250,9 @@ exports[`IconSet should render px-com-message 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -300,8 +300,8 @@ exports[`IconSet should render px-com-phone 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -315,9 +315,9 @@ exports[`IconSet should render px-com-phone 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -365,8 +365,8 @@ exports[`IconSet should render px-com-sms 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -380,9 +380,9 @@ exports[`IconSet should render px-com-sms 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -430,8 +430,8 @@ exports[`IconSet should render px-doc-chart 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -445,9 +445,9 @@ exports[`IconSet should render px-doc-chart 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -495,8 +495,8 @@ exports[`IconSet should render px-doc-document 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -510,9 +510,9 @@ exports[`IconSet should render px-doc-document 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -560,8 +560,8 @@ exports[`IconSet should render px-doc-document-csv 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -575,9 +575,9 @@ exports[`IconSet should render px-doc-document-csv 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -625,8 +625,8 @@ exports[`IconSet should render px-doc-document-pdf 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -640,9 +640,9 @@ exports[`IconSet should render px-doc-document-pdf 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -690,8 +690,8 @@ exports[`IconSet should render px-doc-document-word 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -705,9 +705,9 @@ exports[`IconSet should render px-doc-document-word 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -755,8 +755,8 @@ exports[`IconSet should render px-doc-document-xls 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -770,9 +770,9 @@ exports[`IconSet should render px-doc-document-xls 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -820,8 +820,8 @@ exports[`IconSet should render px-doc-image 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -835,9 +835,9 @@ exports[`IconSet should render px-doc-image 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -885,8 +885,8 @@ exports[`IconSet should render px-doc-note 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -900,9 +900,9 @@ exports[`IconSet should render px-doc-note 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -950,8 +950,8 @@ exports[`IconSet should render px-doc-website 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -965,9 +965,9 @@ exports[`IconSet should render px-doc-website 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -1015,8 +1015,8 @@ exports[`IconSet should render px-fea-administration 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -1030,9 +1030,9 @@ exports[`IconSet should render px-fea-administration 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -1080,8 +1080,8 @@ exports[`IconSet should render px-fea-alerts 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -1095,9 +1095,9 @@ exports[`IconSet should render px-fea-alerts 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -1145,8 +1145,8 @@ exports[`IconSet should render px-fea-analysis 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -1160,9 +1160,9 @@ exports[`IconSet should render px-fea-analysis 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -1210,8 +1210,8 @@ exports[`IconSet should render px-fea-analytics 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -1225,9 +1225,9 @@ exports[`IconSet should render px-fea-analytics 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -1275,8 +1275,8 @@ exports[`IconSet should render px-fea-asset 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -1290,9 +1290,9 @@ exports[`IconSet should render px-fea-asset 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -1340,8 +1340,8 @@ exports[`IconSet should render px-fea-asset-ingestion 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -1355,9 +1355,9 @@ exports[`IconSet should render px-fea-asset-ingestion 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -1405,8 +1405,8 @@ exports[`IconSet should render px-fea-attribute 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -1420,9 +1420,9 @@ exports[`IconSet should render px-fea-attribute 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -1470,8 +1470,8 @@ exports[`IconSet should render px-fea-bug 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -1485,9 +1485,9 @@ exports[`IconSet should render px-fea-bug 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -1535,8 +1535,8 @@ exports[`IconSet should render px-fea-calendar 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -1550,9 +1550,9 @@ exports[`IconSet should render px-fea-calendar 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -1600,8 +1600,8 @@ exports[`IconSet should render px-fea-cases 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -1615,9 +1615,9 @@ exports[`IconSet should render px-fea-cases 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -1665,8 +1665,8 @@ exports[`IconSet should render px-fea-catalog 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -1680,9 +1680,9 @@ exports[`IconSet should render px-fea-catalog 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -1730,8 +1730,8 @@ exports[`IconSet should render px-fea-dashboard 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -1745,9 +1745,9 @@ exports[`IconSet should render px-fea-dashboard 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -1795,8 +1795,8 @@ exports[`IconSet should render px-fea-data-sources 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -1810,9 +1810,9 @@ exports[`IconSet should render px-fea-data-sources 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -1860,8 +1860,8 @@ exports[`IconSet should render px-fea-deployments 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -1875,9 +1875,9 @@ exports[`IconSet should render px-fea-deployments 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -1925,8 +1925,8 @@ exports[`IconSet should render px-fea-dev-ops 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -1940,9 +1940,9 @@ exports[`IconSet should render px-fea-dev-ops 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -1990,8 +1990,8 @@ exports[`IconSet should render px-fea-digital-twin 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -2005,9 +2005,9 @@ exports[`IconSet should render px-fea-digital-twin 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -2055,8 +2055,8 @@ exports[`IconSet should render px-fea-home 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -2070,9 +2070,9 @@ exports[`IconSet should render px-fea-home 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -2120,8 +2120,8 @@ exports[`IconSet should render px-fea-log 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -2135,9 +2135,9 @@ exports[`IconSet should render px-fea-log 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -2185,8 +2185,8 @@ exports[`IconSet should render px-fea-microservice 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -2200,9 +2200,9 @@ exports[`IconSet should render px-fea-microservice 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -2250,8 +2250,8 @@ exports[`IconSet should render px-fea-orchestration 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -2265,9 +2265,9 @@ exports[`IconSet should render px-fea-orchestration 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -2315,8 +2315,8 @@ exports[`IconSet should render px-fea-orders 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -2330,9 +2330,9 @@ exports[`IconSet should render px-fea-orders 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -2380,8 +2380,8 @@ exports[`IconSet should render px-fea-pipeline 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -2395,9 +2395,9 @@ exports[`IconSet should render px-fea-pipeline 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -2445,8 +2445,8 @@ exports[`IconSet should render px-fea-products 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -2460,9 +2460,9 @@ exports[`IconSet should render px-fea-products 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -2510,8 +2510,8 @@ exports[`IconSet should render px-fea-spaces 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -2525,9 +2525,9 @@ exports[`IconSet should render px-fea-spaces 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -2575,8 +2575,8 @@ exports[`IconSet should render px-fea-tag 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -2590,9 +2590,9 @@ exports[`IconSet should render px-fea-tag 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -2640,8 +2640,8 @@ exports[`IconSet should render px-fea-tag-group 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -2655,9 +2655,9 @@ exports[`IconSet should render px-fea-tag-group 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -2705,8 +2705,8 @@ exports[`IconSet should render px-fea-templates 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -2720,9 +2720,9 @@ exports[`IconSet should render px-fea-templates 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -2770,8 +2770,8 @@ exports[`IconSet should render px-fea-users 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -2785,9 +2785,9 @@ exports[`IconSet should render px-fea-users 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -2835,8 +2835,8 @@ exports[`IconSet should render px-fea-versions 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -2850,9 +2850,9 @@ exports[`IconSet should render px-fea-versions 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -2900,8 +2900,8 @@ exports[`IconSet should render px-nav-back 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -2915,9 +2915,9 @@ exports[`IconSet should render px-nav-back 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -2965,8 +2965,8 @@ exports[`IconSet should render px-nav-close 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -2980,9 +2980,9 @@ exports[`IconSet should render px-nav-close 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -3030,8 +3030,8 @@ exports[`IconSet should render px-nav-collapse 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -3045,9 +3045,9 @@ exports[`IconSet should render px-nav-collapse 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -3095,8 +3095,8 @@ exports[`IconSet should render px-nav-confirmed 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -3110,9 +3110,9 @@ exports[`IconSet should render px-nav-confirmed 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -3160,8 +3160,8 @@ exports[`IconSet should render px-nav-down 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -3175,9 +3175,9 @@ exports[`IconSet should render px-nav-down 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -3225,8 +3225,8 @@ exports[`IconSet should render px-nav-expand 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -3240,9 +3240,9 @@ exports[`IconSet should render px-nav-expand 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -3290,8 +3290,8 @@ exports[`IconSet should render px-nav-favorite 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -3305,9 +3305,9 @@ exports[`IconSet should render px-nav-favorite 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -3355,8 +3355,8 @@ exports[`IconSet should render px-nav-generic-user 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -3370,9 +3370,9 @@ exports[`IconSet should render px-nav-generic-user 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -3420,8 +3420,8 @@ exports[`IconSet should render px-nav-grid-view 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -3435,9 +3435,9 @@ exports[`IconSet should render px-nav-grid-view 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -3485,8 +3485,8 @@ exports[`IconSet should render px-nav-hamburger 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -3500,9 +3500,9 @@ exports[`IconSet should render px-nav-hamburger 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -3550,8 +3550,8 @@ exports[`IconSet should render px-nav-hierarchy 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -3565,9 +3565,9 @@ exports[`IconSet should render px-nav-hierarchy 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -3615,8 +3615,8 @@ exports[`IconSet should render px-nav-home 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -3630,9 +3630,9 @@ exports[`IconSet should render px-nav-home 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -3680,8 +3680,8 @@ exports[`IconSet should render px-nav-inbox-view 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -3695,9 +3695,9 @@ exports[`IconSet should render px-nav-inbox-view 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -3745,8 +3745,8 @@ exports[`IconSet should render px-nav-instance 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -3760,9 +3760,9 @@ exports[`IconSet should render px-nav-instance 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -3810,8 +3810,8 @@ exports[`IconSet should render px-nav-list-view 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -3825,9 +3825,9 @@ exports[`IconSet should render px-nav-list-view 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -3875,8 +3875,8 @@ exports[`IconSet should render px-nav-log-out 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -3890,9 +3890,9 @@ exports[`IconSet should render px-nav-log-out 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -3940,8 +3940,8 @@ exports[`IconSet should render px-nav-menu 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -3955,9 +3955,9 @@ exports[`IconSet should render px-nav-menu 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -4005,8 +4005,8 @@ exports[`IconSet should render px-nav-more 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -4020,9 +4020,9 @@ exports[`IconSet should render px-nav-more 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -4070,8 +4070,8 @@ exports[`IconSet should render px-nav-new-window 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -4085,9 +4085,9 @@ exports[`IconSet should render px-nav-new-window 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -4135,8 +4135,8 @@ exports[`IconSet should render px-nav-next 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -4150,9 +4150,9 @@ exports[`IconSet should render px-nav-next 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -4200,8 +4200,8 @@ exports[`IconSet should render px-nav-notification 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -4215,9 +4215,9 @@ exports[`IconSet should render px-nav-notification 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -4265,8 +4265,8 @@ exports[`IconSet should render px-nav-open-context 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -4280,9 +4280,9 @@ exports[`IconSet should render px-nav-open-context 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -4330,8 +4330,8 @@ exports[`IconSet should render px-nav-pause 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -4345,9 +4345,9 @@ exports[`IconSet should render px-nav-pause 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -4395,8 +4395,8 @@ exports[`IconSet should render px-nav-play 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -4410,9 +4410,9 @@ exports[`IconSet should render px-nav-play 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -4460,8 +4460,8 @@ exports[`IconSet should render px-nav-reload 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -4475,9 +4475,9 @@ exports[`IconSet should render px-nav-reload 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -4525,8 +4525,8 @@ exports[`IconSet should render px-nav-search 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -4540,9 +4540,9 @@ exports[`IconSet should render px-nav-search 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -4590,8 +4590,8 @@ exports[`IconSet should render px-nav-stop 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -4605,9 +4605,9 @@ exports[`IconSet should render px-nav-stop 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -4655,8 +4655,8 @@ exports[`IconSet should render px-nav-tile-view 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -4670,9 +4670,9 @@ exports[`IconSet should render px-nav-tile-view 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -4720,8 +4720,8 @@ exports[`IconSet should render px-nav-tree 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -4735,9 +4735,9 @@ exports[`IconSet should render px-nav-tree 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -4785,8 +4785,8 @@ exports[`IconSet should render px-nav-unconfirmed 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -4800,9 +4800,9 @@ exports[`IconSet should render px-nav-unconfirmed 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -4850,8 +4850,8 @@ exports[`IconSet should render px-nav-up 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 22,
+      "width": 22,
     }
   }
 >
@@ -4865,9 +4865,9 @@ exports[`IconSet should render px-nav-up 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 22,
         "pointerEvents": "none",
-        "width": null,
+        "width": 22,
       }
     }
     viewBox="0 0 null null"
@@ -4915,8 +4915,8 @@ exports[`IconSet should render px-obj-airplane 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -4930,9 +4930,9 @@ exports[`IconSet should render px-obj-airplane 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -4980,8 +4980,8 @@ exports[`IconSet should render px-obj-airplane-engine 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -4995,9 +4995,9 @@ exports[`IconSet should render px-obj-airplane-engine 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -5045,8 +5045,8 @@ exports[`IconSet should render px-obj-airport 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -5060,9 +5060,9 @@ exports[`IconSet should render px-obj-airport 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -5110,8 +5110,8 @@ exports[`IconSet should render px-obj-automobile 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -5125,9 +5125,9 @@ exports[`IconSet should render px-obj-automobile 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -5175,8 +5175,8 @@ exports[`IconSet should render px-obj-boiler 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -5190,9 +5190,9 @@ exports[`IconSet should render px-obj-boiler 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -5240,8 +5240,8 @@ exports[`IconSet should render px-obj-cell-tower 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -5255,9 +5255,9 @@ exports[`IconSet should render px-obj-cell-tower 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -5305,8 +5305,8 @@ exports[`IconSet should render px-obj-class 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -5320,9 +5320,9 @@ exports[`IconSet should render px-obj-class 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -5370,8 +5370,8 @@ exports[`IconSet should render px-obj-condenser 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -5385,9 +5385,9 @@ exports[`IconSet should render px-obj-condenser 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -5435,8 +5435,8 @@ exports[`IconSet should render px-obj-controller 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -5450,9 +5450,9 @@ exports[`IconSet should render px-obj-controller 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -5500,8 +5500,8 @@ exports[`IconSet should render px-obj-cooling-tower 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -5515,9 +5515,9 @@ exports[`IconSet should render px-obj-cooling-tower 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -5565,8 +5565,8 @@ exports[`IconSet should render px-obj-database 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -5580,9 +5580,9 @@ exports[`IconSet should render px-obj-database 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -5630,8 +5630,8 @@ exports[`IconSet should render px-obj-desktop 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -5645,9 +5645,9 @@ exports[`IconSet should render px-obj-desktop 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -5695,8 +5695,8 @@ exports[`IconSet should render px-obj-edge-box 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -5710,9 +5710,9 @@ exports[`IconSet should render px-obj-edge-box 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -5760,8 +5760,8 @@ exports[`IconSet should render px-obj-fleet 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -5775,9 +5775,9 @@ exports[`IconSet should render px-obj-fleet 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -5825,8 +5825,8 @@ exports[`IconSet should render px-obj-gas-turbine 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -5840,9 +5840,9 @@ exports[`IconSet should render px-obj-gas-turbine 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -5890,8 +5890,8 @@ exports[`IconSet should render px-obj-gateway 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -5905,9 +5905,9 @@ exports[`IconSet should render px-obj-gateway 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -5955,8 +5955,8 @@ exports[`IconSet should render px-obj-hrsg 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -5970,9 +5970,9 @@ exports[`IconSet should render px-obj-hrsg 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -6020,8 +6020,8 @@ exports[`IconSet should render px-obj-imaging-machine 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -6035,9 +6035,9 @@ exports[`IconSet should render px-obj-imaging-machine 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -6085,8 +6085,8 @@ exports[`IconSet should render px-obj-light-bulb 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -6100,9 +6100,9 @@ exports[`IconSet should render px-obj-light-bulb 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -6150,8 +6150,8 @@ exports[`IconSet should render px-obj-line 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -6165,9 +6165,9 @@ exports[`IconSet should render px-obj-line 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -6215,8 +6215,8 @@ exports[`IconSet should render px-obj-line-og 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -6230,9 +6230,9 @@ exports[`IconSet should render px-obj-line-og 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -6280,8 +6280,8 @@ exports[`IconSet should render px-obj-locomotive 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -6295,9 +6295,9 @@ exports[`IconSet should render px-obj-locomotive 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -6345,8 +6345,8 @@ exports[`IconSet should render px-obj-machine 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -6360,9 +6360,9 @@ exports[`IconSet should render px-obj-machine 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -6410,8 +6410,8 @@ exports[`IconSet should render px-obj-manufacturing-line 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -6425,9 +6425,9 @@ exports[`IconSet should render px-obj-manufacturing-line 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -6475,8 +6475,8 @@ exports[`IconSet should render px-obj-plant 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -6490,9 +6490,9 @@ exports[`IconSet should render px-obj-plant 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -6540,8 +6540,8 @@ exports[`IconSet should render px-obj-predix-box 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -6555,9 +6555,9 @@ exports[`IconSet should render px-obj-predix-box 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -6605,8 +6605,8 @@ exports[`IconSet should render px-obj-product 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -6620,9 +6620,9 @@ exports[`IconSet should render px-obj-product 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -6670,8 +6670,8 @@ exports[`IconSet should render px-obj-rail-yard 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -6685,9 +6685,9 @@ exports[`IconSet should render px-obj-rail-yard 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -6735,8 +6735,8 @@ exports[`IconSet should render px-obj-routes 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -6750,9 +6750,9 @@ exports[`IconSet should render px-obj-routes 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -6800,8 +6800,8 @@ exports[`IconSet should render px-obj-sensor 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -6815,9 +6815,9 @@ exports[`IconSet should render px-obj-sensor 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -6865,8 +6865,8 @@ exports[`IconSet should render px-obj-solar-panel 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -6880,9 +6880,9 @@ exports[`IconSet should render px-obj-solar-panel 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -6930,8 +6930,8 @@ exports[`IconSet should render px-obj-steam-turbine 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -6945,9 +6945,9 @@ exports[`IconSet should render px-obj-steam-turbine 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -6995,8 +6995,8 @@ exports[`IconSet should render px-obj-train 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -7010,9 +7010,9 @@ exports[`IconSet should render px-obj-train 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -7060,8 +7060,8 @@ exports[`IconSet should render px-obj-truck 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -7075,9 +7075,9 @@ exports[`IconSet should render px-obj-truck 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -7125,8 +7125,8 @@ exports[`IconSet should render px-obj-wind-turbine 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 32,
+      "width": 32,
     }
   }
 >
@@ -7140,9 +7140,9 @@ exports[`IconSet should render px-obj-wind-turbine 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 32,
         "pointerEvents": "none",
-        "width": null,
+        "width": 32,
       }
     }
     viewBox="0 0 null null"
@@ -7190,8 +7190,8 @@ exports[`IconSet should render px-utl-add 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -7205,9 +7205,9 @@ exports[`IconSet should render px-utl-add 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -7255,8 +7255,8 @@ exports[`IconSet should render px-utl-alert 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -7270,9 +7270,9 @@ exports[`IconSet should render px-utl-alert 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -7320,8 +7320,8 @@ exports[`IconSet should render px-utl-app-settings 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -7335,9 +7335,9 @@ exports[`IconSet should render px-utl-app-settings 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -7385,8 +7385,8 @@ exports[`IconSet should render px-utl-calculation 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -7400,9 +7400,9 @@ exports[`IconSet should render px-utl-calculation 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -7450,8 +7450,8 @@ exports[`IconSet should render px-utl-calendar 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -7465,9 +7465,9 @@ exports[`IconSet should render px-utl-calendar 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -7515,8 +7515,8 @@ exports[`IconSet should render px-utl-camera 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -7530,9 +7530,9 @@ exports[`IconSet should render px-utl-camera 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -7580,8 +7580,8 @@ exports[`IconSet should render px-utl-check 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -7595,9 +7595,9 @@ exports[`IconSet should render px-utl-check 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -7645,8 +7645,8 @@ exports[`IconSet should render px-utl-chevron 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -7660,9 +7660,9 @@ exports[`IconSet should render px-utl-chevron 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -7710,8 +7710,8 @@ exports[`IconSet should render px-utl-chevron-left 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -7725,9 +7725,9 @@ exports[`IconSet should render px-utl-chevron-left 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -7775,8 +7775,8 @@ exports[`IconSet should render px-utl-chevron-right 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -7790,9 +7790,9 @@ exports[`IconSet should render px-utl-chevron-right 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -7840,8 +7840,8 @@ exports[`IconSet should render px-utl-chevron-up 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -7855,9 +7855,9 @@ exports[`IconSet should render px-utl-chevron-up 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -7905,8 +7905,8 @@ exports[`IconSet should render px-utl-clock 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -7920,9 +7920,9 @@ exports[`IconSet should render px-utl-clock 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -7970,8 +7970,8 @@ exports[`IconSet should render px-utl-close 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -7985,9 +7985,9 @@ exports[`IconSet should render px-utl-close 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -8035,8 +8035,8 @@ exports[`IconSet should render px-utl-confirmed 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -8050,9 +8050,9 @@ exports[`IconSet should render px-utl-confirmed 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -8100,8 +8100,8 @@ exports[`IconSet should render px-utl-copy 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -8115,9 +8115,9 @@ exports[`IconSet should render px-utl-copy 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -8165,8 +8165,8 @@ exports[`IconSet should render px-utl-delete 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -8180,9 +8180,9 @@ exports[`IconSet should render px-utl-delete 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -8230,8 +8230,8 @@ exports[`IconSet should render px-utl-desktop-computer 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -8245,9 +8245,9 @@ exports[`IconSet should render px-utl-desktop-computer 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -8295,8 +8295,8 @@ exports[`IconSet should render px-utl-download 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -8310,9 +8310,9 @@ exports[`IconSet should render px-utl-download 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -8360,8 +8360,8 @@ exports[`IconSet should render px-utl-edit 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -8375,9 +8375,9 @@ exports[`IconSet should render px-utl-edit 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -8425,8 +8425,8 @@ exports[`IconSet should render px-utl-failure 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -8440,9 +8440,9 @@ exports[`IconSet should render px-utl-failure 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -8490,8 +8490,8 @@ exports[`IconSet should render px-utl-filter 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -8505,9 +8505,9 @@ exports[`IconSet should render px-utl-filter 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -8555,8 +8555,8 @@ exports[`IconSet should render px-utl-flag 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -8570,9 +8570,9 @@ exports[`IconSet should render px-utl-flag 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -8620,8 +8620,8 @@ exports[`IconSet should render px-utl-folder-closed 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -8635,9 +8635,9 @@ exports[`IconSet should render px-utl-folder-closed 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -8685,8 +8685,8 @@ exports[`IconSet should render px-utl-folder-open 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -8700,9 +8700,9 @@ exports[`IconSet should render px-utl-folder-open 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -8750,8 +8750,8 @@ exports[`IconSet should render px-utl-formula 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -8765,9 +8765,9 @@ exports[`IconSet should render px-utl-formula 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -8815,8 +8815,8 @@ exports[`IconSet should render px-utl-help 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -8830,9 +8830,9 @@ exports[`IconSet should render px-utl-help 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -8880,8 +8880,8 @@ exports[`IconSet should render px-utl-information 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -8895,9 +8895,9 @@ exports[`IconSet should render px-utl-information 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -8945,8 +8945,8 @@ exports[`IconSet should render px-utl-link 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -8960,9 +8960,9 @@ exports[`IconSet should render px-utl-link 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -9010,8 +9010,8 @@ exports[`IconSet should render px-utl-location 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -9025,9 +9025,9 @@ exports[`IconSet should render px-utl-location 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -9075,8 +9075,8 @@ exports[`IconSet should render px-utl-locked 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -9090,9 +9090,9 @@ exports[`IconSet should render px-utl-locked 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -9140,8 +9140,8 @@ exports[`IconSet should render px-utl-map 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -9155,9 +9155,9 @@ exports[`IconSet should render px-utl-map 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -9205,8 +9205,8 @@ exports[`IconSet should render px-utl-module-settings 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -9220,9 +9220,9 @@ exports[`IconSet should render px-utl-module-settings 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -9270,8 +9270,8 @@ exports[`IconSet should render px-utl-overflow 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -9285,9 +9285,9 @@ exports[`IconSet should render px-utl-overflow 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -9335,8 +9335,8 @@ exports[`IconSet should render px-utl-phone 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -9350,9 +9350,9 @@ exports[`IconSet should render px-utl-phone 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -9400,8 +9400,8 @@ exports[`IconSet should render px-utl-remove 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -9415,9 +9415,9 @@ exports[`IconSet should render px-utl-remove 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -9465,8 +9465,8 @@ exports[`IconSet should render px-utl-reply 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -9480,9 +9480,9 @@ exports[`IconSet should render px-utl-reply 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -9530,8 +9530,8 @@ exports[`IconSet should render px-utl-save 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -9545,9 +9545,9 @@ exports[`IconSet should render px-utl-save 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -9595,8 +9595,8 @@ exports[`IconSet should render px-utl-search 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -9610,9 +9610,9 @@ exports[`IconSet should render px-utl-search 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -9660,8 +9660,8 @@ exports[`IconSet should render px-utl-share 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -9675,9 +9675,9 @@ exports[`IconSet should render px-utl-share 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -9725,8 +9725,8 @@ exports[`IconSet should render px-utl-tablet 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -9740,9 +9740,9 @@ exports[`IconSet should render px-utl-tablet 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -9790,8 +9790,8 @@ exports[`IconSet should render px-utl-unlink 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -9805,9 +9805,9 @@ exports[`IconSet should render px-utl-unlink 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -9855,8 +9855,8 @@ exports[`IconSet should render px-utl-unlocked 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -9870,9 +9870,9 @@ exports[`IconSet should render px-utl-unlocked 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -9920,8 +9920,8 @@ exports[`IconSet should render px-utl-upload 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -9935,9 +9935,9 @@ exports[`IconSet should render px-utl-upload 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"
@@ -9985,8 +9985,8 @@ exports[`IconSet should render px-utl-zoom 1`] = `
   color={null}
   style={
     Object {
-      "height": null,
-      "width": null,
+      "height": 16,
+      "width": 16,
     }
   }
 >
@@ -10000,9 +10000,9 @@ exports[`IconSet should render px-utl-zoom 1`] = `
     style={
       Object {
         "display": "block",
-        "height": null,
+        "height": 16,
         "pointerEvents": "none",
-        "width": null,
+        "width": 16,
       }
     }
     viewBox="0 0 null null"

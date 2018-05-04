@@ -13,16 +13,16 @@ const cheatsheetStyles = {
   // display: 'flex'
   // flexWrap: 'wrap'
 };
-const RenderIconSet = ({ icons, size }) => (
-  <ul style={cheatsheetStyles}>
+const RenderIconSet = ({ icons }) => (
+  <ul style={cheatsheetStyles} className="cheatsheet-icons">
     {icons && icons.map(item => (
-      <li key={item}><Icon icon={item} size={size} viewBox="0 0 32 32" />{item}</li>
+      <li key={item}><Icon icon={item} />{item}</li>
     ))}
   </ul>
 );
 RenderIconSet.propTypes = {
-  icons: PropTypes.arrayOf(PropTypes.string).isRequired,
-  size: PropTypes.number.isRequired
+  icons: PropTypes.arrayOf(PropTypes.string).isRequired
+  // size: PropTypes.number.isRequired
 };
 
 storiesOf('Icon', module)
@@ -36,8 +36,31 @@ storiesOf('Icon', module)
     />
   ))
   .add('cheatsheet', () => (
-    <div>
-      {RenderIconSet({ icons: AllIcons, size: 75 })}
+    <div className="cheatsheet">
+      {RenderIconSet({ icons: AllIcons })}
+      <style>{`
+        .cheatsheet{
+
+        }
+        .cheatsheet ul {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-around;
+          margin: 0;
+          padding: 0;
+        }
+        .cheatsheet li {
+          flex: 1 0 200px;
+          list-style: none;
+          margin: 0.5rem;
+          cursor: pointer;
+        }
+        .cheatsheet .px-icon{
+          margin-right: 1rem;
+        }
+      `}
+      </style>
     </div>
   ));
 
