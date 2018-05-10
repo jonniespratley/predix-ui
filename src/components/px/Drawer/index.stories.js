@@ -11,6 +11,13 @@ const style = {
   position: 'relative'
 };
 
+const anchorOptions = [
+  'top',
+  'bottom',
+  'left',
+  'right'
+];
+
 storiesOf('Drawer', module)
   .addDecorator(withKnobs)
   .add('default', () => (
@@ -21,7 +28,7 @@ storiesOf('Drawer', module)
       onOverlayClick={action('onOverlayClick')}
       opened={boolean('opened', false)}
       docked={boolean('docked', false)}
-      anchor={select('anchor', ['left', 'right', 'top', 'bottom'], 'left')}
+      anchor={select('anchor', anchorOptions, 'left')}
     >
       <p>This is the content of the drawer</p>
     </Drawer>
@@ -43,6 +50,7 @@ storiesOf('Drawer', module)
           onOverlayClick={action('onOverlayClick')}
           opened={boolean('opened', false)}
           docked={boolean('docked', false)}
+          anchor={select('anchor', anchorOptions, 'left')}
         >
           <p>This is the content of the drawer</p>
         </Drawer>

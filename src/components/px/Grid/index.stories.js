@@ -1,24 +1,57 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs/react';
+import { withKnobs, boolean, text, select } from '@storybook/addon-knobs/react';
+
 import Grid from './';
+import Flex from '../../../styles/flex';
 
 const divStyle = {
-  backgroundColor: '#f1f1f1',
-  padding: 20,
-  margin: 10,
-  fontSize: 30
+  backgroundColor: '#fff',
+  fontSize: 22,
+  textAlign: 'center'
 };
 
 const gridStyle = {
-  height: 300,
+  height: 500,
   backgroundColor: 'dodgerblue'
 };
+
+const justifyOptions = [
+  'start',
+  'end',
+  'center',
+  'stretch'
+];
+const alignOptions = [
+  'start',
+  'end',
+  'center',
+  'stretch'
+];
 
 storiesOf('Grid', module)
   .addDecorator(withKnobs)
   .addWithJSX('default', () => (
     <Grid
+      style={gridStyle}
+      columns={text('columns', '1fr 1fr 1fr')}
+      rows={text('rows', '')}
+      rowGap={text('rowGap', '10px')}
+      columnGap={text('columnGap', '10px')}
+      inline={boolean('inline', false)}
+      justifyItems={select('justifyItems', justifyOptions)}
+    >
+      <Grid item style={divStyle} alignSelf={select('alignSelf', alignOptions)}>1</Grid>
+      <Grid item style={divStyle} alignSelf={select('alignSelf', alignOptions)}>2</Grid>
+      <Grid item style={divStyle} alignSelf={select('alignSelf', alignOptions)}>3</Grid>
+      <Grid item style={divStyle} alignSelf={select('alignSelf', alignOptions)}>4</Grid>
+      <Grid item style={divStyle} alignSelf={select('alignSelf', alignOptions)}>5</Grid>
+    </Grid>
+  ));
+storiesOf('Flex', module)
+  .addDecorator(withKnobs)
+  .addWithJSX('default', () => (
+    <Flex
       style={gridStyle}
       row={boolean('row', true)}
       rowrev={boolean('rowrev', false)}
@@ -39,8 +72,8 @@ storiesOf('Grid', module)
       stretch={boolean('stretch', false)}
       baseline={boolean('baseline', false)}
     >
-      <Grid item style={divStyle} flex={text('flex', null)}>1</Grid>
-      <Grid item style={divStyle} flex={text('flex', null)}>2</Grid>
-      <Grid item style={divStyle} flex={text('flex', null)}>3</Grid>
-    </Grid>
+      <Flex item style={divStyle} flex={text('flex', '')}>1</Flex>
+      <Flex item style={divStyle} flex={text('flex', '')}>2</Flex>
+      <Flex item style={divStyle} flex={text('flex', '')}>3</Flex>
+    </Flex>
   ));

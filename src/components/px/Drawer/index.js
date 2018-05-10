@@ -5,16 +5,17 @@ import styled, { css } from 'styled-components';
 // Drawer
 const Drawer = styled.div`
   position: fixed;
-  z-index: -1;
+  z-index: var(--px-drawer-z-index, 100);
   color: var(--px-drawer-font-color, black);
   background-color: var(--px-drawer-background-color, white);
   width: var(--px-drawer-width, 256px);
   height: var(--px-drawer-height, 100%);
-  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px, rgba(0, 0, 0, 0.23) 0 1px 4px;
+  box-shadow: var(--px-drawer-box-shadow, rgba(0, 0, 0, 0.16) 0 1px 4px, rgba(0, 0, 0, 0.23) 0 1px 4px);
 
   transition: var(--px-drawer-transition, transform 350ms cubic-bezier(0.23, 1, 0.32, 1));
 
   ${props => props.anchor === 'left' && css`
+    top: 0;
     left: 0;
     right: auto;
     transform: translateX(-110%);
@@ -24,6 +25,7 @@ const Drawer = styled.div`
   `}
 
   ${props => props.anchor === 'right' && css`
+    top: 0;
     left: auto;
     right: 0;
     transform: translateX(110%);
@@ -84,6 +86,9 @@ const Drawer = styled.div`
   `}
 `;
 Drawer.displayName = 'Drawer';
+Drawer.defaultProps = {
+  className: 'px-drawer'
+};
 
 // Content
 const DrawerContent = styled.div`
@@ -96,6 +101,9 @@ const DrawerContent = styled.div`
   flex: 1 0 auto;
 `;
 DrawerContent.displayName = 'DrawerContent';
+DrawerContent.defaultProps = {
+  className: 'px-drawer-content'
+};
 
 // Overlay
 const DrawerOverlay = styled.div`
@@ -110,7 +118,6 @@ const DrawerOverlay = styled.div`
   background: var(--px-drawer-overlay-background, rgba(0, 0, 0, 0.5));
   z-index: -1;
   visibility: hidden;
-  display: none;
 
   ${props => props.opened && css`
     opacity: 1;
@@ -120,6 +127,9 @@ const DrawerOverlay = styled.div`
   `}
 `;
 DrawerOverlay.displayName = 'DrawerOverlay';
+DrawerOverlay.defaultProps = {
+  className: 'px-drawer-overlay'
+};
 
 
 const DrawerComponent = ({
@@ -132,10 +142,12 @@ const DrawerComponent = ({
   anchor,
   children
 }) => (
-  <Drawer opened={opened} anchor={anchor} fixed={fixed} docked={docked} type={type}>
-    <DrawerContent>{children}</DrawerContent>
+  <div>
+    <Drawer opened={opened} anchor={anchor} fixed={fixed} docked={docked} type={type}>
+      <DrawerContent>{children}</DrawerContent>
+    </Drawer>
     {overlay && <DrawerOverlay onClick={onOverlayClick} opened={opened} />}
-  </Drawer>
+  </div>
 );
 
 DrawerComponent.propTypes = {
