@@ -39,6 +39,7 @@ storiesOf('Grid', module)
       rowGap={text('rowGap', '10px')}
       columnGap={text('columnGap', '10px')}
       inline={boolean('inline', false)}
+      alignItems={select('alignItems', justifyOptions)}
       justifyItems={select('justifyItems', justifyOptions)}
     >
       <Grid item style={divStyle} alignSelf={select('alignSelf', alignOptions)}>1</Grid>

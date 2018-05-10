@@ -2,10 +2,7 @@
 
 exports[`Grid should render 1`] = `
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
 }
 
 <div

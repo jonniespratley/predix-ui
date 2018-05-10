@@ -9,7 +9,7 @@ let data = [{
   label: "All Categories",
   children: [
     {
-      id: 2,
+      id: '2',
       label: "For Sale",
       children: [
         {
@@ -23,52 +23,6 @@ let data = [{
         {
           id: '2-3',
           label: "Category 3"
-        }
-      ]
-    }, {
-      id: 6,
-      label: "Motors",
-      children: [
-        {
-          id: 7,
-          label: "Car Parts & Accessories",
-          children: [
-            {
-              id: '7-1',
-              label: "Category 1"
-            },
-            {
-              id: '7-2',
-              label: "Category 2"
-            },
-            {
-              id: '7-3',
-              label: "Category 3"
-            }
-          ]
-        },
-        {
-          id: 8,
-          label: "Cars"
-        },
-        {
-          id: 13,
-          label: "Motorbike Parts & Accessories"
-        }
-      ]
-    }, {
-      id: 9,
-      label: "Jobs",
-      children: [
-        {
-          id: 10,
-          label: "Accountancy"
-        }, {
-          id: 11,
-          label: "Financial Services & Insurance"
-        }, {
-          id: 12,
-          label: "Bar Staff & Management"
         }
       ]
     }

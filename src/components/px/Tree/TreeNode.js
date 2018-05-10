@@ -155,7 +155,7 @@ TreeNode.defaultProps = {
   isSelectable: true
 };
 TreeNode.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   label: PropTypes.string,
   onCategorySelect: PropTypes.func,
   data: PropTypes.shape({

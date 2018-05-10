@@ -117,6 +117,8 @@ exports[`AlertMessage error matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  overflow: hidden;
+  height: 4rem;
   visibility: visible;
   display: -webkit-box;
   display: -webkit-flex;
@@ -361,6 +363,8 @@ exports[`AlertMessage healthy matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  overflow: hidden;
+  height: 4rem;
   visibility: visible;
   display: -webkit-box;
   display: -webkit-flex;
@@ -836,6 +840,8 @@ exports[`AlertMessage important matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  overflow: hidden;
+  height: 4rem;
   visibility: visible;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1080,6 +1086,8 @@ exports[`AlertMessage information matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  overflow: hidden;
+  height: 4rem;
   visibility: visible;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1324,6 +1332,8 @@ exports[`AlertMessage matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  overflow: hidden;
+  height: 4rem;
   visibility: visible;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1566,6 +1576,8 @@ exports[`AlertMessage success matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  overflow: hidden;
+  height: 4rem;
   visibility: visible;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1810,6 +1822,8 @@ exports[`AlertMessage warning matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  overflow: hidden;
+  height: 4rem;
   visibility: visible;
   display: -webkit-box;
   display: -webkit-flex;

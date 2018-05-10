@@ -41,7 +41,7 @@ const IconSizes = {
 };
 
 const getIconSetSize = (name = '') => {
-  const iconSet = name.replace(':', '-').split('-')[1];
+  const iconSet = name && name.replace(':', '-').split('-')[1];
   return IconSizes[iconSet];
 };
 
@@ -100,7 +100,7 @@ class Icon extends React.Component {
 
 Icon.defaultProps = {
   size: null,
-  icon: null,
+  icon: '',
   viewBox: null,
   color: null,
   className: null,
