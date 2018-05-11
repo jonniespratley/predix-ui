@@ -30,7 +30,7 @@ export default class AssetSelectable {
   }
 
   fire(name, data) {
-    // console.log('fire', name, data);
+    console.log('fire', name, data);
   }
 
   get multiSelect() {

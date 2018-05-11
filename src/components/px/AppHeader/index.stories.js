@@ -19,13 +19,13 @@ const navItems = [
   }
 ];
 // /
-storiesOf('App Header', module)
+storiesOf('Components / App Header', module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(README))
-  .add('default', () => (
+  .addWithJSX('default', () => (
     <AppHeader title={text('title', 'Predix Application')} />
   ))
-  .add('with items', () => (
+  .addWithJSX('with items', () => (
     <AppHeader
       title={text('title', 'Predix Application')}
       items={navItems}

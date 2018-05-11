@@ -54,4 +54,6 @@ Component.propTypes = {
   finished: PropTypes.bool
 };
 
+Component.displayName = 'Spinner';
+
 export default Component;

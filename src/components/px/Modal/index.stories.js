@@ -11,7 +11,7 @@ const customActions = () => (
     <button>Action 2</button>
   </div>
 );
-storiesOf('Modal', module)
+storiesOf('Components / Modal', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <Modal

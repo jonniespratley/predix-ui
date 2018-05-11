@@ -6,7 +6,7 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import Navbar from './';
 
 // Navbar
-storiesOf('Navbar', module)
+storiesOf('Components / Navbar', module)
   .addDecorator(withKnobs)
   .addWithJSX('default', () => (
     <Navbar

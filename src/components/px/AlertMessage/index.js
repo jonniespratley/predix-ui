@@ -184,7 +184,7 @@ const Component = ({
 );
 
 Component.defaultProps = {
-  action: 'dismiss',
+  action: null,
   type: 'information',
   message: null,
   messageTitle: null,
@@ -206,5 +206,7 @@ Component.propTypes = {
   onDismiss: PropTypes.func,
   children: PropTypes.node
 };
+
+Component.displayName = 'AlertMessage';
 
 export default Component;

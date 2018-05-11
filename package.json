@@ -33,6 +33,7 @@
     "test": "NODE_ENV=test jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
+    "test:generate-output": "jest --json --outputFile=jest-test-results.json",
     "lint": "eslint ./src !./src/**/*.stories --cache",
     "test:lint": "eslint ./__tests__ ./src/**/*.test.js --cache",
     "gh-pages": "webpack --env ghPages --progress",
@@ -63,6 +64,7 @@
   ],
   "devDependencies": {
     "@storybook/addon-info": "^3.3.10",
+    "@storybook/addon-jest": "^3.4.3",
     "@storybook/addon-knobs": "^3.3.10",
     "@storybook/addon-storyshots": "^3.3.10",
     "@storybook/addon-viewport": "^3.3.15",
@@ -159,6 +161,7 @@
     "react-test-renderer": "16",
     "rimraf": "^2.6.1",
     "sass-loader": "^7.0.0",
+    "semantic-release": "^15.1.8",
     "sinon": "^4.2.0",
     "storybook-addon-jsx": "^5.3.0",
     "storybook-readme": "^3.3.0",
@@ -170,6 +173,7 @@
     "symbol-tree": "^3.2.2",
     "sync-exec": "^0.6.2",
     "system-bell-webpack-plugin": "^1.0.0",
+    "travis-deploy-once": "^5.0.0",
     "url-loader": "^0.6.0",
     "wallaby-webpack": "^3.9.4",
     "webpack": "^3.6.0",
@@ -177,9 +181,7 @@
     "webpack-dev-server": "^2.11.1",
     "webpack-jarvis": "^0.2.2",
     "webpack-merge": "^4.1.0",
-    "webpack-stream": "^4.0.0",
-    "travis-deploy-once": "^5.0.0",
-    "semantic-release": "^15.1.8"
+    "webpack-stream": "^4.0.0"
   },
   "peerDependencies": {
     "file-loader": "^1.1.6",

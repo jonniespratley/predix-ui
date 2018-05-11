@@ -6,7 +6,7 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 import Button from '../Button';
 import ViewHeader from './';
 
-storiesOf('ViewHeader', module)
+storiesOf('Components / ViewHeader', module)
   .addDecorator(withKnobs)
   .addWithJSX('default', () => (
     <ViewHeader

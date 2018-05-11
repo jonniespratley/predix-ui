@@ -1,14 +1,18 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text } from '@storybook/addon-knobs/react';
+import { withReadme } from 'storybook-readme';
+
+import README from './README.md';
 import Card from './';
 
 const customActions = () => (
   <div>Expand</div>
 );
 
-storiesOf('Card', module)
+storiesOf('Components / Card', module)
   .addDecorator(withKnobs)
+  .addDecorator(withReadme(README))
   .addWithJSX('default', () => (
     <Card
       headerText={text('headerText', 'My Card')}

@@ -28,7 +28,7 @@ const tableSizes = [
   'huge'
 ];
 
-storiesOf('TableView', module)
+storiesOf('Components / TableView', module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(README))
   .addWithJSX('default', () => (

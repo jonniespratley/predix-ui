@@ -5,7 +5,7 @@ import KeyValuePair from './';
 
 const sizes = ['alpha', 'beta', 'gamma', 'delta', 'epsilon', 'regular'];
 
-storiesOf('KeyValuePair', module)
+storiesOf('Components / KeyValuePair', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <KeyValuePair

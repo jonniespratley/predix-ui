@@ -30,7 +30,7 @@ const bgColors = [
 
 const actions = () => (<div>Expand</div>);
 
-storiesOf('Panel', module)
+storiesOf('Components / Panel', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <div style={demoStyles}>

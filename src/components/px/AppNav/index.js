@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styled, { css } from 'styled-components';
 import NavItem from './px-app-nav-item';
+import AppNavGroup from './px-app-nav-sub-group';
 
 const AppNav = styled.div`
   height: var(--px-app-nav-height, 4rem);
@@ -44,9 +45,7 @@ const AppNavItems = styled.div`
 
 
 `;
-const AppNavSubGroup = styled.div`
 
-`;
 
 /**
  * AppNav component
@@ -57,17 +56,18 @@ class AppNavComponent extends React.Component {
     this.state = {
       selected: props.selected || 0,
       onlyShowIcon: props.onlyShowIcon || props.vertical,
-      selectedIndex: props.selectedIndex || null,
-      selectedItem: props.selectedItem || null,
+      /* selectedIndex: props.selectedIndex || null,
+
       collapseOpened: props.collapseOpened || false,
-      vertical: props.vertical || false,
       visibleItems: props.visibleItems,
       collapseWithIcon: props.collapseWithIcon || false,
       opened: props.opened || false,
       collapseAll: props.collapseAll,
       collapseAt: props.collapseAt,
-      verticalOpened: props.verticalOpened || !props.vertical,
-      propForSelect: props.propForSelect
+      propForSelect: props.propForSelect, */
+      vertical: props.vertical || false,
+      verticalOpened: props.verticalOpened || !props.vertical
+
     };
     this._items = [];
     this._keys = [];
@@ -82,9 +82,7 @@ class AppNavComponent extends React.Component {
       this.base.addEventListener('mouseleave', this._handleMouseExit);
       this.base.addEventListener('mouseenter', this._handleMouseEnter);
     }
-    if (this.props.onChange) {
-      this.props.onChange(this.state);
-    }
+
     // this.handleClick(this.props.selected, this._getItemFromValue(this.props.selected));
   }
 
@@ -92,6 +90,7 @@ class AppNavComponent extends React.Component {
     if (this.state.selected !== nextProps.selected) {
       this.setState(nextProps);
     }
+    this.setState(nextProps);
   }
 
   componentWillMount() {
@@ -155,11 +154,13 @@ class AppNavComponent extends React.Component {
   }
 
   handleClick(val, child, isSubItem) {
+    const c = child;
     const propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : val);
     const index = (this.props.propForSelect ? child[this.props.propForSelect] : this._getIndexForValue(propForSelect));/* eslint-disable-line */
     let item = this._getValueForIndex(index); /* eslint-disable-line */
 
-    if (child && child.children && !isSubItem) {
+    if (c && c.children && !isSubItem) {
+      c.selected = true;
       // console.warn('Item has children, do not set active');
       return;
     }
@@ -209,7 +210,7 @@ class AppNavComponent extends React.Component {
       );
     }
     return (
-      <AppNavSubGroup
+      <AppNavGroup
         key={index}
         id={child.id}
         item={child}
@@ -230,7 +231,13 @@ class AppNavComponent extends React.Component {
   render() {
     const {
       items,
-      children
+      children,
+      collapseAll,
+      collapseAt,
+      opened,
+      selectedIndex,
+      collapseWithIcon,
+      collapseOpened
     } = this.props;
 
     const {
@@ -249,10 +256,15 @@ class AppNavComponent extends React.Component {
         className={baseClasses}
         ref={this._handleRef}
         vertical={vertical}
+        collapseAll={collapseAll}
+        collapseWithIcon={collapseWithIcon}
+        selectedIndex={selectedIndex}
+        collapseAt={collapseAt}
+        collapseOpened={collapseOpened}
         verticalOpened={verticalOpened}
       >
-        <AppNavItems vertical={vertical}>
-          {this._renderItems(items)}
+        <AppNavItems vertical={vertical} opened={opened}>
+          {this._renderItems(items, selectedIndex)}
         </AppNavItems>
         {/* STATE: Horizontal or menu nav, any visible items */}
         {/* STATE: Items overflowed or collapsed */}
@@ -299,7 +311,7 @@ AppNavComponent.propTypes = {
     label: PropTypes.string,
     icon: PropTypes.string
   })),
-  children: PropTypes.node,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func, PropTypes.element]),
   propForSelect: PropTypes.string,
   opened: PropTypes.bool
 };

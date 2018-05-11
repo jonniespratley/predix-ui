@@ -29,7 +29,7 @@ const alignOptions = [
   'stretch'
 ];
 
-storiesOf('Grid', module)
+storiesOf('Components / Grid', module)
   .addDecorator(withKnobs)
   .addWithJSX('default', () => (
     <Grid
@@ -49,7 +49,7 @@ storiesOf('Grid', module)
       <Grid item style={divStyle} alignSelf={select('alignSelf', alignOptions)}>5</Grid>
     </Grid>
   ));
-storiesOf('Flex', module)
+storiesOf('Components / Flex', module)
   .addDecorator(withKnobs)
   .addWithJSX('default', () => (
     <Flex

@@ -10,7 +10,7 @@ const sizeOptions = {
   huge: 'Huge'
 };
 
-const stories = storiesOf('Toggle', module);
+const stories = storiesOf('Components / Toggle', module);
 stories.addDecorator(withKnobs);
 
 stories.addWithJSX('default', () => (

@@ -2,8 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, array, boolean, select } from '@storybook/addon-knobs';
+import { withReadme } from 'storybook-readme';
 
 import Dropdown from './';
+import README from './README.md';
 import Icon from '../IconSet/Icon';
 
 const buttonStyles = [
@@ -22,8 +24,9 @@ const items = [
   { key: '5', val: 'Flip Phone', disabled: true }
 ];
 
-storiesOf('Dropdown', module)
+storiesOf('Components / Dropdown', module)
   .addDecorator(withKnobs)
+  .addDecorator(withReadme(README))
   .addWithJSX('default', () => (
     <Dropdown
       onChange={action('onChange')}

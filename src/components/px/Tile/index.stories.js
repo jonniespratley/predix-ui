@@ -9,7 +9,7 @@ const mockText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
 const mockTitle = 'Main Text';
 const mockSubtitle = 'Subtitle Text';
 // /
-storiesOf('Tile', module)
+storiesOf('Components / Tile', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <Tile

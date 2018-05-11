@@ -68,7 +68,7 @@ class Example extends React.Component {
   }
 }
 /* eslint-enable */
-storiesOf('Popover', module)
+storiesOf('Components / Popover', module)
   .addDecorator(withKnobs)
   .add('with example', () => (
     <Example

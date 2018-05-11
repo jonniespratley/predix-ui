@@ -14,7 +14,7 @@ const types = [
   'unknown'
 ];
 
-storiesOf('Notification', module)
+storiesOf('Components / Notification', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <Notification

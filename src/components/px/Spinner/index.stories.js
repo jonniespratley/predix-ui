@@ -6,9 +6,9 @@ import Spinner from './';
 
 
 // Spinner
-storiesOf('Spinner', module)
+storiesOf('Components / Spinner', module)
   .addDecorator(withKnobs)
-  .add('default', () => (
+  .addWithJSX('default', () => (
     <Spinner
       finished={boolean('finished', false)}
       size={number('size', 125)}

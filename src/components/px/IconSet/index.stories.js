@@ -25,7 +25,7 @@ RenderIconSet.propTypes = {
   // size: PropTypes.number.isRequired
 };
 
-storiesOf('Icon', module)
+storiesOf('Components / Icon', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <Icon

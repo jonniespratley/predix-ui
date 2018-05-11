@@ -93,7 +93,7 @@ const items = [{
   label: 'South America',
   id: 'South America'
 }];
-storiesOf('Breadcrumbs', module)
+storiesOf('Components / Breadcrumbs', module)
   .addDecorator(withKnobs)
   .addWithJSX('default', () => (
     <Breadcrumbs

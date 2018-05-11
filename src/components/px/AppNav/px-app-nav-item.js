@@ -65,6 +65,7 @@ const AppNavItem = styled.div`
     `}
   `}
 `;
+AppNavItem.displayName = 'AppNavItem';
 
 const AppNavItemLabel = styled.div`
   margin: 0;
@@ -76,17 +77,20 @@ const AppNavItemLabel = styled.div`
   ${props => props.onlyShowIcon && css`
     display: none;
   `}
+
   ${props => props.collapsed && css`
     flex: 1 1 auto;
     &:before {
 
     }
   `}
+
   ${props => props.overflowed && css`
       &:before {
 
       }
   `}
+
   ${props => props.empty && css`
     display: block;
     width: 6.66667rem;
@@ -97,9 +101,10 @@ const AppNavItemLabel = styled.div`
     }
   `}
 `;
-
+AppNavItemLabel.displayName = 'AppNavItemLabel';
 
 const AppNavItemIcon = styled.div`
+  max-width: 32px;
   ${props => props.empty && css`
     display: block;
     width: var(--px-app-nav-item-icon-size, 2rem);
@@ -133,7 +138,7 @@ class AppNavItemComponent extends React.Component {
       this.props.onClick(e);
     }
   }
-  shouldComponentUpdate(nextProps) {
+  _shouldComponentUpdate(nextProps) {
     return nextProps.selected !== this.props.selected ||
       nextProps.onlyShowIcon !== this.props.onlyShowIcon;
   }
@@ -147,6 +152,7 @@ class AppNavItemComponent extends React.Component {
       collapsed,
       emptyIcon,
       emptyLabel,
+      withLabel,
       empty,
       dropdown,
       onlyShowIcon
@@ -156,28 +162,44 @@ class AppNavItemComponent extends React.Component {
       'px-app-nav-item',
       { selected }
     );
+
     const itemProps = {
       label, icon, id, items, selected, dropdown, collapsed
     };
+
     return (
-      <AppNavItem onClick={this._handleClick} className={baseClasses} data-id={id} {...itemProps}>
-        {icon &&
+      <AppNavItem
+        onClick={this._handleClick}
+        className={baseClasses}
+        dropdown={(items)}
+        data-id={id}
+        {...itemProps}
+      >
+        {icon && !empty && !emptyIcon &&
           <AppNavItemIcon
-            withLabel
-            emptyIcon={emptyIcon}
+            withLabel={label}
           >
-            <Icon size={32} icon={icon} viewBox="0 0 32 32" />
+            <Icon icon={icon} />
           </AppNavItemIcon>
         }
 
-        {label &&
+        {label && !emptyLabel && !emptyIcon && !empty &&
           <AppNavItemLabel
-            emptyLabel={emptyLabel}
-            empty={empty}
+            withLabel={withLabel}
             onlyShowIcon={onlyShowIcon}
-          >{label}
+          >
+            {label}
           </AppNavItemLabel>
         }
+
+        {/* emptyIcon */}
+        {emptyIcon && <AppNavItemIcon empty withLabel={label} />}
+
+        {/* emptyLabel */}
+        {emptyLabel && <AppNavItemLabel empty />}
+
+        {empty && <AppNavItemIcon empty withLabel={label} />}
+        {empty && <AppNavItemLabel empty />}
 
         {dropdown &&
           <AppNavItemIcon dropdownIcon>
@@ -241,11 +263,13 @@ AppNavItemComponent.defaultProps = {
   fixedWidth: null,
   id: null,
   items: null,
-  hideDropdownIcon: false
+  hideDropdownIcon: false,
+  withLabel: false
 };
 
 AppNavItemComponent.propTypes = {
   collapsed: PropTypes.bool,
+  withLabel: PropTypes.bool,
   cancelSelect: PropTypes.bool,
   icon: PropTypes.string,
   item: PropTypes.shape({

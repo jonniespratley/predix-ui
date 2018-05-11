@@ -41,7 +41,7 @@ const items = [{
   }]
 }];
 
-storiesOf('Context Browser', module)
+storiesOf('Components / Context Browser', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <ContextBrowser items={items} />

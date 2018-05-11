@@ -8,7 +8,7 @@ import Select from './Select';
 import Label from './Label';
 import FormField from './FormField';
 
-const stories = storiesOf('Input', module);
+const stories = storiesOf('Components / Input', module);
 stories.addDecorator(withKnobs);
 
 const sizes = ['tiny', 'small', 'regular', 'large', 'huge'];

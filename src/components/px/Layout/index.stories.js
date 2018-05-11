@@ -5,7 +5,7 @@ import Layout from './';
 import LayoutItem from './LayoutItem';
 import Card from '../Card';
 
-storiesOf('Layout', module)
+storiesOf('Components / Layout', module)
   .addDecorator(withKnobs)
   .addWithJSX('default', () => (
     <Layout>

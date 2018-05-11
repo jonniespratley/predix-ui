@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import styled, { css } from 'styled-components';
 
 import AppNavItem from './px-app-nav-item';
@@ -36,7 +37,7 @@ AppNavSubGroup.displayName = 'AppNavSubGroup';
 
 const AppNavGroupDropdown = styled.div`
   display: block;
-  /*height: calc(100vh - var(--px-app-nav-height, 4rem));*/
+  height: calc(100vh - var(--px-app-nav-height, 4rem));
   z-index: 399;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
   ${props => props.opened && css`
@@ -69,108 +70,85 @@ class AppNavSubGroupComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      opened: props.opened || false,
-      children: props.item && props.item.children
+      opened: props.opened || false
     };
   }
-
   _handleClick(e, item, isChild) {
-    let items = this.state.children;
-
-    if (isChild) {
-      items = this.props.item.children.map((o) => {
-        const obj = o;
-        obj.selected = (obj === e);
-        return obj;
-      });
-    }
-
-    this.setState({
-      opened: !this.state.opened,
-      children: items || null
-    });
-
+    this.setState({ opened: !this.state.opened });
     if (this.props.onClick) {
       this.props.onClick(item, isChild);
     }
   }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.opened !== this.state.opened) {
-      this.setState({
-        opened: nextProps.opened
-      });
-    }
-  }
-
   render() {
-    const { opened, children } = this.state;
+    const { opened } = this.props;
+    const subgroupClasses = classnames(
+      'px-app-nav-sub-group',
+      { 'px-app-nav-sub-group--opened': opened }
+    );
+
     const {
       item,
-      // selected,
+      selected,
       overflowed,
+      collapsed,
       onlyShowIcon,
       emptyIcon
     } = this.props;
 
     return (
-      <AppNavSubGroup>
+      <AppNavSubGroup className={subgroupClasses}>
         <AppNavItem
           dropdown
           onClick={this._handleClick.bind(this, item)} /* eslint-disable-line */
           {...item}
           item={item}
-          selected={opened}
+          selected={selected}
           overflowed={overflowed}
-          collapsed={!opened}
+          collapsed={collapsed}
           onlyShowIcon={onlyShowIcon}
           emptyIcon={emptyIcon}
         />
-        <AppNavGroupDropdown>
-          <AppNavSubGroupDropdown opened={opened}>
-            <AppNavGroupDropdownContent>
-              {children && children.map(child => (
-                <AppNavSubItem
-                  onClick={this._handleClick.bind(this, child, true)} /* eslint-disable-line */
-                  selected={child.selected}
-                  key={child.label}
-                  item={child}
-                  {...child}
-                />
-              ))}
-            </AppNavGroupDropdownContent>
-          </AppNavSubGroupDropdown>
-        </AppNavGroupDropdown>
+        <AppNavSubGroupDropdown opened={opened}>
+
+          <AppNavGroupDropdownContent>
+            {item.children && item.children.map(child => (
+              <AppNavSubItem
+                selected={item.selected}
+                onClick={this._handleClick.bind(this, child, true)} /* eslint-disable-line */
+                key={child.label}
+                item={child}
+                {...child}
+              />
+            ))}
+          </AppNavGroupDropdownContent>
+        </AppNavSubGroupDropdown>
       </AppNavSubGroup>
     );
   }
 }
 
-AppNavSubGroupComponent.displayName = 'AppNavSubGroup';
+AppNavSubGroupComponent.displayName = 'AppNavGroup';
 AppNavSubGroupComponent.defaultProps = {
   selected: false,
   collapsed: false,
   overflowed: false,
   onClick: null,
   item: null,
-  children: null,
   emptyIcon: false,
   opened: false,
   onlyShowIcon: false
 };
-const itemShape = PropTypes.shape({
-  id: PropTypes.string,
-  label: PropTypes.string,
-  icon: PropTypes.string
-});
 
 AppNavSubGroupComponent.propTypes = {
   onClick: PropTypes.func,
   selected: PropTypes.bool,
   collapsed: PropTypes.bool,
   overflowed: PropTypes.bool,
-  item: itemShape,
-  children: PropTypes.arrayOf(itemShape),
+  item: PropTypes.shape({
+    id: PropTypes.string,
+    label: PropTypes.string,
+    icon: PropTypes.string
+  }),
   emptyIcon: PropTypes.bool,
   opened: PropTypes.bool,
   onlyShowIcon: PropTypes.bool

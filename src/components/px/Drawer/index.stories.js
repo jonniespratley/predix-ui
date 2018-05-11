@@ -18,7 +18,7 @@ const anchorOptions = [
   'right'
 ];
 
-storiesOf('Drawer', module)
+storiesOf('Components / Drawer', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <Drawer

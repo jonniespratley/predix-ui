@@ -1,16 +1,19 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, number } from '@storybook/addon-knobs';
-
+import { withKnobs, number } from '@storybook/addon-knobs/react';
+import { withReadme } from 'storybook-readme';
 import px from './px';
 
 // import './px/Theme/LightTheme';
 import './px/Theme/DarkTheme';
 
-storiesOf('Welcome', module)
+import README from '../../README.md';
+
+storiesOf('Predix UI', module)
   .addDecorator(withKnobs)
-  .add('to Storybook', () => (
+  .addDecorator(withReadme(README))
+  .add('Welcome', () => (
     <div>Welcome</div>
   ))
   .add('Style Guide', () => (

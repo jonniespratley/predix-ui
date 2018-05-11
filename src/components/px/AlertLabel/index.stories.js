@@ -15,7 +15,7 @@ const typeOptions = {
   success: 'Success'
 };
 
-storiesOf('Alert Label', module)
+storiesOf('Components / Alert Label', module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(README))
   .add('default', () => (

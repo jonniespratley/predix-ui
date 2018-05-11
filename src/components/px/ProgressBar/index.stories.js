@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, number } from '@storybook/addon-knobs/react';
 import ProgressBar from './';
 
-storiesOf('Progress Bar', module)
+storiesOf('Components / Progress Bar', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <ProgressBar

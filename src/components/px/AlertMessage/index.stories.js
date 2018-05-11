@@ -16,7 +16,7 @@ const typeOptions = {
   success: 'Success'
 };
 
-storiesOf('Alert Message', module)
+storiesOf('Components / Alert Message', module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(README))
   .addWithJSX('default', () => (

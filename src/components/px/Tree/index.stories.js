@@ -312,7 +312,7 @@ class ExampleApp extends React.Component {
 }
 
 
-storiesOf('Tree', module)
+storiesOf('Components / Tree', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <Tree

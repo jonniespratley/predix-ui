@@ -1,10 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs/react';
+import { withReadme } from 'storybook-readme';
+
 import BrandingBar from './';
 import Icon from '../IconSet/Icon';
 import Button from '../Button';
 import Flex from '../../../styles/flex';
+import README from './README.md';
 
 const customLogo = () => (
   <Icon icon="px-nav:home" />
@@ -13,8 +16,9 @@ const btnStyles = {
   color: 'white'
 };
 // / BrandingBar
-storiesOf('Branding Bar', module)
+storiesOf('Components / Branding Bar', module)
   .addDecorator(withKnobs)
+  .addDecorator(withReadme(README))
   .addWithJSX('default', () => (
     <BrandingBar
       hideLogo={boolean('hideLogo', false)}

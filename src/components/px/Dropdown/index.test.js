@@ -51,8 +51,6 @@ describe('Dropdown', () => {
       <Dropdown items={items} selected={1}/>
     );
     expect(wrapper.state().selected).toEqual(1);
-    console.log(wrapper.state());
-    console.log('wrapper', wrapper.debug());
     //expect(wrapper.find({icon: 'px-utl:chevron'})).toHaveLength(1);
   });
 

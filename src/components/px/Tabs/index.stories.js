@@ -6,7 +6,7 @@ import Tabs from './';
 import Tab from './Tab';
 
 // / Tabs
-storiesOf('Tabs', module)
+storiesOf('Components / Tabs', module)
   .addDecorator(withKnobs)
   .addWithJSX('default', () => (
     <Tabs selected={number('selected', 0)} onChange={action('onChange')}>
