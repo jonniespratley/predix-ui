@@ -9,7 +9,6 @@ Unoffical React components that implement Predix's Design System CSS.
 Why? Well the `predix-ui` library is built with Polymer. This project attempts to bring those components to React.
 
 
-
 ## Usage
 To use this library simply install it with `npm` or `yarn`:
 
