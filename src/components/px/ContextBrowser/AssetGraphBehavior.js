@@ -17,7 +17,7 @@ export default class AssetGraphBehavior {
 
   emitter = emitter;
 
-  constructor(items, keys) {
+  constructor() {
     this.on = emitter.on;
     this.off = emitter.off;
     this.fire = emitter.emit;
@@ -153,11 +153,14 @@ export default class AssetGraphBehavior {
         // the removed items
         let deactivated;
         let deselected;
+        /* eslint-disable-next-line */
         for (let i = 0; i < childrenArray.length; i++) {
+          /* eslint-disable-next-line */
           if (!deactivated && typeof this.activate === 'function' && this.activeMeta && (this.activeMeta.item === childrenArray[i] || this.activeMeta.path && this.activeMeta.path.indexOf(childrenArray[i]) > -1)) {
             this.activate(null);
             deactivated = true;
           }
+          /* eslint-disable-next-line */
           if (!deselected && typeof this.select === 'function' && this.selectedMeta && (this.selectedMeta.item === childrenArray[i] || this.selectedMeta.path && this.selectedMeta.path.indexOf(childrenArray[i]) > -1)) {
             this.select(null);
             deactivated = true;
