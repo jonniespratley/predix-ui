@@ -25,11 +25,6 @@
         "react-hmre"
       ]
     },
-    "ghPages": {
-      "presets": [
-        "es2015"
-      ]
-    },
     "modules": {
       "presets": [
         [ "env", { "modules": "umd" } ]
