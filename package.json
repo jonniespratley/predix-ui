@@ -16,7 +16,7 @@
   "browser": "dist/predix-ui.min.js",
   "umd:main": "dist/umd/index.js",
   "main": "dist/predix-ui.min.js",
-  "module": "dist/es/index.js",
+  "module": "src/index.js",
   "config": {
     "library": "PxReact",
     "libraryTarget": "umd"

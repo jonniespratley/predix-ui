@@ -62,4 +62,6 @@ Component.propTypes = {
   type: PropTypes.string
 };
 
+Component.displayName = 'AlertLabel';
+
 export default Component;

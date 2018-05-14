@@ -2,7 +2,6 @@ import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-import './px-drawer-layout.scss';
 import Drawer from '../../Drawer';
 import BrandingBar from '../../BrandingBar';
 import AppNav from '../../AppNav';

@@ -27,7 +27,7 @@ const BrandingBar = styled.div`
 `;
 BrandingBar.displayName = 'BrandingBar';
 BrandingBar.defaultProps = {
-  // responsiveWidth: '768px'
+  responsiveWidth: '768px'
 };
 
 const BrandingBarTitle = styled.div`
@@ -92,6 +92,6 @@ Component.defaultProps = {
   children: null
 };
 
-Component.displayName = 'BrandingBar';
+Component.displayName = 'BrandingBarComponent';
 
 export default Component;

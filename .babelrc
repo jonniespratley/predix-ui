@@ -33,11 +33,17 @@
     "modules": {
       "presets": [
         [ "env", { "modules": "umd" } ]
+      ],
+      "plugins": [
+        "babel-plugin-styled-components"
       ]
     },
     "es6": {
       "presets": [
         [ "env", { "modules": false } ]
+      ],
+      "plugins": [
+        "babel-plugin-styled-components"
       ]
     }
   }
