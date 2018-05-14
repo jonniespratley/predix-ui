@@ -84,7 +84,7 @@ class Icon extends React.Component {
       display: 'block'
     }, styles);
 
-    const _viewBox = viewBox || `0 0 ${size} ${size}`;
+    const _viewBox = viewBox || `0 0 ${iconSetSize} ${iconSetSize}`;
     return (
       <PxIcon className={classnames('px-icon', className, icon.replace(':', '-'))} style={styles} color={color}>
         <svg
