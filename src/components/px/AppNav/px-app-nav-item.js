@@ -1,21 +1,17 @@
 import React from 'react';
-import BaseComponent from '../BaseComponent';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import styled, { css } from 'styled-components';
+
 import Icon from '../IconSet/Icon';
 
-import styled, {css} from 'styled-components';
-
 const AppNavItem = styled.div`
-  
   line-height: 1.33333;
   text-size-adjust: 100%;
-  
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   position: relative;
-  
   display: flex;
-  
   align-items: center;
   height: var(--px-app-nav-height, 4rem);
   padding-left: var(--px-app-nav-item-padding, 1rem);
@@ -24,7 +20,6 @@ const AppNavItem = styled.div`
   color: var(--px-app-nav-item-text-color, darkgray);
   background-color: var(--px-app-nav-item-background-color, lightgray);
   --iron-icon-stroke-color: var(--px-app-nav-item-text-color, darkgray);
-  
   user-select: none;
   outline: none;
 
@@ -39,13 +34,11 @@ const AppNavItem = styled.div`
     background-color: var(--px-app-nav-item-background-color--pressed, lightgray);
     --iron-icon-stroke-color: var(--px-app-nav-item-text-color--hover, darkgray);
   }
-  
-  
+
   ${props => props.selected && css`
     color: var(--px-app-nav-item-text-color--selected, darkgray);
     background-color: var(--px-app-nav-item-background-color--selected, white);
     --iron-icon-stroke-color: var(--px-app-nav-item-text-color--selected, darkgray);
-    
     &:before {
       content: '';
       position: absolute;
@@ -58,7 +51,7 @@ const AppNavItem = styled.div`
       background-color: var(--px-app-nav-item-stripe-color--selected, blue);
     }
 
-    ${props => props.collapsed && css`
+    ${props.collapsed && css`
       color: var(--px-app-nav-item-text-color--collapsed, darkgray);
       background-color: var(--px-app-nav-item-background-color--collapsed, white);
       &:before {
@@ -72,6 +65,7 @@ const AppNavItem = styled.div`
     `}
   `}
 `;
+AppNavItem.displayName = 'AppNavItem';
 
 const AppNavItemLabel = styled.div`
   margin: 0;
@@ -83,123 +77,135 @@ const AppNavItemLabel = styled.div`
   ${props => props.onlyShowIcon && css`
     display: none;
   `}
+
   ${props => props.collapsed && css`
     flex: 1 1 auto;
     &:before {
-        
+
     }
   `}
-   ${props => props.overflowed && css`
-      &:before {
-        
-      }
-    `}
-   ${props => props.empty && css`
-      display: block;
-      width: 6.66667rem;
-      height: 0.66667rem;
-      background-color: var(--px-app-nav-item-background-color--empty, lightgray);
-      &:before {
-        
-      }
-    `}
-`;
 
+  ${props => props.overflowed && css`
+      &:before {
+
+      }
+  `}
+
+  ${props => props.empty && css`
+    display: block;
+    width: 6.66667rem;
+    height: 0.66667rem;
+    background-color: var(--px-app-nav-item-background-color--empty, lightgray);
+    &:before {
+
+    }
+  `}
+`;
+AppNavItemLabel.displayName = 'AppNavItemLabel';
 
 const AppNavItemIcon = styled.div`
- ${props => props.empty && css`
+  max-width: 32px;
+  ${props => props.empty && css`
     display: block;
     width: var(--px-app-nav-item-icon-size, 2rem);
     height: var(--px-app-nav-item-icon-size, 2rem);
     background-color: var(--px-app-nav-item-background-color--empty, lightgray);
     flex: none;
     &:before {
-      
+
     }
   `}
- ${props => props.withLabel && css`
+  ${props => props.withLabel && css`
     margin-right: 0.33333rem;
   `}
- ${props => props.dropdownIcon && css`
+  ${props => props.dropdownIcon && css`
     margin-left: 0.2rem;
   `}
 `;
-
+AppNavItemIcon.displayName = 'AppNavItemIcon';
 
 
 /**
  * AppNav-item component
  */
-class AppNavItemComponent extends BaseComponent {
-  constructor(props){
-    super(props, {displayName: 'AppNavItem'});
-    this.state = {
-      selected: this.props.selected
-    };
+class AppNavItemComponent extends React.Component {
+  constructor(props) {
+    super(props);
     this._handleClick = this._handleClick.bind(this);
   }
-  _handleClick(e){
-    if(!this.props.cancelSelect && this.props.onClick){
+  _handleClick(e) {
+    if (!this.props.cancelSelect && this.props.onClick) {
       this.props.onClick(e);
     }
   }
-  shouldComponentUpdate(nextProps, nextState) {
-    return nextProps.selected !== this.props.selected || nextProps.onlyShowIcon !== this.props.onlyShowIcon;
+  _shouldComponentUpdate(nextProps) {
+    return nextProps.selected !== this.props.selected ||
+      nextProps.onlyShowIcon !== this.props.onlyShowIcon;
   }
-  render(){
+  render() {
     const {
       label,
       icon,
       id,
-      item,
       items,
-      style,
       selected,
       collapsed,
-      overflowed,
       emptyIcon,
       emptyLabel,
+      withLabel,
       empty,
       dropdown,
-      onlyShowIcon,
-      onClick,
-      children
+      onlyShowIcon
     } = this.props;
 
     const baseClasses = classnames(
       'px-app-nav-item',
-      {'selected': selected}
+      { selected }
     );
-    let itemProps = {
+
+    const itemProps = {
       label, icon, id, items, selected, dropdown, collapsed
     };
+
     return (
-      <AppNavItem onClick={this._handleClick} className={baseClasses} data-id={id} {...itemProps}>
-
-        {/* icon */}
-        {icon && <AppNavItemIcon withLabel><Icon size={32} icon={icon}/></AppNavItemIcon>}
-
-        {/* emptyIcon */}
-        {emptyIcon && <AppNavItemIcon emptyIcon withLabel/>}
-
-        {/* emptyLabel */}
-        {emptyLabel && <AppNavItemLabel emptyLabel/>}
-
-        {/* label */}
-        {label && <AppNavItemLabel empty={empty} onlyShowIcon={onlyShowIcon}>{label}</AppNavItemLabel>}
-
-        {/* empty */}
-        {empty && <AppNavItemIcon emtpy withLabel/>}
-        {empty && <AppNavItemLabel emtpy/>}
-        
-        {/* dropdown */}
-        {dropdown && 
-          <AppNavItemIcon dropdownIcon>
-            <Icon icon='px-utl:chevron' size={16}/>
+      <AppNavItem
+        onClick={this._handleClick}
+        className={baseClasses}
+        dropdown={(items)}
+        data-id={id}
+        {...itemProps}
+      >
+        {icon && !empty && !emptyIcon &&
+          <AppNavItemIcon
+            withLabel={label}
+          >
+            <Icon icon={icon} />
           </AppNavItemIcon>
         }
-          
 
+        {label && !emptyLabel && !emptyIcon && !empty &&
+          <AppNavItemLabel
+            withLabel={withLabel}
+            onlyShowIcon={onlyShowIcon}
+          >
+            {label}
+          </AppNavItemLabel>
+        }
+
+        {/* emptyIcon */}
+        {emptyIcon && <AppNavItemIcon empty withLabel={label} />}
+
+        {/* emptyLabel */}
+        {emptyLabel && <AppNavItemLabel empty />}
+
+        {empty && <AppNavItemIcon empty withLabel={label} />}
+        {empty && <AppNavItemLabel empty />}
+
+        {dropdown &&
+          <AppNavItemIcon dropdownIcon>
+            <Icon icon="px-utl:chevron" size={16} />
+          </AppNavItemIcon>
+        }
       </AppNavItem>
     );
   }
@@ -232,8 +238,7 @@ AppNavItemComponent.defaultProps = {
    */
   selected: false,
   /**
-   * Shows a dropdown arrow icon to indicate this item can be tapped to
-   * open a subgroup.
+   * Shows a dropdown arrow to indicate item can be tapped to open a subgroup.
    */
   dropdown: false,
   empty: false,
@@ -253,10 +258,39 @@ AppNavItemComponent.defaultProps = {
    * Set to `true` if this is a subitem.
    */
   subitem: false,
+  onlyShowIcon: false,
   onClick: null,
   fixedWidth: null,
-  hideDropdownIcon: false
+  id: null,
+  items: null,
+  hideDropdownIcon: false,
+  withLabel: false
+};
 
+AppNavItemComponent.propTypes = {
+  collapsed: PropTypes.bool,
+  withLabel: PropTypes.bool,
+  cancelSelect: PropTypes.bool,
+  icon: PropTypes.string,
+  item: PropTypes.shape({
+    id: PropTypes.string,
+    label: PropTypes.string,
+    icon: PropTypes.string
+  }),
+  items: PropTypes.arrayOf(PropTypes.any),
+  id: PropTypes.string,
+  label: PropTypes.string,
+  selected: PropTypes.bool,
+  dropdown: PropTypes.bool,
+  empty: PropTypes.bool,
+  onlyShowIcon: PropTypes.bool,
+  emptyIcon: PropTypes.bool,
+  emptyLabel: PropTypes.bool,
+  overflowed: PropTypes.bool,
+  subitem: PropTypes.bool,
+  onClick: PropTypes.func,
+  fixedWidth: PropTypes.bool,
+  hideDropdownIcon: PropTypes.bool
 };
 
 AppNavItemComponent.displayName = 'AppNavItemComponent';

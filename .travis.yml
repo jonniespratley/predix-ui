@@ -1,15 +1,20 @@
 language: node_js
+cache:
+  directories:
+    - ~/.npm
 node_js:
-- '8'
-before_script:
-#- npm i -g bower
-#- bower install --force-latest
+  - '9'
+  - '8'
 script:
-- yarn test:lint
-- yarn test:coverage --ci
+- yarn lint
+- yarn test
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+#- npm run travis-deploy-once "npm run semantic-release"
 - yarn gh-pages
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
 deploy:
   provider: npm
   email: jonniespratley@gmail.com

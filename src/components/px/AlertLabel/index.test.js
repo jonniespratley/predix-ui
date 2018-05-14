@@ -11,6 +11,7 @@ const types = [
 	'warning',
 	'error',
 	'info',
+	'success',
 	'unknown'
 ];
 describe('AlertLabel', () => {
@@ -36,6 +37,8 @@ describe('AlertLabel', () => {
     test(`should render type = ${type}`, () => {
       const wrapper = shallow(<AlertLabel type={type} label={type}/>);
       expect(wrapper.props().type).toEqual(type);
+      const tree = renderer.create(<AlertLabel type={type} label={type} />).toJSON();
+      expect(tree).toMatchSnapshot();
     });
   });
 

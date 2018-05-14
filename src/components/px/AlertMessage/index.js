@@ -1,7 +1,7 @@
 import React from 'react';
-import classnames from 'classnames';
+import styled, { css, keyframes } from 'styled-components';
+import PropTypes from 'prop-types';
 import Button from '../Button';
-import styled, {css, keyframes} from 'styled-components';
 
 const fadeIn = keyframes`
   from {
@@ -49,6 +49,8 @@ const AlertMessage = styled.div`
   align-items: center;
 
   ${props => props.visible && css`
+    overflow:hidden;
+    height: 4rem;
     visibility: visible;
     display: flex;
     opacity: 1;
@@ -57,28 +59,22 @@ const AlertMessage = styled.div`
     padding-bottom: 0.66667rem;
     animation: ${fadeIn} 0.4s cubic-bezier(0.78, 0.13, 0.16, 0.87);
   `}
-
-
-
-
-  button{
+  button {
     color: var(--px-alert-message-dismiss-icon-color, gray);
     outline: none;
     max-width: 50px;
 
-    svg{
+    svg {
       height: 1.33333rem;
       width: 1.33333rem;
       fill: var(--px-alert-message-dismiss-icon-color, gray);
       stroke: var(--px-alert-message-dismiss-icon-color, gray);
     }
   }
-
 `;
 
 const AlertMessageContainer = styled.div`
   display: flex;
-
   align-items: center;
   flex: 2;
   margin-left: 0.66667rem;
@@ -89,7 +85,6 @@ const AlertMessageActions = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-
   .dismiss {
     width: 44px;
     height: 44px;
@@ -128,6 +123,7 @@ const AlertMessageSeverity = styled.div`
   ${props => props.type === 'healthy' && css`
     background-color: var(--px-alert-label-background-color--healthy,green);
   `}
+
   ${props => props.type === 'success' && css`
     background-color: var(--px-alert-label-background-color--healthy,green);
   `}
@@ -141,58 +137,76 @@ const Message = styled.div`
   margin: 0;
 `;
 
-//import stylesheet from './px-alert-message.scss';
-
 /**
  * AlertMessage component
  */
-export default ({
+const Component = ({
   messageTitle,
   message,
-  action = 'dismiss',
+  action,
   visible,
   actions,
-  expanded,
   onActionClick,
   onDismiss,
-  type = 'information',
-  autoDismiss = 5000,
-  language = 'en',
+  type,
   children
-}) => {
-
-
-  return (
+}) => (
   <AlertMessage visible={visible}>
-  <AlertMessageSeverity type={type}/>
+    <AlertMessageSeverity type={type} />
     <AlertMessageContainer>
       <Message>
         <strong>{messageTitle} </strong>
         <span>{message}</span>
         <div>{children}</div>
       </Message>
-      </AlertMessageContainer>
-      <AlertMessageActions>
-
-        {action === 'dismiss' &&
-        <Button onClick={onDismiss} theme='bare' className='dismiss'>
+    </AlertMessageContainer>
+    <AlertMessageActions>
+      {!actions && action === 'dismiss' &&
+        <Button onClick={onDismiss} theme="bare" className="dismiss">
           <svg viewBox="0 0 22 22" preserveAspectRatio="xMidYMid meet" focusable="false">
             <g>
-              <path strokeMiterlimit="10" d="M3 19L19 3M3 3l16 16"></path>
+              <path strokeMiterlimit="10" d="M3 19L19 3M3 3l16 16" />
             </g>
           </svg>
         </Button>}
 
-        {actions && actions()}
+      {actions && actions()}
 
-        {action === 'acknowledge' &&
-        <Button id="actionButton"
+      {!actions && action === 'acknowledge' &&
+        <Button
+          id="actionButton"
           onClick={onActionClick}
-          theme='tertiary'>OK</Button>}
-
-      </AlertMessageActions>
-
-
+          theme="tertiary"
+        >OK
+        </Button>}
+    </AlertMessageActions>
   </AlertMessage>
-  );
-}
+);
+
+Component.defaultProps = {
+  action: null,
+  type: 'information',
+  message: null,
+  messageTitle: null,
+  visible: false,
+  actions: null,
+  children: null,
+  onActionClick: null,
+  onDismiss: null
+};
+
+Component.propTypes = {
+  action: PropTypes.string,
+  type: PropTypes.string,
+  message: PropTypes.string,
+  messageTitle: PropTypes.string,
+  visible: PropTypes.bool,
+  actions: PropTypes.func,
+  onActionClick: PropTypes.func,
+  onDismiss: PropTypes.func,
+  children: PropTypes.node
+};
+
+Component.displayName = 'AlertMessage';
+
+export default Component;

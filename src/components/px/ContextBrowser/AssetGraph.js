@@ -1,7 +1,7 @@
+/* eslint-disable */
 import SymbolTree from 'symbol-tree';
 
 export class AssetGraph {
-
   constructor(options) {
     /* Save options  */
     this._options = {};
@@ -25,13 +25,12 @@ export class AssetGraph {
 
     if (node) {
       return node;
-    } else {
-      return object[this._symbol] = {
-        isExhausted: null,
-        isTerminal: null,
-        isSelectable: null
-      };
     }
+    return object[this._symbol] = {
+      isExhausted: null,
+      isTerminal: null,
+      isSelectable: null
+    };
   }
 
   _getKey(key, val) {
@@ -66,15 +65,15 @@ export class AssetGraph {
 
       return {
         item: node,
-        path: path,
-        route: route,
-        parent: parent,
-        siblings: siblings,
-        children: children,
-        hasChildren: hasChildren,
-        isTerminal: isTerminal,
-        isExhausted: isExhausted,
-        isSelectable: isSelectable
+        path,
+        route,
+        parent,
+        siblings,
+        children,
+        hasChildren,
+        isTerminal,
+        isExhausted,
+        isSelectable
       };
     }
     return null;
@@ -100,7 +99,7 @@ export class AssetGraph {
    * @param {Object} node
    */
   hasSiblings(node) {
-    var siblings = this.getSiblings(node);
+    const siblings = this.getSiblings(node);
     return siblings && siblings.length > 1;
   }
 
@@ -161,12 +160,12 @@ export class AssetGraph {
     }
 
     const _routeKey = typeof routeKey === 'string' && routeKey.length ? routeKey : this._defaultKeys.id;
-    let searchRoute = route.slice(0);
+    const searchRoute = route.slice(0);
     let items = this._tree.childrenToArray(this._rootNode).slice(0);
     let foundItem = null;
 
     while (!foundItem && items.length > 0 && searchRoute.length > 0) {
-      let item = items.shift();
+      const item = items.shift();
       if (item[_routeKey] === searchRoute[0] && this._tree.childrenCount(item) > 0 && searchRoute.length !== 1) {
         searchRoute.shift();
         items = this._tree.childrenToArray(item).slice(0);
@@ -322,7 +321,7 @@ export class AssetGraph {
     const _node = node === null ? this._rootNode : node;
     if (_node && (_node.ROOT || this._tree.index(_node) > -1)) {
       const info = this._node(_node);
-      return info && info.isExhausted === true ? true : false;
+      return !!(info && info.isExhausted === true);
     }
     return null;
   }
@@ -344,7 +343,7 @@ export class AssetGraph {
     }
     if (this._tree.index(node) > -1) {
       const info = this._node(node);
-      return info && info.isTerminal === true ? true : false;
+      return !!(info && info.isTerminal === true);
     }
     return null;
   }
@@ -370,9 +369,8 @@ export class AssetGraph {
       // marked `isSelectable:false` then it is selectable
       if (info && info.isSelectable === false) {
         return false;
-      } else {
-        return true;
       }
+      return true;
     }
     return null;
   }
@@ -388,29 +386,26 @@ export class AssetGraph {
   }
 
   static pathToRoute(path, routeKey) {
-    return path.map(p => typeof p[routeKey] === 'string' && p[routeKey].length ? p[routeKey] : null);
+    return path.map(p => (typeof p[routeKey] === 'string' && p[routeKey].length ? p[routeKey] : null));
   }
-};
-
-
-
+}
 
 
 export class AssetTree {
-  constructor(){
+  constructor() {
     this.keys = {
-      'id': 'id',
-      'label': 'label',
-      'children': 'children',
-      'icon': 'icon'
+      id: 'id',
+      label: 'label',
+      children: 'children',
+      icon: 'icon'
     };
     this.items = [];
     this.__rootItems = [];
     this._assetGraph = {};
     this._assetGraph = new AssetGraph();
   }
-  fire() {
-    //console.log('fire', ...arguments);
+  fire(event, data) {
+    console.log('fire', event, data, ...arguments);
   }
   /**
    * Adds a child or children to the requested node. Pass a single object
@@ -431,7 +426,7 @@ export class AssetTree {
         childrenKey: this.keys.children
       }, options || {}));
       if (node === null) {
-        let childrenArray = Array.isArray(children) ? children : [children];
+        const childrenArray = Array.isArray(children) ? children : [children];
         this.__rootItems = this.__rootItems.concat(childrenArray);
       }
       this.fire('px-app-asset-children-updated', node === null ? {

@@ -1,6 +1,6 @@
-import React from 'react';
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
+
 const Button = styled.button`
   font-family: "GE Inspira Sans";
   outline: none;
@@ -14,11 +14,11 @@ const Button = styled.button`
   border: 1px solid var(--px-btn-border-color, transparent);
   border-radius: 0 !important;
   padding: calc(var(--px-btn-height, 2em) / 10) calc(var(--px-btn-height, 2em) / 2);
-  
+
   box-shadow: var(--px-btn-shadow--light, none);
   font: inherit;
   line-height: calc(var(--px-btn-height, 2em) - 2px);
-  
+
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -33,7 +33,7 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   &:link,
   &:visited,
   &:hover,
@@ -54,8 +54,8 @@ const Button = styled.button`
     background-color: var(--px-btn-background--pressed, #889aa5);
   }
 
-  
-  
+
+
   ${props => props.icon && css`
     height: var(--px-btn-height, 2em);
     width: var(--px-btn-height, 2em);
@@ -63,7 +63,8 @@ const Button = styled.button`
     padding-right: 0;
     padding-left: 0;
     border: var(--px-btn-icon-border, 0px solid) !important;
-    background-color: var(--px-btn-icon-background, transparent) !important;
+    color: var(--btn-color, black);
+    background-color: var(--px-btn-icon-background, transparent);
   `}
 
   ${props => props.size === 'large' && css`
@@ -240,7 +241,6 @@ const Button = styled.button`
       background-color: var(--px-btn-call-to-action-background--pressed, #003d66);
     }
   `}
-
   ${props => props.disabled && css`
     color: var(--px-btn-disabled-color, rgba(0, 0, 0, 0.2));
     border: 1px solid;
@@ -249,7 +249,6 @@ const Button = styled.button`
     background-color: var(--px-btn-disabled-background, transparent);
     pointer-events: none;
   `}
-
 `;
 
 Button.displayName = 'Button';
@@ -269,4 +268,3 @@ Button.propTypes = {
 };
 
 export default Button;
-

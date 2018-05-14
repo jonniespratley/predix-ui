@@ -1,6 +1,6 @@
 import React from 'react';
-import classnames from 'classnames';
-import styled, {css} from 'styled-components';
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
 
 const KvpLabel = styled.div`
   font-size: .8rem;
@@ -9,7 +9,12 @@ const KvpLabel = styled.div`
 `;
 KvpLabel.displayName = 'KvpLabel';
 KvpLabel.defaultProps = {
-  className: 'kvp-label'
+  className: 'kvp-label',
+  size: null
+};
+KvpLabel.propTypes = {
+  className: PropTypes.string,
+  size: PropTypes.string
 };
 
 const KvpValue = styled.span`
@@ -33,8 +38,14 @@ const KvpValue = styled.span`
 `;
 KvpValue.displayName = 'KvpValue';
 KvpValue.defaultProps = {
-  className: 'kvp-value'
+  className: 'kvp-value',
+  size: null
 };
+KvpValue.propTypes = {
+  className: PropTypes.string,
+  size: PropTypes.string
+};
+
 const KvpUom = styled.span`
   margin-left: 0px;
   ${props => props.size === 'value' && css`
@@ -58,35 +69,55 @@ const KvpUom = styled.span`
 `;
 KvpUom.displayName = 'KvpUom';
 KvpUom.defaultProps = {
-  className: 'kvp-uom'
+  className: 'kvp-uom',
+  size: null
 };
-const _getAdjustedSize = (s) => {
-  return (
-    s === 'alpha' ? 'delta' :
+KvpUom.propTypes = {
+  className: PropTypes.string,
+  size: PropTypes.string
+};
+
+/* eslint-disable */
+const _getAdjustedSize = s => (
+  s === 'alpha' ? 'delta' :
     s === 'beta' ? 'epsilon' :
-    s === 'gamma' ? 'value' :
-    s === 'delta' ? 'value' : 'zeta'
-  );
-};
-/**
- * KeyValuePair component
- */
-export default ({
-  label = 'KeyValuePair',
+      s === 'gamma' ? 'value' :
+        s === 'delta' ? 'value' : 'zeta'
+);
+/* eslint-enable */
+
+const Component = ({
+  label,
   value,
   size,
   uom,
   children
-}) => {
+}) => (
+  <div className="px-key-value-pair">
+    <KvpLabel >{label}</KvpLabel>
+    <KvpValue size={_getAdjustedSize(size)} className={size}>
+      {value}
+      {uom &&
+      <KvpUom size={_getAdjustedSize(size)} className={_getAdjustedSize(size)}>{uom}</KvpUom>}
+    </KvpValue>
+    {children}
+  </div>
+);
 
-  return (
-    <div className='px-key-value-pair'>
-      <KvpLabel >{label}</KvpLabel>
-      <KvpValue size={_getAdjustedSize(size)} className={size}>
-        {value}
-        {uom && <KvpUom size={_getAdjustedSize(size)} className={_getAdjustedSize(size)}>{uom}</KvpUom>}
-      </KvpValue>
+Component.defaultProps = {
+  label: null,
+  value: null,
+  size: null,
+  uom: null,
+  children: null
+};
 
-    </div>
-  );
-}
+Component.propTypes = {
+  label: PropTypes.string,
+  value: PropTypes.string,
+  size: PropTypes.string,
+  uom: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func])
+};
+
+export default Component;

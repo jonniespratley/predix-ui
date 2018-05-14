@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
 
 const sizes = {
@@ -89,23 +88,26 @@ const Input = BaseInput.extend`
     }
   }
 
-
-
   ${props => props.auto && css`
     max-width: auto;
   `}
+
   ${props => props.tiny && css`
     max-width: 7.06667rem;
   `}
+
   ${props => props.small && css`
      max-width: 14.13333rem;
   `}
+
   ${props => props.regular && css`
     max-width: 21.2rem;
   `}
+
   ${props => props.large && css`
     max-width: 28.26667rem;
   `}
+
   ${props => props.huge && css`
      max-width: 35.33333rem;
   `}
@@ -113,26 +115,8 @@ const Input = BaseInput.extend`
    ${props => props.size && css`
      max-width: ${sizes[props.size]};
   `}
-
 `;
-Input.displayName = 'Input';
 
-Input.defaultProps = {
-  /** The label */
-  label: null,
-  className: null,
-  /** The input value, required for a controlled component. */
-  value: undefined,
-  /** Type of the input element. It should be a valid HTML5 input type. */
-  type: 'text',
-  /** If true, the input will be disabled. */
-  disabled: null,
-  /** The short hint displayed in the input before the user enters a value. */
-  placeholder: null,
-  /** Use that property to pass a ref callback to the native input component. */
-  inputRef: null,
-  /** Properties applied to the input element. */
-  inputProps: null
-};
+Input.displayName = 'Input';
 
 export default Input;

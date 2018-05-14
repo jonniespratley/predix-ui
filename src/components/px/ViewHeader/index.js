@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, {css} from 'styled-components';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const VHeader = styled.div`
   height          : 4rem;
@@ -21,7 +22,7 @@ const VHeaderText = styled.div`
   min-width    : 0;
   margin-left  : auto;
   margin-right : auto;
-  min-width: 1px; 
+  min-width: 1px;
 `;
 VHeaderText.displayName = 'ViewHeaderText';
 
@@ -58,17 +59,12 @@ const VHeaderRight = styled.div`
 `;
 VHeaderRight.displayName = 'ViewHeaderRight';
 
-export default ({
+const ViewHeader = ({
   title,
   subtitle,
-  onMenuButtonClick,
-  onBackButtonClick,
-  showMenuButton,
-  showBackButton,
-  backButtonLabel,
-  leftContent, 
-  rightContent, 
-  children 
+  leftContent,
+  rightContent,
+  children
 }) => (
 
   <VHeader>
@@ -86,3 +82,21 @@ export default ({
     </VHeaderRight>
   </VHeader>
 );
+
+ViewHeader.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  rightContent: PropTypes.node,
+  leftContent: PropTypes.node,
+  children: PropTypes.node
+};
+
+ViewHeader.defaultProps = {
+  title: null,
+  subtitle: null,
+  rightContent: null,
+  leftContent: null,
+  children: null
+};
+
+export default ViewHeader;

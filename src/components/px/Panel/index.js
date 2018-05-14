@@ -1,6 +1,6 @@
 import React from 'react';
-import classnames from 'classnames';
-import styled, {css} from 'styled-components';
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
 
 const Panel = styled.div`
   overflow:hidden;
@@ -41,7 +41,7 @@ const Panel = styled.div`
     flex: 0 1 320px;
   `}
 
-  ${props => ( props.position === 'left' || props.position === 'right' ) && css`
+  ${props => (props.position === 'left' || props.position === 'right') && css`
     height: auto;
     width: 0;
     top: 0;
@@ -49,21 +49,21 @@ const Panel = styled.div`
     transition: var(--px-panel-transition, width 0.4s cubic-bezier(.78,.13,.16,.87));
     white-space: nowrap;
 
-    ${props => props.opened && css`
+    ${props.opened && css`
       width: var(--px-panel-size, 320px);
       overflow-y: auto;
-      ${props => props.fullSize && css`
+      ${props.fullSize && css`
         width: 100%;
         overflow-y: auto;
       `}
     `}
   `}
 
-   ${props => props.position === 'left'  && css`
+   ${props => props.position === 'left' && css`
     left: 0;
     border-right: 1px solid var(--px-panel-border-color,gray);
 
-    ${props => props.floating && css`
+    ${props.floating && css`
       border-right: none;
       left: var(--px-panel-offset--left, 2rem);
       top: var(--px-panel-offset--top, 2rem);
@@ -71,11 +71,11 @@ const Panel = styled.div`
     `}
   `}
 
-  ${props => props.position === 'right'  && css`
+  ${props => props.position === 'right' && css`
     right: 0;
     border-left: 1px solid var(--px-panel-border-color,gray);
 
-    ${props => props.floating && css`
+    ${props.floating && css`
       border-left: none;
       right: var(--px-panel-offset--right, 2rem);
       top: var(--px-panel-offset--top, 2rem);
@@ -83,35 +83,35 @@ const Panel = styled.div`
     `}
   `}
 
-  ${props => ( props.position === 'top' || props.position === 'bottom' ) && css`
+  ${props => (props.position === 'top' || props.position === 'bottom') && css`
     width: auto;
     height: 0;
     right: 0;
     left: 0;
     transition: var(--px-panel-transition, height 0.4s cubic-bezier(.78,.13,.16,.87));
 
-    ${props => props.opened && css`
+    ${props.opened && css`
       height: var(--px-panel-size, 320px);
       overflow-y: auto;
     `}
   `}
 
-  ${props => props.position === 'top'  && css`
+  ${props => props.position === 'top' && css`
     top: 0;
     border-bottom: 1px solid var(--px-panel-border-color, gray);
 
-    ${props => props.fullSize && css`
+    ${props.fullSize && css`
       right: var(--px-panel-offset--right, 2rem);
       left: var(--px-panel-offset--left, 2rem);
       top: var(--px-panel-offset--bottom, 2rem);
     `}
   `}
 
-  ${props => props.position === 'bottom'  && css`
+  ${props => props.position === 'bottom' && css`
     bottom: 0;
     border-top: 1px solid var(--px-panel-border-color, gray);
 
-    ${props => props.fullSize && css`
+    ${props.fullSize && css`
       right: var(--px-panel-offset--right, 2rem);
       left: var(--px-panel-offset--left, 2rem);
       bottom: var(--px-panel-offset--bottom, 2rem);
@@ -138,31 +138,61 @@ PanelContent.defaultProps = {
 /**
  * Panel component
  */
-export default ({
+const Component = ({
   style,
   className,
-  background = 'light',
-  position = 'right',
-  fullSize = false,
-  opened = false,
-  fixed = false,
-  persistent = false,
-  floating = false,
-  minimizable = false,
+  background,
+  position,
+  fullSize,
+  opened,
+  fixed,
+  persistent,
+  floating,
+  minimizable,
   children
-}) => {
-  return (
-    <Panel
-      background={background}
-      style={style}
-      className={className}
-      position={position}
-      minimizable={minimizable}
-      fullSize={fullSize}
-      floating={floating}
-      opened={opened}
-      fixed={fixed}>
-      <PanelContent>{children}</PanelContent>
-    </Panel>
-  );
-}
+}) => (
+  <Panel
+    persistent={persistent}
+    background={background}
+    style={style}
+    className={className}
+    position={position}
+    minimizable={minimizable}
+    fullSize={fullSize}
+    floating={floating}
+    opened={opened}
+    fixed={fixed}
+  >
+    <PanelContent>{children}</PanelContent>
+  </Panel>
+);
+
+Component.defaultProps = {
+  style: null,
+  className: null,
+  background: 'light',
+  position: 'right',
+  fullSize: false,
+  opened: false,
+  fixed: false,
+  persistent: false,
+  floating: false,
+  minimizable: false,
+  children: null
+};
+
+Component.propTypes = {
+  style: PropTypes.objectOf(PropTypes.string),
+  className: PropTypes.string,
+  background: PropTypes.string,
+  position: PropTypes.string,
+  fullSize: PropTypes.bool,
+  opened: PropTypes.bool,
+  fixed: PropTypes.bool,
+  persistent: PropTypes.bool,
+  floating: PropTypes.bool,
+  minimizable: PropTypes.bool,
+  children: PropTypes.node
+};
+
+export default Component;

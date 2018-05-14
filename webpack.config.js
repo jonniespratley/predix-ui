@@ -9,6 +9,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
 const Jarvis = require('webpack-jarvis');
 const pkg = require('./package.json');
+
 const ROOT_PATH = __dirname;
 
 const config = {
@@ -24,6 +25,7 @@ const config = {
 };
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 const analyzeBundle = new BundleAnalyzerPlugin({
   analyzerMode: 'static',
   reportFilename: 'report.html',
@@ -39,14 +41,14 @@ const EXTRACT_CSS = (process.env.EXTRACT_CSS === true);
 
 
 const extractCss = new ExtractTextPlugin({
-	filename: `[name].css`,
-  //disable: EXTRACT_CSS,
+  filename: '[name].css',
+  // disable: EXTRACT_CSS,
   allChunks: true
 });
 
 const extractSass = new ExtractTextPlugin({
-	filename: process.env.NODE_ENV === 'production' ? `${pkg.name}.min.css` : `${pkg.name}.css`,
-  //disable: process.env.NODE_ENV !== 'production',
+  filename: process.env.NODE_ENV === 'production' ? `${pkg.name}.min.css` : `${pkg.name}.css`,
+  // disable: process.env.NODE_ENV !== 'production',
   allChunks: true
 });
 
@@ -57,7 +59,7 @@ const cssRules = {
   test: /\.module.css$/,
   use: extractCss.extract({
     fallback: 'style-loader',
-    //resolve-url-loader may be chained before sass-loader if necessary
+    // resolve-url-loader may be chained before sass-loader if necessary
     use: [
       {
         loader: 'css-loader',
@@ -91,22 +93,22 @@ const sassRules = {
           localIdentName: '[path]___[name]___[local]___[hash:base64:5]'
         }
       },
-      /*{
+      /* {
         loader: 'postcss-loader',
         options: {
           sourceMap: true
         }
-      },*/
+      }, */
       {
         loader: 'sass-loader',
         options: {
           sourceMap: true,
           importer: require('node-sass-import-once'),
-           importOnce: {
-             index: true,
-             css: true,
-             bower: true
-           }
+          importOnce: {
+            index: true,
+            css: true,
+            bower: true
+          }
         }
       }
     ]
@@ -114,7 +116,7 @@ const sassRules = {
 };
 
 
-//https://github.com/webpack-contrib/svg-inline-loader
+// https://github.com/webpack-contrib/svg-inline-loader
 const svgRules = {
   test: /\.svg$/,
   use: [
@@ -147,7 +149,7 @@ const common = {
       'node_modules'
     ],
     alias: {
-      'styles': './styles'
+      styles: './styles'
     }
   },
   stats: 'full',
@@ -157,7 +159,7 @@ const common = {
         test: /\.js$/,
         enforce: 'pre',
         use: 'eslint-loader',
-        include: [ config.paths.docs, config.paths.src ]
+        include: [config.paths.docs, config.paths.src]
       },
       {
         test: /\.md$/,
@@ -192,15 +194,13 @@ const common = {
   stats: 'minimal'
 };
 
-
-
 const siteCommon = {
   plugins: [
     extractCss,
     extractSass,
     new HtmlWebpackPlugin({
       template: require('html-webpack-template'), // eslint-disable-line global-require
-      //template: './catalog/index.ejs',
+      // template: './catalog/index.ejs',
       inject: false,
       mobile: true,
       title: pkg.name,
@@ -227,14 +227,14 @@ const dev = merge(common, siteCommon, {
     docs: [config.paths.docs]
   },
   plugins: [
-    //new NpmInstallPlugin(),
+    // new NpmInstallPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"development"'
     }),
     new webpack.HotModuleReplacementPlugin(),
     new Jarvis({
-     port: 1337
-   }),
+      port: 1337
+    }),
     extractCss,
     extractSass
   ],
@@ -284,7 +284,6 @@ const ghPages = merge(common, siteCommon, {
     }),
     new ExtractTextPlugin('[name].[chunkhash].css'),
     new webpack.DefinePlugin({
-        // This affects the react lib size
       'process.env.NODE_ENV': '"production"'
     }),
     new webpack.optimize.UglifyJsPlugin({
@@ -328,7 +327,18 @@ const distCommon = {
   },
   entry: config.paths.src,
   externals: {
-    //'styled-components': 'styled-components',
+    'react-popper': {
+      commonjs: 'react-popper',
+      commonjs2: 'react-popper',
+      amd: 'ReactPopper',
+      root: 'ReactPopper'
+    },
+    'prop-types': {
+      commonjs: 'prop-types',
+      commonjs2: 'prop-types',
+      amd: 'PropTypes',
+      root: 'PropTypes'
+    },
     'styled-components': {
       commonjs: 'styled-components',
       commonjs2: 'styled-components',

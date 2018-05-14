@@ -1,4 +1,3 @@
-import Reacpt from 'react';
 import styled, { css } from 'styled-components';
 
 const Label = styled.label`
@@ -9,6 +8,7 @@ const Label = styled.label`
   font-size: 12px;
   color: var(--px-input-label-text-color, #677e8c);
   letter-spacing: var(--px-headings-letter-spacing, 0.3px);
+
   ${props => props.inline && css`
     display: inline-block;
     margin-bottom: 0;
@@ -17,5 +17,7 @@ const Label = styled.label`
     }
   `}
 `;
+
 Label.displayName = 'Label';
+
 export default Label;

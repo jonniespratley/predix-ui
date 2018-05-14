@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const LayoutItem = styled.div`
  
@@ -27,7 +27,7 @@ const LayoutItem = styled.div`
   ${props => props.full && css`
     align-self: stretch;
   `}
-  ${props =>props.center && css`
+  ${props => props.center && css`
     align-self: center;
   `}
   ${props => props.bottom && css`

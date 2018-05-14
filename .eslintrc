@@ -1,5 +1,5 @@
 {
-  "extends": "",
+  "extends": "airbnb",
   "parser": "babel-eslint",
   "env": {
     "browser": true,
@@ -28,8 +28,14 @@
   },
   "overrides": [
     {
-      "files": [ "src/**/*.js"],
-      "excludedFiles": "src/**/*.test.js"
+      "files": [
+        "src/**/*.js",
+        "src/**/*.jsx"
+      ],
+      "excludedFiles": [
+        "src/**/*.stories.js",
+        "src/**/*.test.js"
+      ]
     }
   ]
 }

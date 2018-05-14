@@ -3,7 +3,7 @@
   "description": "px-* web components as React styled components",
   "author": "Jonnie Spratley",
   "user": "jonniespratley",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "license": "",
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
   "browser": "dist/predix-ui.min.js",
   "umd:main": "dist/umd/index.js",
   "main": "dist/predix-ui.min.js",
-  "module": "dist/es/index.js",
+  "module": "src/index.js",
   "config": {
     "library": "PxReact",
     "libraryTarget": "umd"
@@ -25,18 +25,19 @@
     "catalog-start": "catalog start",
     "catalog-build": "catalog build",
     "plop": "./node_modules/.bin/plop",
-    "storybook": "start-storybook -p 8181 -c .storybook",
-    "storybook:build": "build-storybook -c .storybook -o .out",
+    "storybook": "NODE_ENV=dev start-storybook -p 8181 -c .storybook",
+    "storybook:build": "build-storybook -c .storybook -o gh-pages/storybook",
     "docs": "esdoc",
     "dist:icons": "node ./tools/icons-optimize-and-fix.js",
     "start": "webpack-dev-server --env dev",
     "test": "NODE_ENV=test jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
-    "lint": "eslint ./src --cache",
+    "test:generate-output": "jest --json --outputFile=jest-test-results.json",
+    "lint": "eslint ./src !./src/**/*.stories --cache",
     "test:lint": "eslint ./__tests__ ./src/**/*.test.js --cache",
     "gh-pages": "webpack --env ghPages --progress",
-    "gh-pages:deploy": "gh-pages -d gh-pages",
+    "gh-pages:deploy": "npm run storybook:build && gh-pages -d gh-pages",
     "gh-pages:stats": "webpack --env ghPages --profile --json > stats.json",
     "clean": "rimraf dist coverage gh-pages",
     "dist": "NODE_ENV=production ./node_modules/.bin/gulp",
@@ -45,7 +46,9 @@
     "dist:modules": "rimraf ./dist/modules && BABEL_ENV=modules babel ./src --out-dir ./dist/modules",
     "preversion": "npm run test && npm run dist && npm run dist:min && git commit --allow-empty -am 'tag'",
     "prepublish": "npm run dist",
-    "postpublish": "npm run gh-pages && npm run gh-pages:deploy"
+    "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
   },
   "engines": {
     "node": ">=8.0.0",
@@ -56,10 +59,12 @@
     "predix-ui"
   ],
   "pre-push": [
+    "lint",
     "test"
   ],
   "devDependencies": {
     "@storybook/addon-info": "^3.3.10",
+    "@storybook/addon-jest": "^3.4.3",
     "@storybook/addon-knobs": "^3.3.10",
     "@storybook/addon-storyshots": "^3.3.10",
     "@storybook/addon-viewport": "^3.3.15",
@@ -99,6 +104,7 @@
     "esdoc-react-plugin": "^1.0.1",
     "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^4.16.0",
+    "eslint-config-airbnb": "^16.1.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
@@ -133,15 +139,19 @@
     "imports-loader": "^0.7.1",
     "jest": "^22.1.4",
     "jest-styled-components": "^5.0.0",
+    "js-tree": "^2.0.1",
     "json-loader": "^0.5.4",
     "lodash": "^4.17.4",
     "node-sass": "^4.5.3",
     "node-sass-import-once": "^1.2.0",
     "npm-install-webpack-plugin": "^4.0.5",
+    "polished": "^1.9.2",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
+
     "px-table-view": "https://github.com/PredixDev/px-table-view.git#master",
     "px-theme": "https://github.com/PredixDev/px-theme.git#master",
+    "prop-types": "^15.6.0",
     "raf": "^3.4.0",
     "raw-loader": "^0.5.1",
     "react": "^16.2.0",
@@ -149,8 +159,10 @@
     "react-dom": "^16.2.0",
     "react-github-corner": "^2.1.0",
     "react-test-renderer": "16",
+    "react-popper": "^0.8.3",
     "rimraf": "^2.6.1",
     "sass-loader": "^7.0.0",
+    "semantic-release": "^15.1.8",
     "sinon": "^4.2.0",
     "storybook-addon-jsx": "^5.3.0",
     "storybook-readme": "^3.3.0",
@@ -162,6 +174,7 @@
     "symbol-tree": "^3.2.2",
     "sync-exec": "^0.6.2",
     "system-bell-webpack-plugin": "^1.0.0",
+    "travis-deploy-once": "^5.0.0",
     "url-loader": "^0.6.0",
     "wallaby-webpack": "^3.9.4",
     "webpack": "^3.6.0",
@@ -169,17 +182,17 @@
     "webpack-dev-server": "^2.11.1",
     "webpack-jarvis": "^0.2.2",
     "webpack-merge": "^4.1.0",
-    "webpack-stream": "^4.0.0",
-    "polished": "^1.9.2",
-    "prop-types": "^15.6.0",
-    "react-popper": "^0.8.3"
+    "webpack-stream": "^4.0.0"
   },
   "peerDependencies": {
     "file-loader": "^1.1.6",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "styled-components": "^3.2.3"
+    "react-popper": "^0.8.3",
+    "styled-components": "^3.2.3",
+    "prop-types": "^15.6.0"
   },
+
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>__tests__/setup.js",
     "verbose": true,

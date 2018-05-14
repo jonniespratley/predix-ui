@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * observers: [
     '_selectedChanged(selected.*)',
@@ -12,7 +13,6 @@
  */
 export default class AssetSelectable {
   constructor(props) {
-    
     this.multiSelect = props.multiSelect || false;
     this._lastSelection = {
       source: null,
@@ -20,17 +20,17 @@ export default class AssetSelectable {
       item: null
     };
 
-    this.selected =  this.multiSelect ? [] : null;
-    this.selectedRoute =  this.multiSelect ? [] : null;
-    this.selectedMeta =  this.multiSelect ? [] : null;
+    this.selected = this.multiSelect ? [] : null;
+    this.selectedRoute = this.multiSelect ? [] : null;
+    this.selectedMeta = this.multiSelect ? [] : null;
   }
 
-  set(name, val){
+  set(name, val) {
     this[name] = val;
   }
 
-  fire(name, data){
-    //console.log('fire', name, data);
+  fire(name, data) {
+    console.log('fire', name, data);
   }
 
   get multiSelect() {
@@ -85,10 +85,9 @@ export default class AssetSelectable {
     if (this._assetGraph.hasNode(item)) {
       this._selectAsset(item, source);
       return this.selected;
-    } else {
-      throw new Error(`The following item could not be found in the items graph:
-      ${JSON.stringify(item)}`);
     }
+    throw new Error(`The following item could not be found in the items graph:
+      ${JSON.stringify(item)}`);
   }
 
   /**
@@ -143,7 +142,7 @@ export default class AssetSelectable {
       };
     }
     if (selected.base && Array.isArray(selected.base) && selected.base.length) {
-      return selected.base.map(item => {
+      return selected.base.map((item) => {
         const {
           path,
           route,
@@ -223,11 +222,11 @@ export default class AssetSelectable {
 
     const item = this._assetGraph.getNodeAtRoute(route, this.keys.id);
     if (item === this.selected) {
-      return;
+
     } else if (item) {
       this.select(item, 'ROUTE_CHANGED');
     } else {
-      throw new Error(`The route ${JSON.stringify(route)} could not be found in the items graph.`)
+      throw new Error(`The route ${JSON.stringify(route)} could not be found in the items graph.`);
     }
   }
 
@@ -242,7 +241,7 @@ export default class AssetSelectable {
     if (Array.isArray(route)) {
       for (let i = 0; i < route.length; i++) {
         this._squashSelectedChange = true;
-        this.selected = route.map(route => {
+        this.selected = route.map((route) => {
           const item = this._assetGraph.getNodeAtRoute(route, this.keys.id);
           if (!item) {
             throw new Error(`The following item could not be found in the items graph:
@@ -261,28 +260,27 @@ export default class AssetSelectable {
    * infinite loop of `selected` observer triggering `selectedRoute` observer.
    */
   _selectedChanged(ref) {
-      if (!ref || !ref.path || this._squashSelectedChange || !this._assetGraph) return;
+    if (!ref || !ref.path || this._squashSelectedChange || !this._assetGraph) return;
 
-      if (!this.multiSelect && ref.path === 'selected' && typeof this.selectedRoute !== 'undefined') {
-        this._updateSelectedRoute(ref.base);
-      }
-
-      if (this.multiSelect && (ref.path === 'selected' || ref.path === 'selected.splices') && typeof this.selectedRoute !== 'undefined') {
-        this._updateSelectedRouteMulti(ref.base);
-      }
+    if (!this.multiSelect && ref.path === 'selected' && typeof this.selectedRoute !== 'undefined') {
+      this._updateSelectedRoute(ref.base);
     }
 
-    _checkIfEmpty(item) {
-      if (Array.isArray(item)) return !!item.length;
-      return !!item;
+    if (this.multiSelect && (ref.path === 'selected' || ref.path === 'selected.splices') && typeof this.selectedRoute !== 'undefined') {
+      this._updateSelectedRouteMulti(ref.base);
     }
+  }
+
+  _checkIfEmpty(item) {
+    if (Array.isArray(item)) return !!item.length;
+    return !!item;
+  }
 
   _updateSelectedRoute(selected) {
     if (this._checkIfEmpty(selected)) {
       if (!this._assetGraph.hasNode(selected)) {
         throw new Error(`The following item could not be found in the items graph:
           ${JSON.stringify(selected)}`);
-        return;
       }
 
       const route = this._assetGraph.getRoute(selected, this.keys.id);
@@ -301,7 +299,7 @@ export default class AssetSelectable {
   _updateSelectedRouteMulti(selected) {
     if (selected && Array.isArray(selected) && selected.length) {
       this._squashSelectedRouteChange = true;
-      this.selectedRoute = selected.map(item => {
+      this.selectedRoute = selected.map((item) => {
         if (!this._assetGraph.hasNode(item)) {
           throw new Error(`The following item could not be found in the items graph:
             ${JSON.stringify(item)}`);
@@ -318,25 +316,25 @@ export default class AssetSelectable {
   }
 
   __selectInitialAssets() {
-      if (!this.multiSelect && this.selected && !this.selectedRoute) {
-        this._updateSelectedRoute(this.selected);
-      } else if (!this.multiSelect && !this.selected && this.selectedRoute) {
-        this._updateSelectedFromRoute(this.selectedRoute);
-      } else if (this.multiSelect && !!this.selected && this.selected.length && !this.selectedRoute.length) {
-        this._updateSelectedRouteMulti(this.selected);
-      } else if (this.multiSelect && !!this.selected && !this.selected.length && this.selectedRoute.length) {
-        this._updateSelectedFromRouteMulti(this.selected);
-      }
+    if (!this.multiSelect && this.selected && !this.selectedRoute) {
+      this._updateSelectedRoute(this.selected);
+    } else if (!this.multiSelect && !this.selected && this.selectedRoute) {
+      this._updateSelectedFromRoute(this.selectedRoute);
+    } else if (this.multiSelect && !!this.selected && this.selected.length && !this.selectedRoute.length) {
+      this._updateSelectedRouteMulti(this.selected);
+    } else if (this.multiSelect && !!this.selected && !this.selected.length && this.selectedRoute.length) {
+      this._updateSelectedFromRouteMulti(this.selected);
     }
+  }
 
-    _routeIsDifferent(r1, r2) {
-      if (!r1 || !r2) return true;
-      if (r1.length !== r2.length) return true;
-      for (let i = 0; i < r1.length; i++) {
-        if (r1[i] !== r2[i]) return true;
-      }
-      return false;
+  _routeIsDifferent(r1, r2) {
+    if (!r1 || !r2) return true;
+    if (r1.length !== r2.length) return true;
+    for (let i = 0; i < r1.length; i++) {
+      if (r1[i] !== r2[i]) return true;
     }
+    return false;
+  }
 
   _selectAsset(item, source) {
     const {
@@ -344,9 +342,9 @@ export default class AssetSelectable {
       path
     } = this._assetGraph.getInfo(item, this.keys.id);
     this._lastSelection = {
-      item: item,
-      source: source,
-      route: route
+      item,
+      source,
+      route
     };
     if (!this.multiSelect) {
       this.selected = item;

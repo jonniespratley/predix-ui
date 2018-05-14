@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import Label from './Label';
 
@@ -9,13 +10,26 @@ const FormFieldStyled = styled.div`
         margin-bottom: 2.6rem;
     }
 `;
-//FormField.displayName = 'FormField';
 
-const FormField = ({label, htmlFor, children}) => (
-    <FormFieldStyled>
-        {label && <Label htmlFor={htmlFor}>{label}</Label>}
-        {children}
-    </FormFieldStyled>
+const FormField = ({ label, htmlFor, children }) => (
+  <FormFieldStyled>
+    {label && <Label htmlFor={htmlFor}>{label}</Label>}
+    {children}
+  </FormFieldStyled>
 );
+
 FormField.displayName = 'FormField';
+
+FormField.defaultProps = {
+  label: null,
+  htmlFor: null,
+  children: null
+};
+
+FormField.propTypes = {
+  label: PropTypes.string,
+  htmlFor: PropTypes.string,
+  children: PropTypes.node
+};
+
 export default FormField;

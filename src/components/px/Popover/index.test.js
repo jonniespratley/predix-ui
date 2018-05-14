@@ -1,15 +1,15 @@
-import { expect } from 'chai';
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import PxPopover from './';
 
-describe('px-popover', () => {
-  test('should...', () =>{
-    const wrapper = shallow(
-      <PxPopover/>
-    );
+describe('Popover', () => {
+  test('should render', () =>{
+    const wrapper = shallow(<PxPopover/>);
     console.log(wrapper.debug());
-    expect(true).to.equal(true);
+
+    const tree = renderer.create(<PxPopover/>).toJSON();
+    expect(tree).toMatchSnapshot();
   });
   //expect(wrapper.find('.label')).to.have.length(1);
   //expect(wrapper.find('.delta')).to.have.length(1);

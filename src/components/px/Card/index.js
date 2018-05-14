@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
 import Icon from '../IconSet/Icon';
-import styled, {css} from 'styled-components';
 
 const Card = styled.div`
   display: block;
@@ -67,20 +68,36 @@ const CardComponent = ({
   fullBleed,
   children
 }) => (
-  <Card className='px-card'>
-    <CardHeader className='px-card-header'>
+  <Card className="px-card">
+    <CardHeader className="px-card-header">
       <CardTitle>
-        {icon && <CardIcon><Icon icon={icon} size={22} /></CardIcon>}
+        {icon && <CardIcon><Icon icon={icon} /></CardIcon>}
         {headerText}
       </CardTitle>
       {actions && actions()}
     </CardHeader>
-    <CardBody fullBleed={fullBleed} className='px-card-body'>
+    <CardBody fullBleed={fullBleed} className="px-card-body">
       {children}
     </CardBody>
   </Card>
 );
 
 CardComponent.displayName = 'Card';
+
+CardComponent.defaultProps = {
+  headerText: null,
+  icon: null,
+  actions: null,
+  fullBleed: null,
+  children: null
+};
+
+CardComponent.propTypes = {
+  headerText: PropTypes.string,
+  icon: PropTypes.string,
+  actions: PropTypes.func,
+  fullBleed: PropTypes.bool,
+  children: PropTypes.node
+};
 
 export default CardComponent;
