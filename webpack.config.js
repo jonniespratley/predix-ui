@@ -60,17 +60,15 @@ const cssRules = {
   use: extractCss.extract({
     fallback: 'style-loader',
     // resolve-url-loader may be chained before sass-loader if necessary
-    use: [
-      {
-        loader: 'css-loader',
-        options: {
-          importLoaders: 1,
-          modules: true,
-          sourceMap: true,
-          camelCase: true
-        }
+    use: [{
+      loader: 'css-loader',
+      options: {
+        importLoaders: 1,
+        modules: true,
+        sourceMap: true,
+        camelCase: true
       }
-    ]
+    }]
   })
 };
 
@@ -82,35 +80,34 @@ const sassRules = {
   test: /\.s(a|c)ss$/,
   use: extractSass.extract({
     fallback: 'style-loader',
-    use: [
-      {
-        loader: 'css-loader',
-        options: {
-          modules: false,
-          importLoaders: 1,
-          minimize: true,
-          sourceMap: true,
-          localIdentName: '[path]___[name]___[local]___[hash:base64:5]'
-        }
-      },
+    use: [{
+      loader: 'css-loader',
+      options: {
+        modules: false,
+        importLoaders: 1,
+        minimize: true,
+        sourceMap: true,
+        localIdentName: '[path]___[name]___[local]___[hash:base64:5]'
+      }
+    },
       /* {
         loader: 'postcss-loader',
         options: {
           sourceMap: true
         }
       }, */
-      {
-        loader: 'sass-loader',
-        options: {
-          sourceMap: true,
-          importer: require('node-sass-import-once'),
-          importOnce: {
-            index: true,
-            css: true,
-            bower: true
-          }
+    {
+      loader: 'sass-loader',
+      options: {
+        sourceMap: true,
+        importer: require('node-sass-import-once'),
+        importOnce: {
+          index: true,
+          css: true,
+          bower: true
         }
       }
+    }
     ]
   })
 };
@@ -119,15 +116,13 @@ const sassRules = {
 // https://github.com/webpack-contrib/svg-inline-loader
 const svgRules = {
   test: /\.svg$/,
-  use: [
-    {
-      loader: 'svg-inline-loader',
-      options: {
-        classPrefix: false,
-        idPrefix: false
-      }
+  use: [{
+    loader: 'svg-inline-loader',
+    options: {
+      classPrefix: false,
+      idPrefix: false
     }
-  ]
+  }]
 };
 
 /**
@@ -154,44 +149,40 @@ const common = {
   },
   stats: 'full',
   module: {
-    rules: [
-      {
-        test: /\.js$/,
-        enforce: 'pre',
-        use: 'eslint-loader',
-        include: [config.paths.docs, config.paths.src]
-      },
-      {
-        test: /\.md$/,
-        use: ['catalog/loader', 'raw-loader']
-      },
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'svg-inline-loader',
-            options: {
-              classPrefix: false,
-              idPrefix: false
-            }
-          }
-        ]
-      },
-      {
-        test: /\.(jpg|png)$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 10000
-          }
+    rules: [{
+      test: /\.js$/,
+      enforce: 'pre',
+      use: 'eslint-loader',
+      include: [config.paths.docs, config.paths.src]
+    },
+    {
+      test: /\.md$/,
+      use: ['catalog/loader', 'raw-loader']
+    },
+    {
+      test: /\.svg$/,
+      use: [{
+        loader: 'svg-inline-loader',
+        options: {
+          classPrefix: false,
+          idPrefix: false
+        }
+      }]
+    },
+    {
+      test: /\.(jpg|png)$/,
+      use: {
+        loader: 'url-loader',
+        options: {
+          limit: 10000
         }
       }
+    }
     ]
   },
   plugins: [
     new SystemBellPlugin()
-  ],
-  stats: 'minimal'
+  ]
 };
 
 const siteCommon = {
@@ -239,22 +230,21 @@ const dev = merge(common, siteCommon, {
     extractSass
   ],
   module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            cacheDirectory: true
-          }
-        },
-        include: [
-          config.paths.docs,
-          config.paths.src
-        ]
+    rules: [{
+      test: /\.js$/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          cacheDirectory: true
+        }
       },
-      cssRules,
-      sassRules
+      include: [
+        config.paths.docs,
+        config.paths.src
+      ]
+    },
+    cssRules,
+    sassRules
     ]
   },
   devServer: {
@@ -293,7 +283,9 @@ const ghPages = merge(common, siteCommon, {
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks: ({ resource }) => (
+      minChunks: ({
+        resource
+      }) => (
         resource &&
         resource.indexOf('node_modules') >= 0 &&
         resource.match(/\.js$/)
@@ -317,6 +309,39 @@ const ghPages = merge(common, siteCommon, {
 });
 
 
+const externals = {
+  'react-popper': {
+    commonjs: 'react-popper',
+    commonjs2: 'react-popper',
+    amd: 'ReactPopper',
+    root: 'ReactPopper'
+  },
+  'prop-types': {
+    commonjs: 'prop-types',
+    commonjs2: 'prop-types',
+    amd: 'PropTypes',
+    root: 'PropTypes'
+  },
+  'styled-components': {
+    commonjs: 'styled-components',
+    commonjs2: 'styled-components',
+    amd: 'styled',
+    root: 'styled'
+  },
+  react: {
+    commonjs: 'react',
+    commonjs2: 'react',
+    amd: 'React',
+    root: 'React'
+  },
+  'react-dom': {
+    commonjs: 'react-dom',
+    commonjs2: 'react-dom',
+    amd: 'ReactDOM',
+    root: 'ReactDOM'
+  }
+};
+
 const distCommon = {
   devtool: 'source-map',
   resolve: common.resolve,
@@ -326,47 +351,16 @@ const distCommon = {
     library: pkg.config.library
   },
   entry: config.paths.src,
-  externals: {
-    'react-popper': {
-      commonjs: 'react-popper',
-      commonjs2: 'react-popper',
-      amd: 'ReactPopper',
-      root: 'ReactPopper'
-    },
-    'prop-types': {
-      commonjs: 'prop-types',
-      commonjs2: 'prop-types',
-      amd: 'PropTypes',
-      root: 'PropTypes'
-    },
-    'styled-components': {
-      commonjs: 'styled-components',
-      commonjs2: 'styled-components',
-      amd: 'styled-components'
-    },
-    react: {
-      commonjs: 'react',
-      commonjs2: 'react',
-      amd: 'React',
-      root: 'React'
-    },
-    'react-dom': {
-      commonjs: 'react-dom',
-      commonjs2: 'react-dom',
-      amd: 'ReactDOM',
-      root: 'ReactDOM'
-    }
-  },
+  externals,
   stats: 'verbose',
   module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: 'babel-loader',
-        include: config.paths.src
-      },
-      sassRules,
-      cssRules
+    rules: [{
+      test: /\.js$/,
+      use: 'babel-loader',
+      include: config.paths.src
+    },
+    sassRules,
+    cssRules
     ]
   },
   plugins: [
@@ -382,6 +376,7 @@ const dist = merge(distCommon, {
     filename: `${config.filename}.js`
   }
 });
+
 const distMin = merge(distCommon, {
   devtool: 'source-map',
   output: {
@@ -397,12 +392,22 @@ const distMin = merge(distCommon, {
   ]
 });
 
+// This bundle has styled components.
+const distBundle = merge(distMin, {
+  devtool: 'source-map',
+  output: {
+    filename: `${config.filename}.bundle.min.js`
+  }
+});
+
+
 module.exports = (env) => {
   process.env.BABEL_ENV = env;
   const targets = {
     dev,
     dist,
     distMin,
+    distBundle,
     ghPages
   };
   const c = targets[env] ? targets[env] : common;

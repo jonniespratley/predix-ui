@@ -16,120 +16,31 @@
       }
     </style>
 
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.0.0/umd/react.development.js'></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.0.0/umd/react-dom.development.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.0.0/umd/react.development.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.0.0/umd/react-dom.development.js'></script>
+    <script src="https://unpkg.com/prop-types@15.6.1/prop-types.js"></script>
+    <script src="https://unpkg.com/styled-components/dist/styled-components.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.14.3/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/react-popper@0.10.4/dist/umd/react-popper.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   </head>
 
   <body translate="no">
-    <div id="root"><!-- App loaded here --></div>
 
+
+
+    <div id="rootNode"><!-- App loaded here --></div>
 
 
     <!-- theme styles -->
-    <link rel="stylesheet" href="../dist/css/theme/px-theme.css"/>
-
-    <!-- base styles -->
-    <link rel="stylesheet" href="../dist/predix-ui.min.css"/>
-
+    <link rel="stylesheet" href="../dist/px-theme.css"/>
     <script src="../dist/predix-ui.min.js"></script>
+    <script src="./test.js"></script>
     <style media="screen">
       :root{
         --px-drawer-background-color: red;
       }
-
     </style>
-    <script type="text/babel">
-    const { Component } = React;
-    const { render } = ReactDOM;
-    const {
-      AppHeader,
-      AppNav,
-      Button,
-      Card,
-      Drawer,
-      Navbar,
-      KeyValuePair,
-      Grid,
-      Gauge,
-      Layout,
-      Spinner,
-      ProgressBar,
-      Theme
-      } = PxReact;
-
-
-    const dashboardData = {
-      title: 'Predix Sample Application',
-      navItems: [{"label":"Home","id":"home","icon":"px-fea:home"},{"label":"Alerts","id":"alerts","icon":"px-fea:alerts","metadata":{"openCases":"12","closedCases":"82"}},{"label":"Assets","id":"assets","icon":"px-fea:asset","children":[{"label":"Asset #1","id":"a1"},{"label":"Asset #2","id":"a2"}]},{"label":"Dashboards","path":"dashboards","icon":"px-fea:dashboard","subitems":[{"label":"See Live Truck View","path":"trucks","icon":"px-obj:truck"},{"label":"Track Orders","path":"orders","icon":"px-fea:orders"},{"label":"Analyze Invoices","path":"invoices","icon":"px-fea:templates"}]}],
-      keyVals: [
-        {label: 'Total Alerts', value: 21},
-        {label: 'Connected Devices', value: 583},
-
-        {label: 'Utilization', value: '89', uom: '%'},
-        {label: 'Faults', value: 3},
-        {label: 'Output', value: 53, uom: 'mw'}
-      ],
-      cards: [
-        { title: 'Card 1', children: [ <div>Lorem ipsum dolor sit</div> ] },
-        { title: 'Card 2', children: [ <div>Lorem ipsum dolor sit</div> ] },
-        { title: 'Card 3', children: [ <div>Lorem ipsum dolor sit</div> ] },
-        { title: 'Card 4', children: [ <div>Lorem ipsum dolor sit</div> ] },
-        { title: 'Card 5', children: [ <div>Lorem ipsum dolor sit</div> ] },
-        { title: 'Card 6', children: [ <div>Lorem ipsum dolor sit</div> ] },
-        { title: 'Card 7', children: [ <div>Lorem ipsum dolor sit</div> ] }
-      ]
-    };
-
-    /**
-     * Example App
-     */
-    class App extends Component {
-      constructor(props){
-        super(props);
-      }
-
-      render(){
-        return (
-
-            <AppHeader
-              title={dashboardData.title}
-              items={dashboardData.navItems}>
-
-              <Card headerText='West Coast Fleet'>
-                <Grid container wrap justify>
-                  {dashboardData.keyVals.map((item, index) => (
-
-                      <KeyValuePair
-                        key={index}
-                        className='u-p'
-                        label={item.label}
-                        uom={item.uom}
-                        value={item.value}
-                        size="beta"/>
-                  ))}
-                </Grid>
-              </Card>
-
-              <Grid container wrap>
-              {dashboardData.cards && dashboardData.cards.map((card, index) => (
-                <Card key={index}
-                  headerText={card.title}>
-                  {card.children}
-                </Card>
-              ))}
-              </Grid>
-            </AppHeader>
-
-        )
-      }
-    }
-
-    render(<App />, document.querySelector('#root'));
-
-    </script>
-
   </body>
-
 </html>

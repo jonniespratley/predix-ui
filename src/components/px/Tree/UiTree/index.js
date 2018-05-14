@@ -3,7 +3,38 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Tree from './tree';
 import Node from './TreeNode';
-import './styles.scss';
+import styled from 'styled-components';
+
+const MTree = styled.div`
+  position: relative; overflow: hidden; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
+  .collapse.caret-right { display: inline; }
+  .collapse.caret-right { display: inline; }
+  .node {
+    display: flex; padding: .2rem; align-items: center; line-height: 1.8rem; font-size: 1rem;
+    flex: 1;
+    &:hover{
+      color: var(--px-tree-text-color--hover, #000);
+      background-color: var(--px-tree-background-color--hover, #d3d3d3);
+    }
+  }
+  .is-active {
+    color: var(--px-tree-text-color--selected, #fff);
+    background-color: var(--px-tree-background-color--selected, gray);
+  }
+  .m-draggable { position: absolute; opacity: 0.8; }
+  .placeholder > * { visibility: hidden; }
+  .placeholder { border: 1px dashed var(--px-tree-placeholder-border-color, gray);; }
+  .inner {
+    position: relative;
+    cursor: pointer;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .collapse { cursor: pointer; }
+  .caret-down:before { content: '\\25BE'; }
+  .caret-right:before { content: '\\25B8'; }
+`;
 
 class UITree extends Component {
   constructor(props) {
@@ -69,7 +100,7 @@ class UITree extends Component {
     const draggingDom = this.getDraggingDom();
 
     return (
-      <div className="m-tree">
+      <MTree className="m-tree">
         {draggingDom}
         <Node
           tree={tree}
@@ -80,7 +111,7 @@ class UITree extends Component {
           onCollapse={this.toggleCollapse}
           dragging={dragging && dragging.id}
         />
-      </div>
+      </MTree>
     );
   }
 

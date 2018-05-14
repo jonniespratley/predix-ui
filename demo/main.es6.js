@@ -1,82 +1,66 @@
-  const { Component } = React;
-  const { render } = ReactDOM;
-  const {
-    AppHeader,
-    AppNav,
-    Button,
-    Card,
-    Drawer,
-    Navbar,
-    KeyValuePair,
-    Grid,
-    Gauge,
-    Layout,
-    Spinner,
-    ProgressBar,
-    Theme
-    } = PxReact;
+const { Component } = React;
+const { render } = ReactDOM;
+const {
+  AppNav,
+  Button,
+  Card,
+  Notification
+} = PxReact;
 
-
-  const dashboardData = {
-    title: 'Predix Sample Application',
-    navItems: [
-      { "path": "dashboard", "icon": "px-nav:home", "label": "Dashboard" },
-      { "path": "details", "icon": "px-nav:list", "label": "Details" },
-      { "path": "alerts","icon": "px-nav:home", "label": "Alerts" }
-    ],
-    keyVals: [
-      {label: 'New Alerts', value: 21},
-      {label: 'Utilization', value: '70', uom: '%'},
-      {label: 'Faults', value: 3},
-      {label: 'Output', value: 53, uom: 'mw'}
-    ],
-    cards: [
-      { title: 'Card 1', children: [ <div>Lorem ipsum dolor sit</div> ] },
-      { title: 'Card 2', children: [ <div>Lorem ipsum dolor sit</div> ] },
-      { title: 'Card 3', children: [ <div>Lorem ipsum dolor sit</div> ] }
-    ]
-  };
-
-
+const navItems = [
+  {
+    id: 'home', path: '/', label: 'Home', icon: 'px-fea:home'
+  },
+  {
+    id: 'dashboard', path: '/dashboard', label: 'Dashboard', icon: 'px-fea:dashboard'
+  },
+  {
+    id: 'about', path: '/about', label: 'About', icon: 'px-fea:catalog'
+  },
+  {
+    id: 'topics', path: '/topics', label: 'Topics', icon: 'px-fea:log'
+  },
+  {
+    id: 'users', path: '/users', label: 'Users', icon: 'px-fea:users'
+  }
+];
+const dashboardData = {
+  title: 'Predix Sample Application',
+  navItems,
+  keyVals: [
+    { label: 'New Alerts', value: 21 },
+    { label: 'Utilization', value: '70', uom: '%' },
+    { label: 'Faults', value: 3 },
+    { label: 'Output', value: 53, uom: 'mw' }
+  ]
+};
 
   /**
    * Example App
    */
-  class App extends Component {
-    constructor(props){
-      super(props);
-    }
+const App = () => (
+  <div>
+    <AppNav
+      title={dashboardData.title}
+      items={dashboardData.navItems}
+    />
+    <div className="u-">
+      <br />
+      <Notification
+        type="info"
+        statusIcon="px-utl:clock"
+        opened
+        small
+      >
+      Welcome back
+      </Notification>
+      <br />
 
-    render(){
-      return (
-        <Theme dark>
-          <AppHeader
-            title={dashboardData.title}
-            items={dashboardData.navItems}>
+      <Card headerText="My Card">
+        This is the main content area.
+      </Card>
+    </div>
+  </div>
+);
 
-            <Card headerText='West Coast Fleet'>
-              <Layout container center middle wrap>
-                {dashboardData.keyVals.map((item, index) => (
-                  <Layout item key={index} xs={2} md={4} xl={6}>
-                    <KeyValuePair
-                      label={item.label}
-                      uom={item.uom}
-                      value={item.value}
-                    size="beta"/>
-                  </Layout>
-                ))}
-              </Layout>
-            </Card>
-            {dashboardData.cards && dashboardData.cards.map((card, index) => (
-              <Card key={index}
-                headerText={card.title}>
-                {card.children}
-              </Card>
-            ))}
-          </AppHeader>
-        </Theme>
-      )
-    }
-  }
-
-  render(<App />, document.querySelector('#app'));
+render(<App />, document.querySelector('#rootNode'));
