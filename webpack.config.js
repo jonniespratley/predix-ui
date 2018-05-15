@@ -375,17 +375,17 @@ const dist = merge(distCommon, {
   }
 });
 
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+
 const distMin = merge(distCommon, {
   devtool: 'source-map',
   output: {
     filename: `${config.filename}.min.js`
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
+    new UglifyJSPlugin({
       sourceMap: true,
-      compress: {
-        warnings: false
-      }
+      extractComments: true
     })
   ]
 });

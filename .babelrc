@@ -4,8 +4,7 @@
   ],
   "presets": [
     "react",
-    "stage-0",
-    ["env", {
+    "stage-0", ["env", {
       "targets": {
         "browsers": ["last 2 versions"]
       }
@@ -14,8 +13,9 @@
   "plugins": [
     "babel-plugin-styled-components",
     "transform-decorators",
-    "transform-class-properties",
-    ["transform-react-remove-prop-types",{"mode": "wrap"}]
+    "transform-class-properties", ["transform-react-remove-prop-types", {
+      "mode": "wrap"
+    }]
   ],
   "env": {
     "dev": {
@@ -27,7 +27,9 @@
     },
     "modules": {
       "presets": [
-        [ "env", { "modules": "umd" } ]
+        ["env", {
+          "modules": "umd"
+        }]
       ],
       "plugins": [
         "babel-plugin-styled-components"
@@ -35,7 +37,9 @@
     },
     "es6": {
       "presets": [
-        [ "env", { "modules": false } ]
+        ["env", {
+          "modules": false
+        }]
       ],
       "plugins": [
         "babel-plugin-styled-components"

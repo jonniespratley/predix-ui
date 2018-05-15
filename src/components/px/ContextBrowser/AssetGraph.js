@@ -1,10 +1,11 @@
-/* eslint-disable */
-import SymbolTree from 'symbol-tree';
+/* eslint no-plusplus: 0, no-continue: 0, max-len: 0, no-mixed-operators: 0 */
+// import SymbolTree from 'symbol-tree';
+const SymbolTree = require('symbol-tree');
 
 export class AssetGraph {
-  constructor(options) {
+  constructor(options = {}) {
     /* Save options  */
-    this._options = {};
+    this._options = options;
 
     /* Add default keys */
     this._defaultKeys = {
@@ -20,17 +21,19 @@ export class AssetGraph {
     this._symbol = Symbol('AssetGraph data');
   }
 
-  _node(object) {
+  _node(obj) {
+    const object = obj;
     const node = object[this._symbol];
 
     if (node) {
       return node;
     }
-    return object[this._symbol] = {
+    object[this._symbol] = {
       isExhausted: null,
       isTerminal: null,
       isSelectable: null
     };
+    return object[this._symbol];
   }
 
   _getKey(key, val) {
@@ -166,7 +169,9 @@ export class AssetGraph {
 
     while (!foundItem && items.length > 0 && searchRoute.length > 0) {
       const item = items.shift();
-      if (item[_routeKey] === searchRoute[0] && this._tree.childrenCount(item) > 0 && searchRoute.length !== 1) {
+      if (item[_routeKey] === searchRoute[0]
+          && this._tree.childrenCount(item) > 0
+          && searchRoute.length !== 1) {
         searchRoute.shift();
         items = this._tree.childrenToArray(item).slice(0);
         continue;
@@ -247,9 +252,9 @@ export class AssetGraph {
     const isRecursive = typeof options === 'object' && typeof options.recursive === 'boolean' ? options.recursive : false;
     for (let i = 0; i < childArray.length; i++) {
       const info = this._node(childArray[i]);
-      info.isTerminal = childArray[i].hasOwnProperty('isTerminal') ? childArray[i].isTerminal : null;
-      info.isExhausted = childArray[i].hasOwnProperty('isExhausted') ? childArray[i].isExhausted : null;
-      info.isSelectable = childArray[i].hasOwnProperty('isSelectable') ? childArray[i].isSelectable : null;
+      info.isTerminal = childArray[i].isTerminal ? childArray[i].isTerminal : null;
+      info.isExhausted = childArray[i].isExhausted ? childArray[i].isExhausted : null;
+      info.isSelectable = childArray[i].isSelectable ? childArray[i].isSelectable : null;
       this._tree.appendChild(parent, childArray[i]);
       if (isRecursive && typeof childArray[i][childKey] === 'object' && Array.isArray(childArray[i][childKey]) && childArray[i][childKey].length) {
         this.addChildren(childArray[i], childArray[i][childKey], {
@@ -260,13 +265,13 @@ export class AssetGraph {
     }
 
     if (typeof options === 'object' && typeof options.isExhausted === 'boolean') {
-      const isExhausted = options.isExhausted;
+      const { isExhausted } = options;
       const info = this._node(parent);
       info.isExhausted = isExhausted;
     }
 
     if (typeof options === 'object' && typeof options.isSelectable === 'boolean') {
-      const isSelectable = options.isSelectable;
+      const { isSelectable } = options;
       const info = this._node(parent);
       info.isSelectable = isSelectable;
     }
@@ -284,7 +289,7 @@ export class AssetGraph {
    * @param  {Object|Array<Object>} children
    * @return {Array<Object>|undefined} the updated child array of the node
    */
-  removeChildren(node, children, options) {
+  removeChildren(node, children) {
     if (typeof children !== 'object' || Array.isArray(children) && !children.length) {
       throw new Error('A child object or array of child objects is required.');
     }
@@ -310,7 +315,10 @@ export class AssetGraph {
       if (!this.hasNode(childArray[i])) {
         throw new Error('Child node(s) cannot be removed from the graph if it they were never added');
       }
-      if (node !== null && this.getParent(childArray[i]) !== parent || node == null && this.getParent(childArray[i]) !== null) {
+      if (node !== null
+        && this.getParent(childArray[i]) !== parent
+        || node == null
+        && this.getParent(childArray[i]) !== null) {
         throw new Error('Child node(s) passed to "removeChildren" method must be children of the given parent');
       }
       this._tree.remove(childArray[i]);

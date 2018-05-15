@@ -44,6 +44,7 @@
     "dist:es6": "rimraf ./dist/es6 && BABEL_ENV=es6 babel ./src --out-dir ./dist/es6",
     "dist:min": "NODE_ENV=production webpack --env distMin --progress",
     "dist:modules": "rimraf ./dist/modules && BABEL_ENV=modules babel ./src --out-dir ./dist/modules",
+    "build": "NODE_ENV=production webpack --env dist --progress",
     "preversion": "npm run test && npm run dist && npm run dist:min && git commit --allow-empty -am 'tag'",
     "prepublish": "npm run dist",
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
@@ -174,6 +175,7 @@
     "sync-exec": "^0.6.2",
     "system-bell-webpack-plugin": "^1.0.0",
     "travis-deploy-once": "^5.0.0",
+    "uglifyjs-webpack-plugin": "^1.2.5",
     "url-loader": "^0.6.0",
     "wallaby-webpack": "^3.9.4",
     "webpack": "^3.6.0",
@@ -200,7 +202,6 @@
     "testEnvironment": "jsdom",
     "collectCoverage": true,
     "testResultsProcessor": "./node_modules/jest-html-reporter",
-
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
