@@ -153,15 +153,13 @@ class AppNavComponent extends React.Component {
 
   handleClick = (val, node) => {
     const child = node;
-    console.log('handleClick', val, node);
-    const c = val;
     const propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : val);
     const index = (this.props.propForSelect ? child[this.props.propForSelect] : this._getIndexForValue(propForSelect));/* eslint-disable-line */
     let item = this._getValueForIndex(index); /* eslint-disable-line */
 
     if (child && child.children) {
       child.selected = true;
-      console.warn('Item has children, do not set active');
+      //  console.warn('Item has children, do not set active');
       // return;
     }
 
