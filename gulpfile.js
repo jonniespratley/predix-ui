@@ -250,8 +250,9 @@ gulp.task('babel-es6', 'Run scripts through babel to es6', () => {
   return gulp.src(config.scripts.src)
   //  .pipe($.filelog())
     .pipe(babel({
-      plugins: ['transform-class-properties'],
-      presets: ['env']
+      comments: false,
+      compact: true,
+      minified: true
     }))
     .pipe($.size())
     .pipe(gulp.dest('./dist/es'));
@@ -263,8 +264,7 @@ gulp.task('babel-modules', 'Run scripts through babel to modules', () => {
   // .pipe($.filelog())
     .pipe(babel({
       comments: false,
-      plugins: ['transform-class-properties'],
-      extends: path.resolve(__dirname, '.babelrc')
+      minified: true
     }))
     .pipe($.size())
     .pipe(gulp.dest('./dist/umd'));
@@ -276,9 +276,7 @@ gulp.task('compile:demo', () => gulp.src('./demo/**/*.es6.js')
     comments: false,
     extends: path.resolve(__dirname, '.babelrc')
   }))
-  .pipe($.rename({
-    suffix: '.min'
-  }))
+  .pipe($.rename('main.js'))
   .pipe($.size())
   .pipe(gulp.dest('./demo')));
 gulp.task('watch', ['sass:watch', 'autoprefixer:watch']);
@@ -294,10 +292,8 @@ gulp.task('styles', 'Run bower, sass and cssmin', gulpSequence(
 ));
 
 // TODO: Handle all the scripts for right now
-gulp.task('scripts', 'Run lint, babel and webpack.', gulpSequence(
-  'lint',
-  'babel-es6',
-  'babel-modules',
+gulp.task('scripts', 'Run lint, babel and webpack.', ['lint'], gulpSequence(
+  ['compile:demo', 'babel-es6', 'babel-modules'],
   'webpack'
 ));
 
@@ -305,7 +301,7 @@ gulp.task('bower', () => bower());
 
 gulp.task('dist', 'Lint, build ES6 and modules.', gulpSequence(
   'clean:dist',
-  'styles',
+  // 'styles',
   'scripts'
 ));
 

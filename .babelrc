@@ -32,7 +32,8 @@
         }]
       ],
       "plugins": [
-        "babel-plugin-styled-components"
+        "babel-plugin-styled-components",
+        "transform-class-properties"
       ]
     },
     "es6": {
@@ -42,6 +43,7 @@
         }]
       ],
       "plugins": [
+        "transform-class-properties",
         "babel-plugin-styled-components"
       ]
     }

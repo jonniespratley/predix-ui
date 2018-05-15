@@ -1,5 +1,7 @@
+
 const path = require('path');
 const webpack = require('webpack');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const merge = require('webpack-merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -34,9 +36,6 @@ const analyzeBundle = new BundleAnalyzerPlugin({
   statsFilename: 'stats.json',
   logLevel: 'info'
 });
-
-
-const EXTRACT_CSS = (process.env.EXTRACT_CSS === true);
 
 
 const extractCss = new ExtractTextPlugin({
@@ -111,7 +110,6 @@ const sassRules = {
   })
 };
 
-
 // https://github.com/webpack-contrib/svg-inline-loader
 const svgRules = {
   test: /\.svg$/,
@@ -157,16 +155,7 @@ const common = {
       test: /\.md$/,
       use: ['catalog/loader', 'raw-loader']
     },
-    {
-      test: /\.svg$/,
-      use: [{
-        loader: 'svg-inline-loader',
-        options: {
-          classPrefix: false,
-          idPrefix: false
-        }
-      }]
-    },
+    svgRules,
     {
       test: /\.(jpg|png)$/,
       use: {
@@ -274,11 +263,7 @@ const ghPages = merge(common, siteCommon, {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }),
+    new UglifyJSPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: ({
@@ -375,7 +360,6 @@ const dist = merge(distCommon, {
   }
 });
 
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const distMin = merge(distCommon, {
   devtool: 'source-map',
