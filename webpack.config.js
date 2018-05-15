@@ -147,7 +147,6 @@ const common = {
       styles: './styles'
     }
   },
-  stats: 'full',
   module: {
     rules: [{
       test: /\.js$/,

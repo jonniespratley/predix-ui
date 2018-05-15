@@ -1,17 +1,17 @@
-'use strict';
-
-var _React = React,
-    Component = _React.Component;
-var _ReactDOM = ReactDOM,
-    render = _ReactDOM.render;
-var _PxReact = PxReact,
-    AppNav = _PxReact.AppNav,
-    Button = _PxReact.Button,
-    Card = _PxReact.Card,
-    Notification = _PxReact.Notification;
 
 
-var navItems = [{
+let _React = React,
+  Component = _React.Component;
+let _ReactDOM = ReactDOM,
+  render = _ReactDOM.render;
+let _PxReact = PxReact,
+  AppNav = _PxReact.AppNav,
+  Button = _PxReact.Button,
+  Card = _PxReact.Card,
+  Notification = _PxReact.Notification;
+
+
+let navItems = [{
   id: 'home', path: '/', label: 'Home', icon: 'px-fea:home'
 }, {
   id: 'dashboard', path: '/dashboard', label: 'Dashboard', icon: 'px-fea:dashboard'
@@ -22,16 +22,16 @@ var navItems = [{
 }, {
   id: 'users', path: '/users', label: 'Users', icon: 'px-fea:users'
 }];
-var dashboardData = {
+let dashboardData = {
   title: 'Predix Sample Application',
-  navItems: navItems,
+  navItems,
   keyVals: [{ label: 'New Alerts', value: 21 }, { label: 'Utilization', value: '70', uom: '%' }, { label: 'Faults', value: 3 }, { label: 'Output', value: 53, uom: 'mw' }]
 };
 
 /**
  * Example App
  */
-var App = function App() {
+let App = function App() {
   return React.createElement(
     'div',
     null,
@@ -48,8 +48,7 @@ var App = function App() {
         {
           type: 'info',
           statusIcon: 'px-utl:clock',
-          opened: true,
-          small: true
+          opened: true
         },
         'Welcome back'
       ),
