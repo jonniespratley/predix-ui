@@ -1,4 +1,8 @@
 /* eslint-disable */
+import BaseClass from './BaseClass';
+
+
+
 /**
  * observers: [
     '_selectedChanged(selected.*)',
@@ -11,8 +15,9 @@
     'px-app-asset-should-be-deselected' : '_assetDeselectedByEvent'
   },
  */
-export default class AssetSelectable {
-  constructor(props) {
+export default class AssetSelectable extends BaseClass {
+  constructor(props = {}) {
+    super(props);
     this.multiSelect = props.multiSelect || false;
     this._lastSelection = {
       source: null,
@@ -23,14 +28,10 @@ export default class AssetSelectable {
     this.selected = this.multiSelect ? [] : null;
     this.selectedRoute = this.multiSelect ? [] : null;
     this.selectedMeta = this.multiSelect ? [] : null;
-  }
 
-  set(name, val) {
-    this[name] = val;
-  }
-
-  fire(name, data) {
-    console.log('fire', name, data);
+    // this.on('px-app-asset-graph-created', this.__selectInitialAssets);
+    // this.on('px-app-asset-should-be-selected', this._assetSelectedByEvent);
+    // this.on('px-app-asset-should-be-deselected', this._assetDeselectedByEvent);
   }
 
   get multiSelect() {

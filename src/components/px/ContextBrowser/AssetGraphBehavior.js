@@ -1,43 +1,44 @@
 import { AssetGraph } from './AssetGraph';
+import AssetSelectable from './AssetSelectable';
+import AssetActivatable from './AssetActivatable';
 
-import Mitt from '../../../utils/mitt';
+import BaseClass from './BaseClass';
 
-const emitter = new Mitt();
+import { mix } from '../../../utils/mix';
 
 const assetGraph = options => (new AssetGraph(options));
 
-export default class AssetGraphBehavior {
+export default class AssetGraphBehavior extends mix(BaseClass, AssetActivatable, AssetSelectable) {
   items = null;
-  keys = {
+  _keys = {
     id: 'id',
     label: 'label',
     children: 'children',
     icon: 'icon'
   };
 
-  emitter = emitter;
-
-  constructor() {
-    this.on = emitter.on;
-    this.off = emitter.off;
-    this.fire = emitter.emit;
-    this.addEventListener = emitter.on;
+  constructor(...props) {
+    super(...props);
     this._createAssetGraph = assetGraph.bind(this);
   }
 
-
-  select(obj) {
-    this.selected = obj;
+  set keys(val) {
+    this._keys = val;
+    this.__handleKeyUpdated(val);
   }
 
-  activate(obj) {
-    this.active = obj;
+  get keys() {
+    return this._keys;
   }
 
-
-  set items(val) {
-    this.__handleAssetReferenceChanged(val, this.keys);
+  set items(items) {
+    // this.__rootItems = items.slice(0);
+    this.__handleAssetReferenceChanged(items, this._keys);
     return this;
+  }
+
+  get items() {
+    return this.__rootItems;
   }
 
   __handleAssetReferenceChanged(items, keys) {

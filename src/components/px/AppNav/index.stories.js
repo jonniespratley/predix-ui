@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 
 import README from './README.md';
 import AppNav from './';
-import AppNavItem from './px-app-nav-item';
+import AppNavItem from './AppNavItem';
 // import AppNavSubItem from './px-app-nav-sub-item';
 import AppNavSubGroupItem from './px-app-nav-sub-group';
 // import Icons from '../IconSet';
@@ -45,31 +45,11 @@ const navItems = [
         label: 'Asset #2',
         id: 'a2'
       }
-    ],
-    items: [
-      {
-        label: 'Asset #1',
-        id: 'a1'
-      },
-      {
-        label: 'Asset #2',
-        id: 'a2'
-      }
     ]
   }, {
     label: 'Dashboards',
     id: 'dashboards',
     icon: 'px-fea:dashboard',
-    items: [
-      {
-        label: 'Asset #1',
-        id: 'a1'
-      },
-      {
-        label: 'Asset #2',
-        id: 'a2'
-      }
-    ],
     children: [{
       label: 'See Live Truck View',
       id: 'trucks',

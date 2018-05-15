@@ -10,7 +10,7 @@ storiesOf('Components / Navbar', module)
   .addDecorator(withKnobs)
   .addWithJSX('default', () => (
     <Navbar
-      backButtonLabel={text('backButtonLabel', null)}
+      backButtonLabel={text('backButtonLabel', 'Back')}
       title={text('title', 'Navbar Title')}
       subtitle={text('subtitle', 'Some Sub Title')}
       showBackButton={boolean('showBackButton', false)}

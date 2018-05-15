@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`IconSet should render px-com-chat 1`] = `
+exports[`IconSet Icon should render px-com-chat 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -65,7 +65,7 @@ exports[`IconSet should render px-com-chat 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-com-comment 1`] = `
+exports[`IconSet Icon should render px-com-comment 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -130,7 +130,7 @@ exports[`IconSet should render px-com-comment 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-com-email 1`] = `
+exports[`IconSet Icon should render px-com-email 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -195,7 +195,7 @@ exports[`IconSet should render px-com-email 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-com-message 1`] = `
+exports[`IconSet Icon should render px-com-message 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -260,7 +260,7 @@ exports[`IconSet should render px-com-message 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-com-phone 1`] = `
+exports[`IconSet Icon should render px-com-phone 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -325,7 +325,7 @@ exports[`IconSet should render px-com-phone 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-com-sms 1`] = `
+exports[`IconSet Icon should render px-com-sms 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -390,7 +390,7 @@ exports[`IconSet should render px-com-sms 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-doc-chart 1`] = `
+exports[`IconSet Icon should render px-doc-chart 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -455,7 +455,7 @@ exports[`IconSet should render px-doc-chart 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-doc-document 1`] = `
+exports[`IconSet Icon should render px-doc-document 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -520,7 +520,7 @@ exports[`IconSet should render px-doc-document 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-doc-document-csv 1`] = `
+exports[`IconSet Icon should render px-doc-document-csv 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -585,7 +585,7 @@ exports[`IconSet should render px-doc-document-csv 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-doc-document-pdf 1`] = `
+exports[`IconSet Icon should render px-doc-document-pdf 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -650,7 +650,7 @@ exports[`IconSet should render px-doc-document-pdf 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-doc-document-word 1`] = `
+exports[`IconSet Icon should render px-doc-document-word 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -715,7 +715,7 @@ exports[`IconSet should render px-doc-document-word 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-doc-document-xls 1`] = `
+exports[`IconSet Icon should render px-doc-document-xls 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -780,7 +780,7 @@ exports[`IconSet should render px-doc-document-xls 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-doc-image 1`] = `
+exports[`IconSet Icon should render px-doc-image 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -845,7 +845,7 @@ exports[`IconSet should render px-doc-image 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-doc-note 1`] = `
+exports[`IconSet Icon should render px-doc-note 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -910,7 +910,7 @@ exports[`IconSet should render px-doc-note 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-doc-website 1`] = `
+exports[`IconSet Icon should render px-doc-website 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -975,7 +975,7 @@ exports[`IconSet should render px-doc-website 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-administration 1`] = `
+exports[`IconSet Icon should render px-fea-administration 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -1040,7 +1040,7 @@ exports[`IconSet should render px-fea-administration 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-alerts 1`] = `
+exports[`IconSet Icon should render px-fea-alerts 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -1105,7 +1105,7 @@ exports[`IconSet should render px-fea-alerts 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-analysis 1`] = `
+exports[`IconSet Icon should render px-fea-analysis 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -1170,7 +1170,7 @@ exports[`IconSet should render px-fea-analysis 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-analytics 1`] = `
+exports[`IconSet Icon should render px-fea-analytics 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -1235,7 +1235,7 @@ exports[`IconSet should render px-fea-analytics 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-asset 1`] = `
+exports[`IconSet Icon should render px-fea-asset 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -1300,7 +1300,7 @@ exports[`IconSet should render px-fea-asset 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-asset-ingestion 1`] = `
+exports[`IconSet Icon should render px-fea-asset-ingestion 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -1365,7 +1365,7 @@ exports[`IconSet should render px-fea-asset-ingestion 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-attribute 1`] = `
+exports[`IconSet Icon should render px-fea-attribute 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -1430,7 +1430,7 @@ exports[`IconSet should render px-fea-attribute 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-bug 1`] = `
+exports[`IconSet Icon should render px-fea-bug 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -1495,7 +1495,7 @@ exports[`IconSet should render px-fea-bug 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-calendar 1`] = `
+exports[`IconSet Icon should render px-fea-calendar 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -1560,7 +1560,7 @@ exports[`IconSet should render px-fea-calendar 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-cases 1`] = `
+exports[`IconSet Icon should render px-fea-cases 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -1625,7 +1625,7 @@ exports[`IconSet should render px-fea-cases 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-catalog 1`] = `
+exports[`IconSet Icon should render px-fea-catalog 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -1690,7 +1690,7 @@ exports[`IconSet should render px-fea-catalog 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-dashboard 1`] = `
+exports[`IconSet Icon should render px-fea-dashboard 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -1755,7 +1755,7 @@ exports[`IconSet should render px-fea-dashboard 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-data-sources 1`] = `
+exports[`IconSet Icon should render px-fea-data-sources 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -1820,7 +1820,7 @@ exports[`IconSet should render px-fea-data-sources 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-deployments 1`] = `
+exports[`IconSet Icon should render px-fea-deployments 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -1885,7 +1885,7 @@ exports[`IconSet should render px-fea-deployments 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-dev-ops 1`] = `
+exports[`IconSet Icon should render px-fea-dev-ops 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -1950,7 +1950,7 @@ exports[`IconSet should render px-fea-dev-ops 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-digital-twin 1`] = `
+exports[`IconSet Icon should render px-fea-digital-twin 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -2015,7 +2015,7 @@ exports[`IconSet should render px-fea-digital-twin 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-home 1`] = `
+exports[`IconSet Icon should render px-fea-home 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -2080,7 +2080,7 @@ exports[`IconSet should render px-fea-home 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-log 1`] = `
+exports[`IconSet Icon should render px-fea-log 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -2145,7 +2145,7 @@ exports[`IconSet should render px-fea-log 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-microservice 1`] = `
+exports[`IconSet Icon should render px-fea-microservice 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -2210,7 +2210,7 @@ exports[`IconSet should render px-fea-microservice 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-orchestration 1`] = `
+exports[`IconSet Icon should render px-fea-orchestration 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -2275,7 +2275,7 @@ exports[`IconSet should render px-fea-orchestration 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-orders 1`] = `
+exports[`IconSet Icon should render px-fea-orders 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -2340,7 +2340,7 @@ exports[`IconSet should render px-fea-orders 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-pipeline 1`] = `
+exports[`IconSet Icon should render px-fea-pipeline 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -2405,7 +2405,7 @@ exports[`IconSet should render px-fea-pipeline 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-products 1`] = `
+exports[`IconSet Icon should render px-fea-products 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -2470,7 +2470,7 @@ exports[`IconSet should render px-fea-products 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-spaces 1`] = `
+exports[`IconSet Icon should render px-fea-spaces 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -2535,7 +2535,7 @@ exports[`IconSet should render px-fea-spaces 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-tag 1`] = `
+exports[`IconSet Icon should render px-fea-tag 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -2600,7 +2600,7 @@ exports[`IconSet should render px-fea-tag 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-tag-group 1`] = `
+exports[`IconSet Icon should render px-fea-tag-group 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -2665,7 +2665,7 @@ exports[`IconSet should render px-fea-tag-group 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-templates 1`] = `
+exports[`IconSet Icon should render px-fea-templates 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -2730,7 +2730,7 @@ exports[`IconSet should render px-fea-templates 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-users 1`] = `
+exports[`IconSet Icon should render px-fea-users 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -2795,7 +2795,7 @@ exports[`IconSet should render px-fea-users 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-fea-versions 1`] = `
+exports[`IconSet Icon should render px-fea-versions 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -2860,7 +2860,7 @@ exports[`IconSet should render px-fea-versions 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-back 1`] = `
+exports[`IconSet Icon should render px-nav-back 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -2925,7 +2925,7 @@ exports[`IconSet should render px-nav-back 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-close 1`] = `
+exports[`IconSet Icon should render px-nav-close 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -2990,7 +2990,7 @@ exports[`IconSet should render px-nav-close 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-collapse 1`] = `
+exports[`IconSet Icon should render px-nav-collapse 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -3055,7 +3055,7 @@ exports[`IconSet should render px-nav-collapse 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-confirmed 1`] = `
+exports[`IconSet Icon should render px-nav-confirmed 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -3120,7 +3120,7 @@ exports[`IconSet should render px-nav-confirmed 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-down 1`] = `
+exports[`IconSet Icon should render px-nav-down 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -3185,7 +3185,7 @@ exports[`IconSet should render px-nav-down 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-expand 1`] = `
+exports[`IconSet Icon should render px-nav-expand 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -3250,7 +3250,7 @@ exports[`IconSet should render px-nav-expand 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-favorite 1`] = `
+exports[`IconSet Icon should render px-nav-favorite 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -3315,7 +3315,7 @@ exports[`IconSet should render px-nav-favorite 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-generic-user 1`] = `
+exports[`IconSet Icon should render px-nav-generic-user 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -3380,7 +3380,7 @@ exports[`IconSet should render px-nav-generic-user 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-grid-view 1`] = `
+exports[`IconSet Icon should render px-nav-grid-view 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -3445,7 +3445,7 @@ exports[`IconSet should render px-nav-grid-view 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-hamburger 1`] = `
+exports[`IconSet Icon should render px-nav-hamburger 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -3510,7 +3510,7 @@ exports[`IconSet should render px-nav-hamburger 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-hierarchy 1`] = `
+exports[`IconSet Icon should render px-nav-hierarchy 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -3575,7 +3575,7 @@ exports[`IconSet should render px-nav-hierarchy 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-home 1`] = `
+exports[`IconSet Icon should render px-nav-home 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -3640,7 +3640,7 @@ exports[`IconSet should render px-nav-home 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-inbox-view 1`] = `
+exports[`IconSet Icon should render px-nav-inbox-view 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -3705,7 +3705,7 @@ exports[`IconSet should render px-nav-inbox-view 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-instance 1`] = `
+exports[`IconSet Icon should render px-nav-instance 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -3770,7 +3770,7 @@ exports[`IconSet should render px-nav-instance 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-list-view 1`] = `
+exports[`IconSet Icon should render px-nav-list-view 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -3835,7 +3835,7 @@ exports[`IconSet should render px-nav-list-view 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-log-out 1`] = `
+exports[`IconSet Icon should render px-nav-log-out 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -3900,7 +3900,7 @@ exports[`IconSet should render px-nav-log-out 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-menu 1`] = `
+exports[`IconSet Icon should render px-nav-menu 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -3965,7 +3965,7 @@ exports[`IconSet should render px-nav-menu 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-more 1`] = `
+exports[`IconSet Icon should render px-nav-more 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -4030,7 +4030,7 @@ exports[`IconSet should render px-nav-more 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-new-window 1`] = `
+exports[`IconSet Icon should render px-nav-new-window 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -4095,7 +4095,7 @@ exports[`IconSet should render px-nav-new-window 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-next 1`] = `
+exports[`IconSet Icon should render px-nav-next 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -4160,7 +4160,7 @@ exports[`IconSet should render px-nav-next 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-notification 1`] = `
+exports[`IconSet Icon should render px-nav-notification 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -4225,7 +4225,7 @@ exports[`IconSet should render px-nav-notification 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-open-context 1`] = `
+exports[`IconSet Icon should render px-nav-open-context 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -4290,7 +4290,7 @@ exports[`IconSet should render px-nav-open-context 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-pause 1`] = `
+exports[`IconSet Icon should render px-nav-pause 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -4355,7 +4355,7 @@ exports[`IconSet should render px-nav-pause 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-play 1`] = `
+exports[`IconSet Icon should render px-nav-play 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -4420,7 +4420,7 @@ exports[`IconSet should render px-nav-play 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-reload 1`] = `
+exports[`IconSet Icon should render px-nav-reload 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -4485,7 +4485,7 @@ exports[`IconSet should render px-nav-reload 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-search 1`] = `
+exports[`IconSet Icon should render px-nav-search 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -4550,7 +4550,7 @@ exports[`IconSet should render px-nav-search 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-stop 1`] = `
+exports[`IconSet Icon should render px-nav-stop 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -4615,7 +4615,7 @@ exports[`IconSet should render px-nav-stop 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-tile-view 1`] = `
+exports[`IconSet Icon should render px-nav-tile-view 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -4680,7 +4680,7 @@ exports[`IconSet should render px-nav-tile-view 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-tree 1`] = `
+exports[`IconSet Icon should render px-nav-tree 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -4745,7 +4745,7 @@ exports[`IconSet should render px-nav-tree 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-unconfirmed 1`] = `
+exports[`IconSet Icon should render px-nav-unconfirmed 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -4810,7 +4810,7 @@ exports[`IconSet should render px-nav-unconfirmed 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-nav-up 1`] = `
+exports[`IconSet Icon should render px-nav-up 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -4875,7 +4875,7 @@ exports[`IconSet should render px-nav-up 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-airplane 1`] = `
+exports[`IconSet Icon should render px-obj-airplane 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -4940,7 +4940,7 @@ exports[`IconSet should render px-obj-airplane 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-airplane-engine 1`] = `
+exports[`IconSet Icon should render px-obj-airplane-engine 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -5005,7 +5005,7 @@ exports[`IconSet should render px-obj-airplane-engine 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-airport 1`] = `
+exports[`IconSet Icon should render px-obj-airport 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -5070,7 +5070,7 @@ exports[`IconSet should render px-obj-airport 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-automobile 1`] = `
+exports[`IconSet Icon should render px-obj-automobile 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -5135,7 +5135,7 @@ exports[`IconSet should render px-obj-automobile 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-boiler 1`] = `
+exports[`IconSet Icon should render px-obj-boiler 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -5200,7 +5200,7 @@ exports[`IconSet should render px-obj-boiler 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-cell-tower 1`] = `
+exports[`IconSet Icon should render px-obj-cell-tower 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -5265,7 +5265,7 @@ exports[`IconSet should render px-obj-cell-tower 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-class 1`] = `
+exports[`IconSet Icon should render px-obj-class 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -5330,7 +5330,7 @@ exports[`IconSet should render px-obj-class 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-condenser 1`] = `
+exports[`IconSet Icon should render px-obj-condenser 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -5395,7 +5395,7 @@ exports[`IconSet should render px-obj-condenser 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-controller 1`] = `
+exports[`IconSet Icon should render px-obj-controller 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -5460,7 +5460,7 @@ exports[`IconSet should render px-obj-controller 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-cooling-tower 1`] = `
+exports[`IconSet Icon should render px-obj-cooling-tower 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -5525,7 +5525,7 @@ exports[`IconSet should render px-obj-cooling-tower 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-database 1`] = `
+exports[`IconSet Icon should render px-obj-database 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -5590,7 +5590,7 @@ exports[`IconSet should render px-obj-database 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-desktop 1`] = `
+exports[`IconSet Icon should render px-obj-desktop 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -5655,7 +5655,7 @@ exports[`IconSet should render px-obj-desktop 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-edge-box 1`] = `
+exports[`IconSet Icon should render px-obj-edge-box 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -5720,7 +5720,7 @@ exports[`IconSet should render px-obj-edge-box 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-fleet 1`] = `
+exports[`IconSet Icon should render px-obj-fleet 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -5785,7 +5785,7 @@ exports[`IconSet should render px-obj-fleet 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-gas-turbine 1`] = `
+exports[`IconSet Icon should render px-obj-gas-turbine 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -5850,7 +5850,7 @@ exports[`IconSet should render px-obj-gas-turbine 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-gateway 1`] = `
+exports[`IconSet Icon should render px-obj-gateway 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -5915,7 +5915,7 @@ exports[`IconSet should render px-obj-gateway 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-hrsg 1`] = `
+exports[`IconSet Icon should render px-obj-hrsg 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -5980,7 +5980,7 @@ exports[`IconSet should render px-obj-hrsg 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-imaging-machine 1`] = `
+exports[`IconSet Icon should render px-obj-imaging-machine 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -6045,7 +6045,7 @@ exports[`IconSet should render px-obj-imaging-machine 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-light-bulb 1`] = `
+exports[`IconSet Icon should render px-obj-light-bulb 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -6110,7 +6110,7 @@ exports[`IconSet should render px-obj-light-bulb 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-line 1`] = `
+exports[`IconSet Icon should render px-obj-line 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -6175,7 +6175,7 @@ exports[`IconSet should render px-obj-line 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-line-og 1`] = `
+exports[`IconSet Icon should render px-obj-line-og 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -6240,7 +6240,7 @@ exports[`IconSet should render px-obj-line-og 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-locomotive 1`] = `
+exports[`IconSet Icon should render px-obj-locomotive 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -6305,7 +6305,7 @@ exports[`IconSet should render px-obj-locomotive 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-machine 1`] = `
+exports[`IconSet Icon should render px-obj-machine 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -6370,7 +6370,7 @@ exports[`IconSet should render px-obj-machine 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-manufacturing-line 1`] = `
+exports[`IconSet Icon should render px-obj-manufacturing-line 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -6435,7 +6435,7 @@ exports[`IconSet should render px-obj-manufacturing-line 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-plant 1`] = `
+exports[`IconSet Icon should render px-obj-plant 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -6500,7 +6500,7 @@ exports[`IconSet should render px-obj-plant 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-predix-box 1`] = `
+exports[`IconSet Icon should render px-obj-predix-box 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -6565,7 +6565,7 @@ exports[`IconSet should render px-obj-predix-box 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-product 1`] = `
+exports[`IconSet Icon should render px-obj-product 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -6630,7 +6630,7 @@ exports[`IconSet should render px-obj-product 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-rail-yard 1`] = `
+exports[`IconSet Icon should render px-obj-rail-yard 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -6695,7 +6695,7 @@ exports[`IconSet should render px-obj-rail-yard 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-routes 1`] = `
+exports[`IconSet Icon should render px-obj-routes 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -6760,7 +6760,7 @@ exports[`IconSet should render px-obj-routes 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-sensor 1`] = `
+exports[`IconSet Icon should render px-obj-sensor 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -6825,7 +6825,7 @@ exports[`IconSet should render px-obj-sensor 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-solar-panel 1`] = `
+exports[`IconSet Icon should render px-obj-solar-panel 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -6890,7 +6890,7 @@ exports[`IconSet should render px-obj-solar-panel 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-steam-turbine 1`] = `
+exports[`IconSet Icon should render px-obj-steam-turbine 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -6955,7 +6955,7 @@ exports[`IconSet should render px-obj-steam-turbine 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-train 1`] = `
+exports[`IconSet Icon should render px-obj-train 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -7020,7 +7020,7 @@ exports[`IconSet should render px-obj-train 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-truck 1`] = `
+exports[`IconSet Icon should render px-obj-truck 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -7085,7 +7085,7 @@ exports[`IconSet should render px-obj-truck 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-obj-wind-turbine 1`] = `
+exports[`IconSet Icon should render px-obj-wind-turbine 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -7150,7 +7150,7 @@ exports[`IconSet should render px-obj-wind-turbine 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-add 1`] = `
+exports[`IconSet Icon should render px-utl-add 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -7215,7 +7215,7 @@ exports[`IconSet should render px-utl-add 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-alert 1`] = `
+exports[`IconSet Icon should render px-utl-alert 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -7280,7 +7280,7 @@ exports[`IconSet should render px-utl-alert 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-app-settings 1`] = `
+exports[`IconSet Icon should render px-utl-app-settings 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -7345,7 +7345,7 @@ exports[`IconSet should render px-utl-app-settings 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-calculation 1`] = `
+exports[`IconSet Icon should render px-utl-calculation 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -7410,7 +7410,7 @@ exports[`IconSet should render px-utl-calculation 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-calendar 1`] = `
+exports[`IconSet Icon should render px-utl-calendar 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -7475,7 +7475,7 @@ exports[`IconSet should render px-utl-calendar 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-camera 1`] = `
+exports[`IconSet Icon should render px-utl-camera 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -7540,7 +7540,7 @@ exports[`IconSet should render px-utl-camera 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-check 1`] = `
+exports[`IconSet Icon should render px-utl-check 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -7605,7 +7605,7 @@ exports[`IconSet should render px-utl-check 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-chevron 1`] = `
+exports[`IconSet Icon should render px-utl-chevron 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -7670,7 +7670,7 @@ exports[`IconSet should render px-utl-chevron 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-chevron-left 1`] = `
+exports[`IconSet Icon should render px-utl-chevron-left 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -7735,7 +7735,7 @@ exports[`IconSet should render px-utl-chevron-left 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-chevron-right 1`] = `
+exports[`IconSet Icon should render px-utl-chevron-right 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -7800,7 +7800,7 @@ exports[`IconSet should render px-utl-chevron-right 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-chevron-up 1`] = `
+exports[`IconSet Icon should render px-utl-chevron-up 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -7865,7 +7865,7 @@ exports[`IconSet should render px-utl-chevron-up 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-clock 1`] = `
+exports[`IconSet Icon should render px-utl-clock 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -7930,7 +7930,7 @@ exports[`IconSet should render px-utl-clock 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-close 1`] = `
+exports[`IconSet Icon should render px-utl-close 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -7995,7 +7995,7 @@ exports[`IconSet should render px-utl-close 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-confirmed 1`] = `
+exports[`IconSet Icon should render px-utl-confirmed 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -8060,7 +8060,7 @@ exports[`IconSet should render px-utl-confirmed 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-copy 1`] = `
+exports[`IconSet Icon should render px-utl-copy 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -8125,7 +8125,7 @@ exports[`IconSet should render px-utl-copy 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-delete 1`] = `
+exports[`IconSet Icon should render px-utl-delete 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -8190,7 +8190,7 @@ exports[`IconSet should render px-utl-delete 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-desktop-computer 1`] = `
+exports[`IconSet Icon should render px-utl-desktop-computer 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -8255,7 +8255,7 @@ exports[`IconSet should render px-utl-desktop-computer 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-download 1`] = `
+exports[`IconSet Icon should render px-utl-download 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -8320,7 +8320,7 @@ exports[`IconSet should render px-utl-download 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-edit 1`] = `
+exports[`IconSet Icon should render px-utl-edit 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -8385,7 +8385,7 @@ exports[`IconSet should render px-utl-edit 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-failure 1`] = `
+exports[`IconSet Icon should render px-utl-failure 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -8450,7 +8450,7 @@ exports[`IconSet should render px-utl-failure 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-filter 1`] = `
+exports[`IconSet Icon should render px-utl-filter 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -8515,7 +8515,7 @@ exports[`IconSet should render px-utl-filter 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-flag 1`] = `
+exports[`IconSet Icon should render px-utl-flag 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -8580,7 +8580,7 @@ exports[`IconSet should render px-utl-flag 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-folder-closed 1`] = `
+exports[`IconSet Icon should render px-utl-folder-closed 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -8645,7 +8645,7 @@ exports[`IconSet should render px-utl-folder-closed 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-folder-open 1`] = `
+exports[`IconSet Icon should render px-utl-folder-open 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -8710,7 +8710,7 @@ exports[`IconSet should render px-utl-folder-open 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-formula 1`] = `
+exports[`IconSet Icon should render px-utl-formula 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -8775,7 +8775,7 @@ exports[`IconSet should render px-utl-formula 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-help 1`] = `
+exports[`IconSet Icon should render px-utl-help 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -8840,7 +8840,7 @@ exports[`IconSet should render px-utl-help 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-information 1`] = `
+exports[`IconSet Icon should render px-utl-information 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -8905,7 +8905,7 @@ exports[`IconSet should render px-utl-information 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-link 1`] = `
+exports[`IconSet Icon should render px-utl-link 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -8970,7 +8970,7 @@ exports[`IconSet should render px-utl-link 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-location 1`] = `
+exports[`IconSet Icon should render px-utl-location 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -9035,7 +9035,7 @@ exports[`IconSet should render px-utl-location 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-locked 1`] = `
+exports[`IconSet Icon should render px-utl-locked 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -9100,7 +9100,7 @@ exports[`IconSet should render px-utl-locked 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-map 1`] = `
+exports[`IconSet Icon should render px-utl-map 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -9165,7 +9165,7 @@ exports[`IconSet should render px-utl-map 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-module-settings 1`] = `
+exports[`IconSet Icon should render px-utl-module-settings 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -9230,7 +9230,7 @@ exports[`IconSet should render px-utl-module-settings 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-overflow 1`] = `
+exports[`IconSet Icon should render px-utl-overflow 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -9295,7 +9295,7 @@ exports[`IconSet should render px-utl-overflow 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-phone 1`] = `
+exports[`IconSet Icon should render px-utl-phone 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -9360,7 +9360,7 @@ exports[`IconSet should render px-utl-phone 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-remove 1`] = `
+exports[`IconSet Icon should render px-utl-remove 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -9425,7 +9425,7 @@ exports[`IconSet should render px-utl-remove 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-reply 1`] = `
+exports[`IconSet Icon should render px-utl-reply 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -9490,7 +9490,7 @@ exports[`IconSet should render px-utl-reply 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-save 1`] = `
+exports[`IconSet Icon should render px-utl-save 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -9555,7 +9555,7 @@ exports[`IconSet should render px-utl-save 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-search 1`] = `
+exports[`IconSet Icon should render px-utl-search 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -9620,7 +9620,7 @@ exports[`IconSet should render px-utl-search 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-share 1`] = `
+exports[`IconSet Icon should render px-utl-share 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -9685,7 +9685,7 @@ exports[`IconSet should render px-utl-share 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-tablet 1`] = `
+exports[`IconSet Icon should render px-utl-tablet 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -9750,7 +9750,7 @@ exports[`IconSet should render px-utl-tablet 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-unlink 1`] = `
+exports[`IconSet Icon should render px-utl-unlink 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -9815,7 +9815,7 @@ exports[`IconSet should render px-utl-unlink 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-unlocked 1`] = `
+exports[`IconSet Icon should render px-utl-unlocked 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -9880,7 +9880,7 @@ exports[`IconSet should render px-utl-unlocked 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-upload 1`] = `
+exports[`IconSet Icon should render px-utl-upload 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);
@@ -9945,7 +9945,7 @@ exports[`IconSet should render px-utl-upload 1`] = `
 </i>
 `;
 
-exports[`IconSet should render px-utl-zoom 1`] = `
+exports[`IconSet Icon should render px-utl-zoom 1`] = `
 .c0 {
   color: var(--iron-icon-stroke-color,inherit);
   fill: var(--iron-icon-fill-color,none);

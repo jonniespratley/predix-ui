@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar should render 1`] = `
+.c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  -webkit-transition: var(--px-navbar-transition,-webkit-transform 0.4s cubic-bezier(0.215,0.61,0.355,1));
+  -webkit-transition: var(--px-navbar-transition,transform 0.4s cubic-bezier(0.215,0.61,0.355,1));
+  transition: var(--px-navbar-transition,transform 0.4s cubic-bezier(0.215,0.61,0.355,1));
+  font-size: 15px;
+  border-bottom: 1px solid gray;
+  border-bottom: var(--px-navbar-border-bottom,1px solid gray);
+  background-color: var(--px-navbar-background-color,white);
+  color: var(--px-navbar-color,black);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.15);
+}
+
+.c0 svg {
+  stroke: none;
+  fill: var(--px-navbar-color,currentColor);
+  color: currentColor;
+}
+
+.c0 button {
+  padding: 0.33333rem;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+  line-height: 20px;
+  padding: 0.33333rem;
+  min-width: 2.93333rem;
+  min-height: 2.93333rem;
+  -webkit-transition: none;
+  transition: none;
+  vertical-align: middle;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 2.93333rem;
+  height: 2.93333rem;
+  border: 0 !important;
+  border-radius: 0 !important;
+  line-height: inherit;
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c0 button:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c0 button:focus {
+  outline: none;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.c0 button:hover {
+  box-shadow: none;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.c0 button:link,
+.c0 button:visited {
+  box-shadow: none;
+  background: none;
+  outline: none;
+  color: var(--px-btn-bare-color,#2c404c);
+}
+
+.c0 button:hover,
+.c0 button:focus {
+  background-color: transparent;
+}
+
+.c0 button:active {
+  background-color: var(--px-btn-background-color--pressed,rgba(0,0,0,0.23));
+}
+
+.c1 {
+  box-sizing: border-box;
+  white-space: nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0.33333rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.c3 {
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin-left: 0.33333rem;
+}
+
+.c2 {
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.c6 {
+  -webkit-order: 3;
+  -ms-flex-order: 3;
+  order: 3;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.c4 {
+  display: block;
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c5 {
+  display: block;
+}
+
+<div
+  className="px-navbar c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <button
+        className="navbar__button flex flex--center toggle__menu"
+        onClick={null}
+      >
+        <svg
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24h-24z"
+            fill="none"
+          />
+          <path
+            d="M3 18h18v-2h-18v2zm0-5h18v-2h-18v2zm0-7v2h18v-2h-18z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+        onClick={null}
+      >
+        Navbar
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c6"
+    />
+  </div>
+</div>
+`;

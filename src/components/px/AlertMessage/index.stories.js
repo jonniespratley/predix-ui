@@ -37,7 +37,7 @@ storiesOf('Components / Alert Message', module)
       visible
     />
   ))
-  .add('with type "information"', () => (
+  .addWithJSX('with type "information"', () => (
     <AlertMessage
       messageTitle="Alert"
       message="This is a message"
@@ -45,7 +45,7 @@ storiesOf('Components / Alert Message', module)
       visible
     />
   ))
-  .add('with type "important"', () => (
+  .addWithJSX('with type "important"', () => (
     <AlertMessage
       messageTitle="Alert"
       message="This is a message"
@@ -53,7 +53,7 @@ storiesOf('Components / Alert Message', module)
       visible
     />
   ))
-  .add('with type "error"', () => (
+  .addWithJSX('with type "error"', () => (
     <AlertMessage
       messageTitle="Alert"
       message="This is a message"
@@ -61,7 +61,7 @@ storiesOf('Components / Alert Message', module)
       visible
     />
   ))
-  .add('with type "warning"', () => (
+  .addWithJSX('with type "warning"', () => (
     <AlertMessage
       messageTitle="Alert"
       message="This is a message"
@@ -69,7 +69,7 @@ storiesOf('Components / Alert Message', module)
       visible
     />
   ))
-  .add('with type "unkown"', () => (
+  .addWithJSX('with type "unkown"', () => (
     <AlertMessage
       messageTitle="Alert"
       message="This is a message"

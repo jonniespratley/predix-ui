@@ -50,8 +50,8 @@ exports[`Dropdown matches snapshot 1`] = `
   margin: 0;
   border: 1px solid var(--px-btn-border-color,transparent);
   border-radius: 0 !important;
-  padding: calc(var(--px-btn-height,2em) / 10) calc(var(--px-btn-height,2em) / 2);
   box-shadow: var(--px-btn-shadow--light,none);
+  padding: calc(var(--px-btn-height,2em) / 10) calc(var(--px-btn-height,2em) / 2);
   font: inherit;
   line-height: calc(var(--px-btn-height,2em) - 2px);
   cursor: pointer;

@@ -13,12 +13,11 @@ const Button = styled.button`
   margin: 0;
   border: 1px solid var(--px-btn-border-color, transparent);
   border-radius: 0 !important;
+  box-shadow: var(--px-btn-shadow--light, none);
   padding: calc(var(--px-btn-height, 2em) / 10) calc(var(--px-btn-height, 2em) / 2);
 
-  box-shadow: var(--px-btn-shadow--light, none);
   font: inherit;
   line-height: calc(var(--px-btn-height, 2em) - 2px);
-
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -28,7 +27,6 @@ const Button = styled.button`
   transition: background .4s, border-color .4s, color .4s;
   -webkit-appearance: button;
   -webkit-font-smoothing: antialiased;
-
   color: var(--px-btn-color, #2c404c);
   display: flex;
   justify-content: center;
@@ -53,38 +51,29 @@ const Button = styled.button`
     box-shadow: none;
     background-color: var(--px-btn-background--pressed, #889aa5);
   }
-
-
-
   ${props => props.icon && css`
-    height: var(--px-btn-height, 2em);
-    width: var(--px-btn-height, 2em);
+    height: auto;
     min-width: var(--px-btn-height, 2em);
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: .2rem;
+    padding-left: .2rem;
     border: var(--px-btn-icon-border, 0px solid) !important;
     color: var(--btn-color, black);
     background-color: var(--px-btn-icon-background, transparent);
   `}
-
   ${props => props.size === 'large' && css`
     font-size: 1.33333rem;
   `}
-
   ${props => props.size === 'small' && css`
     height: 1.66667em;
     font-size: 0.8rem;
     line-height: calc(1.66667em - 2px);
   `}
-
   ${props => props.size === 'large' && css`
     font-size: 1.33333rem;
   `}
-
   ${props => props.size === 'huge' && css`
     font-size: 2rem;
   `}
-
   ${props => props.size === 'full' && css`
     width: 100%;
     padding-right: 0;
@@ -96,7 +85,6 @@ const Button = styled.button`
     border-color: var(--px-btn-primary-border-color, transparent);
     box-shadow: var(--px-btn-shadow, none);
     background-color: var(--px-btn-primary-background, #364c59);
-
     &:link,
     &:visited,
     &:hover,
@@ -248,6 +236,7 @@ const Button = styled.button`
     box-shadow: none;
     background-color: var(--px-btn-disabled-background, transparent);
     pointer-events: none;
+    cursor: not-allowed;
   `}
 `;
 
@@ -262,9 +251,11 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
+  className: PropTypes.string,
   theme: PropTypes.string,
   type: PropTypes.string,
-  size: PropTypes.string
+  size: PropTypes.string,
+  icon: PropTypes.bool
 };
 
 export default Button;

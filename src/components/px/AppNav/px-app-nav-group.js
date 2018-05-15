@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
 import styled, { css } from 'styled-components';
 
-import AppNavItem from './px-app-nav-item';
+import AppNavItem from './AppNavItem';
 import AppNavSubItem from './px-app-nav-sub-item';
 
 const AppNavGroup = styled.div`
@@ -60,34 +59,24 @@ const AppNavSubGroupDropdown = styled.div`
   height: 0px;
   overflow: hidden;
   ${props => props.opened && css`
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
     height: auto;
     overflow: auto;
   `}
 `;
 AppNavSubGroupDropdown.displayName = 'AppNavSubGroupDropdown';
 
-class AppNavSubGroupComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      opened: props.opened || false
-    };
-  }
-  _handleClick(e, item, isChild) {
-    this.setState({ opened: !this.state.opened });
+class AppNavGroupComponent extends React.Component {
+  _handleClick = (item, isChild) => {
     if (this.props.onClick) {
       this.props.onClick(item, isChild);
     }
   }
-  render() {
-    const { opened } = this.props;
-    const subgroupClasses = classnames(
-      'px-app-nav-sub-group',
-      { 'px-app-nav-sub-group--opened': opened }
-    );
 
+  render() {
     const {
       item,
+      opened,
       selected,
       overflowed,
       collapsed,
@@ -95,11 +84,12 @@ class AppNavSubGroupComponent extends React.Component {
       emptyIcon
     } = this.props;
 
+
     return (
-      <AppNavSubGroup className={subgroupClasses}>
+      <AppNavSubGroup>
         <AppNavItem
           dropdown
-          onClick={this._handleClick.bind(this, item)} /* eslint-disable-line */
+          onClick={() => this._handleClick(item)}
           {...item}
           item={item}
           selected={selected}
@@ -109,12 +99,11 @@ class AppNavSubGroupComponent extends React.Component {
           emptyIcon={emptyIcon}
         />
         <AppNavSubGroupDropdown opened={opened}>
-
           <AppNavGroupDropdownContent>
             {item.children && item.children.map(child => (
               <AppNavSubItem
-                selected={item.selected}
-                onClick={this._handleClick.bind(this, child, true)} /* eslint-disable-line */
+                selected={child.selected}
+                onClick={() => this._handleClick(child, true)}
                 key={child.label}
                 item={child}
                 {...child}
@@ -127,8 +116,8 @@ class AppNavSubGroupComponent extends React.Component {
   }
 }
 
-AppNavSubGroupComponent.displayName = 'AppNavGroup';
-AppNavSubGroupComponent.defaultProps = {
+AppNavGroupComponent.displayName = 'AppNavGroup';
+AppNavGroupComponent.defaultProps = {
   selected: false,
   collapsed: false,
   overflowed: false,
@@ -139,7 +128,7 @@ AppNavSubGroupComponent.defaultProps = {
   onlyShowIcon: false
 };
 
-AppNavSubGroupComponent.propTypes = {
+AppNavGroupComponent.propTypes = {
   onClick: PropTypes.func,
   selected: PropTypes.bool,
   collapsed: PropTypes.bool,
@@ -154,4 +143,4 @@ AppNavSubGroupComponent.propTypes = {
   onlyShowIcon: PropTypes.bool
 };
 
-export default AppNavSubGroupComponent;
+export default AppNavGroupComponent;

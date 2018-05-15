@@ -1,18 +1,12 @@
-import { expect } from 'chai';
 import React from 'react';
-import {shallow} from 'enzyme';
-import PxProgressBar from './';
+import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
+
+import ProgressBar from './';
 
 describe('ProgressBar', () => {
-  test('should...', () =>{
-    const wrapper = shallow(
-      <PxProgressBar/>
-    );
-    console.log(wrapper.debug());
-    expect(true).to.equal(true);
+  test('should render', () =>{
+    const tree = renderer.create(<ProgressBar value={75}/>).toJSON();
+    expect(tree).toMatchSnapshot();
   });
-  //expect(wrapper.find('.label')).to.have.length(1);
-  //expect(wrapper.find('.delta')).to.have.length(1);
-  //expect(wrapper.find('.alpha')).to.have.length(1);
-  //expect(wrapper.contains(<div className='label'/>)).to.equal(true);
 });

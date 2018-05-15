@@ -201,7 +201,7 @@ class AppNavItemComponent extends React.Component {
         {empty && <AppNavItemIcon empty withLabel={label} />}
         {empty && <AppNavItemLabel empty />}
 
-        {dropdown &&
+        {dropdown && !onlyShowIcon &&
           <AppNavItemIcon dropdownIcon>
             <Icon icon="px-utl:chevron" size={16} />
           </AppNavItemIcon>

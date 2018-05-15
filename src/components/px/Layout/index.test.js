@@ -1,18 +1,12 @@
-import { expect } from 'chai';
 import React from 'react';
-import {shallow} from 'enzyme';
-import PxLayout from './';
+import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 
-describe('px-layout', () => {
-  test('should...', () =>{
-    const wrapper = shallow(
-      <PxLayout/>
-    );
-    console.log(wrapper.debug());
-    expect(true).to.equal(true);
+import Layout from './';
+
+describe('Layout', () => {
+  test('should render', () =>{
+    const tree = renderer.create(<Layout>Title</Layout>).toJSON();
+    expect(tree).toMatchSnapshot();
   });
-  //expect(wrapper.find('.label')).to.have.length(1);
-  //expect(wrapper.find('.delta')).to.have.length(1);
-  //expect(wrapper.find('.alpha')).to.have.length(1);
-  //expect(wrapper.contains(<div className='label'/>)).to.equal(true);
 });

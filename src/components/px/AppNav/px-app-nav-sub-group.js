@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
-import AppNavItem from './px-app-nav-item';
+import AppNavItem from './AppNavItem';
 import AppNavSubItem from './px-app-nav-sub-item';
 
 const AppNavGroup = styled.div`

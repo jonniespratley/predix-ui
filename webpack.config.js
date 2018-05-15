@@ -1,13 +1,13 @@
 const path = require('path');
-const glob = require('glob');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SystemBellPlugin = require('system-bell-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const PurifyCSSPlugin = require('purifycss-webpack');
 const Jarvis = require('webpack-jarvis');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
 const pkg = require('./package.json');
 
 const ROOT_PATH = __dirname;
@@ -24,7 +24,6 @@ const config = {
   library: pkg.name
 };
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const analyzeBundle = new BundleAnalyzerPlugin({
   analyzerMode: 'static',

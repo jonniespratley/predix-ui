@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styled, { css } from 'styled-components';
-import NavItem from './px-app-nav-item';
-import AppNavGroup from './px-app-nav-sub-group';
+import NavItem from './AppNavItem';
+import AppNavGroup from './px-app-nav-group';
 
 const AppNav = styled.div`
   height: var(--px-app-nav-height, 4rem);
@@ -42,8 +42,6 @@ const AppNavItems = styled.div`
     flex-direction: column;
     height: 100%;
   `}
-
-
 `;
 
 
@@ -153,20 +151,20 @@ class AppNavComponent extends React.Component {
     return this._getValueForIndex(this._getIndexForValue(index));
   }
 
-  handleClick(val, child, isSubItem) {
-    const c = child;
+  handleClick = (val, node) => {
+    const child = node;
+    console.log('handleClick', val, node);
+    const c = val;
     const propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : val);
     const index = (this.props.propForSelect ? child[this.props.propForSelect] : this._getIndexForValue(propForSelect));/* eslint-disable-line */
     let item = this._getValueForIndex(index); /* eslint-disable-line */
 
-    if (c && c.children && !isSubItem) {
-      c.selected = true;
-      // console.warn('Item has children, do not set active');
-      return;
+    if (child && child.children) {
+      child.selected = true;
+      console.warn('Item has children, do not set active');
+      // return;
     }
-    if (isSubItem) {
-      item = val;
-    }
+
 
     const state = {
       selected: propForSelect,
@@ -200,25 +198,23 @@ class AppNavComponent extends React.Component {
         <NavItem
           key={index}
           item={child}
-          id={child.id}
-          icon={child.icon}
-          label={child.label}
+          {...child}
           selected={selected}
           onlyShowIcon={this.state.onlyShowIcon}
-          onClick={this.handleClick.bind(this, propForSelect, child)} /* eslint-disable-line */
+          onClick={() => this.handleClick(propForSelect, child)}
         />
       );
     }
+
     return (
       <AppNavGroup
         key={index}
-        id={child.id}
         item={child}
-        icon={child.icon}
-        label={child.label}
+        {...child}
         onlyShowIcon={this.state.onlyShowIcon}
         selected={selected}
-        onClick={this.handleClick.bind(this, propForSelect, child)} /* eslint-disable-line */
+        opened={selected}
+        onClick={(item, isChild) => this.handleClick(item, isChild)}
       />
     );
   }
@@ -302,7 +298,7 @@ AppNavComponent.propTypes = {
   onlyShowIcon: PropTypes.bool,
   collapseOpened: PropTypes.bool,
   verticalOpened: PropTypes.bool,
-  selected: PropTypes.number,
+  selected: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   selectedIndex: PropTypes.number,
   selectedItem: PropTypes.object, /* eslint-disable-line */
   visibleItems: PropTypes.any, /* eslint-disable-line */

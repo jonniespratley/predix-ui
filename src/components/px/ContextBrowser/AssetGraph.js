@@ -404,9 +404,7 @@ export class AssetTree {
     this._assetGraph = {};
     this._assetGraph = new AssetGraph();
   }
-  fire(event, data) {
-    console.log('fire', event, data, ...arguments);
-  }
+
   /**
    * Adds a child or children to the requested node. Pass a single object
    * to add one child, or an array of objects to add multiple children.

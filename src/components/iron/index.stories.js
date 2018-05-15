@@ -22,8 +22,7 @@ stories
   .addDecorator(withKnobs)
   .add(
     'simple info',
-    withInfo({ text: 'String or React Element with docs about my component' })(() =>
-      <IronCollapse>Click the mark at top-right to view the info.</IronCollapse>)
+    withInfo({ text: 'String or React Element with docs about my component' })(() => <IronCollapse>Click the mark at top-right to view the info.</IronCollapse>)
   )
   .add('iron-collapse', () => (
     <IronCollapse onClick={action('clicked')} opened={boolean('opened', true)}>

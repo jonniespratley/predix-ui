@@ -54,7 +54,7 @@ TableViewComponent.propTypes = {
   onSelect: PropTypes.func,
   children: PropTypes.node,
   items: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     title: PropTypes.string,
     icon: PropTypes.string,
     body: PropTypes.string

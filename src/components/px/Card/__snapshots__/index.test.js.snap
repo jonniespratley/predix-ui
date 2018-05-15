@@ -61,10 +61,6 @@ exports[`Card should render 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .c2 {
@@ -82,16 +78,7 @@ exports[`Card should render 1`] = `
 .c3 {
   color: var(--px-card-icon-color,black);
   color: var(--px-card-action-icon-color,black);
-  cursor: pointer;
   margin-right: .5rem;
-}
-
-.c3:hover {
-  color: var(--px-card-action-icon-color--hover,blue);
-}
-
-.c3:active {
-  color: var(--px-card-action-icon-color--pressed,blue);
 }
 
 .c3:not(:last-of-type) {

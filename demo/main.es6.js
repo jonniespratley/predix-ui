@@ -1,3 +1,4 @@
+/* eslint-disable */
 const { Component } = React;
 const { render } = ReactDOM;
 const {

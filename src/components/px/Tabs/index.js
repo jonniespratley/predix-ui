@@ -177,7 +177,7 @@ Tabs.defaultProps = {
 };
 
 Tabs.propTypes = {
-  selected: PropTypes.number,
+  selected: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func,
   style: PropTypes.objectOf(PropTypes.string),
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),

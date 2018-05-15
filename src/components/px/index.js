@@ -1,7 +1,9 @@
 import './styles';
+import { AssetGraph, AssetTree } from './ContextBrowser/AssetGraph';
+import AssetGraphBehavior from './ContextBrowser/AssetGraphBehavior';
 import AppHeader from './AppHeader';
 import AppNav from './AppNav';
-import AppNavItem from './AppNav/px-app-nav-item';
+import AppNavItem from './AppNav/AppNavItem';
 import AppNavSubGroup from './AppNav/px-app-nav-sub-group';
 import Accordion from './Accordion';
 import AlertMessage from './AlertMessage';
@@ -99,7 +101,10 @@ const px = {
   TreeNode,
   ViewHeader,
   Flex,
-  Toggle
+  Toggle,
+  AssetGraphBehavior,
+  AssetGraph,
+  AssetTree
 };
 
 module.exports = px;

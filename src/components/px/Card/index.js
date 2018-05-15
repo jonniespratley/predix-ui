@@ -21,7 +21,7 @@ const CardHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  user-select: none;
+
 `;
 CardHeader.displayName = 'CardHeader';
 
@@ -44,14 +44,13 @@ CardBody.displayName = 'CardBody';
 const CardIcon = styled.i`
   color: var(--px-card-icon-color, black);
   color: var(--px-card-action-icon-color, black);
-  cursor: pointer;
   margin-right: .5rem;
-  &:hover{
+  /*&:hover{
     color: var(--px-card-action-icon-color--hover, blue);
   }
   &:active{
     color: var(--px-card-action-icon-color--pressed, blue);
-  }
+  }*/
   &:not(:last-of-type) {
     margin-right: .66666rem;
   }
@@ -95,9 +94,9 @@ CardComponent.defaultProps = {
 CardComponent.propTypes = {
   headerText: PropTypes.string,
   icon: PropTypes.string,
-  actions: PropTypes.func,
+  actions: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   fullBleed: PropTypes.bool,
-  children: PropTypes.node
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func])
 };
 
 export default CardComponent;
