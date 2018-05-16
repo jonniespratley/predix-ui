@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
 import styled, { css } from 'styled-components';
 import NavItem from './AppNavItem';
 import AppNavGroup from './AppNavGroup';
+import AppNavSubGroup from './px-app-nav-sub-group';
 
+// px-app-nav
 const AppNav = styled.div`
   height: var(--px-app-nav-height, 4rem);
   background-color: var(--px-app-nav-background-color, whitesmoke);
@@ -13,6 +14,10 @@ const AppNav = styled.div`
   width: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  .app-nav {
+    display: flex;
+  }
+
   ${props => props.vertical && css`
     overflow-x: hidden;
     overflow-y: hidden;
@@ -23,23 +28,32 @@ const AppNav = styled.div`
     min-width: var(--px-app-nav-vertical-width, 4rem);
     max-width: var(--px-app-nav-vertical-width, 4rem);
     transition: var(--px-app-nav-vertical-transition, max-width 250ms ease);
+    .app-nav {
+      display: block;
+    }
+    .app-nav__items {
+      flex-direction: column;
+      height: 100%;
+    }
 
     ${props.verticalOpened && css`
       overflow-y: auto;
       max-width: var(--px-app-nav-vertical-width--opened, 21.33333rem);
     `}
   `}
-`;
 
+`;
+AppNav.defaultProps = { className: 'px-app-nav' };
+
+// app-nav__items
 const AppNavItems = styled.div`
+  height: var(--px-app-nav-height, 4rem);
   flex: 1 1 auto;
   display: flex;
   max-width: 100%;
-  ${props => props.vertical && css`
-    flex-direction: column;
-    height: 100%;
-  `}
 `;
+AppNavItems.defaultProps = { className: 'app-nav__items' };
+
 
 /**
  * AppNav component
@@ -196,7 +210,7 @@ class AppNavComponent extends React.Component {
     return item ? item[0] : null;
   }
 
-  _renderItem(child, index, itemProps) {
+  _renderItem(child, index, itemProps = {}) {
     const propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : index);
     this._keys.push(propForSelect);
     this._items.push(child);
@@ -205,7 +219,7 @@ class AppNavComponent extends React.Component {
       return (
         <NavItem
           {...itemProps}
-          key={index}
+          key={child.id || child.label}
           item={child}
           {...child}
           selected={selected}
@@ -215,9 +229,23 @@ class AppNavComponent extends React.Component {
       );
     }
 
+    if (itemProps.subGroup) {
+      return (
+        <AppNavSubGroup
+          {...itemProps}
+          key={child.id || child.label}
+          item={child}
+          onlyShowIcon={this.state.onlyShowIcon}
+          selected={selected}
+          opened={child.opened}
+          onClick={(item, isChild) => this.handleClick(propForSelect, item, isChild)}
+        />
+      );
+    }
     return (
       <AppNavGroup
-        key={index}
+        {...itemProps}
+        key={child.id || child.label}
         item={child}
         onlyShowIcon={this.state.onlyShowIcon}
         selected={selected}
@@ -227,9 +255,9 @@ class AppNavComponent extends React.Component {
     );
   }
 
-  _renderItems(items) {
+  _renderItems(items, selected, props) {
     this._reset();
-    return items.map(this._renderItem.bind(this));
+    return items.map((item, index) => this._renderItem(item, index, props));
   }
 
   render() {
@@ -250,15 +278,8 @@ class AppNavComponent extends React.Component {
       verticalOpened
     } = this.state;
 
-    const baseClasses = classnames(
-      'px-app-nav',
-      { vertical },
-      { 'vertical-opened': vertical && verticalOpened }
-    );
-
     return (
       <AppNav
-        className={baseClasses}
         ref={this._handleRef}
         vertical={vertical}
         collapseAll={collapseAll}

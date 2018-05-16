@@ -4,10 +4,17 @@ import styled, { css } from 'styled-components';
 
 const SubItemLabel = styled.p`
   margin: 0;
-  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 const SubItem = styled.div`
+  line-height: 1.33333;
+  text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  /* Subitem State: Default */
   position: relative;
   display: flex;
   align-items: center;
@@ -18,11 +25,13 @@ const SubItem = styled.div`
   color: var(--px-app-nav-subitem-text-color, darkgray);
   background-color: var(--px-app-nav-subitem-background-color, white);
 
+  /* Subitem State: Hover */
   &:hover {
     color: var(--px-app-nav-subitem-text-color--hover, darkgray);
     background-color: var(--px-app-nav-subitem-background-color--hover, lightgray);
   }
 
+  /* Subitem State: Selected */
   ${props => props.selected && css`
     color: var(--px-app-nav-subitem-text-color--selected, white);
     background-color: var(--px-app-nav-subitem-background-color--selected, blue);
@@ -32,6 +41,7 @@ const SubItem = styled.div`
     }
   `}
 
+  /* Subitem State: Collapsed */
   ${props => props.collapsed && css`
     color: var(--px-app-nav-subitem-text-color--collapsed, darkgray);
     background-color: var(--px-app-nav-subitem-background-color--collapsed, darkgray);

@@ -10,10 +10,11 @@ const AppNavGroup = styled.div`
   line-height: 1.33333;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  position                          : relative;
-  display                           : flex;
-  height                            : auto;
-  overflow                          : hidden;
+  position: relative;
+  display: flex;
+  height: auto;
+  overflow: hidden;
+
   .px-app-nav-item {
     flex: 1 1 auto;
   }
@@ -23,31 +24,33 @@ AppNavGroup.defaultProps = {
   className: 'px-app-nav-group'
 };
 
+// app-nav-group__dropdown
 const AppNavGroupDropdown = styled.div`
   display: block;
+  height: calc(100vh - var(--px-app-nav-height, 4rem));
   z-index: 399;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
   ${props => props.opened && css`
-    min-height: calc(100vh - var(--px-app-nav-height, 4rem));
     height: auto;
     overflow: auto;
   `}
 `;
 AppNavGroupDropdown.displayName = 'AppNavGroupDropdown';
 AppNavGroupDropdown.defaultProps = {
-  className: 'px-app-nav-group-dropdown'
+  className: 'app-nav-group__dropdown'
 };
 
+// app-nav-group__dropdown__content
 const AppNavGroupDropdownContent = styled.div`
   background-color: var(--px-app-nav-subitem-background-color, white);
-  max-width       : inherit;
-  margin          : 1px;
-  position        : relative;
-  top             : -1px;
+  max-width: inherit;
+  margin: 1px;
+  position: relative;
+  top: -1px;
 `;
 AppNavGroupDropdownContent.displayName = 'AppNavGroupDropdownContent';
 AppNavGroupDropdownContent.defaultProps = {
-  className: 'px-app-nav-group-dropdown-content'
+  className: 'app-nav-group__dropdown__content'
 };
 
 const AppNavGroupComponent = ({

@@ -183,10 +183,7 @@ exports[`AppNav should render 1`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   height: auto;
   overflow: hidden;
 }
@@ -200,10 +197,12 @@ exports[`AppNav should render 1`] = `
 .c9 {
   display: block;
   z-index: 399;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3);
+  height: 0;
+  overflow: hidden;
 }
 
 .c10 {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3);
   background-color: var(--px-app-nav-subitem-background-color,white);
   max-width: inherit;
   margin: 1px;

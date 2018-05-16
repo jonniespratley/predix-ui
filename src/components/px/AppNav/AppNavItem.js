@@ -5,6 +5,8 @@ import styled, { css } from 'styled-components';
 
 import Icon from '../IconSet/Icon';
 
+import AppNavItemIcon from './AppNavItemIcon';
+
 const AppNavItem = styled.div`
   line-height: 1.33333;
   -moz-osx-font-smoothing: grayscale;
@@ -49,6 +51,7 @@ const AppNavItem = styled.div`
       height: var(--px-app-nav-item-stripe-size--selected, 0.13333rem);
       background-color: var(--px-app-nav-item-stripe-color--selected, blue);
     }
+
     ${props.collapsed && css`
       color: var(--px-app-nav-item-text-color--collapsed, darkgray);
       background-color: var(--px-app-nav-item-background-color--collapsed, white);
@@ -60,10 +63,16 @@ const AppNavItem = styled.div`
         height: 100%;
         width: var(--px-app-nav-item-stripe-size--selected, 0.13333rem);
       }
+      .app-nav-item__label {
+        flex: 1 1 auto;
+      }
     `}
+
   `}
 `;
 AppNavItem.displayName = 'AppNavItem';
+AppNavItem.defaultProps = { className: 'px-app-nav-item' };
+
 
 const AppNavItemLabel = styled.div`
   margin: 0;
@@ -71,6 +80,7 @@ const AppNavItemLabel = styled.div`
   white-space: nowrap;
   text-overflow: ellipsis;
   display: flex;
+
   ${props => props.onlyShowIcon && css`
     display: none;
   `}
@@ -85,24 +95,7 @@ const AppNavItemLabel = styled.div`
   `}
 `;
 AppNavItemLabel.displayName = 'AppNavItemLabel';
-
-const AppNavItemIcon = styled.div`
-  max-width: 32px;
-  ${props => props.empty && css`
-    display: block;
-    width: var(--px-app-nav-item-icon-size, 2rem);
-    height: var(--px-app-nav-item-icon-size, 2rem);
-    background-color: var(--px-app-nav-item-background-color--empty, lightgray);
-    flex: none;
-  `}
-  ${props => props.withLabel && css`
-    margin-right: 0.33333rem;
-  `}
-  ${props => props.dropdownIcon && css`
-    margin-left: 0.3rem;
-  `}
-`;
-AppNavItemIcon.displayName = 'AppNavItemIcon';
+AppNavItemLabel.defaultProps = { className: 'app-nav-item__label' };
 
 
 /**
