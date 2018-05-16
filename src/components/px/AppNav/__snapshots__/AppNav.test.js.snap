@@ -35,6 +35,18 @@ exports[`AppNav should render 1`] = `
   display: none;
 }
 
+.c3 {
+  max-width: 32px;
+  margin-right: 0.33333rem;
+}
+
+.c8 {
+  max-width: 32px;
+  margin-left: 0.3rem;
+  --iron-icon-height: 20px;
+  --iron-icon-width: 20px;
+}
+
 .c2 {
   line-height: 1.33333;
   -moz-osx-font-smoothing: grayscale;
@@ -139,22 +151,19 @@ exports[`AppNav should render 1`] = `
   display: flex;
 }
 
-.c3 {
-  max-width: 32px;
-  margin-right: 0.33333rem;
-}
-
-.c8 {
-  max-width: 32px;
-  margin-left: 0.3rem;
-}
-
 .c12 {
   margin: 0;
-  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .c11 {
+  line-height: 1.33333;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -179,13 +188,17 @@ exports[`AppNav should render 1`] = `
 
 .c7 {
   color: var(--px-base-text-color,#2c404c);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   line-height: 1.33333;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-  display: block;
   height: auto;
   overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c7 .px-app-nav-item {
@@ -195,15 +208,14 @@ exports[`AppNav should render 1`] = `
 }
 
 .c9 {
-  display: block;
+  display: none;
+  height: calc(100vh - var(--px-app-nav-height,4rem));
   z-index: 399;
-  height: 0;
-  overflow: hidden;
 }
 
 .c10 {
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3);
   background-color: var(--px-app-nav-subitem-background-color,white);
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3);
   max-width: inherit;
   margin: 1px;
   position: relative;
@@ -220,7 +232,15 @@ exports[`AppNav should render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c0 .app-nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c1 {
+  height: var(--px-app-nav-height,4rem);
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -232,173 +252,31 @@ exports[`AppNav should render 1`] = `
 }
 
 <div
-  className="px-app-nav c0"
+  className="px-app-nav"
 >
   <div
-    className="c1"
+    className="app-nav c0"
+    onChange={null}
+    selected={null}
   >
-    <div
-      className="px-app-nav-item selected c2"
-      data-id="home"
-      data-label="Home"
-      icon="px-fea:home"
-      id="home"
-      label="Home"
-      onClick={[Function]}
-      selected={true}
+    <section
+      className="app-nav__items c1"
     >
       <div
-        className="c3"
-      >
-        <i
-          className="px-icon px-fea-home c4"
-          color={null}
-          style={
-            Object {
-              "height": 32,
-              "width": 32,
-            }
-          }
-        >
-          <svg
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<g id=\\"px-fea-home\\"><path stroke-linejoin=\\"round\\" d=\\"M5.5 16v14.5h21V16m-25-.79L16 2.1l14.5 13.11\\"/><path stroke-linejoin=\\"round\\" d=\\"M12.5 22.5h7v8h-7z\\"/></g>",
-              }
-            }
-            preserveAspectRatio="xMidYMid meet"
-            style={
-              Object {
-                "display": "block",
-                "height": 32,
-                "pointerEvents": "none",
-                "width": 32,
-              }
-            }
-            viewBox="0 0 32 32"
-          />
-        </i>
-      </div>
-      <div
-        className="c5"
-      >
-        Home
-      </div>
-    </div>
-    <div
-      className="px-app-nav-item c6"
-      data-id="settings"
-      data-label="Settings"
-      icon="px-fea:settings"
-      id="settings"
-      label="Settings"
-      onClick={[Function]}
-      selected={false}
-    >
-      <div
-        className="c3"
-      >
-        <i
-          className="px-icon px-fea-settings c4"
-          color={null}
-          style={
-            Object {
-              "height": 32,
-              "width": 32,
-            }
-          }
-        >
-          <svg
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "px-fea-settings",
-              }
-            }
-            preserveAspectRatio="xMidYMid meet"
-            style={
-              Object {
-                "display": "block",
-                "height": 32,
-                "pointerEvents": "none",
-                "width": 32,
-              }
-            }
-            viewBox="0 0 32 32"
-          />
-        </i>
-      </div>
-      <div
-        className="c5"
-      >
-        Settings
-      </div>
-    </div>
-    <div
-      className="px-app-nav-item c6"
-      data-id="alert"
-      data-label="Alerts"
-      icon="px-fea:alerts"
-      id="alert"
-      label="Alerts"
-      onClick={[Function]}
-      selected={false}
-    >
-      <div
-        className="c3"
-      >
-        <i
-          className="px-icon px-fea-alerts c4"
-          color={null}
-          style={
-            Object {
-              "height": 32,
-              "width": 32,
-            }
-          }
-        >
-          <svg
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<g id=\\"px-fea-alerts\\"><path d=\\"M14.69 3.35L1.7 26.29A1.53 1.53 0 0 0 3 28.58h26a1.53 1.53 0 0 0 1.31-2.29l-13-22.94a1.5 1.5 0 0 0-2.62 0z\\" transform=\\"translate(-1 -2.08)\\" stroke-miterlimit=\\"10\\"/><path stroke-linejoin=\\"round\\" d=\\"M15 17.45h1.56l.78-7.07h-4.68l.78 7.07H15zm-1.4 1.97h2.81v3.37H13.6z\\"/></g>",
-              }
-            }
-            preserveAspectRatio="xMidYMid meet"
-            style={
-              Object {
-                "display": "block",
-                "height": 32,
-                "pointerEvents": "none",
-                "width": 32,
-              }
-            }
-            viewBox="0 0 32 32"
-          />
-        </i>
-      </div>
-      <div
-        className="c5"
-      >
-        Alerts
-      </div>
-    </div>
-    <div
-      className="px-app-nav-group c7"
-    >
-      <div
-        className="px-app-nav-item c6"
-        data-id="assets"
-        data-label="Assets"
-        icon="px-fea:asset"
-        id="assets"
-        label="Assets"
+        className="px-app-nav-item selected c2"
+        data-id="home"
+        data-label="Home"
+        icon="px-fea:home"
+        id="home"
+        label="Home"
         onClick={[Function]}
-        selected={false}
+        selected={true}
       >
         <div
-          className="c3"
+          className="app-nav-item__icon c3"
         >
           <i
-            className="px-icon px-fea-asset c4"
+            className="px-icon px-fea-home c4"
             color={null}
             style={
               Object {
@@ -410,7 +288,7 @@ exports[`AppNav should render 1`] = `
             <svg
               dangerouslySetInnerHTML={
                 Object {
-                  "__html": "<g id=\\"px-fea-asset\\"><path stroke-linejoin=\\"round\\" d=\\"M25.5 22.25V7.75L13 .5.5 7.75v14.5l13 7.25 12-7.25z\\"/><path stroke-linejoin=\\"round\\" d=\\"M.5 8.22l13 7.25 12-7.25m-12 21.18v-14\\"/><path stroke-linejoin=\\"round\\" d=\\"M6.67 7.99L13 4.31l6.3 3.66-6.36 3.65-6.27-3.63z\\"/></g>",
+                  "__html": "<g id=\\"px-fea-home\\"><path stroke-linejoin=\\"round\\" d=\\"M5.5 16v14.5h21V16m-25-.79L16 2.1l14.5 13.11\\"/><path stroke-linejoin=\\"round\\" d=\\"M12.5 22.5h7v8h-7z\\"/></g>",
                 }
               }
               preserveAspectRatio="xMidYMid meet"
@@ -427,76 +305,224 @@ exports[`AppNav should render 1`] = `
           </i>
         </div>
         <div
-          className="c5"
+          className="app-nav-item__label c5"
         >
-          Assets
+          Home
         </div>
+      </div>
+      <div
+        className="px-app-nav-item c6"
+        data-id="settings"
+        data-label="Settings"
+        icon="px-fea:settings"
+        id="settings"
+        label="Settings"
+        onClick={[Function]}
+        selected={false}
+      >
         <div
-          className="c8"
+          className="app-nav-item__icon c3"
         >
           <i
-            className="px-icon px-utl-chevron c4"
+            className="px-icon px-fea-settings c4"
             color={null}
             style={
               Object {
-                "height": 19,
-                "width": 19,
+                "height": 32,
+                "width": 32,
               }
             }
           >
             <svg
               dangerouslySetInnerHTML={
                 Object {
-                  "__html": "<g id=\\"px-utl-chevron\\"><path d=\\"M2.4 6.2l5.5 5.5 5.5-5.5\\"/></g>",
+                  "__html": "px-fea-settings",
                 }
               }
               preserveAspectRatio="xMidYMid meet"
               style={
                 Object {
                   "display": "block",
-                  "height": 19,
+                  "height": 32,
                   "pointerEvents": "none",
-                  "width": 19,
+                  "width": 32,
                 }
               }
-              viewBox="0 0 16 16"
+              viewBox="0 0 32 32"
             />
           </i>
         </div>
+        <div
+          className="app-nav-item__label c5"
+        >
+          Settings
+        </div>
       </div>
       <div
-        className="px-app-nav-group-dropdown c9"
+        className="px-app-nav-item c6"
+        data-id="alert"
+        data-label="Alerts"
+        icon="px-fea:alerts"
+        id="alert"
+        label="Alerts"
+        onClick={[Function]}
+        selected={false}
       >
         <div
-          className="px-app-nav-group-dropdown-content c10"
+          className="app-nav-item__icon c3"
+        >
+          <i
+            className="px-icon px-fea-alerts c4"
+            color={null}
+            style={
+              Object {
+                "height": 32,
+                "width": 32,
+              }
+            }
+          >
+            <svg
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<g id=\\"px-fea-alerts\\"><path d=\\"M14.69 3.35L1.7 26.29A1.53 1.53 0 0 0 3 28.58h26a1.53 1.53 0 0 0 1.31-2.29l-13-22.94a1.5 1.5 0 0 0-2.62 0z\\" transform=\\"translate(-1 -2.08)\\" stroke-miterlimit=\\"10\\"/><path stroke-linejoin=\\"round\\" d=\\"M15 17.45h1.56l.78-7.07h-4.68l.78 7.07H15zm-1.4 1.97h2.81v3.37H13.6z\\"/></g>",
+                }
+              }
+              preserveAspectRatio="xMidYMid meet"
+              style={
+                Object {
+                  "display": "block",
+                  "height": 32,
+                  "pointerEvents": "none",
+                  "width": 32,
+                }
+              }
+              viewBox="0 0 32 32"
+            />
+          </i>
+        </div>
+        <div
+          className="app-nav-item__label c5"
+        >
+          Alerts
+        </div>
+      </div>
+      <div
+        className="px-app-nav-group c7"
+      >
+        <div
+          className="px-app-nav-item c6"
+          data-id="assets"
+          data-label="Assets"
+          icon="px-fea:asset"
+          id="assets"
+          label="Assets"
+          onClick={[Function]}
+          selected={false}
         >
           <div
-            className="c11"
-            data-id="a1"
-            onClick={[Function]}
-            selected={null}
+            className="app-nav-item__icon c3"
           >
-            <p
-              className="app-nav-subitem__label c12"
+            <i
+              className="px-icon px-fea-asset c4"
+              color={null}
+              style={
+                Object {
+                  "height": 32,
+                  "width": 32,
+                }
+              }
             >
-              Asset #1
-            </p>
+              <svg
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<g id=\\"px-fea-asset\\"><path stroke-linejoin=\\"round\\" d=\\"M25.5 22.25V7.75L13 .5.5 7.75v14.5l13 7.25 12-7.25z\\"/><path stroke-linejoin=\\"round\\" d=\\"M.5 8.22l13 7.25 12-7.25m-12 21.18v-14\\"/><path stroke-linejoin=\\"round\\" d=\\"M6.67 7.99L13 4.31l6.3 3.66-6.36 3.65-6.27-3.63z\\"/></g>",
+                  }
+                }
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "display": "block",
+                    "height": 32,
+                    "pointerEvents": "none",
+                    "width": 32,
+                  }
+                }
+                viewBox="0 0 32 32"
+              />
+            </i>
           </div>
           <div
-            className="c11"
-            data-id="a2"
-            onClick={[Function]}
-            selected={null}
+            className="app-nav-item__label c5"
           >
-            <p
-              className="app-nav-subitem__label c12"
+            Assets
+          </div>
+          <div
+            className="app-nav-item__icon c8"
+          >
+            <i
+              className="px-icon px-utl-chevron c4"
+              color={null}
+              style={
+                Object {
+                  "height": 19,
+                  "width": 19,
+                }
+              }
             >
-              Asset #2
-            </p>
+              <svg
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<g id=\\"px-utl-chevron\\"><path d=\\"M2.4 6.2l5.5 5.5 5.5-5.5\\"/></g>",
+                  }
+                }
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "display": "block",
+                    "height": 19,
+                    "pointerEvents": "none",
+                    "width": 19,
+                  }
+                }
+                viewBox="0 0 16 16"
+              />
+            </i>
+          </div>
+        </div>
+        <div
+          className="app-nav-group__dropdown c9"
+        >
+          <div
+            className="app-nav-group__dropdown__content c10"
+          >
+            <div
+              className="c11"
+              data-id="a1"
+              onClick={[Function]}
+              selected={null}
+            >
+              <p
+                className="app-nav-subitem__label c12"
+              >
+                Asset #1
+              </p>
+            </div>
+            <div
+              className="c11"
+              data-id="a2"
+              onClick={[Function]}
+              selected={null}
+            >
+              <p
+                className="app-nav-subitem__label c12"
+              >
+                Asset #2
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </div>
 `;

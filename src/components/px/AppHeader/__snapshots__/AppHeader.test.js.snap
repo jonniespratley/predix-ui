@@ -35,6 +35,11 @@ exports[`AppHeader matches snapshot 1`] = `
   display: none;
 }
 
+.c8 {
+  max-width: 32px;
+  margin-right: 0.33333rem;
+}
+
 .c7 {
   line-height: 1.33333;
   -moz-osx-font-smoothing: grayscale;
@@ -100,11 +105,6 @@ exports[`AppHeader matches snapshot 1`] = `
   display: flex;
 }
 
-.c8 {
-  max-width: 32px;
-  margin-right: 0.33333rem;
-}
-
 .c5 {
   height: var(--px-app-nav-height,4rem);
   background-color: var(--px-app-nav-background-color,whitesmoke);
@@ -115,7 +115,15 @@ exports[`AppHeader matches snapshot 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c5 .app-nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c6 {
+  height: var(--px-app-nav-height,4rem);
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -274,59 +282,65 @@ exports[`AppHeader matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="px-app-nav c5"
+    className="px-app-nav"
   >
     <div
-      className="c6"
+      className="app-nav c5"
+      onChange={null}
+      selected={null}
     >
-      <div
-        className="px-app-nav-item selected c7"
-        data-id="item-1"
-        data-label="Home"
-        icon="px-nav:home"
-        id="item-1"
-        label="Home"
-        onClick={[Function]}
-        selected={true}
+      <section
+        className="app-nav__items c6"
       >
         <div
-          className="c8"
+          className="px-app-nav-item selected c7"
+          data-id="item-1"
+          data-label="Home"
+          icon="px-nav:home"
+          id="item-1"
+          label="Home"
+          onClick={[Function]}
+          selected={true}
         >
-          <i
-            className="px-icon px-nav-home c9"
-            color={null}
-            style={
-              Object {
-                "height": 22,
-                "width": 22,
-              }
-            }
+          <div
+            className="app-nav-item__icon c8"
           >
-            <svg
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<g id=\\"px-nav-home\\"><path stroke-linejoin=\\"round\\" d=\\"M3.5 11v10.5h15V11m-18-.5L11 1l10.5 9.5\\"/><path stroke-linejoin=\\"round\\" d=\\"M8.5 15.5h5v6h-5z\\"/></g>",
-                }
-              }
-              preserveAspectRatio="xMidYMid meet"
+            <i
+              className="px-icon px-nav-home c9"
+              color={null}
               style={
                 Object {
-                  "display": "block",
                   "height": 22,
-                  "pointerEvents": "none",
                   "width": 22,
                 }
               }
-              viewBox="0 0 22 22"
-            />
-          </i>
+            >
+              <svg
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<g id=\\"px-nav-home\\"><path stroke-linejoin=\\"round\\" d=\\"M3.5 11v10.5h15V11m-18-.5L11 1l10.5 9.5\\"/><path stroke-linejoin=\\"round\\" d=\\"M8.5 15.5h5v6h-5z\\"/></g>",
+                  }
+                }
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "display": "block",
+                    "height": 22,
+                    "pointerEvents": "none",
+                    "width": 22,
+                  }
+                }
+                viewBox="0 0 22 22"
+              />
+            </i>
+          </div>
+          <div
+            className="app-nav-item__label c10"
+          >
+            Home
+          </div>
         </div>
-        <div
-          className="c10"
-        >
-          Home
-        </div>
-      </div>
+      </section>
     </div>
   </div>
 </div>
