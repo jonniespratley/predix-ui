@@ -51,7 +51,6 @@ const AppNavItem = styled.div`
       height: var(--px-app-nav-item-stripe-size--selected, 0.13333rem);
       background-color: var(--px-app-nav-item-stripe-color--selected, blue);
     }
-
     ${props.collapsed && css`
       color: var(--px-app-nav-item-text-color--collapsed, darkgray);
       background-color: var(--px-app-nav-item-background-color--collapsed, white);
@@ -67,8 +66,8 @@ const AppNavItem = styled.div`
         flex: 1 1 auto;
       }
     `}
-
   `}
+
 `;
 AppNavItem.displayName = 'AppNavItem';
 AppNavItem.defaultProps = { className: 'px-app-nav-item' };

@@ -7,17 +7,20 @@ import AppNavSubItem from './AppNavSubItem';
 
 const AppNavGroup = styled.div`
   color: var(--px-base-text-color, #2c404c);
-  line-height: 1.33333;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  position: relative;
   display: flex;
+  line-height: 1.33333;
   height: auto;
   overflow: hidden;
-
+  box-sizing: border-box;
+  position: relative;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   .px-app-nav-item {
     flex: 1 1 auto;
   }
+  ${props => props.opened && css`
+    display: block;
+  `}
 `;
 AppNavGroup.displayName = 'AppNavGroup';
 AppNavGroup.defaultProps = {
@@ -26,11 +29,11 @@ AppNavGroup.defaultProps = {
 
 // app-nav-group__dropdown
 const AppNavGroupDropdown = styled.div`
-  display: block;
+  display: none;
   height: calc(100vh - var(--px-app-nav-height, 4rem));
   z-index: 399;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
   ${props => props.opened && css`
+    display: block;
     height: auto;
     overflow: auto;
   `}
@@ -43,6 +46,7 @@ AppNavGroupDropdown.defaultProps = {
 // app-nav-group__dropdown__content
 const AppNavGroupDropdownContent = styled.div`
   background-color: var(--px-app-nav-subitem-background-color, white);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
   max-width: inherit;
   margin: 1px;
   position: relative;
@@ -63,7 +67,7 @@ const AppNavGroupComponent = ({
   emptyIcon,
   onClick
 }) => (
-  <AppNavGroup>
+  <AppNavGroup opened={opened}>
     <AppNavItem
       dropdown
       onClick={() => onClick && onClick(item)}

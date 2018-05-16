@@ -56,11 +56,19 @@ const navItems = [
       label: 'See Live Truck View',
       id: 'trucks',
       icon: 'px-obj:truck'
-    }, {
+    },
+    {
       label: 'Track Orders',
       id: 'orders',
+      selected: true,
       icon: 'px-fea:orders'
-    }, {
+    },
+    {
+      label: 'Past Orders',
+      id: 'past-orders',
+      disabled: true
+    },
+    {
       label: 'Analyze Invoices',
       id: 'invoices',
       icon: 'px-fea:templates'
@@ -98,7 +106,14 @@ storiesOf('Components / App Nav', module)
   ))
   .addWithJSX('with "horizontal"', () => (<AppNav items={navItems} />))
   .addWithJSX('with "selected"', () => (<AppNav items={navItems} selected={number('selected', 2)} />))
-  .addWithJSX('with "vertical"', () => (<AppNav items={navItems} vertical={boolean('vertical', true)} />))
+  .addWithJSX('with "vertical"', () => (
+    <AppNav
+      items={navItems}
+      selected={number('selected', 1)}
+      vertical
+      verticalOpened={boolean('verticalOpened', false)}
+    />
+  ))
   .addWithJSX('with AppNavItem', () => (
     <div>
       <AppNavItem

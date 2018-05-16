@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import NavItem from './AppNavItem';
+
+import AppNavItem from './AppNavItem';
 import AppNavGroup from './AppNavGroup';
 import AppNavSubGroup from './px-app-nav-sub-group';
 
@@ -28,25 +29,37 @@ const AppNav = styled.div`
     min-width: var(--px-app-nav-vertical-width, 4rem);
     max-width: var(--px-app-nav-vertical-width, 4rem);
     transition: var(--px-app-nav-vertical-transition, max-width 250ms ease);
+
     .app-nav {
       display: block;
     }
+
     .app-nav__items {
       flex-direction: column;
       height: 100%;
     }
 
+    .app-nav-item__label {
+      display: none;
+
+    }
+
     ${props.verticalOpened && css`
       overflow-y: auto;
       max-width: var(--px-app-nav-vertical-width--opened, 21.33333rem);
+
+      .app-nav-item__label {
+        flex: 1 1 auto;
+        display: flex;
+      }
     `}
   `}
 
 `;
-AppNav.defaultProps = { className: 'px-app-nav' };
+AppNav.defaultProps = { className: 'app-nav' };
 
 // app-nav__items
-const AppNavItems = styled.div`
+const AppNavItems = styled.section`
   height: var(--px-app-nav-height, 4rem);
   flex: 1 1 auto;
   display: flex;
@@ -115,7 +128,7 @@ class AppNavComponent extends React.Component {
   }
 
   _handleRef = (el) => {
-    this.base = el;
+    this.root = el;
   }
 
   _handleMouseEnter = () => {
@@ -205,37 +218,43 @@ class AppNavComponent extends React.Component {
     this._keys = [];
   }
 
-  _getItemFromPropForSelect(value) {
+  _getItemFromPropForSelect = (value) => {
     const item = this.props.items.filter(val => val[this.props.propForSelect] === value);
     return item ? item[0] : null;
   }
 
-  _renderItem(child, index, itemProps = {}) {
+  /**
+   * Handle rendering each item.
+   * @param {Object} child A menu item
+   * @param {Number} index The index of the selected item
+   * @param {Object} itemProps Props to be passed to the AppNavItem
+   */
+  _renderItem = (child, index, itemProps = {}) => {
     const propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : index);
     this._keys.push(propForSelect);
     this._items.push(child);
     const selected = (this.state.selected === this._getIndexForValue(propForSelect));
     if (!child.children) {
       return (
-        <NavItem
+        <AppNavItem
           {...itemProps}
           key={child.id || child.label}
           item={child}
           {...child}
           selected={selected}
-          onlyShowIcon={this.state.onlyShowIcon}
+          onlyShowIcon={!this.state.verticalOpened}
           onClick={() => this.handleClick(propForSelect, child)}
         />
       );
     }
 
-    if (itemProps.subGroup) {
+    if (this.state.vertical) {
       return (
         <AppNavSubGroup
           {...itemProps}
           key={child.id || child.label}
           item={child}
-          onlyShowIcon={this.state.onlyShowIcon}
+          onlyShowIcon={!this.state.verticalOpened}
           selected={selected}
           opened={child.opened}
           onClick={(item, isChild) => this.handleClick(propForSelect, item, isChild)}
@@ -255,7 +274,7 @@ class AppNavComponent extends React.Component {
     );
   }
 
-  _renderItems(items, selected, props) {
+  _renderItems = (items, selected, props) => {
     this._reset();
     return items.map((item, index) => this._renderItem(item, index, props));
   }
@@ -263,50 +282,38 @@ class AppNavComponent extends React.Component {
   render() {
     const {
       children,
-      collapseAll,
-      collapseAt,
       opened,
-      selectedIndex,
-      collapseWithIcon,
-      collapseOpened
+      selectedIndex
     } = this.props;
 
-    const { items } = this.state;
-
     const {
+      items,
       vertical,
       verticalOpened
     } = this.state;
 
     return (
-      <AppNav
-        ref={this._handleRef}
-        vertical={vertical}
-        collapseAll={collapseAll}
-        collapseWithIcon={collapseWithIcon}
-        selectedIndex={selectedIndex}
-        collapseAt={collapseAt}
-        collapseOpened={collapseOpened}
-        verticalOpened={verticalOpened}
-      >
-        {/* STATE: Horizontal or menu nav, any visible items */}
-        {!vertical &&
-          <AppNavItems opened={opened}>
+      <div className="px-app-nav" ref={e => this._handleRef(e)}>
+        <AppNav
+          vertical={vertical}
+          verticalOpened={verticalOpened}
+          opened={opened}
+          {...this.props}
+        >
+
+          {/* STATE: Horizontal or menu nav, any visible items */}
+          <AppNavItems vertical={vertical}>
             {this._renderItems(items, selectedIndex)}
           </AppNavItems>
-        }
 
-        {/* STATE:
-          Vertical Items overflowed/collapsed nav-group -> nav-sub-group -> nav-sub-item */
-        }
-        {vertical &&
-          <AppNavItems opened={opened} vertical>
-            {this._renderItems(items, selectedIndex, { collapsed: true })}
-          </AppNavItems>
-        }
-        {/* Actions */}
-        {children}
-      </AppNav>
+          {/* STATE:
+            Vertical Items overflowed/collapsed nav-group -> nav-sub-group -> nav-sub-item */
+          }
+
+          {/* Actions */}
+          {children}
+        </AppNav>
+      </div>
     );
   }
 }
