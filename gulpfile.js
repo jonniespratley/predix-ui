@@ -6,6 +6,7 @@ const gulpSequence = require('gulp-sequence');
 const importOnce = require('node-sass-import-once');
 const gulpWebpack = require('webpack-stream');
 const webpack = require('webpack');
+const babel = require('gulp-babel');
 const postcss = require('gulp-postcss');
 const sourcemaps = require('gulp-sourcemaps');
 
@@ -125,15 +126,6 @@ gulp.task('sass:themes', 'Compile all theme files', () => (
     .pipe(gulp.dest('./dist'))
 ));
 
-gulp.task('sass:theme', 'Compile all theme scss files', function () {
-  return gulp.src(config.styles.src)
-    .pipe($.filelog('sass'))
-    .pipe($.sass(sassOptions).on('error', $.sass.logError))
-    .pipe($.size())
-    // .pipe($.rename(pkg.name + '.css'))
-    .pipe(gulp.dest(config.styles.dest));
-});
-
 // /
 gulp.task('sass:all', 'Combine all .sass/.scss files', function () {
   return gulp.src(config.styles.src)
@@ -161,7 +153,7 @@ gulp.task('autoprefixer', function () {
 });
 
 // /
-gulp.task('cssmin', 'Take all css and min with source maps', ['sass'], function () {
+gulp.task('cssmin', 'Take all css and min with source maps', function () {
   return gulp.src([
     `${config.dest}/**/*.css`,
     `!${config.dest}/**/*.min.css`
@@ -259,8 +251,7 @@ gulp.task('watch', ['sass:watch', 'autoprefixer:watch']);
 
 // TODO: Handle all the styles for right now
 gulp.task('styles', 'Run bower, sass and cssmin', gulpSequence(
-  // 'bower',
-  // 'sass',
+
   'sass:themes',
   'autoprefixer',
   'cssmin'
