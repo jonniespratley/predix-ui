@@ -7,7 +7,6 @@ import Icon from '../IconSet/Icon';
 
 const AppNavItem = styled.div`
   line-height: 1.33333;
-  text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   position: relative;
@@ -36,8 +35,8 @@ const AppNavItem = styled.div`
   }
 
   ${props => props.selected && css`
-    color: var(--px-app-nav-item-text-color--selected, darkgray);
-    background-color: var(--px-app-nav-item-background-color--selected, white);
+    color: var(--px-app-nav-item-text-color--selected, darkgray) !important;
+    background-color: var(--px-app-nav-item-background-color--selected, white) !important;
     --iron-icon-stroke-color: var(--px-app-nav-item-text-color--selected, darkgray);
     &:before {
       content: '';
@@ -50,7 +49,6 @@ const AppNavItem = styled.div`
       height: var(--px-app-nav-item-stripe-size--selected, 0.13333rem);
       background-color: var(--px-app-nav-item-stripe-color--selected, blue);
     }
-
     ${props.collapsed && css`
       color: var(--px-app-nav-item-text-color--collapsed, darkgray);
       background-color: var(--px-app-nav-item-background-color--collapsed, white);
@@ -73,32 +71,17 @@ const AppNavItemLabel = styled.div`
   white-space: nowrap;
   text-overflow: ellipsis;
   display: flex;
-  flex: 1;
   ${props => props.onlyShowIcon && css`
     display: none;
   `}
-
   ${props => props.collapsed && css`
     flex: 1 1 auto;
-    &:before {
-
-    }
   `}
-
-  ${props => props.overflowed && css`
-      &:before {
-
-      }
-  `}
-
   ${props => props.empty && css`
     display: block;
     width: 6.66667rem;
     height: 0.66667rem;
     background-color: var(--px-app-nav-item-background-color--empty, lightgray);
-    &:before {
-
-    }
   `}
 `;
 AppNavItemLabel.displayName = 'AppNavItemLabel';
@@ -111,15 +94,12 @@ const AppNavItemIcon = styled.div`
     height: var(--px-app-nav-item-icon-size, 2rem);
     background-color: var(--px-app-nav-item-background-color--empty, lightgray);
     flex: none;
-    &:before {
-
-    }
   `}
   ${props => props.withLabel && css`
     margin-right: 0.33333rem;
   `}
   ${props => props.dropdownIcon && css`
-    margin-left: 0.2rem;
+    margin-left: 0.3rem;
   `}
 `;
 AppNavItemIcon.displayName = 'AppNavItemIcon';
@@ -129,15 +109,12 @@ AppNavItemIcon.displayName = 'AppNavItemIcon';
  * AppNav-item component
  */
 class AppNavItemComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this._handleClick = this._handleClick.bind(this);
-  }
-  _handleClick(e) {
+  _handleClick = (e) => {
     if (!this.props.cancelSelect && this.props.onClick) {
       this.props.onClick(e);
     }
   }
+
   _shouldComponentUpdate(nextProps) {
     return nextProps.selected !== this.props.selected ||
       nextProps.onlyShowIcon !== this.props.onlyShowIcon;
@@ -147,6 +124,7 @@ class AppNavItemComponent extends React.Component {
       label,
       icon,
       id,
+      item,
       items,
       selected,
       collapsed,
@@ -169,10 +147,11 @@ class AppNavItemComponent extends React.Component {
 
     return (
       <AppNavItem
-        onClick={this._handleClick}
+        onClick={() => { this._handleClick(item); }}
         className={baseClasses}
         dropdown={(items)}
         data-id={id}
+        data-label={label}
         {...itemProps}
       >
         {icon && !empty && !emptyIcon &&
@@ -203,7 +182,7 @@ class AppNavItemComponent extends React.Component {
 
         {dropdown && !onlyShowIcon &&
           <AppNavItemIcon dropdownIcon>
-            <Icon icon="px-utl:chevron" size={16} />
+            <Icon icon="px-utl:chevron" size={19} />
           </AppNavItemIcon>
         }
       </AppNavItem>

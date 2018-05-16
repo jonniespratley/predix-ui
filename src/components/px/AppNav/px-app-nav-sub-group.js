@@ -3,34 +3,15 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 import AppNavItem from './AppNavItem';
-import AppNavSubItem from './px-app-nav-sub-item';
+import AppNavSubItem from './AppNavSubItem';
 
-const AppNavGroup = styled.div`
-  color: var(--px-base-text-color, #2c404c);
-  line-height: 1.33333;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-  display: flex;
-  height: auto;
-  overflow: hidden;
-
-  .px-app-nav-item {
-    flex: 1 1 auto;
-  }
-`;
-AppNavGroup.displayName = 'AppNavGroup';
 
 const AppNavSubGroup = styled.div`
   line-height: 1.33333;
-  text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: block;
   height: auto;
-  .px-app-nav-item {
-    flex: 1 1 auto;
-  }
 `;
 AppNavSubGroup.displayName = 'AppNavSubGroup';
 
@@ -49,15 +30,16 @@ AppNavGroupDropdown.displayName = 'AppNavGroupDropdown';
 const AppNavGroupDropdownContent = styled.div`
   background-color: var(--px-app-nav-subitem-background-color, white);
   max-width: inherit;
-  margin: 1px;
+
   position: relative;
-  top: -1px;
+
 `;
 AppNavGroupDropdownContent.displayName = 'AppNavGroupDropdownContent';
 
 const AppNavSubGroupDropdown = styled.div`
   height: 0px;
   overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
   ${props => props.opened && css`
     height: auto;
     overflow: auto;
@@ -74,13 +56,13 @@ class AppNavSubGroupComponent extends React.Component {
     };
   }
 
-  _handleClick(e, item, isChild) {
+  _handleClick = (item, isChild) => {
     let items = this.state.children;
 
     if (isChild) {
       items = this.props.item.children.map((o) => {
         const obj = o;
-        obj.selected = (obj === e);
+        obj.selected = (obj === item);
         return obj;
       });
     }
@@ -107,40 +89,39 @@ class AppNavSubGroupComponent extends React.Component {
     const { opened, children } = this.state;
     const {
       item,
-      // selected,
+      selected,
       overflowed,
       onlyShowIcon,
-      emptyIcon
+      emptyIcon,
+      collapsed
     } = this.props;
 
     return (
       <AppNavSubGroup>
         <AppNavItem
           dropdown
-          onClick={this._handleClick.bind(this, item)} /* eslint-disable-line */
+          onClick={() => { this._handleClick(item); }}
           {...item}
           item={item}
-          selected={opened}
+          selected={selected}
           overflowed={overflowed}
-          collapsed={!opened}
+          collapsed={collapsed}
           onlyShowIcon={onlyShowIcon}
           emptyIcon={emptyIcon}
         />
-        <AppNavGroupDropdown>
-          <AppNavSubGroupDropdown opened={opened}>
-            <AppNavGroupDropdownContent>
-              {children && children.map(child => (
-                <AppNavSubItem
-                  onClick={this._handleClick.bind(this, child, true)} /* eslint-disable-line */
-                  selected={child.selected}
-                  key={child.label}
-                  item={child}
-                  {...child}
-                />
+
+        <AppNavSubGroupDropdown opened={opened}>
+          <AppNavGroupDropdownContent>
+            {children && children.map(child => (
+              <AppNavSubItem
+                onClick={() => { this._handleClick(child, true); }}
+                key={child.label}
+                item={child}
+                {...child}
+              />
               ))}
-            </AppNavGroupDropdownContent>
-          </AppNavSubGroupDropdown>
-        </AppNavGroupDropdown>
+          </AppNavGroupDropdownContent>
+        </AppNavSubGroupDropdown>
       </AppNavSubGroup>
     );
   }

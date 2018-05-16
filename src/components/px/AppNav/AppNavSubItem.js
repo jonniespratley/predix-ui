@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
+const SubItemLabel = styled.p`
+  margin: 0;
+  padding: 0;
+`;
 
 const SubItem = styled.div`
   position: relative;
@@ -18,7 +22,7 @@ const SubItem = styled.div`
     color: var(--px-app-nav-subitem-text-color--hover, darkgray);
     background-color: var(--px-app-nav-subitem-background-color--hover, lightgray);
   }
-  
+
   ${props => props.selected && css`
     color: var(--px-app-nav-subitem-text-color--selected, white);
     background-color: var(--px-app-nav-subitem-background-color--selected, blue);
@@ -32,22 +36,25 @@ const SubItem = styled.div`
     color: var(--px-app-nav-subitem-text-color--collapsed, darkgray);
     background-color: var(--px-app-nav-subitem-background-color--collapsed, darkgray);
     padding-left: 3.66667rem;
-    &:hover { 
+    &:hover {
       background-color: var(--px-app-nav-subitem-background-color--collapsed-hover, darkgray);
     }
   `}
 `;
 
-/* eslint-disable */
-const AppNavSubItem = ({item, selected, collapsed, onClick}) => (
+
+const AppNavSubItem = ({
+  item, selected, collapsed, onClick
+}) => (
   <SubItem
     collapsed={collapsed}
     selected={selected}
     data-id={item.id}
-    onClick={onClick}>
-    <p className="app-nav-subitem__label">{item.label}</p>
+    onClick={onClick}
+  >
+    <SubItemLabel className="app-nav-subitem__label">{item.label}</SubItemLabel>
   </SubItem>
-)
+);
 
 AppNavSubItem.defaultProps = {
   item: null,

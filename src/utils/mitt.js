@@ -1,7 +1,6 @@
 /* eslint-disable */
 export default function mitt(all) {
   all = all || Object.create(null);
-  console.log('all', all);
   return {
     /**
      * Register an event handler for the given type.

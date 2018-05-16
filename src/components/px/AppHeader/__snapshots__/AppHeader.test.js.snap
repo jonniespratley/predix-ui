@@ -37,8 +37,6 @@ exports[`AppHeader matches snapshot 1`] = `
 
 .c7 {
   line-height: 1.33333;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   position: relative;
@@ -62,8 +60,8 @@ exports[`AppHeader matches snapshot 1`] = `
   -ms-user-select: none;
   user-select: none;
   outline: none;
-  color: var(--px-app-nav-item-text-color--selected,darkgray);
-  background-color: var(--px-app-nav-item-background-color--selected,white);
+  color: var(--px-app-nav-item-text-color--selected,darkgray) !important;
+  background-color: var(--px-app-nav-item-background-color--selected,white) !important;
   --iron-icon-stroke-color: var(--px-app-nav-item-text-color--selected,darkgray);
 }
 
@@ -100,9 +98,6 @@ exports[`AppHeader matches snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
 }
 
 .c8 {
@@ -116,8 +111,6 @@ exports[`AppHeader matches snapshot 1`] = `
   box-shadow: var(--px-app-nav-box-shadow,0px 2px 4px var(--px-shadow-navigation,rgba(0,0,0,0.2)));
   display: block;
   width: 100%;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -289,6 +282,7 @@ exports[`AppHeader matches snapshot 1`] = `
       <div
         className="px-app-nav-item selected c7"
         data-id="item-1"
+        data-label="Home"
         icon="px-nav:home"
         id="item-1"
         label="Home"
