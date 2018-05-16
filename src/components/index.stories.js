@@ -6,7 +6,7 @@ import { withReadme } from 'storybook-readme';
 import px from './px';
 
 // import './px/Theme/LightTheme';
-import './px/Theme/DarkTheme';
+// import './px/Theme/DarkTheme';
 
 import README from '../../README.md';
 

@@ -1,0 +1,58 @@
+<style>
+  @media screen and (min-width: 719px) {
+    .catalog-header {
+      height: 80px;
+    }
+  }
+
+  .catalog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 45px;
+    padding: 0 1rem;
+    z-index: 2;
+    background-color: var(--px-catalog-header-background-color, #eaeff1);
+    font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  }
+
+  .catalog-header,
+  .logo .logo__text {
+    color: var(--px-catalog-header-text-color, #1b2a33);
+  }
+
+  .catalog-header a {
+    color: var(--px-catalog-header-text-color, #1b2a33);
+    text-decoration: none;
+  }
+
+</style>
+<div class="catalog-header">
+  <div>
+    <a href="/" class="logo">predix-ui</a>
+  </div>
+  <div>
+    <label for="themeCheckbox">Dark Theme
+      <input type="checkbox" id="themeCheckbox" />
+    </label>
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var darkTheme = 'https://unpkg.com/predix-ui/dist/px-dark-theme.min.css';
+    var lightTheme = 'https://unpkg.com/predix-ui/dist/px-theme.min.css';
+    var iframe = document.querySelector('#storybook-preview-iframe');
+
+    document.querySelector('#themeCheckbox').addEventListener('change', function (e) {
+      var stylesheet = iframe.contentDocument.querySelector('#themeCSS');
+      if (e.target.checked) {
+        stylesheet.href = darkTheme;
+      } else {
+        stylesheet.href = lightTheme;
+      }
+    });
+  });
+
+</script>

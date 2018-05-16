@@ -2,13 +2,10 @@ const path = require('path');
 const gulp = require('gulp-help')(require('gulp'));
 const pkg = require('./package.json');
 const $ = require('gulp-load-plugins')();
-const purify = require('gulp-purifycss');
 const gulpSequence = require('gulp-sequence');
 const importOnce = require('node-sass-import-once');
 const gulpWebpack = require('webpack-stream');
 const webpack = require('webpack');
-const babel = require('gulp-babel');
-const bower = require('gulp-bower');
 const postcss = require('gulp-postcss');
 const sourcemaps = require('gulp-sourcemaps');
 
@@ -196,28 +193,6 @@ gulp.task('postcss', 'Run files throught postcss', function () {
     .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('purifycss', function () {
-  return gulp.src([
-    'dist/**/*.css',
-    '!dist/**/*.min.css'
-
-  ])
-    .pipe($.filelog())
-    .pipe($.size())
-    .pipe(purify([
-      './dist/**/*.js',
-      './src/**/*.js'
-    ], {
-      rejected: true,
-      info: true,
-      minify: true
-    }))
-    .pipe($.rename({
-      suffix: '.min'
-    }))
-    .pipe($.size())
-    .pipe(gulp.dest('./dist/'));
-});
 
 // /
 gulp.task('sass:watch', function () {
@@ -284,8 +259,8 @@ gulp.task('watch', ['sass:watch', 'autoprefixer:watch']);
 
 // TODO: Handle all the styles for right now
 gulp.task('styles', 'Run bower, sass and cssmin', gulpSequence(
-  'bower',
-  'sass',
+  // 'bower',
+  // 'sass',
   'sass:themes',
   'autoprefixer',
   'cssmin'
@@ -297,13 +272,8 @@ gulp.task('scripts', 'Run lint, babel and webpack.', ['lint'], gulpSequence(
   'webpack'
 ));
 
-gulp.task('bower', () => bower());
 
-gulp.task('dist', 'Lint, build ES6 and modules.', gulpSequence(
-  'clean:dist',
-  // 'styles',
-  'scripts'
-));
+gulp.task('dist', 'Lint, build ES6 and modules.', ['clean:dist'], gulpSequence(['styles', 'scripts']));
 
 gulp.task('dist:es6', gulpSequence(
   'babel-es6',

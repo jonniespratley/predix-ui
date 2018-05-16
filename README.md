@@ -32,13 +32,12 @@ import { Card } from 'predix-ui';
 ```
 
 ### Theme
-The component styles are all in separate `.css` files or you can use the entire theme.
+All the components are styled-components that use `css variables`, you also choose between a `light` and `dark` theme.
 
 ```code
-<link rel='stylesheet prefetch' href='https://unpkg.com/predix-ui/dist/predix-ui.min.css'/>
-<link rel='stylesheet prefetch' href='https://unpkg.com/predix-ui/dist/px-dark-theme.min.css'/>
+<link rel='stylesheet prefetch' href='https://unpkg.com/predix-ui/dist/px-theme.min.css' />
+<link rel='stylesheet prefetch' href='https://unpkg.com/predix-ui/dist/px-dark-theme.min.css' />
 ```
-
 
 
 ## Starter Project
