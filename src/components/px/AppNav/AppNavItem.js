@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
 import styled, { css } from 'styled-components';
 
 import Icon from '../IconSet/Icon';
@@ -111,13 +110,20 @@ class AppNavItemComponent extends React.Component {
     return nextProps.selected !== this.props.selected ||
       nextProps.onlyShowIcon !== this.props.onlyShowIcon;
   }
+
+  renderChildren = (props) => React.Children.map(props.children, (child) => {
+      if (child.type === RadioOption) {
+        return React.cloneElement(child, {
+          name: props.name
+        });
+      }
+      return child;
+    })
+
   render() {
+    console.log('AppNavItem.render', this.props);
     const {
-      label,
-      icon,
-      id,
       item,
-      items,
       selected,
       collapsed,
       emptyIcon,
@@ -128,56 +134,60 @@ class AppNavItemComponent extends React.Component {
       onlyShowIcon
     } = this.props;
 
-    const baseClasses = classnames(
-      'px-app-nav-item',
-      { selected }
-    );
+    const {
+      children,
+      label,
+      icon,
+      id
+    } = item || this.props;
 
     const itemProps = {
-      label, icon, id, items, selected, dropdown, collapsed
+      label,
+      icon,
+      id,
+      selected,
+      dropdown,
+      collapsed,
+      children
     };
 
     return (
-      <AppNavItem
-        onClick={() => { this._handleClick(item); }}
-        className={baseClasses}
-        dropdown={(items)}
-        data-id={id}
-        data-label={label}
-        {...itemProps}
-      >
-        {icon && !empty && !emptyIcon &&
-          <AppNavItemIcon
-            withLabel={label}
-          >
-            <Icon icon={icon} />
-          </AppNavItemIcon>
-        }
+      <div>
+        <AppNavItem
+          onClick={() => { this._handleClick(item); }}
+          dropdown={(dropdown)}
+          data-id={id}
+          data-label={label}
+          {...itemProps}
+        >
+          {icon && !empty && !emptyIcon &&
+            <AppNavItemIcon withLabel={label} >
+              <Icon icon={icon} />
+            </AppNavItemIcon>
+          }
 
-        {label && !emptyLabel && !emptyIcon && !empty &&
-          <AppNavItemLabel
-            withLabel={withLabel}
-            onlyShowIcon={onlyShowIcon}
-          >
-            {label}
-          </AppNavItemLabel>
-        }
+          {label && !emptyLabel && !emptyIcon && !empty &&
+            <AppNavItemLabel withLabel={withLabel} onlyShowIcon={onlyShowIcon} >
+              {label}
+            </AppNavItemLabel>
+          }
 
-        {/* emptyIcon */}
-        {emptyIcon && <AppNavItemIcon empty withLabel={label} />}
+          {/* emptyIcon */}
+          {emptyIcon && <AppNavItemIcon empty withLabel={label} />}
 
-        {/* emptyLabel */}
-        {emptyLabel && <AppNavItemLabel empty />}
+          {/* emptyLabel */}
+          {emptyLabel && <AppNavItemLabel empty />}
 
-        {empty && <AppNavItemIcon empty withLabel={label} />}
-        {empty && <AppNavItemLabel empty />}
+          {empty && <AppNavItemIcon empty withLabel={label} />}
+          {empty && <AppNavItemLabel empty />}
 
-        {dropdown && !onlyShowIcon &&
-          <AppNavItemIcon dropdownIcon>
-            <Icon icon="px-utl:chevron" size={19} />
-          </AppNavItemIcon>
-        }
-      </AppNavItem>
+          {dropdown && !onlyShowIcon &&
+            <AppNavItemIcon dropdownIcon>
+              <Icon icon="px-utl:chevron" size={19} />
+            </AppNavItemIcon>
+          }
+        </AppNavItem>
+      </div>
     );
   }
 }
@@ -235,20 +245,22 @@ AppNavItemComponent.defaultProps = {
   id: null,
   items: null,
   hideDropdownIcon: false,
-  withLabel: false
+  withLabel: false,
+  children: null
 };
 
+const itemShape = PropTypes.shape({
+  id: PropTypes.string,
+  label: PropTypes.string,
+  icon: PropTypes.string
+});
 AppNavItemComponent.propTypes = {
   collapsed: PropTypes.bool,
   withLabel: PropTypes.bool,
   cancelSelect: PropTypes.bool,
   icon: PropTypes.string,
-  item: PropTypes.shape({
-    id: PropTypes.string,
-    label: PropTypes.string,
-    icon: PropTypes.string
-  }),
-  items: PropTypes.arrayOf(PropTypes.any),
+  item: itemShape,
+  items: PropTypes.arrayOf(itemShape),
   id: PropTypes.string,
   label: PropTypes.string,
   selected: PropTypes.bool,
@@ -261,7 +273,13 @@ AppNavItemComponent.propTypes = {
   subitem: PropTypes.bool,
   onClick: PropTypes.func,
   fixedWidth: PropTypes.bool,
-  hideDropdownIcon: PropTypes.bool
+  hideDropdownIcon: PropTypes.bool,
+  children: PropTypes.oneOfType([
+    itemShape,
+    PropTypes.func,
+    PropTypes.element,
+    PropTypes.node
+  ])
 };
 
 AppNavItemComponent.displayName = 'AppNavItemComponent';

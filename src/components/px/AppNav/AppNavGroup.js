@@ -10,7 +10,7 @@ const AppNavGroup = styled.div`
   display: flex;
   line-height: 1.33333;
   height: auto;
-  overflow: hidden;
+
   box-sizing: border-box;
   position: relative;
   -moz-osx-font-smoothing: grayscale;
@@ -29,9 +29,10 @@ AppNavGroup.defaultProps = {
 
 // app-nav-group__dropdown
 const AppNavGroupDropdown = styled.div`
-  display: none;
   height: calc(100vh - var(--px-app-nav-height, 4rem));
   z-index: 399;
+  height: 0;
+  overflow: hidden;
   ${props => props.opened && css`
     display: block;
     height: auto;
@@ -65,13 +66,13 @@ const AppNavGroupComponent = ({
   collapsed,
   onlyShowIcon,
   emptyIcon,
-  onClick
+  onToggle,
+  onSubItemClick
 }) => (
   <AppNavGroup opened={opened}>
     <AppNavItem
       dropdown
-      onClick={() => onClick && onClick(item)}
-      {...item}
+      onClick={() => onToggle && onToggle(item)}
       item={item}
       selected={selected}
       overflowed={overflowed}
@@ -84,7 +85,7 @@ const AppNavGroupComponent = ({
         {item.children && item.children.map(child => (
           <AppNavSubItem
             selected={child.selected}
-            onClick={() => onClick && onClick(child, true)}
+            onClick={() => onSubItemClick && onSubItemClick(child, true)}
             key={child.label}
             item={child}
             {...child}
@@ -95,20 +96,22 @@ const AppNavGroupComponent = ({
   </AppNavGroup>
 );
 
-AppNavGroupComponent.displayName = 'AppNavGroup';
+AppNavGroupComponent.displayName = 'AppNavGroupComponent';
 AppNavGroupComponent.defaultProps = {
-  selected: false,
-  collapsed: false,
-  overflowed: false,
-  onClick: null,
+  selected: null,
+  collapsed: null,
+  overflowed: null,
+  onToggle: null,
+  onSubItemClick: null,
   item: null,
-  emptyIcon: false,
+  emptyIcon: null,
   opened: false,
-  onlyShowIcon: false
+  onlyShowIcon: null
 };
 
 AppNavGroupComponent.propTypes = {
-  onClick: PropTypes.func,
+  onToggle: PropTypes.func,
+  onSubItemClick: PropTypes.func,
   selected: PropTypes.bool,
   collapsed: PropTypes.bool,
   overflowed: PropTypes.bool,

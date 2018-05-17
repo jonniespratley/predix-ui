@@ -1,6 +1,5 @@
 import './styles';
-import { AssetGraph, AssetTree } from './ContextBrowser/AssetGraph';
-import AssetGraphBehavior from './ContextBrowser/AssetGraphBehavior';
+import { AssetGraphBehavior, AssetGraph, AssetTree } from './AppHelpers';
 import AppHeader from './AppHeader';
 import AppNav from './AppNav';
 import AppNavItem from './AppNav/AppNavItem';

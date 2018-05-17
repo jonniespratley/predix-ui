@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
+import AssetGraphBehavior from '../AppHelpers/AssetGraphBehavior';
 import AppNavItem from './AppNavItem';
 import AppNavGroup from './AppNavGroup';
 import AppNavSubGroup from './px-app-nav-sub-group';
@@ -78,8 +79,9 @@ class AppNavComponent extends React.Component {
     super(props);
     this.state = {
       selected: props.selected || 0,
+      /*
       onlyShowIcon: props.onlyShowIcon || props.vertical,
-      /* selectedIndex: props.selectedIndex || null,
+      selectedIndex: props.selectedIndex || null,
 
       collapseOpened: props.collapseOpened || false,
       visibleItems: props.visibleItems,
@@ -87,15 +89,50 @@ class AppNavComponent extends React.Component {
       opened: props.opened || false,
       collapseAll: props.collapseAll,
       collapseAt: props.collapseAt,
-      propForSelect: props.propForSelect, */
-      items: props.items || null,
-      vertical: props.vertical || false,
-      verticalOpened: props.verticalOpened || !props.vertical
+      propForSelect: props.propForSelect,
+      selectedRoute: props.selectedRoute,
+      */
+
+      items: props.items,
+      vertical: props.vertical,
+      verticalOpened: props.verticalOpened
     };
+    this._assetGraph = new AssetGraphBehavior();
+    this._assetGraph.items = props.items;
+    this._assetGraph.on('px-app-asset-selected', this._handleAssetSelected);
+    this._assetGraph.on('px-app-asset-activated', this._handleAssetActivated);
+  }
+
+  _handleAssetSelected = (e) => {
+    const { item } = e;
+    item.opened = false;
+    console.log('px-app-asset-selected', e);
+    const state = Object.assign({}, {
+      selectedItem: item,
+      path: e.path,
+      selectedRoute: e.route
+    }, e);
+
+    if (this.props.onChange) {
+      this.props.onChange(state);
+    }
+    this.setState(state);
+  }
+
+  _handleAssetActivated = (e) => {
+    console.log('px-app-asset-activated', e);
+    const { item } = e;
+    item.opened = !item.opened;
+    const state = Object.assign({}, {
+      selectedItem: e.item,
+      path: e.path,
+      selectedRoute: e.route
+    }, e);
+    this.setState(state);
   }
 
   componentDidMount() {
-    if (this.base && this.vertical) {
+    if (this.base && this.state.vertical) {
       this.base.addEventListener('mouseleave', this._handleMouseExit);
       this.base.addEventListener('mouseenter', this._handleMouseEnter);
     }
@@ -107,10 +144,14 @@ class AppNavComponent extends React.Component {
     if (this.state.selected !== nextProps.selected) {
       this.setState(nextProps);
     }
+
+    if (nextProps.items) {
+      this._assetGraph.items = nextProps.items;
+    }
     this.setState(nextProps);
   }
 
-  componentWillMount() {
+  _componentWillMount() {
     if (this.props.items) {
       this.props.items.map((item, index) => {
         this._keys.push(this.props.propForSelect ? item[this.props.propForSelect] : index);
@@ -121,7 +162,7 @@ class AppNavComponent extends React.Component {
   }
 
   componentWillUnmount() {
-    if (this.base && this.vertical) {
+    if (this.base && this.state.vertical) {
       this.base.removeEventListener('mouseleave', this._handleMouseExit);
       this.base.removeEventListener('mouseenter', this._handleMouseEnter);
     }
@@ -153,8 +194,7 @@ class AppNavComponent extends React.Component {
 
   _setVerticalOpened(bool) {
     this.setState({
-      verticalOpened: bool,
-      onlyShowIcon: !bool
+      verticalOpened: bool
     });
   }
 
@@ -184,33 +224,9 @@ class AppNavComponent extends React.Component {
     this.setState({ items });
   }
 
-  handleClick = (val, node, isChild) => {
-    const child = node;
-    const propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : val);
-    const index = (this.props.propForSelect ? child[this.props.propForSelect] : this._getIndexForValue(propForSelect));/* eslint-disable-line */
-    let item = this._getValueForIndex(index); /* eslint-disable-line */
-
-    if (child && isChild) {
-      child.selected = !child.selected;
-      //  console.warn('Item has children, do not set active');
-      // return;
-    }
-
-    if (node.children) {
-      child.opened = !child.opened;
-    }
-
-    // this._clearSelected(this.state.items);
-    const state = {
-      selected: propForSelect,
-      selectedIndex: this._getIndexForValue(propForSelect),
-      selectedItem: child
-    };
-
-    this.setState(state);
-    if (this.props.onChange) {
-      this.props.onChange(state);
-    }
+  handleClick = (val, node) => {
+    this._assetGraph.activate(null);
+    this._assetGraph.select(node);
   }
 
   _reset() {
@@ -231,22 +247,7 @@ class AppNavComponent extends React.Component {
    */
   _renderItem = (child, index, itemProps = {}) => {
     const propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : index);
-    this._keys.push(propForSelect);
-    this._items.push(child);
-    const selected = (this.state.selected === this._getIndexForValue(propForSelect));
-    if (!child.children) {
-      return (
-        <AppNavItem
-          {...itemProps}
-          key={child.id || child.label}
-          item={child}
-          {...child}
-          selected={selected}
-          onlyShowIcon={!this.state.verticalOpened}
-          onClick={() => this.handleClick(propForSelect, child)}
-        />
-      );
-    }
+    const selected = (this.state.item === child);
 
     if (this.state.vertical) {
       return (
@@ -254,24 +255,45 @@ class AppNavComponent extends React.Component {
           {...itemProps}
           key={child.id || child.label}
           item={child}
-          onlyShowIcon={!this.state.verticalOpened}
           selected={selected}
           opened={child.opened}
           onClick={(item, isChild) => this.handleClick(propForSelect, item, isChild)}
         />
       );
     }
+
+    if (!child.children) {
+      return (
+        <AppNavItem
+          {...itemProps}
+          key={child.id || child.label}
+          item={child}
+          selected={selected}
+          onClick={() => this.handleClick(propForSelect, child)}
+        />
+      );
+    }
+
+    /* If node has children and */
     return (
       <AppNavGroup
         {...itemProps}
         key={child.id || child.label}
         item={child}
-        onlyShowIcon={this.state.onlyShowIcon}
         selected={selected}
         opened={child.opened}
-        onClick={(item, isChild) => this.handleClick(propForSelect, item, isChild)}
+        onSubItemClick={(item, isChild) => this.handleClick(propForSelect, item, isChild)}
+        onToggle={item => this._assetGraph.activate(item)}
       />
     );
+  }
+
+
+  handleToggle = (item) => {
+    const node = item;
+    node.opened = !node.opened;
+    console.log('toggle, item', node);
+    this._assetGraph.activate(node);
   }
 
   _renderItems = (items, selected, props) => {
@@ -319,13 +341,13 @@ class AppNavComponent extends React.Component {
 }
 
 AppNavComponent.defaultProps = {
-  vertical: false,
-  collapseAll: false,
+  vertical: null,
+  collapseAll: null,
   collapseAt: null,
-  collapseWithIcon: false,
-  onlyShowIcon: false,
-  collapseOpened: false,
-  verticalOpened: false,
+  collapseWithIcon: null,
+  onlyShowIcon: null,
+  collapseOpened: null,
+  verticalOpened: null,
   selected: null,
   selectedItem: null,
   selectedIndex: null,
@@ -334,10 +356,12 @@ AppNavComponent.defaultProps = {
   propForSelect: null,
   children: null,
   onChange: null,
-  opened: null
+  opened: null,
+  selectedRoute: null
 };
 AppNavComponent.propTypes = {
   onChange: PropTypes.func,
+  selectedRoute: PropTypes.arrayOf(PropTypes.string),
   vertical: PropTypes.bool,
   collapseAll: PropTypes.bool,
   collapseAt: PropTypes.number,

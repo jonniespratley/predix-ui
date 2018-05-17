@@ -10,12 +10,15 @@ import README from './README.md';
 import AppNav from './';
 import AppNavItem from './AppNavItem';
 
-import AssetGraphBehavior from '../ContextBrowser/AssetGraphBehavior';
-
+import AppHelpers from '../AppHelpers';
 // import AppNavSubItem from './px-app-nav-sub-item';
 import AppNavSubGroup from './px-app-nav-sub-group';
 import AppNavGroup from './AppNavGroup';
 // import Icons from '../IconSet';
+
+const { AssetGraphBehavior } = AppHelpers;
+
+console.log('AppHelpers', AppHelpers);
 
 // const AllIcons = Object.keys(Icons).sort();
 const selectedRoute = ['assets', 'a1'];
@@ -82,8 +85,8 @@ console.log(graph.items);
 console.log(graph);
 
 // Set selected item;
-graph.select(navItems[3]);
-console.log('graph.selected', graph.selected, graph.selected === navItems[3], graph.selected === navItems[1]);
+// graph.select(navItems[3]);
+// console.log('graph.selected', graph.selected, graph.selected === navItems[3], graph.selected === navItems[1]);
 
 
 const navItem = navItems[navItems.length - 1];

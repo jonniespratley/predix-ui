@@ -65,9 +65,6 @@ exports[`AppHeader matches snapshot 1`] = `
   -ms-user-select: none;
   user-select: none;
   outline: none;
-  color: var(--px-app-nav-item-text-color--selected,darkgray) !important;
-  background-color: var(--px-app-nav-item-background-color--selected,white) !important;
-  --iron-icon-stroke-color: var(--px-app-nav-item-text-color--selected,darkgray);
 }
 
 .c7:hover {
@@ -80,18 +77,6 @@ exports[`AppHeader matches snapshot 1`] = `
   color: var(--px-app-nav-item-text-color--pressed,darkgray);
   background-color: var(--px-app-nav-item-background-color--pressed,lightgray);
   --iron-icon-stroke-color: var(--px-app-nav-item-text-color--hover,darkgray);
-}
-
-.c7:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: block;
-  width: 100%;
-  height: var(--px-app-nav-item-stripe-size--selected,0.13333rem);
-  background-color: var(--px-app-nav-item-stripe-color--selected,blue);
 }
 
 .c10 {
@@ -292,52 +277,54 @@ exports[`AppHeader matches snapshot 1`] = `
       <section
         className="app-nav__items c6"
       >
-        <div
-          className="px-app-nav-item selected c7"
-          data-id="item-1"
-          data-label="Home"
-          icon="px-nav:home"
-          id="item-1"
-          label="Home"
-          onClick={[Function]}
-          selected={true}
-        >
+        <div>
           <div
-            className="app-nav-item__icon c8"
+            className="px-app-nav-item c7"
+            data-id="item-1"
+            data-label="Home"
+            icon="px-nav:home"
+            id="item-1"
+            label="Home"
+            onClick={[Function]}
+            selected={false}
           >
-            <i
-              className="px-icon px-nav-home c9"
-              color={null}
-              style={
-                Object {
-                  "height": 22,
-                  "width": 22,
-                }
-              }
+            <div
+              className="app-nav-item__icon c8"
             >
-              <svg
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<g id=\\"px-nav-home\\"><path stroke-linejoin=\\"round\\" d=\\"M3.5 11v10.5h15V11m-18-.5L11 1l10.5 9.5\\"/><path stroke-linejoin=\\"round\\" d=\\"M8.5 15.5h5v6h-5z\\"/></g>",
-                  }
-                }
-                preserveAspectRatio="xMidYMid meet"
+              <i
+                className="px-icon px-nav-home c9"
+                color={null}
                 style={
                   Object {
-                    "display": "block",
                     "height": 22,
-                    "pointerEvents": "none",
                     "width": 22,
                   }
                 }
-                viewBox="0 0 22 22"
-              />
-            </i>
-          </div>
-          <div
-            className="app-nav-item__label c10"
-          >
-            Home
+              >
+                <svg
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<g id=\\"px-nav-home\\"><path stroke-linejoin=\\"round\\" d=\\"M3.5 11v10.5h15V11m-18-.5L11 1l10.5 9.5\\"/><path stroke-linejoin=\\"round\\" d=\\"M8.5 15.5h5v6h-5z\\"/></g>",
+                    }
+                  }
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "display": "block",
+                      "height": 22,
+                      "pointerEvents": "none",
+                      "width": 22,
+                    }
+                  }
+                  viewBox="0 0 22 22"
+                />
+              </i>
+            </div>
+            <div
+              className="app-nav-item__label c10"
+            >
+              Home
+            </div>
           </div>
         </div>
       </section>
