@@ -23,7 +23,6 @@ exports[`Accordion should render open by default 1`] = `
 }
 
 .c1 {
-  font-family: "GE Inspira Sans";
   padding: .5rem;
   margin-bottom: 0.3333rem;
   cursor: pointer;
@@ -31,10 +30,8 @@ exports[`Accordion should render open by default 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: var(--px-accordion-header-background-color,whitesmoke);
-  color: var(--px-accordion-header-color,black);
-  color: var(--px-headings-heading-subsection-color);
-  background-color: var(--px-headings-heading-subsection-background);
+  color: var(--px-headings-heading-subsection-color,black);
+  background-color: var(--px-headings-heading-subsection-background,whitesmoke);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
