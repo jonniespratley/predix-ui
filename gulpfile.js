@@ -62,23 +62,12 @@ gulp.task('sassdoc', function () {
 // /
 gulp.task('clean', function () {
   return gulp.src([
-    '.tmp',
-
-    './dist',
-    config.styles.dest
+    '.tmp'
   ], {
     read: false
   }).pipe($.clean());
 });
 
-// /
-gulp.task('clean:dist', function () {
-  return gulp.src(['./dist'], { read: false }).pipe($.clean());
-});
-// /
-gulp.task('clean:dist:files', function () {
-  return gulp.src(['./dist/*.*'], { read: false }).pipe($.clean());
-});
 // /
 gulp.task('clean:es6', function () {
   return gulp.src(['./dist/es'], { read: false }).pipe($.clean());
@@ -252,7 +241,7 @@ gulp.task('watch', ['sass:watch', 'autoprefixer:watch']);
 // TODO: Handle all the styles for right now
 gulp.task('styles', 'Run bower, sass and cssmin', gulpSequence(
 
-  'sass:themes',
+  // 'sass:themes',
   'autoprefixer',
   'cssmin'
 ));
@@ -264,7 +253,7 @@ gulp.task('scripts', 'Run lint, babel and webpack.', ['lint'], gulpSequence(
 ));
 
 
-gulp.task('dist', 'Lint, build ES6 and modules.', ['clean:dist'], gulpSequence(['styles', 'scripts']));
+gulp.task('dist', 'Lint, build ES6 and modules.', gulpSequence(['styles', 'scripts']));
 
 gulp.task('dist:es6', gulpSequence(
   'babel-es6',

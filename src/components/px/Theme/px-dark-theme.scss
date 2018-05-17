@@ -7,15 +7,12 @@
 //@import "px-mixins-design/_tools.mixins.scss";
 
 html {
+  font-family: $global-font-family;
+  font-size  : $global-font-size;
   color: var(--px-base-text-color, $gray5);
   background: var(--px-base-background-color, $gray16);
 }
 
-
-html {
-  font-family: $global-font-family;
-  font-size  : $global-font-size;
-}
 
 
 :root {
@@ -32,7 +29,7 @@ html {
   --px-actionable-alt-text-color                                      : #{$gray5};
   --px-actionable-alt-text-color--hover                               : #{$d-actionable-default};
   --px-actionable-alt-text-color--active                              : #{$d-actionable-pressed};
-  --px-actionable-disabled-text-color                                 : rgba(#{$gray10}, 0.5);
+  --px-actionable-disabled-text-color                                 : rgba($gray10, 0.5);
   // Button Group
   --px-btn-group-text-color                                           : #{$white};
   --px-btn-group-background-color                                     : #{$select-default};
@@ -146,9 +143,7 @@ html {
   --px-toggle__switch-border--hover                                   : #{$gray10};
   --px-toggle__switch-border--pressed                                 : #{$gray12};
   --px-toggle__switch-border--disabled                                : rgba($gray10,0.5);
-  // /********************************/
-  // /* Dark Theme for Px Components */
-  // /********************************/
+
   // Alert Label
   --px-alert-label-border-color                                       : transparent;
   --px-alert-label-text-color--important                              : #{$white};
@@ -739,5 +734,4 @@ html {
   --px-gauge-empty-color                                              : #{$gray15};
   --px-gauge-needle-color                                             : #{$gray12};
 }
-
 

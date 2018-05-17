@@ -21,4 +21,18 @@ html { font-family: "GE Inspira Sans", sans-serif; font-size: 16px; color: var(-
 .shadow-navigation { box-shadow: 0 2px 4px var(--px-shadow-navigation, rgba(0, 0, 0, 0.2)); }
 .shadow-notification { box-shadow: 0 4px 8px var(--px-shadow-notification, rgba(0, 0, 0, 0.2)); }
 .shadow-modal { box-shadow: 0 6px 12px var(--px-shadow-modal, rgba(0, 0, 0, 0.2)); }
+.actionable { height: auto; border: 0; border-radius: 0; padding: 0; box-shadow: none; background: none; white-space: nowrap; line-height: inherit; text-decoration: none; font: inherit; -webkit-font-smoothing: antitodoed; cursor: pointer; outline: none; transition: color .4s; }
+.actionable, .actionable:link, .actionable:visited, .actionable:active, .actionable:focus { color: var(--px-actionable-text-color, #007acc); outline: inherit; }
+.actionable:hover { color: var(--px-actionable-text-color--hover, #005c99); }
+.actionable:active { color: var(--px-actionable-text-color--active, #003d66); }
+.actionable--select, .actionable--select:link, .actionable--select:visited, .actionable--select:active, .actionable--select:focus { color: var(--px-selectable-text-color, #09819c); }
+.actionable--select:hover { color: var(--px-selectable-text-color--hover, #065769); }
+.actionable--select:active { color: var(--px-selectable-text-color--active, #032c36); }
+.actionable--action, .actionable--action:link, .actionable--action:visited, .actionable--action:active, .actionable--action:focus, .actionable--secondary, .actionable--secondary:link, .actionable--secondary:visited, .actionable--secondary:active, .actionable--secondary:focus { color: var(--px-actionable-alt-text-color, #2c404c); }
+.actionable--action:hover, .actionable--secondary:hover { color: var(--px-actionable-alt-text-color--hover, #007acc); }
+.actionable--action:active, .actionable--secondary:active { color: var(--px-actionable-alt-text-color--active, #003d66); }
+.actionable--disabled, .actionable--disabled:link, .actionable--disabled:visited, .actionable--disabled:hover, .actionable--disabled:active, .actionable[disabled], .actionable[disabled]:link, .actionable[disabled]:visited, .actionable[disabled]:hover, .actionable[disabled]:active { cursor: not-allowed; color: var(--px-actionable-disabled-text-color, rgba(0, 0, 0, 0.3)); }
+.actionable--small { font-size: 0.8rem; }
+.actionable--large { font-size: 1.33333rem; }
+.actionable--huge { font-size: 2rem; }
 `;

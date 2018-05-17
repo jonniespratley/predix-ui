@@ -40,18 +40,37 @@
 
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var darkTheme = 'https://unpkg.com/predix-ui/dist/px-dark-theme.min.css';
-    var lightTheme = 'https://unpkg.com/predix-ui/dist/px-theme.min.css';
-    var iframe = document.querySelector('#storybook-preview-iframe');
+  var isLocal = /localhost/.test(window.location.href);
+  var darkTheme = 'https://unpkg.com/predix-ui/dist/px-dark-theme.min.css';
+  var lightTheme = 'https://unpkg.com/predix-ui/dist/px-theme.min.css';
+  var useDark = localStorage.getItem('predix-ui-dark-theme');
+  var iframe = document.querySelector('#storybook-preview-iframe');
+  if (/localhost/.test(window.location.href)) {
+    lightTheme = './px-theme.css';
+    darkTheme = './px-dark-theme.css';
+  }
 
+  window.addEventListener('message', function(e){
+    // console.log('Message from storybook-preview-iframe', e);
+  }, false);
+
+  function changeStylesheet(dark) {
+    localStorage.setItem('predix-ui-dark-theme', dark);
+    var stylesheet = document.querySelector('#storybook-preview-iframe').contentDocument.querySelector('#themeCSS');
+    if(!stylesheet){
+      console.warn('There is no stylesheet in the iframe');
+    }
+    if (dark) {
+      stylesheet.setAttribute('href', darkTheme);
+    } else {
+      stylesheet.setAttribute('href', lightTheme);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    //changeStylesheet(useDark);
     document.querySelector('#themeCheckbox').addEventListener('change', function (e) {
-      var stylesheet = iframe.contentDocument.querySelector('#themeCSS');
-      if (e.target.checked) {
-        stylesheet.href = darkTheme;
-      } else {
-        stylesheet.href = lightTheme;
-      }
+      changeStylesheet(e.target.checked)
     });
   });
 

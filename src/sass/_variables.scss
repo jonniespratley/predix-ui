@@ -1,17 +1,12 @@
 // @import "px-defaults-design/_settings.defaults.scss";
-
 //$predix-font-family: "GE Inspira Sans", sans-serif !default;
-
 //@import "px-typography-design/_base.typography.scss";
-
-
 $primary-color: black;
 $red: #F00;
 $blue: #00F;
 $white: #FFF;
 $gray: #999;
 $black: #000;
-
 $global-primary-color: #007acc;
 $global-primary-light-color: #b5e5fd;
 $global-background-color: #fff;
@@ -25,8 +20,6 @@ $header-font-color: #fff;
 $navBackground: #1b2a33;
 $footerBackground: #2c404c;
 $contentBackground: #8b8d8f;
-
-
 //Prefix for utility classes
 $utility-prefix: 'u-';
 $layout-prefix: 'l-';
@@ -36,14 +29,6 @@ $margin-step: 5;
 $height-step: 25;
 $width-step: 25;
 $padding-step: 5;
-/*------------------------------------*\
-    #PX-COLORS-DESIGN
-\*------------------------------------*/
-
-/**
- * Neutral Palette (gray20 is darkest, gray1 is lightest)
- */
-
 $black: rgb(0, 0, 0);
 $gray20: rgb(5, 9, 12);
 $gray19: rgb(12, 20, 25);
@@ -66,10 +51,6 @@ $gray3: rgb(216, 224, 229);
 $gray2: rgb(226, 232, 237);
 $gray1: rgb(235, 239, 242);
 $white: rgb(255, 255, 255);
-/**
-     * Define grey = gray to avoid dev typos
-     */
-
 $grey20: $gray20;
 $grey19: $gray19;
 $grey18: $gray18;
@@ -90,33 +71,29 @@ $grey4: $gray4;
 $grey3: $gray3;
 $grey2: $gray2;
 $grey1: $gray1;
-/**
-  * Actionable Palette
-  */
-
+/////
+// Actionable Palette
+///
 $primary-default: rgb(0, 122, 204);
 $primary-hover: rgb(0, 92, 153);
 $primary-pressed: rgb(0, 61, 102);
 $primary-light: rgb(238, 251, 255);
-/**
-  * Selection Palette
-  */
-
+/////
+// Selection Palette
+///
 $select-default: rgb(9, 129, 156);
 $select-hover: rgb(6, 87, 105);
 $select-pressed: rgb(3, 44, 54);
 $select-light: rgb(230, 251, 255);
-/**
-  * Dark Actionable Palette
-  */
-
+/////
+// Dark Actionable Palette
+///
 $d-actionable-default: rgb(69, 172, 229);
 $d-actionable-hover: rgb(45, 115, 153);
 $d-actionable-pressed: rgb(30, 77, 102);
-/**
-  * Alerts and Status
-  */
-
+/////
+// Alerts and Status
+///
 $status-red1: rgb(255, 236, 236);
 $status-red2: rgb(249, 165, 159);
 $status-red3: rgb(243, 67, 54);
@@ -137,14 +114,12 @@ $status-green1: rgb(236, 255, 238);
 $status-green2: rgb(180, 227, 79);
 $status-green3: rgb(127, 174, 27);
 $status-green4: rgb(66, 88, 14);
-/**
-  * Data Visualization
-  */
-
-/**
-      * Orange
-      */
-
+/////
+// Data Visualization
+///
+/////
+// Orange
+///
 $orange1: rgb(244, 210, 173);
 $orange2: rgb(242, 200, 154);
 $orange3: rgb(240, 191, 136);
@@ -155,10 +130,9 @@ $orange7: rgb(196, 122, 20);
 $orange8: rgb(149, 92, 17);
 $orange9: rgb(124, 77, 16);
 $orange10: rgb(97, 60, 13);
-/**
-      * Yellow
-      */
-
+/////
+// Yellow
+///
 $yellow1: rgb(239, 232, 165);
 $yellow2: rgb(235, 227, 147);
 $yellow3: rgb(232, 224, 130);
@@ -169,10 +143,9 @@ $yellow7: rgb(180, 171, 0);
 $yellow8: rgb(138, 131, 0);
 $yellow9: rgb(115, 109, 0);
 $yellow10: rgb(89, 85, 2);
-/**
-      * Yellow Green
-      */
-
+/////
+// Yellow Green
+///
 $yellow-green1: rgb(187, 226, 151);
 $yellow-green2: rgb(174, 220, 128);
 $yellow-green3: rgb(164, 215, 107);
@@ -183,10 +156,9 @@ $yellow-green7: rgb(103, 159, 0);
 $yellow-green8: rgb(79, 123, 0);
 $yellow-green9: rgb(64, 102, 0);
 $yellow-green10: rgb(50, 80, 0);
-/**
-      * Green
-      */
-
+/////
+// Green
+///
 $green1: rgb(189, 212, 181);
 $green2: rgb(176, 204, 166);
 $green3: rgb(164, 196, 151);
@@ -197,10 +169,9 @@ $green7: rgb(85, 126, 54);
 $green8: rgb(66, 98, 42);
 $green9: rgb(53, 80, 35);
 $green10: rgb(42, 64, 27);
-/**
-      * Teal
-      */
-
+/////
+// Teal
+///
 $teal1: rgb(201, 227, 223);
 $teal2: rgb(174, 213, 207);
 $teal3: rgb(147, 200, 191);
@@ -211,10 +182,9 @@ $teal7: rgb(62, 121, 111);
 $teal8: rgb(49, 94, 87);
 $teal9: rgb(35, 67, 62);
 $teal10: rgb(21, 40, 37);
-/**
-      * Aqua
-      */
-
+/////
+// Aqua
+///
 $aqua1: rgb(182, 206, 221);
 $aqua2: rgb(168, 196, 214);
 $aqua3: rgb(153, 186, 208);
@@ -225,10 +195,9 @@ $aqua7: rgb(62, 112, 145);
 $aqua8: rgb(46, 84, 109);
 $aqua9: rgb(38, 69, 90);
 $aqua10: rgb(30, 55, 71);
-/**
-      * Cyan
-      */
-
+/////
+// Cyan
+///
 $cyan1: rgb(181, 229, 253);
 $cyan2: rgb(166, 223, 252);
 $cyan3: rgb(153, 218, 251);
@@ -239,10 +208,9 @@ $cyan7: rgb(77, 164, 213);
 $cyan8: rgb(59, 126, 164);
 $cyan9: rgb(47, 103, 135);
 $cyan10: rgb(36, 80, 105);
-/**
-      * Blue
-      */
-
+/////
+// Blue
+///
 $blue1: rgb(197, 205, 255);
 $blue2: rgb(185, 195, 255);
 $blue3: rgb(173, 185, 255);
@@ -253,10 +221,9 @@ $blue7: rgb(82, 111, 218);
 $blue8: rgb(64, 86, 170);
 $blue9: rgb(54, 72, 142);
 $blue10: rgb(43, 58, 114);
-/**
-      * Violet
-      */
-
+/////
+// Violet
+///
 $violet1: rgb(217, 198, 249);
 $violet2: rgb(210, 187, 249);
 $violet3: rgb(204, 177, 247);
@@ -267,10 +234,9 @@ $violet7: rgb(140, 101, 203);
 $violet8: rgb(107, 76, 155);
 $violet9: rgb(89, 64, 128);
 $violet10: rgb(70, 50, 102);
-/**
-      * Purple
-      */
-
+/////
+// Purple
+///
 $purple1: rgb(236, 191, 229);
 $purple2: rgb(233, 180, 224);
 $purple3: rgb(231, 168, 219);
@@ -281,10 +247,9 @@ $purple7: rgb(187, 90, 159);
 $purple8: rgb(144, 69, 123);
 $purple9: rgb(119, 57, 102);
 $purple10: rgb(96, 46, 82);
-/**
-      * Pink
-      */
-
+/////
+// Pink
+///
 $pink1: rgb(232, 165, 200);
 $pink2: rgb(229, 148, 189);
 $pink3: rgb(226, 132, 178);
@@ -295,10 +260,9 @@ $pink7: rgb(188, 56, 94);
 $pink8: rgb(145, 41, 72);
 $pink9: rgb(120, 33, 60);
 $pink10: rgb(95, 24, 48);
-/**
-      * Red
-      */
-
+/////
+// Red
+///
 $red1: rgb(237, 182, 189);
 $red2: rgb(235, 169, 176);
 $red3: rgb(233, 155, 163);
@@ -309,10 +273,9 @@ $red7: rgb(190, 71, 72);
 $red8: rgb(144, 53, 55);
 $red9: rgb(120, 44, 46);
 $red10: rgb(97, 35, 37);
-/**
-      * Brown
-      */
-
+/////
+// Brown
+///
 $brown1: rgb(225, 211, 176);
 $brown2: rgb(220, 202, 160);
 $brown3: rgb(214, 194, 143);
@@ -323,10 +286,9 @@ $brown7: rgb(151, 123, 39);
 $brown8: rgb(116, 94, 31);
 $brown9: rgb(96, 78, 26);
 $brown10: rgb(76, 62, 20);
-/**
-      * Gray
-      */
-
+/////
+// Gray
+///
 $neutral-gray1: rgb(224, 224, 224);
 $neutral-gray2: rgb(204, 204, 204);
 $neutral-gray3: rgb(184, 184, 184);
@@ -337,10 +299,9 @@ $neutral-gray7: rgb(102, 102, 102);
 $neutral-gray8: rgb(77, 77, 77);
 $neutral-gray9: rgb(61, 61, 61);
 $neutral-gray10: rgb(41, 41, 41);
-/**
-      * Define grey = gray to avoid dev typos
-      */
-
+/////
+// Define grey = gray to avoid dev typos
+///
 $neutral-grey1: $neutral-gray1;
 $neutral-grey2: $neutral-gray2;
 $neutral-grey3: $neutral-gray3;
@@ -351,10 +312,9 @@ $neutral-grey7: $neutral-gray7;
 $neutral-grey8: $neutral-gray8;
 $neutral-grey9: $neutral-gray9;
 $neutral-grey10: $neutral-gray10;
-/**
-      * Salmon
-      */
-
+/////
+// Salmon
+///
 $salmon1: rgb(247, 219, 201);
 $salmon2: rgb(246, 212, 191);
 $salmon3: rgb(244, 204, 180);
