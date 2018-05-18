@@ -1,40 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dropdown matches snapshot 1`] = `
-.c3 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c3 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c3.hidden {
-  display: none;
-}
-
 .c0 {
   font-family: "GE Inspira Sans";
   outline: none;
@@ -115,7 +81,7 @@ exports[`Dropdown matches snapshot 1`] = `
   margin-left: .5rem;
 }
 
-.c4 {
+.c3 {
   z-index: 10;
   position: absolute;
   background-color: var(--px-dropdown-bg-color,#fff);
@@ -132,9 +98,10 @@ exports[`Dropdown matches snapshot 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   display: none;
+  display: block;
 }
 
-.c5 {
+.c4 {
   padding-left: var(--px-dropdown-item-padding,.66667rem);
   padding-right: var(--px-dropdown-item-padding,.66667rem);
   padding-top: var(--px-dropdown-item-padding);
@@ -151,17 +118,17 @@ exports[`Dropdown matches snapshot 1`] = `
   align-items: center;
 }
 
-.c5:hover {
+.c4:hover {
   background-color: var(--px-dropdown-bg-color--hover,#d3d3d3);
 }
 
-.c5.selected,
-.c5:active {
+.c4.selected,
+.c4:active {
   background-color: var(--px-dropdown-bg-color--selected,#00f);
   color: var(--px-dropdown-text-color--selected,#fff);
 }
 
-.c6 {
+.c5 {
   padding-left: var(--px-dropdown-item-padding,.66667rem);
   padding-right: var(--px-dropdown-item-padding,.66667rem);
   padding-top: var(--px-dropdown-item-padding);
@@ -182,12 +149,12 @@ exports[`Dropdown matches snapshot 1`] = `
   pointer-events: none;
 }
 
-.c6:hover {
+.c5:hover {
   background-color: var(--px-dropdown-bg-color--hover,#d3d3d3);
 }
 
-.c6.selected,
-.c6:active {
+.c5.selected,
+.c5:active {
   background-color: var(--px-dropdown-bg-color--selected,#00f);
   color: var(--px-dropdown-text-color--selected,#fff);
 }
@@ -236,42 +203,14 @@ exports[`Dropdown matches snapshot 1`] = `
       >
         My Val
       </div>
-      <i
-        className="px-icon px-utl-chevron c3"
-        color={null}
-        style={
-          Object {
-            "height": 16,
-            "width": 16,
-          }
-        }
-      >
-        <svg
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<g id=\\"px-utl-chevron\\"><path d=\\"M2.4 6.2l5.5 5.5 5.5-5.5\\"/></g>",
-            }
-          }
-          preserveAspectRatio="xMidYMid meet"
-          style={
-            Object {
-              "display": "block",
-              "height": 16,
-              "pointerEvents": "none",
-              "width": 16,
-            }
-          }
-          viewBox="0 0 16 16"
-        />
-      </i>
     </div>
   </button>
   <div
-    className="px-dropdown__content c4"
+    className="px-dropdown__content c3"
     width={null}
   >
     <div
-      className="px-dropdown__option c5"
+      className="px-dropdown__option c4"
       data-key="1"
       data-val="iPhone"
       disabled={undefined}
@@ -281,7 +220,7 @@ exports[`Dropdown matches snapshot 1`] = `
       iPhone
     </div>
     <div
-      className="px-dropdown__option c5"
+      className="px-dropdown__option c4"
       data-key="2"
       data-val="Android"
       disabled={undefined}
@@ -291,7 +230,7 @@ exports[`Dropdown matches snapshot 1`] = `
       Android
     </div>
     <div
-      className="px-dropdown__option c5"
+      className="px-dropdown__option c4"
       data-key="3"
       data-val="Blackberry"
       disabled={undefined}
@@ -301,7 +240,7 @@ exports[`Dropdown matches snapshot 1`] = `
       Blackberry
     </div>
     <div
-      className="px-dropdown__option c5"
+      className="px-dropdown__option c4"
       data-key="4"
       data-val="Windows Phone"
       disabled={undefined}
@@ -311,7 +250,7 @@ exports[`Dropdown matches snapshot 1`] = `
       Windows Phone
     </div>
     <div
-      className="px-dropdown__option c6"
+      className="px-dropdown__option c5"
       data-key="5"
       data-val="Flip Phone"
       disabled={true}

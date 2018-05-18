@@ -18,7 +18,6 @@ import AppNavGroup from './AppNavGroup';
 
 const { AssetGraphBehavior } = AppHelpers;
 
-console.log('AppHelpers', AppHelpers);
 
 // const AllIcons = Object.keys(Icons).sort();
 const selectedRoute = ['assets', 'a1'];
@@ -82,8 +81,6 @@ const navItems = [
 const graph = new AssetGraphBehavior();
 graph.items = navItems;
 
-console.log(graph.items);
-console.log(graph);
 
 const navItem = navItems[navItems.length - 1];
 // /

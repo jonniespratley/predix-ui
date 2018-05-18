@@ -1,8 +1,10 @@
 /* eslint no-plusplus: 0, no-continue: 0, max-len: 0, no-mixed-operators: 0 */
 import AssetGraph from './AssetGraph';
+import BaseClass from './BaseClass';
 
-export default class AssetTree {
+export default class AssetTree extends BaseClass {
   constructor() {
+    super();
     this.keys = {
       id: 'id',
       label: 'label',

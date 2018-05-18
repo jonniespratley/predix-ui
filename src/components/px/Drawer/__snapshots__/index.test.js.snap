@@ -1,0 +1,465 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Drawer anchors should render bottom 1`] = `
+.c0 {
+  position: fixed;
+  z-index: var(--px-drawer-z-index,100);
+  color: var(--px-drawer-font-color,black);
+  background-color: var(--px-drawer-background-color,white);
+  width: var(--px-drawer-width,256px);
+  height: var(--px-drawer-height,100%);
+  box-shadow: var(--px-drawer-box-shadow,rgba(0,0,0,0.16) 0 1px 4px,rgba(0,0,0,0.23) 0 1px 4px);
+  -webkit-transition: var(--px-drawer-transition,-webkit-transform 350ms cubic-bezier(0.23,1,0.32,1));
+  -webkit-transition: var(--px-drawer-transition,transform 350ms cubic-bezier(0.23,1,0.32,1));
+  transition: var(--px-drawer-transition,transform 350ms cubic-bezier(0.23,1,0.32,1));
+  top: auto;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: auto;
+  max-height: 100vh;
+  width: 100%;
+  -webkit-transform: translateY(105%);
+  -ms-transform: translateY(105%);
+  transform: translateY(105%);
+  width: 100%;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  z-index: var(--px-drawer-z-index,25);
+  visibility: visible;
+}
+
+.c0::after {
+  position: fixed;
+  top: 56px;
+  bottom: 0;
+  left: 100%;
+  visibility: visible;
+  width: 20px;
+  content: "";
+}
+
+.c1 {
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c2 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  opacity: 0;
+  background: var(--px-drawer-overlay-background,rgba(0,0,0,0.5));
+  z-index: -1;
+  visibility: hidden;
+  opacity: 1;
+  z-index: 15;
+  visibility: visible;
+  display: block;
+}
+
+<div>
+  <div
+    className="px-drawer c0"
+    type={null}
+  >
+    <div
+      className="px-drawer-content c1"
+    >
+      Drawer Content
+    </div>
+  </div>
+  <div
+    className="px-drawer-overlay c2"
+    onClick={null}
+  />
+</div>
+`;
+
+exports[`Drawer anchors should render left 1`] = `
+.c0 {
+  position: fixed;
+  z-index: var(--px-drawer-z-index,100);
+  color: var(--px-drawer-font-color,black);
+  background-color: var(--px-drawer-background-color,white);
+  width: var(--px-drawer-width,256px);
+  height: var(--px-drawer-height,100%);
+  box-shadow: var(--px-drawer-box-shadow,rgba(0,0,0,0.16) 0 1px 4px,rgba(0,0,0,0.23) 0 1px 4px);
+  -webkit-transition: var(--px-drawer-transition,-webkit-transform 350ms cubic-bezier(0.23,1,0.32,1));
+  -webkit-transition: var(--px-drawer-transition,transform 350ms cubic-bezier(0.23,1,0.32,1));
+  transition: var(--px-drawer-transition,transform 350ms cubic-bezier(0.23,1,0.32,1));
+  top: 0;
+  left: 0;
+  right: auto;
+  -webkit-transform: translateX(-110%);
+  -ms-transform: translateX(-110%);
+  transform: translateX(-110%);
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  z-index: var(--px-drawer-z-index,25);
+  visibility: visible;
+}
+
+.c0::after {
+  position: fixed;
+  top: 56px;
+  bottom: 0;
+  left: 100%;
+  visibility: visible;
+  width: 20px;
+  content: "";
+}
+
+.c1 {
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c2 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  opacity: 0;
+  background: var(--px-drawer-overlay-background,rgba(0,0,0,0.5));
+  z-index: -1;
+  visibility: hidden;
+  opacity: 1;
+  z-index: 15;
+  visibility: visible;
+  display: block;
+}
+
+<div>
+  <div
+    className="px-drawer c0"
+    type={null}
+  >
+    <div
+      className="px-drawer-content c1"
+    >
+      Drawer Content
+    </div>
+  </div>
+  <div
+    className="px-drawer-overlay c2"
+    onClick={null}
+  />
+</div>
+`;
+
+exports[`Drawer anchors should render right 1`] = `
+.c0 {
+  position: fixed;
+  z-index: var(--px-drawer-z-index,100);
+  color: var(--px-drawer-font-color,black);
+  background-color: var(--px-drawer-background-color,white);
+  width: var(--px-drawer-width,256px);
+  height: var(--px-drawer-height,100%);
+  box-shadow: var(--px-drawer-box-shadow,rgba(0,0,0,0.16) 0 1px 4px,rgba(0,0,0,0.23) 0 1px 4px);
+  -webkit-transition: var(--px-drawer-transition,-webkit-transform 350ms cubic-bezier(0.23,1,0.32,1));
+  -webkit-transition: var(--px-drawer-transition,transform 350ms cubic-bezier(0.23,1,0.32,1));
+  transition: var(--px-drawer-transition,transform 350ms cubic-bezier(0.23,1,0.32,1));
+  top: 0;
+  left: auto;
+  right: 0;
+  -webkit-transform: translateX(110%);
+  -ms-transform: translateX(110%);
+  transform: translateX(110%);
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  z-index: var(--px-drawer-z-index,25);
+  visibility: visible;
+}
+
+.c0::after {
+  position: fixed;
+  top: 56px;
+  bottom: 0;
+  left: 100%;
+  visibility: visible;
+  width: 20px;
+  content: "";
+}
+
+.c1 {
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c2 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  opacity: 0;
+  background: var(--px-drawer-overlay-background,rgba(0,0,0,0.5));
+  z-index: -1;
+  visibility: hidden;
+  opacity: 1;
+  z-index: 15;
+  visibility: visible;
+  display: block;
+}
+
+<div>
+  <div
+    className="px-drawer c0"
+    type={null}
+  >
+    <div
+      className="px-drawer-content c1"
+    >
+      Drawer Content
+    </div>
+  </div>
+  <div
+    className="px-drawer-overlay c2"
+    onClick={null}
+  />
+</div>
+`;
+
+exports[`Drawer anchors should render top 1`] = `
+.c0 {
+  position: fixed;
+  z-index: var(--px-drawer-z-index,100);
+  color: var(--px-drawer-font-color,black);
+  background-color: var(--px-drawer-background-color,white);
+  width: var(--px-drawer-width,256px);
+  height: var(--px-drawer-height,100%);
+  box-shadow: var(--px-drawer-box-shadow,rgba(0,0,0,0.16) 0 1px 4px,rgba(0,0,0,0.23) 0 1px 4px);
+  -webkit-transition: var(--px-drawer-transition,-webkit-transform 350ms cubic-bezier(0.23,1,0.32,1));
+  -webkit-transition: var(--px-drawer-transition,transform 350ms cubic-bezier(0.23,1,0.32,1));
+  transition: var(--px-drawer-transition,transform 350ms cubic-bezier(0.23,1,0.32,1));
+  top: 0;
+  left: 0;
+  bottom: auto;
+  right: 0;
+  height: auto;
+  max-height: 100vh;
+  -webkit-transform: translateY(-110%);
+  -ms-transform: translateY(-110%);
+  transform: translateY(-110%);
+  width: 100%;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  z-index: var(--px-drawer-z-index,25);
+  visibility: visible;
+}
+
+.c0::after {
+  position: fixed;
+  top: 56px;
+  bottom: 0;
+  left: 100%;
+  visibility: visible;
+  width: 20px;
+  content: "";
+}
+
+.c1 {
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c2 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  opacity: 0;
+  background: var(--px-drawer-overlay-background,rgba(0,0,0,0.5));
+  z-index: -1;
+  visibility: hidden;
+  opacity: 1;
+  z-index: 15;
+  visibility: visible;
+  display: block;
+}
+
+<div>
+  <div
+    className="px-drawer c0"
+    type={null}
+  >
+    <div
+      className="px-drawer-content c1"
+    >
+      Drawer Content
+    </div>
+  </div>
+  <div
+    className="px-drawer-overlay c2"
+    onClick={null}
+  />
+</div>
+`;
+
+exports[`Drawer should render disabled 1`] = `
+.c0 {
+  position: fixed;
+  z-index: var(--px-drawer-z-index,100);
+  color: var(--px-drawer-font-color,black);
+  background-color: var(--px-drawer-background-color,white);
+  width: var(--px-drawer-width,256px);
+  height: var(--px-drawer-height,100%);
+  box-shadow: var(--px-drawer-box-shadow,rgba(0,0,0,0.16) 0 1px 4px,rgba(0,0,0,0.23) 0 1px 4px);
+  -webkit-transition: var(--px-drawer-transition,-webkit-transform 350ms cubic-bezier(0.23,1,0.32,1));
+  -webkit-transition: var(--px-drawer-transition,transform 350ms cubic-bezier(0.23,1,0.32,1));
+  transition: var(--px-drawer-transition,transform 350ms cubic-bezier(0.23,1,0.32,1));
+  top: 0;
+  left: 0;
+  right: auto;
+  -webkit-transform: translateX(-110%);
+  -ms-transform: translateX(-110%);
+  transform: translateX(-110%);
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  z-index: var(--px-drawer-z-index,25);
+  visibility: visible;
+}
+
+.c0::after {
+  position: fixed;
+  top: 56px;
+  bottom: 0;
+  left: 100%;
+  visibility: visible;
+  width: 20px;
+  content: "";
+}
+
+.c1 {
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c2 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  opacity: 0;
+  background: var(--px-drawer-overlay-background,rgba(0,0,0,0.5));
+  z-index: -1;
+  visibility: hidden;
+  opacity: 1;
+  z-index: 15;
+  visibility: visible;
+  display: block;
+}
+
+<div>
+  <div
+    className="px-drawer c0"
+    type={null}
+  >
+    <div
+      className="px-drawer-content c1"
+    >
+      Drawer Content
+    </div>
+  </div>
+  <div
+    className="px-drawer-overlay c2"
+    onClick={null}
+  />
+</div>
+`;

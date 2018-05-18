@@ -1,18 +1,39 @@
-import { expect } from 'chai';
+import renderer from 'react-test-renderer';
 import React from 'react';
-import {shallow} from 'enzyme';
-import PxDrawer from './';
+import { shallow } from 'enzyme';
+import sinon from 'sinon';
+
+import Drawer from './';
+
+const anchors = [ 'left', 'right', 'top', 'bottom' ];
 
 describe('Drawer', () => {
-  test('should...', () =>{
-    const wrapper = shallow(
-      <PxDrawer/>
-    );
-    console.log(wrapper.debug());
-    expect(true).to.equal(true);
+  test('should render disabled', () => {
+    const tree = renderer.create(
+      <Drawer opened overlay>Drawer Content</Drawer>
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
   });
-  //expect(wrapper.find('.label')).to.have.length(1);
-  //expect(wrapper.find('.delta')).to.have.length(1);
-  //expect(wrapper.find('.alpha')).to.have.length(1);
-  //expect(wrapper.contains(<div className='label'/>)).to.equal(true);
+
+  describe('anchors', () => {
+    anchors.forEach(anchor => {
+      test(`should render ${anchor}`, () => {
+        const tree = renderer.create(
+          <Drawer overlay anchor={anchor} opened>Drawer Content</Drawer>
+        ).toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+  });
+
+  describe('Events', () => {
+    test('onOverlayClick - should trigger handler', () => {
+      const spy = sinon.spy();
+      const wrapper = shallow(<Drawer onOverlayClick={spy} overlay opened>Drawer Content</Drawer>);
+      expect(wrapper.find('.px-drawer-overlay')).toHaveLength(1);
+      wrapper.find('.px-drawer-overlay').simulate('click');
+      expect(spy.calledOnce).toEqual(true);
+    });
+  });
+
 });

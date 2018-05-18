@@ -19,6 +19,18 @@ describe('Overlay', () => {
     expect(wrapper.state('opened')).toEqual(true);
   });
 
+  test('should update state when props change', () =>{
+    const wrapper = shallow(<Overlay/>);
+    expect(wrapper.state('opened')).toEqual(false);
+    wrapper.setProps({opened: true});
+    expect(wrapper.state('opened')).toEqual(true);
+  });
+  
+  test('should has open class', () =>{
+    const wrapper = shallow(<Overlay opened/>);
+    expect(wrapper.state('opened')).toEqual(true);
+  });
+
   test('onOverlayClick triggers on backdrop click', () => {
     const onButtonClick = sinon.spy();
     const onRequestClose = sinon.spy();
@@ -42,7 +54,7 @@ describe('Overlay', () => {
     expect(onEscapeKeyUp.calledOnce).toEqual(true);
   });
 
-  test('does not close on ignoreBackdropClick click', () => {
+  test('ignoreBackdropClick - does not close on ignoreBackdropClick click', () => {
     const onButtonClick = sinon.spy();
     const wrapper = shallow(<Overlay opened ignoreOverlayClick onOverlayClick={onButtonClick}/>);
     wrapper.simulate('click');

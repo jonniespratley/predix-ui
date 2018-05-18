@@ -268,11 +268,11 @@ exports[`AppHeader matches snapshot 1`] = `
   </div>
   <div
     className="px-app-nav"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <div
       className="app-nav c5"
-      onChange={null}
-      selected={null}
     >
       <section
         className="app-nav__items c6"

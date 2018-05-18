@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, number } from '@storybook/addon-knobs/react';
+import { withKnobs } from '@storybook/addon-knobs/react';
 import { withReadme } from 'storybook-readme';
 import px from './px';
 
@@ -56,7 +56,7 @@ storiesOf('Examples', module)
   .addDecorator(withKnobs)
   .add('App', () => (
     <div>
-      <AppNav items={navItems} onChange={action('onChange')} selected={number('selected', 1)} />
+      <AppNav items={navItems} onChange={action('onChange')} />
       <br />
       <Notification
         type="info"
@@ -69,6 +69,7 @@ storiesOf('Examples', module)
       <Card headerText="My Card">
         This is the main content area.
       </Card>
+      <br />
       <Card headerText="Buttons">
         <Flex>
           <Button>Default</Button>

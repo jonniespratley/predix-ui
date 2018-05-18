@@ -40,13 +40,6 @@ exports[`AppNav should render 1`] = `
   margin-right: 0.33333rem;
 }
 
-.c7 {
-  max-width: 32px;
-  margin-left: 0.3rem;
-  --iron-icon-height: 20px;
-  --iron-icon-width: 20px;
-}
-
 .c2 {
   line-height: 1.33333;
   -moz-osx-font-smoothing: grayscale;
@@ -97,6 +90,18 @@ exports[`AppNav should render 1`] = `
   display: flex;
 }
 
+.c7 {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: none;
+}
+
 .c11 {
   margin: 0;
   overflow: hidden;
@@ -105,9 +110,11 @@ exports[`AppNav should render 1`] = `
 }
 
 .c10 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   line-height: 1.33333;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   position: relative;
@@ -130,6 +137,12 @@ exports[`AppNav should render 1`] = `
 .c10:hover {
   color: var(--px-app-nav-subitem-text-color--hover,darkgray);
   background-color: var(--px-app-nav-subitem-background-color--hover,lightgray);
+}
+
+.c10[disabled] {
+  opacity: .5;
+  color: var(--px-app-nav-subitem-text-color--hover,gray);
+  cursor: not-allowed;
 }
 
 .c6 {
@@ -182,11 +195,11 @@ exports[`AppNav should render 1`] = `
 
 <div
   className="px-app-nav"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
 >
   <div
     className="app-nav c0"
-    onChange={null}
-    selected={null}
   >
     <section
       className="app-nav__items c1"
@@ -388,41 +401,9 @@ exports[`AppNav should render 1`] = `
               </i>
             </div>
             <div
-              className="app-nav-item__label c5"
+              className="app-nav-item__label c7"
             >
               Assets
-            </div>
-            <div
-              className="app-nav-item__icon c7"
-            >
-              <i
-                className="px-icon px-utl-chevron c4"
-                color={null}
-                style={
-                  Object {
-                    "height": 19,
-                    "width": 19,
-                  }
-                }
-              >
-                <svg
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<g id=\\"px-utl-chevron\\"><path d=\\"M2.4 6.2l5.5 5.5 5.5-5.5\\"/></g>",
-                    }
-                  }
-                  preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "display": "block",
-                      "height": 19,
-                      "pointerEvents": "none",
-                      "width": 19,
-                    }
-                  }
-                  viewBox="0 0 16 16"
-                />
-              </i>
             </div>
           </div>
         </div>
@@ -435,11 +416,12 @@ exports[`AppNav should render 1`] = `
             <div
               className="c10"
               data-id="a1"
+              disabled={undefined}
               onClick={[Function]}
-              selected={null}
+              selected={undefined}
             >
               <p
-                className="app-nav-subitem__label c11"
+                className="c11"
               >
                 Asset #1
               </p>
@@ -447,11 +429,12 @@ exports[`AppNav should render 1`] = `
             <div
               className="c10"
               data-id="a2"
+              disabled={undefined}
               onClick={[Function]}
-              selected={null}
+              selected={undefined}
             >
               <p
-                className="app-nav-subitem__label c11"
+                className="c11"
               >
                 Asset #2
               </p>

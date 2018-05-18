@@ -46,6 +46,12 @@ const SubItem = styled.div`
       background-color: var(--px-app-nav-subitem-background-color--collapsed-hover, darkgray);
     }
   `}
+
+  &[disabled]{
+    opacity: .5;
+    color: var(--px-app-nav-subitem-text-color--hover, gray);
+    cursor: not-allowed;
+  }
 `;
 
 

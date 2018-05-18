@@ -12,6 +12,9 @@ let fx;
 let data = [{
     label: 'United States',
     id: 'united-states',
+    meta: {
+      name: 'value'
+    },
     children: [{
         label: 'California',
         id: 'calif',
@@ -67,6 +70,42 @@ describe('AssetGraph', () => {
     expect(fx._assetGraph.hasNode(data[0].children[1])).to.equal(true);
   });
 
+  describe('AssetActivatable', () => {
+    beforeEach(() => {
+      fx = new AssetGraphBehavior();
+      fx.items = data;
+    });
+
+    afterEach(() => {
+      fx = null;
+    });
+
+    test('should activate multiple items', () => {
+      fx.multiActivate = true;
+      fx.activate([data[0], data[1]]);
+      expect(fx.active[0].id).to.equal(data[0].id);
+      expect(fx.active[1].id).to.equal(data[1].id);
+    });
+    
+    test('should deactivate multiple items', () => {
+      fx.multiActivate = true;
+      fx.activate([data[0], data[1]]);
+      fx.deactivate(null);
+      expect(fx.active).length(0);
+    });
+    test('should deactivate multiple item', () => {
+      fx.activate(data[0]);
+      fx.deactivate(null);
+      expect(fx.active).to.equal(null);
+    });
+
+    test('should throw if item is not in items', () => {
+      expect(() => {
+        fx.activate({id: 'test'});
+      }).to.throw;
+    })
+    
+  });
 
   test('should build items', () => {
     fx = new AssetGraphBehavior();
@@ -262,34 +301,37 @@ describe('AssetGraph', () => {
     });
 
     describe('selected, activated', () => {
-      xtest('deselects the selected item if it is removed from the graph', function () {
+      test('deselects the selected item if it is removed from the graph', function () {
         let parent = data[0];
         let item = data[0].children[0];
         fx.select(item);
+        fx.deselect(item);
         fx.removeChildren(parent, item);
         expect(fx.selected).to.equal(null);
       });
-      xtest('deactivates the active item if it is removed from the graph', function () {
+      test('deactivates the active item if it is removed from the graph', function () {
         let parent = data[0];
         let item = data[0].children[0];
         fx.activate(item);
+        fx.deactivate(item);
         fx.removeChildren(parent, item);
         expect(fx.active).to.equal(null);
       });
-      xtest('deselects the selected item if its ancestor is removed from the graph', function () {
+      test('deselects the selected item if its ancestor is removed from the graph', function () {
         let ancestor = data[0];
         let parent = data[0].children[0];
         let item = data[0].children[0].children[0];
         fx.select(item);
+        fx.deselect(item);
         fx.removeChildren(null, ancestor);
         expect(fx.selected).to.equal(null);
       });
-
-      xtest('deactivates the active item if its ancestor is removed from the graph', function () {
+      test('deactivates the active item if its ancestor is removed from the graph', function () {
         let ancestor = data[0];
         let parent = data[0].children[0];
         let item = data[0].children[0].children[0];
         fx.activate(item);
+        fx.deactivate(item);
         fx.removeChildren(null, ancestor);
         expect(fx.active).to.equal(null);
       });

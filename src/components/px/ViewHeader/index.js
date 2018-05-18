@@ -13,7 +13,7 @@ const VHeader = styled.div`
   position: relative;
   user-select:none;
 `;
-VHeader.displayName = 'ViewHeader';
+VHeader.displayName = 'VHeader';
 
 const VHeaderText = styled.div`
   padding-left : 1rem;
@@ -24,7 +24,7 @@ const VHeaderText = styled.div`
   margin-right : auto;
   min-width: 1px;
 `;
-VHeaderText.displayName = 'ViewHeaderText';
+VHeaderText.displayName = 'VHeaderText';
 
 const VHeaderTitle = styled.div`
   text-align: center;
@@ -33,7 +33,7 @@ const VHeaderTitle = styled.div`
   text-overflow: ellipsis;
   white-space  : nowrap;
 `;
-VHeaderTitle.displayName = 'ViewHeaderTitle';
+VHeaderTitle.displayName = 'VHeaderTitle';
 
 const VHeaderSubTitle = styled.div`
   text-align: center;
@@ -45,19 +45,19 @@ const VHeaderSubTitle = styled.div`
   text-overflow: ellipsis;
   white-space  : nowrap;
 `;
-VHeaderSubTitle.displayName = 'ViewHeaderSubTitle';
+VHeaderSubTitle.displayName = 'VHeaderSubTitle';
 
 const VHeaderLeft = styled.div`
   position: absolute;
   left: 1rem;
 `;
-VHeaderLeft.displayName = 'ViewHeaderLeft';
+VHeaderLeft.displayName = 'VHeaderLeft';
 
 const VHeaderRight = styled.div`
   position: absolute;
   right: 1rem;
 `;
-VHeaderRight.displayName = 'ViewHeaderRight';
+VHeaderRight.displayName = 'VHeaderRight';
 
 const ViewHeader = ({
   title,
@@ -86,9 +86,9 @@ const ViewHeader = ({
 ViewHeader.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  rightContent: PropTypes.node,
-  leftContent: PropTypes.node,
-  children: PropTypes.node
+  rightContent: PropTypes.oneOfType([PropTypes.element, PropTypes.func, PropTypes.node]),
+  leftContent: PropTypes.oneOfType([PropTypes.element, PropTypes.func, PropTypes.node]),
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.func, PropTypes.node])
 };
 
 ViewHeader.defaultProps = {
@@ -98,5 +98,5 @@ ViewHeader.defaultProps = {
   leftContent: null,
   children: null
 };
-
+ViewHeader.displayName = 'ViewHeader';
 export default ViewHeader;

@@ -59,8 +59,7 @@ class Example extends React.Component {
         >
           <PopoverHeader>{title}</PopoverHeader>
           <PopoverBody>
-						Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
-						vestibulum.
+            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
           </PopoverBody>
         </Popover>
       </div>
@@ -70,7 +69,7 @@ class Example extends React.Component {
 /* eslint-enable */
 storiesOf('Components / Popover', module)
   .addDecorator(withKnobs)
-  .add('with example', () => (
+  .addWithJSX('with example', () => (
     <Example
       title={text('title', 'Popover Title')}
       popoverOpen={boolean('isOpen', false)}

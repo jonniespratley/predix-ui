@@ -21,6 +21,9 @@ const TabsContainerNav = styled.ul`
   border-bottom: 1px solid var(--px-tab-border-color, gray);
   padding: 0 1rem 0;
   display: flex;
+  ${props => props.hidden && css`
+    display: none;
+  `}
 `;
 TabsContainerNav.displayName = 'TabsContainerNav';
 
@@ -85,12 +88,16 @@ class Tabs extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
+    if (nextProps.hideTabs !== this.props.hideTabs) {
+      return true;
+    }
     if (
       nextProps.selected !== this.props.selected ||
       nextState.selected !== this.state.selected
     ) {
       return true;
     }
+
     return false;
   }
 
@@ -156,10 +163,10 @@ class Tabs extends React.Component {
   }
 
   render() {
-    const { style } = this.props;
+    const { style, hideTabs } = this.props;
     return (
       <TabsContainer style={style} className="px-tabs__container">
-        <TabsContainerNav className="px-tabs__nav" role="tablist">
+        <TabsContainerNav className="px-tabs__nav" role="tablist" hidden={hideTabs}>
           {this._renderTitles()}
         </TabsContainerNav>
         {this._renderContent()}
@@ -170,6 +177,7 @@ class Tabs extends React.Component {
 
 Tabs.defaultProps = {
   selected: 0,
+  hideTabs: false,
   onChange: null,
   style: null,
   children: null,
@@ -178,6 +186,7 @@ Tabs.defaultProps = {
 
 Tabs.propTypes = {
   selected: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  hideTabs: PropTypes.bool,
   onChange: PropTypes.func,
   style: PropTypes.objectOf(PropTypes.string),
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),

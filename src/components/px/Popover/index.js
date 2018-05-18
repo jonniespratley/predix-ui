@@ -16,7 +16,7 @@ const defaultProps = {
   innerClassName: null,
   cssModule: null,
   className: null,
-  container: null,
+  container: 'body',
   modifiers: null,
   hideArrow: false,
   placement: 'right',
@@ -330,8 +330,8 @@ Popover.defaultProps = defaultProps;
 
 Popover.propTypes = {
   innerClassName: PropTypes.string,
-  target: PropTypes.element,
-  container: PropTypes.element,
+  target: PropTypes.oneOfType([PropTypes.element, PropTypes.string, PropTypes.node]),
+  container: PropTypes.oneOfType([PropTypes.element, PropTypes.string, PropTypes.node]),
   cssModule: PropTypes.objectOf(PropTypes.string),
   modifiers: PropTypes.objectOf(PropTypes.string),
   disabled: PropTypes.bool,

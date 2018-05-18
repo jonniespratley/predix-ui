@@ -24,6 +24,8 @@ describe('Dropdown', () => {
     const tree = renderer.create(
       <Dropdown
         displayValue='My Val'
+        selected={2}
+        opened
         buttonStyle='default'
         items={items} />
     ).toJSON();

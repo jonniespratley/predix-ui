@@ -103,16 +103,6 @@ class AppNavComponent extends React.Component {
     this._assetGraph.on('px-app-asset-activated', this._handleAssetActivated);
   }
 
-
-  componentDidMount() {
-    if (this.base && this.state.vertical) {
-      this.base.addEventListener('mouseleave', this._handleMouseExit);
-      this.base.addEventListener('mouseenter', this._handleMouseEnter);
-    }
-
-    // this.handleClick(this.props.selected, this._getItemFromValue(this.props.selected));
-  }
-
   componentWillReceiveProps(nextProps) {
     if (this.state.selected !== nextProps.selected) {
       this.setState(nextProps);
@@ -137,18 +127,10 @@ class AppNavComponent extends React.Component {
   componentWillUnmount() {
     this._assetGraph.off('px-app-asset-selected', this._handleAssetSelected);
     this._assetGraph.off('px-app-asset-activated', this._handleAssetActivated);
-    if (this.base && this.state.vertical) {
-      this.base.removeEventListener('mouseleave', this._handleMouseExit);
-      this.base.removeEventListener('mouseenter', this._handleMouseEnter);
-    }
-  }
-
-  _handleRef = (el) => {
-    this.root = el;
   }
 
   _handleMouseEnter = () => {
-    if (!this.state.vertical) {
+    if (!this.props.vertical) {
       return;
     }
     this._mouseIsOverNav = true;
@@ -158,11 +140,12 @@ class AppNavComponent extends React.Component {
   }
 
   _handleMouseExit = () => {
-    if (!this.state.vertical) {
+    if (!this.props.vertical) {
       return;
     }
     this._mouseIsOverNav = false;
     if (!this._mouseIsOverNav && this.state.verticalOpened) {
+      this.clearOpened();
       this._setVerticalOpened(false);
     }
   }
@@ -201,7 +184,6 @@ class AppNavComponent extends React.Component {
 
   _handleAssetSelected = (e) => {
     this.clearOpened();
-    console.log('px-app-asset-selected', e);
     const { items } = this._assetGraph;
     const state = Object.assign({}, {
       items,
@@ -229,7 +211,6 @@ class AppNavComponent extends React.Component {
 
   _handleAssetActivated = (e) => {
     this.clearOpened();
-    console.log('px-app-asset-activated', e);
     const { item } = e;
     item.opened = !item.opened;
     const state = Object.assign({}, {
@@ -272,7 +253,6 @@ class AppNavComponent extends React.Component {
    * @param {Object} itemProps Props to be passed to the AppNavItem
    */
   _renderItem = (child, index, itemProps = {}) => {
-    console.log('_renderItem', child);
     const propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : index);
     const selected = (this.state.item === child);
 
@@ -283,8 +263,9 @@ class AppNavComponent extends React.Component {
           key={child.id || child.label}
           item={child}
           // onlyShowIcon={!this.state.verticalOpened}
-         // collapsed
+          collapsed={this.state.vertical}
           selected={selected}
+          onlyShowIcon={!this.state.verticalOpened}
           opened={child.opened}
           onToggle={item => this.handleToggle(item)}
           onClick={(item, isChild) => this.handleClick(propForSelect, item, isChild)}
@@ -298,6 +279,7 @@ class AppNavComponent extends React.Component {
           {...itemProps}
           key={child.id || child.label}
           item={child}
+          collapsed={this.state.vertical}
           selected={selected}
           onClick={item => this.handleClick(propForSelect, item)}
         />
@@ -337,12 +319,16 @@ class AppNavComponent extends React.Component {
     } = this.state;
 
     return (
-      <div className="px-app-nav" ref={e => this._handleRef(e)}>
+      <div
+        className="px-app-nav"
+        onMouseLeave={e => this._handleMouseExit(e)}
+        onMouseEnter={e => this._handleMouseEnter(e)}
+      >
         <AppNav
           vertical={vertical}
           verticalOpened={verticalOpened}
+          collapseAll={this.state.collapseAll}
           opened={opened}
-          {...this.props}
         >
 
           {/* STATE: Horizontal or menu nav, any visible items */}
