@@ -32,6 +32,7 @@ AppNavSubGroupDropdown.defaultProps = {
 };
 AppNavSubGroupDropdown.displayName = 'AppNavSubGroupDropdown';
 
+//
 const AppNavSubGroupDropdownContent = styled.div`
   background-color: var(--px-app-nav-subitem-background-color, white);
   max-width: inherit;
@@ -39,32 +40,23 @@ const AppNavSubGroupDropdownContent = styled.div`
   position: relative;
 
 `;
-AppNavSubGroupDropdownContent.displayName = 'AppNavGroupDropdownContent';
+AppNavSubGroupDropdownContent.displayName = 'AppNavSubGroupDropdownContent';
 
 
 class AppNavSubGroupComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      opened: props.opened || false,
-      children: props.item && props.item.children
-    };
-  }
-
   _handleClick = (item, isChild) => {
-    let items = this.state.children;
-
+    /* let items = this.props.item.children;
     if (isChild) {
       items = this.props.item.children.map((o) => {
         const obj = o;
         obj.selected = (obj === item);
         return obj;
       });
-    }
+    } */
 
     this.setState({
-      opened: !this.state.opened,
-      children: items || null
+      opened: !this.state.opened
+      // children: items || null
     });
 
     if (this.props.onClick) {
@@ -72,14 +64,27 @@ class AppNavSubGroupComponent extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      opened: nextProps.opened
-    });
+  _shouldComponentUpdate(nextProps, nextState) {
+    if (this.props.selected !== nextProps.selected) {
+      return true;
+    }
+    if (this.state.opened !== nextState.opened) {
+      return true;
+    }
+    return false;
+  }
+
+  _componentWillReceiveProps(nextProps) {
+    console.log('AppNavSubGroup', this.props.item.label, 'componentWillReceiveProps', nextProps.opened);
+  }
+
+  onToggle = (e) => {
+    if (this.props.onToggle) {
+      this.props.onToggle(e);
+    }
   }
 
   render() {
-    const { children } = this.state;
     const {
       item,
       selected,
@@ -90,12 +95,13 @@ class AppNavSubGroupComponent extends React.Component {
       opened
     } = this.props;
 
+    const { children } = item;
+    // const { opened } = this.state;
     return (
       <AppNavSubGroup>
         <AppNavItem
-          dropdown
-          onClick={() => { this._handleClick(item); }}
-          {...item}
+          dropdown={!!item.children}
+          onClick={() => { this.onToggle(item); }}
           item={item}
           selected={selected}
           overflowed={overflowed}
@@ -110,8 +116,8 @@ class AppNavSubGroupComponent extends React.Component {
               <AppNavSubItem
                 onClick={() => { this._handleClick(child, true); }}
                 key={child.label}
+                label={child.label}
                 item={child}
-                {...child}
               />
               ))}
           </AppNavSubGroupDropdownContent>
@@ -126,11 +132,12 @@ AppNavSubGroupComponent.defaultProps = {
   selected: null,
   collapsed: null,
   overflowed: null,
+  onToggle: null,
   onClick: null,
   item: null,
-  children: null,
+  // children: null,
   emptyIcon: false,
-  opened: null,
+  opened: false,
   onlyShowIcon: false
 };
 const itemShape = PropTypes.shape({
@@ -140,12 +147,13 @@ const itemShape = PropTypes.shape({
 });
 
 AppNavSubGroupComponent.propTypes = {
+  onToggle: PropTypes.func,
   onClick: PropTypes.func,
   selected: PropTypes.bool,
   collapsed: PropTypes.bool,
   overflowed: PropTypes.bool,
   item: itemShape,
-  children: PropTypes.arrayOf(itemShape),
+  // children: PropTypes.arrayOf(itemShape),
   emptyIcon: PropTypes.bool,
   opened: PropTypes.bool,
   onlyShowIcon: PropTypes.bool

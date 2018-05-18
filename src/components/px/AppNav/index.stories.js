@@ -32,11 +32,7 @@ const navItems = [
   {
     label: 'Alerts',
     id: 'alerts',
-    icon: 'px-fea:alerts',
-    metadata: {
-      openCases: '12',
-      closedCases: '82'
-    }
+    icon: 'px-fea:alerts'
   }, {
     label: 'Assets',
     id: 'assets',
@@ -84,11 +80,6 @@ graph.items = navItems;
 console.log(graph.items);
 console.log(graph);
 
-// Set selected item;
-// graph.select(navItems[3]);
-// console.log('graph.selected', graph.selected, graph.selected === navItems[3], graph.selected === navItems[1]);
-
-
 const navItem = navItems[navItems.length - 1];
 // /
 storiesOf('Components / App Nav', module)
@@ -114,7 +105,12 @@ storiesOf('Components / App Nav', module)
       items={navItems}
       selected={number('selected', 1)}
       vertical
-      verticalOpened={boolean('verticalOpened', false)}
+      collapsed
+      verticalOpened={boolean('verticalOpened', true)}
+      selectedRoute={array('selectedRoute', selectedRoute)}
+      collapseAll={boolean('collapseAll', false)}
+      collapseWithIcon={boolean('collapseWithIcon', false)}
+      onlyShowIcon={boolean('onlyShowIcon', false)}
     />
   ))
   .addWithJSX('with AppNavItem', () => (

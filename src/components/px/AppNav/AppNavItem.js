@@ -111,17 +111,7 @@ class AppNavItemComponent extends React.Component {
       nextProps.onlyShowIcon !== this.props.onlyShowIcon;
   }
 
-  renderChildren = (props) => React.Children.map(props.children, (child) => {
-      if (child.type === RadioOption) {
-        return React.cloneElement(child, {
-          name: props.name
-        });
-      }
-      return child;
-    })
-
   render() {
-    console.log('AppNavItem.render', this.props);
     const {
       item,
       selected,

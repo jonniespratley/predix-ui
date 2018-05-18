@@ -103,33 +103,6 @@ class AppNavComponent extends React.Component {
     this._assetGraph.on('px-app-asset-activated', this._handleAssetActivated);
   }
 
-  _handleAssetSelected = (e) => {
-    const { item } = e;
-    item.opened = false;
-    console.log('px-app-asset-selected', e);
-    const state = Object.assign({}, {
-      selectedItem: item,
-      path: e.path,
-      selectedRoute: e.route
-    }, e);
-
-    if (this.props.onChange) {
-      this.props.onChange(state);
-    }
-    this.setState(state);
-  }
-
-  _handleAssetActivated = (e) => {
-    console.log('px-app-asset-activated', e);
-    const { item } = e;
-    item.opened = !item.opened;
-    const state = Object.assign({}, {
-      selectedItem: e.item,
-      path: e.path,
-      selectedRoute: e.route
-    }, e);
-    this.setState(state);
-  }
 
   componentDidMount() {
     if (this.base && this.state.vertical) {
@@ -224,9 +197,58 @@ class AppNavComponent extends React.Component {
     this.setState({ items });
   }
 
-  handleClick = (val, node) => {
-    this._assetGraph.activate(null);
-    this._assetGraph.select(node);
+  _handleAssetSelected = (e) => {
+    this.clearOpened();
+    console.log('px-app-asset-selected', e);
+
+
+    const { items } = this._assetGraph;
+    const state = Object.assign({}, {
+      items,
+      selectedItem: this._assetGraph.selected,
+      path: e.path,
+      selectedRoute: e.route
+    }, e);
+
+    if (this.props.onChange) {
+      this.props.onChange(state);
+    }
+    this.setState(state);
+  }
+
+  clearOpened = () => {
+    const items = this._assetGraph.items.map((obj) => {
+      const o = obj;
+      o.opened = false;
+      return o;
+    });
+    this.setState({ items });
+  }
+
+  _handleAssetActivated = (e) => {
+    this.clearOpened();
+    console.log('px-app-asset-activated', e);
+    const { item } = e;
+    item.opened = !item.opened;
+
+    const state = Object.assign({}, {
+      selectedItem: item,
+      path: e.path,
+      selectedRoute: e.route
+    }, e);
+    this.setState(state);
+  }
+
+  handleToggle = (item) => {
+    this._assetGraph.activate(item, 'DOM_EVENT');
+  }
+
+  handleClick = (val, node, isChild) => {
+    if (!isChild) {
+      this._assetGraph.activate(null);
+    }
+
+    this._assetGraph.select(node, 'DOM_EVENT');
   }
 
   _reset() {
@@ -246,17 +268,21 @@ class AppNavComponent extends React.Component {
    * @param {Object} itemProps Props to be passed to the AppNavItem
    */
   _renderItem = (child, index, itemProps = {}) => {
+    console.log('_renderItem', child);
     const propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : index);
     const selected = (this.state.item === child);
 
-    if (this.state.vertical) {
+    if (child.children) {
       return (
         <AppNavSubGroup
           {...itemProps}
           key={child.id || child.label}
           item={child}
+          // onlyShowIcon={!this.state.verticalOpened}
+         // collapsed
           selected={selected}
           opened={child.opened}
+          onToggle={item => this.handleToggle(item)}
           onClick={(item, isChild) => this.handleClick(propForSelect, item, isChild)}
         />
       );
@@ -283,17 +309,9 @@ class AppNavComponent extends React.Component {
         selected={selected}
         opened={child.opened}
         onSubItemClick={(item, isChild) => this.handleClick(propForSelect, item, isChild)}
-        onToggle={item => this._assetGraph.activate(item)}
+        onToggle={item => this._assetGraph.activate(item, 'DOM_EVENT')}
       />
     );
-  }
-
-
-  handleToggle = (item) => {
-    const node = item;
-    node.opened = !node.opened;
-    console.log('toggle, item', node);
-    this._assetGraph.activate(node);
   }
 
   _renderItems = (items, selected, props) => {
@@ -341,13 +359,13 @@ class AppNavComponent extends React.Component {
 }
 
 AppNavComponent.defaultProps = {
-  vertical: null,
-  collapseAll: null,
-  collapseAt: null,
+  vertical: false,
+  collapseAll: false,
+  collapseAt: 320,
   collapseWithIcon: null,
-  onlyShowIcon: null,
-  collapseOpened: null,
-  verticalOpened: null,
+  onlyShowIcon: false,
+  collapseOpened: false,
+  verticalOpened: false,
   selected: null,
   selectedItem: null,
   selectedIndex: null,
@@ -356,7 +374,7 @@ AppNavComponent.defaultProps = {
   propForSelect: null,
   children: null,
   onChange: null,
-  opened: null,
+  opened: false,
   selectedRoute: null
 };
 AppNavComponent.propTypes = {
