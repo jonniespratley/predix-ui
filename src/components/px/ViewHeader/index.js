@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, {css} from 'styled-components';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const VHeader = styled.div`
   height          : 4rem;
@@ -12,6 +13,8 @@ const VHeader = styled.div`
   position: relative;
   user-select:none;
 `;
+VHeader.displayName = 'ViewHeader';
+
 const VHeaderText = styled.div`
   padding-left : 1rem;
   padding-right: 1rem;
@@ -19,8 +22,10 @@ const VHeaderText = styled.div`
   min-width    : 0;
   margin-left  : auto;
   margin-right : auto;
-  min-width: 1px; 
+  min-width: 1px;
 `;
+VHeaderText.displayName = 'ViewHeaderText';
+
 const VHeaderTitle = styled.div`
   text-align: center;
   color     : var(--px-view-header-title-color, black);
@@ -28,6 +33,8 @@ const VHeaderTitle = styled.div`
   text-overflow: ellipsis;
   white-space  : nowrap;
 `;
+VHeaderTitle.displayName = 'ViewHeaderTitle';
+
 const VHeaderSubTitle = styled.div`
   text-align: center;
   color     : var(--px-view-header-subtitle-color, gray);
@@ -38,26 +45,26 @@ const VHeaderSubTitle = styled.div`
   text-overflow: ellipsis;
   white-space  : nowrap;
 `;
+VHeaderSubTitle.displayName = 'ViewHeaderSubTitle';
+
 const VHeaderLeft = styled.div`
   position: absolute;
   left: 1rem;
 `;
+VHeaderLeft.displayName = 'ViewHeaderLeft';
+
 const VHeaderRight = styled.div`
   position: absolute;
   right: 1rem;
 `;
+VHeaderRight.displayName = 'ViewHeaderRight';
 
-export default ({
+const ViewHeader = ({
   title,
   subtitle,
-  onMenuButtonClick,
-  onBackButtonClick,
-  showMenuButton,
-  showBackButton,
-  backButtonLabel,
-  leftContent, 
-  rightContent, 
-  children 
+  leftContent,
+  rightContent,
+  children
 }) => (
 
   <VHeader>
@@ -75,3 +82,21 @@ export default ({
     </VHeaderRight>
   </VHeader>
 );
+
+ViewHeader.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  rightContent: PropTypes.node,
+  leftContent: PropTypes.node,
+  children: PropTypes.node
+};
+
+ViewHeader.defaultProps = {
+  title: null,
+  subtitle: null,
+  rightContent: null,
+  leftContent: null,
+  children: null
+};
+
+export default ViewHeader;

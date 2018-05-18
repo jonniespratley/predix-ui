@@ -1,4 +1,4 @@
-//nav icons
+// nav icons
 const nav = {
   'px-nav-back': '<g id="px-nav-back"><path stroke-linejoin="round" d="M7 5l-5.5 5.5L7 16m-5-5.5h20"/></g>',
   'px-nav-close': '<g id="px-nav-close"><path stroke-miterlimit="10" d="M3 19L19 3M3 3l16 16"></path></g>',
@@ -32,5 +32,5 @@ const nav = {
   'px-nav-unconfirmed': '<g id="px-nav-unconfirmed"><circle cx="11" cy="11" r="10" stroke-linejoin="round"/></g>',
   'px-nav-up': '<g id="px-nav-up"><path stroke-linejoin="round" d="M16.14 6.5L10.64 1l-5.5 5.5m5.5-5v20"/></g>'
 };
-//done
-export default nav
+// done
+export default nav;

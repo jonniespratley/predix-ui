@@ -1,7 +1,8 @@
+/* eslint-disable */
 import React from 'react';
 import classnames from 'classnames';
 
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const ContextBrowser = styled.div`
   display         : inline-block;
@@ -17,12 +18,12 @@ const ContextBrowser = styled.div`
     background-color: var(--px-chip-background-color--hover, rgba(gray, 0.2));
     border          : 1px solid var(--px-chip-border-color--hover, gray);
   }
-  
+
   ${props => props.selected && css`
   background-color: var(--px-chip-background-color--selected, white);
     border          : 1px solid var(--px-chip-border-color--selected, blue);
   `}
-    
+
 `;
 
 const ContextBrowserContent = styled.div`
@@ -51,12 +52,10 @@ export default ({
   selected,
   showIcon,
   children
-}) => {
-  return (
-    <ContextBrowser selected={selected}>
-      <ContextBrowserContent>{children}</ContextBrowserContent>
-    </ContextBrowser>
+}) => (
+  <ContextBrowser selected={selected}>
+    <ContextBrowserContent>{children}</ContextBrowserContent>
+  </ContextBrowser>
 
-  );
-}
+);
 

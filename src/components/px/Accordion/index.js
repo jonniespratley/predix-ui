@@ -1,36 +1,35 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import BaseComponent from '../BaseComponent';
+import styled, { css } from 'styled-components';
 import IronCollapse from '../../iron/IronCollapse';
 import Flex from '../../../styles/flex';
-import styled, {css} from 'styled-components';
 import Icon from '../IconSet/Icon';
+
 const styles = {
-  width: `16px`,
-  height: `16px`
+  width: '16px',
+  height: '16px'
 };
 const svgStyles = {
   pointerEvents: 'none',
   display: 'block',
   height: '16px',
-  width: '16px'
+  width: '16px',
+  fill: 'none',
+  stroke: 'currentColor'
 };
-const CloseIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron" style={styles} ><svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" style={svgStyles}><g id="px-utl-chevron-right"><path strokeLinejoin="round" d="M6.2 13.2l5.4-5.5-5.5-5.5"></path></g></svg></i>);
-const OpenIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron-down" style={styles}><svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" style={svgStyles}><g id="px-utl-chevron"><path d="M2.4 6.2l5.5 5.5 5.5-5.5"></path></g></svg></i>);
+const CloseIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron" style={styles} ><svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" style={svgStyles}><g id="px-utl-chevron-right"><path strokeLinejoin="round" d="M6.2 13.2l5.4-5.5-5.5-5.5" /></g></svg></i>);
+const OpenIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron-down" style={styles}><svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" style={svgStyles}><g id="px-utl-chevron"><path d="M2.4 6.2l5.5 5.5 5.5-5.5" /></g></svg></i>);
 
 const AccordionHeader = styled.div`
-  font-family: "GE Inspira Sans";
   padding: .5rem;
   margin-bottom   : 0.3333rem;
   cursor          : pointer;
   user-select     : none;
-  
-  background-color: var(--px-accordion-header-background-color, white);
-  color           : var(--px-accordion-header-color, black);
-  
-  color: var(--px-headings-heading-subsection-color);
-  background-color: var(--px-headings-heading-subsection-background);
-  
+
+  color: var(--px-headings-heading-subsection-color, black);
+  background-color: var(--px-headings-heading-subsection-background, whitesmoke);
+
   display         : flex;
   justify-content : space-between;
   > * {
@@ -107,81 +106,81 @@ const AccordionAction = styled.div`
 `;
 AccordionAction.displayName = 'AccordionAction';
 
-
-
-
 class Accordion extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      open: props.opened || true
+      open: props.opened
     };
     this.onClick = this.onClick.bind(this);
   }
 
-  onClick(){
-    if(!this.props.disabled){
-      this.setState((prevState, props) => ({
+  onClick() {
+    if (!this.props.disabled) {
+      this.setState(prevState => ({
         open: !prevState.open
       }));
     }
   }
 
-  onActionClick(e){
-    e.preventDefault();
-  }
-  
-  componentDidUpdate(){
-    const {onCollapsed, onExpanded} = this.props;
-    if(this.state.open){
-      //console.log('Trigger', 'onExpanded');
+  componentDidUpdate() {
+    const { onCollapsed, onExpanded } = this.props;
+    if (this.state.open) {
+      onExpanded ? onExpanded(this.state) : null;
     } else {
-      //console.log('Trigger', 'onCollapsed');
+      onCollapsed ? onCollapsed(this.state) : null;
     }
   }
-  componentWillReceiveProps(nextProps){
-    this.setState({open: nextProps.opened});
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ open: nextProps.opened });
   }
 
-  render(){
+  render() {
     const { open } = this.state;
     const {
-      headerValue = 'Accordion',
+      headerText,
+      headerValue,
       status,
       disabled,
+      actions,
       showAction,
       onActionClick,
-      icons = {
-        more: 'px-utl:chevron-right',
-        left: 'px-utl:chevron',
-        action: 'px-utl:edit'
-      },
+      icons,
       children
     } = this.props;
-    const {more, less, action} = icons;
-    
+    const { action } = icons;
+
     const baseClasses = classNames(
       'px-accordion',
-      {'px-accordion--disabled': disabled},
-      {'px-accordion--open': open}
+      { 'px-accordion--disabled': disabled },
+      { 'px-accordion--open': open }
     );
+    const headerClasses = classNames('px-accordion__header');
 
     return (
       <AccordionContainer className={baseClasses}>
-        <AccordionHeader disabled={disabled}>
-          <Flex item={true} onClick={this.onClick} >
+        <AccordionHeader disabled={disabled} className={headerClasses}>
+          <Flex item onClick={this.onClick} >
             <span>
               {open && <OpenIcon />}
               {!open && <CloseIcon />}
             </span>
-            <AccordionHeaderText>{headerValue}</AccordionHeaderText>
+            <AccordionHeaderText>{headerText || headerValue}</AccordionHeaderText>
           </Flex>
           <Flex middle>
             {status && <AccordionStatus>{status}</AccordionStatus>}
-            {showAction && <AccordionAction onClick={this.onActionClick.bind(this)}> <Icon icon={action} size={16}/> </AccordionAction>}
+            {showAction &&
+            <AccordionAction onClick={onActionClick}>
+              <Icon icon={action} size={16} />
+            </AccordionAction>}
+            {actions &&
+            <AccordionAction>
+              {actions()}
+            </AccordionAction>}
           </Flex>
         </AccordionHeader>
-        <IronCollapse ref="collapse" opened={open}>
+        <IronCollapse opened={open}>
           <AccordionBody>
             {children}
           </AccordionBody>
@@ -190,5 +189,45 @@ class Accordion extends React.Component {
     );
   }
 }
+
 Accordion.displayName = 'Accordion';
+
+Accordion.propTypes = {
+  headerText: PropTypes.string,
+  headerValue: PropTypes.string,
+  status: PropTypes.string,
+  opened: PropTypes.bool,
+  disabled: PropTypes.bool,
+  actions: PropTypes.node,
+  showAction: PropTypes.bool,
+  onExpanded: PropTypes.func,
+  onCollapsed: PropTypes.func,
+  onActionClick: PropTypes.func,
+  icons: PropTypes.shape({
+    more: PropTypes.string,
+    left: PropTypes.string,
+    action: PropTypes.string
+  }),
+  children: PropTypes.node
+};
+
+Accordion.defaultProps = {
+  headerText: null,
+  headerValue: null,
+  status: null,
+  opened: true,
+  disabled: null,
+  actions: null,
+  showAction: null,
+  onCollapsed: null,
+  onExpanded: null,
+  onActionClick: null,
+  icons: {
+    more: 'px-utl:chevron-right',
+    left: 'px-utl:chevron',
+    action: 'px-utl:edit'
+  },
+  children: null
+};
+
 export default Accordion;

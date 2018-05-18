@@ -1,4 +1,4 @@
-//fea icons
+// fea icons
 const fea = {
   'px-fea-administration': '<g id="px-fea-administration"><path d="M21.65 25.48l3 2.36 1.57-1.57 1.58-1.58-2.36-3a11.21 11.21 0 0 0 1.26-2.99l3.8-.47v-4.46l-3.8-.47a11.21 11.21 0 0 0-1.23-2.95l2.36-3-1.57-1.59-1.58-1.58-3 2.36A11.21 11.21 0 0 0 18.7 5.3l-.47-3.8h-4.47l-.46 3.8a11.21 11.21 0 0 0-2.95 1.23l-3-2.36-1.59 1.57-1.58 1.58 2.36 3A11.21 11.21 0 0 0 5.3 13.3l-3.8.47v4.46l3.8.47a11.21 11.21 0 0 0 1.23 2.95l-2.36 3 1.57 1.57 1.58 1.58 3-2.36" transform="translate(-1 -1)" stroke-linejoin="round"/><path d="M22.08 16a6.1 6.1 0 0 0-3.74-5.61v6.08h-4.68v-6.08a6.07 6.07 0 0 0-.94 10.73v9.38h6.55v-9.39A6.08 6.08 0 0 0 22.08 16z" transform="translate(-1 -1)" stroke-linejoin="round"/></g>',
   'px-fea-alerts': '<g id="px-fea-alerts"><path d="M14.69 3.35L1.7 26.29A1.53 1.53 0 0 0 3 28.58h26a1.53 1.53 0 0 0 1.31-2.29l-13-22.94a1.5 1.5 0 0 0-2.62 0z" transform="translate(-1 -2.08)" stroke-miterlimit="10"/><path stroke-linejoin="round" d="M15 17.45h1.56l.78-7.07h-4.68l.78 7.07H15zm-1.4 1.97h2.81v3.37H13.6z"/></g>',
@@ -30,5 +30,5 @@ const fea = {
   'px-fea-users': '<g id="px-fea-users"><path stroke-linejoin="round" d="M14.4 14l4.1 4v5.5H.5V18l4.1-4"/><rect x="5" y="3.5" width="9" height="11" rx="4.5" ry="4.5" stroke-linejoin="round"/><path stroke-linejoin="round" d="M25.43 11l4.13 4v5.5H20.5"/><rect x="16" y=".5" width="9" height="11" rx="4.5" ry="4.5" stroke-linejoin="round"/></g>',
   'px-fea-versions': '<g id="px-fea-versions"><path stroke-linejoin="round" d="M15 24.5H.5V.5h27V13"/><path stroke-linecap="round" stroke-linejoin="round" d="M.5 5.5h27"/><circle cx="3" cy="3" r=".5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="3" r=".5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="3" r=".5" stroke-linecap="round" stroke-linejoin="round"/><path stroke-linecap="round" stroke-linejoin="round" d="M29.5 24.03V17.1l-6-3.46-6 3.46v6.93l6 3.47 6-3.47z"/><path stroke-linejoin="round" d="M23.5 24.22v-5.5H22"/></g>'
 };
-//done
-export default fea
+// done
+export default fea;

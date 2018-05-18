@@ -1,68 +1,73 @@
 import React from 'react';
-import classnames from 'classnames';
-//import stylesheet from './px-tree.scss';
+import PropTypes from 'prop-types';
 import TreeNode from './TreeNode';
-import BaseComponent from '../BaseComponent';
-import styled, {css} from 'styled-components';
 
-
-
-
-/**
- * Tree component
- */
-class Tree extends BaseComponent {
-	constructor(props) {
-		super(props, {displayName: 'Tree'});
-		this.state = {
-			selectedNode: props.selectedNode || null,
-			selected: props.selected || null
-		};
-		this.onSelect = this.onSelect.bind(this);
-	}
+class Tree extends React.Component {
+  constructor(props) {
+    super(props, { displayName: 'Tree' });
+    this.state = {
+      selectedNode: props.selectedNode || null,
+      selected: props.selected || null
+    };
+    this.onSelect = this.onSelect.bind(this);
+  }
 
   onSelect(node) {
-		if (this.state.selected) {
-			this.state.selected.setState({ selected: false });
-		}
-		node.setState({ selected: !node.state.selected }, () => {
-			this.setState({ selectedNode: node }, () => {
-				if (this.props.onChange) {
-					this.props.onChange(this.state);
-				}
-			});
-		});
-		
-	}
+    if (this.state.selected) {
+      this.state.selected.setState({ selected: false });
+    }
+    node.setState({ selected: !node.state.selected }, () => {
+      this.setState({ selectedNode: node }, () => {
+        if (this.props.onChange) {
+          this.props.onChange(this.state);
+        }
+      });
+    });
+  }
 
-
-	render() {
-		const { items, children } = this.props;
-		const {selectedNode} = this.state;
-		const baseClasses = classnames('px-tree');
-    const _items = items.length ? items : [items];
-		const treeStyle = {
-			margin: 0,
-			padding: 0
-		};
-		return (
-			<ul className='px-tree' style={treeStyle}>
-        {items && items.map((item, index) => (
-						<TreeNode 
-							key={index} 
-							data={item} 
-							{...item}
-							onCategorySelect={this.onSelect}/>
-					))
-				}
-			</ul>
-		);
-	}
+  render() {
+    const { items } = this.props;
+    const treeStyle = {
+      margin: 0,
+      padding: 0
+    };
+    return (
+      <ul className="px-tree" style={treeStyle}>
+        {items && items.map(item => (
+          <TreeNode
+            key={item.id}
+            data={item}
+            {...item}
+            onCategorySelect={this.onSelect}
+          />
+          ))
+        }
+      </ul>
+    );
+  }
 }
 
 Tree.defaultProps = {
-	items: null,
-	style: null,
-	selected: null
+  items: null,
+  children: null,
+  style: null,
+  onChange: null,
+  selectedNode: null,
+  selected: null
 };
+const treeItem = PropTypes.shape({
+  id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  label: PropTypes.string,
+  children: PropTypes.arrayOf(treeItem)
+});
+
+Tree.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+  onChange: PropTypes.func,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  style: PropTypes.objectOf(PropTypes.string),
+  selectedNode: PropTypes.objectOf(PropTypes.string),
+  selected: PropTypes.number
+};
+
 export default Tree;

@@ -1,14 +1,13 @@
 import React from 'react';
 import classnames from 'classnames';
-
+import PropTypes from 'prop-types';
 
 class IronSelector extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.displayName = 'IronSelector';
     this.state = {
       selected: props.selected || 0,
-      selectedItem: props.selectedItem || null,
       selectedClassName: props.selectedClassName || 'iron-selected',
       propForSelected: props.propForSelect || null
     };
@@ -16,21 +15,17 @@ class IronSelector extends React.Component {
     this._keys = [];
   }
 
-  _renderChildren(){
-    let selected = this.props.selected;
-    let children = this.props.children;
-    let child = children[selected];
-    if(child){
-      return <div>{child}</div>
+  _renderChildren() {
+    const { selected, children } = this.props;
+    const child = children[selected];
+    if (child) {
+      return <div>{child}</div>;
     }
+    return null;
   }
 
-  componentWillReceiveProps(nextProps){
-    //this.setState({selected: nextProps.selected});
-  }
-  
-  componentDidUpdate(){
-    if(this.props.onChange){
+  componentDidUpdate() {
+    if (this.props.onChange) {
       this.props.onChange(this.state);
     }
   }
@@ -40,17 +35,15 @@ class IronSelector extends React.Component {
     function labels(child, index) {
       let propForSelect = index;
       this._items.push(child);
-      if(this.props.propForSelect){
-         propForSelect = child.props[this.props.propForSelect];
+      if (this.props.propForSelect) {
+        propForSelect = child.props[this.props.propForSelect];
         this._keys.push(propForSelect);
       } else {
         this._keys.push(index);
       }
-      const selectedClassName = this.props.selectedClassName;
+      const { selectedClassName } = this.props;
       const selected = (this.props.selected === this._getIndexForValue(propForSelect));
-      const baseClasses = classnames(
-        {[`${selectedClassName}`]: selected}
-      );
+      const baseClasses = classnames({ [`${selectedClassName}`]: selected });
       return (
         <li key={index} className={baseClasses}>
           {child}
@@ -61,21 +54,14 @@ class IronSelector extends React.Component {
     return nodes;
   }
 
-  _getIndexForValue(val){
+  _getIndexForValue(val) {
     return this._keys.indexOf(val);
   }
 
-  render(){
+  render() {
     const {
-      children,
       className,
-      selected,
-      selectedItem,
-      style = {
-        listStyleType: 'none',
-        margin: 0,
-        padding: 0
-      }
+      style
     } = this.props;
 
     const baseClassnames = classnames(
@@ -92,11 +78,29 @@ class IronSelector extends React.Component {
 }
 
 IronSelector.defaultProps = {
-  selectedClassName: 'iron-selected',
-  selectedStyle: null,
+  onChange: null,
+  style: {
+    listStyleType: 'none',
+    margin: 0,
+    padding: 0
+  },
+  propForSelect: null,
   selected: 0,
-  selectedItem: null,
-  propForSelect: null
+  children: null,
+  // selectedItem: null,
+  selectedClassName: 'iron-selected',
+  className: 'iron-selector'
+};
+
+IronSelector.propTypes = {
+  onChange: PropTypes.func,
+  style: null,
+  children: PropTypes.node,
+  propForSelect: PropTypes.string,
+  selected: PropTypes.number,
+  // selectedItem: PropTypes.string,
+  selectedClassName: PropTypes.string,
+  className: PropTypes.string
 };
 
 export default IronSelector;

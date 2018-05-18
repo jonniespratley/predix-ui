@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewHeader should render 1`] = `
+.c0 {
+  height: 4rem;
+  background-color: var(--px-view-header-background-color,whitesmoke);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  -webkit-flex: initial;
+  -ms-flex: initial;
+  flex: initial;
+  min-width: 0;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 1px;
+}
+
+.c3 {
+  text-align: center;
+  color: var(--px-view-header-title-color,black);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c4 {
+  text-align: center;
+  color: var(--px-view-header-subtitle-color,gray);
+  font-size: 0.8rem;
+  line-height: 1.66667;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c1 {
+  position: absolute;
+  left: 1rem;
+}
+
+.c5 {
+  position: absolute;
+  right: 1rem;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+  <div
+    className="c2"
+  >
+    <div
+      className="c3"
+    >
+      View Title
+    </div>
+    <div
+      className="c4"
+    >
+      Subtitle
+    </div>
+  </div>
+  <div
+    className="c5"
+  />
+</div>
+`;

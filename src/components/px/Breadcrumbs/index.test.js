@@ -1,7 +1,11 @@
-import { expect } from 'chai';
+import renderer from 'react-test-renderer';
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
+
 import PxBreadcrumbs from './';
+
+const selectedRoute = ['North America', 'United States of America', 'California', 'San Ramon'];
+
 const items = [{
   "label": "North America",
   "id": "North America",
@@ -88,14 +92,18 @@ const items = [{
   "label": "South America",
   "id": "South America"
 }];
+
 describe('px-breadcrumbs', () => {
-  test('should...', () =>{
-    const wrapper = shallow(
-      <PxBreadcrumbs/>
-    );
+  test('should render', () =>{
+    const wrapper = shallow(<PxBreadcrumbs/>);
     console.log(wrapper.debug());
-    expect(true).to.equal(true);
   });
+
+  test('renders correctly', () => {
+    const tree = renderer.create(<PxBreadcrumbs items={items} selectedRoute={selectedRoute} />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   //expect(wrapper.find('.label')).to.have.length(1);
   //expect(wrapper.find('.delta')).to.have.length(1);
   //expect(wrapper.find('.alpha')).to.have.length(1);

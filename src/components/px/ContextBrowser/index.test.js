@@ -1,18 +1,12 @@
-import { expect } from 'chai';
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
+
 import ContextBrowser from './';
 
 describe('ContextBrowser', () => {
-  test('should...', () =>{
-    const wrapper = shallow(
-      <ContextBrowser/>
-    );
-    console.log(wrapper.debug());
-    expect(true).to.equal(true);
+  test('should render', () =>{
+    const tree = renderer.create(<ContextBrowser />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
-  //expect(wrapper.find('.label')).to.have.length(1);
-  //expect(wrapper.find('.delta')).to.have.length(1);
-  //expect(wrapper.find('.alpha')).to.have.length(1);
-  //expect(wrapper.contains(<div className='label'/>)).to.equal(true);
 });

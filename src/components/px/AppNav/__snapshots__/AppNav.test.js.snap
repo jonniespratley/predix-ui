@@ -1,0 +1,465 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppNav should render 1`] = `
+.c4 {
+  color: var(--iron-icon-stroke-color,inherit);
+  fill: var(--iron-icon-fill-color,none);
+  stroke: var(--iron-icon-stroke-color,currentColor);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  vertical-align: middle;
+  width: var(--iron-icon-width);
+  height: var(--iron-icon-height);
+}
+
+.c4 > svg {
+  color: var(--iron-icon-stroke-color,inherit);
+  fill: var(--iron-icon-fill-color,none);
+  stroke: var(--iron-icon-stroke-color,currentColor);
+  position: relative;
+  vertical-align: middle;
+}
+
+.c4.hidden {
+  display: none;
+}
+
+.c3 {
+  max-width: 32px;
+  margin-right: 0.33333rem;
+}
+
+.c7 {
+  max-width: 32px;
+  margin-left: 0.3rem;
+  --iron-icon-height: 20px;
+  --iron-icon-width: 20px;
+}
+
+.c2 {
+  line-height: 1.33333;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: var(--px-app-nav-height,4rem);
+  padding-left: var(--px-app-nav-item-padding,1rem);
+  padding-right: var(--px-app-nav-item-padding,1rem);
+  cursor: pointer;
+  color: var(--px-app-nav-item-text-color,darkgray);
+  background-color: var(--px-app-nav-item-background-color,lightgray);
+  --iron-icon-stroke-color: var(--px-app-nav-item-text-color,darkgray);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+}
+
+.c2:hover {
+  color: var(--px-app-nav-item-text-color--hover,lightgray);
+  background-color: var(--px-app-nav-item-background-color--hover,darkgray);
+  --iron-icon-stroke-color: var(--px-app-nav-item-text-color--hover,lightgray);
+}
+
+.c2:active {
+  color: var(--px-app-nav-item-text-color--pressed,darkgray);
+  background-color: var(--px-app-nav-item-background-color--pressed,lightgray);
+  --iron-icon-stroke-color: var(--px-app-nav-item-text-color--hover,darkgray);
+}
+
+.c5 {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c11 {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.c10 {
+  line-height: 1.33333;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  cursor: pointer;
+  height: var(--px-app-nav-subitem-height,2rem);
+  color: var(--px-app-nav-subitem-text-color,darkgray);
+  background-color: var(--px-app-nav-subitem-background-color,white);
+}
+
+.c10:hover {
+  color: var(--px-app-nav-subitem-text-color--hover,darkgray);
+  background-color: var(--px-app-nav-subitem-background-color--hover,lightgray);
+}
+
+.c6 {
+  line-height: 1.33333;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  height: auto;
+}
+
+.c8 {
+  height: 0px;
+  overflow: hidden;
+}
+
+.c9 {
+  background-color: var(--px-app-nav-subitem-background-color,white);
+  max-width: inherit;
+  position: relative;
+}
+
+.c0 {
+  height: var(--px-app-nav-height,4rem);
+  background-color: var(--px-app-nav-background-color,whitesmoke);
+  box-shadow: var(--px-app-nav-box-shadow,0px 2px 4px var(--px-shadow-navigation,rgba(0,0,0,0.2)));
+  display: block;
+  width: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 .app-nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  height: var(--px-app-nav-height,4rem);
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+}
+
+<div
+  className="px-app-nav"
+>
+  <div
+    className="app-nav c0"
+    onChange={null}
+    selected={null}
+  >
+    <section
+      className="app-nav__items c1"
+    >
+      <div>
+        <div
+          className="px-app-nav-item c2"
+          data-id="home"
+          data-label="Home"
+          icon="px-fea:home"
+          id="home"
+          label="Home"
+          onClick={[Function]}
+          selected={false}
+        >
+          <div
+            className="app-nav-item__icon c3"
+          >
+            <i
+              className="px-icon px-fea-home c4"
+              color={null}
+              style={
+                Object {
+                  "height": 32,
+                  "width": 32,
+                }
+              }
+            >
+              <svg
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<g id=\\"px-fea-home\\"><path stroke-linejoin=\\"round\\" d=\\"M5.5 16v14.5h21V16m-25-.79L16 2.1l14.5 13.11\\"/><path stroke-linejoin=\\"round\\" d=\\"M12.5 22.5h7v8h-7z\\"/></g>",
+                  }
+                }
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "display": "block",
+                    "height": 32,
+                    "pointerEvents": "none",
+                    "width": 32,
+                  }
+                }
+                viewBox="0 0 32 32"
+              />
+            </i>
+          </div>
+          <div
+            className="app-nav-item__label c5"
+          >
+            Home
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="px-app-nav-item c2"
+          data-id="settings"
+          data-label="Settings"
+          icon="px-fea:settings"
+          id="settings"
+          label="Settings"
+          onClick={[Function]}
+          selected={false}
+        >
+          <div
+            className="app-nav-item__icon c3"
+          >
+            <i
+              className="px-icon px-fea-settings c4"
+              color={null}
+              style={
+                Object {
+                  "height": 32,
+                  "width": 32,
+                }
+              }
+            >
+              <svg
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "px-fea-settings",
+                  }
+                }
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "display": "block",
+                    "height": 32,
+                    "pointerEvents": "none",
+                    "width": 32,
+                  }
+                }
+                viewBox="0 0 32 32"
+              />
+            </i>
+          </div>
+          <div
+            className="app-nav-item__label c5"
+          >
+            Settings
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="px-app-nav-item c2"
+          data-id="alert"
+          data-label="Alerts"
+          icon="px-fea:alerts"
+          id="alert"
+          label="Alerts"
+          onClick={[Function]}
+          selected={false}
+        >
+          <div
+            className="app-nav-item__icon c3"
+          >
+            <i
+              className="px-icon px-fea-alerts c4"
+              color={null}
+              style={
+                Object {
+                  "height": 32,
+                  "width": 32,
+                }
+              }
+            >
+              <svg
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<g id=\\"px-fea-alerts\\"><path d=\\"M14.69 3.35L1.7 26.29A1.53 1.53 0 0 0 3 28.58h26a1.53 1.53 0 0 0 1.31-2.29l-13-22.94a1.5 1.5 0 0 0-2.62 0z\\" transform=\\"translate(-1 -2.08)\\" stroke-miterlimit=\\"10\\"/><path stroke-linejoin=\\"round\\" d=\\"M15 17.45h1.56l.78-7.07h-4.68l.78 7.07H15zm-1.4 1.97h2.81v3.37H13.6z\\"/></g>",
+                  }
+                }
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "display": "block",
+                    "height": 32,
+                    "pointerEvents": "none",
+                    "width": 32,
+                  }
+                }
+                viewBox="0 0 32 32"
+              />
+            </i>
+          </div>
+          <div
+            className="app-nav-item__label c5"
+          >
+            Alerts
+          </div>
+        </div>
+      </div>
+      <div
+        className="px-app-nav-subgroup c6"
+      >
+        <div>
+          <div
+            className="px-app-nav-item c2"
+            data-id="assets"
+            data-label="Assets"
+            icon="px-fea:asset"
+            id="assets"
+            label="Assets"
+            onClick={[Function]}
+            selected={false}
+          >
+            <div
+              className="app-nav-item__icon c3"
+            >
+              <i
+                className="px-icon px-fea-asset c4"
+                color={null}
+                style={
+                  Object {
+                    "height": 32,
+                    "width": 32,
+                  }
+                }
+              >
+                <svg
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<g id=\\"px-fea-asset\\"><path stroke-linejoin=\\"round\\" d=\\"M25.5 22.25V7.75L13 .5.5 7.75v14.5l13 7.25 12-7.25z\\"/><path stroke-linejoin=\\"round\\" d=\\"M.5 8.22l13 7.25 12-7.25m-12 21.18v-14\\"/><path stroke-linejoin=\\"round\\" d=\\"M6.67 7.99L13 4.31l6.3 3.66-6.36 3.65-6.27-3.63z\\"/></g>",
+                    }
+                  }
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "display": "block",
+                      "height": 32,
+                      "pointerEvents": "none",
+                      "width": 32,
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                />
+              </i>
+            </div>
+            <div
+              className="app-nav-item__label c5"
+            >
+              Assets
+            </div>
+            <div
+              className="app-nav-item__icon c7"
+            >
+              <i
+                className="px-icon px-utl-chevron c4"
+                color={null}
+                style={
+                  Object {
+                    "height": 19,
+                    "width": 19,
+                  }
+                }
+              >
+                <svg
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<g id=\\"px-utl-chevron\\"><path d=\\"M2.4 6.2l5.5 5.5 5.5-5.5\\"/></g>",
+                    }
+                  }
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "display": "block",
+                      "height": 19,
+                      "pointerEvents": "none",
+                      "width": 19,
+                    }
+                  }
+                  viewBox="0 0 16 16"
+                />
+              </i>
+            </div>
+          </div>
+        </div>
+        <div
+          className="app-nav-subgroup__dropdown c8"
+        >
+          <div
+            className="c9"
+          >
+            <div
+              className="c10"
+              data-id="a1"
+              onClick={[Function]}
+              selected={null}
+            >
+              <p
+                className="app-nav-subitem__label c11"
+              >
+                Asset #1
+              </p>
+            </div>
+            <div
+              className="c10"
+              data-id="a2"
+              onClick={[Function]}
+              selected={null}
+            >
+              <p
+                className="app-nav-subitem__label c11"
+              >
+                Asset #2
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;

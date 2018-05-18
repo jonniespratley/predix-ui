@@ -1,14 +1,17 @@
+
 const path = require('path');
-const glob = require('glob');
 const webpack = require('webpack');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const merge = require('webpack-merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SystemBellPlugin = require('system-bell-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const PurifyCSSPlugin = require('purifycss-webpack');
 const Jarvis = require('webpack-jarvis');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
 const pkg = require('./package.json');
+
 const ROOT_PATH = __dirname;
 
 const config = {
@@ -23,7 +26,7 @@ const config = {
   library: pkg.name
 };
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 const analyzeBundle = new BundleAnalyzerPlugin({
   analyzerMode: 'static',
   reportFilename: 'report.html',
@@ -35,18 +38,15 @@ const analyzeBundle = new BundleAnalyzerPlugin({
 });
 
 
-const EXTRACT_CSS = (process.env.EXTRACT_CSS === true);
-
-
 const extractCss = new ExtractTextPlugin({
-	filename: `[name].css`,
-  //disable: EXTRACT_CSS,
+  filename: '[name].css',
+  // disable: EXTRACT_CSS,
   allChunks: true
 });
 
 const extractSass = new ExtractTextPlugin({
-	filename: process.env.NODE_ENV === 'production' ? `${pkg.name}.min.css` : `${pkg.name}.css`,
-  //disable: process.env.NODE_ENV !== 'production',
+  filename: process.env.NODE_ENV === 'production' ? `${pkg.name}.min.css` : `${pkg.name}.css`,
+  // disable: process.env.NODE_ENV !== 'production',
   allChunks: true
 });
 
@@ -57,18 +57,16 @@ const cssRules = {
   test: /\.module.css$/,
   use: extractCss.extract({
     fallback: 'style-loader',
-    //resolve-url-loader may be chained before sass-loader if necessary
-    use: [
-      {
-        loader: 'css-loader',
-        options: {
-          importLoaders: 1,
-          modules: true,
-          sourceMap: true,
-          camelCase: true
-        }
+    // resolve-url-loader may be chained before sass-loader if necessary
+    use: [{
+      loader: 'css-loader',
+      options: {
+        importLoaders: 1,
+        modules: true,
+        sourceMap: true,
+        camelCase: true
       }
-    ]
+    }]
   })
 };
 
@@ -80,52 +78,48 @@ const sassRules = {
   test: /\.s(a|c)ss$/,
   use: extractSass.extract({
     fallback: 'style-loader',
-    use: [
-      {
-        loader: 'css-loader',
-        options: {
-          modules: false,
-          importLoaders: 1,
-          minimize: true,
-          sourceMap: true,
-          localIdentName: '[path]___[name]___[local]___[hash:base64:5]'
-        }
-      },
-      /*{
+    use: [{
+      loader: 'css-loader',
+      options: {
+        modules: false,
+        importLoaders: 1,
+        minimize: true,
+        sourceMap: true,
+        localIdentName: '[path]___[name]___[local]___[hash:base64:5]'
+      }
+    },
+      /* {
         loader: 'postcss-loader',
         options: {
           sourceMap: true
         }
-      },*/
-      {
-        loader: 'sass-loader',
-        options: {
-          sourceMap: true,
-          importer: require('node-sass-import-once'),
-           importOnce: {
-             index: true,
-             css: true,
-             bower: true
-           }
+      }, */
+    {
+      loader: 'sass-loader',
+      options: {
+        sourceMap: true,
+        importer: require('node-sass-import-once'),
+        importOnce: {
+          index: true,
+          css: true,
+          bower: true
         }
       }
+    }
     ]
   })
 };
 
-
-//https://github.com/webpack-contrib/svg-inline-loader
+// https://github.com/webpack-contrib/svg-inline-loader
 const svgRules = {
   test: /\.svg$/,
-  use: [
-    {
-      loader: 'svg-inline-loader',
-      options: {
-        classPrefix: false,
-        idPrefix: false
-      }
+  use: [{
+    loader: 'svg-inline-loader',
+    options: {
+      classPrefix: false,
+      idPrefix: false
     }
-  ]
+  }]
 };
 
 /**
@@ -147,66 +141,50 @@ const common = {
       'node_modules'
     ],
     alias: {
-      'styles': './styles'
+      styles: './styles'
     }
   },
-  stats: 'full',
   module: {
-    rules: [
-      {
-        test: /\.js$/,
-        enforce: 'pre',
-        use: 'eslint-loader',
-        include: [ config.paths.docs, config.paths.src ]
-      },
-      {
-        test: /\.md$/,
-        use: ['catalog/loader', 'raw-loader']
-      },
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'svg-inline-loader',
-            options: {
-              classPrefix: false,
-              idPrefix: false
-            }
-          }
-        ]
-      },
-      {
-        test: /\.(jpg|png)$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 10000
-          }
+    rules: [{
+      test: /\.js$/,
+      enforce: 'pre',
+      use: 'eslint-loader',
+      include: [config.paths.docs, config.paths.src]
+    },
+    {
+      test: /\.md$/,
+      use: ['catalog/loader', 'raw-loader']
+    },
+    svgRules,
+    {
+      test: /\.(jpg|png)$/,
+      use: {
+        loader: 'url-loader',
+        options: {
+          limit: 10000
         }
       }
+    }
     ]
   },
   plugins: [
     new SystemBellPlugin()
-  ],
-  stats: 'minimal'
+  ]
 };
-
-
 
 const siteCommon = {
   plugins: [
     extractCss,
     extractSass,
     new HtmlWebpackPlugin({
-      //template: require('html-webpack-template'), // eslint-disable-line global-require
-      template: './catalog/index.ejs',
+      template: require('html-webpack-template'), // eslint-disable-line global-require
+      // template: './catalog/index.ejs',
       inject: false,
       mobile: true,
       title: pkg.name,
       appMountId: 'catalog',
       googleAnalytics: {
-        id: 'UA-58422623-3'
+        trackingId: 'UA-58422623-3'
       }
     }),
     new webpack.DefinePlugin({
@@ -227,34 +205,33 @@ const dev = merge(common, siteCommon, {
     docs: [config.paths.docs]
   },
   plugins: [
-    //new NpmInstallPlugin(),
+    // new NpmInstallPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"development"'
     }),
     new webpack.HotModuleReplacementPlugin(),
     new Jarvis({
-     port: 1337
-   }),
+      port: 1337
+    }),
     extractCss,
     extractSass
   ],
   module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            cacheDirectory: true
-          }
-        },
-        include: [
-          config.paths.docs,
-          config.paths.src
-        ]
+    rules: [{
+      test: /\.js$/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          cacheDirectory: true
+        }
       },
-      cssRules,
-      sassRules
+      include: [
+        config.paths.docs,
+        config.paths.src
+      ]
+    },
+    cssRules,
+    sassRules
     ]
   },
   devServer: {
@@ -284,17 +261,14 @@ const ghPages = merge(common, siteCommon, {
     }),
     new ExtractTextPlugin('[name].[chunkhash].css'),
     new webpack.DefinePlugin({
-        // This affects the react lib size
       'process.env.NODE_ENV': '"production"'
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }),
+    new UglifyJSPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks: ({ resource }) => (
+      minChunks: ({
+        resource
+      }) => (
         resource &&
         resource.indexOf('node_modules') >= 0 &&
         resource.match(/\.js$/)
@@ -318,6 +292,39 @@ const ghPages = merge(common, siteCommon, {
 });
 
 
+const externals = {
+  'react-popper': {
+    commonjs: 'react-popper',
+    commonjs2: 'react-popper',
+    amd: 'ReactPopper',
+    root: 'ReactPopper'
+  },
+  'prop-types': {
+    commonjs: 'prop-types',
+    commonjs2: 'prop-types',
+    amd: 'PropTypes',
+    root: 'PropTypes'
+  },
+  'styled-components': {
+    commonjs: 'styled-components',
+    commonjs2: 'styled-components',
+    amd: 'styled',
+    root: 'styled'
+  },
+  react: {
+    commonjs: 'react',
+    commonjs2: 'react',
+    amd: 'React',
+    root: 'React'
+  },
+  'react-dom': {
+    commonjs: 'react-dom',
+    commonjs2: 'react-dom',
+    amd: 'ReactDOM',
+    root: 'ReactDOM'
+  }
+};
+
 const distCommon = {
   devtool: 'source-map',
   resolve: common.resolve,
@@ -327,30 +334,16 @@ const distCommon = {
     library: pkg.config.library
   },
   entry: config.paths.src,
-  externals: {
-    react: {
-      commonjs: 'react',
-      commonjs2: 'react',
-      amd: 'React',
-      root: 'React'
-    },
-    'react-dom': {
-      commonjs: 'react-dom',
-      commonjs2: 'react-dom',
-      amd: 'ReactDOM',
-      root: 'ReactDOM'
-    }
-  },
+  externals,
   stats: 'verbose',
   module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: 'babel-loader',
-        include: config.paths.src
-      },
-      sassRules,
-      cssRules
+    rules: [{
+      test: /\.js$/,
+      use: 'babel-loader',
+      include: config.paths.src
+    },
+    sassRules,
+    cssRules
     ]
   },
   plugins: [
@@ -366,18 +359,29 @@ const dist = merge(distCommon, {
     filename: `${config.filename}.js`
   }
 });
+
+
 const distMin = merge(distCommon, {
+  devtool: 'source-map',
   output: {
     filename: `${config.filename}.min.js`
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
+    new UglifyJSPlugin({
+      sourceMap: true,
+      extractComments: true
     })
   ]
 });
+
+// This bundle has styled components.
+const distBundle = merge(distMin, {
+  devtool: 'source-map',
+  output: {
+    filename: `${config.filename}.bundle.min.js`
+  }
+});
+
 
 module.exports = (env) => {
   process.env.BABEL_ENV = env;
@@ -385,6 +389,7 @@ module.exports = (env) => {
     dev,
     dist,
     distMin,
+    distBundle,
     ghPages
   };
   const c = targets[env] ? targets[env] : common;

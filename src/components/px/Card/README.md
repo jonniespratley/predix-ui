@@ -1,11 +1,6 @@
 The `<Card/>` component consist of a header area and content area. The header can optionally contain a descriptive icon in the top left corner and/or an actions area in the top right corner for settings or other action icons. Cards are incredibly flexible in terms of what content can be placed in the main area of the card and how it's arranged.
 
 
-
-```hint
-Reference https://www.predix-ui.com/#/elements/cards/card/px-card
-```
-
 ## Usage
 
 ```react
@@ -71,7 +66,6 @@ rows:
     Description: Icon that appears to the left of the card header text. Should be a valid icon name from the Predix icon set.
 ```
 
-
 ### Styling
 The following custom properties are available for styling:
 
@@ -98,5 +92,4 @@ rows:
 
   - Custom Property: --px-card-action-icon-color--pressed
     Description: Color of icons in actions slot when pressed
-
 ```

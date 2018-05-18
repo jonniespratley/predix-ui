@@ -1,18 +1,20 @@
-import { expect } from 'chai';
 import React from 'react';
-import {shallow} from 'enzyme';
-import PxBrandingBar from './';
+import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
+
+import BrandingBar from './';
 
 describe('BrandingBar', () => {
   test('should render', () =>{
-    const wrapper = shallow(
-      <PxBrandingBar/>
-    );
-    //expect(wrapper).to.matchSnapshot(true);
-    expect(true).to.equal(true);
+    const tree = renderer.create(<BrandingBar title="Custom Title" />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
-  //expect(wrapper.find('.label')).to.have.length(1);
-  //expect(wrapper.find('.delta')).to.have.length(1);
-  //expect(wrapper.find('.alpha')).to.have.length(1);
-  //expect(wrapper.contains(<div className='label'/>)).to.equal(true);
+  test('should render with hideLogo', () =>{
+    const tree = renderer.create(<BrandingBar title="Custom Title" hideLogo/>).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('should render with hidePowered', () =>{
+    const tree = renderer.create(<BrandingBar title="Custom Title" hidePowered/>).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

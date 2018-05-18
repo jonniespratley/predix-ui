@@ -1,18 +1,27 @@
-import { expect } from 'chai';
 import React from 'react';
-import {shallow} from 'enzyme';
-import PxCard from './';
+import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
+
+import Card from './';
 
 describe('Card', () => {
-  test('should...', () =>{
-    const wrapper = shallow(
-      <PxCard/>
-    );
-    console.log(wrapper.debug());
-    expect(true).to.equal(true);
+  test('should render', () =>{
+    const tree = renderer.create(<Card headerText='Card Header' icon='px-nav:home'>Content</Card>).toJSON();
+    expect(tree).toMatchSnapshot();
   });
-  //expect(wrapper.find('.label')).to.have.length(1);
-  //expect(wrapper.find('.delta')).to.have.length(1);
-  //expect(wrapper.find('.alpha')).to.have.length(1);
-  //expect(wrapper.contains(<div className='label'/>)).to.equal(true);
+
+  test('should render with headerText', () =>{
+    const wrapper = shallow(<Card headerText='Card Title'/>);
+    expect(wrapper.find('.px-card-header')).toHaveLength(1);
+  });
+
+  test('should render with icon', () =>{
+    const wrapper = shallow(<Card headerText='Card Title' icon='px-nav:home'/>);
+    expect(wrapper.find('.px-card-icon')).toHaveLength(1);
+  });
+
+  test('should render with children', () =>{
+    const wrapper = shallow(<Card headerText='Card Title' icon='px-nav:home'>This is content</Card>);
+    expect(wrapper.find('.px-card-body')).toHaveLength(1);
+  });
 });

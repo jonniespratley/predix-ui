@@ -25,7 +25,6 @@ const { Accordion } = PxReact;
     .custom {
       --px-accordion-header-color: white;
       --px-accordion-header-background-color: crimson;
-
     }
   `}</style>
   <Accordion
@@ -36,16 +35,19 @@ const { Accordion } = PxReact;
 </div>
 ```
 
-
 ## Properties
 
 ```table
 span: 6
 rows:
-  - Name: headerText
+  - Name: disabled
+    Type: bool
+    Description: Flag indicating whether the accordion should be disabled.
+
+  - Name: headerText | headerValue
     Type: string
     Description: String that will appear in header.
-
+  
   - Name: status
     Type: string
     Description: String that will appear in the right hand side of the accordion.
@@ -53,28 +55,23 @@ rows:
   - Name: showAction
     Type: bool
     Description: Flag indicating whether the 'action' icon should be shown on the right hand side.
-
-  - Name: disabled
-    Type: bool
-    Description: Flag indicating whether the accordion should be disabled.
-  
-  - Name: onCollapsed
-    Type: Function
-    Description: Callback function when accordion is collapsed.
-  
-  - Name: onExpanded
-    Type: Function
-    Description: Callback function when accordion is expanded.
-
-  - Name: onActionClick
-    Type: Function
-    Description: Callback function when action icon is clicked.
   
   - Name: opened
     Type: bool
     Description: If true the accordion is opened. If false it is closed. Use to observe the user opening/closing the accordion, or set to programatically change the accordion state.
 
+  - Name: onCollapsed
+    Type: func
+    Description: Callback function when accordion is collapsed.
+  
+  - Name: onExpanded
+    Type: func
+    Description: Callback function when accordion is expanded.
 
+  - Name: onActionClick
+    Type: func
+    Description: Callback function when action icon is clicked.
+  
 ```
 
 ## Styling
@@ -84,6 +81,7 @@ The following custom properties are available for styling
 rows:
   - Custom Property: --px-headings-heading-subsection-color
     Description: Text color for the accordion header
+  
   - Custom Property: --px-headings-heading-subsection-background
     Description: Background color for the accordion header
 ```

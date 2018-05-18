@@ -22,14 +22,11 @@ const style = {
   overflow: 'hidden',
   position: 'relative'
 };
-const { AppNav } = PxReact;
-const navItems = [
-  {id : "home", label: "Home", icon: "px-fea:home", selected: true},
-  {id : "settings", label: "Settings", icon: "px-fea:settings"},
-  {id : "alert", label: "Alerts", icon: "px-fea:alerts"}
-];
+const { Drawer } = PxReact;
 <div>
- 
+  <Drawer opened={true} anchor='left'>
+    <p>This is drawer content</p>
+  </Drawer>
 </div>
 ```
 

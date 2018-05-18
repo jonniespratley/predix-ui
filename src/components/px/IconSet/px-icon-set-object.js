@@ -1,4 +1,4 @@
-//obj icons
+// obj icons
 const obj = {
   'px-obj-airplane': '<g id="px-obj-airplane"><path stroke-linejoin="round" d="M10.9 16L8.1 27h3.7l7.1-11m-8-4L8.1 5h3.7l5.6 7"/><path d="M8.5 18H5.2a3.89 3.89 0 0 1-3.7-4V8h1.9l1.9 4h21.5a3.89 3.89 0 0 1 3.7 4v2H19.7" stroke-linejoin="round"/><path d="M30.4 15.1h-4.5a1.35 1.35 0 0 1-1.3-1.4v-1.9" stroke-miterlimit="10"/></g>',
   'px-obj-airplane-engine': '<g id="px-obj-airplane-engine"><path d="M12.9 28H7.4a.68.68 0 0 1-.7-.7 48 48 0 0 1 0-22.6.68.68 0 0 1 .7-.7H13a47.6 47.6 0 0 0-.1 24zm1.1-6.8a44.05 44.05 0 0 1-.3-5.2 45.33 45.33 0 0 1 .3-5.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.4 28h1.7a.68.68 0 0 0 .7-.7 41 41 0 0 0 1.1-6.1" stroke-miterlimit="10"/><path d="M11.4 4h1.7a.68.68 0 0 1 .7.7 59.72 59.72 0 0 1 1.1 6.1" stroke-linecap="round" stroke-linejoin="round"/><path stroke-miterlimit="10" d="M14.1 11l7.2-2m-7.2 12l7.2 2m-7.2-9h7.2m-7.2 4h7.2"/><path stroke-linecap="round" stroke-miterlimit="10" d="M21.5 8v16m.1-3.1s2.3 2 5.3-1V12c-3-3-5.3-1-5.3-1"/><path stroke-linecap="round" stroke-linejoin="round" d="M26.9 14l3.9 2-3.9 2m-21.7.8l-3-1.5a1.73 1.73 0 0 1-.5-2.2c.1-.2.3-.3.5-.5l3-1.5"/></g>',
@@ -36,5 +36,5 @@ const obj = {
   'px-obj-truck': '<g id="px-obj-truck"><path d="M11.1 25h-4m8.9 0h3.5V10h4.9l6.1 7v8H28"/><path d="M21.6 16v-3h2.6l2.3 2.4c.1.1.1.4 0 .5-.1.1-.2.1-.3.1h-4.6zm2.4 9h-5"/><circle cx="5.1" cy="25.5" r="2.5"/><circle cx="13.1" cy="25.5" r="2.5"/><circle cx="26" cy="25.5" r="2.5"/><path d="M3.1 25H1.6V7H18m-.9-3h1c.8 0 1.5.6 1.5 1.5v5"/></g>',
   'px-obj-wind-turbine': '<g id="px-obj-wind-turbine"><circle cx="15.9" cy="14.1" r="2.3"/><path d="M14.5 18.8l-1.7 11.7m6.4 0l-1.8-11.7m-1.8-7l-1.4-1.9c-.4-.6-.5-1.3-.1-1.9l3.2-6.5h1.9l-1.9 10.8m.8 2.7l2.3-.2c.7-.1 1.4.3 1.7.8l4 6-.9 1.6-8.4-7m-2.7-.6l-1 2.1c-.3.6-1.2.7-1.9.7l-7 .8-.9-1.6 10.3-3.8M9 30.5h14"/></g>'
 };
-//done
-export default obj
+// done
+export default obj;

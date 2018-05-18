@@ -8,7 +8,6 @@ describe('Tile', () => {
     const wrapper = shallow(
       <PxTile />
     );
-    console.log(wrapper.debug());
     expect(true).to.equal(true);
   });
   test('should render with images', () =>{
@@ -17,7 +16,6 @@ describe('Tile', () => {
         title='My Tile'
         image='https://www.predix-ui.com/bower_components/Tile/turbine.jpg'>This is the tile</PxTile>
     );
-    console.log(wrapper.debug());
     expect(true).to.equal(true);
   });
   //expect(wrapper.find('.label')).to.have.length(1);

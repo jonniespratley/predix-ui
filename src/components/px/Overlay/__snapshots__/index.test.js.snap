@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Overlay matches snapshot 1`] = `
+.c0 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 900;
+  background-color: var(--px-modal-overlay-color,rgba(0,0,0,0.5));
+  -webkit-transition: background-color 0.2s cubic-bezier(.78,.13,.16,.87);
+  transition: background-color 0.2s cubic-bezier(.78,.13,.16,.87);
+}
+
+<div
+  className="px-overlay c0"
+  onClick={[Function]}
+  onKeyUp={[Function]}
+/>
+`;

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContextBrowser should render 1`] = `
+.c0 {
+  display: inline-block;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: var(--px-chip-background-color,white);
+  border: 1px solid var(--px-chip-border-color,gray);
+}
+
+.c0:hover {
+  cursor: pointer;
+  background-color: var(--px-chip-background-color--hover,rgba(gray,0.2));
+  border: 1px solid var(--px-chip-border-color--hover,gray);
+}
+
+.c1 {
+  line-height: 18px;
+  display: inline-block;
+  min-width: 0;
+  max-width: var(--px-chip-max-width,120px);
+  color: var(--px-chip-text-color,gray);
+}
+
+<div
+  className="c0"
+  selected={undefined}
+>
+  <div
+    className="c1"
+  />
+</div>
+`;

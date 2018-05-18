@@ -1,5 +1,3 @@
-import React from 'react';
-
 import IronCollapse from './IronCollapse';
 import IronPages from './IronPages';
 import IronMediaQuery from './IronMediaQuery';

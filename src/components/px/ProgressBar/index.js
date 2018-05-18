@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css, keyframes } from 'styled-components';
 
 const ProgressAnimation = keyframes`
@@ -19,9 +20,8 @@ const ProgressAnimation = keyframes`
   }
 `;
 
-const _computeRatio = (v) => {
-  return v < 0 ? 0 : (v > 100 ? 1 : v / 100);
-};
+/* eslint-disable-next-line */
+const _computeRatio = v => (v < 0 ? 0 : (v > 100 ? 1 : v / 100));
 
 const ProgressFill = styled.div`
   background-color        : var(--px-progress-bar-fill-color,black);
@@ -50,19 +50,32 @@ const ProgressBar = styled.div`
   height: var(--px-progress-bar-height, 5px);
 `;
 
-export default ({
-  value = 0,
-  max = 100,
-  min = 0,
+const Component = ({
+  value,
+  max,
+  min,
   infinite
-}) => {
-  return (
-    <div aria-valuemin={min} aria-valuemax={max}>
-      <ProgressBar>
-        <ProgressBackground>
-          <ProgressFill value={value} infinite={infinite} />
-        </ProgressBackground>
-      </ProgressBar>
-    </div>
-  );
-}
+}) => (
+  <div aria-valuemin={min} aria-valuemax={max}>
+    <ProgressBar>
+      <ProgressBackground>
+        <ProgressFill value={value} infinite={infinite} />
+      </ProgressBackground>
+    </ProgressBar>
+  </div>
+);
+
+Component.defaultProps = {
+  value: 0,
+  max: 100,
+  min: 0,
+  infinite: false
+};
+Component.propTypes = {
+  value: PropTypes.number,
+  max: PropTypes.number,
+  min: PropTypes.number,
+  infinite: PropTypes.bool
+};
+
+export default Component;

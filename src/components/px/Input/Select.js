@@ -1,5 +1,4 @@
-import React from 'react';
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 
 const Select = styled.select`
   font: inherit;
@@ -19,7 +18,7 @@ const Select = styled.select`
   min-height: calc(2em);
   cursor: pointer;
   -webkit-appearance: none;
-  
+
   &:hover {
     background-color: var(--px-select-background-color--hover, #a3b5bf);
   }

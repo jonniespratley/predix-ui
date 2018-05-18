@@ -1,0 +1,77 @@
+<style>
+  @media screen and (min-width: 719px) {
+    .catalog-header {
+      height: 80px;
+    }
+  }
+
+  .catalog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 45px;
+    padding: 0 1rem;
+    z-index: 2;
+    background-color: var(--px-catalog-header-background-color, #eaeff1);
+    font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  }
+
+  .catalog-header,
+  .logo .logo__text {
+    color: var(--px-catalog-header-text-color, #1b2a33);
+  }
+
+  .catalog-header a {
+    color: var(--px-catalog-header-text-color, #1b2a33);
+    text-decoration: none;
+  }
+
+</style>
+<div class="catalog-header">
+  <div>
+    <a href="/" class="logo">predix-ui</a>
+  </div>
+  <div>
+    <label for="themeCheckbox">Dark Theme
+      <input type="checkbox" id="themeCheckbox" />
+    </label>
+  </div>
+</div>
+
+
+<script>
+  var isLocal = /localhost/.test(window.location.href);
+  var darkTheme = 'https://unpkg.com/predix-ui/dist/px-dark-theme.min.css';
+  var lightTheme = 'https://unpkg.com/predix-ui/dist/px-theme.min.css';
+  var useDark = localStorage.getItem('predix-ui-dark-theme');
+  var iframe = document.querySelector('#storybook-preview-iframe');
+  if (/localhost/.test(window.location.href)) {
+    lightTheme = './px-theme.css';
+    darkTheme = './px-dark-theme.css';
+  }
+
+  window.addEventListener('message', function(e){
+    // console.log('Message from storybook-preview-iframe', e);
+  }, false);
+
+  function changeStylesheet(dark) {
+    localStorage.setItem('predix-ui-dark-theme', dark);
+    var stylesheet = document.querySelector('#storybook-preview-iframe').contentDocument.querySelector('#themeCSS');
+    if(!stylesheet){
+      console.warn('There is no stylesheet in the iframe');
+    }
+    if (dark) {
+      stylesheet.setAttribute('href', darkTheme);
+    } else {
+      stylesheet.setAttribute('href', lightTheme);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    //changeStylesheet(useDark);
+    document.querySelector('#themeCheckbox').addEventListener('change', function (e) {
+      changeStylesheet(e.target.checked)
+    });
+  });
+
+</script>
