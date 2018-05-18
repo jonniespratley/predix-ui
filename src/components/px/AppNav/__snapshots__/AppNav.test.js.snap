@@ -133,39 +133,22 @@ exports[`AppNav should render 1`] = `
 }
 
 .c6 {
-  color: var(--px-base-text-color,#2c404c);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   line-height: 1.33333;
-  height: auto;
-  box-sizing: border-box;
-  position: relative;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c6 .px-app-nav-item {
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
+  display: block;
+  height: auto;
 }
 
 .c8 {
-  height: calc(100vh - var(--px-app-nav-height,4rem));
-  z-index: 399;
-  height: 0;
+  height: 0px;
   overflow: hidden;
 }
 
 .c9 {
   background-color: var(--px-app-nav-subitem-background-color,white);
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3);
   max-width: inherit;
-  margin: 1px;
   position: relative;
-  top: -1px;
 }
 
 .c0 {
@@ -359,7 +342,7 @@ exports[`AppNav should render 1`] = `
         </div>
       </div>
       <div
-        className="px-app-nav-group c6"
+        className="px-app-nav-subgroup c6"
       >
         <div>
           <div
@@ -444,10 +427,10 @@ exports[`AppNav should render 1`] = `
           </div>
         </div>
         <div
-          className="app-nav-group__dropdown c8"
+          className="app-nav-subgroup__dropdown c8"
         >
           <div
-            className="app-nav-group__dropdown__content c9"
+            className="c9"
           >
             <div
               className="c10"
