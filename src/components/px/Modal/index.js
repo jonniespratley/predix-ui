@@ -74,62 +74,6 @@ const ModalActions = styled.div`
     margin-right: 1rem;
   }
 `;
-
-
-const Modal = styled.div`
- position        : absolute;
-
-  background-color: transparent;
-  visibility      : hidden;
-  ${props => props.zIndex && css`
-    z-index      : ${props.zIndex}
-  `}
-  ${props => props.fixed && css`
-    position: fixed;
-  `}
-  ${props => props.opened && css`
-    visibility      : visible;
-  `}
-`;
-
-const ModalContent = styled.div`
-  z-index         : 900;
-  ${props => props.zIndex && css`
-    z-index      : ${props.zIndex}
-  `}
-  top: 50%;
-  left: 50%;
-  
-  transform: translate(-50%, -50%);
- 
-  max-height: calc(100% - 2rem);
-  max-width: calc(100% - 2rem);
-  overflow: auto;
-  white-space: normal;
-  word-wrap: break-word;
-  background-color: var(--px-modal-background-color, white);
-  color: var(--px-modal-text-color, black);
-  
-  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
-  padding: 1rem;
-  position: fixed;
-  ${props => props.fixed && css`
-    position: fixed;
-  `}
-  @media screen and (max-width: 44.9375em) {
-    width: 100%;
-  }
-  @media screen and (min-width: 45em) {
-    min-width: 400px;
-  }
-`;
-
-const ModalTitle = styled.h3`
-  margin-bottom: 2rem;
-  margin-top: 0;
-`;
-
-
 /**
  * Modal component
  */
@@ -221,5 +165,5 @@ Component.propTypes = {
   zIndex: PropTypes.number,
   modalContentElement: PropTypes.oneOfType([PropTypes.node, PropTypes.func])
 };
-
+Component.displayName = 'ModalComponent';
 export default Component;

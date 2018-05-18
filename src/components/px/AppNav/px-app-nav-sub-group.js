@@ -36,9 +36,7 @@ AppNavSubGroupDropdown.displayName = 'AppNavSubGroupDropdown';
 const AppNavSubGroupDropdownContent = styled.div`
   background-color: var(--px-app-nav-subitem-background-color, white);
   max-width: inherit;
-
   position: relative;
-
 `;
 AppNavSubGroupDropdownContent.displayName = 'AppNavSubGroupDropdownContent';
 
@@ -72,10 +70,6 @@ class AppNavSubGroupComponent extends React.Component {
       return true;
     }
     return false;
-  }
-
-  _componentWillReceiveProps(nextProps) {
-    console.log('AppNavSubGroup', this.props.item.label, 'componentWillReceiveProps', nextProps.opened);
   }
 
   onToggle = (e) => {

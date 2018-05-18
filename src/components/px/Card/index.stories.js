@@ -7,13 +7,7 @@ import README from './README.md';
 import Card from './';
 
 const customActions = () => (
-  <div>
-		Expand +
-	</div>
-);
-
-const customActions = () => (
-  <div>Expand</div>
+  <div>Expand +</div>
 );
 
 storiesOf('Components / Card', module)

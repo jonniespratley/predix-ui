@@ -20,7 +20,6 @@ export default class AssetGraphBehavior extends mix(BaseClass, AssetActivatable,
   constructor(...props) {
     super(...props);
     this._createAssetGraph = assetGraph.bind(this);
-    console.log('new AssetGraphInstance');
   }
 
   set keys(val) {
