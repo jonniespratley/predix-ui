@@ -112,10 +112,9 @@ class Accordion extends React.Component {
     this.state = {
       open: props.opened
     };
-    this.onClick = this.onClick.bind(this);
   }
 
-  onClick() {
+  onClick = () => {
     if (!this.props.disabled) {
       this.setState(prevState => ({
         open: !prevState.open
@@ -208,7 +207,7 @@ Accordion.propTypes = {
     left: PropTypes.string,
     action: PropTypes.string
   }),
-  children: PropTypes.node
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func, PropTypes.element])
 };
 
 Accordion.defaultProps = {

@@ -135,6 +135,8 @@ class AppNavComponent extends React.Component {
   }
 
   componentWillUnmount() {
+    this._assetGraph.off('px-app-asset-selected', this._handleAssetSelected);
+    this._assetGraph.off('px-app-asset-activated', this._handleAssetActivated);
     if (this.base && this.state.vertical) {
       this.base.removeEventListener('mouseleave', this._handleMouseExit);
       this.base.removeEventListener('mouseenter', this._handleMouseEnter);
@@ -187,8 +189,8 @@ class AppNavComponent extends React.Component {
     const clear = n => n.map((obj) => {
       const item = obj;
       item.selected = false;
-      item.opened = false;
       if (item.children) {
+        item.opened = false;
         item.children = clear(item.children);
       }
       return item;
@@ -200,8 +202,6 @@ class AppNavComponent extends React.Component {
   _handleAssetSelected = (e) => {
     this.clearOpened();
     console.log('px-app-asset-selected', e);
-
-
     const { items } = this._assetGraph;
     const state = Object.assign({}, {
       items,
@@ -219,7 +219,9 @@ class AppNavComponent extends React.Component {
   clearOpened = () => {
     const items = this._assetGraph.items.map((obj) => {
       const o = obj;
-      o.opened = false;
+      if (o.children) {
+        o.opened = false;
+      }
       return o;
     });
     this.setState({ items });
@@ -230,10 +232,8 @@ class AppNavComponent extends React.Component {
     console.log('px-app-asset-activated', e);
     const { item } = e;
     item.opened = !item.opened;
-
     const state = Object.assign({}, {
       selectedItem: item,
-      path: e.path,
       selectedRoute: e.route
     }, e);
     this.setState(state);
@@ -246,6 +246,10 @@ class AppNavComponent extends React.Component {
   handleClick = (val, node, isChild) => {
     if (!isChild) {
       this._assetGraph.activate(null);
+    }
+
+    if (this.state.selectedItem) {
+      this._assetGraph.deselect(this.state.selectedItem);
     }
 
     this._assetGraph.select(node, 'DOM_EVENT');
@@ -295,7 +299,7 @@ class AppNavComponent extends React.Component {
           key={child.id || child.label}
           item={child}
           selected={selected}
-          onClick={() => this.handleClick(propForSelect, child)}
+          onClick={item => this.handleClick(propForSelect, item)}
         />
       );
     }

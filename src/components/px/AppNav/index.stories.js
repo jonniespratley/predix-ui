@@ -33,7 +33,13 @@ const navItems = [
     label: 'Alerts',
     id: 'alerts',
     icon: 'px-fea:alerts'
-  }, {
+  },
+  {
+    label: 'Cases',
+    id: 'cases',
+    icon: 'px-fea:cases'
+  },
+  {
     label: 'Assets',
     id: 'assets',
     icon: 'px-fea:asset',
@@ -59,7 +65,6 @@ const navItems = [
     {
       label: 'Track Orders',
       id: 'orders',
-      selected: true,
       icon: 'px-fea:orders'
     },
     {

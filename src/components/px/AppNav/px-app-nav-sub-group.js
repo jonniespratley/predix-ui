@@ -52,11 +52,6 @@ class AppNavSubGroupComponent extends React.Component {
       });
     } */
 
-    this.setState({
-      opened: !this.state.opened
-      // children: items || null
-    });
-
     if (this.props.onClick) {
       this.props.onClick(item, isChild);
     }

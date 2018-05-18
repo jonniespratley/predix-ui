@@ -10,11 +10,10 @@ const SubItemLabel = styled.p`
 `;
 
 const SubItem = styled.div`
+  user-select: none;
   line-height: 1.33333;
-  text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  /* Subitem State: Default */
   position: relative;
   display: flex;
   align-items: center;
@@ -25,13 +24,11 @@ const SubItem = styled.div`
   color: var(--px-app-nav-subitem-text-color, darkgray);
   background-color: var(--px-app-nav-subitem-background-color, white);
 
-  /* Subitem State: Hover */
   &:hover {
     color: var(--px-app-nav-subitem-text-color--hover, darkgray);
     background-color: var(--px-app-nav-subitem-background-color--hover, lightgray);
   }
 
-  /* Subitem State: Selected */
   ${props => props.selected && css`
     color: var(--px-app-nav-subitem-text-color--selected, white);
     background-color: var(--px-app-nav-subitem-background-color--selected, blue);
@@ -41,7 +38,6 @@ const SubItem = styled.div`
     }
   `}
 
-  /* Subitem State: Collapsed */
   ${props => props.collapsed && css`
     color: var(--px-app-nav-subitem-text-color--collapsed, darkgray);
     background-color: var(--px-app-nav-subitem-background-color--collapsed, darkgray);
@@ -54,21 +50,21 @@ const SubItem = styled.div`
 
 
 const AppNavSubItem = ({
-  item, selected, collapsed, onClick
+  item, collapsed, onClick
 }) => (
   <SubItem
     collapsed={collapsed}
-    selected={selected}
+    selected={item.selected}
+    disabled={item.disabled}
     data-id={item.id}
     onClick={onClick}
   >
-    <SubItemLabel className="app-nav-subitem__label">{item.label}</SubItemLabel>
+    <SubItemLabel>{item.label}</SubItemLabel>
   </SubItem>
 );
 
 AppNavSubItem.defaultProps = {
   item: null,
-  selected: null,
   collapsed: null,
   onClick: null
 };
@@ -76,10 +72,11 @@ AppNavSubItem.defaultProps = {
 AppNavSubItem.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.string,
+    disabled: PropTypes.bool,
+    selected: PropTypes.bool,
     label: PropTypes.string,
     icon: PropTypes.string
   }),
-  selected: PropTypes.bool,
   collapsed: PropTypes.bool,
   onClick: PropTypes.func
 };
