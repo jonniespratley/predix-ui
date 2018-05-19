@@ -1,1 +1,310 @@
-#todo
+0.0.22 / 2018-05-14
+===================
+
+  * fixed icon size
+  * fixed umd build
+
+0.0.21 / 2018-05-14
+===================
+
+  * Added eslint airbnb and fixed all files. ([#17](https://github.com/jonniespratley/predix-ui/issues/17))
+    * adding air bnb eslint
+    * added proptypes to almost all components, updated specs to have snapshots
+    * updated eslint
+    * fixed all eslint airbnb errors
+    * fixed build issue
+    * added semantic release
+    * added semantic release
+    * updated snapshots
+    * updated snapshots and coverage
+    * upsdated specs
+    * updated code
+    * updated branding bar
+    * lint in prepush
+    * updated button styles
+    * updated snapshots
+    * updated demos and added grid container
+    * updated snapshots
+    * updated stories
+    * fixed lint
+    * added storybook build to gh-pages
+    * updated package to be smaller
+    * smaller bundle
+    * updated snapshots
+    * added react-popper to dev dependencies
+    * fixed gh-pages webpack
+
+0.0.20 / 2018-04-24
+===================
+
+  * 0.0.20
+  * tag
+  * fixed issue with catalog building ([#16](https://github.com/jonniespratley/predix-ui/issues/16))
+  * fixed travis
+  * tagged
+  * Fix/coverage ([#15](https://github.com/jonniespratley/predix-ui/issues/15))
+    * added snappshot testing
+    * updated handling of dependencies
+    * moved styled components as peer dependency
+    * changed node version
+    * added styled-components as dev dependency but excluded from bundle
+
+0.0.18 / 2018-04-21
+===================
+
+  * Fixed issue with theme, updated component api demos and docs. ([#14](https://github.com/jonniespratley/predix-ui/issues/14))
+    * updated table row content
+    * fixed issue with sass and css variables
+    * updated examples, fixed unit tests
+    * updated modal, accordion, etc.
+    * updated some stories and added themes to dist
+    * fixed issue with theme
+
+0.0.17 / 2018-04-12
+===================
+
+  * Fix/bugs ([#13](https://github.com/jonniespratley/predix-ui/issues/13))
+    * updated docs and demos
+    * fixed issue with tiles
+    * tag
+    * 0.0.17
+
+0.0.16 / 2018-04-11
+===================
+
+  * Fix/docs ([#12](https://github.com/jonniespratley/predix-ui/issues/12))
+    * updated docs
+    * fixed spec
+    * updated styles and readme
+    * added panel component.
+    * updated readme
+    * updated panels
+    * updated card to take actions child component
+    * updated demos and docs
+    * updated specs
+    * updated demo docs
+    * removed stylesheet from docs
+
+0.0.15 / 2018-04-06
+===================
+
+  * Fix/specs ([#11](https://github.com/jonniespratley/predix-ui/issues/11))
+    * added some specs, and fixed handling of tabs
+    * added janky context browser shell
+    * upgraded dependencies
+    * cleaned up components
+    * updated buttons
+    * updated branding bar
+    * added popover
+    * added drawer story file
+    * updated all components, updated all unit tests
+    * updated  components
+    * updated  components
+    * updated code
+    * updated code
+    * updated unit tests;
+    * updated setup jest
+    * disable snapshots on ci
+    * updated ui
+    * fixed some components
+    * fixed lint
+    * removed lodash
+    * updated
+    * bump
+
+0.0.14 / 2018-03-23
+===================
+
+  * version bump
+  * Fix/components ([#10](https://github.com/jonniespratley/predix-ui/issues/10))
+    * fixed issue on tabs where selected = 0 was returning false, thus not updating state
+    * updated stories and fixed issue
+
+0.0.13 / 2018-03-22
+===================
+
+  * Feature/styled ([#9](https://github.com/jonniespratley/predix-ui/issues/9))
+    * Updated demos and iron components
+    * removed all console log statements
+    * :sparkles: updated styles and components
+    * cleaned up code and styles
+    * fixed icon set
+    * added dropdown demos
+    * added custom index template
+    * added notifications and story file for demo
+    * update dropdown
+    * updated icons
+
+0.0.12 / 2018-03-08
+===================
+
+  * version bump
+  * Fix/depends ([#8](https://github.com/jonniespratley/predix-ui/issues/8))
+    * cleaned up bundle size and unused modules
+    * added storybook for toggle
+    * :art: updated storybooks for components
+    * added stores and theme
+    * updated collapse
+
+0.0.11 / 2018-03-02
+===================
+
+  * Fix/bundle size ([#7](https://github.com/jonniespratley/predix-ui/issues/7))
+    * :construction:
+    * fixed accordion and view-header
+    * :art: more styled components.
+    * :art: Updated format
+    * :art: updated tiles
+    * :art: Added styled-components for key-value-pair
+    * :art: added toggle input
+    * :art: added new toggle input
+    * :art: Added toggle input
+    * :art: updated toggle input
+    * :green_heart: fixed specs
+    * :truck: added more functionality to the app nav component.
+    * :art: added dropdown component and docs
+    * :art: added input elements and updated documentation
+    * :sparkles: added notification component
+    * added onClick event handler for notification action
+
+0.0.10 / 2018-02-25
+===================
+
+  * Feature/jss ([#5](https://github.com/jonniespratley/predix-ui/issues/5))
+    * fixed warning in styles
+    * added some jss
+    * added some jss
+    * updated build
+    * updated build
+    * updated
+    * upgraded jest and fixed
+    * updated npm ignore
+    * playing with css modules
+    * added style component
+    * :hammer:
+    * :hammer: :green_heart: :beers:
+    * :hammer: :green_heart: :beers:
+    * :hammer: :art: :truck: :construction:
+    * :truck:
+    * :hammer:
+    * :hammer:
+    * :construction_worker: :bento:
+    * updated icons
+    * :construction:
+    * updated
+    * updated dependencies
+    * :art:
+    * :art:
+    * :art:
+    * updated docs, added more stories
+    * updated index value on props select
+    * Updated readme and version.
+    * :art: Updated some components to use styled components.
+    * :art: updated components to use styled components as much
+    * :art: Updated table view to use  react virtualized
+    * :art: removing all the junk inuit stuff
+    * :art: Updated styled components
+  * update  $popover-max-width to be 3000px ([#3](https://github.com/jonniespratley/predix-ui/issues/3))
+  * updated main
+
+0.0.9 / 2017-12-11
+==================
+
+  * bumped version
+  * Merge branch 'develop' of https://github.com/jonniespratley/predix-ui into develop
+  * Fix/umd build ([#2](https://github.com/jonniespratley/predix-ui/issues/2))
+    * update
+    * added package-lock
+    * added build tools for rollup
+    * fixed issue with umd build
+    * fixed comma
+  * added package-lock
+  * update
+  * removed agent
+  * added jenkinsfile
+
+0.0.8 / 2017-12-01
+==================
+
+  * bumped version
+  * added licence file
+  * removed licence
+  * bumped
+
+0.0.7 / 2017-11-29
+==================
+
+  * bumped version
+  * post install
+  * updated build scripts and added configuration to components
+  * updated read
+
+0.0.6 / 2017-10-26
+==================
+
+  * Updated docs
+  * updated build steps
+
+0.0.5 / 2017-10-25
+==================
+
+  * updated
+  * updated version
+  * updated gitignore
+  * updated styles
+
+0.0.4 / 2017-10-19
+==================
+
+  * updated demo
+  * added updated appnav
+  * added updated icon set
+  * updated icons
+  * updated some code
+  * cleanup
+  * updated docs, cleanup files
+  * added some purifycss
+  * updated simple card readme
+  * updated layout docs
+  * fixed build
+  * added icons
+  * updated docs, dont really know why
+  * updated documentation and styles
+  * cleaned up globals
+  * added some iron components
+  * updated comp
+  * updated base component
+  * updated ironcomponents name
+  * updated specs
+  * renamed all components
+  * renaming
+  * Added input updated misc docs
+  * updated overlay api
+  * updated components with css vars
+  * fixed bower
+
+0.0.3 / 2017-10-06
+==================
+
+  * added more demos
+  * added table styles
+  * updated tests
+  * updated versions
+  * added wallaby
+  * updated css variables
+  * updated demo files
+
+0.0.2 / 2017-10-06
+==================
+
+  * fixed webpack
+  * updated naming
+  * updated
+  * updated all theme
+  * added storeis
+  * added seperate story
+  * added storybook addons
+  * updated breadcrumbs
+  * added storybook for quick api demos
+  * updated grids
+  * added individual scss files

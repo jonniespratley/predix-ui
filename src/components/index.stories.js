@@ -10,6 +10,14 @@ import px from './px';
 
 import README from '../../README.md';
 
+const {
+  AppNav,
+  Button,
+  Card,
+  Flex,
+  Notification
+} = px;
+
 storiesOf('Predix UI', module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(README))
@@ -43,14 +51,6 @@ const navItems = [
     id: 'users', path: '/users', label: 'Users', icon: 'px-fea:users'
   }
 ];
-
-const {
-  AppNav,
-  Button,
-  Card,
-  Flex,
-  Notification
-} = px;
 
 storiesOf('Examples', module)
   .addDecorator(withKnobs)
