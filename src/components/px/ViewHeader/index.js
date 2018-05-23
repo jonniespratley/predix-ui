@@ -1,9 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 
 const VHeader = styled.div`
-  height          : 4rem;
+  height          : var(--px-view-header-height, 4rem);
   background-color: var(--px-view-header-background-color, whitesmoke);
   padding-left    : 1rem;
   padding-right   : 1rem;
@@ -27,10 +27,10 @@ const VHeaderText = styled.div`
 VHeaderText.displayName = 'VHeaderText';
 
 const VHeaderTitle = styled.div`
-  text-align: center;
-  color     : var(--px-view-header-title-color, black);
-  overflow     : hidden;
-  text-overflow: ellipsis;
+  text-align    : center;
+  color         : var(--px-view-header-title-color, black);
+  overflow      : hidden;
+  text-overflow : ellipsis;
   white-space  : nowrap;
 `;
 VHeaderTitle.displayName = 'VHeaderTitle';

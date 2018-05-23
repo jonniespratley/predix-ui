@@ -2,7 +2,7 @@
 
 exports[`ViewHeader should render 1`] = `
 .c0 {
-  height: 4rem;
+  height: var(--px-view-header-height,4rem);
   background-color: var(--px-view-header-background-color,whitesmoke);
   padding-left: 1rem;
   padding-right: 1rem;
@@ -93,7 +93,7 @@ exports[`ViewHeader should render 1`] = `
 
 exports[`ViewHeader should render with children on left/right 1`] = `
 .c0 {
-  height: 4rem;
+  height: var(--px-view-header-height,4rem);
   background-color: var(--px-view-header-background-color,whitesmoke);
   padding-left: 1rem;
   padding-right: 1rem;
