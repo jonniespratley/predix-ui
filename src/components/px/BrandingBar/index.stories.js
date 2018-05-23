@@ -6,7 +6,7 @@ import { withReadme } from 'storybook-readme';
 import BrandingBar from './';
 import Icon from '../IconSet/Icon';
 import Button from '../Button';
-import Flex from '../../../styles/flex';
+import Flex from '../Flex';
 import README from './README.md';
 
 const customLogo = () => (

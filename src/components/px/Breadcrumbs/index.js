@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../IconSet/Icon';
-import Flex from '../../../styles/flex';
+import Flex from '../Flex';
 
 class BreadcrumbsComponent extends React.Component {
   constructor(props) {
