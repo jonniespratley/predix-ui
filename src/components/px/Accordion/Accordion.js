@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 import styled, { css } from 'styled-components';
 import IronCollapse from '../../iron/IronCollapse';
 import Flex from '..//Flex';
@@ -28,10 +28,8 @@ const AccordionHeader = styled.div`
   margin-bottom   : 0.3333rem;
   cursor          : pointer;
   user-select     : none;
-
   color: var(--px-headings-heading-subsection-color, black);
   background-color: var(--px-headings-heading-subsection-background, whitesmoke);
-
   display         : flex;
   justify-content : space-between;
   > * {

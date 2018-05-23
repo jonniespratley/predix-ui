@@ -24,3 +24,4 @@ package-lock.json
 jest-test-results.json
 test-report.html
 demo/main.js
+.vscode
