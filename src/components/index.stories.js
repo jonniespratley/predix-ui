@@ -1,38 +1,26 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs/react';
+import { storiesOf } from '@storybook/react';
+import React from 'react';
 import { withReadme } from 'storybook-readme';
-import px from './px';
-
 // import './px/Theme/LightTheme';
 // import './px/Theme/DarkTheme';
-
 import README from '../../README.md';
+import px from './px';
 
-const {
-  AppNav,
-  Button,
-  Card,
-  Flex,
-  Notification
-} = px;
-
-storiesOf('Predix UI', module)
-  .addDecorator(withKnobs)
-  .addDecorator(withReadme(README))
-  .add('Welcome', () => (
-    <div>Welcome</div>
-  ))
-  .add('Style Guide', () => (
-    <div>
-      <Flex>
-        <px.Button>Default</px.Button>
-        <px.Button theme="primary">Primary</px.Button>
-      </Flex>
-    </div>
-  ));
-
+const buttonThemes = [
+  'primary',
+  'secondary',
+  'tertiary',
+  'call-to-action',
+  'bare',
+  'bare-primary',
+  'info',
+  'healthy',
+  'warning',
+  'error',
+  'important'
+];
 
 const navItems = [
   {
@@ -51,6 +39,32 @@ const navItems = [
     id: 'users', path: '/users', label: 'Users', icon: 'px-fea:users'
   }
 ];
+
+const {
+  AppNav,
+  Button,
+  Card,
+  Flex,
+  Notification
+} = px;
+
+storiesOf('Predix UI', module)
+  .addDecorator(withKnobs)
+  .addDecorator(withReadme(README))
+  .add('Welcome', () => (
+    <div>Welcome</div>
+  ))
+  .add('Style Guide', () => (
+    <div>
+      <div>
+        <h2>Buttons</h2>
+        {buttonThemes.map(theme => (
+          <Button onClick={action('onClick')} theme={theme} key={theme}>Button ({theme})</Button>
+        ))}
+      </div>
+    </div>
+  ));
+
 
 storiesOf('Examples', module)
   .addDecorator(withKnobs)

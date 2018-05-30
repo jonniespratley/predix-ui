@@ -1,16 +1,17 @@
-import React from 'react';
+import { select, text, withKnobs } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, select } from '@storybook/addon-knobs/react';
+import React from 'react';
 import { withReadme } from 'storybook-readme';
-
 import AlertLabel from './';
 import README from './README.md';
+
 
 const typeOptions = {
   info: 'Info',
   error: 'Error',
   important: 'Important',
   healthy: 'Healthy',
+  unknown: 'Unknown',
   warning: 'Warning',
   success: 'Success'
 };

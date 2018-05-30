@@ -6,6 +6,7 @@ import IronSelector from './IronSelector';
 import IronMultiSelectable from './IronMultiSelectable';
 import IronSelectable from './IronSelectable';
 
+
 const IronComponents = {
   IronCollapse,
   IronPages,

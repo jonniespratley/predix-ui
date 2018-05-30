@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 /**
  * IronCollapse component implementation.
@@ -14,7 +14,6 @@ class IronCollapse extends React.Component {
       opened: props.opened || false,
       style: null
     };
-    this._handleRef = this._handleRef.bind(this);
     this._transitionEndBound = this._transitionEnd.bind(this);
   }
 
@@ -140,14 +139,14 @@ class IronCollapse extends React.Component {
     }
   }
 
-  _handleRef(el) {
+  _handleRef = (el) => {
     this.base = el;
   }
 
   render() {
     const { opened } = this.state;
     const { children } = this.props;
-    const baseClassnames = classnames('iron-collapse');
+    const baseClassnames = classnames('iron-collapse', { 'iron-collapse-closed': !opened });
 
     return (
       <div

@@ -68,7 +68,8 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    //changeStylesheet(useDark);
+
+    changeStylesheet(useDark);
     document.querySelector('#themeCheckbox').addEventListener('change', function (e) {
       changeStylesheet(e.target.checked)
     });
