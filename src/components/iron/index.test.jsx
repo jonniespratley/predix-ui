@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 import IronPages from './IronPages';
-import IronCollapse from './IconCollapse';
+import IronCollapse from './IronCollapse';
 import IronSelectable from './IronSelectable';
 import IconSelector from './IronSelector';
 
@@ -61,7 +61,9 @@ describe('Iron Components', () => {
     test('should render', () => {
       const wrapper = shallow(<IronCollapse />);
       expect(wrapper.find('.iron-collapse')).toHaveLength(1);
-      const tree = renderer.create(<IronCollapse>This is content</IronCollapse>).toJSON();
+      const tree = renderer
+        .create(<IronCollapse>This is content</IronCollapse>)
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
   });
@@ -74,11 +76,13 @@ describe('Iron Components', () => {
         <div>Three</div>
       </IronPages>);
       expect(wrapper.find('.iron-selected')).toHaveLength(1);
-      const tree = renderer.create(<IronPages selected={0}>
-        <div>One</div>
-        <div>Two</div>
-        <div>Three</div>
-                                   </IronPages>).toJSON();
+      const tree = renderer
+        .create(<IronPages selected={0}>
+          <div>One</div>
+          <div>Two</div>
+          <div>Three</div>
+        </IronPages>)
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
   });
@@ -89,9 +93,8 @@ describe('Iron Components', () => {
         <div>1</div>
         <div>2</div>
         <div>3</div>
-                              </IronSelector>);
-      expect(wrapper.find('.iron-selected'))
-        .toHaveLength(1);
+      </IronSelector>);
+      expect(wrapper.find('.iron-selected')).toHaveLength(1);
     });
   });
 });
