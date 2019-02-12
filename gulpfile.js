@@ -29,7 +29,9 @@ const config = {
     main: 'src/index.js',
     src: [
       'src/**/*.js',
+      'src/**/*.jsx',
       '!src/**/*.test.js',
+      '!src/**/*.test.jsx',
       '!src/**/*.stories.js'
     ]
   },
@@ -42,6 +44,28 @@ const config = {
     ]
   }
 };
+
+
+gulp.task('rename-js-to-jsx', () =>
+  gulp
+    .src('src/**/*.stories.js')
+    .pipe($.filelog('js'))
+    .pipe($.size())
+    .pipe($.rename({
+      extname: '.jsx'
+    }))
+    .pipe($.filelog('jsx'))
+    .pipe(gulp.dest('./src')));
+
+gulp.task('remove-js-tests', () =>
+  gulp
+    .src([
+      'src/**/*.test.js',
+      'src/**/*.stories.js'
+    ])
+    .pipe($.filelog('js'))
+    .pipe($.size())
+    .pipe($.clean()));
 
 
 // /

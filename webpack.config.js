@@ -230,7 +230,7 @@ const dev = merge(common, siteCommon, {
   ],
   module: {
     rules: [{
-      test: /\.js$/,
+      test: /\.jsx$/,
       use: {
         loader: 'babel-loader',
         options: {

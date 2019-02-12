@@ -22,3 +22,4 @@ package-lock.json
 #__snapshots__
 
 jest-test-results.json
+tmp
