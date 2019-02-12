@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styled, { css } from 'styled-components';
-import IconSet from './';
+import IconSet from '.';
 
 const PxIcon = styled.i`
   color: var(--iron-icon-stroke-color, inherit);

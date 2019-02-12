@@ -149,7 +149,7 @@ const common = {
   },
   module: {
     rules: [{
-      test: /\.js$/,
+      test: /.(js|jsx)$/,
       enforce: 'pre',
       use: 'eslint-loader',
       include: [config.paths.docs, config.paths.src]
@@ -230,7 +230,7 @@ const dev = merge(common, siteCommon, {
   ],
   module: {
     rules: [{
-      test: /\.jsx$/,
+      test: /.(js|jsx)$/,
       use: {
         loader: 'babel-loader',
         options: {
@@ -287,7 +287,7 @@ const ghPages = merge(common, siteCommon, {
       }) => (
         resource &&
         resource.indexOf('node_modules') >= 0 &&
-        resource.match(/\.js$/)
+        resource.match(/.(js|jsx)$/)
       )
     })
   ],
@@ -296,7 +296,7 @@ const ghPages = merge(common, siteCommon, {
       cssRules,
       sassRules,
       {
-        test: /\.js$/,
+        test: /.(js|jsx)$/,
         use: 'babel-loader',
         include: [
           config.paths.docs,
@@ -354,7 +354,7 @@ const distCommon = {
   stats: 'verbose',
   module: {
     rules: [{
-      test: /\.js$/,
+      test: /.(js|jsx)$/,
       use: 'babel-loader',
       include: config.paths.src
     },
