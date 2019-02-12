@@ -2,21 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import './styles.css';
 import { getTarget, DOMElement, Placements, setPosition } from '../utils';
 
 // Used for default delays
 const DEFAULT_DELAYS = {
   show: 0,
   hide: 0
-};
-
-// Used for calculations
-const DEFAULT_MARGINS = {
-  top: 10,
-  bottom: 10,
-  left: 10,
-  right: 10
 };
 
 class Tooltip extends React.Component {
@@ -32,11 +23,6 @@ class Tooltip extends React.Component {
     this.addTargetEvents = this.addTargetEvents.bind(this);
     this.removeTargetEvents = this.removeTargetEvents.bind(this);
     this.handleTargetEvents = this.handleTargetEvents.bind(this);
-  }
-
-  _shouldComponentUpdate() {
-    // return false;
-    return true;
   }
 
   componentDidMount() {

@@ -69,8 +69,8 @@ export function offset(elem) {
   }
   const win = getWindow(doc);
   return {
-    top: box.top + win.pageYOffset - docElem.clientTop,
-    left: box.left + win.pageXOffset - docElem.clientLeft
+    top: (box.top + win.pageYOffset) - docElem.clientTop,
+    left: (box.left + win.pageXOffset) - docElem.clientLeft
   };
 }
 
@@ -110,9 +110,10 @@ export function setPosition(tooltip, source, placement) {
     if_left_x: sourceDimensions.left - tooltipDimensions.width,
     if_right_x: sourceDimensions.left + sourceDimensions.width,
     if_vertical_x:
-      sourceDimensions.left + (sourceDimensions.width / 2 - tooltipDimensions.width / 2),
+      sourceDimensions.left + ((sourceDimensions.width / 2) - (tooltipDimensions.width / 2)),
     if_horizontal_y:
-      sourceDimensions.top + (sourceDimensions.height / 2 - tooltipDimensions.height / 2) - offsetSize
+      (sourceDimensions.top + ((sourceDimensions.height / 2) - (tooltipDimensions.height / 2)))
+      - offsetSize
   };
 
   // The target x, y positions
@@ -160,7 +161,6 @@ export function computeBestPosition(
 ) {
   const screenTop = window.pageYOffset;
   const screenWidth = window.innerWidth;
-  const screenHeight = window.innerHeight;
   const selector = [0, 0, 0, 0];
 
   if (screenTop < imaginaryPositions.if_top_y) {
