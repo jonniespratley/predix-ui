@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, text, select } from '@storybook/addon-knobs/react';
 
 import Grid from './';
-import Flex from '../../../styles/flex';
+import Flex from '../Flex';
 
 const divStyle = {
   backgroundColor: '#fff',

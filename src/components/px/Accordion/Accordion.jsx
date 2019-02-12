@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styled, { css } from 'styled-components';
 import IronCollapse from '../../iron/IronCollapse';
-import Flex from '../../../styles/flex';
+import Flex from '../Flex';
 import Icon from '../IconSet/Icon';
 
 const styles = {

@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import 'jest-styled-components'
+import 'jest-styled-components';
 
-import Flex from './flex';
+import Flex from './';
 
 describe('Styles', () => {
   describe('Flex', () => {
@@ -41,7 +41,5 @@ describe('Styles', () => {
       expect(tree).toMatchSnapshot();
       expect(tree).toHaveStyleRule('display', 'inline-flex');
     });
-
   });
-
 });

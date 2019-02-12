@@ -44,7 +44,7 @@ import TreeNode from './Tree/TreeNode';
 import Tile from './Tile';
 import ViewHeader from './ViewHeader';
 import Notification from './Notification';
-import Flex from '../../styles/flex';
+import Flex from './Flex';
 
 /**
  * @access public
