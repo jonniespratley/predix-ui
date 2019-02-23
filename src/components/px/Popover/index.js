@@ -136,33 +136,28 @@ class Popover extends React.Component {
   }
 
   render() {
-    if (!this.props.isOpen) {
+    const {
+      innerClassName, isOpen, placement, className, cssModule
+    } = this.props;
+
+    if (!isOpen) {
       return null;
     }
 
     const attributes = omit(this.props, Object.keys(PropTypes));
-    const classes = mapToCssModules(
-      classNames('popover-inner', this.props.innerClassName),
-      this.props.cssModule
-    );
+    const classes = mapToCssModules(classNames('popover-inner', innerClassName), cssModule);
 
     const popperClasses = classNames(
       'popover',
       'show',
-      `bs-popover-${this.props.placement}`,
-      this.props.className
+      `bs-popover-${placement}`,
+      className
     );
 
     return (
       <PopperContent
         className={popperClasses}
-        target={this.props.target}
-        isOpen={this.props.isOpen}
-        hideArrow={this.props.hideArrow}
-        placement={this.props.placement}
-        placementPrefix={this.props.placementPrefix}
-        container={this.props.container}
-        modifiers={this.props.modifiers}
+        {...this.props}
       >
         <div {...attributes} className={classes} ref={this.getRef} />
         <style>

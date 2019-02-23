@@ -55,8 +55,7 @@
     "predix-ui"
   ],
   "pre-push": [
-    "lint",
-    "test"
+    
   ],
   "devDependencies": {
     "@babel/cli": "^7.0.0",
