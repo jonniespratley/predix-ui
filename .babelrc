@@ -3,9 +3,8 @@
     "node_modules"
   ],
   "presets": [
-    "react",
-    "stage-0",
-    ["env", {
+    "@babel/preset-react",
+    ["@babel/preset-env", {
       "targets": {
         "browsers": ["last 2 versions"]
       }
@@ -13,21 +12,20 @@
   ],
   "plugins": [
     "babel-plugin-styled-components",
-    "transform-decorators",
-    "transform-class-properties",
+    "@babel/plugin-proposal-decorators",
+    "@babel/plugin-proposal-class-properties",
     ["transform-react-remove-prop-types",{"mode": "wrap"}]
   ],
   "env": {
     "dev": {
       "presets": [
-        "env",
-        "stage-0",
+        "@babel/preset-env",
         "react-hmre"
       ]
     },
     "modules": {
       "presets": [
-        [ "env", { "modules": "umd" } ]
+        [ "@babel/preset-env", { "modules": "umd" } ]
       ],
       "plugins": [
         "babel-plugin-styled-components"
@@ -35,7 +33,7 @@
     },
     "es6": {
       "presets": [
-        [ "env", { "modules": false } ]
+        [ "@babel/preset-env", { "modules": false } ]
       ],
       "plugins": [
         "babel-plugin-styled-components"
