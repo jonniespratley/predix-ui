@@ -42,23 +42,22 @@ describe('Input', () => {
 
     wrapper.simulate('change');
     expect(onChange.called).to.equal(true);
-    // expect(wrapper.name()).to.equal('input');
-    expect(wrapper.find('input')).to.have.length(1);
+    expect(wrapper).matchSnapshot();
   });
 
   types.forEach((type) => {
     test(`should render ${type}`, () => {
       const wrapper = shallow(<Input type={type} />);
-      console.log(wrapper.debug());
-      expect(wrapper.find('input')).to.have.length(1);
+      // expect(wrapper.props('type')).to.be(type);
+      expect(wrapper).matchSnapshot();
     });
   });
 
   sizes.forEach((size) => {
     test(`should render ${size}`, () => {
       const wrapper = shallow(<Input type="text" size={size} />);
-      console.log(wrapper.debug());
-      expect(wrapper.find('input')).to.have.length(1);
+      // expect(wrapper.props('size')).to.be(size);
+      expect(wrapper).matchSnapshot();
     });
   });
 });
@@ -67,28 +66,27 @@ describe('Label', () => {
   const mockLabel = 'Some Label';
   it('should render', () => {
     const wrapper = shallow(<Label>{mockLabel}</Label>);
-    expect(wrapper.find('label')).to.have.length(1);
-    expect(wrapper.name()).to.equal('label');
+    expect(wrapper).matchSnapshot();
   });
   it('should render inline', () => {
     const wrapper = shallow(<Label inline>{mockLabel}</Label>);
-    expect(wrapper.find('label')).to.have.length(1);
+    expect(wrapper).matchSnapshot();
   });
 });
 
 describe('Textarea', () => {
   it('should render', () => {
     const wrapper = shallow(<Textarea name="text" />);
-    // expect(wrapper.name()).to.equal('textarea');
-    expect(wrapper.find('textarea')).to.have.length(1);
+    expect(wrapper).matchSnapshot();
   });
 });
 
 describe('Select', () => {
   it('should render', () => {
     const wrapper = shallow(<Select />);
+    expect(wrapper).matchSnapshot();
     // expect(wrapper.name()).to.equal('select');
-    expect(wrapper.find('select')).to.have.length(1);
+    // expect(wrapper.find('select')).to.have.length(1);
   });
 });
 
