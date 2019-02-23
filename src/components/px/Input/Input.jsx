@@ -8,8 +8,7 @@ const sizes = {
   huge: '35.33333rem'
 };
 
-
-const BaseInput = styled.input`
+const Input = styled.input`
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -18,9 +17,6 @@ const BaseInput = styled.input`
   border-bottom: 1px solid var(--px-input-border-color--outer, #889aa5);
   padding: 0 0.33333rem;
   color: var(--px-input-text-color, #2c404c);
-`;
-
-const Input = styled(BaseInput)`
   font: inherit;
   outline: 0;
   background-color: var(--px-input-background-color, transparent);
