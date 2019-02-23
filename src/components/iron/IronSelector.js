@@ -25,32 +25,36 @@ class IronSelector extends React.Component {
   }
 
   componentDidUpdate() {
-    if (this.props.onChange) {
-      this.props.onChange(this.state);
+    const { onChange } = this.props;
+    if (onChange) {
+      onChange(this.state);
     }
   }
 
   _renderTitles() {
     this._keys = [];
+
+    const { propForSelect, selected, children } = this.props;
+
     function labels(child, index) {
-      let propForSelect = index;
+      let propForSelectChild = propForSelect || index;
       this._items.push(child);
-      if (this.props.propForSelect) {
-        propForSelect = child.props[this.props.propForSelect];
-        this._keys.push(propForSelect);
+      if (propForSelectChild) {
+        propForSelectChild = child.props[propForSelectChild];
+        this._keys.push(propForSelectChild);
       } else {
         this._keys.push(index);
       }
       const { selectedClassName } = this.props;
-      const selected = (this.props.selected === this._getIndexForValue(propForSelect));
-      const baseClasses = classnames({ [`${selectedClassName}`]: selected });
+      const selectedItem = (selected === this._getIndexForValue(propForSelectChild));
+      const baseClasses = classnames({ [`${selectedClassName}`]: selectedItem });
       return (
         <li key={index} className={baseClasses}>
           {child}
         </li>
       );
     }
-    const nodes = this.props.children.map(labels.bind(this));
+    const nodes = children.map(labels.bind(this));
     return nodes;
   }
 
@@ -97,7 +101,7 @@ IronSelector.propTypes = {
   style: null,
   children: PropTypes.node,
   propForSelect: PropTypes.string,
-  selected: PropTypes.number,
+  selected: PropTypes.oneOfType(PropTypes.number, PropTypes.string),
   // selectedItem: PropTypes.string,
   selectedClassName: PropTypes.string,
   className: PropTypes.string

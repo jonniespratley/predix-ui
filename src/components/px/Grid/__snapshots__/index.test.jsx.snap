@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Grid should render 1`] = `
+.c0 {
+  display: grid;
+}
+
 <div
-  className="fdPICg"
+  className="c0"
 />
 `;

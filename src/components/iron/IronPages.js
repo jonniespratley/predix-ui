@@ -6,14 +6,16 @@ class IronPages extends React.Component {
   _renderChildren() {
     const {
       selected,
-      selectedClassName
+      selectedClassName,
+      children
     } = this.props;
-    const len = React.Children.count(this.props.children);
+    const len = React.Children.count(children);
     let child = null;
+    
     if (selected > len - 1) {
-      [child] = this.props.children;
+      [child] = children;
     } else {
-      child = this.props.children[selected];
+      child = children[selected];
     }
     return (<div className={classnames(selectedClassName)}>{child}</div>);
   }

@@ -87,7 +87,8 @@ class AppNavComponent extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.state.selected !== nextProps.selected) {
+    const {selected} = this.state;
+    if (selected !== nextProps.selected) {
       this.setState(nextProps);
     }
     this.setState(nextProps);

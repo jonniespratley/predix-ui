@@ -1,6 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tree matches snapshot 1`] = `
+.c3 {
+  color: var(--iron-icon-stroke-color,inherit);
+  fill: var(--iron-icon-fill-color,none);
+  stroke: var(--iron-icon-stroke-color,currentColor);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  vertical-align: middle;
+  width: var(--iron-icon-width);
+  height: var(--iron-icon-height);
+}
+
+.c3 > svg {
+  color: var(--iron-icon-stroke-color,inherit);
+  fill: var(--iron-icon-fill-color,none);
+  stroke: var(--iron-icon-stroke-color,currentColor);
+  position: relative;
+  vertical-align: middle;
+}
+
+.c3.hidden {
+  display: none;
+}
+
+.c0 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.8rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.c4 {
+  margin: 0;
+  list-style: none;
+  padding-left: 1.5rem !important;
+  display: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 1.75rem;
+}
+
+.c1:hover {
+  color: var(--px-tree-text-color--hover,black);
+  background-color: var(--px-tree-background-color--hover,lightgray);
+}
+
+.c1:hover {
+  color: var(--px-tree-text-color--hover,#000);
+  background-color: var(--px-tree-background-color--hover,#d3d3d3);
+}
+
 <ul
   className="px-tree"
   style={
@@ -11,7 +101,7 @@ exports[`Tree matches snapshot 1`] = `
   }
 >
   <li
-    className="iPPvfZ"
+    className="c0"
     data-branch={true}
     data-leaf={false}
     data-open={false}
@@ -20,15 +110,15 @@ exports[`Tree matches snapshot 1`] = `
     selected={false}
   >
     <div
-      className="jhtnpA"
+      className="c1"
       data-id={1}
       selected={false}
     >
       <span
-        className="RvCyt"
+        className="c2"
       >
         <i
-          className="px-icon px-utl-chevron-right femNjm"
+          className="px-icon px-utl-chevron-right c3"
           color={null}
           style={
             Object {
@@ -64,7 +154,7 @@ exports[`Tree matches snapshot 1`] = `
        
     </div>
     <ul
-      className="kAmVrN"
+      className="c4"
       open={false}
     />
   </li>

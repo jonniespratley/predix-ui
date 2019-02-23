@@ -1,16 +1,193 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TableView TableRow should render 1`] = `
+.c2 {
+  color: var(--iron-icon-stroke-color,inherit);
+  fill: var(--iron-icon-fill-color,none);
+  stroke: var(--iron-icon-stroke-color,currentColor);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  vertical-align: middle;
+  width: var(--iron-icon-width);
+  height: var(--iron-icon-height);
+}
+
+.c2 > svg {
+  color: var(--iron-icon-stroke-color,inherit);
+  fill: var(--iron-icon-fill-color,none);
+  stroke: var(--iron-icon-stroke-color,currentColor);
+  position: relative;
+  vertical-align: middle;
+}
+
+.c2.hidden {
+  display: none;
+}
+
+.c0 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-height: var(--px-table-row-min-height,2.93333rem);
+  line-height: var(--px-table-row-line-height,15px);
+  color: var(--px-table-row-color,inherit);
+  font-size: var(--px-table-row-font-size,15px);
+  background-color: var(--px-table-row-background-color,white);
+  border-bottom-width: var(--px-table-row-separator-width,1px);
+  border-bottom-style: var(--px-table-row-separator-style,solid);
+  border-bottom-color: var(--px-table-row-separator-color,black);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-appearance: normal;
+  -moz-appearance: normal;
+  appearance: normal;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0:after,
+.c0:before {
+  display: table;
+  content: ' ';
+}
+
+.c4 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: normal;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+  font-size: var(--px-table-row-title-font-size,15px);
+  color: var(--px-table-row-title-color,inherit);
+}
+
+.c5 {
+  font-size: var(--px-table-row-body-font-size,15px);
+  -webkit-order: 5;
+  -ms-flex-order: 5;
+  order: 5;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  white-space: normal;
+  line-height: normal;
+}
+
+.c1 {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: var(--px-table-row-media-margin,0);
+  margin-right: var(--px-table-row-media-margin,0.66667rem);
+}
+
+.c1 img {
+  display: block;
+  max-width: 80px;
+  max-height: 80px;
+}
+
+.c3 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 <div
-  className="px-table-row Uxbfq"
+  className="px-table-row c0"
   selected={null}
   size={null}
 >
   <div
-    className="fCkSbY"
+    className="c1"
   >
     <i
-      className="px-icon px-nav-home femNjm"
+      className="px-icon px-nav-home c2"
       color={null}
       style={
         Object {
@@ -39,15 +216,15 @@ exports[`TableView TableRow should render 1`] = `
     </i>
   </div>
   <div
-    className="hSKbhZ"
+    className="c3"
   >
     <div
-      className="cXpoUy"
+      className="c4"
     >
       Row Label
     </div>
     <div
-      className="hSECeV"
+      className="c5"
     >
       This is the body
     </div>
@@ -60,27 +237,138 @@ exports[`TableView TableRow should render 1`] = `
 `;
 
 exports[`TableView should render 1`] = `
+.c0 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 <ul
-  className="dQSBrF"
+  className="c0"
   size={null}
 />
 `;
 
 exports[`TableView should render with "large" rows 1`] = `
+.c1 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-height: var(--px-table-row-min-height,2.93333rem);
+  line-height: var(--px-table-row-line-height,15px);
+  color: var(--px-table-row-color,inherit);
+  font-size: var(--px-table-row-font-size,15px);
+  background-color: var(--px-table-row-background-color,white);
+  border-bottom-width: var(--px-table-row-separator-width,1px);
+  border-bottom-style: var(--px-table-row-separator-style,solid);
+  border-bottom-color: var(--px-table-row-separator-color,black);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-appearance: normal;
+  -moz-appearance: normal;
+  appearance: normal;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 1.33333rem;
+}
+
+.c1:after,
+.c1:before {
+  display: table;
+  content: ' ';
+}
+
+.c3 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: normal;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+  font-size: var(--px-table-row-title-font-size,15px);
+  color: var(--px-table-row-title-color,inherit);
+}
+
+.c2 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.c0 .px-table-row {
+  padding: 1.33333rem !important;
+}
+
 <ul
-  className="hAWoXQ"
+  className="c0"
   size="large"
 >
   <div
-    className="px-table-row bNCzmA"
+    className="px-table-row c1"
     selected={null}
     size="large"
   >
     <div
-      className="hSKbhZ"
+      className="c2"
     >
       <div
-        className="cXpoUy"
+        className="c3"
       >
         Item 1
       </div>
@@ -91,15 +379,15 @@ exports[`TableView should render with "large" rows 1`] = `
     />
   </div>
   <div
-    className="px-table-row bNCzmA"
+    className="px-table-row c1"
     selected={null}
     size="large"
   >
     <div
-      className="hSKbhZ"
+      className="c2"
     >
       <div
-        className="cXpoUy"
+        className="c3"
       >
         Item 2
       </div>
@@ -110,15 +398,15 @@ exports[`TableView should render with "large" rows 1`] = `
     />
   </div>
   <div
-    className="px-table-row bNCzmA"
+    className="px-table-row c1"
     selected={null}
     size="large"
   >
     <div
-      className="hSKbhZ"
+      className="c2"
     >
       <div
-        className="cXpoUy"
+        className="c3"
       >
         Item 3
       </div>
@@ -129,15 +417,15 @@ exports[`TableView should render with "large" rows 1`] = `
     />
   </div>
   <div
-    className="px-table-row bNCzmA"
+    className="px-table-row c1"
     selected={null}
     size="large"
   >
     <div
-      className="hSKbhZ"
+      className="c2"
     >
       <div
-        className="cXpoUy"
+        className="c3"
       >
         Item 4
       </div>
@@ -148,15 +436,15 @@ exports[`TableView should render with "large" rows 1`] = `
     />
   </div>
   <div
-    className="px-table-row bNCzmA"
+    className="px-table-row c1"
     selected={null}
     size="large"
   >
     <div
-      className="hSKbhZ"
+      className="c2"
     >
       <div
-        className="cXpoUy"
+        className="c3"
       >
         Item 5
       </div>

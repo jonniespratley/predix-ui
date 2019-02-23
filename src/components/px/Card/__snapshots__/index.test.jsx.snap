@@ -1,20 +1,117 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card should render 1`] = `
+.c4 {
+  color: var(--iron-icon-stroke-color,inherit);
+  fill: var(--iron-icon-fill-color,none);
+  stroke: var(--iron-icon-stroke-color,currentColor);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  vertical-align: middle;
+  width: var(--iron-icon-width);
+  height: var(--iron-icon-height);
+}
+
+.c4 > svg {
+  color: var(--iron-icon-stroke-color,inherit);
+  fill: var(--iron-icon-fill-color,none);
+  stroke: var(--iron-icon-stroke-color,currentColor);
+  position: relative;
+  vertical-align: middle;
+}
+
+.c4.hidden {
+  display: none;
+}
+
+.c0 {
+  display: block;
+  width: 100%;
+  padding-bottom: 4rem;
+  background-color: var(--px-card-background-color,lightgray);
+  border-top: 1px solid var(--px-card-border-color,gray);
+  border: var(--px-card-border);
+}
+
+.c1 {
+  padding: 1rem;
+  padding-top: 1.33333rem;
+  border-bottom: 1px solid var(--px-card-border-color,transparent);
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  height: 2rem;
+  line-height: 2rem;
+  text-transform: uppercase;
+  color: var(--px-card-header-color,black);
+}
+
+.c5 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.c3 {
+  color: var(--px-card-icon-color,black);
+  color: var(--px-card-action-icon-color,black);
+  cursor: pointer;
+  margin-right: .5rem;
+}
+
+.c3:hover {
+  color: var(--px-card-action-icon-color--hover,blue);
+}
+
+.c3:active {
+  color: var(--px-card-action-icon-color--pressed,blue);
+}
+
+.c3:not(:last-of-type) {
+  margin-right: .66666rem;
+}
+
 <div
-  className="px-card hLbjWt"
+  className="px-card c0"
 >
   <header
-    className="px-card-header frRFri"
+    className="px-card-header c1"
   >
     <span
-      className="yYkWD"
+      className="c2"
     >
       <i
-        className="px-card-icon fxynje"
+        className="px-card-icon c3"
       >
         <i
-          className="px-icon px-nav-home femNjm"
+          className="px-icon px-nav-home c4"
           color={null}
           style={
             Object {
@@ -46,7 +143,7 @@ exports[`Card should render 1`] = `
     </span>
   </header>
   <section
-    className="px-card-body keWRp"
+    className="px-card-body c5"
   >
     Content
   </section>

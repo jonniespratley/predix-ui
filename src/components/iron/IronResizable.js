@@ -53,6 +53,7 @@ export default class IronResizable extends BaseComponent {
 
     this._fireResize();
   }
+
   /**
    * Used to remove a resizable descendant from the list of descendants
    * that should be notified of a resize change.
