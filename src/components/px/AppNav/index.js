@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styled, { css } from 'styled-components';
+
 import NavItem from './px-app-nav-item';
 import AppNavGroup from './px-app-nav-sub-group';
 
@@ -87,7 +88,7 @@ class AppNavComponent extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const {selected} = this.state;
+    const { selected } = this.state;
     if (selected !== nextProps.selected) {
       this.setState(nextProps);
     }
@@ -116,21 +117,23 @@ class AppNavComponent extends React.Component {
   }
 
   _handleMouseEnter() {
-    if (!this.state.vertical) {
+    const { vertical, verticalOpened } = this.state;
+    if (!vertical) {
       return;
     }
     this._mouseIsOverNav = true;
-    if (this._mouseIsOverNav && !this.state.verticalOpened) {
+    if (this._mouseIsOverNav && !verticalOpened) {
       this._setVerticalOpened(true);
     }
   }
 
   _handleMouseExit() {
-    if (!this.state.vertical) {
+    const { vertical, verticalOpened } = this.state;
+    if (!vertical) {
       return;
     }
     this._mouseIsOverNav = false;
-    if (!this._mouseIsOverNav && this.state.verticalOpened) {
+    if (!this._mouseIsOverNav && verticalOpened) {
       this._setVerticalOpened(false);
     }
   }
@@ -155,9 +158,10 @@ class AppNavComponent extends React.Component {
   }
 
   handleClick(val, child, isSubItem) {
+    const { propForSelect, onChange } = this.props;
     const c = child;
-    const propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : val);
-    const index = (this.props.propForSelect ? child[this.props.propForSelect] : this._getIndexForValue(propForSelect));/* eslint-disable-line */
+    const propForChildSelect = (propForSelect ? child[propForSelect] : val);
+    const index = (propForChildSelect ? child[propForChildSelect] : this._getIndexForValue(propForChildSelect));/* eslint-disable-line */
     let item = this._getValueForIndex(index); /* eslint-disable-line */
 
     if (c && c.children && !isSubItem) {
@@ -170,14 +174,14 @@ class AppNavComponent extends React.Component {
     }
 
     const state = {
-      selected: propForSelect,
-      selectedIndex: this._getIndexForValue(propForSelect),
+      selected: propForChildSelect,
+      selectedIndex: this._getIndexForValue(propForChildSelect),
       selectedItem: child
     };
 
     this.setState(state);
-    if (this.props.onChange) {
-      this.props.onChange(state);
+    if (onChange) {
+      onChange(state);
     }
   }
 
@@ -187,7 +191,8 @@ class AppNavComponent extends React.Component {
   }
 
   _getItemFromPropForSelect(value) {
-    const item = this.props.items.filter(val => val[this.props.propForSelect] === value);
+    const { items, propForSelect } = this.props;
+    const item = items.filter(val => val[propForSelect] === value);
     return item ? item[0] : null;
   }
 

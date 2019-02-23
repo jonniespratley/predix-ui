@@ -3,6 +3,7 @@ export default class IronSelection {
     this.selection = [];
     this.selectCallback = props && props.selectCallback;
   }
+
   /**
      * Retrieves the selected item(s).
      *
@@ -16,6 +17,7 @@ export default class IronSelection {
       ? this.selection.slice()
       : this.selection[0];
   }
+
   /**
      * Clears all the selection except the ones indicated.
      *
@@ -29,6 +31,7 @@ export default class IronSelection {
       }
     }, this);
   }
+
   /**
      * Indicates if a given item is selected.
      *
@@ -39,6 +42,7 @@ export default class IronSelection {
   isSelected(item) {
     return this.selection.indexOf(item) >= 0;
   }
+
   /**
      * Sets the selection state for a given item to either selected or deselected.
      *
@@ -64,6 +68,7 @@ export default class IronSelection {
       }
     }
   }
+
   select(item) {
     if (this.multi) {
       this.toggle(item);
@@ -72,6 +77,7 @@ export default class IronSelection {
       this.setItemSelected(item, true);
     }
   }
+
   toggle(item) {
     this.setItemSelected(item, !this.isSelected(item));
   }

@@ -39,7 +39,8 @@ class Popover extends React.Component {
   }
 
   componentDidMount() {
-    this._target = getTarget(this.props.target);
+    const { target } = this.props;
+    this._target = getTarget(target);
     this.handleProps();
   }
 
@@ -103,10 +104,10 @@ class Popover extends React.Component {
 
   handleDocumentClick(e) {
     if (
-      e.target !== this._target &&
-      !this._target.contains(e.target) &&
-      e.target !== this._popover &&
-      !(this._popover && this._popover.contains(e.target))
+      e.target !== this._target
+      && !this._target.contains(e.target)
+      && e.target !== this._popover
+      && !(this._popover && this._popover.contains(e.target))
     ) {
       if (this._hideTimeout) {
         this.clearHideTimeout();
@@ -119,13 +120,11 @@ class Popover extends React.Component {
   }
 
   addTargetEvents() {
-    ['click', 'touchstart'].forEach(event =>
-      document.addEventListener(event, this.handleDocumentClick, true));
+    ['click', 'touchstart'].forEach(event => document.addEventListener(event, this.handleDocumentClick, true));
   }
 
   removeTargetEvents() {
-    ['click', 'touchstart'].forEach(event =>
-      document.removeEventListener(event, this.handleDocumentClick, true));
+    ['click', 'touchstart'].forEach(event => document.removeEventListener(event, this.handleDocumentClick, true));
   }
 
   toggle(e) {
@@ -166,159 +165,160 @@ class Popover extends React.Component {
         modifiers={this.props.modifiers}
       >
         <div {...attributes} className={classes} ref={this.getRef} />
-        <style>{`
-        .popover{
-          top: 0;
-          left: 0;
-          z-index: 1060;
-          max-width: 276px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 1.5;
-          text-align: left;
-          text-decoration: none;
-          text-shadow: none;
-          text-transform: none;
-          letter-spacing: normal;
-          word-break: normal;
-          word-spacing: normal;
-          white-space: normal;
-          line-break: auto;
-          font-size: 1rem;
-          word-wrap: break-word;
-          background-clip: padding-box;
-          border: 1px solid var(--px-popover-border-color, #000);
-          background: var(--px-popover-background-color, #fff);
-          color: var(--px-popover-text-color, #000);
-          box-shadow: 0 1px 3px 0 var(--px-popover-shadow-color, #000);
-          position: absolute;
-          display: block;
-        }
-          .popover,
-          .popover .arrow {
-              position: absolute;
-              display: block
+        <style>
+          {`
+          .popover{
+            top: 0;
+            left: 0;
+            z-index: 1060;
+            max-width: 276px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: left;
+            text-decoration: none;
+            text-shadow: none;
+            text-transform: none;
+            letter-spacing: normal;
+            word-break: normal;
+            word-spacing: normal;
+            white-space: normal;
+            line-break: auto;
+            font-size: 1rem;
+            word-wrap: break-word;
+            background-clip: padding-box;
+            border: 1px solid var(--px-popover-border-color, #000);
+            background: var(--px-popover-background-color, #fff);
+            color: var(--px-popover-text-color, #000);
+            box-shadow: 0 1px 3px 0 var(--px-popover-shadow-color, #000);
+            position: absolute;
+            display: block;
           }
+            .popover,
+            .popover .arrow {
+                position: absolute;
+                display: block
+            }
 
-          .popover .arrow {
-              width: 1rem;
-              height: .5rem;
-              margin: 0 .3rem
-          }
+            .popover .arrow {
+                width: 1rem;
+                height: .5rem;
+                margin: 0 .3rem
+            }
 
-          .popover .arrow:after,.popover .arrow:before {
-              position: absolute;
-              display: block;
-              content: "";
-              border-color: transparent;
-              border-style: solid
-          }
+            .popover .arrow:after,.popover .arrow:before {
+                position: absolute;
+                display: block;
+                content: "";
+                border-color: transparent;
+                border-style: solid
+            }
 
-          .bs-popover-auto[x-placement^=top],.bs-popover-top {
-              margin-bottom: .5rem
-          }
+            .bs-popover-auto[x-placement^=top],.bs-popover-top {
+                margin-bottom: .5rem
+            }
 
-          .bs-popover-auto[x-placement^=top] .arrow,.bs-popover-top .arrow {
-              bottom: calc((.5rem + 1px) * -1)
-          }
+            .bs-popover-auto[x-placement^=top] .arrow,.bs-popover-top .arrow {
+                bottom: calc((.5rem + 1px) * -1)
+            }
 
-          .bs-popover-auto[x-placement^=top] .arrow:after,.bs-popover-auto[x-placement^=top] .arrow:before,.bs-popover-top .arrow:after,.bs-popover-top .arrow:before {
-              border-width: .5rem .5rem 0
-          }
+            .bs-popover-auto[x-placement^=top] .arrow:after,.bs-popover-auto[x-placement^=top] .arrow:before,.bs-popover-top .arrow:after,.bs-popover-top .arrow:before {
+                border-width: .5rem .5rem 0
+            }
 
-          .bs-popover-auto[x-placement^=top] .arrow:before,.bs-popover-top .arrow:before {
-              bottom: 0;
-              border-top-color: rgba(0,0,0,.25)
-          }
+            .bs-popover-auto[x-placement^=top] .arrow:before,.bs-popover-top .arrow:before {
+                bottom: 0;
+                border-top-color: rgba(0,0,0,.25)
+            }
 
-          .bs-popover-auto[x-placement^=top] .arrow:after,.bs-popover-top .arrow:after {
-              bottom: 1px;
-              border-top-color: #fff
-          }
+            .bs-popover-auto[x-placement^=top] .arrow:after,.bs-popover-top .arrow:after {
+                bottom: 1px;
+                border-top-color: #fff
+            }
 
-          .bs-popover-auto[x-placement^=right],.bs-popover-right {
-              margin-left: .5rem
-          }
+            .bs-popover-auto[x-placement^=right],.bs-popover-right {
+                margin-left: .5rem
+            }
+            .bs-popover-auto[x-placement^=right] .arrow,.bs-popover-right .arrow {
+                left: calc((.5rem + 1px) * -1);
+                width: .5rem;
+                height: 1rem;
+                margin: .3rem 0
+            }
 
-          .bs-popover-auto[x-placement^=right] .arrow,.bs-popover-right .arrow {
-              left: calc((.5rem + 1px) * -1);
-              width: .5rem;
-              height: 1rem;
-              margin: .3rem 0
-          }
+            .bs-popover-auto[x-placement^=right] .arrow:after,.bs-popover-auto[x-placement^=right] .arrow:before,.bs-popover-right .arrow:after,.bs-popover-right .arrow:before {
+                border-width: .5rem .5rem .5rem 0
+            }
 
-          .bs-popover-auto[x-placement^=right] .arrow:after,.bs-popover-auto[x-placement^=right] .arrow:before,.bs-popover-right .arrow:after,.bs-popover-right .arrow:before {
-              border-width: .5rem .5rem .5rem 0
-          }
+            .bs-popover-auto[x-placement^=right] .arrow:before,.bs-popover-right .arrow:before {
+                left: 0;
+                border-right-color: rgba(0,0,0,.25)
+            }
 
-          .bs-popover-auto[x-placement^=right] .arrow:before,.bs-popover-right .arrow:before {
-              left: 0;
-              border-right-color: rgba(0,0,0,.25)
-          }
+            .bs-popover-auto[x-placement^=right] .arrow:after,.bs-popover-right .arrow:after {
+                left: 1px;
+                border-right-color: #fff
+            }
 
-          .bs-popover-auto[x-placement^=right] .arrow:after,.bs-popover-right .arrow:after {
-              left: 1px;
-              border-right-color: #fff
-          }
+            .bs-popover-auto[x-placement^=bottom],.bs-popover-bottom {
+                margin-top: .5rem
+            }
 
-          .bs-popover-auto[x-placement^=bottom],.bs-popover-bottom {
-              margin-top: .5rem
-          }
+            .bs-popover-auto[x-placement^=bottom] .arrow,.bs-popover-bottom .arrow {
+                top: calc((.5rem + 1px) * -1)
+            }
 
-          .bs-popover-auto[x-placement^=bottom] .arrow,.bs-popover-bottom .arrow {
-              top: calc((.5rem + 1px) * -1)
-          }
+            .bs-popover-auto[x-placement^=bottom] .arrow:after,.bs-popover-auto[x-placement^=bottom] .arrow:before,.bs-popover-bottom .arrow:after,.bs-popover-bottom .arrow:before {
+                border-width: 0 .5rem .5rem
+            }
 
-          .bs-popover-auto[x-placement^=bottom] .arrow:after,.bs-popover-auto[x-placement^=bottom] .arrow:before,.bs-popover-bottom .arrow:after,.bs-popover-bottom .arrow:before {
-              border-width: 0 .5rem .5rem
-          }
+            .bs-popover-auto[x-placement^=bottom] .arrow:before,.bs-popover-bottom .arrow:before {
+                top: 0;
+                border-bottom-color: rgba(0,0,0,.25)
+            }
 
-          .bs-popover-auto[x-placement^=bottom] .arrow:before,.bs-popover-bottom .arrow:before {
-              top: 0;
-              border-bottom-color: rgba(0,0,0,.25)
-          }
+            .bs-popover-auto[x-placement^=bottom] .arrow:after,.bs-popover-bottom .arrow:after {
+                top: 1px;
+                border-bottom-color: #fff
+            }
 
-          .bs-popover-auto[x-placement^=bottom] .arrow:after,.bs-popover-bottom .arrow:after {
-              top: 1px;
-              border-bottom-color: #fff
-          }
+            .bs-popover-auto[x-placement^=bottom] .popover-header:before,.bs-popover-bottom .popover-header:before {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                display: block;
+                width: 1rem;
+                margin-left: -.5rem;
+                content: "";
+                border-bottom: 1px solid #f7f7f7
+            }
 
-          .bs-popover-auto[x-placement^=bottom] .popover-header:before,.bs-popover-bottom .popover-header:before {
-              position: absolute;
-              top: 0;
-              left: 50%;
-              display: block;
-              width: 1rem;
-              margin-left: -.5rem;
-              content: "";
-              border-bottom: 1px solid #f7f7f7
-          }
+            .bs-popover-auto[x-placement^=left],.bs-popover-left {
+                margin-right: .5rem
+            }
 
-          .bs-popover-auto[x-placement^=left],.bs-popover-left {
-              margin-right: .5rem
-          }
+            .bs-popover-auto[x-placement^=left] .arrow,.bs-popover-left .arrow {
+                right: calc((.5rem + 1px) * -1);
+                width: .5rem;
+                height: 1rem;
+                margin: .3rem 0
+            }
 
-          .bs-popover-auto[x-placement^=left] .arrow,.bs-popover-left .arrow {
-              right: calc((.5rem + 1px) * -1);
-              width: .5rem;
-              height: 1rem;
-              margin: .3rem 0
-          }
+            .bs-popover-auto[x-placement^=left] .arrow:after,.bs-popover-auto[x-placement^=left] .arrow:before,.bs-popover-left .arrow:after,.bs-popover-left .arrow:before {
+                border-width: .5rem 0 .5rem .5rem
+            }
 
-          .bs-popover-auto[x-placement^=left] .arrow:after,.bs-popover-auto[x-placement^=left] .arrow:before,.bs-popover-left .arrow:after,.bs-popover-left .arrow:before {
-              border-width: .5rem 0 .5rem .5rem
-          }
+            .bs-popover-auto[x-placement^=left] .arrow:before,.bs-popover-left .arrow:before {
+                right: 0;
+                border-left-color: rgba(0,0,0,.25)
+            }
 
-          .bs-popover-auto[x-placement^=left] .arrow:before,.bs-popover-left .arrow:before {
-              right: 0;
-              border-left-color: rgba(0,0,0,.25)
-          }
-
-          .bs-popover-auto[x-placement^=left] .arrow:after,.bs-popover-left .arrow:after {
-              right: 1px;
-              border-left-color: #fff
-          }
+            .bs-popover-auto[x-placement^=left] .arrow:after,.bs-popover-left .arrow:after {
+                right: 1px;
+                border-left-color: #fff
+            }
         `}
+
         </style>
       </PopperContent>
     );

@@ -33,11 +33,12 @@ class IronMediaQuery extends React.Component {
     const s = this.state;
     s.queryMatches = m;
     this.setState(s);
-    if (this.props.onChange) {
-      this.props.onChange(s);
+    const { onChange, onMatch } = this.props;
+    if (onChange) {
+      onChange(s);
     }
-    if (m && this.props.onMatch) {
-      this.props.onMatch(s);
+    if (m && onMatch) {
+      onMatch(s);
     }
   }
 
@@ -56,6 +57,7 @@ class IronMediaQuery extends React.Component {
 
   queryChanged() {
     this._remove();
+    const { full } = this.props;
     let { query } = this.state;
     if (this.namedQueries[query]) {
       query = this.namedQueries[query];
@@ -63,7 +65,7 @@ class IronMediaQuery extends React.Component {
     if (!query) {
       return;
     }
-    if (!this.props.full && query[0] !== '(') {
+    if (!full && query[0] !== '(') {
       query = `(${query})`;
     }
     this._mq = window.matchMedia(query);

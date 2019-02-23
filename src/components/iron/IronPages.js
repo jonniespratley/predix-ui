@@ -11,7 +11,6 @@ class IronPages extends React.Component {
     } = this.props;
     const len = React.Children.count(children);
     let child = null;
-    
     if (selected > len - 1) {
       [child] = children;
     } else {

@@ -34,7 +34,7 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:generate-output": "jest --json --outputFile=jest-test-results.json",
-    "lint": "eslint ./src !./src/**/*.stories --cache",
+    "lint": "eslint ./src --ignore-pattern ./src/**/*.stories.jsx --cache",
     "test:lint": "eslint ./__tests__ ./src/**/*.test.js --cache",
     "gh-pages": "webpack --env ghPages --progress",
     "gh-pages:deploy": "npm run storybook:build && gh-pages -d gh-pages",
