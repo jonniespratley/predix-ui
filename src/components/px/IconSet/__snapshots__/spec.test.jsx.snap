@@ -1,42 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`IconSet should render px-com-chat 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-com-chat c0"
+  className="px-icon px-com-chat femNjm"
   color={null}
   style={
     Object {
@@ -66,42 +32,8 @@ exports[`IconSet should render px-com-chat 1`] = `
 `;
 
 exports[`IconSet should render px-com-comment 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-com-comment c0"
+  className="px-icon px-com-comment femNjm"
   color={null}
   style={
     Object {
@@ -131,42 +63,8 @@ exports[`IconSet should render px-com-comment 1`] = `
 `;
 
 exports[`IconSet should render px-com-email 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-com-email c0"
+  className="px-icon px-com-email femNjm"
   color={null}
   style={
     Object {
@@ -196,42 +94,8 @@ exports[`IconSet should render px-com-email 1`] = `
 `;
 
 exports[`IconSet should render px-com-message 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-com-message c0"
+  className="px-icon px-com-message femNjm"
   color={null}
   style={
     Object {
@@ -261,42 +125,8 @@ exports[`IconSet should render px-com-message 1`] = `
 `;
 
 exports[`IconSet should render px-com-phone 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-com-phone c0"
+  className="px-icon px-com-phone femNjm"
   color={null}
   style={
     Object {
@@ -326,42 +156,8 @@ exports[`IconSet should render px-com-phone 1`] = `
 `;
 
 exports[`IconSet should render px-com-sms 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-com-sms c0"
+  className="px-icon px-com-sms femNjm"
   color={null}
   style={
     Object {
@@ -391,42 +187,8 @@ exports[`IconSet should render px-com-sms 1`] = `
 `;
 
 exports[`IconSet should render px-doc-chart 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-doc-chart c0"
+  className="px-icon px-doc-chart femNjm"
   color={null}
   style={
     Object {
@@ -456,42 +218,8 @@ exports[`IconSet should render px-doc-chart 1`] = `
 `;
 
 exports[`IconSet should render px-doc-document 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-doc-document c0"
+  className="px-icon px-doc-document femNjm"
   color={null}
   style={
     Object {
@@ -521,42 +249,8 @@ exports[`IconSet should render px-doc-document 1`] = `
 `;
 
 exports[`IconSet should render px-doc-document-csv 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-doc-document-csv c0"
+  className="px-icon px-doc-document-csv femNjm"
   color={null}
   style={
     Object {
@@ -586,42 +280,8 @@ exports[`IconSet should render px-doc-document-csv 1`] = `
 `;
 
 exports[`IconSet should render px-doc-document-pdf 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-doc-document-pdf c0"
+  className="px-icon px-doc-document-pdf femNjm"
   color={null}
   style={
     Object {
@@ -651,42 +311,8 @@ exports[`IconSet should render px-doc-document-pdf 1`] = `
 `;
 
 exports[`IconSet should render px-doc-document-word 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-doc-document-word c0"
+  className="px-icon px-doc-document-word femNjm"
   color={null}
   style={
     Object {
@@ -716,42 +342,8 @@ exports[`IconSet should render px-doc-document-word 1`] = `
 `;
 
 exports[`IconSet should render px-doc-document-xls 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-doc-document-xls c0"
+  className="px-icon px-doc-document-xls femNjm"
   color={null}
   style={
     Object {
@@ -781,42 +373,8 @@ exports[`IconSet should render px-doc-document-xls 1`] = `
 `;
 
 exports[`IconSet should render px-doc-image 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-doc-image c0"
+  className="px-icon px-doc-image femNjm"
   color={null}
   style={
     Object {
@@ -846,42 +404,8 @@ exports[`IconSet should render px-doc-image 1`] = `
 `;
 
 exports[`IconSet should render px-doc-note 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-doc-note c0"
+  className="px-icon px-doc-note femNjm"
   color={null}
   style={
     Object {
@@ -911,42 +435,8 @@ exports[`IconSet should render px-doc-note 1`] = `
 `;
 
 exports[`IconSet should render px-doc-website 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-doc-website c0"
+  className="px-icon px-doc-website femNjm"
   color={null}
   style={
     Object {
@@ -976,42 +466,8 @@ exports[`IconSet should render px-doc-website 1`] = `
 `;
 
 exports[`IconSet should render px-fea-administration 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-administration c0"
+  className="px-icon px-fea-administration femNjm"
   color={null}
   style={
     Object {
@@ -1041,42 +497,8 @@ exports[`IconSet should render px-fea-administration 1`] = `
 `;
 
 exports[`IconSet should render px-fea-alerts 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-alerts c0"
+  className="px-icon px-fea-alerts femNjm"
   color={null}
   style={
     Object {
@@ -1106,42 +528,8 @@ exports[`IconSet should render px-fea-alerts 1`] = `
 `;
 
 exports[`IconSet should render px-fea-analysis 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-analysis c0"
+  className="px-icon px-fea-analysis femNjm"
   color={null}
   style={
     Object {
@@ -1171,42 +559,8 @@ exports[`IconSet should render px-fea-analysis 1`] = `
 `;
 
 exports[`IconSet should render px-fea-analytics 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-analytics c0"
+  className="px-icon px-fea-analytics femNjm"
   color={null}
   style={
     Object {
@@ -1236,42 +590,8 @@ exports[`IconSet should render px-fea-analytics 1`] = `
 `;
 
 exports[`IconSet should render px-fea-asset 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-asset c0"
+  className="px-icon px-fea-asset femNjm"
   color={null}
   style={
     Object {
@@ -1301,42 +621,8 @@ exports[`IconSet should render px-fea-asset 1`] = `
 `;
 
 exports[`IconSet should render px-fea-asset-ingestion 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-asset-ingestion c0"
+  className="px-icon px-fea-asset-ingestion femNjm"
   color={null}
   style={
     Object {
@@ -1366,42 +652,8 @@ exports[`IconSet should render px-fea-asset-ingestion 1`] = `
 `;
 
 exports[`IconSet should render px-fea-attribute 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-attribute c0"
+  className="px-icon px-fea-attribute femNjm"
   color={null}
   style={
     Object {
@@ -1431,42 +683,8 @@ exports[`IconSet should render px-fea-attribute 1`] = `
 `;
 
 exports[`IconSet should render px-fea-bug 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-bug c0"
+  className="px-icon px-fea-bug femNjm"
   color={null}
   style={
     Object {
@@ -1496,42 +714,8 @@ exports[`IconSet should render px-fea-bug 1`] = `
 `;
 
 exports[`IconSet should render px-fea-calendar 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-calendar c0"
+  className="px-icon px-fea-calendar femNjm"
   color={null}
   style={
     Object {
@@ -1561,42 +745,8 @@ exports[`IconSet should render px-fea-calendar 1`] = `
 `;
 
 exports[`IconSet should render px-fea-cases 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-cases c0"
+  className="px-icon px-fea-cases femNjm"
   color={null}
   style={
     Object {
@@ -1626,42 +776,8 @@ exports[`IconSet should render px-fea-cases 1`] = `
 `;
 
 exports[`IconSet should render px-fea-catalog 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-catalog c0"
+  className="px-icon px-fea-catalog femNjm"
   color={null}
   style={
     Object {
@@ -1691,42 +807,8 @@ exports[`IconSet should render px-fea-catalog 1`] = `
 `;
 
 exports[`IconSet should render px-fea-dashboard 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-dashboard c0"
+  className="px-icon px-fea-dashboard femNjm"
   color={null}
   style={
     Object {
@@ -1756,42 +838,8 @@ exports[`IconSet should render px-fea-dashboard 1`] = `
 `;
 
 exports[`IconSet should render px-fea-data-sources 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-data-sources c0"
+  className="px-icon px-fea-data-sources femNjm"
   color={null}
   style={
     Object {
@@ -1821,42 +869,8 @@ exports[`IconSet should render px-fea-data-sources 1`] = `
 `;
 
 exports[`IconSet should render px-fea-deployments 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-deployments c0"
+  className="px-icon px-fea-deployments femNjm"
   color={null}
   style={
     Object {
@@ -1886,42 +900,8 @@ exports[`IconSet should render px-fea-deployments 1`] = `
 `;
 
 exports[`IconSet should render px-fea-dev-ops 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-dev-ops c0"
+  className="px-icon px-fea-dev-ops femNjm"
   color={null}
   style={
     Object {
@@ -1951,42 +931,8 @@ exports[`IconSet should render px-fea-dev-ops 1`] = `
 `;
 
 exports[`IconSet should render px-fea-digital-twin 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-digital-twin c0"
+  className="px-icon px-fea-digital-twin femNjm"
   color={null}
   style={
     Object {
@@ -2016,42 +962,8 @@ exports[`IconSet should render px-fea-digital-twin 1`] = `
 `;
 
 exports[`IconSet should render px-fea-home 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-home c0"
+  className="px-icon px-fea-home femNjm"
   color={null}
   style={
     Object {
@@ -2081,42 +993,8 @@ exports[`IconSet should render px-fea-home 1`] = `
 `;
 
 exports[`IconSet should render px-fea-log 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-log c0"
+  className="px-icon px-fea-log femNjm"
   color={null}
   style={
     Object {
@@ -2146,42 +1024,8 @@ exports[`IconSet should render px-fea-log 1`] = `
 `;
 
 exports[`IconSet should render px-fea-microservice 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-microservice c0"
+  className="px-icon px-fea-microservice femNjm"
   color={null}
   style={
     Object {
@@ -2211,42 +1055,8 @@ exports[`IconSet should render px-fea-microservice 1`] = `
 `;
 
 exports[`IconSet should render px-fea-orchestration 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-orchestration c0"
+  className="px-icon px-fea-orchestration femNjm"
   color={null}
   style={
     Object {
@@ -2276,42 +1086,8 @@ exports[`IconSet should render px-fea-orchestration 1`] = `
 `;
 
 exports[`IconSet should render px-fea-orders 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-orders c0"
+  className="px-icon px-fea-orders femNjm"
   color={null}
   style={
     Object {
@@ -2341,42 +1117,8 @@ exports[`IconSet should render px-fea-orders 1`] = `
 `;
 
 exports[`IconSet should render px-fea-pipeline 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-pipeline c0"
+  className="px-icon px-fea-pipeline femNjm"
   color={null}
   style={
     Object {
@@ -2406,42 +1148,8 @@ exports[`IconSet should render px-fea-pipeline 1`] = `
 `;
 
 exports[`IconSet should render px-fea-products 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-products c0"
+  className="px-icon px-fea-products femNjm"
   color={null}
   style={
     Object {
@@ -2471,42 +1179,8 @@ exports[`IconSet should render px-fea-products 1`] = `
 `;
 
 exports[`IconSet should render px-fea-spaces 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-spaces c0"
+  className="px-icon px-fea-spaces femNjm"
   color={null}
   style={
     Object {
@@ -2536,42 +1210,8 @@ exports[`IconSet should render px-fea-spaces 1`] = `
 `;
 
 exports[`IconSet should render px-fea-tag 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-tag c0"
+  className="px-icon px-fea-tag femNjm"
   color={null}
   style={
     Object {
@@ -2601,42 +1241,8 @@ exports[`IconSet should render px-fea-tag 1`] = `
 `;
 
 exports[`IconSet should render px-fea-tag-group 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-tag-group c0"
+  className="px-icon px-fea-tag-group femNjm"
   color={null}
   style={
     Object {
@@ -2666,42 +1272,8 @@ exports[`IconSet should render px-fea-tag-group 1`] = `
 `;
 
 exports[`IconSet should render px-fea-templates 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-templates c0"
+  className="px-icon px-fea-templates femNjm"
   color={null}
   style={
     Object {
@@ -2731,42 +1303,8 @@ exports[`IconSet should render px-fea-templates 1`] = `
 `;
 
 exports[`IconSet should render px-fea-users 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-users c0"
+  className="px-icon px-fea-users femNjm"
   color={null}
   style={
     Object {
@@ -2796,42 +1334,8 @@ exports[`IconSet should render px-fea-users 1`] = `
 `;
 
 exports[`IconSet should render px-fea-versions 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-fea-versions c0"
+  className="px-icon px-fea-versions femNjm"
   color={null}
   style={
     Object {
@@ -2861,42 +1365,8 @@ exports[`IconSet should render px-fea-versions 1`] = `
 `;
 
 exports[`IconSet should render px-nav-back 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-back c0"
+  className="px-icon px-nav-back femNjm"
   color={null}
   style={
     Object {
@@ -2926,42 +1396,8 @@ exports[`IconSet should render px-nav-back 1`] = `
 `;
 
 exports[`IconSet should render px-nav-close 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-close c0"
+  className="px-icon px-nav-close femNjm"
   color={null}
   style={
     Object {
@@ -2991,42 +1427,8 @@ exports[`IconSet should render px-nav-close 1`] = `
 `;
 
 exports[`IconSet should render px-nav-collapse 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-collapse c0"
+  className="px-icon px-nav-collapse femNjm"
   color={null}
   style={
     Object {
@@ -3056,42 +1458,8 @@ exports[`IconSet should render px-nav-collapse 1`] = `
 `;
 
 exports[`IconSet should render px-nav-confirmed 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-confirmed c0"
+  className="px-icon px-nav-confirmed femNjm"
   color={null}
   style={
     Object {
@@ -3121,42 +1489,8 @@ exports[`IconSet should render px-nav-confirmed 1`] = `
 `;
 
 exports[`IconSet should render px-nav-down 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-down c0"
+  className="px-icon px-nav-down femNjm"
   color={null}
   style={
     Object {
@@ -3186,42 +1520,8 @@ exports[`IconSet should render px-nav-down 1`] = `
 `;
 
 exports[`IconSet should render px-nav-expand 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-expand c0"
+  className="px-icon px-nav-expand femNjm"
   color={null}
   style={
     Object {
@@ -3251,42 +1551,8 @@ exports[`IconSet should render px-nav-expand 1`] = `
 `;
 
 exports[`IconSet should render px-nav-favorite 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-favorite c0"
+  className="px-icon px-nav-favorite femNjm"
   color={null}
   style={
     Object {
@@ -3316,42 +1582,8 @@ exports[`IconSet should render px-nav-favorite 1`] = `
 `;
 
 exports[`IconSet should render px-nav-generic-user 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-generic-user c0"
+  className="px-icon px-nav-generic-user femNjm"
   color={null}
   style={
     Object {
@@ -3381,42 +1613,8 @@ exports[`IconSet should render px-nav-generic-user 1`] = `
 `;
 
 exports[`IconSet should render px-nav-grid-view 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-grid-view c0"
+  className="px-icon px-nav-grid-view femNjm"
   color={null}
   style={
     Object {
@@ -3446,42 +1644,8 @@ exports[`IconSet should render px-nav-grid-view 1`] = `
 `;
 
 exports[`IconSet should render px-nav-hamburger 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-hamburger c0"
+  className="px-icon px-nav-hamburger femNjm"
   color={null}
   style={
     Object {
@@ -3511,42 +1675,8 @@ exports[`IconSet should render px-nav-hamburger 1`] = `
 `;
 
 exports[`IconSet should render px-nav-hierarchy 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-hierarchy c0"
+  className="px-icon px-nav-hierarchy femNjm"
   color={null}
   style={
     Object {
@@ -3576,42 +1706,8 @@ exports[`IconSet should render px-nav-hierarchy 1`] = `
 `;
 
 exports[`IconSet should render px-nav-home 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-home c0"
+  className="px-icon px-nav-home femNjm"
   color={null}
   style={
     Object {
@@ -3641,42 +1737,8 @@ exports[`IconSet should render px-nav-home 1`] = `
 `;
 
 exports[`IconSet should render px-nav-inbox-view 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-inbox-view c0"
+  className="px-icon px-nav-inbox-view femNjm"
   color={null}
   style={
     Object {
@@ -3706,42 +1768,8 @@ exports[`IconSet should render px-nav-inbox-view 1`] = `
 `;
 
 exports[`IconSet should render px-nav-instance 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-instance c0"
+  className="px-icon px-nav-instance femNjm"
   color={null}
   style={
     Object {
@@ -3771,42 +1799,8 @@ exports[`IconSet should render px-nav-instance 1`] = `
 `;
 
 exports[`IconSet should render px-nav-list-view 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-list-view c0"
+  className="px-icon px-nav-list-view femNjm"
   color={null}
   style={
     Object {
@@ -3836,42 +1830,8 @@ exports[`IconSet should render px-nav-list-view 1`] = `
 `;
 
 exports[`IconSet should render px-nav-log-out 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-log-out c0"
+  className="px-icon px-nav-log-out femNjm"
   color={null}
   style={
     Object {
@@ -3901,42 +1861,8 @@ exports[`IconSet should render px-nav-log-out 1`] = `
 `;
 
 exports[`IconSet should render px-nav-menu 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-menu c0"
+  className="px-icon px-nav-menu femNjm"
   color={null}
   style={
     Object {
@@ -3966,42 +1892,8 @@ exports[`IconSet should render px-nav-menu 1`] = `
 `;
 
 exports[`IconSet should render px-nav-more 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-more c0"
+  className="px-icon px-nav-more femNjm"
   color={null}
   style={
     Object {
@@ -4031,42 +1923,8 @@ exports[`IconSet should render px-nav-more 1`] = `
 `;
 
 exports[`IconSet should render px-nav-new-window 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-new-window c0"
+  className="px-icon px-nav-new-window femNjm"
   color={null}
   style={
     Object {
@@ -4096,42 +1954,8 @@ exports[`IconSet should render px-nav-new-window 1`] = `
 `;
 
 exports[`IconSet should render px-nav-next 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-next c0"
+  className="px-icon px-nav-next femNjm"
   color={null}
   style={
     Object {
@@ -4161,42 +1985,8 @@ exports[`IconSet should render px-nav-next 1`] = `
 `;
 
 exports[`IconSet should render px-nav-notification 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-notification c0"
+  className="px-icon px-nav-notification femNjm"
   color={null}
   style={
     Object {
@@ -4226,42 +2016,8 @@ exports[`IconSet should render px-nav-notification 1`] = `
 `;
 
 exports[`IconSet should render px-nav-open-context 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-open-context c0"
+  className="px-icon px-nav-open-context femNjm"
   color={null}
   style={
     Object {
@@ -4291,42 +2047,8 @@ exports[`IconSet should render px-nav-open-context 1`] = `
 `;
 
 exports[`IconSet should render px-nav-pause 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-pause c0"
+  className="px-icon px-nav-pause femNjm"
   color={null}
   style={
     Object {
@@ -4356,42 +2078,8 @@ exports[`IconSet should render px-nav-pause 1`] = `
 `;
 
 exports[`IconSet should render px-nav-play 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-play c0"
+  className="px-icon px-nav-play femNjm"
   color={null}
   style={
     Object {
@@ -4421,42 +2109,8 @@ exports[`IconSet should render px-nav-play 1`] = `
 `;
 
 exports[`IconSet should render px-nav-reload 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-reload c0"
+  className="px-icon px-nav-reload femNjm"
   color={null}
   style={
     Object {
@@ -4486,42 +2140,8 @@ exports[`IconSet should render px-nav-reload 1`] = `
 `;
 
 exports[`IconSet should render px-nav-search 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-search c0"
+  className="px-icon px-nav-search femNjm"
   color={null}
   style={
     Object {
@@ -4551,42 +2171,8 @@ exports[`IconSet should render px-nav-search 1`] = `
 `;
 
 exports[`IconSet should render px-nav-stop 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-stop c0"
+  className="px-icon px-nav-stop femNjm"
   color={null}
   style={
     Object {
@@ -4616,42 +2202,8 @@ exports[`IconSet should render px-nav-stop 1`] = `
 `;
 
 exports[`IconSet should render px-nav-tile-view 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-tile-view c0"
+  className="px-icon px-nav-tile-view femNjm"
   color={null}
   style={
     Object {
@@ -4681,42 +2233,8 @@ exports[`IconSet should render px-nav-tile-view 1`] = `
 `;
 
 exports[`IconSet should render px-nav-tree 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-tree c0"
+  className="px-icon px-nav-tree femNjm"
   color={null}
   style={
     Object {
@@ -4746,42 +2264,8 @@ exports[`IconSet should render px-nav-tree 1`] = `
 `;
 
 exports[`IconSet should render px-nav-unconfirmed 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-unconfirmed c0"
+  className="px-icon px-nav-unconfirmed femNjm"
   color={null}
   style={
     Object {
@@ -4811,42 +2295,8 @@ exports[`IconSet should render px-nav-unconfirmed 1`] = `
 `;
 
 exports[`IconSet should render px-nav-up 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-nav-up c0"
+  className="px-icon px-nav-up femNjm"
   color={null}
   style={
     Object {
@@ -4876,42 +2326,8 @@ exports[`IconSet should render px-nav-up 1`] = `
 `;
 
 exports[`IconSet should render px-obj-airplane 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-airplane c0"
+  className="px-icon px-obj-airplane femNjm"
   color={null}
   style={
     Object {
@@ -4941,42 +2357,8 @@ exports[`IconSet should render px-obj-airplane 1`] = `
 `;
 
 exports[`IconSet should render px-obj-airplane-engine 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-airplane-engine c0"
+  className="px-icon px-obj-airplane-engine femNjm"
   color={null}
   style={
     Object {
@@ -5006,42 +2388,8 @@ exports[`IconSet should render px-obj-airplane-engine 1`] = `
 `;
 
 exports[`IconSet should render px-obj-airport 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-airport c0"
+  className="px-icon px-obj-airport femNjm"
   color={null}
   style={
     Object {
@@ -5071,42 +2419,8 @@ exports[`IconSet should render px-obj-airport 1`] = `
 `;
 
 exports[`IconSet should render px-obj-automobile 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-automobile c0"
+  className="px-icon px-obj-automobile femNjm"
   color={null}
   style={
     Object {
@@ -5136,42 +2450,8 @@ exports[`IconSet should render px-obj-automobile 1`] = `
 `;
 
 exports[`IconSet should render px-obj-boiler 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-boiler c0"
+  className="px-icon px-obj-boiler femNjm"
   color={null}
   style={
     Object {
@@ -5201,42 +2481,8 @@ exports[`IconSet should render px-obj-boiler 1`] = `
 `;
 
 exports[`IconSet should render px-obj-cell-tower 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-cell-tower c0"
+  className="px-icon px-obj-cell-tower femNjm"
   color={null}
   style={
     Object {
@@ -5266,42 +2512,8 @@ exports[`IconSet should render px-obj-cell-tower 1`] = `
 `;
 
 exports[`IconSet should render px-obj-class 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-class c0"
+  className="px-icon px-obj-class femNjm"
   color={null}
   style={
     Object {
@@ -5331,42 +2543,8 @@ exports[`IconSet should render px-obj-class 1`] = `
 `;
 
 exports[`IconSet should render px-obj-condenser 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-condenser c0"
+  className="px-icon px-obj-condenser femNjm"
   color={null}
   style={
     Object {
@@ -5396,42 +2574,8 @@ exports[`IconSet should render px-obj-condenser 1`] = `
 `;
 
 exports[`IconSet should render px-obj-controller 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-controller c0"
+  className="px-icon px-obj-controller femNjm"
   color={null}
   style={
     Object {
@@ -5461,42 +2605,8 @@ exports[`IconSet should render px-obj-controller 1`] = `
 `;
 
 exports[`IconSet should render px-obj-cooling-tower 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-cooling-tower c0"
+  className="px-icon px-obj-cooling-tower femNjm"
   color={null}
   style={
     Object {
@@ -5526,42 +2636,8 @@ exports[`IconSet should render px-obj-cooling-tower 1`] = `
 `;
 
 exports[`IconSet should render px-obj-database 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-database c0"
+  className="px-icon px-obj-database femNjm"
   color={null}
   style={
     Object {
@@ -5591,42 +2667,8 @@ exports[`IconSet should render px-obj-database 1`] = `
 `;
 
 exports[`IconSet should render px-obj-desktop 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-desktop c0"
+  className="px-icon px-obj-desktop femNjm"
   color={null}
   style={
     Object {
@@ -5656,42 +2698,8 @@ exports[`IconSet should render px-obj-desktop 1`] = `
 `;
 
 exports[`IconSet should render px-obj-edge-box 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-edge-box c0"
+  className="px-icon px-obj-edge-box femNjm"
   color={null}
   style={
     Object {
@@ -5721,42 +2729,8 @@ exports[`IconSet should render px-obj-edge-box 1`] = `
 `;
 
 exports[`IconSet should render px-obj-fleet 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-fleet c0"
+  className="px-icon px-obj-fleet femNjm"
   color={null}
   style={
     Object {
@@ -5786,42 +2760,8 @@ exports[`IconSet should render px-obj-fleet 1`] = `
 `;
 
 exports[`IconSet should render px-obj-gas-turbine 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-gas-turbine c0"
+  className="px-icon px-obj-gas-turbine femNjm"
   color={null}
   style={
     Object {
@@ -5851,42 +2791,8 @@ exports[`IconSet should render px-obj-gas-turbine 1`] = `
 `;
 
 exports[`IconSet should render px-obj-gateway 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-gateway c0"
+  className="px-icon px-obj-gateway femNjm"
   color={null}
   style={
     Object {
@@ -5916,42 +2822,8 @@ exports[`IconSet should render px-obj-gateway 1`] = `
 `;
 
 exports[`IconSet should render px-obj-hrsg 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-hrsg c0"
+  className="px-icon px-obj-hrsg femNjm"
   color={null}
   style={
     Object {
@@ -5981,42 +2853,8 @@ exports[`IconSet should render px-obj-hrsg 1`] = `
 `;
 
 exports[`IconSet should render px-obj-imaging-machine 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-imaging-machine c0"
+  className="px-icon px-obj-imaging-machine femNjm"
   color={null}
   style={
     Object {
@@ -6046,42 +2884,8 @@ exports[`IconSet should render px-obj-imaging-machine 1`] = `
 `;
 
 exports[`IconSet should render px-obj-light-bulb 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-light-bulb c0"
+  className="px-icon px-obj-light-bulb femNjm"
   color={null}
   style={
     Object {
@@ -6111,42 +2915,8 @@ exports[`IconSet should render px-obj-light-bulb 1`] = `
 `;
 
 exports[`IconSet should render px-obj-line 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-line c0"
+  className="px-icon px-obj-line femNjm"
   color={null}
   style={
     Object {
@@ -6176,42 +2946,8 @@ exports[`IconSet should render px-obj-line 1`] = `
 `;
 
 exports[`IconSet should render px-obj-line-og 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-line-og c0"
+  className="px-icon px-obj-line-og femNjm"
   color={null}
   style={
     Object {
@@ -6241,42 +2977,8 @@ exports[`IconSet should render px-obj-line-og 1`] = `
 `;
 
 exports[`IconSet should render px-obj-locomotive 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-locomotive c0"
+  className="px-icon px-obj-locomotive femNjm"
   color={null}
   style={
     Object {
@@ -6306,42 +3008,8 @@ exports[`IconSet should render px-obj-locomotive 1`] = `
 `;
 
 exports[`IconSet should render px-obj-machine 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-machine c0"
+  className="px-icon px-obj-machine femNjm"
   color={null}
   style={
     Object {
@@ -6371,42 +3039,8 @@ exports[`IconSet should render px-obj-machine 1`] = `
 `;
 
 exports[`IconSet should render px-obj-manufacturing-line 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-manufacturing-line c0"
+  className="px-icon px-obj-manufacturing-line femNjm"
   color={null}
   style={
     Object {
@@ -6436,42 +3070,8 @@ exports[`IconSet should render px-obj-manufacturing-line 1`] = `
 `;
 
 exports[`IconSet should render px-obj-plant 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-plant c0"
+  className="px-icon px-obj-plant femNjm"
   color={null}
   style={
     Object {
@@ -6501,42 +3101,8 @@ exports[`IconSet should render px-obj-plant 1`] = `
 `;
 
 exports[`IconSet should render px-obj-predix-box 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-predix-box c0"
+  className="px-icon px-obj-predix-box femNjm"
   color={null}
   style={
     Object {
@@ -6566,42 +3132,8 @@ exports[`IconSet should render px-obj-predix-box 1`] = `
 `;
 
 exports[`IconSet should render px-obj-product 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-product c0"
+  className="px-icon px-obj-product femNjm"
   color={null}
   style={
     Object {
@@ -6631,42 +3163,8 @@ exports[`IconSet should render px-obj-product 1`] = `
 `;
 
 exports[`IconSet should render px-obj-rail-yard 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-rail-yard c0"
+  className="px-icon px-obj-rail-yard femNjm"
   color={null}
   style={
     Object {
@@ -6696,42 +3194,8 @@ exports[`IconSet should render px-obj-rail-yard 1`] = `
 `;
 
 exports[`IconSet should render px-obj-routes 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-routes c0"
+  className="px-icon px-obj-routes femNjm"
   color={null}
   style={
     Object {
@@ -6761,42 +3225,8 @@ exports[`IconSet should render px-obj-routes 1`] = `
 `;
 
 exports[`IconSet should render px-obj-sensor 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-sensor c0"
+  className="px-icon px-obj-sensor femNjm"
   color={null}
   style={
     Object {
@@ -6826,42 +3256,8 @@ exports[`IconSet should render px-obj-sensor 1`] = `
 `;
 
 exports[`IconSet should render px-obj-solar-panel 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-solar-panel c0"
+  className="px-icon px-obj-solar-panel femNjm"
   color={null}
   style={
     Object {
@@ -6891,42 +3287,8 @@ exports[`IconSet should render px-obj-solar-panel 1`] = `
 `;
 
 exports[`IconSet should render px-obj-steam-turbine 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-steam-turbine c0"
+  className="px-icon px-obj-steam-turbine femNjm"
   color={null}
   style={
     Object {
@@ -6956,42 +3318,8 @@ exports[`IconSet should render px-obj-steam-turbine 1`] = `
 `;
 
 exports[`IconSet should render px-obj-train 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-train c0"
+  className="px-icon px-obj-train femNjm"
   color={null}
   style={
     Object {
@@ -7021,42 +3349,8 @@ exports[`IconSet should render px-obj-train 1`] = `
 `;
 
 exports[`IconSet should render px-obj-truck 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-truck c0"
+  className="px-icon px-obj-truck femNjm"
   color={null}
   style={
     Object {
@@ -7086,42 +3380,8 @@ exports[`IconSet should render px-obj-truck 1`] = `
 `;
 
 exports[`IconSet should render px-obj-wind-turbine 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-obj-wind-turbine c0"
+  className="px-icon px-obj-wind-turbine femNjm"
   color={null}
   style={
     Object {
@@ -7151,42 +3411,8 @@ exports[`IconSet should render px-obj-wind-turbine 1`] = `
 `;
 
 exports[`IconSet should render px-utl-add 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-add c0"
+  className="px-icon px-utl-add femNjm"
   color={null}
   style={
     Object {
@@ -7216,42 +3442,8 @@ exports[`IconSet should render px-utl-add 1`] = `
 `;
 
 exports[`IconSet should render px-utl-alert 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-alert c0"
+  className="px-icon px-utl-alert femNjm"
   color={null}
   style={
     Object {
@@ -7281,42 +3473,8 @@ exports[`IconSet should render px-utl-alert 1`] = `
 `;
 
 exports[`IconSet should render px-utl-app-settings 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-app-settings c0"
+  className="px-icon px-utl-app-settings femNjm"
   color={null}
   style={
     Object {
@@ -7346,42 +3504,8 @@ exports[`IconSet should render px-utl-app-settings 1`] = `
 `;
 
 exports[`IconSet should render px-utl-calculation 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-calculation c0"
+  className="px-icon px-utl-calculation femNjm"
   color={null}
   style={
     Object {
@@ -7411,42 +3535,8 @@ exports[`IconSet should render px-utl-calculation 1`] = `
 `;
 
 exports[`IconSet should render px-utl-calendar 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-calendar c0"
+  className="px-icon px-utl-calendar femNjm"
   color={null}
   style={
     Object {
@@ -7476,42 +3566,8 @@ exports[`IconSet should render px-utl-calendar 1`] = `
 `;
 
 exports[`IconSet should render px-utl-camera 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-camera c0"
+  className="px-icon px-utl-camera femNjm"
   color={null}
   style={
     Object {
@@ -7541,42 +3597,8 @@ exports[`IconSet should render px-utl-camera 1`] = `
 `;
 
 exports[`IconSet should render px-utl-check 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-check c0"
+  className="px-icon px-utl-check femNjm"
   color={null}
   style={
     Object {
@@ -7606,42 +3628,8 @@ exports[`IconSet should render px-utl-check 1`] = `
 `;
 
 exports[`IconSet should render px-utl-chevron 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-chevron c0"
+  className="px-icon px-utl-chevron femNjm"
   color={null}
   style={
     Object {
@@ -7671,42 +3659,8 @@ exports[`IconSet should render px-utl-chevron 1`] = `
 `;
 
 exports[`IconSet should render px-utl-chevron-left 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-chevron-left c0"
+  className="px-icon px-utl-chevron-left femNjm"
   color={null}
   style={
     Object {
@@ -7736,42 +3690,8 @@ exports[`IconSet should render px-utl-chevron-left 1`] = `
 `;
 
 exports[`IconSet should render px-utl-chevron-right 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-chevron-right c0"
+  className="px-icon px-utl-chevron-right femNjm"
   color={null}
   style={
     Object {
@@ -7801,42 +3721,8 @@ exports[`IconSet should render px-utl-chevron-right 1`] = `
 `;
 
 exports[`IconSet should render px-utl-chevron-up 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-chevron-up c0"
+  className="px-icon px-utl-chevron-up femNjm"
   color={null}
   style={
     Object {
@@ -7866,42 +3752,8 @@ exports[`IconSet should render px-utl-chevron-up 1`] = `
 `;
 
 exports[`IconSet should render px-utl-clock 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-clock c0"
+  className="px-icon px-utl-clock femNjm"
   color={null}
   style={
     Object {
@@ -7931,42 +3783,8 @@ exports[`IconSet should render px-utl-clock 1`] = `
 `;
 
 exports[`IconSet should render px-utl-close 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-close c0"
+  className="px-icon px-utl-close femNjm"
   color={null}
   style={
     Object {
@@ -7996,42 +3814,8 @@ exports[`IconSet should render px-utl-close 1`] = `
 `;
 
 exports[`IconSet should render px-utl-confirmed 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-confirmed c0"
+  className="px-icon px-utl-confirmed femNjm"
   color={null}
   style={
     Object {
@@ -8061,42 +3845,8 @@ exports[`IconSet should render px-utl-confirmed 1`] = `
 `;
 
 exports[`IconSet should render px-utl-copy 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-copy c0"
+  className="px-icon px-utl-copy femNjm"
   color={null}
   style={
     Object {
@@ -8126,42 +3876,8 @@ exports[`IconSet should render px-utl-copy 1`] = `
 `;
 
 exports[`IconSet should render px-utl-delete 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-delete c0"
+  className="px-icon px-utl-delete femNjm"
   color={null}
   style={
     Object {
@@ -8191,42 +3907,8 @@ exports[`IconSet should render px-utl-delete 1`] = `
 `;
 
 exports[`IconSet should render px-utl-desktop-computer 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-desktop-computer c0"
+  className="px-icon px-utl-desktop-computer femNjm"
   color={null}
   style={
     Object {
@@ -8256,42 +3938,8 @@ exports[`IconSet should render px-utl-desktop-computer 1`] = `
 `;
 
 exports[`IconSet should render px-utl-download 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-download c0"
+  className="px-icon px-utl-download femNjm"
   color={null}
   style={
     Object {
@@ -8321,42 +3969,8 @@ exports[`IconSet should render px-utl-download 1`] = `
 `;
 
 exports[`IconSet should render px-utl-edit 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-edit c0"
+  className="px-icon px-utl-edit femNjm"
   color={null}
   style={
     Object {
@@ -8386,42 +4000,8 @@ exports[`IconSet should render px-utl-edit 1`] = `
 `;
 
 exports[`IconSet should render px-utl-failure 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-failure c0"
+  className="px-icon px-utl-failure femNjm"
   color={null}
   style={
     Object {
@@ -8451,42 +4031,8 @@ exports[`IconSet should render px-utl-failure 1`] = `
 `;
 
 exports[`IconSet should render px-utl-filter 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-filter c0"
+  className="px-icon px-utl-filter femNjm"
   color={null}
   style={
     Object {
@@ -8516,42 +4062,8 @@ exports[`IconSet should render px-utl-filter 1`] = `
 `;
 
 exports[`IconSet should render px-utl-flag 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-flag c0"
+  className="px-icon px-utl-flag femNjm"
   color={null}
   style={
     Object {
@@ -8581,42 +4093,8 @@ exports[`IconSet should render px-utl-flag 1`] = `
 `;
 
 exports[`IconSet should render px-utl-folder-closed 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-folder-closed c0"
+  className="px-icon px-utl-folder-closed femNjm"
   color={null}
   style={
     Object {
@@ -8646,42 +4124,8 @@ exports[`IconSet should render px-utl-folder-closed 1`] = `
 `;
 
 exports[`IconSet should render px-utl-folder-open 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-folder-open c0"
+  className="px-icon px-utl-folder-open femNjm"
   color={null}
   style={
     Object {
@@ -8711,42 +4155,8 @@ exports[`IconSet should render px-utl-folder-open 1`] = `
 `;
 
 exports[`IconSet should render px-utl-formula 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-formula c0"
+  className="px-icon px-utl-formula femNjm"
   color={null}
   style={
     Object {
@@ -8776,42 +4186,8 @@ exports[`IconSet should render px-utl-formula 1`] = `
 `;
 
 exports[`IconSet should render px-utl-help 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-help c0"
+  className="px-icon px-utl-help femNjm"
   color={null}
   style={
     Object {
@@ -8841,42 +4217,8 @@ exports[`IconSet should render px-utl-help 1`] = `
 `;
 
 exports[`IconSet should render px-utl-information 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-information c0"
+  className="px-icon px-utl-information femNjm"
   color={null}
   style={
     Object {
@@ -8906,42 +4248,8 @@ exports[`IconSet should render px-utl-information 1`] = `
 `;
 
 exports[`IconSet should render px-utl-link 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-link c0"
+  className="px-icon px-utl-link femNjm"
   color={null}
   style={
     Object {
@@ -8971,42 +4279,8 @@ exports[`IconSet should render px-utl-link 1`] = `
 `;
 
 exports[`IconSet should render px-utl-location 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-location c0"
+  className="px-icon px-utl-location femNjm"
   color={null}
   style={
     Object {
@@ -9036,42 +4310,8 @@ exports[`IconSet should render px-utl-location 1`] = `
 `;
 
 exports[`IconSet should render px-utl-locked 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-locked c0"
+  className="px-icon px-utl-locked femNjm"
   color={null}
   style={
     Object {
@@ -9101,42 +4341,8 @@ exports[`IconSet should render px-utl-locked 1`] = `
 `;
 
 exports[`IconSet should render px-utl-map 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-map c0"
+  className="px-icon px-utl-map femNjm"
   color={null}
   style={
     Object {
@@ -9166,42 +4372,8 @@ exports[`IconSet should render px-utl-map 1`] = `
 `;
 
 exports[`IconSet should render px-utl-module-settings 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-module-settings c0"
+  className="px-icon px-utl-module-settings femNjm"
   color={null}
   style={
     Object {
@@ -9231,42 +4403,8 @@ exports[`IconSet should render px-utl-module-settings 1`] = `
 `;
 
 exports[`IconSet should render px-utl-overflow 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-overflow c0"
+  className="px-icon px-utl-overflow femNjm"
   color={null}
   style={
     Object {
@@ -9296,42 +4434,8 @@ exports[`IconSet should render px-utl-overflow 1`] = `
 `;
 
 exports[`IconSet should render px-utl-phone 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-phone c0"
+  className="px-icon px-utl-phone femNjm"
   color={null}
   style={
     Object {
@@ -9361,42 +4465,8 @@ exports[`IconSet should render px-utl-phone 1`] = `
 `;
 
 exports[`IconSet should render px-utl-remove 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-remove c0"
+  className="px-icon px-utl-remove femNjm"
   color={null}
   style={
     Object {
@@ -9426,42 +4496,8 @@ exports[`IconSet should render px-utl-remove 1`] = `
 `;
 
 exports[`IconSet should render px-utl-reply 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-reply c0"
+  className="px-icon px-utl-reply femNjm"
   color={null}
   style={
     Object {
@@ -9491,42 +4527,8 @@ exports[`IconSet should render px-utl-reply 1`] = `
 `;
 
 exports[`IconSet should render px-utl-save 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-save c0"
+  className="px-icon px-utl-save femNjm"
   color={null}
   style={
     Object {
@@ -9556,42 +4558,8 @@ exports[`IconSet should render px-utl-save 1`] = `
 `;
 
 exports[`IconSet should render px-utl-search 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-search c0"
+  className="px-icon px-utl-search femNjm"
   color={null}
   style={
     Object {
@@ -9621,42 +4589,8 @@ exports[`IconSet should render px-utl-search 1`] = `
 `;
 
 exports[`IconSet should render px-utl-share 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-share c0"
+  className="px-icon px-utl-share femNjm"
   color={null}
   style={
     Object {
@@ -9686,42 +4620,8 @@ exports[`IconSet should render px-utl-share 1`] = `
 `;
 
 exports[`IconSet should render px-utl-tablet 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-tablet c0"
+  className="px-icon px-utl-tablet femNjm"
   color={null}
   style={
     Object {
@@ -9751,42 +4651,8 @@ exports[`IconSet should render px-utl-tablet 1`] = `
 `;
 
 exports[`IconSet should render px-utl-unlink 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-unlink c0"
+  className="px-icon px-utl-unlink femNjm"
   color={null}
   style={
     Object {
@@ -9816,42 +4682,8 @@ exports[`IconSet should render px-utl-unlink 1`] = `
 `;
 
 exports[`IconSet should render px-utl-unlocked 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-unlocked c0"
+  className="px-icon px-utl-unlocked femNjm"
   color={null}
   style={
     Object {
@@ -9881,42 +4713,8 @@ exports[`IconSet should render px-utl-unlocked 1`] = `
 `;
 
 exports[`IconSet should render px-utl-upload 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-upload c0"
+  className="px-icon px-utl-upload femNjm"
   color={null}
   style={
     Object {
@@ -9946,42 +4744,8 @@ exports[`IconSet should render px-utl-upload 1`] = `
 `;
 
 exports[`IconSet should render px-utl-zoom 1`] = `
-.c0 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-}
-
-.c0 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c0.hidden {
-  display: none;
-}
-
 <i
-  className="px-icon px-utl-zoom c0"
+  className="px-icon px-utl-zoom femNjm"
   color={null}
   style={
     Object {

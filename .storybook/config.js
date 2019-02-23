@@ -6,7 +6,7 @@ import JSXAddon from 'storybook-addon-jsx';
 setAddon(JSXAddon);
 
 const path = require('path');
-const req = require.context('../src/components', true, /\.stories\.js$/)
+const req = require.context('../src/components', true, /\.stories\.jsx$/)
 
 function loadStories() {
   req.keys().forEach((filename) => req(filename))

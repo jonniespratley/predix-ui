@@ -1,78 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BrandingBar should render 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: inherit;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  height: var(--px-branding-bar-height,30px);
-  max-height: 67px;
-  min-height: 30px;
-  background-color: var(--px-branding-bar-background-color,black);
-  font-size: var(--px-branding-bar-font-size,15px);
-  color: var(--px-branding-bar-logo-and-title-text-color,gray);
-  padding: 0 1rem;
-}
-
-.c3 {
-  margin-left: .5rem;
-}
-
-.c4 {
-  font-size: 12px;
-  margin-right: .3rem;
-}
-
-@media (max-width:500px) {
-  .c0 {
-    display: none !important;
-    visibility: hidden;
-  }
-}
-
 <div
-  className="c0"
+  className="gYfrAq"
 >
   <div
-    className="c1"
+    className="eaDVcc"
   >
     <div
-      className="c2"
+      className="cGrfKf"
     >
       <svg
         height="20"
@@ -91,20 +27,20 @@ exports[`BrandingBar should render 1`] = `
       </svg>
     </div>
     <div
-      className="c2"
+      className="cGrfKf"
     >
       <div
-        className="c3"
+        className="cVkHkL"
       >
         Custom Title
       </div>
     </div>
   </div>
   <div
-    className="c2"
+    className="cGrfKf"
   >
     <div
-      className="c4"
+      className="kBKryo"
     >
       Powered by React
     </div>
@@ -150,94 +86,30 @@ exports[`BrandingBar should render 1`] = `
 `;
 
 exports[`BrandingBar should render with hideLogo 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: inherit;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  height: var(--px-branding-bar-height,30px);
-  max-height: 67px;
-  min-height: 30px;
-  background-color: var(--px-branding-bar-background-color,black);
-  font-size: var(--px-branding-bar-font-size,15px);
-  color: var(--px-branding-bar-logo-and-title-text-color,gray);
-  padding: 0 1rem;
-}
-
-.c3 {
-  margin-left: .5rem;
-}
-
-.c4 {
-  font-size: 12px;
-  margin-right: .3rem;
-}
-
-@media (max-width:500px) {
-  .c0 {
-    display: none !important;
-    visibility: hidden;
-  }
-}
-
 <div
-  className="c0"
+  className="gYfrAq"
 >
   <div
-    className="c1"
+    className="eaDVcc"
   >
     <div
-      className="c2"
+      className="cGrfKf"
     />
     <div
-      className="c2"
+      className="cGrfKf"
     >
       <div
-        className="c3"
+        className="cVkHkL"
       >
         Custom Title
       </div>
     </div>
   </div>
   <div
-    className="c2"
+    className="cGrfKf"
   >
     <div
-      className="c4"
+      className="kBKryo"
     >
       Powered by React
     </div>
@@ -283,73 +155,14 @@ exports[`BrandingBar should render with hideLogo 1`] = `
 `;
 
 exports[`BrandingBar should render with hidePowered 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: inherit;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  height: var(--px-branding-bar-height,30px);
-  max-height: 67px;
-  min-height: 30px;
-  background-color: var(--px-branding-bar-background-color,black);
-  font-size: var(--px-branding-bar-font-size,15px);
-  color: var(--px-branding-bar-logo-and-title-text-color,gray);
-  padding: 0 1rem;
-}
-
-.c3 {
-  margin-left: .5rem;
-}
-
-@media (max-width:500px) {
-  .c0 {
-    display: none !important;
-    visibility: hidden;
-  }
-}
-
 <div
-  className="c0"
+  className="gYfrAq"
 >
   <div
-    className="c1"
+    className="eaDVcc"
   >
     <div
-      className="c2"
+      className="cGrfKf"
     >
       <svg
         height="20"
@@ -368,10 +181,10 @@ exports[`BrandingBar should render with hidePowered 1`] = `
       </svg>
     </div>
     <div
-      className="c2"
+      className="cGrfKf"
     >
       <div
-        className="c3"
+        className="cVkHkL"
       >
         Custom Title
       </div>

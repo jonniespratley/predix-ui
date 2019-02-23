@@ -1,15 +1,15 @@
 import renderer from 'react-test-renderer';
 import React from 'react';
 import { shallow } from 'enzyme';
-import Notification from './';
+import Notification from '.';
 
 const types = [
-	'healthy',
-	'important',
-	'warning',
-	'error',
-	'info',
-	'unknown'
+  'healthy',
+  'important',
+  'warning',
+  'error',
+  'info',
+  'unknown'
 ];
 
 describe('Notification', () => {

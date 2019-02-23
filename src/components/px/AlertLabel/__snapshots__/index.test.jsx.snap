@@ -1,23 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AlertLabel matches snapshot 1`] = `
-.c0 {
-  display: inline-block;
-  position: relative;
-  padding: 5px;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 0.8rem;
-  line-height: 0.8rem;
-  background-color: var(--px-alert-label-background-color--unknown,gray);
-  color: var(--px-alert-label-text-color--unknown,white);
-  border: 1px solid var(--px-alert-label-border-color,transparent);
-  background-color: var(--px-alert-label-background-color--information,blue);
-  color: var(--px-alert-label-text-color--information,white);
-}
-
 <div
-  className="c0"
+  className="gcNQWW"
   type="info"
 >
   <span
@@ -27,23 +12,8 @@ exports[`AlertLabel matches snapshot 1`] = `
 `;
 
 exports[`AlertLabel should render type = error 1`] = `
-.c0 {
-  display: inline-block;
-  position: relative;
-  padding: 5px;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 0.8rem;
-  line-height: 0.8rem;
-  background-color: var(--px-alert-label-background-color--unknown,gray);
-  color: var(--px-alert-label-text-color--unknown,white);
-  border: 1px solid var(--px-alert-label-border-color,transparent);
-  background-color: var(--px-alert-label-background-color--error,yellow);
-  color: var(--px-alert-label-text-color--error,black);
-}
-
 <div
-  className="c0"
+  className="VPDfB"
   type="error"
 >
   <span
@@ -55,23 +25,8 @@ exports[`AlertLabel should render type = error 1`] = `
 `;
 
 exports[`AlertLabel should render type = healthy 1`] = `
-.c0 {
-  display: inline-block;
-  position: relative;
-  padding: 5px;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 0.8rem;
-  line-height: 0.8rem;
-  background-color: var(--px-alert-label-background-color--unknown,gray);
-  color: var(--px-alert-label-text-color--unknown,white);
-  border: 1px solid var(--px-alert-label-border-color,transparent);
-  background-color: var(--px-alert-label-background-color--healthy,green);
-  color: var(--px-alert-label-text-color--healthy,white);
-}
-
 <div
-  className="c0"
+  className="iXwUDJ"
   type="healthy"
 >
   <span
@@ -83,23 +38,8 @@ exports[`AlertLabel should render type = healthy 1`] = `
 `;
 
 exports[`AlertLabel should render type = important 1`] = `
-.c0 {
-  display: inline-block;
-  position: relative;
-  padding: 5px;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 0.8rem;
-  line-height: 0.8rem;
-  background-color: var(--px-alert-label-background-color--unknown,gray);
-  color: var(--px-alert-label-text-color--unknown,white);
-  border: 1px solid var(--px-alert-label-border-color,transparent);
-  background-color: var(--px-alert-label-background-color--important,red);
-  color: var(--px-alert-label-text-color--important,white);
-}
-
 <div
-  className="c0"
+  className="ghhLOP"
   type="important"
 >
   <span
@@ -111,23 +51,8 @@ exports[`AlertLabel should render type = important 1`] = `
 `;
 
 exports[`AlertLabel should render type = info 1`] = `
-.c0 {
-  display: inline-block;
-  position: relative;
-  padding: 5px;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 0.8rem;
-  line-height: 0.8rem;
-  background-color: var(--px-alert-label-background-color--unknown,gray);
-  color: var(--px-alert-label-text-color--unknown,white);
-  border: 1px solid var(--px-alert-label-border-color,transparent);
-  background-color: var(--px-alert-label-background-color--information,blue);
-  color: var(--px-alert-label-text-color--information,white);
-}
-
 <div
-  className="c0"
+  className="gcNQWW"
   type="info"
 >
   <span
@@ -139,23 +64,8 @@ exports[`AlertLabel should render type = info 1`] = `
 `;
 
 exports[`AlertLabel should render type = success 1`] = `
-.c0 {
-  display: inline-block;
-  position: relative;
-  padding: 5px;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 0.8rem;
-  line-height: 0.8rem;
-  background-color: var(--px-alert-label-background-color--unknown,gray);
-  color: var(--px-alert-label-text-color--unknown,white);
-  border: 1px solid var(--px-alert-label-border-color,transparent);
-  background-color: var(--px-alert-label-background-color--healthy,green);
-  color: var(--px-alert-label-text-color--healthy,white);
-}
-
 <div
-  className="c0"
+  className="cWpaXy"
   type="success"
 >
   <span
@@ -167,23 +77,8 @@ exports[`AlertLabel should render type = success 1`] = `
 `;
 
 exports[`AlertLabel should render type = unknown 1`] = `
-.c0 {
-  display: inline-block;
-  position: relative;
-  padding: 5px;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 0.8rem;
-  line-height: 0.8rem;
-  background-color: var(--px-alert-label-background-color--unknown,gray);
-  color: var(--px-alert-label-text-color--unknown,white);
-  border: 1px solid var(--px-alert-label-border-color,transparent);
-  background-color: var(--px-alert-label-background-color--unknown,gray);
-  color: var(--px-alert-label-text-color--unknown,white);
-}
-
 <div
-  className="c0"
+  className="dPvPTo"
   type="unknown"
 >
   <span
@@ -195,23 +90,8 @@ exports[`AlertLabel should render type = unknown 1`] = `
 `;
 
 exports[`AlertLabel should render type = warning 1`] = `
-.c0 {
-  display: inline-block;
-  position: relative;
-  padding: 5px;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 0.8rem;
-  line-height: 0.8rem;
-  background-color: var(--px-alert-label-background-color--unknown,gray);
-  color: var(--px-alert-label-text-color--unknown,white);
-  border: 1px solid var(--px-alert-label-border-color,transparent);
-  background-color: var(--px-alert-label-background-color--warning,orange);
-  color: var(--px-alert-label-text-color--warning,white);
-}
-
 <div
-  className="c0"
+  className="jifMBH"
   type="warning"
 >
   <span

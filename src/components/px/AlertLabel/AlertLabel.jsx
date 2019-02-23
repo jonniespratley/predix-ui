@@ -13,6 +13,10 @@ const AlertLabel = styled.div`
   background-color: var(--px-alert-label-background-color--unknown, gray);
   color           : var(--px-alert-label-text-color--unknown, white);
   border          : 1px solid var(--px-alert-label-border-color, transparent);
+  
+  ${props => props.pill && css`
+    border-radius          : var(--px-alert-label-border-radius, 5px);
+  `}
 
   ${props => props.type === 'info' && css`
     background-color: var(--px-alert-label-background-color--information, blue);
@@ -45,20 +49,24 @@ const AlertLabel = styled.div`
 `;
 
 const Component = ({
-  label, type
+  label, type, children, pill
 }) => (
-  <AlertLabel type={type}>
-    <span className="label__text">{label}</span>
+  <AlertLabel type={type} pill={pill}>
+    <span className="label__text">{label || children}</span>
   </AlertLabel>
 );
 
 Component.defaultProps = {
   label: null,
+  pill: false,
+  children: null,
   type: null
 };
 
 Component.propTypes = {
   label: PropTypes.string,
+  pill: PropTypes.bool,
+  children: PropTypes.node,
   type: PropTypes.string
 };
 

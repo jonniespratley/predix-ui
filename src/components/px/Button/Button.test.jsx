@@ -3,7 +3,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import PxButton from './';
+import PxButton from '.';
 
 const buttonThemes = [
   'primary',

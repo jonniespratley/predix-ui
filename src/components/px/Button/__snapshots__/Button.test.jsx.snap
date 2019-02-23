@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render bare button 1`] = `
+<button
+  className="px-button bwoprp"
+  size={null}
+  type={null}
+>
+  Button
+</button>
+`;
+
+exports[`Button should render bare-primary button 1`] = `
+<button
+  className="px-button jVTKsE"
+  size={null}
+  type={null}
+>
+  Button
+</button>
+`;
+
+exports[`Button should render call-to-action button 1`] = `
+<button
+  className="px-button SLkOf"
+  size={null}
+  type={null}
+>
+  Button
+</button>
+`;
+
+exports[`Button should render primary button 1`] = `
+<button
+  className="px-button cfGkUF"
+  size={null}
+  type={null}
+>
+  Button
+</button>
+`;
+
+exports[`Button should render secondary button 1`] = `
+<button
+  className="px-button hdtnUs"
+  size={null}
+  type={null}
+>
+  Button
+</button>
+`;
+
+exports[`Button should render tertiary button 1`] = `
+<button
+  className="px-button lcDptN"
+  size={null}
+  type={null}
+>
+  Button
+</button>
+`;

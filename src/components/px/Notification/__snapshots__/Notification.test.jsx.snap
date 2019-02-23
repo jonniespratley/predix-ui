@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notification should type error 1`] = `
+<div
+  className="jOryzS"
+  type="error"
+>
+  <div
+    className="kdoeIZ"
+  >
+    Message
+  </div>
+  <div
+    className="fOoyNC"
+  />
+</div>
+`;
+
+exports[`Notification should type healthy 1`] = `
+<div
+  className="kCTdff"
+  type="healthy"
+>
+  <div
+    className="kdoeIZ"
+  >
+    Message
+  </div>
+  <div
+    className="fOoyNC"
+  />
+</div>
+`;
+
+exports[`Notification should type important 1`] = `
+<div
+  className="ccnYkO"
+  type="important"
+>
+  <div
+    className="kdoeIZ"
+  >
+    Message
+  </div>
+  <div
+    className="fOoyNC"
+  />
+</div>
+`;
+
+exports[`Notification should type info 1`] = `
+<div
+  className="jJXJjq"
+  type="info"
+>
+  <div
+    className="kdoeIZ"
+  >
+    Message
+  </div>
+  <div
+    className="fOoyNC"
+  />
+</div>
+`;
+
+exports[`Notification should type unknown 1`] = `
+<div
+  className="gnAdfr"
+  type="unknown"
+>
+  <div
+    className="kdoeIZ"
+  >
+    Message
+  </div>
+  <div
+    className="fOoyNC"
+  />
+</div>
+`;
+
+exports[`Notification should type warning 1`] = `
+<div
+  className="dSrHWr"
+  type="warning"
+>
+  <div
+    className="kdoeIZ"
+  >
+    Message
+  </div>
+  <div
+    className="fOoyNC"
+  />
+</div>
+`;

@@ -1,22 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Spinner should render 1`] = `
-.c0 {
-  fill: none;
-  stroke: var(--px-spinner-background-color,gray);
-  stroke-width: 5px;
-}
-
-.c1 {
-  fill: none;
-  stroke: var(--px-spinner-fill-color,black);
-  stroke-width: 5px;
-  stroke-dasharray: 283;
-  stroke-dashoffset: 566;
-  -webkit-animation: ffGLem 1.5s infinite cubic-bezier(0.78,0.13,0.16,0.87);
-  animation: ffGLem 1.5s infinite cubic-bezier(0.78,0.13,0.16,0.87);
-}
-
 <div>
   <svg
     height={100}
@@ -24,13 +8,13 @@ exports[`Spinner should render 1`] = `
     width={100}
   >
     <circle
-      className="c0"
+      className="bfWoCa"
       cx="50"
       cy="50"
       r="45"
     />
     <circle
-      className="c1"
+      className="cDRLOv"
       cx="50"
       cy="50"
       r="45"
@@ -41,22 +25,6 @@ exports[`Spinner should render 1`] = `
 `;
 
 exports[`Spinner should render with value 1`] = `
-.c0 {
-  fill: none;
-  stroke: var(--px-spinner-background-color,gray);
-  stroke-width: 5px;
-}
-
-.c1 {
-  fill: none;
-  stroke: var(--px-spinner-fill-color,black);
-  stroke-width: 5px;
-  stroke-dasharray: 283;
-  stroke-dashoffset: 566;
-  -webkit-animation: ffGLem 1.5s infinite cubic-bezier(0.78,0.13,0.16,0.87);
-  animation: ffGLem 1.5s infinite cubic-bezier(0.78,0.13,0.16,0.87);
-}
-
 <div>
   <svg
     height={100}
@@ -64,13 +32,13 @@ exports[`Spinner should render with value 1`] = `
     width={100}
   >
     <circle
-      className="c0"
+      className="bfWoCa"
       cx="50"
       cy="50"
       r="45"
     />
     <circle
-      className="c1"
+      className="cDRLOv"
       cx="50"
       cy="50"
       r="45"

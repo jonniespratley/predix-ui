@@ -20,7 +20,7 @@ const BaseInput = styled.input`
   color: var(--px-input-text-color, #2c404c);
 `;
 
-const Input = BaseInput.extend`
+const Input = styled(BaseInput)`
   font: inherit;
   outline: 0;
   background-color: var(--px-input-background-color, transparent);

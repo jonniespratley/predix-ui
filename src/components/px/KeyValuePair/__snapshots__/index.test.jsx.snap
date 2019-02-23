@@ -1,39 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`KeyValuePair alpha - renders correctly 1`] = `
-.c0 {
-  font-size: .8rem;
-  line-height: 1.66667;
-  color: var(--px-headings-label-color,gray);
-}
-
-.c1 {
-  color: var(--px-headings-value-color,black);
-  margin-top: -4px;
-  margin-top: -8px;
-}
-
-.c2 {
-  margin-left: 0px;
-  margin-left: -4px;
-}
-
 <div
   className="px-key-value-pair"
 >
   <div
-    className="kvp-label c0"
+    className="kvp-label ctwgUQ"
     size={null}
   >
     Lorem Ipsum
   </div>
   <span
-    className="alpha c1"
+    className="alpha kfFMcF"
     size="delta"
   >
     12345
     <span
-      className="delta c2"
+      className="delta eHtIjR"
       size="delta"
     >
       units
@@ -43,39 +26,22 @@ exports[`KeyValuePair alpha - renders correctly 1`] = `
 `;
 
 exports[`KeyValuePair beta - renders correctly 1`] = `
-.c0 {
-  font-size: .8rem;
-  line-height: 1.66667;
-  color: var(--px-headings-label-color,gray);
-}
-
-.c1 {
-  color: var(--px-headings-value-color,black);
-  margin-top: -4px;
-  margin-top: -2px;
-}
-
-.c2 {
-  margin-left: 0px;
-  margin-left: -2px;
-}
-
 <div
   className="px-key-value-pair"
 >
   <div
-    className="kvp-label c0"
+    className="kvp-label ctwgUQ"
     size={null}
   >
     Lorem Ipsum
   </div>
   <span
-    className="beta c1"
+    className="beta dEiQCL"
     size="epsilon"
   >
     12345
     <span
-      className="epsilon c2"
+      className="epsilon bYwwOz"
       size="epsilon"
     >
       units

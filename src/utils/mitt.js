@@ -28,21 +28,21 @@ export default function mitt(all) {
     },
 
     /**
-    * Invoke all handlers for the given type.
-    * If present, `"*"` handlers are invoked after type-matched handlers.
-    *
-    * @param {String} type  The event type to invoke
-    * @param {Any} [evt]  Any value (object is recommended and powerful), passed to each handler
-    * @memberOf mitt
-    */
+     * Invoke all handlers for the given type.
+     * If present, `"*"` handlers are invoked after type-matched handlers.
+     *
+     * @param {String} type  The event type to invoke
+     * @param {Any} [evt]  Any value (object is recommended and powerful), passed to each handler
+     * @memberOf mitt
+     */
     emit(type, evt) {
       (all[type] || [])
-        .slice()
+      .slice()
         .map((handler) => {
           handler(evt);
         });
       (all['*'] || [])
-        .slice()
+      .slice()
         .map((handler) => {
           handler(type, evt);
         });

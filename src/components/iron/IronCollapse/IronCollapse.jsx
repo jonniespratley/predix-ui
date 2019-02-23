@@ -9,9 +9,9 @@ class IronCollapse extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      noAnimation: props.noAnimation || false,
-      horizontal: props.horizontal || false,
-      opened: props.opened || false,
+      noAnimation: props.noAnimation,
+      horizontal: props.horizontal,
+      opened: props.opened,
       style: null
     };
     this._handleRef = this._handleRef.bind(this);
@@ -178,7 +178,7 @@ class IronCollapse extends React.Component {
 IronCollapse.defaultProps = {
   horizontal: false,
   onChange: null,
-  noAnimation: null,
+  noAnimation: false,
   opened: false,
   children: null
 };

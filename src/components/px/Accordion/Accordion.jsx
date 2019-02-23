@@ -22,17 +22,18 @@ const CloseIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron" style
 const OpenIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron-down" style={styles}><svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" style={svgStyles}><g id="px-utl-chevron"><path d="M2.4 6.2l5.5 5.5 5.5-5.5" /></g></svg></i>);
 
 const AccordionHeader = styled.div`
-  font-family: "GE Inspira Sans";
   padding: .5rem;
   margin-bottom   : 0.3333rem;
   cursor          : pointer;
   user-select     : none;
 
+  color: var(--px-headings-heading-subsection-color, black);
+  background-color: var(--px-headings-heading-subsection-background, whitesmoke);
+
   background-color: var(--px-accordion-header-background-color, whitesmoke);
   color           : var(--px-accordion-header-color, black);
 
-  color: var(--px-headings-heading-subsection-color);
-  background-color: var(--px-headings-heading-subsection-background);
+  
 
   display         : flex;
   justify-content : space-between;
@@ -59,6 +60,10 @@ AccordionHeaderText.displayName = 'AccordionHeaderText';
 const AccordionContainer = styled.div`
   display: flex;
   flex-direction: column;
+  font-family: "GE Inspira Sans";
+  -webkit-transition-duration: 300ms;
+  -moz-transition-duration: 300ms;
+  transition-duration: 300ms;
 `;
 AccordionContainer.displayName = 'AccordionContainer';
 AccordionContainer.defaultProps = {

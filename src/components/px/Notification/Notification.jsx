@@ -16,7 +16,7 @@ const NotificationLeft = styled.div`
   align-items: center;
   margin-right: .33333rem;
 `;
-const NotificationRight = NotificationLeft.extend`
+const NotificationRight = styled(NotificationLeft)`
   margin-right: 0;
   margin-left: 1rem;
   cursor: pointer;
