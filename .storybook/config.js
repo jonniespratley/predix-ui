@@ -1,8 +1,12 @@
-import { configure, setAddon} from '@storybook/react';
+import { configure, setAddon, addDecorator } from '@storybook/react';
 import JSXAddon from 'storybook-addon-jsx';
+import { withInfo } from '@storybook/addon-info';
+
 //import { configure as configureViewports } from '@storybook/addon-viewport';
 
 
+
+addDecorator(withInfo);
 setAddon(JSXAddon);
 
 const path = require('path');

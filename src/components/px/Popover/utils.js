@@ -1,8 +1,12 @@
+/** Placements available for the tooltip */
+const Placements = ['top', 'bottom', 'right', 'left'];
+
+
 /**
  * This function checks if the passed argument is a function
  * @param {*} functionToCheck The function
  */
-export function isFunction(functionToCheck) {
+function isFunction(functionToCheck) {
   return (
     functionToCheck && {}.toString.call(functionToCheck) === '[object Function]'
   );
@@ -14,7 +18,7 @@ export function isFunction(functionToCheck) {
  * @param {String} propName The name of the prop
  * @param {String} componentName The name of the component
  */
-export function DOMElement(props, propName, componentName) {
+function DOMElement(props, propName, componentName) {
   if (!(props[propName] instanceof Element)) {
     return new Error(`Invalid prop \`${propName}\` supplied to \`${componentName}\`. Expected prop to be an instance of Element. Validation failed.`);
   }
@@ -24,7 +28,7 @@ export function DOMElement(props, propName, componentName) {
  * This function handles locating the target DOM element.
  * @param {DOMElement} target The target element to locate.
  */
-export function getTarget(target) {
+function getTarget(target) {
   if (isFunction(target)) {
     return target();
   }
@@ -42,16 +46,12 @@ export function getTarget(target) {
   return target;
 }
 
-/** Placements available for the tooltip */
-export const Placements = ['top', 'bottom', 'right', 'left'];
-
 /** Replicating jQuery Offset Methods * */
-
-export function isWindow(obj) {
+function isWindow(obj) {
   return obj !== null && obj === obj.window;
 }
 
-export function getWindow(elem) {
+function getWindow(elem) {
   return isWindow(elem) ? elem : elem.nodeType === 9 && elem.defaultView;
 }
 
@@ -59,7 +59,7 @@ export function getWindow(elem) {
  * This function handles getting the position of an element.
  * @param {DOMElement} elem The target element
  */
-export function offset(elem) {
+function offset(elem) {
   let box = { top: 0, left: 0 };
   const doc = elem && elem.ownerDocument;
   const docElem = doc.documentElement;
@@ -78,7 +78,7 @@ export function offset(elem) {
  * This function handles getting the dimensions of an element.
  * @param {DOMElement} element The target element
  */
-export function getElemDimensions(element) {
+function getElemDimensions(element) {
   const info = {
     left: offset(element).left,
     top: offset(element).top
@@ -90,13 +90,14 @@ export function getElemDimensions(element) {
   element.classList.remove('fake');
   return info;
 }
+
 /**
  * This function handles setting the position of the tooltip relative to the target.
  * @param {DOMElement} tooltip The target tooltip
  * @param {DOMElement} source The target source
  * @param {String} placement The position of the tooltip
  */
-export function setPosition(tooltip, source, placement) {
+function setPosition(tooltip, source, placement) {
   const _pos = Placements;
   const sourceDimensions = getElemDimensions(source);
   const tooltipDimensions = getElemDimensions(tooltip);
@@ -154,11 +155,7 @@ export function setPosition(tooltip, source, placement) {
  * @param {Object} tooltipDimensions Dimensions of tooltip
  * @param {String} placement Placement of tooltip
  */
-export function computeBestPosition(
-  imaginaryPositions,
-  tooltipDimensions,
-  placement
-) {
+function computeBestPosition(imaginaryPositions, tooltipDimensions, placement) {
   const screenTop = window.pageYOffset;
   const screenWidth = window.innerWidth;
   const selector = [0, 0, 0, 0];
@@ -170,9 +167,8 @@ export function computeBestPosition(
     }
   }
 
-  if (
-    screenTop > imaginaryPositions.if_top_y ||
-    screenTop < imaginaryPositions.if_bottom_y
+  if (screenTop > imaginaryPositions.if_top_y
+    || screenTop < imaginaryPositions.if_bottom_y
   ) {
     selector[1] += 1;
     if (placement === 'bottom') {
@@ -181,10 +177,10 @@ export function computeBestPosition(
   }
 
   if (
-    imaginaryPositions.if_vertical_x < 0 ||
-    (placement === 'right' &&
-      imaginaryPositions.if_right_x + tooltipDimensions.width <
-        screenWidth)
+    imaginaryPositions.if_vertical_x < 0
+    || (placement === 'right'
+      && imaginaryPositions.if_right_x + tooltipDimensions.width
+        < screenWidth)
   ) {
     selector[2] += 1;
     if (placement === 'right') {
@@ -201,3 +197,17 @@ export function computeBestPosition(
 
   return selector.indexOf(Math.max(...selector));
 }
+
+export {
+  Placements,
+  isFunction,
+  DOMElement,
+  getTarget,
+  offset,
+  getWindow,
+  isWindow,
+  getElemDimensions,
+  setPosition,
+  computeBestPosition
+};
+export { setPosition as setPos };

@@ -227,14 +227,15 @@ const TableRowComponent = ({
     {labelLeft && <TableRowLabel labelLeft className="table-row__label table-row__label--left">{labelLeft}</TableRowLabel>}
     {image && <TableRowMedia><img src={image} alt={title} /></TableRowMedia>}
     {icon && <TableRowMedia><Icon icon={icon} /></TableRowMedia>}
-    {editMode && <div className="table-row__media table-row__media--icon table-row__media--right"><button className="btn btn--bare table-row__handle">hamburger</button></div>}
-    {title &&
+    {editMode && <div className="table-row__media table-row__media--icon table-row__media--right"><button type="button" className="btn btn--bare table-row__handle">hamburger</button></div>}
+    {title && (
     <TableRowContent>
-      {title && <TableRowTitle >{title}</TableRowTitle>}
+      {title && <TableRowTitle>{title}</TableRowTitle>}
       {subtitle && <TableRowSubtitle>{subtitle}</TableRowSubtitle>}
       {body && <TableRowBody>{body}</TableRowBody>}
       {rowContent}
-    </TableRowContent>}
+    </TableRowContent>
+    )}
 
     {labelRight && <TableRowLabel labelRight className="table-row__label table-row__label--right">{labelRight}</TableRowLabel>}
     {children && <TableRowContent>{children}</TableRowContent>}

@@ -7,7 +7,7 @@ const PopperTargetHelper = (props, context) => {
 };
 
 PopperTargetHelper.contextTypes = {
-  popperManager: propTypes.object.isRequired
+  popperManager: propTypes.shape.isRequired
 };
 
 PopperTargetHelper.propTypes = {

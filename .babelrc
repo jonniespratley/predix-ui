@@ -16,12 +16,6 @@
     ["transform-react-remove-prop-types",{"mode": "wrap"}]
   ],
   "env": {
-    "dev": {
-      "presets": [
-        "@babel/preset-env",
-        "react-hmre"
-      ]
-    },
     "modules": {
       "presets": [
         [ "@babel/preset-env", { "modules": "umd" } ]

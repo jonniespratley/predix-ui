@@ -133,15 +133,18 @@ class AppNavItemComponent extends React.Component {
     super(props);
     this._handleClick = this._handleClick.bind(this);
   }
+
   _handleClick(e) {
     if (!this.props.cancelSelect && this.props.onClick) {
       this.props.onClick(e);
     }
   }
+
   _shouldComponentUpdate(nextProps) {
-    return nextProps.selected !== this.props.selected ||
-      nextProps.onlyShowIcon !== this.props.onlyShowIcon;
+    return nextProps.selected !== this.props.selected
+      || nextProps.onlyShowIcon !== this.props.onlyShowIcon;
   }
+
   render() {
     const {
       label,
@@ -175,21 +178,20 @@ class AppNavItemComponent extends React.Component {
         data-id={id}
         {...itemProps}
       >
-        {icon && !empty && !emptyIcon &&
-          <AppNavItemIcon
-            withLabel={label}
-          >
-            <Icon icon={icon} />
-          </AppNavItemIcon>
+        {icon && !empty && !emptyIcon
+          && (
+            <AppNavItemIcon withLabel={label}>
+              <Icon icon={icon} />
+            </AppNavItemIcon>
+          )
         }
 
-        {label && !emptyLabel && !emptyIcon && !empty &&
-          <AppNavItemLabel
-            withLabel={withLabel}
-            onlyShowIcon={onlyShowIcon}
-          >
+        {label && !emptyLabel && !emptyIcon && !empty
+          && (
+          <AppNavItemLabel withLabel={withLabel} onlyShowIcon={onlyShowIcon}>
             {label}
           </AppNavItemLabel>
+          )
         }
 
         {/* emptyIcon */}
@@ -201,10 +203,12 @@ class AppNavItemComponent extends React.Component {
         {empty && <AppNavItemIcon empty withLabel={label} />}
         {empty && <AppNavItemLabel empty />}
 
-        {dropdown &&
+        {dropdown
+          && (
           <AppNavItemIcon dropdownIcon>
             <Icon icon="px-utl:chevron" size={16} />
           </AppNavItemIcon>
+          )
         }
       </AppNavItem>
     );

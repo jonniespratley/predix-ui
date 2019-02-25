@@ -54,9 +54,7 @@
     "reactjs",
     "predix-ui"
   ],
-  "pre-push": [
-    
-  ],
+  "pre-push": [],
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
@@ -66,9 +64,12 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.0.0",
+    "@storybook/addon-actions": "^4.1.13",
     "@storybook/addon-info": "^4.1.13",
     "@storybook/addon-jest": "^4.1.13",
     "@storybook/addon-knobs": "^4.1.13",
+    "@storybook/addon-links": "^4.1.13",
+    "@storybook/addon-notes": "^4.1.13",
     "@storybook/addon-storyshots": "^4.1.13",
     "@storybook/addon-viewport": "^4.1.13",
     "@storybook/addons": "^4.1.13",

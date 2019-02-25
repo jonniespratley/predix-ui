@@ -1,14 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, array, number, text, boolean } from '@storybook/addon-knobs';
+import {
+  withKnobs, array, number, text, boolean
+} from '@storybook/addon-knobs';
 import { withReadme } from 'storybook-readme';
 import { action } from '@storybook/addon-actions';
 
 import README from './README.md';
-import AppNav from './';
-import AppNavItem from './px-app-nav-item';
+import AppNav from './AppNav';
+import AppNavItem from './AppNavItem';
 // import AppNavSubItem from './px-app-nav-sub-item';
-import AppNavSubGroupItem from './px-app-nav-sub-group';
+import AppNavSubGroupItem from './AppNavSubItem';
 // import Icons from '../IconSet';
 
 // const AllIcons = Object.keys(Icons).sort();

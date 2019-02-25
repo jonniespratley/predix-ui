@@ -1,10 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
+import {
+  withKnobs, text, boolean, select
+} from '@storybook/addon-knobs';
 import { withReadme } from 'storybook-readme';
 import README from './README.md';
-import TableView from './';
+import TableView from './TableView';
 import TableRow from './TableRow';
 
 function makeRows(count = 5, obj) {
@@ -93,4 +95,3 @@ storiesOf('Components / TableView', module)
       tappable={boolean('tappable', true)}
     />
   ));
-

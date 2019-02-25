@@ -98,6 +98,7 @@ class TreeNode extends React.Component {
     ev.preventDefault();
     ev.stopPropagation();
   }
+
   render() {
     const isOpen = !!(this.state.children && this.state.children.length);
     const hasChildren = this.props && this.props.data && this.props.data.children;
@@ -129,7 +130,8 @@ class TreeNode extends React.Component {
           <span onClick={this.onCategorySelect}>{label}</span> {/* eslint-disable-line*/}
         </TreeNodeLabel>
 
-        {this.state.children &&
+        {this.state.children
+        && (
         <TreeNodeContent open={isOpen}>
           {this.state.children.map(child => (
             <TreeNode
@@ -138,8 +140,9 @@ class TreeNode extends React.Component {
               {...child}
               onCategorySelect={this.props.onCategorySelect}
             />
-            ))}
-        </TreeNodeContent>}
+          ))}
+        </TreeNodeContent>
+        )}
 
       </TreeNodeStyled>
     );

@@ -7,9 +7,9 @@ class IronSelector extends React.Component {
     super(props);
     this.displayName = 'IronSelector';
     this.state = {
-      selected: props.selected || 0,
-      selectedClassName: props.selectedClassName || 'iron-selected',
-      propForSelected: props.propForSelect || null
+      selected: props.selected,
+      selectedClassName: props.selectedClassName,
+      propForSelected: props.propForSelect
     };
     this._items = [];
     this._keys = [];
@@ -31,31 +31,40 @@ class IronSelector extends React.Component {
     }
   }
 
-  _renderTitles() {
+  _renderTitles = (children) => {
     this._keys = [];
-
-    const { propForSelect, selected, children } = this.props;
+    this._items = [];
+    const {
+      propForSelect,
+      selectedClassName,
+      selected
+    } = this.props;
 
     function labels(child, index) {
-      let propForSelectChild = propForSelect || index;
+      const propForSelectChild = propForSelect || index;
+
       this._items.push(child);
       if (propForSelectChild) {
-        propForSelectChild = child.props[propForSelectChild];
         this._keys.push(propForSelectChild);
       } else {
         this._keys.push(index);
       }
-      const { selectedClassName } = this.props;
+
+
       const selectedItem = (selected === this._getIndexForValue(propForSelectChild));
       const baseClasses = classnames({ [`${selectedClassName}`]: selectedItem });
+
+      const propForChild = {
+        [`${propForSelect}`]: child.props[`${propForSelect}`]
+      };
       return (
-        <li key={index} className={baseClasses}>
+        <li key={index} className={baseClasses} {...propForChild}>
           {child}
         </li>
       );
     }
-    const nodes = children.map(labels.bind(this));
-    return nodes;
+
+    return children.map(labels.bind(this));
   }
 
   _getIndexForValue(val) {
@@ -65,17 +74,15 @@ class IronSelector extends React.Component {
   render() {
     const {
       className,
-      style
+      style,
+      children
     } = this.props;
 
-    const baseClassnames = classnames(
-      'iron-selector',
-      className
-    );
+    const baseClassnames = classnames(className);
 
     return (
       <ul className={baseClassnames} style={style}>
-        { this._renderTitles() }
+        { this._renderTitles(children) }
       </ul>
     );
   }
@@ -101,7 +108,7 @@ IronSelector.propTypes = {
   style: null,
   children: PropTypes.node,
   propForSelect: PropTypes.string,
-  selected: PropTypes.oneOfType(PropTypes.number, PropTypes.string),
+  selected: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   // selectedItem: PropTypes.string,
   selectedClassName: PropTypes.string,
   className: PropTypes.string

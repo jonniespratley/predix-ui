@@ -142,7 +142,9 @@ exports[`BrandingBar should render 1`] = `
         points="73.31 7.08 68.55 13.24 71.88 13.24 75.34 8.67 78.8 13.24 82.13 13.24 77.37 7.08 73.31 7.08"
       />
       <style>
-        .cls-1 { fill: #2886af; }.cls-2 { fill: #3ab4d4; }
+        
+.cls-1 { fill: #2886af; }.cls-2 { fill: #3ab4d4; }
+
       </style>
     </svg>
   </div>
@@ -275,7 +277,9 @@ exports[`BrandingBar should render with hideLogo 1`] = `
         points="73.31 7.08 68.55 13.24 71.88 13.24 75.34 8.67 78.8 13.24 82.13 13.24 77.37 7.08 73.31 7.08"
       />
       <style>
-        .cls-1 { fill: #2886af; }.cls-2 { fill: #3ab4d4; }
+        
+.cls-1 { fill: #2886af; }.cls-2 { fill: #3ab4d4; }
+
       </style>
     </svg>
   </div>

@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { getTarget, DOMElement, Placements, setPosition } from '../utils';
+import * as utils from './utils';
+
+const { setPosition, getTarget, DOMElement } = utils;
 
 // Used for default delays
 const DEFAULT_DELAYS = {
@@ -68,13 +70,11 @@ class Tooltip extends React.Component {
   }
 
   addTargetEvents() {
-    ['mouseover', 'mouseout'].forEach(event =>
-      this._target.addEventListener(event, this.handleTargetEvents, true));
+    ['mouseover', 'mouseout'].forEach(event => this._target.addEventListener(event, this.handleTargetEvents, true));
   }
 
   removeTargetEvents() {
-    ['mouseover', 'mouseout'].forEach(event =>
-      this._target.removeEventListener(event, this.handleTargetEvents, true));
+    ['mouseover', 'mouseout'].forEach(event => this._target.removeEventListener(event, this.handleTargetEvents, true));
   }
 
   show() {
@@ -176,7 +176,7 @@ Tooltip.propTypes = {
   isOpen: PropTypes.bool,
   onMouseEnterDelay: PropTypes.number,
   onMouseLeaveDelay: PropTypes.number,
-  placement: PropTypes.oneOf(Placements),
+  placement: PropTypes.oneOf(['top', 'bottom', 'right', 'left']),
   toggle: PropTypes.func,
   target: PropTypes.oneOfType([PropTypes.string, PropTypes.func, DOMElement])
     .isRequired

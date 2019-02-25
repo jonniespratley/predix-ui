@@ -5,7 +5,6 @@ const Layout = styled.div`
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
-  
   padding: 0;
 
   ${props => props.tiny && css` 
