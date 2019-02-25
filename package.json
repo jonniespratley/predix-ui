@@ -3,7 +3,7 @@
   "description": "px-* web components as React styled components",
   "author": "Jonnie Spratley",
   "user": "jonniespratley",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "license": "",
   "repository": {
     "type": "git",
@@ -183,13 +183,13 @@
     "webpack-stream": "^4.0.0"
   },
   "peerDependencies": {
-    "file-loader": "^1.1.6",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "styled-components": "^3.2.3"
   },
   "dependencies": {
+    "styled-components": "^3.2.3",
     "js-tree": "^2.0.1",
     "react-popper": "^0.10.4"
   },
