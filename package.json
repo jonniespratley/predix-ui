@@ -54,7 +54,10 @@
     "reactjs",
     "predix-ui"
   ],
-  "pre-push": [],
+  "pre-push": [
+    "lint",
+    "test"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
