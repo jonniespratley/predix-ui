@@ -80,7 +80,7 @@
     "babel-plugin-styled-components": "^1.5.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-decorators": "^6.24.1",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.4",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.19",
     "babel-plugin-transform-require-ignore": "^0.1.1",
     "babel-plugin-wrap-in-js": "^1.1.1",
     "babel-preset-env": "^1.6.0",
@@ -198,6 +198,7 @@
     "verbose": true,
     "testEnvironment": "jsdom",
     "collectCoverage": true,
+    "testURL": "http://localhost",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
