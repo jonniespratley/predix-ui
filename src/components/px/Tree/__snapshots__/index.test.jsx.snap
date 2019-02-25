@@ -21,6 +21,7 @@ exports[`Tree matches snapshot 1`] = `
   vertical-align: middle;
   width: var(--iron-icon-width);
   height: var(--iron-icon-height);
+  color: inherit !important;
 }
 
 .c3 > svg {
@@ -119,7 +120,7 @@ exports[`Tree matches snapshot 1`] = `
       >
         <i
           className="px-icon px-utl-chevron-right c3"
-          color={null}
+          color="inherit"
           style={
             Object {
               "height": 16,

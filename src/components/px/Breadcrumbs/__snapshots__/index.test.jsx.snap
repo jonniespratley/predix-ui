@@ -21,6 +21,7 @@ exports[`px-breadcrumbs renders correctly 1`] = `
   vertical-align: middle;
   width: var(--iron-icon-width);
   height: var(--iron-icon-height);
+  color: inherit !important;
 }
 
 .c1 > svg {
@@ -74,13 +75,14 @@ exports[`px-breadcrumbs renders correctly 1`] = `
       >
         <i
           className="px-icon px-utl-chevron-right c1"
-          color={null}
+          color="inherit"
           style={
             Object {
               "height": 24,
               "width": 24,
             }
           }
+          viewBox="0 0 16 16"
         >
           <svg
             dangerouslySetInnerHTML={
@@ -117,13 +119,14 @@ exports[`px-breadcrumbs renders correctly 1`] = `
       >
         <i
           className="px-icon px-utl-chevron-right c1"
-          color={null}
+          color="inherit"
           style={
             Object {
               "height": 24,
               "width": 24,
             }
           }
+          viewBox="0 0 16 16"
         >
           <svg
             dangerouslySetInnerHTML={
@@ -160,13 +163,14 @@ exports[`px-breadcrumbs renders correctly 1`] = `
       >
         <i
           className="px-icon px-utl-chevron-right c1"
-          color={null}
+          color="inherit"
           style={
             Object {
               "height": 24,
               "width": 24,
             }
           }
+          viewBox="0 0 16 16"
         >
           <svg
             dangerouslySetInnerHTML={

@@ -21,6 +21,7 @@ exports[`Card should render 1`] = `
   vertical-align: middle;
   width: var(--iron-icon-width);
   height: var(--iron-icon-height);
+  color: inherit !important;
 }
 
 .c4 > svg {
@@ -112,7 +113,7 @@ exports[`Card should render 1`] = `
       >
         <i
           className="px-icon px-nav-home c4"
-          color={null}
+          color="inherit"
           style={
             Object {
               "height": 22,

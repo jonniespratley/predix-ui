@@ -21,6 +21,7 @@ exports[`TableView TableRow should render 1`] = `
   vertical-align: middle;
   width: var(--iron-icon-width);
   height: var(--iron-icon-height);
+  color: inherit !important;
 }
 
 .c2 > svg {
@@ -188,7 +189,7 @@ exports[`TableView TableRow should render 1`] = `
   >
     <i
       className="px-icon px-nav-home c2"
-      color={null}
+      color="inherit"
       style={
         Object {
           "height": 22,
