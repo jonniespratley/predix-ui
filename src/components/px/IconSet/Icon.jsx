@@ -42,7 +42,7 @@ const IconSizes = {
 
 const getIconSetSize = (name = '') => {
   const iconSet = name && name.replace(':', '-').split('-')[1];
-  return IconSizes[iconSet];
+  return IconSizes[iconSet] || 16;
 };
 
 class Icon extends React.Component {
@@ -50,11 +50,13 @@ class Icon extends React.Component {
     super(props);
     this.createMarkup = this.createMarkup.bind(this);
   }
+
   createMarkup(icon) {
     const name = icon && icon.replace(':', '-');
     const html = this.getIcon(name);
     return { __html: html };
   }
+
   getIcon(name) {
     this.name = name;
     if (IconSet[name]) {
@@ -62,6 +64,7 @@ class Icon extends React.Component {
     }
     return name;
   }
+
   render() {
     const {
       icon,
@@ -85,8 +88,20 @@ class Icon extends React.Component {
     }, styles);
 
     const _viewBox = viewBox || `0 0 ${iconSetSize} ${iconSetSize}`;
+    const iconProps = {
+
+    };
+    if (viewBox) {
+      iconProps.viewBox = viewBox;
+    }
+    if (color) {
+      iconProps.color = color;
+    }
+    if (styles) {
+      iconProps.style = styles;
+    }
     return (
-      <PxIcon className={classnames('px-icon', className, icon.replace(':', '-'))} style={styles} color={color}>
+      <PxIcon className={classnames('px-icon', className, icon.replace(':', '-'))} {...iconProps}>
         <svg
           viewBox={_viewBox}
           preserveAspectRatio="xMidYMid meet"
@@ -102,9 +117,9 @@ Icon.defaultProps = {
   size: null,
   icon: '',
   viewBox: null,
-  color: null,
+  color: 'inherit',
   className: null,
-  style: null
+  style: {}
 };
 
 Icon.propTypes = {

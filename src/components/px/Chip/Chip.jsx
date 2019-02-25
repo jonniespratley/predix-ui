@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
+import Icon from '../IconSet/Icon';
 
 const Chip = styled.div`
   display         : inline-block;
   align-items     : center;
-  height          : 20px;
+  
   padding-left    : 10px;
   padding-right   : 10px;
   background-color: var(--px-chip-background-color, white);
   border          : 1px solid var(--px-chip-border-color, gray);
+  font-size: .8rem;
+  line-height: 1.66667;
+  font-weight: 400;
 
   &:hover {
     cursor          : pointer;
@@ -26,15 +30,20 @@ const Chip = styled.div`
 
 const ChipContent = styled.div`
   line-height: 18px;
-  display    : inline-block;
+  display    : flex;
   min-width  : 0;
   max-width  : var(--px-chip-max-width, 120px);
   color      : var(--px-chip-text-color, gray);
+
+  height          : 20px;
+  
 `;
 
 const ChipIcon = styled.div`
   height: 12px;
   width : 12px;
+  color: inherit;
+  padding-left: .33333rem;
   &:hover{
     color: var(--px-chip-icon-color--hover, blue);
   }
@@ -52,7 +61,7 @@ const Component = ({
   <Chip selected={selected}>
     <ChipContent>
       {children}
-      {showIcon && <ChipIcon>{icon}</ChipIcon>}
+      {showIcon && <ChipIcon><Icon icon={icon} size={16} /></ChipIcon>}
     </ChipContent>
   </Chip>
 

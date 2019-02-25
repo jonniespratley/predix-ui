@@ -5,8 +5,9 @@ import { withKnobs, number } from '@storybook/addon-knobs/react';
 import { withReadme } from 'storybook-readme';
 import px from './px';
 
-// import './px/Theme/LightTheme';
-import './px/Theme/DarkTheme';
+
+import LightTheme from './px/Theme/LightTheme';
+// import './px/Theme/DarkTheme';
 
 import README from '../../README.md';
 
@@ -21,6 +22,12 @@ const labelTypes = [
 ];
 
 storiesOf('Predix UI', module)
+  .addDecorator(story => (
+    <div>
+
+      {story()}
+    </div>
+  ))
   .addDecorator(withKnobs)
   .addDecorator(withReadme(README))
   .add('Welcome', () => (
@@ -28,19 +35,20 @@ storiesOf('Predix UI', module)
   ))
   .add('Style Guide', () => (
     <div>
+      <LightTheme />
       <h2>Buttons</h2>
-      <Flex>
+      <Flex spaced>
         <px.Button>Default</px.Button>
         <px.Button theme="primary">Primary</px.Button>
         <px.Button theme="tertiary">Tertiary</px.Button>
         <px.Button theme="call-to-action">Call to Action</px.Button>
       </Flex>
       <h2>Alert Labels</h2>
-      <Flex>
+      <Flex spaced>
         {labelTypes.map(type => <px.AlertLabel type={type}>{type}</px.AlertLabel>)}
       </Flex>
       <h2>Alert Pills</h2>
-      <Flex>
+      <Flex spaced>
         {labelTypes.map(type => <px.AlertLabel type={type} pill>{type}</px.AlertLabel>)}
       </Flex>
     </div>

@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, select, number } from '@storybook/addon-knobs/react';
+import {
+  withKnobs, text, select, number
+} from '@storybook/addon-knobs/react';
 
 import Icon from './Icon';
-import Icons from './';
+import Icons from '.';
 // import DocIcons from './px-icon-set-document';
 
 const AllIcons = Object.keys(Icons).sort();
@@ -16,7 +18,10 @@ const cheatsheetStyles = {
 const RenderIconSet = ({ icons }) => (
   <ul style={cheatsheetStyles} className="cheatsheet-icons">
     {icons && icons.map(item => (
-      <li key={item}><Icon icon={item} />{item}</li>
+      <li key={item}>
+        <Icon icon={item} />
+        {item}
+      </li>
     ))}
   </ul>
 );
@@ -27,7 +32,18 @@ RenderIconSet.propTypes = {
 
 storiesOf('Components / Icon', module)
   .addDecorator(withKnobs)
-  .add('default', () => (
+  .addWithJSX('default', () => (
+    <Icon
+      icon={select('icon', AllIcons, 'px-fea:home')}
+    />
+  ))
+  .addWithJSX('custom color', () => (
+    <Icon
+      icon={select('icon', AllIcons, 'px-fea:home')}
+      color={text('color', 'blue')}
+    />
+  ))
+  .addWithJSX('custom size/color', () => (
     <Icon
       icon={select('icon', AllIcons, 'px-fea:home')}
       color={text('color', 'blue')}
@@ -38,9 +54,9 @@ storiesOf('Components / Icon', module)
   .add('cheatsheet', () => (
     <div className="cheatsheet">
       {RenderIconSet({ icons: AllIcons })}
-      <style>{`
+      <style>
+        {`
         .cheatsheet{
-
         }
         .cheatsheet ul {
           display: flex;
@@ -63,4 +79,3 @@ storiesOf('Components / Icon', module)
       </style>
     </div>
   ));
-

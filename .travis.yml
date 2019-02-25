@@ -3,8 +3,9 @@ cache:
   directories:
     - ~/.npm
 node_js:
-  - '9'
   - '8'
+  - '10'
+  - '11'
 script:
 - yarn lint
 - yarn test
