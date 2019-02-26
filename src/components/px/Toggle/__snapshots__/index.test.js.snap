@@ -176,6 +176,7 @@ exports[`Toggle disabled = matches snapshot 1`] = `
   <label
     className="c1"
     disabled={true}
+    for="toggle1"
     onClick={null}
     size={null}
   />
@@ -355,6 +356,7 @@ exports[`Toggle matches snapshot 1`] = `
   <label
     className="c1"
     disabled={null}
+    for="toggle1"
     onClick={null}
     size={null}
   />
