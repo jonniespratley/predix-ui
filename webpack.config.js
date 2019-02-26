@@ -9,6 +9,7 @@ const {
 
 
 const pkg = require('./package.json');
+
 const cssRules = [];
 const sassRules = [];
 const ROOT_PATH = __dirname;
@@ -73,42 +74,40 @@ const common = {
   },
   module: {
     rules: [{
-        test: /.(js|jsx)$/,
-        enforce: 'pre',
-        use: 'eslint-loader',
-        include: [config.paths.docs, config.paths.src]
-      },
-      {
-        test: /\.md$/,
-        use: ['catalog/loader', 'raw-loader']
-      },
-      {
-        test: /\.svg$/,
-        use: [{
-          loader: 'svg-inline-loader',
-          options: {
-            classPrefix: false,
-            idPrefix: false
-          }
-        }]
-      },
-      {
-        test: /\.(jpg|png)$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 10000
-          }
+      test: /.(js|jsx)$/,
+      enforce: 'pre',
+      use: 'eslint-loader',
+      include: [config.paths.docs, config.paths.src]
+    },
+    {
+      test: /\.md$/,
+      use: ['catalog/loader', 'raw-loader']
+    },
+    {
+      test: /\.svg$/,
+      use: [{
+        loader: 'svg-inline-loader',
+        options: {
+          classPrefix: false,
+          idPrefix: false
+        }
+      }]
+    },
+    {
+      test: /\.(jpg|png)$/,
+      use: {
+        loader: 'url-loader',
+        options: {
+          limit: 10000
         }
       }
+    }
     ]
   }
 };
 
 const siteCommon = {
   plugins: [
-    extractCss,
-    extractSass,
     new HtmlWebpackPlugin({
       template: require('html-webpack-template'), // eslint-disable-line global-require
       // template: './catalog/index.ejs',
@@ -142,29 +141,24 @@ const dev = merge(common, siteCommon, {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"development"'
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new Jarvis({
-      port: 1337
-    }),
-    extractCss,
-    extractSass
+    new webpack.HotModuleReplacementPlugin()
   ],
   module: {
     rules: [{
-        test: /.(js|jsx)$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            cacheDirectory: true
-          }
-        },
-        include: [
-          config.paths.docs,
-          config.paths.src
-        ]
+      test: /.(js|jsx)$/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          cacheDirectory: true
+        }
       },
-      cssRules,
-      sassRules
+      include: [
+        config.paths.docs,
+        config.paths.src
+      ]
+    },
+    cssRules,
+    sassRules
     ]
   },
   devServer: {
@@ -189,9 +183,6 @@ const ghPages = merge(common, siteCommon, {
     chunkFilename: '[chunkhash].js'
   },
   plugins: [
-    new CleanWebpackPlugin(['gh-pages'], {
-      verbose: false
-    }),
     // new ExtractTextPlugin('[name].[chunkhash].css'),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
@@ -264,6 +255,7 @@ const distCommon = {
   resolve: common.resolve,
   output: {
     path: config.paths.dist,
+    libraryExport: 'default',
     libraryTarget: pkg.config.libraryTarget,
     library: pkg.config.library
   },

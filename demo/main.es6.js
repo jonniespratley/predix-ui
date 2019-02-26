@@ -7,9 +7,6 @@ const {
   Notification
 } = PxReact;
 
-console.log('Component', Component);
-console.log('PxReact', PxReact);
-
 const navItems = [
   {
     id: 'home', path: '/', label: 'Home', icon: 'px-fea:home'
@@ -47,7 +44,7 @@ const App = () => (
       title={dashboardData.title}
       items={dashboardData.navItems}
     />
-    <div className="u-">
+    <div className="u-p">
       <br />
       <Notification
         type="info"
@@ -59,10 +56,17 @@ const App = () => (
       </Notification>
       <br />
 
+      <br />
       <Card headerText="My Card">
         This is the main content area.
         <Button>Label</Button>
       </Card>
+      <br />
+
+      <Card headerText="My Card">
+        This is the main content area.
+      </Card>
+
     </div>
   </div>
 );
