@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 
-import Tree from './';
+import Tree from './Tree';
 import Grid from '../Grid';
 import TreeNode from './TreeNode';
 import UiTree from './UiTree';
@@ -300,7 +300,8 @@ class ExampleApp extends React.Component {
           <pre>{JSON.stringify(this.state.tree, null, '  ')}</pre>
         </div>
 
-        <style>{`
+        <style>
+{`
           .is-active {
             color: blue;
           }
@@ -333,4 +334,3 @@ storiesOf('Components / Tree', module)
       data={mockNode}
     />
   ));
-

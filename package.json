@@ -26,7 +26,7 @@
     "catalog-build": "catalog build",
     "plop": "./node_modules/.bin/plop",
     "storybook": "NODE_ENV=dev start-storybook -p 8181 -c .storybook",
-    "storybook:build": "build-storybook -c .storybook -o gh-pages/storybook",
+    "storybook:build": "build-storybook -c .storybook -o gh-pages",
     "docs": "esdoc",
     "dist:icons": "node ./tools/icons-optimize-and-fix.js",
     "start": "webpack-dev-server --env dev",
