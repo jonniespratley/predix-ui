@@ -1,13 +1,14 @@
 const path = require('path');
-const glob = require('glob');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SystemBellPlugin = require('system-bell-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const PurifyCSSPlugin = require('purifycss-webpack');
 const Jarvis = require('webpack-jarvis');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
+
 const pkg = require('./package.json');
 
 const ROOT_PATH = __dirname;
@@ -24,7 +25,6 @@ const config = {
   library: pkg.name
 };
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const analyzeBundle = new BundleAnalyzerPlugin({
   analyzerMode: 'static',
@@ -90,7 +90,7 @@ const sassRules = {
         localIdentName: '[path]___[name]___[local]___[hash:base64:5]'
       }
     },
-      /* {
+    /* {
         loader: 'postcss-loader',
         options: {
           sourceMap: true
@@ -178,10 +178,7 @@ const common = {
       }
     }
     ]
-  },
-  plugins: [
-    new SystemBellPlugin()
-  ]
+  }
 };
 
 const siteCommon = {
@@ -271,25 +268,21 @@ const ghPages = merge(common, siteCommon, {
     new CleanWebpackPlugin(['gh-pages'], {
       verbose: false
     }),
-    new ExtractTextPlugin('[name].[chunkhash].css'),
+    // new ExtractTextPlugin('[name].[chunkhash].css'),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
+    })
+
+    /* new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: ({
         resource
       }) => (
-        resource &&
-        resource.indexOf('node_modules') >= 0 &&
-        resource.match(/.(js|jsx)$/)
+        resource
+        && resource.indexOf('node_modules') >= 0
+        && resource.match(/.(js|jsx)$/)
       )
-    })
+    }) */
   ],
   module: {
     rules: [
@@ -343,6 +336,7 @@ const externals = {
 
 const distCommon = {
   devtool: 'source-map',
+  mode: 'production',
   resolve: common.resolve,
   output: {
     path: config.paths.dist,
@@ -357,15 +351,11 @@ const distCommon = {
       test: /.(js|jsx)$/,
       use: 'babel-loader',
       include: config.paths.src
-    },
-    sassRules,
-    cssRules
+    }
     ]
   },
   plugins: [
     new SystemBellPlugin(),
-    extractCss,
-    extractSass,
     analyzeBundle
   ]
 };
@@ -378,17 +368,13 @@ const dist = merge(distCommon, {
 
 const distMin = merge(distCommon, {
   devtool: 'source-map',
+  optimization: {
+    minimize: true
+  },
   output: {
     filename: `${config.filename}.min.js`
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    })
-  ]
+  plugins: []
 });
 
 // This bundle has styled components.
