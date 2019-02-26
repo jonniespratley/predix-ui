@@ -1,98 +1,42 @@
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-injectGlobal`
+const FONT_URL = '//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0';
+
+export default createGlobalStyle`
 
 @font-face {
   font-family: "GE Inspira Sans";
   font-weight: normal;
   font-style: normal;
-  src: url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans.eot");
-  src: url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans.eot?#iefix") format("embedded-opentype"), url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans.woff") format("woff"), url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans.ttf") format("truetype"), url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans.svg#GE Inspira Sans") format("svg");
+  src: url("${FONT_URL}/GEInspiraSans.eot");
+  src: url("${FONT_URL}/GEInspiraSans.eot?#iefix") format("embedded-opentype"), url("${FONT_URL}/GEInspiraSans.woff") format("woff"), url("${FONT_URL}/GEInspiraSans.ttf") format("truetype"), url("${FONT_URL}/GEInspiraSans.svg#GE Inspira Sans") format("svg");
 }
 
 @font-face {
   font-family: "GE Inspira Sans";
   font-weight: normal;
   font-style: italic;
-  src: url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans-Italic.eot");
-  src: url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans-Italic.eot?#iefix") format("embedded-opentype"), url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans-Italic.woff") format("woff"), url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans-Italic.ttf") format("truetype"), url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans-Italic.svg#GE Inspira Sans") format("svg");
+  src: url("${FONT_URL}/GEInspiraSans-Italic.eot");
+  src: url("${FONT_URL}/GEInspiraSans-Italic.eot?#iefix") format("embedded-opentype"), url("${FONT_URL}/GEInspiraSans-Italic.woff") format("woff"), url("${FONT_URL}/GEInspiraSans-Italic.ttf") format("truetype"), url("${FONT_URL}/GEInspiraSans-Italic.svg#GE Inspira Sans") format("svg");
 }
 
 @font-face {
   font-family: "GE Inspira Sans";
   font-weight: bold;
   font-style: normal;
-  src: url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans-Bold.eot");
-  src: url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans-Bold.eot?#iefix") format("embedded-opentype"), url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans-Bold.woff") format("woff"), url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans-Bold.ttf") format("truetype"), url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans-Bold.svg#GE Inspira Sans") format("svg");
+  src: url("${FONT_URL}/GEInspiraSans-Bold.eot");
+  src: url("${FONT_URL}/GEInspiraSans-Bold.eot?#iefix") format("embedded-opentype"), url("${FONT_URL}/GEInspiraSans-Bold.woff") format("woff"), url("${FONT_URL}/GEInspiraSans-Bold.ttf") format("truetype"), url("${FONT_URL}/GEInspiraSans-Bold.svg#GE Inspira Sans") format("svg");
 }
 
 @font-face {
   font-family: "GE Inspira Sans";
   font-weight: bold;
   font-style: italic;
-  src: url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans-BoldItalic.eot");
-  src: url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans-BoldItalic.eot?#iefix") format("embedded-opentype"), url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans-BoldItalic.woff") format("woff"), url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans-BoldItalic.ttf") format("truetype"), url("//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0/GEInspiraSans-BoldItalic.svg#GE Inspira Sans") format("svg");
+  src: url("${FONT_URL}/GEInspiraSans-BoldItalic.eot");
+  src: url("${FONT_URL}/GEInspiraSans-BoldItalic.eot?#iefix") format("embedded-opentype"), url("${FONT_URL}/GEInspiraSans-BoldItalic.woff") format("woff"), url("${FONT_URL}/GEInspiraSans-BoldItalic.ttf") format("truetype"), url("${FONT_URL}/GEInspiraSans-BoldItalic.svg#GE Inspira Sans") format("svg");
 }
 
- 
-.weight--normal {
-  font-weight: 400 !important;
-}
-
-.weight--bold {
-  font-weight: 600 !important;
-}
-
- 
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-
-b,
-strong {
-  font-weight: bold;
-}
-
-dfn {
-  font-style: italic;
-}
-
-mark {
-  background: #ff0;
-  color: #000;
-}
-
-small {
-  font-size: 80%;
-}
- 
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-
-
-/** Font weights */
-.weight--normal {
-  font-weight: 400 !important;
-}
-
-.weight--bold {
-  font-weight: 600 !important;
-}
+.weight--normal{font-weight:400 !important}.weight--bold{font-weight:600 !important}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}.weight--normal{font-weight:400 !important}.weight--bold{font-weight:600 !important}
 
 :root {
   --px-base-text-color: #2c404c;
@@ -764,11 +708,10 @@ sub {
   --px-gauge-needle-color: #2c404c;
 }
 
-
 html {
   font-family: "GE Inspira Sans", sans-serif;
   font-size: 15px;
   background-color: var(--px-base-background-color);
+  color: var(--px-base-color);
 }
-
 `;

@@ -115,9 +115,8 @@ class PopperContent extends React.Component {
     this.getContainerNode().appendChild(this._element);
     this.renderIntoSubtree();
     if (
-      this._element.childNodes &&
-      this._element.childNodes[0] &&
-      this._element.childNodes[0].focus
+      this._element.childNodes && this._element.childNodes[0]
+      && this._element.childNodes[0].focus
     ) {
       this._element.childNodes[0].focus();
     }
@@ -215,7 +214,7 @@ class PopperContent extends React.Component {
 }
 
 PopperContent.childContextTypes = {
-  popperManager: PropTypes.object.isRequired
+  popperManager: PropTypes.shape.isRequired
 };
 
 PopperContent.defaultProps = {

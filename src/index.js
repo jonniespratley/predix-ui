@@ -1,3 +1,1 @@
-import px from './components/px';
-
-module.exports = px;
+export { default } from './components/px';

@@ -1,8 +1,8 @@
-import './styles';
+import GlobalStyles from './styles';
 import AppHeader from './AppHeader';
 import AppNav from './AppNav';
-import AppNavItem from './AppNav/px-app-nav-item';
-import AppNavSubGroup from './AppNav/px-app-nav-sub-group';
+import AppNavItem from './AppNav/AppNavItem';
+import AppNavSubGroup from './AppNav/AppNavSubGroup';
 import Accordion from './Accordion';
 import AlertMessage from './AlertMessage';
 import AlertLabel from './AlertLabel';
@@ -35,7 +35,7 @@ import PopoverArrow from './Popover/PopoverArrow';
 import PredixSvgLogo from './BrandingBar/px-predix-svg-logo';
 import ProgressBar from './ProgressBar';
 import Spinner from './Spinner';
-import TableView from './TableView';
+import TableView from './TableView/TableView';
 import TableRow from './TableView/TableRow';
 import Tabs from './Tabs';
 import Tab from './Tabs/Tab';
@@ -44,7 +44,9 @@ import TreeNode from './Tree/TreeNode';
 import Tile from './Tile';
 import ViewHeader from './ViewHeader';
 import Notification from './Notification';
-import Flex from '../../styles/flex';
+import Flex from './Flex';
+import LightTheme from './Theme/LightTheme';
+import DarkTheme from './Theme/DarkTheme';
 
 /**
  * @access public
@@ -52,7 +54,10 @@ import Flex from '../../styles/flex';
  * const {AppNav} = px;
  *
  */
-const px = {
+export default {
+  GlobalStyles,
+  LightTheme,
+  DarkTheme,
   // Theme,
   Input,
   Select,
@@ -102,4 +107,4 @@ const px = {
   Toggle
 };
 
-module.exports = px;
+// module.exports = px;

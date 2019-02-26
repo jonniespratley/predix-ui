@@ -3,7 +3,6 @@ cache:
   directories:
     - ~/.npm
 node_js:
-  - '9'
   - '8'
 script:
 - yarn lint

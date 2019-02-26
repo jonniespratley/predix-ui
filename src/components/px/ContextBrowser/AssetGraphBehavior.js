@@ -8,6 +8,7 @@ const assetGraph = options => (new AssetGraph(options));
 
 export default class AssetGraphBehavior {
   items = null;
+
   keys = {
     id: 'id',
     label: 'label',

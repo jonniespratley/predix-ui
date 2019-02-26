@@ -1,5 +1,5 @@
 const { Component } = React;
-const { render } = ReactDOM;
+
 const {
   AppNav,
   Button,
@@ -35,7 +35,7 @@ const dashboardData = {
   ]
 };
 
-  /**
+/**
    * Example App
    */
 const App = () => (
@@ -44,7 +44,7 @@ const App = () => (
       title={dashboardData.title}
       items={dashboardData.navItems}
     />
-    <div className="u-">
+    <div className="u-p">
       <br />
       <Notification
         type="info"
@@ -56,11 +56,19 @@ const App = () => (
       </Notification>
       <br />
 
+      <br />
+      <Card headerText="My Card">
+        This is the main content area.
+        <Button>Label</Button>
+      </Card>
+      <br />
+
       <Card headerText="My Card">
         This is the main content area.
       </Card>
+
     </div>
   </div>
 );
 
-render(<App />, document.querySelector('#rootNode'));
+ReactDOM.render(<App />, document.querySelector('#rootNode'));

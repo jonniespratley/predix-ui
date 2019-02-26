@@ -1,15 +1,17 @@
 const path = require('path');
-const glob = require('glob');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SystemBellPlugin = require('system-bell-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const PurifyCSSPlugin = require('purifycss-webpack');
-const Jarvis = require('webpack-jarvis');
+const {
+  BundleAnalyzerPlugin
+} = require('webpack-bundle-analyzer');
+
+
 const pkg = require('./package.json');
 
+const cssRules = [];
+const sassRules = [];
 const ROOT_PATH = __dirname;
 
 const config = {
@@ -24,7 +26,6 @@ const config = {
   library: pkg.name
 };
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const analyzeBundle = new BundleAnalyzerPlugin({
   analyzerMode: 'static',
@@ -35,82 +36,6 @@ const analyzeBundle = new BundleAnalyzerPlugin({
   statsFilename: 'stats.json',
   logLevel: 'info'
 });
-
-
-const EXTRACT_CSS = (process.env.EXTRACT_CSS === true);
-
-
-const extractCss = new ExtractTextPlugin({
-  filename: '[name].css',
-  // disable: EXTRACT_CSS,
-  allChunks: true
-});
-
-const extractSass = new ExtractTextPlugin({
-  filename: process.env.NODE_ENV === 'production' ? `${pkg.name}.min.css` : `${pkg.name}.css`,
-  // disable: process.env.NODE_ENV !== 'production',
-  allChunks: true
-});
-
-/**
- * CSS Rules
- */
-const cssRules = {
-  test: /\.module.css$/,
-  use: extractCss.extract({
-    fallback: 'style-loader',
-    // resolve-url-loader may be chained before sass-loader if necessary
-    use: [{
-      loader: 'css-loader',
-      options: {
-        importLoaders: 1,
-        modules: true,
-        sourceMap: true,
-        camelCase: true
-      }
-    }]
-  })
-};
-
-
-/**
- * Sass Rules
- */
-const sassRules = {
-  test: /\.s(a|c)ss$/,
-  use: extractSass.extract({
-    fallback: 'style-loader',
-    use: [{
-      loader: 'css-loader',
-      options: {
-        modules: false,
-        importLoaders: 1,
-        minimize: true,
-        sourceMap: true,
-        localIdentName: '[path]___[name]___[local]___[hash:base64:5]'
-      }
-    },
-      /* {
-        loader: 'postcss-loader',
-        options: {
-          sourceMap: true
-        }
-      }, */
-    {
-      loader: 'sass-loader',
-      options: {
-        sourceMap: true,
-        importer: require('node-sass-import-once'),
-        importOnce: {
-          index: true,
-          css: true,
-          bower: true
-        }
-      }
-    }
-    ]
-  })
-};
 
 
 // https://github.com/webpack-contrib/svg-inline-loader
@@ -149,7 +74,7 @@ const common = {
   },
   module: {
     rules: [{
-      test: /\.js$/,
+      test: /.(js|jsx)$/,
       enforce: 'pre',
       use: 'eslint-loader',
       include: [config.paths.docs, config.paths.src]
@@ -178,16 +103,11 @@ const common = {
       }
     }
     ]
-  },
-  plugins: [
-    new SystemBellPlugin()
-  ]
+  }
 };
 
 const siteCommon = {
   plugins: [
-    extractCss,
-    extractSass,
     new HtmlWebpackPlugin({
       template: require('html-webpack-template'), // eslint-disable-line global-require
       // template: './catalog/index.ejs',
@@ -221,16 +141,11 @@ const dev = merge(common, siteCommon, {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"development"'
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new Jarvis({
-      port: 1337
-    }),
-    extractCss,
-    extractSass
+    new webpack.HotModuleReplacementPlugin()
   ],
   module: {
     rules: [{
-      test: /\.js$/,
+      test: /.(js|jsx)$/,
       use: {
         loader: 'babel-loader',
         options: {
@@ -268,35 +183,28 @@ const ghPages = merge(common, siteCommon, {
     chunkFilename: '[chunkhash].js'
   },
   plugins: [
-    new CleanWebpackPlugin(['gh-pages'], {
-      verbose: false
-    }),
-    new ExtractTextPlugin('[name].[chunkhash].css'),
+    // new ExtractTextPlugin('[name].[chunkhash].css'),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
+    })
+
+    /* new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: ({
         resource
       }) => (
-        resource &&
-        resource.indexOf('node_modules') >= 0 &&
-        resource.match(/\.js$/)
+        resource
+        && resource.indexOf('node_modules') >= 0
+        && resource.match(/.(js|jsx)$/)
       )
-    })
+    }) */
   ],
   module: {
     rules: [
       cssRules,
       sassRules,
       {
-        test: /\.js$/,
+        test: /.(js|jsx)$/,
         use: 'babel-loader',
         include: [
           config.paths.docs,
@@ -343,9 +251,11 @@ const externals = {
 
 const distCommon = {
   devtool: 'source-map',
+  mode: 'production',
   resolve: common.resolve,
   output: {
     path: config.paths.dist,
+    libraryExport: 'default',
     libraryTarget: pkg.config.libraryTarget,
     library: pkg.config.library
   },
@@ -354,18 +264,13 @@ const distCommon = {
   stats: 'verbose',
   module: {
     rules: [{
-      test: /\.js$/,
+      test: /.(js|jsx)$/,
       use: 'babel-loader',
       include: config.paths.src
-    },
-    sassRules,
-    cssRules
-    ]
+    }]
   },
   plugins: [
     new SystemBellPlugin(),
-    extractCss,
-    extractSass,
     analyzeBundle
   ]
 };
@@ -378,17 +283,13 @@ const dist = merge(distCommon, {
 
 const distMin = merge(distCommon, {
   devtool: 'source-map',
+  optimization: {
+    minimize: true
+  },
   output: {
     filename: `${config.filename}.min.js`
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    })
-  ]
+  plugins: []
 });
 
 // This bundle has styled components.

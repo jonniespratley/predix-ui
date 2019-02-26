@@ -1,4 +1,27 @@
 /* eslint-disable */
+/**
+ * Taken from https://github.com/developit/mitt
+ * @description
+
+  import mitt from 'mitt'
+
+  const emitter = mitt()
+
+  // listen to an event
+  emitter.on('foo', e => console.log('foo', e) )
+
+  // listen to all events
+  emitter.on('*', (type, e) => console.log(type, e) )
+
+  // fire an event
+  emitter.emit('foo', { a: 'b' })
+
+  // working with handler references:
+  function onFoo() {}
+  emitter.on('foo', onFoo)   // listen
+  emitter.off('foo', onFoo)  // unlisten
+ * @param {*} all 
+ */
 export default function mitt(all) {
   all = all || Object.create(null);
 
@@ -28,21 +51,21 @@ export default function mitt(all) {
     },
 
     /**
-    * Invoke all handlers for the given type.
-    * If present, `"*"` handlers are invoked after type-matched handlers.
-    *
-    * @param {String} type  The event type to invoke
-    * @param {Any} [evt]  Any value (object is recommended and powerful), passed to each handler
-    * @memberOf mitt
-    */
+     * Invoke all handlers for the given type.
+     * If present, `"*"` handlers are invoked after type-matched handlers.
+     *
+     * @param {String} type  The event type to invoke
+     * @param {Any} [evt]  Any value (object is recommended and powerful), passed to each handler
+     * @memberOf mitt
+     */
     emit(type, evt) {
       (all[type] || [])
-        .slice()
+      .slice()
         .map((handler) => {
           handler(evt);
         });
       (all['*'] || [])
-        .slice()
+      .slice()
         .map((handler) => {
           handler(type, evt);
         });
