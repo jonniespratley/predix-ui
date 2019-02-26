@@ -1,45 +1,47 @@
 import { expect } from 'chai';
 import React from 'react';
-import {shallow} from 'enzyme';
-import PxTabs from './';
+import { shallow } from 'enzyme';
+
+import Tabs from './Tabs';
 import Tab from './Tab';
+
 describe('Tabs', () => {
-  test('should render', () =>{
+  test('should render', () => {
     const wrapper = shallow(
-      <PxTabs/>
+      <Tabs />
     );
     expect(wrapper.find('.px-tabs__nav')).to.have.length(1);
   });
 
 
-  test('should change tab when selected prop changes', () =>{
+  test('should change tab when selected prop changes', () => {
     const wrapper = shallow(
-      <PxTabs selected={1}>
-        <Tab label='Tab 1' id='tab1'>This is the tab 1 content.</Tab>
-        <Tab label='Tab 2' id='tab2'>This is the tab 2 content.</Tab>
-        <Tab label='Tab 3' id='tab3'>This is the tab 3 content.</Tab>
-      </PxTabs>
+      <Tabs selected={1}>
+        <Tab label="Tab 1" id="tab1">This is the tab 1 content.</Tab>
+        <Tab label="Tab 2" id="tab2">This is the tab 2 content.</Tab>
+        <Tab label="Tab 3" id="tab3">This is the tab 3 content.</Tab>
+      </Tabs>
     );
     expect(wrapper.state().selected).to.equal(1);
-    wrapper.setProps({selected: 0});
+    wrapper.setProps({ selected: 0 });
     expect(wrapper.state().selected).to.equal(0);
-    wrapper.setProps({selected: 2});
+    wrapper.setProps({ selected: 2 });
     expect(wrapper.state().selected).to.equal(2);
   });
 
-  test('should change tab on click', () =>{
+  test('should change tab on click', () => {
     const wrapper = shallow(
-      <PxTabs>
-        <Tab label="Tab 1" id='tab1'>
+      <Tabs>
+        <Tab label="Tab 1" id="tab1">
           <p>This is the tab 1 content. </p>
         </Tab>
-        <Tab label="Tab 2" id='tab2'>
+        <Tab label="Tab 2" id="tab2">
           <p>This is the tab 2 content. </p>
         </Tab>
-        <Tab label="Tab 3" id='tab3'>
+        <Tab label="Tab 3" id="tab3">
           <p>This is the tab 3 content. </p>
         </Tab>
-      </PxTabs>
+      </Tabs>
     );
     wrapper.find('#tab2').simulate('click');
     expect(wrapper.state().selected).to.equal(1);
@@ -47,28 +49,28 @@ describe('Tabs', () => {
     expect(wrapper.state().selected).to.equal(0);
   });
 
-  test('should change selected tab to propForSelect', () =>{
+  test('should change selected tab to propForSelect', () => {
     const wrapper = shallow(
-      <PxTabs selected='tab2' propForSelect='id'>
-        <Tab label="Tab 1" id='tab1'>
+      <Tabs selected="tab2" propForSelect="id">
+        <Tab label="Tab 1" id="tab1">
           <p>This is the tab 1 content. </p>
         </Tab>
-        <Tab label="Tab 2" id='tab2'>
+        <Tab label="Tab 2" id="tab2">
           <p>This is the tab 2 content. </p>
         </Tab>
-        <Tab label="Tab 3" id='tab3'>
-        <p>This is the tab 3 content. </p>
+        <Tab label="Tab 3" id="tab3">
+          <p>This is the tab 3 content. </p>
         </Tab>
-      </PxTabs>
+      </Tabs>
     );
     expect(wrapper.state().selected).to.equal('tab2');
-    wrapper.setProps({selected: 'tab1'});
+    wrapper.setProps({ selected: 'tab1' });
     expect(wrapper.state().selected).to.equal(0);
-    wrapper.setProps({selected: 'tab3'});
+    wrapper.setProps({ selected: 'tab3' });
     expect(wrapper.state().selected).to.equal(2);
   });
-  //expect(wrapper.find('.label')).to.have.length(1);
-  //expect(wrapper.find('.delta')).to.have.length(1);
-  //expect(wrapper.find('.alpha')).to.have.length(1);
-  //expect(wrapper.contains(<div className='label'/>)).to.equal(true);
+  // expect(wrapper.find('.label')).to.have.length(1);
+  // expect(wrapper.find('.delta')).to.have.length(1);
+  // expect(wrapper.find('.alpha')).to.have.length(1);
+  // expect(wrapper.contains(<div className='label'/>)).to.equal(true);
 });

@@ -119,7 +119,7 @@ Icon.defaultProps = {
   viewBox: null,
   color: 'inherit',
   className: null,
-  style: {}
+  style: null
 };
 
 Icon.propTypes = {
@@ -128,7 +128,10 @@ Icon.propTypes = {
   viewBox: PropTypes.string,
   color: PropTypes.string,
   className: PropTypes.string,
-  style: PropTypes.func
+  style: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]))
 };
 
 export default Icon;

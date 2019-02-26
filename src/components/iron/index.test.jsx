@@ -74,14 +74,14 @@ describe('Iron Components', () => {
         <div>One</div>
         <div>Two</div>
         <div>Three</div>
-      </IronPages>);
+                              </IronPages>);
       expect(wrapper.find('.iron-selected')).toHaveLength(1);
       const tree = renderer
         .create(<IronPages selected={0}>
           <div>One</div>
           <div>Two</div>
           <div>Three</div>
-        </IronPages>)
+                </IronPages>)
         .toJSON();
       expect(tree).toMatchSnapshot();
     });
@@ -93,7 +93,7 @@ describe('Iron Components', () => {
         <div>1</div>
         <div>2</div>
         <div>3</div>
-      </IronSelector>);
+                              </IronSelector>);
       expect(wrapper.find('.iron-selected')).toHaveLength(1);
     });
   });

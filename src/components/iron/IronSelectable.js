@@ -18,26 +18,32 @@ export default class IronSelectable extends IronMultiSelectable {
     this.selected = props.selected || null;
     this.selectedAttribute = props.selectedAttribute || null;
   }
+  
   indexOf(item) {
     return this.items.indexOf(item);
   }
+
   select(value) {
     this.selected = value;
     this.selectedItem = value;
   }
+
   selectPrevious() {
     const { length } = this.items;
     const index = (Number(this._valueToIndex(this.selected)) - 1 + length) % length;
     this.select(this._indexToValue(index));
   }
+
   selectNext() {
     const index =
 			(Number(this._valueToIndex(this.selected)) + 1) % this.items.length;
     this.select(this._indexToValue(index));
   }
+
   selectIndex(index) {
     this.select(this._indexToValue(index));
   }
+
   _valueToIndex(value) {
     if (this.attrForSelected) {
       for (var i = 0, item; (item = this.items[i]); i++) {
@@ -49,6 +55,7 @@ export default class IronSelectable extends IronMultiSelectable {
       return Number(value);
     }
   }
+
   _indexToValue(index) {
     if (this.attrForSelected) {
       const item = this.items[index];
@@ -59,6 +66,7 @@ export default class IronSelectable extends IronMultiSelectable {
       return index;
     }
   }
+
   _valueForItem(item) {
     if (!item) {
       return null;
@@ -66,6 +74,7 @@ export default class IronSelectable extends IronMultiSelectable {
     const propValue = item.props[this.attrForSelected];
     return propValue != undefined ? propValue : item;
   }
+
   _valueForIndex(index) {
     if (!index) {
       return null;
@@ -73,6 +82,7 @@ export default class IronSelectable extends IronMultiSelectable {
     const propValue = this.items[this.attrForSelected];
     return propValue != undefined ? propValue : this.items[index];
   }
+
   _selectionChange() {
     this._setSelectedItem(this._selection.get());
   }

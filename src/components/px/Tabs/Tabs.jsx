@@ -85,9 +85,8 @@ class Tabs extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    if (
-      nextProps.selected !== this.props.selected ||
-      nextState.selected !== this.state.selected
+    if (nextProps.selected !== this.props.selected
+      || nextState.selected !== this.state.selected
     ) {
       return true;
     }
@@ -177,7 +176,7 @@ Tabs.defaultProps = {
 };
 
 Tabs.propTypes = {
-  selected: PropTypes.number,
+  selected: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   onChange: PropTypes.func,
   style: PropTypes.objectOf(PropTypes.string),
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),

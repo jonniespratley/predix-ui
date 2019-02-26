@@ -55,6 +55,7 @@ Tree.defaultProps = {
   selectedNode: null,
   selected: null
 };
+
 const treeItem = PropTypes.shape({
   id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   label: PropTypes.string,
@@ -62,10 +63,16 @@ const treeItem = PropTypes.shape({
 });
 
 Tree.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+  items: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]))),
   onChange: PropTypes.func,
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-  style: PropTypes.objectOf(PropTypes.string),
+  style: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ])),
   selectedNode: PropTypes.objectOf(PropTypes.string),
   selected: PropTypes.number
 };
