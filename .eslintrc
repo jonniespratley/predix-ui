@@ -25,7 +25,8 @@
     "react/sort-comp": 0,
     "react/no-multi-comp": 0,
     "template-curly-spacing": 0,
-    "react/require-extension": 0
+    "react/require-extension": 0,
+    "react/destructuring-assignment": 1
   },
   "overrides": [
     {
