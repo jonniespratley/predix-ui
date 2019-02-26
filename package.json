@@ -3,7 +3,7 @@
   "description": "px-* web components as React styled components",
   "author": "Jonnie Spratley",
   "user": "jonniespratley",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "license": "",
   "repository": {
     "type": "git",
@@ -34,7 +34,7 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:generate-output": "jest --json --outputFile=jest-test-results.json",
-    "lint": "eslint ./src --ignore-pattern ./src/**/*.stories.jsx --cache",
+    "lint": "eslint ./src",
     "test:lint": "eslint ./__tests__ ./src/**/*.test.js --cache",
     "gh-pages": "webpack --env ghPages --progress",
     "gh-pages:deploy": "npm run storybook:build && gh-pages -d gh-pages",
@@ -199,6 +199,7 @@
     "verbose": true,
     "testEnvironment": "jsdom",
     "collectCoverage": true,
+    "testURL": "http://localhost",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],

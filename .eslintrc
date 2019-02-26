@@ -24,8 +24,8 @@
     "react/jsx-filename-extension": 1,
     "react/sort-comp": 0,
     "react/no-multi-comp": 0,
-    "react/require-extension": 0,
-    "react/destructuring-assignment": 1
+    "template-curly-spacing": 0,
+    "react/require-extension": 0
   },
   "overrides": [
     {
