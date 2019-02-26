@@ -20,6 +20,16 @@ exports[`Chip should render with icon 1`] = `
 </Chip>
 `;
 
+exports[`Chip should render with selected 1`] = `
+<Chip
+  selected={true}
+>
+  <Chip__ChipContent>
+    Label
+  </Chip__ChipContent>
+</Chip>
+`;
+
 exports[`Chip should render with text 1`] = `
 <Chip
   selected={null}
