@@ -10,7 +10,7 @@ script:
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 #- npm run travis-deploy-once "npm run semantic-release"
-- yarn gh-pages
+- yarn gh-pages:deploy
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
