@@ -1,11 +1,14 @@
 const { Component } = React;
-const { render } = ReactDOM;
+
 const {
   AppNav,
   Button,
   Card,
   Notification
 } = PxReact;
+
+console.log('Component', Component);
+console.log('PxReact', PxReact);
 
 const navItems = [
   {
@@ -35,7 +38,7 @@ const dashboardData = {
   ]
 };
 
-  /**
+/**
    * Example App
    */
 const App = () => (
@@ -58,9 +61,10 @@ const App = () => (
 
       <Card headerText="My Card">
         This is the main content area.
+        <Button>Label</Button>
       </Card>
     </div>
   </div>
 );
 
-render(<App />, document.querySelector('#rootNode'));
+ReactDOM.render(<App />, document.querySelector('#rootNode'));

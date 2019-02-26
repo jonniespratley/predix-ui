@@ -1,4 +1,4 @@
-import './styles';
+import GlobalStyles from './styles';
 import AppHeader from './AppHeader';
 import AppNav from './AppNav';
 import AppNavItem from './AppNav/AppNavItem';
@@ -45,6 +45,8 @@ import Tile from './Tile';
 import ViewHeader from './ViewHeader';
 import Notification from './Notification';
 import Flex from './Flex';
+import LightTheme from './Theme/LightTheme';
+import DarkTheme from './Theme/DarkTheme';
 
 /**
  * @access public
@@ -53,6 +55,9 @@ import Flex from './Flex';
  *
  */
 export default {
+  GlobalStyles,
+  LightTheme,
+  DarkTheme,
   // Theme,
   Input,
   Select,

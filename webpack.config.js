@@ -1,16 +1,16 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SystemBellPlugin = require('system-bell-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const Jarvis = require('webpack-jarvis');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const {
+  BundleAnalyzerPlugin
+} = require('webpack-bundle-analyzer');
 
 
 const pkg = require('./package.json');
-
+const cssRules = [];
+const sassRules = [];
 const ROOT_PATH = __dirname;
 
 const config = {
@@ -35,82 +35,6 @@ const analyzeBundle = new BundleAnalyzerPlugin({
   statsFilename: 'stats.json',
   logLevel: 'info'
 });
-
-
-const EXTRACT_CSS = (process.env.EXTRACT_CSS === true);
-
-
-const extractCss = new ExtractTextPlugin({
-  filename: '[name].css',
-  // disable: EXTRACT_CSS,
-  allChunks: true
-});
-
-const extractSass = new ExtractTextPlugin({
-  filename: process.env.NODE_ENV === 'production' ? `${pkg.name}.min.css` : `${pkg.name}.css`,
-  // disable: process.env.NODE_ENV !== 'production',
-  allChunks: true
-});
-
-/**
- * CSS Rules
- */
-const cssRules = {
-  test: /\.module.css$/,
-  use: extractCss.extract({
-    fallback: 'style-loader',
-    // resolve-url-loader may be chained before sass-loader if necessary
-    use: [{
-      loader: 'css-loader',
-      options: {
-        importLoaders: 1,
-        modules: true,
-        sourceMap: true,
-        camelCase: true
-      }
-    }]
-  })
-};
-
-
-/**
- * Sass Rules
- */
-const sassRules = {
-  test: /\.s(a|c)ss$/,
-  use: extractSass.extract({
-    fallback: 'style-loader',
-    use: [{
-      loader: 'css-loader',
-      options: {
-        modules: false,
-        importLoaders: 1,
-        minimize: true,
-        sourceMap: true,
-        localIdentName: '[path]___[name]___[local]___[hash:base64:5]'
-      }
-    },
-    /* {
-        loader: 'postcss-loader',
-        options: {
-          sourceMap: true
-        }
-      }, */
-    {
-      loader: 'sass-loader',
-      options: {
-        sourceMap: true,
-        importer: require('node-sass-import-once'),
-        importOnce: {
-          index: true,
-          css: true,
-          bower: true
-        }
-      }
-    }
-    ]
-  })
-};
 
 
 // https://github.com/webpack-contrib/svg-inline-loader
@@ -149,34 +73,34 @@ const common = {
   },
   module: {
     rules: [{
-      test: /.(js|jsx)$/,
-      enforce: 'pre',
-      use: 'eslint-loader',
-      include: [config.paths.docs, config.paths.src]
-    },
-    {
-      test: /\.md$/,
-      use: ['catalog/loader', 'raw-loader']
-    },
-    {
-      test: /\.svg$/,
-      use: [{
-        loader: 'svg-inline-loader',
-        options: {
-          classPrefix: false,
-          idPrefix: false
-        }
-      }]
-    },
-    {
-      test: /\.(jpg|png)$/,
-      use: {
-        loader: 'url-loader',
-        options: {
-          limit: 10000
+        test: /.(js|jsx)$/,
+        enforce: 'pre',
+        use: 'eslint-loader',
+        include: [config.paths.docs, config.paths.src]
+      },
+      {
+        test: /\.md$/,
+        use: ['catalog/loader', 'raw-loader']
+      },
+      {
+        test: /\.svg$/,
+        use: [{
+          loader: 'svg-inline-loader',
+          options: {
+            classPrefix: false,
+            idPrefix: false
+          }
+        }]
+      },
+      {
+        test: /\.(jpg|png)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 10000
+          }
         }
       }
-    }
     ]
   }
 };
@@ -227,20 +151,20 @@ const dev = merge(common, siteCommon, {
   ],
   module: {
     rules: [{
-      test: /.(js|jsx)$/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          cacheDirectory: true
-        }
+        test: /.(js|jsx)$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true
+          }
+        },
+        include: [
+          config.paths.docs,
+          config.paths.src
+        ]
       },
-      include: [
-        config.paths.docs,
-        config.paths.src
-      ]
-    },
-    cssRules,
-    sassRules
+      cssRules,
+      sassRules
     ]
   },
   devServer: {
@@ -351,8 +275,7 @@ const distCommon = {
       test: /.(js|jsx)$/,
       use: 'babel-loader',
       include: config.paths.src
-    }
-    ]
+    }]
   },
   plugins: [
     new SystemBellPlugin(),
