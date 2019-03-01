@@ -35,6 +35,7 @@ class IronCollapse extends React.Component {
     });
     return false;
   }
+
   /* eslint-ignore-stop */
   _calcSize() {
     return `${this.base.getBoundingClientRect()[this.dimension]}px`;
@@ -156,19 +157,21 @@ class IronCollapse extends React.Component {
         aria-hidden={!opened}
         aria-expanded={opened}
       >
-        {children}
-        <style>{`
-        .iron-collapse {
-          display: block;
-          -webkit-transition-duration: 300ms;
-          -moz-transition-duration: 300ms;
-          transition-duration: 300ms;
-          overflow: visible;
-        }
-        .iron-collapse:not(.iron-collapse-opened) {
-          overflow: hidden;
-        }
-      `}</style>
+        {opened && children}
+        <style>
+          {`
+          .iron-collapse {
+            display: block;
+            -webkit-transition-duration: 300ms;
+            -moz-transition-duration: 300ms;
+            transition-duration: 300ms;
+            overflow: visible;
+          }
+          .iron-collapse:not(.iron-collapse-opened) {
+            overflow: hidden;
+          }
+        `}
+        </style>
       </div>
     );
   }
