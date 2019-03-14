@@ -46,7 +46,7 @@ You can get started quickly with this starter project.
 
 ```html
 <div class="glitch-embed-wrap" style="height: 450px; width: 100%;">
-  <iframe src="https://glitch.com/embed/#!/embed/jps-react-predix-ui-starter?path=src/components/App/index.js&previewSize=100" alt="jps-react-predix-ui-starter on glitch" style="height: 100%; width: 100%; border: 0;"></iframe>
+  <iframe src="https://glitch.com/embed/#!/embed/jps-react-predix-ui-starter?path=src/components/App/Popover.jsx&previewSize=100" alt="jps-react-predix-ui-starter on glitch" style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
 ```
 

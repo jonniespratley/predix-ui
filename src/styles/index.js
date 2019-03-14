@@ -1,18 +1,10 @@
-/* eslint-disable */
 
-const $baseFontSize = '15px';
-
-function calculateRem($size) {
-  const $remSize = $size / $baseFontSize;
-  const $remUnit = '1rem';
-  return $remSize * $remUnit;
-}
-
-function remToPx($size) {
-  const $remUnit = '1rem';
-  return ($rem / $remUnit) * $baseFontSize;
-}
-
-const helpers = { calculateRem, remToPx };
-
-export default helpers;
+const sizes = {
+  tiny: '-0.33333rem',
+  small: '-0.66667rem',
+  large: '',
+  huge: ''
+};
+export default {
+  sizes
+};

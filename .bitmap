@@ -9,9 +9,9 @@
                 "name": "README.md"
             },
             {
-                "relativePath": "src/components/px/AppNav/index.js",
+                "relativePath": "src/components/px/AppNav/Popover.jsx",
                 "test": false,
-                "name": "index.js"
+                "name": "Popover.jsx"
             },
             {
                 "relativePath": "src/components/px/AppNav/index.stories.jsx",
@@ -44,7 +44,7 @@
                 "name": "spec.test.jsx"
             }
         ],
-        "mainFile": "src/components/px/AppNav/index.js",
+        "mainFile": "src/components/px/AppNav/Popover.jsx",
         "origin": "AUTHORED",
         "exported": true
     },
@@ -61,9 +61,9 @@
                 "name": "README.md"
             },
             {
-                "relativePath": "src/components/px/Grid/index.js",
+                "relativePath": "src/components/px/Grid/Popover.jsx",
                 "test": false,
-                "name": "index.js"
+                "name": "Popover.jsx"
             },
             {
                 "relativePath": "src/components/px/Grid/index.stories.jsx",
@@ -76,7 +76,7 @@
                 "name": "index.test.jsx"
             }
         ],
-        "mainFile": "src/components/px/Grid/index.js",
+        "mainFile": "src/components/px/Grid/Popover.jsx",
         "origin": "AUTHORED",
         "exported": true
     },
@@ -1978,9 +1978,9 @@
                 "name": "zoom_toolbar_22x22.svg"
             },
             {
-                "relativePath": "src/components/px/IconSet/index.js",
+                "relativePath": "src/components/px/IconSet/Popover.jsx",
                 "test": false,
-                "name": "index.js"
+                "name": "Popover.jsx"
             },
             {
                 "relativePath": "src/components/px/IconSet/index.stories.jsx",
@@ -2038,7 +2038,7 @@
                 "name": "spec.test.jsx"
             }
         ],
-        "mainFile": "src/components/px/IconSet/index.js",
+        "mainFile": "src/components/px/IconSet/Popover.jsx",
         "origin": "AUTHORED",
         "exported": true
     },
@@ -2055,9 +2055,9 @@
                 "name": "README.md"
             },
             {
-                "relativePath": "src/components/px/Card/index.js",
+                "relativePath": "src/components/px/Card/Popover.jsx",
                 "test": false,
-                "name": "index.js"
+                "name": "Popover.jsx"
             },
             {
                 "relativePath": "src/components/px/Card/index.stories.jsx",
@@ -2070,7 +2070,7 @@
                 "name": "index.test.jsx"
             }
         ],
-        "mainFile": "src/components/px/Card/index.js",
+        "mainFile": "src/components/px/Card/Popover.jsx",
         "origin": "AUTHORED",
         "exported": true
     },
@@ -2092,9 +2092,9 @@
                 "name": "index.test.jsx.snap"
             },
             {
-                "relativePath": "src/components/px/Button/index.js",
+                "relativePath": "src/components/px/Button/Popover.jsx",
                 "test": false,
-                "name": "index.js"
+                "name": "Popover.jsx"
             },
             {
                 "relativePath": "src/components/px/Button/index.stories.jsx",
@@ -2107,7 +2107,7 @@
                 "name": "index.test.jsx"
             }
         ],
-        "mainFile": "src/components/px/Button/index.js",
+        "mainFile": "src/components/px/Button/Popover.jsx",
         "trackDir": "src/components/px/Button",
         "origin": "AUTHORED",
         "exported": true
@@ -2120,9 +2120,9 @@
                 "name": "Flex.jsx"
             },
             {
-                "relativePath": "src/components/px/Flex/index.js",
+                "relativePath": "src/components/px/Flex/Popover.jsx",
                 "test": false,
-                "name": "index.js"
+                "name": "Popover.jsx"
             },
             {
                 "relativePath": "src/components/px/Flex/index.test.jsx",
@@ -2130,7 +2130,7 @@
                 "name": "index.test.jsx"
             }
         ],
-        "mainFile": "src/components/px/Flex/index.js",
+        "mainFile": "src/components/px/Flex/Popover.jsx",
         "origin": "AUTHORED",
         "exported": true
     },
@@ -2142,12 +2142,12 @@
                 "name": "IronCollapse.jsx"
             },
             {
-                "relativePath": "src/components/iron/IronCollapse/index.js",
+                "relativePath": "src/components/iron/IronCollapse/Popover.jsx",
                 "test": false,
-                "name": "index.js"
+                "name": "Popover.jsx"
             }
         ],
-        "mainFile": "src/components/iron/IronCollapse/index.js",
+        "mainFile": "src/components/iron/IronCollapse/Popover.jsx",
         "origin": "AUTHORED",
         "exported": true
     },

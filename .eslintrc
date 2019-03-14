@@ -36,7 +36,9 @@
       ],
       "excludedFiles": [
         "src/**/*.stories.js",
-        "src/**/*.test.js"
+        "src/**/*.test.js",
+        "src/**/*.stories.jsx",
+        "src/**/*.test.jsx"
       ]
     }
   ]
