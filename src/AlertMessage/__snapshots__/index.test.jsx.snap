@@ -118,7 +118,7 @@ exports[`AlertMessage error matches snapshot 1`] = `
       className="c3"
     >
       <strong>
-         
+        null
       </strong>
       <span />
       <div>
@@ -250,7 +250,7 @@ exports[`AlertMessage healthy matches snapshot 1`] = `
       className="c3"
     >
       <strong>
-         
+        null
       </strong>
       <span />
       <div>
@@ -369,7 +369,7 @@ exports[`AlertMessage hidden - matches snapshot 1`] = `
       className="c3"
     >
       <strong>
-         
+        null
       </strong>
       <span />
       <div />
@@ -499,7 +499,7 @@ exports[`AlertMessage important matches snapshot 1`] = `
       className="c3"
     >
       <strong>
-         
+        null
       </strong>
       <span />
       <div>
@@ -631,7 +631,7 @@ exports[`AlertMessage information matches snapshot 1`] = `
       className="c3"
     >
       <strong>
-         
+        null
       </strong>
       <span />
       <div>
@@ -763,7 +763,7 @@ exports[`AlertMessage matches snapshot 1`] = `
       className="c3"
     >
       <strong>
-         
+        null
       </strong>
       <span />
       <div />
@@ -893,7 +893,7 @@ exports[`AlertMessage success matches snapshot 1`] = `
       className="c3"
     >
       <strong>
-         
+        null
       </strong>
       <span />
       <div>
@@ -1025,7 +1025,7 @@ exports[`AlertMessage warning matches snapshot 1`] = `
       className="c3"
     >
       <strong>
-         
+        null
       </strong>
       <span />
       <div>

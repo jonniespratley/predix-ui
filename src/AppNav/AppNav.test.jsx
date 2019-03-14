@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import React from 'react';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
-import AppNav from '.';
+import AppNav from './AppNav';
 import AppNavItem from './AppNavItem';
 
 const navItems = [

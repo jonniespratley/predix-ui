@@ -3,7 +3,7 @@ import sinon from 'sinon';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import Input from '.';
+import Input from './Input';
 import Label from './Label';
 import Textarea from './Textarea';
 import Select from './Select';
