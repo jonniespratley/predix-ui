@@ -10,16 +10,24 @@ npm-debug.log
 .log
 bower_components
 stats.json
-js-docs
+
 temp
 .tmp
 esdocs
 .idea
 .DS_Store
 *.log
-docs
+
 package-lock.json
 #__snapshots__
 
 jest-test-results.json
 tmp
+test-report.html
+
+
+js-docs
+docs
+_docz
+.docz
+_docs

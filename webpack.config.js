@@ -149,7 +149,8 @@ const dev = merge(common, siteCommon, {
       use: {
         loader: 'babel-loader',
         options: {
-          cacheDirectory: true
+          cacheDirectory: true,
+          babelrc: true
         }
       },
       include: [
