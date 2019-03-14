@@ -3,10 +3,10 @@ import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 import sinon from 'sinon';
 
-import Accordion from './';
+import Accordion from './Accordion';
 
 describe('Accordion', () => {
-  test('should render open by default', () =>{
+  test('should render open by default', () => {
     const wrapper = shallow(
       <Accordion headerText="Header Caption" status="Last Updated: 3 Days Ago">
         <p>Accordion content goes here.</p>
@@ -14,22 +14,22 @@ describe('Accordion', () => {
     );
     expect(wrapper.find('.px-accordion__header').exists());
     expect(wrapper.state().open === true);
-    wrapper.setProps({open: false})
+    wrapper.setProps({ open: false });
     expect(wrapper.state().open === false);
     const tree = renderer.create(
       <Accordion headerText="Header Caption" status="Last Updated: 3 Days Ago">
         <p>Accordion content goes here.</p>
       </Accordion>
     ).toJSON();
-      expect(tree).toMatchSnapshot();
+    expect(tree).toMatchSnapshot();
   });
 
-  test('should toggle open/closed', () =>{
-    let isOpen = true;
-    let onCollapsed = sinon.spy();
-    let onExpanded = sinon.spy();
+  test('should toggle open/closed', () => {
+    const isOpen = true;
+    const onCollapsed = sinon.spy();
+    const onExpanded = sinon.spy();
     const wrapper = shallow(
-      <Accordion headerText='Should Toggle' open={isOpen} onCollapsed={onCollapsed} onExpanded={onExpanded}>
+      <Accordion headerText="Should Toggle" open={isOpen} onCollapsed={onCollapsed} onExpanded={onExpanded}>
         <p>Accordion content goes here.</p>
       </Accordion>
     );
@@ -44,9 +44,9 @@ describe('Accordion', () => {
   });
 
   test('can be disabled', () => {
-    let spy = sinon.spy();
+    const spy = sinon.spy();
     const wrapper = shallow(
-      <Accordion headerText='Should Toggle' onCollapsed={spy} disabled>
+      <Accordion headerText="Should Toggle" onCollapsed={spy} disabled>
         <p>Accordion content goes here.</p>
       </Accordion>
     );

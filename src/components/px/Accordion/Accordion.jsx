@@ -18,7 +18,7 @@ const svgStyles = {
   fill: 'none',
   stroke: 'currentColor'
 };
-const CloseIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron" style={styles} ><svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" style={svgStyles}><g id="px-utl-chevron-right"><path strokeLinejoin="round" d="M6.2 13.2l5.4-5.5-5.5-5.5" /></g></svg></i>);
+const CloseIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron" style={styles}><svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" style={svgStyles}><g id="px-utl-chevron-right"><path strokeLinejoin="round" d="M6.2 13.2l5.4-5.5-5.5-5.5" /></g></svg></i>);
 const OpenIcon = () => (<i className="px-icon px-icon-utl px-utl-chevron-down" style={styles}><svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" style={svgStyles}><g id="px-utl-chevron"><path d="M2.4 6.2l5.5 5.5 5.5-5.5" /></g></svg></i>);
 
 const AccordionHeader = styled.div`
@@ -146,7 +146,7 @@ class Accordion extends React.Component {
   }
 
   render() {
-    const { open } = this.state;
+    const { closed } = this.state;
     const {
       headerText,
       headerValue,
@@ -159,6 +159,7 @@ class Accordion extends React.Component {
       children
     } = this.props;
     const { action } = icons;
+    const open = !closed;
 
     const baseClasses = classNames(
       'px-accordion',
@@ -170,26 +171,30 @@ class Accordion extends React.Component {
     return (
       <AccordionContainer className={baseClasses}>
         <AccordionHeader disabled={disabled} className={headerClasses}>
-          <Flex item onClick={this.onClick} >
+          <Flex item onClick={this.onClick}>
             <span>
-              {open && <OpenIcon />}
-              {!open && <CloseIcon />}
+              {!closed && <OpenIcon />}
+              {closed && <CloseIcon />}
             </span>
             <AccordionHeaderText>{headerText || headerValue}</AccordionHeaderText>
           </Flex>
           <Flex middle>
             {status && <AccordionStatus>{status}</AccordionStatus>}
-            {showAction &&
+            {showAction
+            && (
             <AccordionAction onClick={onActionClick}>
               <Icon icon={action} size={16} />
-            </AccordionAction>}
-            {actions &&
+            </AccordionAction>
+            )}
+            {actions
+            && (
             <AccordionAction>
               {actions()}
-            </AccordionAction>}
+            </AccordionAction>
+            )}
           </Flex>
         </AccordionHeader>
-        <IronCollapse opened={open}>
+        <IronCollapse opened={!closed}>
           <AccordionBody>
             {children}
           </AccordionBody>
@@ -206,6 +211,7 @@ Accordion.propTypes = {
   headerValue: PropTypes.string,
   status: PropTypes.string,
   opened: PropTypes.bool,
+  closed: PropTypes.bool,
   disabled: PropTypes.bool,
   actions: PropTypes.node,
   showAction: PropTypes.bool,
@@ -225,6 +231,7 @@ Accordion.defaultProps = {
   headerValue: null,
   status: null,
   opened: true,
+  closed: null,
   disabled: null,
   actions: null,
   showAction: null,

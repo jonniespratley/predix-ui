@@ -157,17 +157,17 @@ exports[`Accordion should render open by default 1`] = `
     </div>
     <style>
       
-        .iron-collapse {
-          display: block;
-          -webkit-transition-duration: 300ms;
-          -moz-transition-duration: 300ms;
-          transition-duration: 300ms;
-          overflow: visible;
-        }
-        .iron-collapse:not(.iron-collapse-opened) {
-          overflow: hidden;
-        }
-      
+          .iron-collapse {
+            display: block;
+            -webkit-transition-duration: 300ms;
+            -moz-transition-duration: 300ms;
+            transition-duration: 300ms;
+            overflow: visible;
+          }
+          .iron-collapse:not(.iron-collapse-opened) {
+            overflow: hidden;
+          }
+        
     </style>
   </div>
 </div>
