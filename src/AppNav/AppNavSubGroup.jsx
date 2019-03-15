@@ -98,7 +98,8 @@ class AppNavSubGroupComponent extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.opened !== this.state.opened) {
+    const { opened } = this.state;
+    if (nextProps.opened !== opened) {
       this.setState({
         opened: nextProps.opened
       });

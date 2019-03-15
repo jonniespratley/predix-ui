@@ -61,7 +61,8 @@ class PopperContent extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.isOpen !== prevProps.isOpen) {
+    const { isOpen } = this.props;
+    if (isOpen !== prevProps.isOpen) {
       this.handleProps();
     } else if (this._element) {
       // rerender
@@ -82,19 +83,22 @@ class PopperContent extends React.Component {
   }
 
   getContainerNode() {
-    return getTarget(this.props.container);
+    const { container } = this.props;
+    return getTarget(container);
   }
 
   handlePlacementChange(data) {
-    if (this.state.placement !== data.placement) {
+    const { placement } = this.state;
+    if (placement !== data.placement) {
       this.setState({ placement: data.placement });
     }
     return data;
   }
 
   handleProps() {
-    if (this.props.container !== 'inline') {
-      if (this.props.isOpen) {
+    const { container, isOpen } = this.props;
+    if (container !== 'inline') {
+      if (isOpen) {
         this.show();
       } else {
         this.hide();
@@ -134,28 +138,26 @@ class PopperContent extends React.Component {
     const {
       cssModule,
       children,
-      isOpen,
       flip,
-      target,
       offset,
       fallbackPlacement,
       placementPrefix,
       hideArrow,
       className,
       tag,
-      container,
       modifiers,
       ...attrs
     } = this.props;
 
+    const { placement } = this.state;
     const arrowClassName = mapToCssModules('arrow', cssModule);
-    const placement = (this.state.placement || attrs.placement).split('-')[0];
+    const newPlacement = (placement || attrs.placement).split('-')[0];
     const popperClassName = mapToCssModules(
       classNames(
         className,
-        placementPrefix ? `${placementPrefix}-${placement}` : placement
+        placementPrefix ? `${placementPrefix}-${newPlacement}` : newPlacement
       ),
-      this.props.cssModule
+      cssModule
     );
 
     const extendedModifiers = {
@@ -204,9 +206,10 @@ class PopperContent extends React.Component {
   }
 
   render() {
-    this.setTargetNode(getTarget(this.props.target));
-    if (this.props.container === 'inline') {
-      return this.props.isOpen ? this.renderChildren() : null;
+    const { target, container, isOpen } = this.props;
+    this.setTargetNode(getTarget(target));
+    if (container === 'inline') {
+      return isOpen ? this.renderChildren() : null;
     }
 
     return null;

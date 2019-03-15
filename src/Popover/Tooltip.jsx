@@ -28,7 +28,8 @@ class Tooltip extends React.Component {
   }
 
   componentDidMount() {
-    this._target = getTarget(this.props.target);
+    const { target } = this.props;
+    this._target = getTarget(target);
     this.addTargetEvents();
     this.handleProps();
   }
@@ -43,13 +44,15 @@ class Tooltip extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.isOpen !== prevProps.isOpen) {
+    const { isOpen } = this.props;
+    if (isOpen !== prevProps.isOpen) {
       this.handleProps();
     }
   }
 
   handleProps() {
-    if (this.props.isOpen) {
+    const { isOpen } = this.props;
+    if (isOpen) {
       this.show();
     } else {
       this.hide();
@@ -78,30 +81,33 @@ class Tooltip extends React.Component {
   }
 
   show() {
-    const pos = this.props.placement;
+    const { placement, isOpen } = this.props;
+    const pos = placement;
     const target = this._target;
     const tooltip = this._element.current;
     setPosition(tooltip, target, pos);
     this.clearHideTimeout();
-    if (!this.props.isOpen) {
+    if (!isOpen) {
       this.clearShowTimeout();
       this._showTimeout = setTimeout(this.toggle, this.getDelay('show'));
     }
   }
 
   hide() {
+    const { isOpen } = this.props;
     this.clearShowTimeout();
-    if (this.props.isOpen) {
+    if (isOpen) {
       this.clearHideTimeout();
       this._hideTimeout = setTimeout(this.toggle, this.getDelay('hide'));
     }
   }
 
   toggle = (e) => {
-    if (this.props.disabled) {
+    const { disabled, toggle } = this.props;
+    if (disabled) {
       return e && e.preventDefault();
     }
-    return this.props.toggle(e);
+    return toggle(e);
   };
 
   clearTimeouts() {
@@ -120,13 +126,14 @@ class Tooltip extends React.Component {
   }
 
   getDelay(state) {
+    const { onMouseEnterDelay, onMouseLeaveDelay } = this.props;
     let delay;
     switch (state) {
       case 'show':
-        delay = this.props.onMouseEnterDelay;
+        delay = onMouseEnterDelay;
         break;
       case 'hide':
-        delay = this.props.onMouseLeaveDelay;
+        delay = onMouseLeaveDelay;
         break;
       default:
         delay = DEFAULT_DELAYS.show;
@@ -181,4 +188,5 @@ Tooltip.propTypes = {
   target: PropTypes.oneOfType([PropTypes.string, PropTypes.func, DOMElement])
     .isRequired
 };
+
 export default Tooltip;

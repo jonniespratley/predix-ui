@@ -26,7 +26,7 @@ const sassOptions = {
 const config = {
   dest: './dist',
   scripts: {
-    main: 'src/index.js',
+    main: 'src/ProgressBar.jsx',
     src: [
       'src/**/*.js',
       'src/**/*.jsx',

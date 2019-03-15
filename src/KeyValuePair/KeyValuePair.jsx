@@ -126,7 +126,14 @@ const Component = ({
     <KvpLabel>{label}</KvpLabel>
     <KvpValue size={_getAdjustedSize(size)} className={size}>
       {value}
-      {uom && <KvpUom size={_getAdjustedSize(size)} className={_getAdjustedSize(size)}>{uom}</KvpUom>}
+      {uom && (
+      <KvpUom
+        size={_getAdjustedSize(size)}
+        className={_getAdjustedSize(size)}
+      >
+        {uom}
+      </KvpUom>
+      )}
     </KvpValue>
     {children}
   </div>

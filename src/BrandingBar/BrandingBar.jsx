@@ -63,11 +63,13 @@ const Component = ({
     </Flex>
     {children && <div>{children}</div>}
 
-    {!hidePowered &&
-    <Flex middle>
-      <BrandingBarPoweredBy>{powered}</BrandingBarPoweredBy>
-      <PredixLogo size={10} />
-    </Flex>
+    {!hidePowered
+  && (
+  <Flex middle>
+    <BrandingBarPoweredBy>{powered}</BrandingBarPoweredBy>
+    <PredixLogo size={10} />
+  </Flex>
+  )
   }
   </BrandingBar>
 );

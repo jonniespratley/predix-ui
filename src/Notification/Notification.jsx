@@ -87,20 +87,24 @@ const Component = ({
   opened, type, actionIcon, statusIcon, slotRight, onClick, small, children
 }) => (
   <Notification opened={opened} type={type} small={small}>
-    {statusIcon &&
+    {statusIcon
+    && (
     <NotificationLeft>
       <Icon size={16} icon={statusIcon} />
     </NotificationLeft>
+    )
     }
     <NotificationContent>
       {children}
     </NotificationContent>
     <NotificationRight>
       {slotRight && slotRight}
-      {actionIcon &&
+      {actionIcon
+      && (
       <NotificationIcon onClick={onClick}>
         <Icon size={16} viewBox="0 0 22 22" icon={actionIcon} />
       </NotificationIcon>
+      )
     }
     </NotificationRight>
   </Notification>

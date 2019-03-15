@@ -99,9 +99,9 @@ const Component = ({
 
     <ModalContent role="region" fixed={fixed} zIndex={zIndex}>
       {modalContentElement && modalContentElement}
-      {!modalContentElement &&
+      {!modalContentElement
+        && (
         <div>
-
           <ModalTitle>{headerText}</ModalTitle>
 
           <ModalBody>
@@ -110,15 +110,18 @@ const Component = ({
           <ModalActions>
             {actions && actions()}
 
-            {rejectText &&
+            {rejectText
+            && (
             <Button
               id="btnModalNegative"
               onClick={onBtnModalNegativeClick}
             >
               {rejectText}
             </Button>
+            )
                 }
-            {acceptText &&
+            {acceptText
+            && (
             <Button
               theme="primary"
               id="btnModalPositive"
@@ -127,10 +130,12 @@ const Component = ({
             >
               {acceptText}
             </Button>
+            )
                   }
 
           </ModalActions>
         </div>
+        )
         }
 
     </ModalContent>

@@ -96,9 +96,10 @@ class AppNavComponent extends React.Component {
   }
 
   componentWillMount() {
-    if (this.props.items) {
-      this.props.items.map((item, index) => {
-        this._keys.push(this.props.propForSelect ? item[this.props.propForSelect] : index);
+    const { items, propForSelect } = this.props;
+    if (items) {
+      items.map((item, index) => {
+        this._keys.push(propForSelect ? item[propForSelect] : index);
         this._items.push(item);
         return item;
       });
@@ -197,10 +198,13 @@ class AppNavComponent extends React.Component {
   }
 
   _renderItem(child, index) {
-    const propForSelect = (this.props.propForSelect ? child[this.props.propForSelect] : index);
+    const { onlyShowIcon, selected } = this.state;
+    const { propForSelect } = this.props;
+
+    const itemPropForSelect = (propForSelect ? child[propForSelect] : index);
     this._keys.push(propForSelect);
     this._items.push(child);
-    const selected = (this.state.selected === this._getIndexForValue(propForSelect));
+    const itemSelected = (selected === this._getIndexForValue(itemPropForSelect));
     if (!child.children) {
       return (
         <NavItem
@@ -209,8 +213,8 @@ class AppNavComponent extends React.Component {
           id={child.id}
           icon={child.icon}
           label={child.label}
-          selected={selected}
-          onlyShowIcon={this.state.onlyShowIcon}
+          selected={itemSelected}
+          onlyShowIcon={onlyShowIcon}
           onClick={this.handleClick.bind(this, propForSelect, child)} /* eslint-disable-line */
         />
       );
@@ -222,8 +226,8 @@ class AppNavComponent extends React.Component {
         item={child}
         icon={child.icon}
         label={child.label}
-        onlyShowIcon={this.state.onlyShowIcon}
-        selected={selected}
+        onlyShowIcon={onlyShowIcon}
+        selected={itemSelected}
         onClick={this.handleClick.bind(this, propForSelect, child)} /* eslint-disable-line */
       />
     );

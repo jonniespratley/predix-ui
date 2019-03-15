@@ -135,14 +135,16 @@ class AppNavItemComponent extends React.Component {
   }
 
   _handleClick(e) {
-    if (!this.props.cancelSelect && this.props.onClick) {
-      this.props.onClick(e);
+    const { cancelSelect, onClick } = this.props;
+    if (!cancelSelect && onClick) {
+      onClick(e);
     }
   }
 
   _shouldComponentUpdate(nextProps) {
-    return nextProps.selected !== this.props.selected
-      || nextProps.onlyShowIcon !== this.props.onlyShowIcon;
+    const { selected, onlyShowIcon } = this.props;
+    return nextProps.selected !== selected
+      || nextProps.onlyShowIcon !== onlyShowIcon;
   }
 
   render() {

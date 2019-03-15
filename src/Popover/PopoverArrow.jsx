@@ -14,8 +14,4 @@ const PopoverArrow = styled.span`
   }
 `;
 
-/* export default ({restProps, arrowProps:{ ref, style  }}) => (
-  <PopoverArrow style={style} ref={ref} {...restProps}/>
-); */
-
 export default PopoverArrow;

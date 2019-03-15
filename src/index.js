@@ -33,7 +33,7 @@ export {
   Popover, PopoverArrow, PopoverBody, PopoverContent, PopoverHeader
 } from './Popover';
 export { default as PredixSvgLogo } from './BrandingBar/px-predix-svg-logo';
-export { default as ProgressBar } from './ProgressBar';
+export { default as ProgressBar } from './ProgressBar/ProgressBar';
 export { default as Spinner } from './Spinner';
 export { default as TableView } from './TableView/TableView';
 export { default as TableRow } from './TableView/TableRow';
@@ -42,7 +42,7 @@ export { default as Tab } from './Tabs/Tab';
 export { default as Tree } from './Tree';
 export { default as TreeNode } from './Tree/TreeNode';
 export { default as Tile } from './Tile';
-export { default as ViewHeader } from './ViewHeader';
+export { default as ViewHeader } from './ViewHeader/ViewHeader';
 export { default as Notification } from './Notification';
 export { default as Flex } from './Flex';
 export { LightTheme, DarkTheme } from './Theme';
