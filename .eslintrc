@@ -10,6 +10,7 @@
     "react"
   ],
   "rules": {
+    "max-len": 1,
     "no-console": 1,
     "comma-dangle": ["error", "never"],
     "jsx-a11y/href-no-hash": 0,

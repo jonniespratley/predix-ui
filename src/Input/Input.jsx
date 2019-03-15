@@ -1,6 +1,8 @@
 import styled, { css } from '../styled';
 
 const sizes = {
+  auto: 'auto',
+  full: '100%',
   tiny: '7.06667rem',
   small: '14.13333rem',
   regular: '21.2rem',
@@ -84,28 +86,8 @@ const Input = styled.input`
     }
   }
 
-  ${props => props.auto && css`
-    max-width: auto;
-  `}
-
-  ${props => props.tiny && css`
-    max-width: 7.06667rem;
-  `}
-
-  ${props => props.small && css`
-     max-width: 14.13333rem;
-  `}
-
-  ${props => props.regular && css`
-    max-width: 21.2rem;
-  `}
-
-  ${props => props.large && css`
-    max-width: 28.26667rem;
-  `}
-
-  ${props => props.huge && css`
-     max-width: 35.33333rem;
+  ${props => props.size && css`
+    max-width: ${sizes[props.size]}
   `}
 
    ${props => props.size && css`

@@ -146,7 +146,7 @@ exports[`Accordion should render open by default 1`] = `
   <div
     aria-expanded={true}
     aria-hidden={false}
-    className="iron-collapse"
+    className="iron-collapse iron-collapse-opened"
   >
     <div
       className="px-accordion__body c6"

@@ -1,5 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Iron Components IronCollapse should render 1`] = `
+<div
+  aria-expanded={true}
+  aria-hidden={false}
+  className="iron-collapse iron-collapse-opened"
+>
+  This is content
+  <style>
+    
+          .iron-collapse {
+            display: block;
+            -webkit-transition-duration: 300ms;
+            -moz-transition-duration: 300ms;
+            transition-duration: 300ms;
+            overflow: visible;
+          }
+          .iron-collapse:not(.iron-collapse-opened) {
+            overflow: hidden;
+          }
+        
+  </style>
+</div>
+`;
+
+exports[`Iron Components IronCollapse should render 2`] = `
+<div
+  aria-expanded={false}
+  aria-hidden={true}
+  className="iron-collapse"
+>
+  This is content
+  <style>
+    
+          .iron-collapse {
+            display: block;
+            -webkit-transition-duration: 300ms;
+            -moz-transition-duration: 300ms;
+            transition-duration: 300ms;
+            overflow: visible;
+          }
+          .iron-collapse:not(.iron-collapse-opened) {
+            overflow: hidden;
+          }
+        
+  </style>
+</div>
+`;
+
 exports[`Iron Components IronPages should render selected page 1`] = `
 <div
   className="iron-selector"

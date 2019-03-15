@@ -21,7 +21,12 @@ describe('Iron Components', () => {
       const instance = new IronSelectable({
         multi: false,
         selected: 1,
-        items: [createMockItem(1), createMockItem(2), createMockItem(3), createMockItem(4), createMockItem(5)]
+        items: [
+          createMockItem(1),
+          createMockItem(2),
+          createMockItem(3),
+          createMockItem(4),
+          createMockItem(5)]
       });
       instance.selectNext();
       expect(instance.selected).toEqual(2);
@@ -57,24 +62,34 @@ describe('Iron Components', () => {
     });
   });
 
-  xdescribe('IronCollapse', () => {
+  describe('IronCollapse', () => {
     test('should render', () => {
-      const wrapper = shallow(<IronCollapse />);
+      const wrapper = shallow(<IronCollapse horizontal>Content</IronCollapse>);
       expect(wrapper.find('.iron-collapse')).toHaveLength(1);
-      const tree = renderer
-        .create(<IronCollapse>This is content</IronCollapse>)
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+
+      wrapper.setProps({ opened: false });
+      expect(wrapper.find('.iron-collapse-opened')).toHaveLength(0);
+
+      expect(wrapper.find('.iron-collapse')).toHaveLength(1);
+
+      expect(renderer.create(<IronCollapse opened>This is content</IronCollapse>).toJSON()).toMatchSnapshot();
+      expect(renderer.create(<IronCollapse horizontal>This is content</IronCollapse>).toJSON()).toMatchSnapshot();
+    });
+    test('should toggle', () => {
+      const wrapper = shallow(<IronCollapse horizontal>Content</IronCollapse>);
+      expect(wrapper.find('.iron-collapse')).toHaveLength(1);
     });
   });
 
   describe('IronPages', () => {
     test('should render selected page', () => {
-      const wrapper = shallow(<IronPages selected={0}>
-        <div>One</div>
-        <div>Two</div>
-        <div>Three</div>
-                              </IronPages>);
+      const wrapper = shallow(
+        <IronPages selected={0}>
+          <div>One</div>
+          <div>Two</div>
+          <div>Three</div>
+        </IronPages>
+      );
       expect(wrapper.find('.iron-selected')).toHaveLength(1);
       const tree = renderer
         .create(<IronPages selected={0}>
@@ -89,11 +104,13 @@ describe('Iron Components', () => {
 
   xdescribe('IronSelector', () => {
     test('should render selected item', () => {
-      const wrapper = shallow(<IronSelector selected={1}>
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-                              </IronSelector>);
+      const wrapper = shallow(
+        <IronSelector selected={1}>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </IronSelector>
+      );
       expect(wrapper.find('.iron-selected')).toHaveLength(1);
     });
   });

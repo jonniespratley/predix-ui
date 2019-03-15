@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import styled from '../styled';
+import styled, { css } from '../styled';
 
 const Button = styled.button`
   font-family: "GE Inspira Sans";
