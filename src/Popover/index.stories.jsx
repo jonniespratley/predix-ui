@@ -1,10 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
+import {
+  withKnobs,
+  text,
+  boolean,
+  select
+} from '@storybook/addon-knobs';
 
-import Popover from '.';
-import PopoverBody from './PopoverBody';
-import PopoverHeader from './PopoverHeader';
+import { Popover, PopoverBody, PopoverHeader } from '.';
 
 const PopperPlacements = [
   'auto-start',

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from '../styled';
 
 const sizes = {
   tiny: '7.06667rem',

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css, keyframes } from '../styled';
 
 const ProgressAnimation = keyframes`
   0% {

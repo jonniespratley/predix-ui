@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import styled, { css } from '../styled';
 import Icon from '../Icon/Icon';
 
 const TreeNodeStyled = styled.li`

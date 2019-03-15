@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from '../styled';
 
 const FONT_URL = '//dzlpbrbc7yvq0.cloudfront.net/predixdev/fonts/2.0.0';
 

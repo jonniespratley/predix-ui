@@ -7,10 +7,8 @@ import { withReadme } from 'storybook-readme';
 import { action } from '@storybook/addon-actions';
 
 import README from './README.md';
-import AppNav from './AppNav';
-import AppNavItem from './AppNavItem';
-// import AppNavSubItem from './px-app-nav-sub-item';
-import AppNavSubGroupItem from './AppNavSubItem';
+import { AppNav, AppNavItem, AppNavSubItem } from './';
+
 // import Icons from '../IconSet';
 
 // const AllIcons = Object.keys(Icons).sort();
@@ -125,7 +123,7 @@ storiesOf('Components / App Nav', module)
     />
   ))
   .addWithJSX('with Sub Group', () => (
-    <AppNavSubGroupItem
+    <AppNavSubItem
       id="item3"
       item={navItem}
       onClick={action('onClick')}

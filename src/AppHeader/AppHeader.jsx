@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppNav from '../AppNav';
+import { AppNav } from '../AppNav';
 import BrandingBar from '../BrandingBar';
 
 /**

@@ -325,7 +325,7 @@ Popover.defaultProps = defaultProps;
 
 Popover.propTypes = {
   innerClassName: PropTypes.string,
-  target: PropTypes.element,
+  target: PropTypes.oneOfType(PropTypes.element, PropTypes.string),
   container: PropTypes.element,
   cssModule: PropTypes.objectOf(PropTypes.string),
   modifiers: PropTypes.objectOf(PropTypes.string),

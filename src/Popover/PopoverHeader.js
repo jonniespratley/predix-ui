@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '../styled';
 
 const PopoverHeader = styled.h3`
   margin: 0;

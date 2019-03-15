@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '../styled';
 
 const PopoverBody = styled.div`
   padding: 0.5rem 0.75rem;

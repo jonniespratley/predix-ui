@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '../styled';
 
 const Tab = styled.div`
   background-color: transparent;

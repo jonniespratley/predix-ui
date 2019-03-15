@@ -1,9 +1,9 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Tree from './tree';
+import Tree from './Tree';
 import Node from './TreeNode';
-import styled from 'styled-components';
+import styled from '../../styled';
 
 const MTree = styled.div`
   position: relative; overflow: hidden; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;

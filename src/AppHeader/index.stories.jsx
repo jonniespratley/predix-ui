@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 import { withReadme } from 'storybook-readme';
 
-import AppHeader from '.';
+import AppHeader from './AppHeader';
 import README from './README.md';
 
 const navItems = [
@@ -18,7 +18,7 @@ const navItems = [
     label: 'Page 2'
   }
 ];
-// /
+
 storiesOf('Components / App Header', module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(README))

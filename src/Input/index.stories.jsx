@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, select } from '@storybook/addon-knobs/react';
-import Input from '.';
+import Input from './Input';
 import Button from '../Button';
 import Textarea from './Textarea';
 import Select from './Select';

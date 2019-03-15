@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css } from '../styled';
 import TableRow from './TableRow';
 
 const TableView = styled.ul`

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Arrow, Popper } from 'react-popper';
-import styled from 'styled-components';
+import styled from '../styled';
 
 import { mapToCssModules, getTarget } from '../utils';
 

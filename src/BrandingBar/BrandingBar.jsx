@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import styled, { css } from '../styled';
 import PredixLogo from './px-predix-svg-logo';
 import Logo from './px-ge-svg-logo';
 import Flex from '../styles/flex';

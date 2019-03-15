@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, number } from '@storybook/addon-knobs/react';
 import { action } from '@storybook/addon-actions';
-import Tabs from '.';
+import Tabs from './Tabs';
 import Tab from './Tab';
 
 // / Tabs

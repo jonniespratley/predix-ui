@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import styled, { css } from 'styled-components';
+import styled, { css } from '../styled';
 import IconSet from '../IconSet';
 
 const PxIcon = styled.i`

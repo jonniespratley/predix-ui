@@ -2,7 +2,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import styled, { css } from 'styled-components';
+import styled, { css } from '../styled';
 
 const ContextBrowser = styled.div`
   display         : inline-block;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import styled, { css } from 'styled-components';
+import styled, { css } from '../styled';
 import IronCollapse from '../iron/IronCollapse';
 import Flex from '../Flex';
 import Icon from '../Icon/Icon';
