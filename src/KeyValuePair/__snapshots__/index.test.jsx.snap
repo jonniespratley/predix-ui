@@ -10,11 +10,13 @@ exports[`KeyValuePair alpha - renders correctly 1`] = `
 .c1 {
   color: var(--px-headings-value-color,black);
   margin-top: -4px;
+  font-size: 2rem;
   margin-top: -8px;
 }
 
 .c2 {
   margin-left: 0px;
+  font-size: 2rem;
   margin-left: -4px;
 }
 
@@ -52,11 +54,13 @@ exports[`KeyValuePair beta - renders correctly 1`] = `
 .c1 {
   color: var(--px-headings-value-color,black);
   margin-top: -4px;
+  font-size: 1.3333rem;
   margin-top: -2px;
 }
 
 .c2 {
   margin-left: 0px;
+  font-size: 1.3333rem;
   margin-left: -2px;
 }
 

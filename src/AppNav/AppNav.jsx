@@ -139,26 +139,20 @@ class AppNavComponent extends React.Component {
     }
   }
 
-  _setVerticalOpened(bool) {
+  _setVerticalOpened = (bool) => {
     this.setState({
       verticalOpened: bool,
       onlyShowIcon: !bool
     });
   }
 
-  _getIndexForValue(val) {
-    return this._keys.indexOf(val);
-  }
+  _getIndexForValue = val => this._keys.indexOf(val)
 
-  _getValueForIndex(index) {
-    return this._items[index];
-  }
+  _getValueForIndex = index => this._items[index];
 
-  _getItemFromValue(index) {
-    return this._getValueForIndex(this._getIndexForValue(index));
-  }
+  _getItemFromValue = index => this._getValueForIndex(this._getIndexForValue(index));
 
-  handleClick(val, child, isSubItem) {
+  handleClick = (val, child, isSubItem) => {
     const { propForSelect, onChange } = this.props;
     const c = child;
     const propForChildSelect = (propForSelect ? child[propForSelect] : val);
@@ -191,20 +185,22 @@ class AppNavComponent extends React.Component {
     this._keys = [];
   }
 
-  _getItemFromPropForSelect(value) {
+  _getItemFromPropForSelect = (value) => {
     const { items, propForSelect } = this.props;
     const item = items.filter(val => val[propForSelect] === value);
     return item ? item[0] : null;
   }
 
-  _renderItem(child, index) {
+  _renderItem = (child, index) => {
     const { onlyShowIcon, selected } = this.state;
     const { propForSelect } = this.props;
 
     const itemPropForSelect = (propForSelect ? child[propForSelect] : index);
-    this._keys.push(propForSelect);
+    this._keys.push(itemPropForSelect);
     this._items.push(child);
+
     const itemSelected = (selected === this._getIndexForValue(itemPropForSelect));
+
     if (!child.children) {
       return (
         <NavItem
@@ -215,7 +211,7 @@ class AppNavComponent extends React.Component {
           label={child.label}
           selected={itemSelected}
           onlyShowIcon={onlyShowIcon}
-          onClick={this.handleClick.bind(this, propForSelect, child)} /* eslint-disable-line */
+          onClick={this.handleClick.bind(this, itemPropForSelect, child)} /* eslint-disable-line */
         />
       );
     }

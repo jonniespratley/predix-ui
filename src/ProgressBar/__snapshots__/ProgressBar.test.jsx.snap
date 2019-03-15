@@ -4,9 +4,9 @@ exports[`ProgressBar infinite - renders correctly 1`] = `
 .c2 {
   background-color: var(--px-progress-bar-fill-color,black);
   height: var(--px-progress-bar-height,5px);
-  -webkit-transition: -webkit-transform 1s cubic-bezier(.78,.13,.16,.87);
-  -webkit-transition: transform 1s cubic-bezier(.78,.13,.16,.87);
-  transition: transform 1s cubic-bezier(.78,.13,.16,.87);
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.78,0.13,0.16,0.87);
+  -webkit-transition: transform 1s cubic-bezier(0.78,0.13,0.16,0.87);
+  transition: transform 1s cubic-bezier(0.78,0.13,0.16,0.87);
   -webkit-transform-origin: left center;
   -webkit-transform-origin: left center;
   -ms-transform-origin: left center;
@@ -20,8 +20,8 @@ exports[`ProgressBar infinite - renders correctly 1`] = `
   -ms-transform: scaleX(0.5);
   transform: scaleX(0.5);
   position: relative;
-  -webkit-animation: cJGqkr 2s cubic-bezier(.78,.13,.16,.87) infinite;
-  animation: cJGqkr 2s cubic-bezier(.78,.13,.16,.87) infinite;
+  -webkit-animation: cJGqkr 2s cubic-bezier(0.78,0.13,0.16,0.87) infinite;
+  animation: cJGqkr 2s cubic-bezier(0.78,0.13,0.16,0.87) infinite;
 }
 
 .c1 {
@@ -56,9 +56,9 @@ exports[`ProgressBar renders correctly 1`] = `
 .c2 {
   background-color: var(--px-progress-bar-fill-color,black);
   height: var(--px-progress-bar-height,5px);
-  -webkit-transition: -webkit-transform 1s cubic-bezier(.78,.13,.16,.87);
-  -webkit-transition: transform 1s cubic-bezier(.78,.13,.16,.87);
-  transition: transform 1s cubic-bezier(.78,.13,.16,.87);
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.78,0.13,0.16,0.87);
+  -webkit-transition: transform 1s cubic-bezier(0.78,0.13,0.16,0.87);
+  transition: transform 1s cubic-bezier(0.78,0.13,0.16,0.87);
   -webkit-transform-origin: left center;
   -webkit-transform-origin: left center;
   -ms-transform-origin: left center;
