@@ -71,9 +71,9 @@
                 "name": "index.stories.jsx"
             },
             {
-                "relativePath": "src/components/px/Grid/index.test.jsx",
+                "relativePath": "src/components/px/Grid/TableView.test.jsx",
                 "test": true,
-                "name": "index.test.jsx"
+                "name": "TableView.test.jsx"
             }
         ],
         "mainFile": "src/components/px/Grid/Popover.jsx",
@@ -2065,9 +2065,9 @@
                 "name": "index.stories.jsx"
             },
             {
-                "relativePath": "src/components/px/Card/index.test.jsx",
+                "relativePath": "src/components/px/Card/TableView.test.jsx",
                 "test": true,
-                "name": "index.test.jsx"
+                "name": "TableView.test.jsx"
             }
         ],
         "mainFile": "src/components/px/Card/Popover.jsx",
@@ -2087,9 +2087,9 @@
                 "name": "README.md"
             },
             {
-                "relativePath": "src/components/px/Button/__snapshots__/index.test.jsx.snap",
+                "relativePath": "src/components/px/Button/__snapshots__/TableView.test.jsx.snap",
                 "test": false,
-                "name": "index.test.jsx.snap"
+                "name": "TableView.test.jsx.snap"
             },
             {
                 "relativePath": "src/components/px/Button/Popover.jsx",
@@ -2102,9 +2102,9 @@
                 "name": "index.stories.jsx"
             },
             {
-                "relativePath": "src/components/px/Button/index.test.jsx",
+                "relativePath": "src/components/px/Button/TableView.test.jsx",
                 "test": true,
-                "name": "index.test.jsx"
+                "name": "TableView.test.jsx"
             }
         ],
         "mainFile": "src/components/px/Button/Popover.jsx",
@@ -2125,9 +2125,9 @@
                 "name": "Popover.jsx"
             },
             {
-                "relativePath": "src/components/px/Flex/index.test.jsx",
+                "relativePath": "src/components/px/Flex/TableView.test.jsx",
                 "test": true,
-                "name": "index.test.jsx"
+                "name": "TableView.test.jsx"
             }
         ],
         "mainFile": "src/components/px/Flex/Popover.jsx",

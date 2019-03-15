@@ -21,41 +21,42 @@ const ProgressAnimation = keyframes`
 `;
 
 /* eslint-disable-next-line */
-const _computeRatio = v => (v < 0 ? 0 : (v > 100 ? 1 : v / 100));
+const _computeRatio = v => (v < 0 ? 0 : v > 100 ? 1 : v / 100);
 
 const ProgressFill = styled.div`
-  background-color        : var(--px-progress-bar-fill-color,black);
-  height                  : var(--px-progress-bar-height, 5px);
-  transition              : transform 1s cubic-bezier(.78,.13,.16,.87);
+  background-color: var(--px-progress-bar-fill-color, black);
+  height: var(--px-progress-bar-height, 5px);
+  transition: transform 1s cubic-bezier(0.78, 0.13, 0.16, 0.87);
   -webkit-transform-origin: left center;
-  transform-origin        : left center;
-  -webkit-transform       : scaleX(0);
-  transform               : scaleX(0);
-  overflow                : hidden;
-  
-  ${props => props.value && css`
-    transform               : scaleX(${_computeRatio(props.value)});
-  `}
-  ${props => props.infinite && css`
-    position : relative;
-    animation: ${ProgressAnimation} 2s cubic-bezier(.78,.13,.16,.87) infinite;
-  `}
+  transform-origin: left center;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  overflow: hidden;
+
+  ${props =>
+    props.value &&
+    css`
+      transform: scaleX(${_computeRatio(props.value)});
+    `}
+  ${props =>
+    props.infinite &&
+    css`
+      position: relative;
+      animation: ${ProgressAnimation} 2s cubic-bezier(0.78, 0.13, 0.16, 0.87)
+        infinite;
+    `}
 `;
+
 const ProgressBackground = styled.div`
   background-color: var(--px-progress-bar-background-color, lightgray);
-  height          : var(--px-progress-bar-height, 5px);
+  height: var(--px-progress-bar-height, 5px);
 `;
 
 const ProgressBar = styled.div`
   height: var(--px-progress-bar-height, 5px);
 `;
 
-const Component = ({
-  value,
-  max,
-  min,
-  infinite
-}) => (
+const Component = ({ value, max, min, infinite }) => (
   <div aria-valuemin={min} aria-valuemax={max}>
     <ProgressBar>
       <ProgressBackground>
@@ -71,11 +72,13 @@ Component.defaultProps = {
   min: 0,
   infinite: false
 };
+
 Component.propTypes = {
   value: PropTypes.number,
   max: PropTypes.number,
   min: PropTypes.number,
   infinite: PropTypes.bool
 };
+Component.displayName = 'ProgressBar';
 
 export default Component;
