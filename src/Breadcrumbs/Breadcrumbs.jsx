@@ -89,7 +89,7 @@ class BreadcrumbsComponent extends React.Component {
   _isOverflow(item) {
     return this._getItemProp(item, this.keys.label) === '...';
   }
-  /**
+  /** 
    * Determines whether to display small or large chevrons based on whether
    * `clickOnlyMode` is enabled.
    */
@@ -125,7 +125,7 @@ class BreadcrumbsComponent extends React.Component {
                 {/* eslint-enable */}
               </Flex>
             </div>
-            ))}
+          ))}
         </Flex>
       </div>
     );

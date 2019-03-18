@@ -159,21 +159,30 @@ const Component = ({
     <NavbarInner>
       <NavbarLeft>
 
-        {showMenuButton &&
-        <button className="navbar__button flex flex--center toggle__menu" onClick={onMenuButtonClick}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24h-24z" fill="none" /><path d="M3 18h18v-2h-18v2zm0-5h18v-2h-18v2zm0-7v2h18v-2h-18z" /></svg>
-        </button>}
+        {showMenuButton
+        && (
+        <button className="navbar__button flex flex--center toggle__menu" onClick={onMenuButtonClick} type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 0h24v24h-24z" fill="none" />
+            <path d="M3 18h18v-2h-18v2zm0-5h18v-2h-18v2zm0-7v2h18v-2h-18z" />
+          </svg>
+        </button>
+        )}
 
-        {showBackButton &&
-        <button className="navbar__button" onClick={onBackButtonClick}>
+        {showBackButton
+        && (
+        <button className="navbar__button" onClick={onBackButtonClick} type="button">
           {backButtonLabel}
         </button>
+        )
         }
 
-        {iconNameLeft &&
-        <button onClick={onLeftIconButtonClick}>
+        {iconNameLeft
+        && (
+        <button onClick={onLeftIconButtonClick} type="button">
           <Icon icon={iconNameLeft} size={22} />
-        </button>}
+        </button>
+        )}
 
         {iconElementLeft && iconElementLeft}
       </NavbarLeft>
@@ -182,10 +191,12 @@ const Component = ({
         <NavbarSubTitle>{subtitle}</NavbarSubTitle>
       </NavbarCenter>
       <NavbarRight>
-        {iconNameRight &&
-        <button onClick={onRightIconButtonClick}>
+        {iconNameRight
+        && (
+        <button onClick={onRightIconButtonClick} type="button">
           <Icon icon={iconNameRight} size={22} />
-        </button>}
+        </button>
+        )}
         {iconElementRight && iconElementRight}
       </NavbarRight>
     </NavbarInner>

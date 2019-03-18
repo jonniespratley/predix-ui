@@ -27,7 +27,7 @@ class IronCollapse extends React.Component {
 
   /* eslint-ignore-start */
   getIsDisplayed() {
-    if(this.base.current) {
+    if (this.base.current) {
       const rect = this.base.current.getBoundingClientRect();
       Object.keys(rect)
         .forEach((key) => {

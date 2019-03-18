@@ -1,4 +1,3 @@
-import React from 'react';
 import use from 'reuse';
 
 import Base from './Base';

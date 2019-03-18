@@ -131,13 +131,14 @@ class Dropdown extends React.Component {
   }
 
   _handleClick(e) {
+    const { opened } = this.state;
     if (e && e.target && e.target.classList.contains('px-utl-close')) {
       this._clearSelected();
       this.setState({
         selectedItem: null
       });
     } else {
-      this.setState({ opened: !this.state.opened });
+      this.setState({ opened: !opened });
     }
   }
 
@@ -174,6 +175,7 @@ class Dropdown extends React.Component {
       selectedItem: null
     });
   }
+
   _handleDropdownContentRef(el) {
     this.dropdownContent = el;
   }
@@ -216,13 +218,15 @@ class Dropdown extends React.Component {
           onClick={this._handleClick}
         >
           {children && children}
-          {!children &&
+          {!children
+          && (
           <DropdownTrigger>
             {selectedItem && <DropdownLabel>{selectedItem[keys.val]}</DropdownLabel>}
             {!selectedItem && <DropdownLabel>{displayValue}</DropdownLabel>}
             {(!hideChevron && !opened && !selectedItem) && <Icon icon={icon} size={16} />}
             {(!disableClear && selectedItem && opened) && <Icon icon="px-utl:close" size={16} onClick={this._handleClear} />}
-          </DropdownTrigger>}
+          </DropdownTrigger>
+          )}
         </Button>
         <DropdownContent opened={opened} width={dropdownContentWidth}>
           {items && items.map((item, index) => (
