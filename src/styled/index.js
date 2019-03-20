@@ -1,4 +1,6 @@
-import { prop, ifProp, switchProp } from 'styled-tools';
+import {
+  prop, ifProp, switchProp, palette, theme, withProp
+} from 'styled-tools';
 import styled, {
   css,
   createGlobalStyle,
@@ -25,7 +27,10 @@ export {
   isStyledComponent,
   switchProp,
   prop,
-  ifProp
+  ifProp,
+  theme,
+  palette,
+  withProp
 };
 
 export default styled;

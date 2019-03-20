@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 
-
-import styled, { css, switchProp, prop } from '../styled';
+import styled, {
+  css, switchProp, theme
+} from '../styled';
 
 const Button = styled.button`
   font-family: "GE Inspira Sans";
@@ -9,14 +10,14 @@ const Button = styled.button`
   user-select: none;
   display: inline-block;
   overflow: visible;
-  height: var(--px-btn-height, auto);
-  min-height: var(--px-btn-min-height, 2rem);
-  min-width: var(--px-btn-min-width, 4.66667em);
+  height: ${theme('button.height', 'var(--px-btn-height, auto)')};
+  min-height: ${theme('button.min-height', 'var(--px-btn-min-height, 2rem)')};
+  min-width: ${theme('button.min-width', 'var(--px-btn-min-width, 4.66667em)')};
   margin: 0;
-  border: 1px solid var(--px-btn-border-color, transparent);
+  border: ${theme('button.border', '1px solid var(--px-btn-border-color, transparent)')};
   border-radius: 0 !important;
   padding: calc(var(--px-btn-height, 2em) / 10) calc(var(--px-btn-height, 2em) / 2);
-  box-shadow: var(--px-btn-shadow--light, none);
+  box-shadow: ${theme('button.box-shadow', 'var(--px-btn-shadow--light, none)')};
   font: inherit;
   line-height: calc(var(--px-btn-height, 2em) - 2px);
   cursor: pointer;
@@ -24,12 +25,12 @@ const Button = styled.button`
   text-decoration: none;
   text-transform: none;
   white-space: nowrap;
-  background-color: var(--px-btn-background, #d8e0e5);
+  background-color: ${theme('button.background-color', 'var(--px-btn-background, #d8e0e5)')};
   transition: background .4s, border-color .4s, color .4s;
   -webkit-appearance: button;
   -webkit-font-smoothing: antialiased;
 
-  color: ${prop('theme.button.color', 'var(--px-btn-color, #2c404c)')};
+  color: ${theme('button.color', 'var(--px-btn-color, #2c404c)')};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +39,7 @@ const Button = styled.button`
   &:visited,
   &:hover,
   &:active {
-    color: var(--px-btn-color, #2c404c);
+    color: ${theme('button.color', 'var(--px-btn-color, #2c404c)')};
   }
 
   &:hover,
@@ -46,6 +47,8 @@ const Button = styled.button`
     border-color: var(--px-btn-border-color--hover, transparent);
     box-shadow: var(--px-btn-shadow, none);
     background-color: var(--px-btn-background--hover, #a3b5bf);
+    color: ${theme('button.hover.color', 'var(--px-btn-color--hover, #2c404c)')};
+    
   }
   &:active {
     outline: none;
