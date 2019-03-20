@@ -41,22 +41,22 @@ stories
   .addWithJSX('sizes', () => (
     <form>
       <FormField>
-        <Input name="input1" tiny placeholder="Tiny size" />
+        <Input name="input1" size="tiny" placeholder="Tiny size" />
       </FormField>
       <FormField>
-        <Input name="input2" small placeholder="Small size" />
+        <Input name="input2" size="small" placeholder="Small size" />
       </FormField>
       <FormField>
-        <Input name="input3" regular placeholder="Regular size" />
+        <Input name="input3" size="regular" placeholder="Regular size" />
       </FormField>
       <FormField>
-        <Input name="input4" large placeholder="Large size" />
+        <Input name="input4" size="large" placeholder="Large size" />
       </FormField>
       <FormField>
-        <Input name="input5" huge placeholder="Huge size" />
+        <Input name="input5" size="huge" placeholder="Huge size" />
       </FormField>
       <FormField>
-        <Input name="input6" placeholder="Auto size" />
+        <Input name="input6" size="auto" placeholder="Auto size" />
       </FormField>
     </form>
   ))
@@ -94,17 +94,17 @@ stories
   .addWithJSX('with Select', () => (
     <form>
       <Select>
-        <optgroup label="Header 1" >
-          <option >Option 1</option>
-          <option >Option 2</option>
-          <option >Option 3</option>
-          <option >Option 4</option>
+        <optgroup label="Header 1">
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+          <option>Option 4</option>
         </optgroup>
-        <optgroup label="Header 2" >
-          <option >Option 1</option>
-          <option >Option 2</option>
-          <option >Option 3</option>
-          <option >Option 4</option>
+        <optgroup label="Header 2">
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+          <option>Option 4</option>
         </optgroup>
       </Select>
     </form>
@@ -112,10 +112,10 @@ stories
   .addWithJSX('with Select multiple', () => (
     <form>
       <Select multiple>
-        <option >Option 1</option>
-        <option >Option 2</option>
-        <option >Option 3</option>
-        <option >Option 4</option>
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+        <option>Option 4</option>
       </Select>
     </form>
   ))

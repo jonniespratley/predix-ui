@@ -7,7 +7,9 @@ import README from './README.md';
 import Card from '.';
 
 const customActions = () => (
-  <div>Expand</div>
+  <div>
+    <button type="button">Edit</button>
+  </div>
 );
 
 storiesOf('Components / Card', module)
@@ -37,4 +39,3 @@ storiesOf('Components / Card', module)
       {text('content', 'This is the main context area of the card.')}
     </Card>
   ));
-

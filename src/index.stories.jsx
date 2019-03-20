@@ -12,10 +12,19 @@ import {
   AppNav,
   Card,
   Flex,
-  Notification
+  Notification,
+  AppHeader,
+  GlobalStyles,
+  Tabs,
+  Tab,
+  KeyValuePair
 } from '.';
 
 import README from '../README.md';
+import { ThemeProvider } from './styled';
+import Box from './Box/Box';
+import Base from './Box/Base';
+import colors from './styles/colors';
 
 const labelTypes = [
   'healthy',
@@ -73,12 +82,51 @@ const navItems = [
 ];
 
 
+function Page1Example() {
+  return (
+    <ThemeProvider theme={{}}>
+      <div>
+        <LightTheme />
+        <AppHeader title="Application Name" items={navItems} onChange={action('onChange')} selected={number('selected', 0)} />
+        <Box style={{ padding: 20, backgroundColor: colors.gray1 }}>
+          <h2 style={{ padding: '5px 0', margin: 0 }}>Title of Page</h2>
+          <br />
+          <Flex justify wrap>
+            <KeyValuePair label="Label" value="Value" />
+            <KeyValuePair label="Label" value="Value" />
+            <KeyValuePair label="Label" value="Value" />
+            <KeyValuePair label="Label" value="Value" />
+            <KeyValuePair label="Label" value="Value" />
+          </Flex>
+          <br />
+          <Flex justify wrap>
+            <KeyValuePair label="Label" value="Value" />
+            <KeyValuePair label="Label" value="Value" />
+            <KeyValuePair label="Label" value="Value" />
+            <KeyValuePair label="Label" value="Value" />
+            <KeyValuePair label="Label" value="Value" />
+          </Flex>
+        </Box>
+        <br />
+        <Card headerText="List" icon="px-fea:asset">
+          Content
+        </Card>
+        <br />
+        <Card headerText="Asset Status" icon="px-obj:fleet">
+          Content
+        </Card>
+      </div>
+    </ThemeProvider>
+  );
+}
+
 
 storiesOf('Examples', module)
   .addDecorator(withKnobs)
+  .add('Page Example 1', () => (<Page1Example />))
   .add('App', () => (
     <div>
-      <AppNav items={navItems} onChange={action('onChange')} selected={number('selected', 1)} />
+      <AppNav title="Predix Application" items={navItems} onChange={action('onChange')} selected={number('selected', 1)} />
       <br />
       <Notification
         type="info"

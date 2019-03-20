@@ -1,16 +1,8 @@
-import styled, { css } from '../styled';
+import styled, { switchProp } from '../styled';
 
-const sizes = {
-  auto: 'auto',
-  full: '100%',
-  tiny: '7.06667rem',
-  small: '14.13333rem',
-  regular: '21.2rem',
-  large: '28.26667rem',
-  huge: '35.33333rem'
-};
 
 const Input = styled.input`
+  font-family: "GE Inspira Sans", sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -26,15 +18,15 @@ const Input = styled.input`
 
 
   &:focus::placeholder,
-  &:disabled::placeholder{
+  &:disabled::placeholder {
     color: var(--px-input-text-color--placeholder--focused, rgba(0, 0, 0, 0.3));
   }
 
-  &::placeholder{
+  &::placeholder {
     color: var(--px-input-text-color--placeholder, rgba(0, 0, 0, 0.3));
   }
 
-  &:disabled::placeholder{
+  &:disabled::placeholder {
     color: var(--px-input-text-color--disabled, rgba(0, 0, 0, 0.2));
   }
 
@@ -86,13 +78,15 @@ const Input = styled.input`
     }
   }
 
-  ${props => props.size && css`
-    max-width: ${sizes[props.size]}
-  `}
-
-   ${props => props.size && css`
-     max-width: ${sizes[props.size]};
-  `}
+  max-width: ${switchProp('size', {
+    auto: 'auto',
+    full: '100%',
+    tiny: '7.06667rem',
+    small: '14.13333rem',
+    regular: '21.2rem',
+    large: '28.26667rem',
+    huge: '35.33333rem'
+  })}
 `;
 
 Input.displayName = 'Input';

@@ -1,7 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../Icon/Icon';
-import Flex from '../styles/flex';
+import styled, { ifProp } from '../styled';
+
+const BreadcrumbIcon = () => (
+  <svg
+    viewBox="0 0 16 16"
+    preserveAspectRatio="xMidYMid meet"
+    style={{
+      width: 24, height: 24, fill: 'none', stroke: 'currentColor'
+    }}
+  >
+    <g id="px-utl-chevron-right"><path strokeLinejoin="round" d="M6.2 13.2l5.4-5.5-5.5-5.5" /></g>
+  </svg>
+);
+const Breadcrumbs = styled.ul`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+`;
+
+const BreadcrumbItem = styled.li`
+  list-style-type: none;
+  height         : 2rem;
+  display: flex;
+  align-items: center;
+  &:last-of-type {
+    font-weight: 600;
+  }
+`;
+
+const BreadcrumbLabel = styled.span`
+  padding: 0 .2rem;
+  user-select: ${ifProp({ clickOnlyMode: true }, 'none', 'normal')};
+  cursor: ${ifProp({ clickOnlyMode: true }, 'pointer', 'normal')};
+`;
 
 class BreadcrumbsComponent extends React.Component {
   constructor(props) {
@@ -20,9 +53,10 @@ class BreadcrumbsComponent extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e, index, item) {
-    if (this.props.onClick) {
-      this.props.onClick(e, index, item);
+  handleClick(index, items) {
+    const { onClick } = this.props;
+    if (onClick) {
+      onClick({ index, items });
     }
   }
 
@@ -105,29 +139,25 @@ class BreadcrumbsComponent extends React.Component {
 
   render() {
     const {
-      selectedRoute
+      selectedRoute,
+      clickOnlyMode
     } = this.props;
 
     return (
-      <div ref={this.handleRef}>
-        <Flex middle>
+      <Breadcrumbs ref={this.handleRef}>
           {selectedRoute && selectedRoute.map((label, index) => (
-            <div data-index={index} className="breadcrumbTopItem" key={label} >
-              <Flex middle>
-                {this._isNotFirstItemInData(index, selectedRoute) && (<Icon icon="px-utl:chevron-right" size={24} viewBox="0 0 16 16" />)}
-                {/* eslint-disable*/}
-                <span
-                  className="actionable actionable--action u-ph-"
-                  onClick={this.handleClick.bind(this, index, selectedRoute)} /* eslint-ignore-line */
+            <BreadcrumbItem data-index={index} key={label} >
+              
+                {this._isNotFirstItemInData(index, selectedRoute) && (<BreadcrumbIcon />)}
+                <BreadcrumbLabel clickOnlyMode={clickOnlyMode}
+                  onClick={() => { this.handleClick(index, selectedRoute) }} /* eslint-ignore-line */
                 >
                   {label}
-                </span>
-                {/* eslint-enable */}
-              </Flex>
-            </div>
+                </BreadcrumbLabel>
+              
+            </BreadcrumbItem>
           ))}
-        </Flex>
-      </div>
+      </Breadcrumbs>
     );
   }
 }
