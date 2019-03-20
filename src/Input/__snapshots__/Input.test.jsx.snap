@@ -2,6 +2,7 @@
 
 exports[`FormField should render 1`] = `
 .c2 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -172,6 +173,7 @@ exports[`FormField should render 1`] = `
 
 exports[`Input should render auto - and match snapshot 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -185,7 +187,7 @@ exports[`Input should render auto - and match snapshot 1`] = `
   background-color: var(--px-input-background-color,transparent);
   -webkit-transition: background .4s,border-color .4s,color .4s;
   transition: background .4s,border-color .4s,color .4s;
-  max-width: auto max-width:auto;
+  max-width: auto;
 }
 
 .c0:focus::-webkit-input-placeholder,
@@ -311,6 +313,7 @@ exports[`Input should render auto - and match snapshot 1`] = `
 
 exports[`Input should render color 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -448,6 +451,7 @@ exports[`Input should render color 1`] = `
 
 exports[`Input should render date 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -585,6 +589,7 @@ exports[`Input should render date 1`] = `
 
 exports[`Input should render datetime-local 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -722,6 +727,7 @@ exports[`Input should render datetime-local 1`] = `
 
 exports[`Input should render email 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -859,6 +865,7 @@ exports[`Input should render email 1`] = `
 
 exports[`Input should render file 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -996,6 +1003,7 @@ exports[`Input should render file 1`] = `
 
 exports[`Input should render full - and match snapshot 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -1009,7 +1017,7 @@ exports[`Input should render full - and match snapshot 1`] = `
   background-color: var(--px-input-background-color,transparent);
   -webkit-transition: background .4s,border-color .4s,color .4s;
   transition: background .4s,border-color .4s,color .4s;
-  max-width: 100% max-width:100%;
+  max-width: 100%;
 }
 
 .c0:focus::-webkit-input-placeholder,
@@ -1135,6 +1143,7 @@ exports[`Input should render full - and match snapshot 1`] = `
 
 exports[`Input should render huge - and match snapshot 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -1148,7 +1157,7 @@ exports[`Input should render huge - and match snapshot 1`] = `
   background-color: var(--px-input-background-color,transparent);
   -webkit-transition: background .4s,border-color .4s,color .4s;
   transition: background .4s,border-color .4s,color .4s;
-  max-width: 35.33333rem max-width:35.33333rem;
+  max-width: 35.33333rem;
 }
 
 .c0:focus::-webkit-input-placeholder,
@@ -1274,6 +1283,7 @@ exports[`Input should render huge - and match snapshot 1`] = `
 
 exports[`Input should render large - and match snapshot 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -1287,7 +1297,7 @@ exports[`Input should render large - and match snapshot 1`] = `
   background-color: var(--px-input-background-color,transparent);
   -webkit-transition: background .4s,border-color .4s,color .4s;
   transition: background .4s,border-color .4s,color .4s;
-  max-width: 28.26667rem max-width:28.26667rem;
+  max-width: 28.26667rem;
 }
 
 .c0:focus::-webkit-input-placeholder,
@@ -1413,6 +1423,7 @@ exports[`Input should render large - and match snapshot 1`] = `
 
 exports[`Input should render month 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -1550,6 +1561,7 @@ exports[`Input should render month 1`] = `
 
 exports[`Input should render number 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -1687,6 +1699,7 @@ exports[`Input should render number 1`] = `
 
 exports[`Input should render password 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -1824,6 +1837,7 @@ exports[`Input should render password 1`] = `
 
 exports[`Input should render regular - and match snapshot 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -1837,7 +1851,7 @@ exports[`Input should render regular - and match snapshot 1`] = `
   background-color: var(--px-input-background-color,transparent);
   -webkit-transition: background .4s,border-color .4s,color .4s;
   transition: background .4s,border-color .4s,color .4s;
-  max-width: 21.2rem max-width:21.2rem;
+  max-width: 21.2rem;
 }
 
 .c0:focus::-webkit-input-placeholder,
@@ -1963,6 +1977,7 @@ exports[`Input should render regular - and match snapshot 1`] = `
 
 exports[`Input should render search 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -2100,6 +2115,7 @@ exports[`Input should render search 1`] = `
 
 exports[`Input should render small - and match snapshot 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -2113,7 +2129,7 @@ exports[`Input should render small - and match snapshot 1`] = `
   background-color: var(--px-input-background-color,transparent);
   -webkit-transition: background .4s,border-color .4s,color .4s;
   transition: background .4s,border-color .4s,color .4s;
-  max-width: 14.13333rem max-width:14.13333rem;
+  max-width: 14.13333rem;
 }
 
 .c0:focus::-webkit-input-placeholder,
@@ -2239,6 +2255,7 @@ exports[`Input should render small - and match snapshot 1`] = `
 
 exports[`Input should render tel 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -2376,6 +2393,7 @@ exports[`Input should render tel 1`] = `
 
 exports[`Input should render text 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -2513,6 +2531,7 @@ exports[`Input should render text 1`] = `
 
 exports[`Input should render time 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -2650,6 +2669,7 @@ exports[`Input should render time 1`] = `
 
 exports[`Input should render tiny - and match snapshot 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -2663,7 +2683,7 @@ exports[`Input should render tiny - and match snapshot 1`] = `
   background-color: var(--px-input-background-color,transparent);
   -webkit-transition: background .4s,border-color .4s,color .4s;
   transition: background .4s,border-color .4s,color .4s;
-  max-width: 7.06667rem max-width:7.06667rem;
+  max-width: 7.06667rem;
 }
 
 .c0:focus::-webkit-input-placeholder,
@@ -2789,6 +2809,7 @@ exports[`Input should render tiny - and match snapshot 1`] = `
 
 exports[`Input should render url 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;
@@ -2926,6 +2947,7 @@ exports[`Input should render url 1`] = `
 
 exports[`Input should render week 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   box-sizing: border-box;
   height: 2em;
   width: 100%;

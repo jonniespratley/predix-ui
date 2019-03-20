@@ -1,42 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`px-breadcrumbs renders correctly 1`] = `
-.c1 {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
-  width: var(--iron-icon-width);
-  height: var(--iron-icon-height);
-  color: inherit !important;
-}
-
-.c1 > svg {
-  color: var(--iron-icon-stroke-color,inherit);
-  fill: var(--iron-icon-fill-color,none);
-  stroke: var(--iron-icon-stroke-color,currentColor);
-  position: relative;
-  vertical-align: middle;
-}
-
-.c1.hidden {
-  display: none;
-}
-
 .c0 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  list-style-type: none;
+  height: 2rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -47,157 +24,128 @@ exports[`px-breadcrumbs renders correctly 1`] = `
   align-items: center;
 }
 
-<div>
-  <div
-    className="c0"
+.c1:last-of-type {
+  font-weight: 600;
+}
+
+.c2 {
+  padding: 0 .2rem;
+  -webkit-user-select: normal;
+  -moz-user-select: normal;
+  -ms-user-select: normal;
+  user-select: normal;
+  cursor: normal;
+}
+
+<ul
+  className="c0"
+>
+  <li
+    className="c1"
+    data-index={0}
   >
-    <div
-      className="breadcrumbTopItem"
-      data-index={0}
+    <span
+      className="c2"
+      onClick={[Function]}
     >
-      <div
-        className="c0"
-      >
-        <span
-          className="actionable actionable--action u-ph-"
-          onClick={[Function]}
-        >
-          North America
-        </span>
-      </div>
-    </div>
-    <div
-      className="breadcrumbTopItem"
-      data-index={1}
+      North America
+    </span>
+  </li>
+  <li
+    className="c1"
+    data-index={1}
+  >
+    <svg
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "fill": "none",
+          "height": 24,
+          "stroke": "currentColor",
+          "width": 24,
+        }
+      }
+      viewBox="0 0 16 16"
     >
-      <div
-        className="c0"
+      <g
+        id="px-utl-chevron-right"
       >
-        <i
-          className="px-icon px-utl-chevron-right c1"
-          color="inherit"
-          style={
-            Object {
-              "height": 24,
-              "width": 24,
-            }
-          }
-          viewBox="0 0 16 16"
-        >
-          <svg
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<g id=\\"px-utl-chevron-right\\"><path stroke-linejoin=\\"round\\" d=\\"M6.2 13.2l5.4-5.5-5.5-5.5\\"/></g>",
-              }
-            }
-            preserveAspectRatio="xMidYMid meet"
-            style={
-              Object {
-                "display": "block",
-                "height": 24,
-                "pointerEvents": "none",
-                "width": 24,
-              }
-            }
-            viewBox="0 0 16 16"
-          />
-        </i>
-        <span
-          className="actionable actionable--action u-ph-"
-          onClick={[Function]}
-        >
-          United States of America
-        </span>
-      </div>
-    </div>
-    <div
-      className="breadcrumbTopItem"
-      data-index={2}
+        <path
+          d="M6.2 13.2l5.4-5.5-5.5-5.5"
+          strokeLinejoin="round"
+        />
+      </g>
+    </svg>
+    <span
+      className="c2"
+      onClick={[Function]}
     >
-      <div
-        className="c0"
-      >
-        <i
-          className="px-icon px-utl-chevron-right c1"
-          color="inherit"
-          style={
-            Object {
-              "height": 24,
-              "width": 24,
-            }
-          }
-          viewBox="0 0 16 16"
-        >
-          <svg
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<g id=\\"px-utl-chevron-right\\"><path stroke-linejoin=\\"round\\" d=\\"M6.2 13.2l5.4-5.5-5.5-5.5\\"/></g>",
-              }
-            }
-            preserveAspectRatio="xMidYMid meet"
-            style={
-              Object {
-                "display": "block",
-                "height": 24,
-                "pointerEvents": "none",
-                "width": 24,
-              }
-            }
-            viewBox="0 0 16 16"
-          />
-        </i>
-        <span
-          className="actionable actionable--action u-ph-"
-          onClick={[Function]}
-        >
-          California
-        </span>
-      </div>
-    </div>
-    <div
-      className="breadcrumbTopItem"
-      data-index={3}
+      United States of America
+    </span>
+  </li>
+  <li
+    className="c1"
+    data-index={2}
+  >
+    <svg
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "fill": "none",
+          "height": 24,
+          "stroke": "currentColor",
+          "width": 24,
+        }
+      }
+      viewBox="0 0 16 16"
     >
-      <div
-        className="c0"
+      <g
+        id="px-utl-chevron-right"
       >
-        <i
-          className="px-icon px-utl-chevron-right c1"
-          color="inherit"
-          style={
-            Object {
-              "height": 24,
-              "width": 24,
-            }
-          }
-          viewBox="0 0 16 16"
-        >
-          <svg
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<g id=\\"px-utl-chevron-right\\"><path stroke-linejoin=\\"round\\" d=\\"M6.2 13.2l5.4-5.5-5.5-5.5\\"/></g>",
-              }
-            }
-            preserveAspectRatio="xMidYMid meet"
-            style={
-              Object {
-                "display": "block",
-                "height": 24,
-                "pointerEvents": "none",
-                "width": 24,
-              }
-            }
-            viewBox="0 0 16 16"
-          />
-        </i>
-        <span
-          className="actionable actionable--action u-ph-"
-          onClick={[Function]}
-        >
-          San Ramon
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
+        <path
+          d="M6.2 13.2l5.4-5.5-5.5-5.5"
+          strokeLinejoin="round"
+        />
+      </g>
+    </svg>
+    <span
+      className="c2"
+      onClick={[Function]}
+    >
+      California
+    </span>
+  </li>
+  <li
+    className="c1"
+    data-index={3}
+  >
+    <svg
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "fill": "none",
+          "height": 24,
+          "stroke": "currentColor",
+          "width": 24,
+        }
+      }
+      viewBox="0 0 16 16"
+    >
+      <g
+        id="px-utl-chevron-right"
+      >
+        <path
+          d="M6.2 13.2l5.4-5.5-5.5-5.5"
+          strokeLinejoin="round"
+        />
+      </g>
+    </svg>
+    <span
+      className="c2"
+      onClick={[Function]}
+    >
+      San Ramon
+    </span>
+  </li>
+</ul>
 `;

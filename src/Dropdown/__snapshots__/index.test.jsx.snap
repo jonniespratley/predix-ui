@@ -93,6 +93,7 @@ exports[`Dropdown matches snapshot 1`] = `
   border-color: var(--px-btn-border-color--hover,transparent);
   box-shadow: var(--px-btn-shadow,none);
   background-color: var(--px-btn-background--hover,#a3b5bf);
+  color: var(--px-btn-color--hover,#2c404c);
 }
 
 .c0:active {
