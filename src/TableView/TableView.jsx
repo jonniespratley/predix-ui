@@ -2,8 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled, { css } from '../styled';
 import TableRow from './TableRow';
+import { defaultFontFamily } from '../styles';
 
 const TableView = styled.ul`
+  font-family: ${defaultFontFamily};
   margin: 0;
   padding: 0;
   list-style: none;
@@ -54,7 +56,7 @@ TableViewComponent.propTypes = {
   onSelect: PropTypes.func,
   children: PropTypes.node,
   items: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.oneOfType(PropTypes.string, PropTypes.number),
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     title: PropTypes.string,
     icon: PropTypes.string,
     body: PropTypes.string

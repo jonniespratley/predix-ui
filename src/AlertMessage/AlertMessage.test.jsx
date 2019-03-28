@@ -1,8 +1,6 @@
-//import { expect } from 'chai';
 import React from 'react';
-import { shallow } from 'enzyme';
-import AlertMessage from '.';
 import renderer from 'react-test-renderer';
+import AlertMessage from '.';
 
 const typeOptions = {
   information: 'Info',
@@ -14,22 +12,27 @@ const typeOptions = {
 };
 
 describe('AlertMessage', () => {
-
   test('matches snapshot', () => {
-    const tree = renderer.create(<AlertMessage type='important' visible />).toJSON();
+    const tree = renderer.create(<AlertMessage type="important" visible />).toJSON();
     expect(tree).toMatchSnapshot();
     expect(tree).toHaveStyleRule('display', 'flex');
-    //expect(tree).toHaveStyleRule('color', 'var(--px-alert-label-text-color--information,white)');
+    // expect(tree).toHaveStyleRule('color', 'var(--px-alert-label-text-color--information,white)');
   });
   test('hidden - matches snapshot', () => {
-    const tree = renderer.create(<AlertMessage type='important' />).toJSON();
+    const tree = renderer.create(<AlertMessage type="important" />).toJSON();
     expect(tree).toMatchSnapshot();
-
   });
 
-  Object.keys(typeOptions).forEach(val => {
+  Object.keys(typeOptions).forEach((val) => {
     test(`${val} matches snapshot`, () => {
-      const tree = renderer.create(<AlertMessage type={val} visible>This is a message</AlertMessage>).toJSON();
+      const tree = renderer.create(
+        <AlertMessage
+          type={val}
+          visible
+        >
+        This is a message
+        </AlertMessage>
+      ).toJSON();
       expect(tree).toMatchSnapshot();
     });
   });

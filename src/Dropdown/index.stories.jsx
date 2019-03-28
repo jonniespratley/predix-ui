@@ -1,7 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, text, array, boolean, select } from '@storybook/addon-knobs';
+import {
+ withKnobs, text, array, boolean, select 
+} from '@storybook/addon-knobs';
 import { withReadme } from 'storybook-readme';
 
 import Dropdown from '.';
@@ -32,7 +34,6 @@ storiesOf('Components / Dropdown', module)
       onChange={action('onChange')}
       items={array('items', items)}
       sortMode="key"
-      opened={boolean('opened', false)}
       disabled={boolean('disabled', false)}
       disableClear={boolean('disableClear', false)}
       hideChevron={boolean('hideChevron', false)}

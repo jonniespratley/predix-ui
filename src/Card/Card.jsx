@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from '../styled';
+import styled, { css, switchProp, ifProp } from '../styled';
 
 import Icon from '../Icon/Icon';
 
 const Card = styled.div`
   display: block;
   width: 100%;
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
   background-color: var(--px-card-background-color, lightgray);
   border-top: 1px solid var(--px-card-border-color, gray);
   border: var(--px-card-border);
+  margin-bottom: 1rem;
 `;
 Card.displayName = 'CardContainer';
 
@@ -34,11 +35,7 @@ const CardTitle = styled.span`
 `;
 
 const CardBody = styled.section`
-  padding-left: 1rem;
-  padding-right: 1rem;
-  ${props => props.fullBleed && css`
-    padding: none;
-  `}
+  padding: ${ifProp('fullBleed', 'none', '0 1rem')};
 `;
 CardBody.displayName = 'CardBody';
 
@@ -70,13 +67,15 @@ const CardComponent = ({
   children
 }) => (
   <Card className="px-card">
-    <CardHeader className="px-card-header">
-      <CardTitle>
-        {icon && <CardIcon><Icon icon={icon} /></CardIcon>}
-        {headerText}
-      </CardTitle>
-      {actions && actions()}
-    </CardHeader>
+    {headerText && (
+      <CardHeader className="px-card-header">
+        <CardTitle>
+          {icon && <CardIcon><Icon icon={icon} /></CardIcon>}
+          {headerText}
+        </CardTitle>
+        {actions && actions()}
+      </CardHeader>
+    )}
     <CardBody fullBleed={fullBleed} className="px-card-body">
       {children}
     </CardBody>

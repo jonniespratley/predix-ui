@@ -4,11 +4,12 @@ import styled, { css } from '../styled';
 import Icon from '../Icon/Icon';
 
 const TableRow = styled.div`
+  
   user-select: none;
   min-height: var(--px-table-row-min-height, 2.93333rem);
-  line-height: var(--px-table-row-line-height, 15px);
+  line-height: var(--px-table-row-line-height, 1rem);
   color: var(--px-table-row-color, inherit);
-  font-size: var(--px-table-row-font-size, 15px);
+  font-size: var(--px-table-row-font-size, 1rem);
   background-color: var(--px-table-row-background-color, white);
   border-bottom-width: var(--px-table-row-separator-width, 1px);
   border-bottom-style: var(--px-table-row-separator-style, solid);
@@ -47,7 +48,7 @@ const TableRow = styled.div`
 
   ${props => props.header && css`
     padding: var(--px-table-row-header-padding, 0.33333rem);
-    font-size: var(--px-table-row-header-font-size, 15px);
+    font-size: var(--px-table-row-header-font-size, 1rem);
     color: var(--px-table-row-header-color, inherit);
     background-color: var(--px-table-row-header-background-color, black);
     text-transform: var(--px-table-row-header-text-transform, uppercase);
@@ -94,13 +95,13 @@ const TableRowTitle = styled.div`
   align-self: stretch;
   display: flex;
   white-space: nowrap;
-  font-size: var(--px-table-row-title-font-size, 15px);
+  font-size: var(--px-table-row-title-font-size, 1rem);
   color: var(--px-table-row-title-color, inherit);
 `;
 TableRowTitle.displayName = 'TableRowTitle';
 
 const TableRowBody = styled.div`
-  font-size: var(--px-table-row-body-font-size, 15px);
+  font-size: var(--px-table-row-body-font-size, 1rem);
   order: 5;
   align-self: stretch;
   flex: 1 0 auto;
@@ -152,7 +153,7 @@ const TableRowLabel = styled.div`
 TableRowLabel.displayName = 'TableRowLabel';
 
 const TableRowSubtitle = styled.div`
-  font-size: var(--px-table-row-subtitle-font-size, 15px);
+  font-size: var(--px-table-row-subtitle-font-size, 1rem);
   color: var(--px-table-row-subtitle-color, black);
 `;
 
@@ -161,9 +162,11 @@ const TableRowContent = styled.div`
   display: flex;
   flex-direction: column;
   align-self: stretch;
-
   flex: 1;
   user-select: none;
+  ${props => props.header && css`
+    color: var(--px-table-row-header-color, white);
+  `}
 `;
 TableRowContent.displayName = 'TableRowContent';
 
@@ -228,21 +231,21 @@ const TableRowComponent = ({
     {image && <TableRowMedia><img src={image} alt={title} /></TableRowMedia>}
     {icon && <TableRowMedia><Icon icon={icon} /></TableRowMedia>}
     {editMode && <div className="table-row__media table-row__media--icon table-row__media--right"><button type="button" className="btn btn--bare table-row__handle">hamburger</button></div>}
-    {title && (
-    <TableRowContent>
+    <TableRowContent header={header}>
       {title && <TableRowTitle>{title}</TableRowTitle>}
       {subtitle && <TableRowSubtitle>{subtitle}</TableRowSubtitle>}
       {body && <TableRowBody>{body}</TableRowBody>}
       {rowContent}
     </TableRowContent>
-    )}
 
     {labelRight && <TableRowLabel labelRight className="table-row__label table-row__label--right">{labelRight}</TableRowLabel>}
     {children && <TableRowContent>{children}</TableRowContent>}
     {actions && <TableRowActions>{actions}</TableRowActions>}
+    {underlayContent && (
     <div id="underlay" className="flex flex--stretch">
       {underlayContent}
     </div>
+    )}
   </TableRow>
 );
 

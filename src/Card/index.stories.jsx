@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text } from '@storybook/addon-knobs/react';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs/react';
 import { withReadme } from 'storybook-readme';
 
 import README from './README.md';
@@ -18,6 +18,7 @@ storiesOf('Components / Card', module)
   .addWithJSX('default', () => (
     <Card
       headerText={text('headerText', 'My Card')}
+      fullBleed={boolean('fullBleed', false)}
     >
       {text('content', 'This is the main context area of the card.')}
     </Card>
@@ -26,6 +27,7 @@ storiesOf('Components / Card', module)
     <Card
       icon={text('icon', 'px-fea:analysis')}
       headerText={text('headerText', 'My Card')}
+      fullBleed={boolean('fullBleed', false)}
     >
       {text('content', 'This is the main context area of the card.')}
     </Card>
@@ -34,6 +36,7 @@ storiesOf('Components / Card', module)
     <Card
       icon={text('icon', 'px-fea:analysis')}
       headerText={text('headerText', 'My Card')}
+      fullBleed={boolean('fullBleed', false)}
       actions={customActions}
     >
       {text('content', 'This is the main context area of the card.')}

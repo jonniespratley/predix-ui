@@ -42,9 +42,9 @@ exports[`TableView TableRow should render 1`] = `
   -ms-user-select: none;
   user-select: none;
   min-height: var(--px-table-row-min-height,2.93333rem);
-  line-height: var(--px-table-row-line-height,15px);
+  line-height: var(--px-table-row-line-height,1rem);
   color: var(--px-table-row-color,inherit);
-  font-size: var(--px-table-row-font-size,15px);
+  font-size: var(--px-table-row-font-size,1rem);
   background-color: var(--px-table-row-background-color,white);
   border-bottom-width: var(--px-table-row-separator-width,1px);
   border-bottom-style: var(--px-table-row-separator-style,solid);
@@ -102,12 +102,12 @@ exports[`TableView TableRow should render 1`] = `
   display: -ms-flexbox;
   display: flex;
   white-space: nowrap;
-  font-size: var(--px-table-row-title-font-size,15px);
+  font-size: var(--px-table-row-title-font-size,1rem);
   color: var(--px-table-row-title-color,inherit);
 }
 
 .c5 {
-  font-size: var(--px-table-row-body-font-size,15px);
+  font-size: var(--px-table-row-body-font-size,1rem);
   -webkit-order: 5;
   -ms-flex-order: 5;
   order: 5;
@@ -230,15 +230,12 @@ exports[`TableView TableRow should render 1`] = `
       This is the body
     </div>
   </div>
-  <div
-    className="flex flex--stretch"
-    id="underlay"
-  />
 </div>
 `;
 
 exports[`TableView should render 1`] = `
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -257,9 +254,9 @@ exports[`TableView should render with "large" rows 1`] = `
   -ms-user-select: none;
   user-select: none;
   min-height: var(--px-table-row-min-height,2.93333rem);
-  line-height: var(--px-table-row-line-height,15px);
+  line-height: var(--px-table-row-line-height,1rem);
   color: var(--px-table-row-color,inherit);
-  font-size: var(--px-table-row-font-size,15px);
+  font-size: var(--px-table-row-font-size,1rem);
   background-color: var(--px-table-row-background-color,white);
   border-bottom-width: var(--px-table-row-separator-width,1px);
   border-bottom-style: var(--px-table-row-separator-style,solid);
@@ -318,7 +315,7 @@ exports[`TableView should render with "large" rows 1`] = `
   display: -ms-flexbox;
   display: flex;
   white-space: nowrap;
-  font-size: var(--px-table-row-title-font-size,15px);
+  font-size: var(--px-table-row-title-font-size,1rem);
   color: var(--px-table-row-title-color,inherit);
 }
 
@@ -347,6 +344,7 @@ exports[`TableView should render with "large" rows 1`] = `
 }
 
 .c0 {
+  font-family: "GE Inspira Sans",sans-serif;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -374,10 +372,6 @@ exports[`TableView should render with "large" rows 1`] = `
         Item 1
       </div>
     </div>
-    <div
-      className="flex flex--stretch"
-      id="underlay"
-    />
   </div>
   <div
     className="px-table-row c1"
@@ -393,10 +387,6 @@ exports[`TableView should render with "large" rows 1`] = `
         Item 2
       </div>
     </div>
-    <div
-      className="flex flex--stretch"
-      id="underlay"
-    />
   </div>
   <div
     className="px-table-row c1"
@@ -412,10 +402,6 @@ exports[`TableView should render with "large" rows 1`] = `
         Item 3
       </div>
     </div>
-    <div
-      className="flex flex--stretch"
-      id="underlay"
-    />
   </div>
   <div
     className="px-table-row c1"
@@ -431,10 +417,6 @@ exports[`TableView should render with "large" rows 1`] = `
         Item 4
       </div>
     </div>
-    <div
-      className="flex flex--stretch"
-      id="underlay"
-    />
   </div>
   <div
     className="px-table-row c1"
@@ -450,10 +432,6 @@ exports[`TableView should render with "large" rows 1`] = `
         Item 5
       </div>
     </div>
-    <div
-      className="flex flex--stretch"
-      id="underlay"
-    />
   </div>
 </ul>
 `;
