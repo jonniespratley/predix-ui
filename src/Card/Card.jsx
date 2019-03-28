@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css, switchProp, ifProp } from '../styled';
+import styled, { ifProp } from '../styled';
 
 import Icon from '../Icon/Icon';
 
