@@ -37,7 +37,7 @@ exports[`IconSet should render px-com-chat 1`] = `
 }
 
 <i
-  className="px-icon px-com-chat c0"
+  className="c0 px-icon px-com-chat"
   color="inherit"
   style={
     Object {
@@ -103,7 +103,7 @@ exports[`IconSet should render px-com-comment 1`] = `
 }
 
 <i
-  className="px-icon px-com-comment c0"
+  className="c0 px-icon px-com-comment"
   color="inherit"
   style={
     Object {
@@ -169,7 +169,7 @@ exports[`IconSet should render px-com-email 1`] = `
 }
 
 <i
-  className="px-icon px-com-email c0"
+  className="c0 px-icon px-com-email"
   color="inherit"
   style={
     Object {
@@ -235,7 +235,7 @@ exports[`IconSet should render px-com-message 1`] = `
 }
 
 <i
-  className="px-icon px-com-message c0"
+  className="c0 px-icon px-com-message"
   color="inherit"
   style={
     Object {
@@ -301,7 +301,7 @@ exports[`IconSet should render px-com-phone 1`] = `
 }
 
 <i
-  className="px-icon px-com-phone c0"
+  className="c0 px-icon px-com-phone"
   color="inherit"
   style={
     Object {
@@ -367,7 +367,7 @@ exports[`IconSet should render px-com-sms 1`] = `
 }
 
 <i
-  className="px-icon px-com-sms c0"
+  className="c0 px-icon px-com-sms"
   color="inherit"
   style={
     Object {
@@ -433,7 +433,7 @@ exports[`IconSet should render px-doc-chart 1`] = `
 }
 
 <i
-  className="px-icon px-doc-chart c0"
+  className="c0 px-icon px-doc-chart"
   color="inherit"
   style={
     Object {
@@ -499,7 +499,7 @@ exports[`IconSet should render px-doc-document 1`] = `
 }
 
 <i
-  className="px-icon px-doc-document c0"
+  className="c0 px-icon px-doc-document"
   color="inherit"
   style={
     Object {
@@ -565,7 +565,7 @@ exports[`IconSet should render px-doc-document-csv 1`] = `
 }
 
 <i
-  className="px-icon px-doc-document-csv c0"
+  className="c0 px-icon px-doc-document-csv"
   color="inherit"
   style={
     Object {
@@ -631,7 +631,7 @@ exports[`IconSet should render px-doc-document-pdf 1`] = `
 }
 
 <i
-  className="px-icon px-doc-document-pdf c0"
+  className="c0 px-icon px-doc-document-pdf"
   color="inherit"
   style={
     Object {
@@ -697,7 +697,7 @@ exports[`IconSet should render px-doc-document-word 1`] = `
 }
 
 <i
-  className="px-icon px-doc-document-word c0"
+  className="c0 px-icon px-doc-document-word"
   color="inherit"
   style={
     Object {
@@ -763,7 +763,7 @@ exports[`IconSet should render px-doc-document-xls 1`] = `
 }
 
 <i
-  className="px-icon px-doc-document-xls c0"
+  className="c0 px-icon px-doc-document-xls"
   color="inherit"
   style={
     Object {
@@ -829,7 +829,7 @@ exports[`IconSet should render px-doc-image 1`] = `
 }
 
 <i
-  className="px-icon px-doc-image c0"
+  className="c0 px-icon px-doc-image"
   color="inherit"
   style={
     Object {
@@ -895,7 +895,7 @@ exports[`IconSet should render px-doc-note 1`] = `
 }
 
 <i
-  className="px-icon px-doc-note c0"
+  className="c0 px-icon px-doc-note"
   color="inherit"
   style={
     Object {
@@ -961,7 +961,7 @@ exports[`IconSet should render px-doc-website 1`] = `
 }
 
 <i
-  className="px-icon px-doc-website c0"
+  className="c0 px-icon px-doc-website"
   color="inherit"
   style={
     Object {
@@ -1027,7 +1027,7 @@ exports[`IconSet should render px-fea-administration 1`] = `
 }
 
 <i
-  className="px-icon px-fea-administration c0"
+  className="c0 px-icon px-fea-administration"
   color="inherit"
   style={
     Object {
@@ -1093,7 +1093,7 @@ exports[`IconSet should render px-fea-alerts 1`] = `
 }
 
 <i
-  className="px-icon px-fea-alerts c0"
+  className="c0 px-icon px-fea-alerts"
   color="inherit"
   style={
     Object {
@@ -1159,7 +1159,7 @@ exports[`IconSet should render px-fea-analysis 1`] = `
 }
 
 <i
-  className="px-icon px-fea-analysis c0"
+  className="c0 px-icon px-fea-analysis"
   color="inherit"
   style={
     Object {
@@ -1225,7 +1225,7 @@ exports[`IconSet should render px-fea-analytics 1`] = `
 }
 
 <i
-  className="px-icon px-fea-analytics c0"
+  className="c0 px-icon px-fea-analytics"
   color="inherit"
   style={
     Object {
@@ -1291,7 +1291,7 @@ exports[`IconSet should render px-fea-asset 1`] = `
 }
 
 <i
-  className="px-icon px-fea-asset c0"
+  className="c0 px-icon px-fea-asset"
   color="inherit"
   style={
     Object {
@@ -1357,7 +1357,7 @@ exports[`IconSet should render px-fea-asset-ingestion 1`] = `
 }
 
 <i
-  className="px-icon px-fea-asset-ingestion c0"
+  className="c0 px-icon px-fea-asset-ingestion"
   color="inherit"
   style={
     Object {
@@ -1423,7 +1423,7 @@ exports[`IconSet should render px-fea-attribute 1`] = `
 }
 
 <i
-  className="px-icon px-fea-attribute c0"
+  className="c0 px-icon px-fea-attribute"
   color="inherit"
   style={
     Object {
@@ -1489,7 +1489,7 @@ exports[`IconSet should render px-fea-bug 1`] = `
 }
 
 <i
-  className="px-icon px-fea-bug c0"
+  className="c0 px-icon px-fea-bug"
   color="inherit"
   style={
     Object {
@@ -1555,7 +1555,7 @@ exports[`IconSet should render px-fea-calendar 1`] = `
 }
 
 <i
-  className="px-icon px-fea-calendar c0"
+  className="c0 px-icon px-fea-calendar"
   color="inherit"
   style={
     Object {
@@ -1621,7 +1621,7 @@ exports[`IconSet should render px-fea-cases 1`] = `
 }
 
 <i
-  className="px-icon px-fea-cases c0"
+  className="c0 px-icon px-fea-cases"
   color="inherit"
   style={
     Object {
@@ -1687,7 +1687,7 @@ exports[`IconSet should render px-fea-catalog 1`] = `
 }
 
 <i
-  className="px-icon px-fea-catalog c0"
+  className="c0 px-icon px-fea-catalog"
   color="inherit"
   style={
     Object {
@@ -1753,7 +1753,7 @@ exports[`IconSet should render px-fea-dashboard 1`] = `
 }
 
 <i
-  className="px-icon px-fea-dashboard c0"
+  className="c0 px-icon px-fea-dashboard"
   color="inherit"
   style={
     Object {
@@ -1819,7 +1819,7 @@ exports[`IconSet should render px-fea-data-sources 1`] = `
 }
 
 <i
-  className="px-icon px-fea-data-sources c0"
+  className="c0 px-icon px-fea-data-sources"
   color="inherit"
   style={
     Object {
@@ -1885,7 +1885,7 @@ exports[`IconSet should render px-fea-deployments 1`] = `
 }
 
 <i
-  className="px-icon px-fea-deployments c0"
+  className="c0 px-icon px-fea-deployments"
   color="inherit"
   style={
     Object {
@@ -1951,7 +1951,7 @@ exports[`IconSet should render px-fea-dev-ops 1`] = `
 }
 
 <i
-  className="px-icon px-fea-dev-ops c0"
+  className="c0 px-icon px-fea-dev-ops"
   color="inherit"
   style={
     Object {
@@ -2017,7 +2017,7 @@ exports[`IconSet should render px-fea-digital-twin 1`] = `
 }
 
 <i
-  className="px-icon px-fea-digital-twin c0"
+  className="c0 px-icon px-fea-digital-twin"
   color="inherit"
   style={
     Object {
@@ -2083,7 +2083,7 @@ exports[`IconSet should render px-fea-home 1`] = `
 }
 
 <i
-  className="px-icon px-fea-home c0"
+  className="c0 px-icon px-fea-home"
   color="inherit"
   style={
     Object {
@@ -2149,7 +2149,7 @@ exports[`IconSet should render px-fea-log 1`] = `
 }
 
 <i
-  className="px-icon px-fea-log c0"
+  className="c0 px-icon px-fea-log"
   color="inherit"
   style={
     Object {
@@ -2215,7 +2215,7 @@ exports[`IconSet should render px-fea-microservice 1`] = `
 }
 
 <i
-  className="px-icon px-fea-microservice c0"
+  className="c0 px-icon px-fea-microservice"
   color="inherit"
   style={
     Object {
@@ -2281,7 +2281,7 @@ exports[`IconSet should render px-fea-orchestration 1`] = `
 }
 
 <i
-  className="px-icon px-fea-orchestration c0"
+  className="c0 px-icon px-fea-orchestration"
   color="inherit"
   style={
     Object {
@@ -2347,7 +2347,7 @@ exports[`IconSet should render px-fea-orders 1`] = `
 }
 
 <i
-  className="px-icon px-fea-orders c0"
+  className="c0 px-icon px-fea-orders"
   color="inherit"
   style={
     Object {
@@ -2413,7 +2413,7 @@ exports[`IconSet should render px-fea-pipeline 1`] = `
 }
 
 <i
-  className="px-icon px-fea-pipeline c0"
+  className="c0 px-icon px-fea-pipeline"
   color="inherit"
   style={
     Object {
@@ -2479,7 +2479,7 @@ exports[`IconSet should render px-fea-products 1`] = `
 }
 
 <i
-  className="px-icon px-fea-products c0"
+  className="c0 px-icon px-fea-products"
   color="inherit"
   style={
     Object {
@@ -2545,7 +2545,7 @@ exports[`IconSet should render px-fea-spaces 1`] = `
 }
 
 <i
-  className="px-icon px-fea-spaces c0"
+  className="c0 px-icon px-fea-spaces"
   color="inherit"
   style={
     Object {
@@ -2611,7 +2611,7 @@ exports[`IconSet should render px-fea-tag 1`] = `
 }
 
 <i
-  className="px-icon px-fea-tag c0"
+  className="c0 px-icon px-fea-tag"
   color="inherit"
   style={
     Object {
@@ -2677,7 +2677,7 @@ exports[`IconSet should render px-fea-tag-group 1`] = `
 }
 
 <i
-  className="px-icon px-fea-tag-group c0"
+  className="c0 px-icon px-fea-tag-group"
   color="inherit"
   style={
     Object {
@@ -2743,7 +2743,7 @@ exports[`IconSet should render px-fea-templates 1`] = `
 }
 
 <i
-  className="px-icon px-fea-templates c0"
+  className="c0 px-icon px-fea-templates"
   color="inherit"
   style={
     Object {
@@ -2809,7 +2809,7 @@ exports[`IconSet should render px-fea-users 1`] = `
 }
 
 <i
-  className="px-icon px-fea-users c0"
+  className="c0 px-icon px-fea-users"
   color="inherit"
   style={
     Object {
@@ -2875,7 +2875,7 @@ exports[`IconSet should render px-fea-versions 1`] = `
 }
 
 <i
-  className="px-icon px-fea-versions c0"
+  className="c0 px-icon px-fea-versions"
   color="inherit"
   style={
     Object {
@@ -2941,7 +2941,7 @@ exports[`IconSet should render px-nav-back 1`] = `
 }
 
 <i
-  className="px-icon px-nav-back c0"
+  className="c0 px-icon px-nav-back"
   color="inherit"
   style={
     Object {
@@ -3007,7 +3007,7 @@ exports[`IconSet should render px-nav-close 1`] = `
 }
 
 <i
-  className="px-icon px-nav-close c0"
+  className="c0 px-icon px-nav-close"
   color="inherit"
   style={
     Object {
@@ -3073,7 +3073,7 @@ exports[`IconSet should render px-nav-collapse 1`] = `
 }
 
 <i
-  className="px-icon px-nav-collapse c0"
+  className="c0 px-icon px-nav-collapse"
   color="inherit"
   style={
     Object {
@@ -3139,7 +3139,7 @@ exports[`IconSet should render px-nav-confirmed 1`] = `
 }
 
 <i
-  className="px-icon px-nav-confirmed c0"
+  className="c0 px-icon px-nav-confirmed"
   color="inherit"
   style={
     Object {
@@ -3205,7 +3205,7 @@ exports[`IconSet should render px-nav-down 1`] = `
 }
 
 <i
-  className="px-icon px-nav-down c0"
+  className="c0 px-icon px-nav-down"
   color="inherit"
   style={
     Object {
@@ -3271,7 +3271,7 @@ exports[`IconSet should render px-nav-expand 1`] = `
 }
 
 <i
-  className="px-icon px-nav-expand c0"
+  className="c0 px-icon px-nav-expand"
   color="inherit"
   style={
     Object {
@@ -3337,7 +3337,7 @@ exports[`IconSet should render px-nav-favorite 1`] = `
 }
 
 <i
-  className="px-icon px-nav-favorite c0"
+  className="c0 px-icon px-nav-favorite"
   color="inherit"
   style={
     Object {
@@ -3403,7 +3403,7 @@ exports[`IconSet should render px-nav-generic-user 1`] = `
 }
 
 <i
-  className="px-icon px-nav-generic-user c0"
+  className="c0 px-icon px-nav-generic-user"
   color="inherit"
   style={
     Object {
@@ -3469,7 +3469,7 @@ exports[`IconSet should render px-nav-grid-view 1`] = `
 }
 
 <i
-  className="px-icon px-nav-grid-view c0"
+  className="c0 px-icon px-nav-grid-view"
   color="inherit"
   style={
     Object {
@@ -3535,7 +3535,7 @@ exports[`IconSet should render px-nav-hamburger 1`] = `
 }
 
 <i
-  className="px-icon px-nav-hamburger c0"
+  className="c0 px-icon px-nav-hamburger"
   color="inherit"
   style={
     Object {
@@ -3601,7 +3601,7 @@ exports[`IconSet should render px-nav-hierarchy 1`] = `
 }
 
 <i
-  className="px-icon px-nav-hierarchy c0"
+  className="c0 px-icon px-nav-hierarchy"
   color="inherit"
   style={
     Object {
@@ -3667,7 +3667,7 @@ exports[`IconSet should render px-nav-home 1`] = `
 }
 
 <i
-  className="px-icon px-nav-home c0"
+  className="c0 px-icon px-nav-home"
   color="inherit"
   style={
     Object {
@@ -3733,7 +3733,7 @@ exports[`IconSet should render px-nav-inbox-view 1`] = `
 }
 
 <i
-  className="px-icon px-nav-inbox-view c0"
+  className="c0 px-icon px-nav-inbox-view"
   color="inherit"
   style={
     Object {
@@ -3799,7 +3799,7 @@ exports[`IconSet should render px-nav-instance 1`] = `
 }
 
 <i
-  className="px-icon px-nav-instance c0"
+  className="c0 px-icon px-nav-instance"
   color="inherit"
   style={
     Object {
@@ -3865,7 +3865,7 @@ exports[`IconSet should render px-nav-list-view 1`] = `
 }
 
 <i
-  className="px-icon px-nav-list-view c0"
+  className="c0 px-icon px-nav-list-view"
   color="inherit"
   style={
     Object {
@@ -3931,7 +3931,7 @@ exports[`IconSet should render px-nav-log-out 1`] = `
 }
 
 <i
-  className="px-icon px-nav-log-out c0"
+  className="c0 px-icon px-nav-log-out"
   color="inherit"
   style={
     Object {
@@ -3997,7 +3997,7 @@ exports[`IconSet should render px-nav-menu 1`] = `
 }
 
 <i
-  className="px-icon px-nav-menu c0"
+  className="c0 px-icon px-nav-menu"
   color="inherit"
   style={
     Object {
@@ -4063,7 +4063,7 @@ exports[`IconSet should render px-nav-more 1`] = `
 }
 
 <i
-  className="px-icon px-nav-more c0"
+  className="c0 px-icon px-nav-more"
   color="inherit"
   style={
     Object {
@@ -4129,7 +4129,7 @@ exports[`IconSet should render px-nav-new-window 1`] = `
 }
 
 <i
-  className="px-icon px-nav-new-window c0"
+  className="c0 px-icon px-nav-new-window"
   color="inherit"
   style={
     Object {
@@ -4195,7 +4195,7 @@ exports[`IconSet should render px-nav-next 1`] = `
 }
 
 <i
-  className="px-icon px-nav-next c0"
+  className="c0 px-icon px-nav-next"
   color="inherit"
   style={
     Object {
@@ -4261,7 +4261,7 @@ exports[`IconSet should render px-nav-notification 1`] = `
 }
 
 <i
-  className="px-icon px-nav-notification c0"
+  className="c0 px-icon px-nav-notification"
   color="inherit"
   style={
     Object {
@@ -4327,7 +4327,7 @@ exports[`IconSet should render px-nav-open-context 1`] = `
 }
 
 <i
-  className="px-icon px-nav-open-context c0"
+  className="c0 px-icon px-nav-open-context"
   color="inherit"
   style={
     Object {
@@ -4393,7 +4393,7 @@ exports[`IconSet should render px-nav-pause 1`] = `
 }
 
 <i
-  className="px-icon px-nav-pause c0"
+  className="c0 px-icon px-nav-pause"
   color="inherit"
   style={
     Object {
@@ -4459,7 +4459,7 @@ exports[`IconSet should render px-nav-play 1`] = `
 }
 
 <i
-  className="px-icon px-nav-play c0"
+  className="c0 px-icon px-nav-play"
   color="inherit"
   style={
     Object {
@@ -4525,7 +4525,7 @@ exports[`IconSet should render px-nav-reload 1`] = `
 }
 
 <i
-  className="px-icon px-nav-reload c0"
+  className="c0 px-icon px-nav-reload"
   color="inherit"
   style={
     Object {
@@ -4591,7 +4591,7 @@ exports[`IconSet should render px-nav-search 1`] = `
 }
 
 <i
-  className="px-icon px-nav-search c0"
+  className="c0 px-icon px-nav-search"
   color="inherit"
   style={
     Object {
@@ -4657,7 +4657,7 @@ exports[`IconSet should render px-nav-stop 1`] = `
 }
 
 <i
-  className="px-icon px-nav-stop c0"
+  className="c0 px-icon px-nav-stop"
   color="inherit"
   style={
     Object {
@@ -4723,7 +4723,7 @@ exports[`IconSet should render px-nav-tile-view 1`] = `
 }
 
 <i
-  className="px-icon px-nav-tile-view c0"
+  className="c0 px-icon px-nav-tile-view"
   color="inherit"
   style={
     Object {
@@ -4789,7 +4789,7 @@ exports[`IconSet should render px-nav-tree 1`] = `
 }
 
 <i
-  className="px-icon px-nav-tree c0"
+  className="c0 px-icon px-nav-tree"
   color="inherit"
   style={
     Object {
@@ -4855,7 +4855,7 @@ exports[`IconSet should render px-nav-unconfirmed 1`] = `
 }
 
 <i
-  className="px-icon px-nav-unconfirmed c0"
+  className="c0 px-icon px-nav-unconfirmed"
   color="inherit"
   style={
     Object {
@@ -4921,7 +4921,7 @@ exports[`IconSet should render px-nav-up 1`] = `
 }
 
 <i
-  className="px-icon px-nav-up c0"
+  className="c0 px-icon px-nav-up"
   color="inherit"
   style={
     Object {
@@ -4987,7 +4987,7 @@ exports[`IconSet should render px-obj-airplane 1`] = `
 }
 
 <i
-  className="px-icon px-obj-airplane c0"
+  className="c0 px-icon px-obj-airplane"
   color="inherit"
   style={
     Object {
@@ -5053,7 +5053,7 @@ exports[`IconSet should render px-obj-airplane-engine 1`] = `
 }
 
 <i
-  className="px-icon px-obj-airplane-engine c0"
+  className="c0 px-icon px-obj-airplane-engine"
   color="inherit"
   style={
     Object {
@@ -5119,7 +5119,7 @@ exports[`IconSet should render px-obj-airport 1`] = `
 }
 
 <i
-  className="px-icon px-obj-airport c0"
+  className="c0 px-icon px-obj-airport"
   color="inherit"
   style={
     Object {
@@ -5185,7 +5185,7 @@ exports[`IconSet should render px-obj-automobile 1`] = `
 }
 
 <i
-  className="px-icon px-obj-automobile c0"
+  className="c0 px-icon px-obj-automobile"
   color="inherit"
   style={
     Object {
@@ -5251,7 +5251,7 @@ exports[`IconSet should render px-obj-boiler 1`] = `
 }
 
 <i
-  className="px-icon px-obj-boiler c0"
+  className="c0 px-icon px-obj-boiler"
   color="inherit"
   style={
     Object {
@@ -5317,7 +5317,7 @@ exports[`IconSet should render px-obj-cell-tower 1`] = `
 }
 
 <i
-  className="px-icon px-obj-cell-tower c0"
+  className="c0 px-icon px-obj-cell-tower"
   color="inherit"
   style={
     Object {
@@ -5383,7 +5383,7 @@ exports[`IconSet should render px-obj-class 1`] = `
 }
 
 <i
-  className="px-icon px-obj-class c0"
+  className="c0 px-icon px-obj-class"
   color="inherit"
   style={
     Object {
@@ -5449,7 +5449,7 @@ exports[`IconSet should render px-obj-condenser 1`] = `
 }
 
 <i
-  className="px-icon px-obj-condenser c0"
+  className="c0 px-icon px-obj-condenser"
   color="inherit"
   style={
     Object {
@@ -5515,7 +5515,7 @@ exports[`IconSet should render px-obj-controller 1`] = `
 }
 
 <i
-  className="px-icon px-obj-controller c0"
+  className="c0 px-icon px-obj-controller"
   color="inherit"
   style={
     Object {
@@ -5581,7 +5581,7 @@ exports[`IconSet should render px-obj-cooling-tower 1`] = `
 }
 
 <i
-  className="px-icon px-obj-cooling-tower c0"
+  className="c0 px-icon px-obj-cooling-tower"
   color="inherit"
   style={
     Object {
@@ -5647,7 +5647,7 @@ exports[`IconSet should render px-obj-database 1`] = `
 }
 
 <i
-  className="px-icon px-obj-database c0"
+  className="c0 px-icon px-obj-database"
   color="inherit"
   style={
     Object {
@@ -5713,7 +5713,7 @@ exports[`IconSet should render px-obj-desktop 1`] = `
 }
 
 <i
-  className="px-icon px-obj-desktop c0"
+  className="c0 px-icon px-obj-desktop"
   color="inherit"
   style={
     Object {
@@ -5779,7 +5779,7 @@ exports[`IconSet should render px-obj-edge-box 1`] = `
 }
 
 <i
-  className="px-icon px-obj-edge-box c0"
+  className="c0 px-icon px-obj-edge-box"
   color="inherit"
   style={
     Object {
@@ -5845,7 +5845,7 @@ exports[`IconSet should render px-obj-fleet 1`] = `
 }
 
 <i
-  className="px-icon px-obj-fleet c0"
+  className="c0 px-icon px-obj-fleet"
   color="inherit"
   style={
     Object {
@@ -5911,7 +5911,7 @@ exports[`IconSet should render px-obj-gas-turbine 1`] = `
 }
 
 <i
-  className="px-icon px-obj-gas-turbine c0"
+  className="c0 px-icon px-obj-gas-turbine"
   color="inherit"
   style={
     Object {
@@ -5977,7 +5977,7 @@ exports[`IconSet should render px-obj-gateway 1`] = `
 }
 
 <i
-  className="px-icon px-obj-gateway c0"
+  className="c0 px-icon px-obj-gateway"
   color="inherit"
   style={
     Object {
@@ -6043,7 +6043,7 @@ exports[`IconSet should render px-obj-hrsg 1`] = `
 }
 
 <i
-  className="px-icon px-obj-hrsg c0"
+  className="c0 px-icon px-obj-hrsg"
   color="inherit"
   style={
     Object {
@@ -6109,7 +6109,7 @@ exports[`IconSet should render px-obj-imaging-machine 1`] = `
 }
 
 <i
-  className="px-icon px-obj-imaging-machine c0"
+  className="c0 px-icon px-obj-imaging-machine"
   color="inherit"
   style={
     Object {
@@ -6175,7 +6175,7 @@ exports[`IconSet should render px-obj-light-bulb 1`] = `
 }
 
 <i
-  className="px-icon px-obj-light-bulb c0"
+  className="c0 px-icon px-obj-light-bulb"
   color="inherit"
   style={
     Object {
@@ -6241,7 +6241,7 @@ exports[`IconSet should render px-obj-line 1`] = `
 }
 
 <i
-  className="px-icon px-obj-line c0"
+  className="c0 px-icon px-obj-line"
   color="inherit"
   style={
     Object {
@@ -6307,7 +6307,7 @@ exports[`IconSet should render px-obj-line-og 1`] = `
 }
 
 <i
-  className="px-icon px-obj-line-og c0"
+  className="c0 px-icon px-obj-line-og"
   color="inherit"
   style={
     Object {
@@ -6373,7 +6373,7 @@ exports[`IconSet should render px-obj-locomotive 1`] = `
 }
 
 <i
-  className="px-icon px-obj-locomotive c0"
+  className="c0 px-icon px-obj-locomotive"
   color="inherit"
   style={
     Object {
@@ -6439,7 +6439,7 @@ exports[`IconSet should render px-obj-machine 1`] = `
 }
 
 <i
-  className="px-icon px-obj-machine c0"
+  className="c0 px-icon px-obj-machine"
   color="inherit"
   style={
     Object {
@@ -6505,7 +6505,7 @@ exports[`IconSet should render px-obj-manufacturing-line 1`] = `
 }
 
 <i
-  className="px-icon px-obj-manufacturing-line c0"
+  className="c0 px-icon px-obj-manufacturing-line"
   color="inherit"
   style={
     Object {
@@ -6571,7 +6571,7 @@ exports[`IconSet should render px-obj-plant 1`] = `
 }
 
 <i
-  className="px-icon px-obj-plant c0"
+  className="c0 px-icon px-obj-plant"
   color="inherit"
   style={
     Object {
@@ -6637,7 +6637,7 @@ exports[`IconSet should render px-obj-predix-box 1`] = `
 }
 
 <i
-  className="px-icon px-obj-predix-box c0"
+  className="c0 px-icon px-obj-predix-box"
   color="inherit"
   style={
     Object {
@@ -6703,7 +6703,7 @@ exports[`IconSet should render px-obj-product 1`] = `
 }
 
 <i
-  className="px-icon px-obj-product c0"
+  className="c0 px-icon px-obj-product"
   color="inherit"
   style={
     Object {
@@ -6769,7 +6769,7 @@ exports[`IconSet should render px-obj-rail-yard 1`] = `
 }
 
 <i
-  className="px-icon px-obj-rail-yard c0"
+  className="c0 px-icon px-obj-rail-yard"
   color="inherit"
   style={
     Object {
@@ -6835,7 +6835,7 @@ exports[`IconSet should render px-obj-routes 1`] = `
 }
 
 <i
-  className="px-icon px-obj-routes c0"
+  className="c0 px-icon px-obj-routes"
   color="inherit"
   style={
     Object {
@@ -6901,7 +6901,7 @@ exports[`IconSet should render px-obj-sensor 1`] = `
 }
 
 <i
-  className="px-icon px-obj-sensor c0"
+  className="c0 px-icon px-obj-sensor"
   color="inherit"
   style={
     Object {
@@ -6967,7 +6967,7 @@ exports[`IconSet should render px-obj-solar-panel 1`] = `
 }
 
 <i
-  className="px-icon px-obj-solar-panel c0"
+  className="c0 px-icon px-obj-solar-panel"
   color="inherit"
   style={
     Object {
@@ -7033,7 +7033,7 @@ exports[`IconSet should render px-obj-steam-turbine 1`] = `
 }
 
 <i
-  className="px-icon px-obj-steam-turbine c0"
+  className="c0 px-icon px-obj-steam-turbine"
   color="inherit"
   style={
     Object {
@@ -7099,7 +7099,7 @@ exports[`IconSet should render px-obj-train 1`] = `
 }
 
 <i
-  className="px-icon px-obj-train c0"
+  className="c0 px-icon px-obj-train"
   color="inherit"
   style={
     Object {
@@ -7165,7 +7165,7 @@ exports[`IconSet should render px-obj-truck 1`] = `
 }
 
 <i
-  className="px-icon px-obj-truck c0"
+  className="c0 px-icon px-obj-truck"
   color="inherit"
   style={
     Object {
@@ -7231,7 +7231,7 @@ exports[`IconSet should render px-obj-wind-turbine 1`] = `
 }
 
 <i
-  className="px-icon px-obj-wind-turbine c0"
+  className="c0 px-icon px-obj-wind-turbine"
   color="inherit"
   style={
     Object {
@@ -7297,7 +7297,7 @@ exports[`IconSet should render px-utl-add 1`] = `
 }
 
 <i
-  className="px-icon px-utl-add c0"
+  className="c0 px-icon px-utl-add"
   color="inherit"
   style={
     Object {
@@ -7363,7 +7363,7 @@ exports[`IconSet should render px-utl-alert 1`] = `
 }
 
 <i
-  className="px-icon px-utl-alert c0"
+  className="c0 px-icon px-utl-alert"
   color="inherit"
   style={
     Object {
@@ -7429,7 +7429,7 @@ exports[`IconSet should render px-utl-app-settings 1`] = `
 }
 
 <i
-  className="px-icon px-utl-app-settings c0"
+  className="c0 px-icon px-utl-app-settings"
   color="inherit"
   style={
     Object {
@@ -7495,7 +7495,7 @@ exports[`IconSet should render px-utl-calculation 1`] = `
 }
 
 <i
-  className="px-icon px-utl-calculation c0"
+  className="c0 px-icon px-utl-calculation"
   color="inherit"
   style={
     Object {
@@ -7561,7 +7561,7 @@ exports[`IconSet should render px-utl-calendar 1`] = `
 }
 
 <i
-  className="px-icon px-utl-calendar c0"
+  className="c0 px-icon px-utl-calendar"
   color="inherit"
   style={
     Object {
@@ -7627,7 +7627,7 @@ exports[`IconSet should render px-utl-camera 1`] = `
 }
 
 <i
-  className="px-icon px-utl-camera c0"
+  className="c0 px-icon px-utl-camera"
   color="inherit"
   style={
     Object {
@@ -7693,7 +7693,7 @@ exports[`IconSet should render px-utl-check 1`] = `
 }
 
 <i
-  className="px-icon px-utl-check c0"
+  className="c0 px-icon px-utl-check"
   color="inherit"
   style={
     Object {
@@ -7759,7 +7759,7 @@ exports[`IconSet should render px-utl-chevron 1`] = `
 }
 
 <i
-  className="px-icon px-utl-chevron c0"
+  className="c0 px-icon px-utl-chevron"
   color="inherit"
   style={
     Object {
@@ -7825,7 +7825,7 @@ exports[`IconSet should render px-utl-chevron-left 1`] = `
 }
 
 <i
-  className="px-icon px-utl-chevron-left c0"
+  className="c0 px-icon px-utl-chevron-left"
   color="inherit"
   style={
     Object {
@@ -7891,7 +7891,7 @@ exports[`IconSet should render px-utl-chevron-right 1`] = `
 }
 
 <i
-  className="px-icon px-utl-chevron-right c0"
+  className="c0 px-icon px-utl-chevron-right"
   color="inherit"
   style={
     Object {
@@ -7957,7 +7957,7 @@ exports[`IconSet should render px-utl-chevron-up 1`] = `
 }
 
 <i
-  className="px-icon px-utl-chevron-up c0"
+  className="c0 px-icon px-utl-chevron-up"
   color="inherit"
   style={
     Object {
@@ -8023,7 +8023,7 @@ exports[`IconSet should render px-utl-clock 1`] = `
 }
 
 <i
-  className="px-icon px-utl-clock c0"
+  className="c0 px-icon px-utl-clock"
   color="inherit"
   style={
     Object {
@@ -8089,7 +8089,7 @@ exports[`IconSet should render px-utl-close 1`] = `
 }
 
 <i
-  className="px-icon px-utl-close c0"
+  className="c0 px-icon px-utl-close"
   color="inherit"
   style={
     Object {
@@ -8155,7 +8155,7 @@ exports[`IconSet should render px-utl-confirmed 1`] = `
 }
 
 <i
-  className="px-icon px-utl-confirmed c0"
+  className="c0 px-icon px-utl-confirmed"
   color="inherit"
   style={
     Object {
@@ -8221,7 +8221,7 @@ exports[`IconSet should render px-utl-copy 1`] = `
 }
 
 <i
-  className="px-icon px-utl-copy c0"
+  className="c0 px-icon px-utl-copy"
   color="inherit"
   style={
     Object {
@@ -8287,7 +8287,7 @@ exports[`IconSet should render px-utl-delete 1`] = `
 }
 
 <i
-  className="px-icon px-utl-delete c0"
+  className="c0 px-icon px-utl-delete"
   color="inherit"
   style={
     Object {
@@ -8353,7 +8353,7 @@ exports[`IconSet should render px-utl-desktop-computer 1`] = `
 }
 
 <i
-  className="px-icon px-utl-desktop-computer c0"
+  className="c0 px-icon px-utl-desktop-computer"
   color="inherit"
   style={
     Object {
@@ -8419,7 +8419,7 @@ exports[`IconSet should render px-utl-download 1`] = `
 }
 
 <i
-  className="px-icon px-utl-download c0"
+  className="c0 px-icon px-utl-download"
   color="inherit"
   style={
     Object {
@@ -8485,7 +8485,7 @@ exports[`IconSet should render px-utl-edit 1`] = `
 }
 
 <i
-  className="px-icon px-utl-edit c0"
+  className="c0 px-icon px-utl-edit"
   color="inherit"
   style={
     Object {
@@ -8551,7 +8551,7 @@ exports[`IconSet should render px-utl-failure 1`] = `
 }
 
 <i
-  className="px-icon px-utl-failure c0"
+  className="c0 px-icon px-utl-failure"
   color="inherit"
   style={
     Object {
@@ -8617,7 +8617,7 @@ exports[`IconSet should render px-utl-filter 1`] = `
 }
 
 <i
-  className="px-icon px-utl-filter c0"
+  className="c0 px-icon px-utl-filter"
   color="inherit"
   style={
     Object {
@@ -8683,7 +8683,7 @@ exports[`IconSet should render px-utl-flag 1`] = `
 }
 
 <i
-  className="px-icon px-utl-flag c0"
+  className="c0 px-icon px-utl-flag"
   color="inherit"
   style={
     Object {
@@ -8749,7 +8749,7 @@ exports[`IconSet should render px-utl-folder-closed 1`] = `
 }
 
 <i
-  className="px-icon px-utl-folder-closed c0"
+  className="c0 px-icon px-utl-folder-closed"
   color="inherit"
   style={
     Object {
@@ -8815,7 +8815,7 @@ exports[`IconSet should render px-utl-folder-open 1`] = `
 }
 
 <i
-  className="px-icon px-utl-folder-open c0"
+  className="c0 px-icon px-utl-folder-open"
   color="inherit"
   style={
     Object {
@@ -8881,7 +8881,7 @@ exports[`IconSet should render px-utl-formula 1`] = `
 }
 
 <i
-  className="px-icon px-utl-formula c0"
+  className="c0 px-icon px-utl-formula"
   color="inherit"
   style={
     Object {
@@ -8947,7 +8947,7 @@ exports[`IconSet should render px-utl-help 1`] = `
 }
 
 <i
-  className="px-icon px-utl-help c0"
+  className="c0 px-icon px-utl-help"
   color="inherit"
   style={
     Object {
@@ -9013,7 +9013,7 @@ exports[`IconSet should render px-utl-information 1`] = `
 }
 
 <i
-  className="px-icon px-utl-information c0"
+  className="c0 px-icon px-utl-information"
   color="inherit"
   style={
     Object {
@@ -9079,7 +9079,7 @@ exports[`IconSet should render px-utl-link 1`] = `
 }
 
 <i
-  className="px-icon px-utl-link c0"
+  className="c0 px-icon px-utl-link"
   color="inherit"
   style={
     Object {
@@ -9145,7 +9145,7 @@ exports[`IconSet should render px-utl-location 1`] = `
 }
 
 <i
-  className="px-icon px-utl-location c0"
+  className="c0 px-icon px-utl-location"
   color="inherit"
   style={
     Object {
@@ -9211,7 +9211,7 @@ exports[`IconSet should render px-utl-locked 1`] = `
 }
 
 <i
-  className="px-icon px-utl-locked c0"
+  className="c0 px-icon px-utl-locked"
   color="inherit"
   style={
     Object {
@@ -9277,7 +9277,7 @@ exports[`IconSet should render px-utl-map 1`] = `
 }
 
 <i
-  className="px-icon px-utl-map c0"
+  className="c0 px-icon px-utl-map"
   color="inherit"
   style={
     Object {
@@ -9343,7 +9343,7 @@ exports[`IconSet should render px-utl-module-settings 1`] = `
 }
 
 <i
-  className="px-icon px-utl-module-settings c0"
+  className="c0 px-icon px-utl-module-settings"
   color="inherit"
   style={
     Object {
@@ -9409,7 +9409,7 @@ exports[`IconSet should render px-utl-overflow 1`] = `
 }
 
 <i
-  className="px-icon px-utl-overflow c0"
+  className="c0 px-icon px-utl-overflow"
   color="inherit"
   style={
     Object {
@@ -9475,7 +9475,7 @@ exports[`IconSet should render px-utl-phone 1`] = `
 }
 
 <i
-  className="px-icon px-utl-phone c0"
+  className="c0 px-icon px-utl-phone"
   color="inherit"
   style={
     Object {
@@ -9541,7 +9541,7 @@ exports[`IconSet should render px-utl-remove 1`] = `
 }
 
 <i
-  className="px-icon px-utl-remove c0"
+  className="c0 px-icon px-utl-remove"
   color="inherit"
   style={
     Object {
@@ -9607,7 +9607,7 @@ exports[`IconSet should render px-utl-reply 1`] = `
 }
 
 <i
-  className="px-icon px-utl-reply c0"
+  className="c0 px-icon px-utl-reply"
   color="inherit"
   style={
     Object {
@@ -9673,7 +9673,7 @@ exports[`IconSet should render px-utl-save 1`] = `
 }
 
 <i
-  className="px-icon px-utl-save c0"
+  className="c0 px-icon px-utl-save"
   color="inherit"
   style={
     Object {
@@ -9739,7 +9739,7 @@ exports[`IconSet should render px-utl-search 1`] = `
 }
 
 <i
-  className="px-icon px-utl-search c0"
+  className="c0 px-icon px-utl-search"
   color="inherit"
   style={
     Object {
@@ -9805,7 +9805,7 @@ exports[`IconSet should render px-utl-share 1`] = `
 }
 
 <i
-  className="px-icon px-utl-share c0"
+  className="c0 px-icon px-utl-share"
   color="inherit"
   style={
     Object {
@@ -9871,7 +9871,7 @@ exports[`IconSet should render px-utl-tablet 1`] = `
 }
 
 <i
-  className="px-icon px-utl-tablet c0"
+  className="c0 px-icon px-utl-tablet"
   color="inherit"
   style={
     Object {
@@ -9937,7 +9937,7 @@ exports[`IconSet should render px-utl-unlink 1`] = `
 }
 
 <i
-  className="px-icon px-utl-unlink c0"
+  className="c0 px-icon px-utl-unlink"
   color="inherit"
   style={
     Object {
@@ -10003,7 +10003,7 @@ exports[`IconSet should render px-utl-unlocked 1`] = `
 }
 
 <i
-  className="px-icon px-utl-unlocked c0"
+  className="c0 px-icon px-utl-unlocked"
   color="inherit"
   style={
     Object {
@@ -10069,7 +10069,7 @@ exports[`IconSet should render px-utl-upload 1`] = `
 }
 
 <i
-  className="px-icon px-utl-upload c0"
+  className="c0 px-icon px-utl-upload"
   color="inherit"
   style={
     Object {
@@ -10135,7 +10135,7 @@ exports[`IconSet should render px-utl-zoom 1`] = `
 }
 
 <i
-  className="px-icon px-utl-zoom c0"
+  className="c0 px-icon px-utl-zoom"
   color="inherit"
   style={
     Object {

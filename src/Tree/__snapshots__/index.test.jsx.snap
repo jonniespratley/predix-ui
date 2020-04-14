@@ -119,7 +119,7 @@ exports[`Tree matches snapshot 1`] = `
         className="c2"
       >
         <i
-          className="px-icon px-utl-chevron-right c3"
+          className="c3 px-icon px-utl-chevron-right"
           color="inherit"
           style={
             Object {

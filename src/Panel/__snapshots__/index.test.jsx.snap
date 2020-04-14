@@ -33,7 +33,7 @@ exports[`Panel fixed renders correctly 1`] = `
   style={null}
 >
   <div
-    className="px-panel-content c1"
+    className="c1 px-panel-content"
   />
 </div>
 `;
@@ -70,7 +70,7 @@ exports[`Panel renders block when visible 1`] = `
   style={null}
 >
   <div
-    className="px-panel-content c1"
+    className="c1 px-panel-content"
   />
 </div>
 `;

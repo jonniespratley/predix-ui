@@ -100,19 +100,19 @@ exports[`Card should render 1`] = `
 }
 
 <div
-  className="px-card c0"
+  className="c0 px-card"
 >
   <header
-    className="px-card-header c1"
+    className="c1 px-card-header"
   >
     <span
       className="c2"
     >
       <i
-        className="px-card-icon c3"
+        className="c3 px-card-icon"
       >
         <i
-          className="px-icon px-nav-home c4"
+          className="c4 px-icon px-nav-home"
           color="inherit"
           style={
             Object {
@@ -144,7 +144,7 @@ exports[`Card should render 1`] = `
     </span>
   </header>
   <section
-    className="px-card-body c5"
+    className="c5 px-card-body"
   >
     Content
   </section>

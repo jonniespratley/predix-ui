@@ -180,7 +180,7 @@ exports[`TableView TableRow should render 1`] = `
 }
 
 <div
-  className="px-table-row c0"
+  className="c0 px-table-row"
   selected={null}
   size={null}
 >
@@ -188,7 +188,7 @@ exports[`TableView TableRow should render 1`] = `
     className="c1"
   >
     <i
-      className="px-icon px-nav-home c2"
+      className="c2 px-icon px-nav-home"
       color="inherit"
       style={
         Object {
@@ -359,7 +359,7 @@ exports[`TableView should render with "large" rows 1`] = `
   size="large"
 >
   <div
-    className="px-table-row c1"
+    className="c1 px-table-row"
     selected={null}
     size="large"
   >
@@ -374,7 +374,7 @@ exports[`TableView should render with "large" rows 1`] = `
     </div>
   </div>
   <div
-    className="px-table-row c1"
+    className="c1 px-table-row"
     selected={null}
     size="large"
   >
@@ -389,7 +389,7 @@ exports[`TableView should render with "large" rows 1`] = `
     </div>
   </div>
   <div
-    className="px-table-row c1"
+    className="c1 px-table-row"
     selected={null}
     size="large"
   >
@@ -404,7 +404,7 @@ exports[`TableView should render with "large" rows 1`] = `
     </div>
   </div>
   <div
-    className="px-table-row c1"
+    className="c1 px-table-row"
     selected={null}
     size="large"
   >
@@ -419,7 +419,7 @@ exports[`TableView should render with "large" rows 1`] = `
     </div>
   </div>
   <div
-    className="px-table-row c1"
+    className="c1 px-table-row"
     selected={null}
     size="large"
   >

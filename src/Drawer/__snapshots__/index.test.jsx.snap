@@ -59,11 +59,11 @@ exports[`Drawer bottom - matches snapshot 1`] = `
 
 <div>
   <div
-    className="px-drawer c0"
+    className="c0 px-drawer"
     type={null}
   >
     <div
-      className="px-drawer-content c1"
+      className="c1 px-drawer-content"
     />
   </div>
 </div>
@@ -126,11 +126,11 @@ exports[`Drawer docked - matches snapshot 1`] = `
 
 <div>
   <div
-    className="px-drawer c0"
+    className="c0 px-drawer"
     type={null}
   >
     <div
-      className="px-drawer-content c1"
+      className="c1 px-drawer-content"
     />
   </div>
 </div>
@@ -190,11 +190,11 @@ exports[`Drawer left - matches snapshot 1`] = `
 
 <div>
   <div
-    className="px-drawer c0"
+    className="c0 px-drawer"
     type={null}
   >
     <div
-      className="px-drawer-content c1"
+      className="c1 px-drawer-content"
     />
   </div>
 </div>
@@ -249,11 +249,11 @@ exports[`Drawer matches snapshot 1`] = `
 
 <div>
   <div
-    className="px-drawer c0"
+    className="c0 px-drawer"
     type={null}
   >
     <div
-      className="px-drawer-content c1"
+      className="c1 px-drawer-content"
     />
   </div>
 </div>
@@ -313,11 +313,11 @@ exports[`Drawer opened - matches snapshot 1`] = `
 
 <div>
   <div
-    className="px-drawer c0"
+    className="c0 px-drawer"
     type={null}
   >
     <div
-      className="px-drawer-content c1"
+      className="c1 px-drawer-content"
     />
   </div>
 </div>
@@ -377,11 +377,11 @@ exports[`Drawer right - matches snapshot 1`] = `
 
 <div>
   <div
-    className="px-drawer c0"
+    className="c0 px-drawer"
     type={null}
   >
     <div
-      className="px-drawer-content c1"
+      className="c1 px-drawer-content"
     />
   </div>
 </div>
@@ -445,11 +445,11 @@ exports[`Drawer top - matches snapshot 1`] = `
 
 <div>
   <div
-    className="px-drawer c0"
+    className="c0 px-drawer"
     type={null}
   >
     <div
-      className="px-drawer-content c1"
+      className="c1 px-drawer-content"
     />
   </div>
 </div>

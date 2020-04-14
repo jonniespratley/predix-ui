@@ -218,7 +218,7 @@ exports[`Dropdown matches snapshot 1`] = `
   className="px-dropdown"
 >
   <button
-    className="px-button c0"
+    className="c0 px-button"
     disabled={null}
     onClick={[Function]}
     size={null}
@@ -230,15 +230,15 @@ exports[`Dropdown matches snapshot 1`] = `
     type={null}
   >
     <div
-      className="px-dropdown__trigger c1"
+      className="c1 px-dropdown__trigger"
     >
       <div
-        className="px-dropdown__label c2"
+        className="c2 px-dropdown__label"
       >
         My Val
       </div>
       <i
-        className="px-icon px-utl-chevron c3"
+        className="c3 px-icon px-utl-chevron"
         color="inherit"
         style={
           Object {
@@ -268,11 +268,11 @@ exports[`Dropdown matches snapshot 1`] = `
     </div>
   </button>
   <div
-    className="px-dropdown__content c4"
+    className="c4 px-dropdown__content"
     width={null}
   >
     <div
-      className="px-dropdown__option c5"
+      className="c5 px-dropdown__option"
       data-key="1"
       data-val="iPhone"
       onClick={[Function]}
@@ -280,7 +280,7 @@ exports[`Dropdown matches snapshot 1`] = `
       iPhone
     </div>
     <div
-      className="px-dropdown__option c5"
+      className="c5 px-dropdown__option"
       data-key="2"
       data-val="Android"
       onClick={[Function]}
@@ -288,7 +288,7 @@ exports[`Dropdown matches snapshot 1`] = `
       Android
     </div>
     <div
-      className="px-dropdown__option c5"
+      className="c5 px-dropdown__option"
       data-key="3"
       data-val="Blackberry"
       onClick={[Function]}
@@ -296,7 +296,7 @@ exports[`Dropdown matches snapshot 1`] = `
       Blackberry
     </div>
     <div
-      className="px-dropdown__option c5"
+      className="c5 px-dropdown__option"
       data-key="4"
       data-val="Windows Phone"
       onClick={[Function]}
@@ -304,7 +304,7 @@ exports[`Dropdown matches snapshot 1`] = `
       Windows Phone
     </div>
     <div
-      className="px-dropdown__option c6"
+      className="c6 px-dropdown__option"
       data-key="5"
       data-val="Flip Phone"
       disabled={true}

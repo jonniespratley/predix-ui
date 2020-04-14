@@ -83,10 +83,10 @@ exports[`Accordion should render open by default 1`] = `
 }
 
 <div
-  className="px-accordion px-accordion--open c0"
+  className="c0 px-accordion px-accordion--open"
 >
   <div
-    className="px-accordion__header c1"
+    className="c1 px-accordion__header"
     disabled={null}
   >
     <div
@@ -149,7 +149,7 @@ exports[`Accordion should render open by default 1`] = `
     className="iron-collapse iron-collapse-opened"
   >
     <div
-      className="px-accordion__body c6"
+      className="c6 px-accordion__body"
     >
       <p>
         Accordion content goes here.

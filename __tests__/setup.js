@@ -11,8 +11,7 @@ initStoryshots({
   renderer: mount
 });
 */
-import 'core-js/es6/map';
-import 'core-js/es6/set';
+import 'core-js/stable';
 import 'raf/polyfill';
 
 // import React from 'react';

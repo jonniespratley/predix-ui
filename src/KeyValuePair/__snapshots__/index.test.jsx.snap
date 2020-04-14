@@ -24,18 +24,18 @@ exports[`KeyValuePair alpha - renders correctly 1`] = `
   className="px-key-value-pair"
 >
   <div
-    className="kvp-label c0"
+    className="c0 kvp-label"
     size={null}
   >
     Lorem Ipsum
   </div>
   <span
-    className="alpha c1"
+    className="c1 alpha"
     size="delta"
   >
     12345
     <span
-      className="delta c2"
+      className="c2 delta"
       size="delta"
     >
       units
@@ -68,18 +68,18 @@ exports[`KeyValuePair beta - renders correctly 1`] = `
   className="px-key-value-pair"
 >
   <div
-    className="kvp-label c0"
+    className="c0 kvp-label"
     size={null}
   >
     Lorem Ipsum
   </div>
   <span
-    className="beta c1"
+    className="c1 beta"
     size="epsilon"
   >
     12345
     <span
-      className="epsilon c2"
+      className="c2 epsilon"
       size="epsilon"
     >
       units

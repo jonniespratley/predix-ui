@@ -3,8 +3,8 @@
   "description": "px-* web components as React styled components",
   "author": "Jonnie Spratley",
   "user": "jonniespratley",
-  "version": "0.0.23",
-  "license": "",
+  "version": "0.0.24",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/jonniespratley/predix-ui.git"

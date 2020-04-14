@@ -174,7 +174,7 @@ exports[`Modal should render 1`] = `
   className="c0"
 >
   <div
-    className="px-overlay c1"
+    className="c1 px-overlay"
     onClick={[Function]}
     onKeyUp={[Function]}
   />
@@ -195,7 +195,7 @@ exports[`Modal should render 1`] = `
         className="c4"
       >
         <button
-          className="px-button c5"
+          className="c5 px-button"
           disabled={null}
           id="btnModalPositive"
           onClick={null}

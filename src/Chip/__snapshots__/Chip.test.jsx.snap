@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Chip should render with icon 1`] = `
-<Chip
+<styled.div
   selected={null}
 >
-  <Chip__ChipContent>
+  <styled.div>
     Label
-    <Chip__ChipIcon>
+    <styled.div>
       <Icon
         className={null}
         color="inherit"
@@ -15,27 +15,27 @@ exports[`Chip should render with icon 1`] = `
         style={null}
         viewBox={null}
       />
-    </Chip__ChipIcon>
-  </Chip__ChipContent>
-</Chip>
+    </styled.div>
+  </styled.div>
+</styled.div>
 `;
 
 exports[`Chip should render with selected 1`] = `
-<Chip
+<styled.div
   selected={true}
 >
-  <Chip__ChipContent>
+  <styled.div>
     Label
-  </Chip__ChipContent>
-</Chip>
+  </styled.div>
+</styled.div>
 `;
 
 exports[`Chip should render with text 1`] = `
-<Chip
+<styled.div
   selected={null}
 >
-  <Chip__ChipContent>
+  <styled.div>
     Label
-  </Chip__ChipContent>
-</Chip>
+  </styled.div>
+</styled.div>
 `;

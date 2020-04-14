@@ -14,7 +14,7 @@ exports[`Overlay matches snapshot 1`] = `
 }
 
 <div
-  className="px-overlay c0"
+  className="c0 px-overlay"
   onClick={[Function]}
   onKeyUp={[Function]}
 />
