@@ -183,7 +183,7 @@ const Component = ({
           onClick={onActionClick}
           theme="tertiary"
         >
-          {'OK'}
+          OK
         </Button>
         )}
     </AlertMessageActions>
