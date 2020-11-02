@@ -10,7 +10,7 @@ npm-debug.log
 .log
 bower_components
 stats.json
-
+.vscode/
 temp
 .tmp
 esdocs
