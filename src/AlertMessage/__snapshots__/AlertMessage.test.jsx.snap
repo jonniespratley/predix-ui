@@ -18,8 +18,8 @@ exports[`AlertMessage error matches snapshot 1`] = `
   padding-top: 0px;
   padding-bottom: 0px;
   box-shadow: 0px 4px 8px var(--px-shadow-notification,rgba(0,0,0,0.2));
-  -webkit-animation: LkNfV 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
-  animation: LkNfV 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  -webkit-animation: jxTkOk 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  animation: jxTkOk 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -35,8 +35,8 @@ exports[`AlertMessage error matches snapshot 1`] = `
   max-height: none;
   padding-top: 0.66667rem;
   padding-bottom: 0.66667rem;
-  -webkit-animation: ayxbO 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
-  animation: ayxbO 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  -webkit-animation: ddFaAv 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  animation: ddFaAv 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
 }
 
 .c0 button {
@@ -150,8 +150,8 @@ exports[`AlertMessage healthy matches snapshot 1`] = `
   padding-top: 0px;
   padding-bottom: 0px;
   box-shadow: 0px 4px 8px var(--px-shadow-notification,rgba(0,0,0,0.2));
-  -webkit-animation: LkNfV 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
-  animation: LkNfV 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  -webkit-animation: jxTkOk 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  animation: jxTkOk 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -167,8 +167,8 @@ exports[`AlertMessage healthy matches snapshot 1`] = `
   max-height: none;
   padding-top: 0.66667rem;
   padding-bottom: 0.66667rem;
-  -webkit-animation: ayxbO 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
-  animation: ayxbO 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  -webkit-animation: ddFaAv 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  animation: ddFaAv 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
 }
 
 .c0 button {
@@ -282,8 +282,8 @@ exports[`AlertMessage hidden - matches snapshot 1`] = `
   padding-top: 0px;
   padding-bottom: 0px;
   box-shadow: 0px 4px 8px var(--px-shadow-notification,rgba(0,0,0,0.2));
-  -webkit-animation: LkNfV 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
-  animation: LkNfV 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  -webkit-animation: jxTkOk 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  animation: jxTkOk 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -399,8 +399,8 @@ exports[`AlertMessage important matches snapshot 1`] = `
   padding-top: 0px;
   padding-bottom: 0px;
   box-shadow: 0px 4px 8px var(--px-shadow-notification,rgba(0,0,0,0.2));
-  -webkit-animation: LkNfV 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
-  animation: LkNfV 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  -webkit-animation: jxTkOk 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  animation: jxTkOk 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -416,8 +416,8 @@ exports[`AlertMessage important matches snapshot 1`] = `
   max-height: none;
   padding-top: 0.66667rem;
   padding-bottom: 0.66667rem;
-  -webkit-animation: ayxbO 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
-  animation: ayxbO 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  -webkit-animation: ddFaAv 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  animation: ddFaAv 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
 }
 
 .c0 button {
@@ -531,8 +531,8 @@ exports[`AlertMessage information matches snapshot 1`] = `
   padding-top: 0px;
   padding-bottom: 0px;
   box-shadow: 0px 4px 8px var(--px-shadow-notification,rgba(0,0,0,0.2));
-  -webkit-animation: LkNfV 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
-  animation: LkNfV 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  -webkit-animation: jxTkOk 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  animation: jxTkOk 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -548,8 +548,8 @@ exports[`AlertMessage information matches snapshot 1`] = `
   max-height: none;
   padding-top: 0.66667rem;
   padding-bottom: 0.66667rem;
-  -webkit-animation: ayxbO 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
-  animation: ayxbO 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  -webkit-animation: ddFaAv 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  animation: ddFaAv 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
 }
 
 .c0 button {
@@ -663,8 +663,8 @@ exports[`AlertMessage matches snapshot 1`] = `
   padding-top: 0px;
   padding-bottom: 0px;
   box-shadow: 0px 4px 8px var(--px-shadow-notification,rgba(0,0,0,0.2));
-  -webkit-animation: LkNfV 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
-  animation: LkNfV 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  -webkit-animation: jxTkOk 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  animation: jxTkOk 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -680,8 +680,8 @@ exports[`AlertMessage matches snapshot 1`] = `
   max-height: none;
   padding-top: 0.66667rem;
   padding-bottom: 0.66667rem;
-  -webkit-animation: ayxbO 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
-  animation: ayxbO 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  -webkit-animation: ddFaAv 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  animation: ddFaAv 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
 }
 
 .c0 button {
@@ -793,8 +793,8 @@ exports[`AlertMessage success matches snapshot 1`] = `
   padding-top: 0px;
   padding-bottom: 0px;
   box-shadow: 0px 4px 8px var(--px-shadow-notification,rgba(0,0,0,0.2));
-  -webkit-animation: LkNfV 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
-  animation: LkNfV 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  -webkit-animation: jxTkOk 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  animation: jxTkOk 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -810,8 +810,8 @@ exports[`AlertMessage success matches snapshot 1`] = `
   max-height: none;
   padding-top: 0.66667rem;
   padding-bottom: 0.66667rem;
-  -webkit-animation: ayxbO 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
-  animation: ayxbO 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  -webkit-animation: ddFaAv 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  animation: ddFaAv 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
 }
 
 .c0 button {
@@ -925,8 +925,8 @@ exports[`AlertMessage warning matches snapshot 1`] = `
   padding-top: 0px;
   padding-bottom: 0px;
   box-shadow: 0px 4px 8px var(--px-shadow-notification,rgba(0,0,0,0.2));
-  -webkit-animation: LkNfV 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
-  animation: LkNfV 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  -webkit-animation: jxTkOk 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  animation: jxTkOk 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -942,8 +942,8 @@ exports[`AlertMessage warning matches snapshot 1`] = `
   max-height: none;
   padding-top: 0.66667rem;
   padding-bottom: 0.66667rem;
-  -webkit-animation: ayxbO 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
-  animation: ayxbO 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  -webkit-animation: ddFaAv 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
+  animation: ddFaAv 0.4s cubic-bezier(0.78,0.13,0.16,0.87);
 }
 
 .c0 button {

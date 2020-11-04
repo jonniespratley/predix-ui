@@ -20,8 +20,8 @@ exports[`ProgressBar infinite - renders correctly 1`] = `
   -ms-transform: scaleX(0.5);
   transform: scaleX(0.5);
   position: relative;
-  -webkit-animation: cJGqkr 2s cubic-bezier(0.78,0.13,0.16,0.87) infinite;
-  animation: cJGqkr 2s cubic-bezier(0.78,0.13,0.16,0.87) infinite;
+  -webkit-animation: gxHwZO 2s cubic-bezier(0.78,0.13,0.16,0.87) infinite;
+  animation: gxHwZO 2s cubic-bezier(0.78,0.13,0.16,0.87) infinite;
 }
 
 .c1 {

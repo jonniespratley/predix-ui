@@ -185,9 +185,10 @@
     "react-dom": "^16.0.0"
   },
   "dependencies": {
+    "@popperjs/core": "^2.5.4",
     "js-tree": "^2.0.1",
     "prop-types": "^15.7.2",
-    "react-popper": "^2.2.2",
+    "react-popper": "^2.2.3",
     "reuse": "^2.0.0",
     "styled-components": "^5.1.0",
     "styled-tools": "^1.7.1"
