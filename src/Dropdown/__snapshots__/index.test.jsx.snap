@@ -1,0 +1,317 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown matches snapshot 1`] = `
+.c3 {
+  color: var(--iron-icon-stroke-color,inherit);
+  fill: var(--iron-icon-fill-color,none);
+  stroke: var(--iron-icon-stroke-color,currentColor);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  vertical-align: middle;
+  width: var(--iron-icon-width);
+  height: var(--iron-icon-height);
+  color: inherit !important;
+}
+
+.c3 > svg {
+  color: var(--iron-icon-stroke-color,inherit);
+  fill: var(--iron-icon-fill-color,none);
+  stroke: var(--iron-icon-stroke-color,currentColor);
+  position: relative;
+  vertical-align: middle;
+}
+
+.c3.hidden {
+  display: none;
+}
+
+.c0 {
+  font-family: "GE Inspira Sans";
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+  overflow: visible;
+  height: var(--px-btn-height,auto);
+  min-height: var(--px-btn-min-height,2rem);
+  min-width: var(--px-btn-min-width,4.66667em);
+  margin: 0;
+  border: 1px solid var(--px-btn-border-color,transparent);
+  border-radius: 0 !important;
+  padding: calc(var(--px-btn-height,2em) / 10) calc(var(--px-btn-height,2em) / 2);
+  box-shadow: var(--px-btn-shadow--light,none);
+  font: inherit;
+  line-height: calc(var(--px-btn-height,2em) - 2px);
+  cursor: pointer;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  background-color: var(--px-btn-background,#d8e0e5);
+  -webkit-transition: background .4s,border-color .4s,color .4s;
+  transition: background .4s,border-color .4s,color .4s;
+  -webkit-appearance: button;
+  -webkit-font-smoothing: antialiased;
+  color: var(--px-btn-color,#2c404c);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0:link,
+.c0:visited,
+.c0:hover,
+.c0:active {
+  color: var(--px-btn-color,#2c404c);
+}
+
+.c0:hover,
+.c0:focus {
+  border-color: var(--px-btn-border-color--hover,transparent);
+  box-shadow: var(--px-btn-shadow,none);
+  background-color: var(--px-btn-background--hover,#a3b5bf);
+  color: var(--px-btn-color--hover,#2c404c);
+}
+
+.c0:active {
+  outline: none;
+  border-color: var(--px-btn-border-color--pressed,transparent);
+  box-shadow: none;
+  background-color: var(--px-btn-background--pressed,#889aa5);
+}
+
+.c2 {
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.c2 ~ i {
+  margin-left: .5rem;
+}
+
+.c4 {
+  z-index: 10;
+  position: absolute;
+  background-color: var(--px-dropdown-bg-color,#fff);
+  border: 1px solid var(--px-dropdown-border-color,gray);
+  max-height: var(--px-dropdown-max-height,300px);
+  max-width: var(--px-dropdown-max-width,400px);
+  min-width: var(--px-dropdown-min-width);
+  min-height: var(--px-dropdown-min-height);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  display: none;
+}
+
+.c5 {
+  padding-left: var(--px-dropdown-item-padding,.66667rem);
+  padding-right: var(--px-dropdown-item-padding,.66667rem);
+  padding-top: var(--px-dropdown-item-padding);
+  padding-bottom: var(--px-dropdown-item-padding);
+  height: var(--px-dropdown-item-height,2rem);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5:hover {
+  background-color: var(--px-dropdown-bg-color--hover,#d3d3d3);
+}
+
+.c5.selected,
+.c5:active {
+  background-color: var(--px-dropdown-bg-color--selected,#00f);
+  color: var(--px-dropdown-text-color--selected,#fff);
+}
+
+.c6 {
+  padding-left: var(--px-dropdown-item-padding,.66667rem);
+  padding-right: var(--px-dropdown-item-padding,.66667rem);
+  padding-top: var(--px-dropdown-item-padding);
+  padding-bottom: var(--px-dropdown-item-padding);
+  height: var(--px-dropdown-item-height,2rem);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: var(--px-dropdown-text-color--disabled,gray);
+  background-color: var(--px-dropdown-bg-color--disabled,transparent);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.c6:hover {
+  background-color: var(--px-dropdown-bg-color--hover,#d3d3d3);
+}
+
+.c6.selected,
+.c6:active {
+  background-color: var(--px-dropdown-bg-color--selected,#00f);
+  color: var(--px-dropdown-text-color--selected,#fff);
+}
+
+.c1 {
+  max-width: inherit;
+  width: inherit;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: 0;
+  font-weight: var(--px-dropdown-font-weight,normal);
+  height: auto;
+}
+
+<div
+  className="px-dropdown"
+>
+  <button
+    className="c0 px-button"
+    disabled={null}
+    onClick={[Function]}
+    size={null}
+    style={
+      Object {
+        "height": null,
+      }
+    }
+    type={null}
+  >
+    <div
+      className="c1 px-dropdown__trigger"
+    >
+      <div
+        className="c2 px-dropdown__label"
+      >
+        My Val
+      </div>
+      <i
+        className="c3 px-icon px-utl-chevron"
+        color="inherit"
+        style={
+          Object {
+            "height": 16,
+            "width": 16,
+          }
+        }
+      >
+        <svg
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<g id=\\"px-utl-chevron\\"><path d=\\"M2.4 6.2l5.5 5.5 5.5-5.5\\"/></g>",
+            }
+          }
+          preserveAspectRatio="xMidYMid meet"
+          style={
+            Object {
+              "display": "block",
+              "height": 16,
+              "pointerEvents": "none",
+              "width": 16,
+            }
+          }
+          viewBox="0 0 16 16"
+        />
+      </i>
+    </div>
+  </button>
+  <div
+    className="c4 px-dropdown__content"
+    width={null}
+  >
+    <div
+      className="c5 px-dropdown__option"
+      data-key="1"
+      data-val="iPhone"
+      onClick={[Function]}
+    >
+      iPhone
+    </div>
+    <div
+      className="c5 px-dropdown__option"
+      data-key="2"
+      data-val="Android"
+      onClick={[Function]}
+    >
+      Android
+    </div>
+    <div
+      className="c5 px-dropdown__option"
+      data-key="3"
+      data-val="Blackberry"
+      onClick={[Function]}
+    >
+      Blackberry
+    </div>
+    <div
+      className="c5 px-dropdown__option"
+      data-key="4"
+      data-val="Windows Phone"
+      onClick={[Function]}
+    >
+      Windows Phone
+    </div>
+    <div
+      className="c6 px-dropdown__option"
+      data-key="5"
+      data-val="Flip Phone"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Flip Phone
+    </div>
+  </div>
+</div>
+`;

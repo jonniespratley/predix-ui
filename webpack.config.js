@@ -7,7 +7,6 @@ const {
   BundleAnalyzerPlugin
 } = require('webpack-bundle-analyzer');
 
-
 const pkg = require('./package.json');
 
 const cssRules = [];
@@ -25,7 +24,6 @@ const config = {
   filename: pkg.name,
   library: pkg.name
 };
-
 
 const analyzeBundle = new BundleAnalyzerPlugin({
   analyzerMode: 'static',
@@ -149,7 +147,8 @@ const dev = merge(common, siteCommon, {
       use: {
         loader: 'babel-loader',
         options: {
-          cacheDirectory: true
+          cacheDirectory: true,
+          babelrc: true
         }
       },
       include: [

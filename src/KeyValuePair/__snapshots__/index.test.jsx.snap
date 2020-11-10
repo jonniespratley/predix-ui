@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`KeyValuePair alpha - renders correctly 1`] = `
+.c0 {
+  font-size: .8rem;
+  line-height: 1.66667;
+  color: var(--px-headings-label-color,gray);
+}
+
+.c1 {
+  color: var(--px-headings-value-color,black);
+  margin-top: -4px;
+  font-size: 2rem;
+  margin-top: -8px;
+}
+
+.c2 {
+  margin-left: 0px;
+  font-size: 2rem;
+  margin-left: -4px;
+}
+
+<div
+  className="px-key-value-pair"
+>
+  <div
+    className="c0 kvp-label"
+    size={null}
+  >
+    Lorem Ipsum
+  </div>
+  <span
+    className="c1 alpha"
+    size="delta"
+  >
+    12345
+    <span
+      className="c2 delta"
+      size="delta"
+    >
+      units
+    </span>
+  </span>
+</div>
+`;
+
+exports[`KeyValuePair beta - renders correctly 1`] = `
+.c0 {
+  font-size: .8rem;
+  line-height: 1.66667;
+  color: var(--px-headings-label-color,gray);
+}
+
+.c1 {
+  color: var(--px-headings-value-color,black);
+  margin-top: -4px;
+  font-size: 1.3333rem;
+  margin-top: -2px;
+}
+
+.c2 {
+  margin-left: 0px;
+  font-size: 1.3333rem;
+  margin-left: -2px;
+}
+
+<div
+  className="px-key-value-pair"
+>
+  <div
+    className="c0 kvp-label"
+    size={null}
+  >
+    Lorem Ipsum
+  </div>
+  <span
+    className="c1 beta"
+    size="epsilon"
+  >
+    12345
+    <span
+      className="c2 epsilon"
+      size="epsilon"
+    >
+      units
+    </span>
+  </span>
+</div>
+`;

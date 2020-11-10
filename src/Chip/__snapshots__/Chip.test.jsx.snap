@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chip should render with icon 1`] = `
+<styled.div
+  selected={null}
+>
+  <styled.div>
+    Label
+    <styled.div>
+      <Icon
+        className={null}
+        color="inherit"
+        icon="px-utl:close"
+        size={16}
+        style={null}
+        viewBox={null}
+      />
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`Chip should render with selected 1`] = `
+<styled.div
+  selected={true}
+>
+  <styled.div>
+    Label
+  </styled.div>
+</styled.div>
+`;
+
+exports[`Chip should render with text 1`] = `
+<styled.div
+  selected={null}
+>
+  <styled.div>
+    Label
+  </styled.div>
+</styled.div>
+`;

@@ -1,7 +1,8 @@
 import { configure, setAddon, addDecorator } from '@storybook/react';
 import JSXAddon from 'storybook-addon-jsx';
 import { withInfo } from '@storybook/addon-info';
-
+import { withTests } from '@storybook/addon-jest';
+import results from '../jest-test-results.json';
 //import { configure as configureViewports } from '@storybook/addon-viewport';
 
 
@@ -9,8 +10,14 @@ import { withInfo } from '@storybook/addon-info';
 addDecorator(withInfo);
 setAddon(JSXAddon);
 
+addDecorator(
+  withTests({
+    results
+  })
+);
+
 const path = require('path');
-const req = require.context('../src/components', true, /\.stories\.jsx$/)
+const req = require.context('../src', true, /\.stories\.js?(x)$/);
 
 function loadStories() {
   req.keys().forEach((filename) => req(filename))

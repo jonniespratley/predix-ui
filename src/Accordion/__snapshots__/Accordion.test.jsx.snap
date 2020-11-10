@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion should render open by default 1`] = `
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  padding: .5rem;
+  margin-bottom: 0.3333rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: var(--px-headings-heading-subsection-color,black);
+  background-color: var(--px-headings-heading-subsection-background,whitesmoke);
+  background-color: var(--px-accordion-header-background-color,whitesmoke);
+  color: var(--px-accordion-header-color,black);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 > * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c3 {
+  text-transform: uppercase;
+  margin-left: .2rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-family: "GE Inspira Sans";
+  -webkit-transition-duration: 300ms;
+  -moz-transition-duration: 300ms;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+}
+
+.c6 {
+  margin: 0;
+  overflow: auto;
+  padding: .5rem;
+}
+
+.c5 {
+  margin-right: 1rem;
+  text-transform: none;
+}
+
+<div
+  className="c0 px-accordion px-accordion--open"
+>
+  <div
+    className="c1 px-accordion__header"
+    disabled={null}
+  >
+    <div
+      className="c2"
+      onClick={[Function]}
+    >
+      <span>
+        <i
+          className="px-icon px-icon-utl px-utl-chevron-down"
+          style={
+            Object {
+              "height": "16px",
+              "width": "16px",
+            }
+          }
+        >
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            style={
+              Object {
+                "display": "block",
+                "fill": "none",
+                "height": "16px",
+                "pointerEvents": "none",
+                "stroke": "currentColor",
+                "width": "16px",
+              }
+            }
+            viewBox="0 0 16 16"
+          >
+            <g
+              id="px-utl-chevron"
+            >
+              <path
+                d="M2.4 6.2l5.5 5.5 5.5-5.5"
+              />
+            </g>
+          </svg>
+        </i>
+      </span>
+      <span
+        className="c3"
+      >
+        Header Caption
+      </span>
+    </div>
+    <div
+      className="c4"
+    >
+      <div
+        className="c5"
+      >
+        Last Updated: 3 Days Ago
+      </div>
+    </div>
+  </div>
+  <div
+    aria-expanded={true}
+    aria-hidden={false}
+    className="iron-collapse iron-collapse-opened"
+  >
+    <div
+      className="c6 px-accordion__body"
+    >
+      <p>
+        Accordion content goes here.
+      </p>
+    </div>
+    <style>
+      
+          .iron-collapse {
+            display: block;
+            -webkit-transition-duration: 300ms;
+            -moz-transition-duration: 300ms;
+            transition-duration: 300ms;
+            overflow: visible;
+          }
+          .iron-collapse:not(.iron-collapse-opened) {
+            overflow: hidden;
+          }
+        
+    </style>
+  </div>
+</div>
+`;

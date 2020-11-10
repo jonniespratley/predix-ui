@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box should render 1`] = `
+<span>
+  Content
+</span>
+`;
+
+exports[`Box should render as <h2>Heading</h2> 1`] = `
+<h2>
+  Content
+</h2>
+`;

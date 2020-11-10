@@ -39,7 +39,7 @@ const config = {
   styles: {
     dest: './dist/css',
     src: [
-      'src/sass/index.scss',
+      'src/styles/index.scss',
       'src/**/*.scss',
       '!src/**/_*.scss'
     ]
@@ -138,7 +138,7 @@ gulp.task('sass', () => (
 
 gulp.task('sass:themes', () => (
   gulp.src([
-    'src/components/px/Theme/*.scss'
+    'src/Theme/*.scss'
   ])
     .pipe($.sass(sassOptions).on('error', $.sass.logError))
     .pipe($.size())
@@ -223,7 +223,8 @@ gulp.task('purifycss', function () {
     .pipe($.size())
     .pipe(purify([
       './dist/**/*.js',
-      './src/**/*.js'
+      './src/**/*.js',
+      './src/**/*.jsx'
     ], {
       rejected: true,
       info: true,
@@ -238,7 +239,7 @@ gulp.task('purifycss', function () {
 
 // /
 gulp.task('sass:watch', function () {
-  gulp.watch('./sass/**/*.scss', ['sass']);
+  gulp.watch('./styles/**/*.scss', ['sass']);
 });
 
 // /
@@ -247,14 +248,22 @@ gulp.task('autoprefixer:watch', function () {
 });
 
 // /
-gulp.task('lint', () => gulp.src(['src/**/*.js', '!node_modules/**'])
+gulp.task('lint', () => gulp.src([
+  'src/**/*.js',
+  'src/**/*.jsx',
+  '!src/**/*.stories.js',
+  '!src/**/*.test.js',
+  '!src/**/*.stories.jsx',
+  '!src/**/*.test.jsx',
+  '!node_modules/**'
+])
   .pipe($.eslint())
   .pipe($.eslint.format())
   .pipe($.eslint.failAfterError()));
 
 
 // /
-gulp.task('webpack', () => gulp.src('src/index.js')
+gulp.task('webpack', () => gulp.src(config.scripts.main)
   .pipe(gulpWebpack({
     config: require('./webpack.config.js')('distMin')
   }, webpack))
@@ -265,7 +274,7 @@ gulp.task('webpack', () => gulp.src('src/index.js')
 gulp.task('babel-es6', () => {
   process.env.BABEL_ENV = 'es6';
   return gulp.src(config.scripts.src)
-    //  .pipe($.filelog())
+    .pipe($.filelog())
     .pipe(babel({
       // plugins: ['transform-class-properties'],
       extends: path.resolve(__dirname, '.babelrc')
@@ -277,7 +286,7 @@ gulp.task('babel-es6', () => {
 gulp.task('babel-modules', () => {
   process.env.BABEL_ENV = 'modules';
   return gulp.src(config.scripts.src)
-    // .pipe($.filelog())
+    .pipe($.filelog())
     .pipe(babel({
       comments: false,
       // plugins: ['transform-class-properties'],

@@ -11,7 +11,7 @@ const pkg = require('../package.json');
 console.log('pkg', pkg);
 
 const OUTPUT_DIR = path.resolve(__dirname, '../temp');
-const SRC_MAIN = path.resolve(__dirname, '../src/index.js');
+const SRC_MAIN = path.resolve(__dirname, '../src/Popover.jsx');
 fs.ensureDirSync(OUTPUT_DIR);
 
 const bundles = [

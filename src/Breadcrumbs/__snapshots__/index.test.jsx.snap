@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`px-breadcrumbs renders correctly 1`] = `
+.c0 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  list-style-type: none;
+  height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1:last-of-type {
+  font-weight: 600;
+}
+
+.c2 {
+  padding: 0 .2rem;
+  -webkit-user-select: normal;
+  -moz-user-select: normal;
+  -ms-user-select: normal;
+  user-select: normal;
+  cursor: normal;
+}
+
+<ul
+  className="c0"
+>
+  <li
+    className="c1"
+    data-index={0}
+  >
+    <span
+      className="c2"
+      onClick={[Function]}
+    >
+      North America
+    </span>
+  </li>
+  <li
+    className="c1"
+    data-index={1}
+  >
+    <svg
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "fill": "none",
+          "height": 24,
+          "stroke": "currentColor",
+          "width": 24,
+        }
+      }
+      viewBox="0 0 16 16"
+    >
+      <g
+        id="px-utl-chevron-right"
+      >
+        <path
+          d="M6.2 13.2l5.4-5.5-5.5-5.5"
+          strokeLinejoin="round"
+        />
+      </g>
+    </svg>
+    <span
+      className="c2"
+      onClick={[Function]}
+    >
+      United States of America
+    </span>
+  </li>
+  <li
+    className="c1"
+    data-index={2}
+  >
+    <svg
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "fill": "none",
+          "height": 24,
+          "stroke": "currentColor",
+          "width": 24,
+        }
+      }
+      viewBox="0 0 16 16"
+    >
+      <g
+        id="px-utl-chevron-right"
+      >
+        <path
+          d="M6.2 13.2l5.4-5.5-5.5-5.5"
+          strokeLinejoin="round"
+        />
+      </g>
+    </svg>
+    <span
+      className="c2"
+      onClick={[Function]}
+    >
+      California
+    </span>
+  </li>
+  <li
+    className="c1"
+    data-index={3}
+  >
+    <svg
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "fill": "none",
+          "height": 24,
+          "stroke": "currentColor",
+          "width": 24,
+        }
+      }
+      viewBox="0 0 16 16"
+    >
+      <g
+        id="px-utl-chevron-right"
+      >
+        <path
+          d="M6.2 13.2l5.4-5.5-5.5-5.5"
+          strokeLinejoin="round"
+        />
+      </g>
+    </svg>
+    <span
+      className="c2"
+      onClick={[Function]}
+    >
+      San Ramon
+    </span>
+  </li>
+</ul>
+`;

@@ -25,7 +25,7 @@ module.exports = function(plop) {
   const ACTIONS = {
     ADD_COMPONENT: {
       type: "add",
-      path: COMP_SRC + "/{{dashCase name}}/index.js",
+      path: COMP_SRC + "/{{dashCase name}}/Popover.jsx",
       templateFile: "plop-templates/component.tmpl.js"
     }
   };
